@@ -1,0 +1,69 @@
+Functional Annotation
+    Possible levels of functional annotation
+        gene-by-gene, single organism
+        genomic-context, single organism
+        cross-organismic comparisons (e.g. synteny)
+    Autoannotate (Phil)
+        gene-by-gene
+        HMMs
+            Equivalog
+            others at a lower priority
+        Blast = BER - Gip/SGC only keeps top N hits
+            Char hits
+            Swissprot hits
+            Others
+        Other types as specified
+        name modifications from e.g. signalp
+    BrainGrab (Malay, Kevin)
+        some gene-by-gene
+        some gene-by-gene w/ organismic limits (e.g. clade-specific blast hit)
+        some w/ genomic context
+        Data types:
+            Blast
+            HMMs
+            Genome Property values
+        Levels
+            On gene of interest (THIS)
+            In operon/region (NEAR)
+            presence in genome (GENOME)
+        
+    Genome Properties (Alex)
+        a bunch of calculated attributes (e.g. taxonomic hierarchy)
+        in genomic context
+        Used for Process GO annotation
+        Evidence asserts component. e.g.
+            HMM hit equivalog
+            HMM hit to family but not to subfamily
+            Other functional annotations (e.g. gene symbol)
+        Components or Properties can be asserted manually
+        Set of components asserts a property
+            ranged assertions (NO, none found, not supported, some evidence, YES)
+            some components are optional, and not counted in ranges
+        
+    BrainGrab is initial Scope
+        assume genomic context needed
+        data types
+            features and locations(ORFs, etc)
+            comparative evidence on features (blast hits, hmm hits, or genome property component info)
+            other annotations (e.g. go-terms)
+            genome info - taxonomy, genome properties
+        we should initially assume inputs of
+            feature id, locations (molecule=asmbl_id, low_bound, high_bound, frame/strand), annotations (to fill)
+            processed hmm hits (strong, weak, hmm_id, hit_id)
+            processed blast hits (score, e-value, subject_id, subject_start, subject_end, subject_length, hit_id, hit_start, hit_end, hit_length, %sim)
+            genome properties (id, state, value, component_ids)
+        output is modified features --
+            filling in common name, gene sym, go terms, ec num, role_ids
+        
+Classes:
+    feature
+    hmm_hit
+    blast_hit
+    genome
+    genome_property
+            
+        
+    Open Questions:
+        can we use outside data sources for initial fact loading (e.g. hibernate or RDF)? see http://magazine.redhat.com/2008/07/11/jboss-drools-meets-hibernate/
+        
+        

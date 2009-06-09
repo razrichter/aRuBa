@@ -1,0 +1,34 @@
+Rule: exosporium protein K|9|THIS_BLAST_HIT[RF|NP_844922.1, 160, 90, 90, 80, 5, 0]|
+
+Means:
+    rule name = exosporium protein K
+    confidence level = INIT_EQUIV - not quite as good as verified equivalog
+    condition = 
+        affects = THIS
+        type = BLAST_HIT
+        accession = RF|NP_844922.1
+        bit_score = 160
+        hit%length = 90
+        query%lengh = 90
+        %id = 80
+        relative_length_diff = 5(%)
+        requires single hit in genome = true
+    actions = 
+        set go_ids = GO:0043592 GO:0003674 GO:0008150
+        set ec_num = NULL
+        set role_ids = 705
+        set com_name = exosporium protein K
+        set gene_sym = exsK
+        
+
+Reinterpreted:
+    condition:
+        Exists one and only one Blastp hit with
+            subjectId = RF|NP_844922.1
+            bitScore >= 160
+            hitPercentLength >= 90
+            queryPercentLength >= 90
+            percentIdentity >= 80
+            abs(queryLength-subjectLength)/(min(queryLength,subjectLength) <= 5
+        
+            

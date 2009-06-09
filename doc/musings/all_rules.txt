@@ -1,0 +1,509 @@
+spore surface glycoprotein BclA|6|THIS_BLAST_HIT[GB|CAD56871.1, 125, 60, 60, 80, 20, 1] && THIS_HMM_HIT[TIGR03720]|
+exosporium protein K|9|THIS_BLAST_HIT[RF|NP_844922.1, 160, 90, 90, 80, 5, 0]|
+spore coat protein Y|6|THIS_BLAST_HIT[RF|NP_843710.1, 270, 95, 92, 90, 5, 1]|
+exosporium protein Y|6|THIS_BLAST_HIT[RF|YP_082716.1, 290, 95, 92, 90, 5, 0]|
+precorrin-6Y C5,15-methyltransferase (decarboxylating)|7|THIS_HMM_HIT[TIGR02469] && THIS_HMM_HIT[TIGR02467]|
+selenide, water dikinase: GO terms for selenocysteine|7|THIS_HMM_HIT[TIGR00476] && GEN_PROP[GenProp0016, 0.45]|
+selenide, water dikinase: GO terms for selenouridine|7|THIS_HMM_HIT[TIGR00476] && GEN_PROP[GenProp0692, 0.7]|
+GMP synthase|6|THIS_HMM_HIT[TIGR00884] && THIS_HMM_HIT[TIGR00888]|
+bifunctional protein HldE|7|THIS_HMM_HIT[TIGR02198] && THIS_HMM_HIT[TIGR02199]|
+outer membrane protein IcsA|6|THIS_BLAST_HIT[GB|AAQ57625.1, 1500, 90, 90, 80, 5, 1]|
+actin-based motility protein RickA|6|THIS_BLAST_HIT[GB|AAL03447.1, 500, 80, 70, 70, 10, 0]|
+transcriptional regulator PlcR|6|THIS_BLAST_HIT[GB|AAP12212.1, 450, 95, 92, 80, 5, 0]|
+cell-cell signaling protein PapR|6|THIS_BLAST_HIT[GB|AAL73951.1, 75, 90, 90, 75, 3, 0]|
+spore maturation protein B|9|THIS_BLAST_HIT[SP|P35158, 175, 95, 92, 50, 5, 0] && NEAR_BLAST_HIT[800, SP|P35150, 275, 95, 92, 40, 5, 0]|
+spore maturation protein A|9|THIS_BLAST_HIT[SP|P35157, 200, 85, 85, 50, 5, 0] && NEAR_BLAST_HIT[200, SP|P35150, 275, 95, 92, 40, 5, 0]|
+putative lantibiotic biosynthesis regulatory protein after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001781221.1]|
+putative lantibiotic biosynthesis sensor histidine kinase|8|DEFAULT_METHOD[GB|ABS42087.1]|
+upgade GO process for endospore formers from sporulation to endospore|5|(THIS_GO_TERM[GO:0030435] || THIS_GO_TERM[GO:0043936]) && GEN_PROP[GenProp0610, 0.6] && GEN_STATE[GenProp0078, Firmicutes]|
+bacteriocin, boticin B family|8|THIS_BLAST_HIT[GB|AAF87749.1, 30, 80, 80, 30, 5, 0] && THIS_BLAST_HIT[GB|CAL81549.1, 60, 80, 80, 50, 5, 0]|
+putative lantibiotic biosynthesis sensor histidine kinase after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001781222.1]|
+cell wall-anchored surface protein LrrG|9|THIS_BLAST_HIT[GB|AAW88442.1, 1250, 95, 92, 67, 6, 0]|
+putative arsenical resistance operon repressor ArsR after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001386645.1]|
+putative thiamine pyridinylase I after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001386702.1]|
+precorrin-8X methylmutase|8|DEFAULT_METHOD[GB|ABK62540.1]|
+hemagglutinin component HA33 after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001386735.1]|
+bontoxilysin after MGAT curation Clostridium|6|DEFAULT_METHOD[RF|YP_001386738.1] && GEN_STATE[GenProp0079, Clostridia]|
+N-carbamyl-L-cysteine amidohydrolase|6|DEFAULT_METHOD[GB|ACA45093.1]|
+beta-amylase after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001387112.1]|
+CotJB protein after MGAT curation Clostridium|6|DEFAULT_METHOD[RF|YP_001780854.1] && GEN_STATE[GenProp0078, Firmicutes]|
+central glycolytic genes regulator after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001779856.1]|
+arginine/ornithine antiporter after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001387477.1]|
+ABC transporter, ATP-binding protein, SagG family after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA54161.1]|
+glutamine-dependent NAD(+) synthetase after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ABS39988.1]|
+putative lysine-specific permease after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001779892.1]|
+maltose-6'-phosphate glucosidase after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001779931.1]|
+pyridoxal-phosphate-dependent aminotransferase family after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA53790.1]|
+putative thiamin salvage enzyme TenA|9|THIS_BLAST_HIT[GB|AAU17901.1, 300, 95, 92, 80, 5, 0]|
+biotin-[acetyl-CoA-carboxylase] ligase (NOT with repressor domain)|9|THIS_HMM_HIT[TIGR00121] ! THIS_HMM_HIT[TIGR00122]|
+collagenase after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001781252.1]|
+TPP-dependent acetoin dehydrogenase complex, E1 component, alpha subunit after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001781263.1]|
+glycerol dehydrogenase after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|AAN17729.1]|
+sulfite reductase, subunit A after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ABS39976.1]|
+sulfite reductase, subunit B after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|BAB81145.1]|
+sulfite reductase, subunit C after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ABS42103.1]|
+transcriptional antiterminator, LicT after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA56469.1]|
+N-carbamyl-L-cysteine amidohydrolase after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|EDK34415.1]|
+proton/sodium-glutamate symporter after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA46415.1]|
+sigma-K factor processing regulatory protein BofA after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|EDK35801.1]|
+spore maturation protein SpmA after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|EDK35754.1]|
+TPP-dependent acetoin dehydrogenase complex, E1 component, beta subunit|8|DEFAULT_METHOD[RF|YP_001781264.1]|
+spore maturation protein B after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|EDK35753.1]|
+dipeptidase MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA56090.1]|
+ATP-dependent nuclease subunit A after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA55236.1]|
+small, acid-soluble spore protein tlp MGAT curation Clostridium|8|DEFAULT_METHOD[GB|EDK32590.1]|
+chitinase A MGAT curation Clostridium|8|DEFAULT_METHOD[GB|BAB16890.1]|
+putative (R)-2-hydroxyglutaryl-CoA dehydratase, alpha subunit|6|DEFAULT_METHOD[RF|YP_001781805.1]|
+chemotaxis protein CheX after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ABS39804.1]|
+hydroxyethylthiazole kinase after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA55211.1]|
+exonuclease SbcCD, C subunit after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA44534.1]|
+high-affinity branched-chain amino acid ABC transporter, permease protein|8|DEFAULT_METHOD[GB|ACA54656.1]|
+streptolysin associated protein SagB after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA45815.1]|
+streptolysin associated protein SagD after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ABS40086.1]|
+bontoxilysin A after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA57525.1]|
+putative acetoin catabolism protein X|6|DEFAULT_METHOD[RF|YP_001781265.1]|
+TPP-dependent acetoin dehydrogenase complex, E2 component, dihydrolipoyllysine-residue acetyltransferase after MGAT curation Clostridium|8|DEFAULT_METHOD[RF|YP_001787037.1]|
+TPP-dependent acetoin dehydrogenase complex, E3 component, dihydrolipoyl dehydrogenase after MGAT curation Clostridium|6|DEFAULT_METHOD[RF|YP_001781267.1]|
+NADH-dependent butanol dehydrogenase|8|DEFAULT_METHOD[RF|YP_001781276.1]|
+selenide, water dikinase: GO terms for labile selenium system|7|THIS_HMM_HIT[TIGR00476] && GENOME_HMM_HIT[TIGR03309]|
+putative serine-type D-Ala-D-Ala carboxypeptidase|8|DEFAULT_METHOD[RF|YP_001387651.1]|
+serine-type D-Ala-D-Ala carboxypeptidase|6|DEFAULT_METHOD[RF|YP_001781407.1]|
+pyrimidine-nucleoside phosphorylase|6|DEFAULT_METHOD[RF|YP_001781411.1]|
+sporulation transcription factor Spo0A|6|DEFAULT_METHOD[ RF|YP_001781423.1]|
+putative geranyltranstransferase|8|DEFAULT_METHOD[RF|YP_001781434.1]|
+glyceraldehyde-3-phosphate dehydrogenase (NADP+) after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|AA91091.1]|
+putative stage III sporulation protein AH|8|DEFAULT_METHOD[RF|YP_001781439.1]|
+glycine reductase complex component C, beta subunit after MGAT curation Clostridium|6|DEFAULT_METHOD[SP|P54935]|
+fibronectin-binding protein|8|DEFAULT_METHOD[RF|YP_001781474.1]|
+nitrate reductase, iron-sulfur subunit|8|DEFAULT_METHOD[GB|BAA74792.1]|
+aldehyde ferredoxin oxidoreductase, tungsten-containing|8|DEFAULT_METHOD[RF|YP_001781500.1]|
+stage V sporulation protein B|8|DEFAULT_METHOD[SP|Q00758  ]|
+glycine reductase complex component C, alpha subunit after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA53975.1]|
+S-methyl-5-thioribose-1-phosphate isomerase after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA57104.1]|
+aldolase, AraD/FucA family after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA53818.1]|
+ATP-dependent RNA helicase DbpA after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA44514.1]|
+stage V sporulation protein S|8|DEFAULT_METHOD[SP|P45693]|
+aspartate kinase 1|8|DEFAULT_METHOD[GB|AAO35849.1]|
+pyrimidine operon regulatory protein/uracil phosphoribosyltransferase|8|DEFAULT_METHOD[SP|A0Q074|]|
+xanthine dehydrogenase family protein, iron-sulfur binding subunit after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA53876.1]|
+guanine deaminase after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA46111.1]|
+uracil permease|8|DEFAULT_METHOD[GB|AAK80070.1]|
+tungstate ABC transporter, tungstate-binding protein|6|DEFAULT_METHOD[RF|YP_001781510.1]|
+dimethylamine corrinoid protein|8|DEFAULT_METHOD[GB|ACA55714.1]|
+Trk system potassium uptake protein TrkA after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ABS40789.1]|
+Trk system potassium uptake protein TrkH after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ABS41826.1]|
+glycerol dehydrogenase|8|DEFAULT_METHOD[RF|YP_001781563.1]|
+rubrerythrin after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|CAA63429.1]|
+ribonuclease Z after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA56416.1]|
+putative aspartate aminotransferase|8|DEFAULT_METHOD[RF|YP_001781578.1]|
+putative Xaa-Pro dipeptidase|8|DEFAULT_METHOD[RF|YP_001781592.1]|
+flagellar biosynthesis protein FlhF after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ABS41391.1]|
+deoxyribonucleoside regulator|8|DEFAULT_METHOD[GB|ABS40524.1]|
+prolyl aminopeptidase|6|DEFAULT_METHOD[RF|YP_001781593.1]|
+major cold shock protein CspA|8|DEFAULT_METHOD[GB|ACA40331.1]|
+triacylglycerol lipase|8|DEFAULT_METHOD[RF|YP_001781621.1]|
+NADH-dependent butanol dehydrogenase|8|DEFAULT_METHOD[GB|AAO35042.1]|
+putative hydroxyethylthiazole kinase|8|DEFAULT_METHOD[GB|ACA54005.1]|
+dihydroorotate dehydrogenase, electron transfer subunit|8|DEFAULT_METHOD[GB|ACA45288.1]|
+cytosine deaminase|6|DEFAULT_METHOD[RF|YP_001781623.1]|
+cytosine permease|6|DEFAULT_METHOD[RF|YP_001781624.1]|
+protein-glutamine gamma-glutamyltransferase|8|DEFAULT_METHOD[GB|ACA55393.1]|
+chemotaxis protein CheV after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA56159.1]|
+2-enoate reductase|6|DEFAULT_METHOD[RF|YP_001781775.1]|
+5-nitroimidazole resistance protein NimA|8|DEFAULT_METHOD[GB|ACA45891.1]|
+putative esterase|8|DEFAULT_METHOD[RF|YP_001781794.1]|
+putative (R)-2-hydroxyglutaryl-CoA dehydratase, beta subunit|8|DEFAULT_METHOD[RF|YP_001781804.1]|
+aspartate aminotransferase after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA55601.1]|
+spore coat protein, CotS family after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA53965.1]|
+flagellin after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA44725.1]|
+accessory Sec system translocase SecA2|9|THIS_BLAST_HIT[GB|CAC98662.1, 1200, 90, 90, 80, 5, 0]|
+accessory Sec system translocase SecA2|6|THIS_BLAST_HIT[SP|P66786, 1100, 92, 92, 75, 5, 0]|
+glucose-1-phosphate cytidylyltransferase after MGAT curation Clostridium|6|DEFAULT_METHOD[RF|YP_001388430.1]|
+glycerate kinase|8|DEFAULT_METHOD[RF|YP_001781847.1]|
+polyribonucleotide nucleotidyltransferase|8|DEFAULT_METHOD[SP|Q0TPS3]|
+D-proline reductase, PrdB subunit, selenocysteine-containing|8|DEFAULT_METHOD[GB|CAB38127.2]|
+cytidylyltransferase after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|AAK80148.1]|
+D-proline reductase, PrdA proprotein|8|DEFAULT_METHOD[GB|ACA56757.1]|
+heterocyclic bacteriocin ABC transporter, ATP-binding protein|8|DEFAULT_METHOD[GB|ACA54161.1]|
+N(5)-(carboxyethyl)ornithine synthase|8|DEFAULT_METHOD[GB|ACA55266.1]|
+glutamine-dependent NAD(+) synthetase|8|DEFAULT_METHOD[GB|EDK33034.1]|
+flagellin after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ABS41149.1]|
+preprotein translocase, SecA subunit|7|THIS_BLAST_HIT[GB|AAS44195.1, 1200, 95, 92, 75, 5, 1] && THIS_HMM_HIT[TIGR00963] && GEN_STATE[GenProp0081, Bacillaceae]|
+putative accessory secretory protein SecA2|7|THIS_BLAST_HIT[GB|ABK84171.1, 1200, 90, 90, 80, 5, 0]|
+negative regulator of flagellin synthesis FlgM after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ABS42678.1]|
+chemotaxis protein CheC acter MGAT curation Clostridium|6|DEFAULT_METHOD[GB|AAO36263.1]|
+chemotaxis protein CheA after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA45034.1]|
+core tail protein after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ABS41727.1]|
+putative tail length tape measure protein after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ABS40983.1]|
+RNA polymerase sigma-G factor|8|DEFAULT_METHOD[SP|P19940]|
+putative F-pilin acetylation protein TraX after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ABS41906.1]|
+putative RNAase regulator|8|DEFAULT_METHOD[RF|YP_001781859.1]|
+glutamate dehydrogenase, NAD-specific after MGAT curation Clostridium|6|DEFAULT_METHOD[SP|P27346]|
+small, acid-soluble spore protein beta after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ABS39510.1]|
+5-nitroimidazole antibiotic resistance protein NimB after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA44719.1]|
+5-nitroimidazole antibiotic resistance protein NimA after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA45891.1]|
+addiction module toxin component PemK|6|THIS_BLAST_HIT[RF|YP_893153.1, 100, 95, 92, 50, 5, 0] && NEAR_BLAST_HIT[100, RF|YP_016859.1, 70, 92, 92, 50, 5, 0]|
+putative peptidyl-prolyl cis-trans isomerase|8|DEFAULT_METHOD[RF|YP_001783178.1]|
+triacylglycerol lipase after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ABS42747.1]|
+oxalate decarboxylase after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA53992.1]|
+sporulation initiation inhibitor protein Soj|6|DEFAULT_METHOD[RF|YP_001783274.1]|
+undecaprenyl-phosphate galactose phosphotransferase after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA54775.1]|
+putative transmembrane regulator PrtR|8|DEFAULT_METHOD[GB|AAF81073.1] && GEN_STATE[GenProp0078, Proteobacteria]|
+putative ferredoxin--NADP reductase|6|DEFAULT_METHOD[SP|Q44532]|
+dipeptide ABC transporter, permease protein DppB|6|DEFAULT_METHOD[SP|P0AEF8]|
+chemotaxis protein MotA after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA54202.1]|
+flagellar biosynthesis protein FlhG after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA54482.1]|
+putative haloacetate dehalogenase|8|DEFAULT_METHOD[SP|Q01398]|
+leucine-responsive regulatory protein|6|DEFAULT_METHOD[SP|P0ACJ0]|
+putative Trk system potassium uptake protein TrkA|6|DEFAULT_METHOD[SP|P0AGI8]|
+ferredoxin, 4Fe-4S|6|DEFAULT_METHOD[SP|P00195]|
+choloylglycine hydrolase family protein|8|DEFAULT_METHOD[RF|YP_001781881.1]|
+addiction module antitoxin component PemI|6|THIS_BLAST_HIT[RF|YP_016859.1, 70, 92, 92, 50, 5, 0] %% NEAR_BLAST_HIT[100, RF|YP_893153.1, 100, 95, 92, 50, 5, 0]|
+cadmium resistance transporter CadD after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ABS40012.1]|
+exopolysaccharide biosynthesis protein after MGAT curation Clostridium|8|DEFAULT_METHOD[GB|ACA56915.1]|
+cardiolipin synthase after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA55208.1]|
+putative coniferyl aldehyde dehydrogenase|6|DEFAULT_METHOD[SP|O86447]|
+dipeptide ABC transporter, periplasmic dipeptide-binding protein DppA|6|DEFAULT_METHOD[SP|P23847]|
+chemotaxis protein MotB after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ACA56606.1]|
+flagellar biosynthesis protein FlhF after MGAT curation Clostridium|6|DEFAULT_METHOD[GB|ABS41391.1]|
+dipeptide ABC transporter, permease protein DppC|6|DEFAULT_METHOD[SP|P0AEG1]|
+motility regulatory protein YcgR|8|DEFAULT_METHOD[SP|P76010]|
+hydroxymethylglutaryl-CoA lyase|6|DEFAULT_METHOD[SP|P13703]|
+copper chaperone CopZ|6|DEFAULT_METHOD[SP|O32221]|
+LPXTG-motif cell wall anchored repeat protein|9|DEFAULT_METHOD[RF|ZP_03568752.1] && GEN_STATE[GenProp0006, Bacteria]|
+sortase variant motif VPYMG cell wall-anchored repeat protein|9|DEFAULT_METHOD[RF|ZP_03568276.1]|
+N(6)-hydroxylysine O-acetyltransferase, aerobactin biosynthetic by blastp 60%|7|BLASTP_MATCH[GB|AAN82074.1, 1000, 95, 95, 60, 3, 1]|
+L-lysine 6-monooxygenase (NADPH) as IucD of aerobactin, OVERRULES|7|BLASTP_MATCH[GB|AAN82072.1, 1600, 95, 95, 70, 3, 1] || BLASTP_NEAR_BLASTP[GB|AAN82072.1, 650, 95, 95,35, 3, 1, 1000, GB|AAN82072.1, 1600, 95, 95, 70, 5, 1]|
+N-acetylmuramoyl-L-alanine amidase AmiC by BLASTP|7|BLASTP_MATCH[SP|P63883, 1850, 95, 92, 90, 5, 0]|
+DNA polymerase IV by BLASTP|6|BLASTP_MATCH[SP|Q47155, 590, 95, 92, 40, 5, 1]|
+Coxiella 23S RNA group I intron homing endonuclease, LAGLIDADG family, BLASTP 90 percent|7|BLASTP_MATCH[GB|AAO89742.1, 700, 95, 95, 90, 2, 1]|
+galactoside O-acetyltransferase LacA bu BLASTP|6|BLASTP_MATCH[SP|P07464, 975, 95, 92, 90, 5, 1]|
+CBU_2096 family c.h.p., name correction vs. PF05635, complement to rule 2214.|8|BLASTP_MATCH[GB|AAT38219.1, 115, 85, 85, 28, 5, 0]|
+sucrose porin ScrY, BLASTP, stringent at 60 percent|6|BLASTP_MATCH[SP|P22340, 1600, 95, 95, 60, 5, 1]|
+nucleoside permease NupG by BLASTP|6|BLASTP_MATCH[SP|P0AFF5, 1900, 95, 92, 90, 5, 1]|
+xanthosine permease XapB by BLASTP|6|BLASTP_MATCH[SP|P45562, 1800, 95, 92, 85, 5, 1] || (BLASTP_MATCH[SP|P45562, 1100, 95, 92, 50, 2, 1] && NEAR_HMM_HIT[500, TIGR01699])|
+nucleoside transporter NupC by BLASTP|6|BLASTP_MATCH[SP|P0AFF2, 1550, 95, 92, 80, 5, 1]|
+maltoporin by BLAST 65 percent.|6|BLASTP_MATCH[SP|P02943, 1400, 95, 93, 65, 4, 1]|
+staphylobactin siderophore biosynthesis protein SbnE, BLASTP 80 percent|10|BLASTP_MATCH[OMNI|NTL01SA0123, 2400, 95, 92, 80, 2, 1]|
+staphylobactin biosynthesis, high stringency in nine-gene operon, SbnA|10|BLASTP_MATCH[GB|AAP82063.1, 1250, 95, 95, 80, 2, 1]|
+staphylobactin biosynthesis, high stringency in nine-gene operon, SbnB|10|BLASTP_MATCH[GB|AAP82064.1, 1450, 95, 95, 80, 2, 1]|
+staphylobactin biosynthesis, high stringency in nine-gene operon, SbnC|10|BLASTP_MATCH[GB|AAP82065.1, 2500, 95, 95, 80, 2, 1]|
+staphylobactin putative exporter SbnD, high stringency in nine-gene biosynthesis operon|10|BLASTP_MATCH[GB|AAP82066.1, 1700, 96, 96, 80, 2, 1]|
+staphylobactin biosynthesis, high stringency in nine-gene operon, SbnF|10|BLASTP_MATCH[GB|AAP82068.1, 2500, 95, 92, 80, 2, 1]|
+staphylobactin biosynthesis, high stringency in nine-gene operon, SbnG|10|BLASTP_MATCH[GB|AAP82069.1, 1050, 96, 96, 80, 2, 1]|
+staphylobactin biosynthesis, high stringency in nine-gene operon, SbnH|10|BLASTP_MATCH[GB|AAP82070.1, 1600, 96, 96, 80, 2, 1]|
+staphylobactin biosynthesis operon protein SbnI, high stringency in nine-gene operon|10|BLASTP_MATCH[GB|AAP82071.1, 1000, 96, 96, 80, 2, 1]|
+cyclic AMP phosphodiesterase CpdA (icc protein)|6|BLASTP_MATCH[SP|P0AEW4, 1100, 95, 90, 80, 5, 1]|
+nitrate reductase NarB as in Cyanobacteria|6|BLASTP_MATCH[SP|P73448, 2200, 93, 90, 60, 5, 1]|
+|6|BLASTP_MATCH[SP|P27771, 800, 95, 95, 70, 5, 1]|
+HisIE fusion protein DUAL STRATEGY|6|BLASTP_MATCH[SP|P06989, 400, 94, 92, 60, 5, 1] || (BLASTP_MATCH[SP|P06989, 300, 94, 92, 40, 5, 1] && GEN_PROP[GenProp0109, 0.75])|
+YidC/OxaA membrane insertion protein by BLASTP with HMM-based neighboring protein RnpA (TIGR00188)|6|BLASTP_MATCH[SP|P25714, 1250, 95, 92, 50, 5, 1] && NEAR_HMM_HIT[1000, TIGR00188]|
+|6|BLASTP_MATCH[SP|P40727, 1500, 95, 90, 85, 5, 1]|
+hisE gene as NON-FUSION|6|BLASTP_MATCH[SP|Q9Z471, 50, 92, 90, 60, 5, 1] || (BLASTP_MATCH[SP|Q9Z471, 50, 92, 80, 40, 5, 1] && GEN_PROP[GenProp0109, 0.75])|
+50S ribosomal protein S19 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01050] && GEN_STATE[GenProp0006,Bacteria]|
+triose-phosphate isomerase|6|THIS_HMM_HIT[PF00121] && THIS_HMM_HIT[TIGR00419]|
+transcriptional regulator MgsR|7|BLASTP_MATCH[SP|P54503, 500, 95, 92, 75, 3, 1]|
+L-Ala-D/L-Glu epimerase by stringent BLASTP|6|BLASTP_MATCH[SP|P51981, 1250, 95, 92, 80, 3, 1]|
+heme uptake protein IsdA|7|BLASTP_MATCH[OMNI|NTL05SA1019, 1500, 95, 92, 85, 5, 1] && GEN_STATE[GenProp0078, Firmicutes]|
+50S ribosomal protein L31 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR00105] && GEN_STATE[GenProp0006,Bacteria]|
+violacein biosynthesis enzyme VioE by BLASTP|9|BLASTP_MATCH[GB|AAZ39195.1, 580, 93, 93, 60, 3, 1]|
+2-nitropropane dioxygenase, plastic rule based on NTL03PA01025|PA1024 GB|AAG04413.1|9|DEFAULT_METHOD[GB|AAG04413.1]|
+L23 by HMM in Bacteria|7|THIS_HMM_HIT[PF00276] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L5 by HMM in BACTERIA|7|THIS_HMM_HIT[PF00281] && GEN_STATE[GenProp0006,Bacteria]|
+aromatic-amino-acid transaminase (TyrB) by stringent BLASTP|6|BLASTP_MATCH[SP|P04693, 1600, 97, 95, 80, 2, 1]|
+sucrose-6-P hydrolase (ignoring PTS gene nearby)|6|BLASTP_MATCH[SP|P27217, 1000, 95, 92, 72, 5, 1]|
+NADP-dependent malic enzyme|6|BLASTP_MATCH[SP|O30808, 2000, 95, 92, 60, 5, 1]|
+D-arabinitol 4-dehydrogenase, BLASTP high stringency|6|BLASTP_MATCH[SP|O52720, 2000, 95, 92, 80, 5, 1]|
+S-ribosylhomocysteine lyase, proteobacterial clade|6|BLASTP_MATCH[SP|P45578, 400, 95, 92, 60, 5, 1]|
+small heat shock protein IbpA|6|BLASTP_MATCH[SP|P0C054, 200, 95, 92, 80, 5, 1]|
+small heat shock protein IbpB|6|BLASTP_MATCH[SP|P0C058, 350, 95, 92, 60, 5, 1]|
+undecaprenyl-diphosphatase YbjG|6|BLASTP_MATCH[SP|P75806, 750, 95, 92, 70, 5, 1]|
+TMAO reductase III=TorYZ, TorZ subunit, blast only|6|BLASTP_MATCH[SP|P46923, 2800, 95, 92, 66.5, 5, 1]|
+TMAO oxidase, TorY subunit, high stringency BLAST, balking at Haemophilus|6|BLASTP_MATCH[SP|P52005, 1000, 95, 92, 50, 5, 1]|
+Na+/serine symporter SstT by blast only|6|BLASTP_MATCH[SP|P0AGE4, 1000, 92, 92, 50, 5, 1]|
+Neisseria transferrin-binding protein 1|6|BLASTP_MATCH[SP|Q01996, 3400, 92, 92, 75, 5, 1]|
+Neisseria lactoferrin-binding protein A|6|BLASTP_MATCH[GB|AAC35271.1, 4500, 92, 92, 90, 5, 1]|
+glucose/galactose transporter GluP|6|BLASTP_MATCH[SP|Q2YIJ8, 900, 92, 92, 40, 5, 1]|
+PpkA of type VI secretion by BLAST/GENPROP|6|BLASTP_MATCH[GB|AAD03499.2, 2500, 95, 92, 65, 5, 1] && GEN_PROP[GenProp0735, 0.6]|
+endonuclease VIII|6|BLASTP_MATCH[SP|P50465, 1138, 95, 92, 81.75, 5, 1]|
+|6|BLASTP_MATCH[SP|P25078, 1450, 95, 92, 55, 5, 1]|
+trans-aconitate 2-methyltransferase by stringent BLASTP|6|BLASTP_MATCH[SP|P76145, 190, 95, 92, 43, 5, 1]|
+pabC, stringently by blast|6|BLASTP_MATCH[SP|P28305, 800, 95, 92, 60, 5, 1]|
+pabB, stringently by blast|6|BLASTP_MATCH[SP|P05041, 1400, 95, 92, 62, 5, 1]|
+|6|BLASTP_MATCH[SP|P75949, 1560, 95, 90, 85, 5, 1]|
+spore maturation protein SpmA by Blastp in Firmicutes.|6|BLASTP_MATCH[OMNI|CPR_2542, 550, 95, 92, 52, 3, 1] && GEN_STATE[GenProp0078, Firmicutes]|
+global transcriptional regulator Spx|6|BLASTP_MATCH[SP|O31602, 450, 95, 92, 65, 3, 1]|
+glucose-1-phosphatase agp, periplasmic, narrowly distributed, by BLASTP|6|BLASTP_MATCH[SP|P19926, 1500, 95, 92, 75, 5, 1]|
+L-Ala-D/L-Glu epimerase|6|BLASTP_MATCH[GB|CAB13155.1, 1100, 95, 92, 62, 3, 1]|
+AppA (phytase/acid phosphatase)|6|BLASTP_MATCH[SP|P07102, 1750, 95, 92, 80, 5, 1]|
+RIP metalloprotease RasP|7|THIS_HMM_HIT[TIGR00054] && GEN_STATE[GenProp0081, Bacillaceae]|
+exodeoxyribonuclease III|7|THIS_HMM_HIT[TIGR00195] && GEN_STATE[GenProp0082, Bacillus]|
+pabA by stringent blastp from E. coli.|6|BLASTP_MATCH[SP|P00903, 775, 95, 92, 77, 5, 1]|
+PuuA : Glutamate--putrescine ligase by 85 percent BLASTP|6|BLASTP_MATCH[SP|P78061, 1800, 95, 92, 85, 5, 1]|
+pabAB, fusion of components I and II, more stringent than orf/db example.|6|BLASTP_MATCH[SP|P32483, 1100, 95, 92, 44, 5, 1]|
+BLASTP_MATCH outer membrane protein N OmpN|6|BLASTP_MATCH[SP|P77747, 1632, 95, 92, 81.44, 5, 1]|
+Name fix, GO fix, to the CapE, rare protein of this protein capsule system, BLAST-70.|7|BLASTP_MATCH[SP|Q9RMX8, 150, 90, 90, 70, 5, 1]|
+PuuB - gamma-glutamylputrescine oxidase|6|BLASTP_MATCH[SP|P37906, 1800, 95, 92, 85, 5, 1]|
+PuuC gamma-glutamyl-gamma-aminobutyraldehyde dehydrogenase|6|BLASTP_MATCH[SP|P23883, 2000, 95, 92, 80, 5, 1]|
+PuuD gamma-glutamyl-gamma-aminobutyrate hydrolase by BLASTP|6|BLASTP_MATCH[SP|P76038, 1000, 95, 92, 84, 5, 1]|
+FeoA (ferrous iron transport A) by stringent BLASTP alone vs. E. coli.|6|BLASTP_MATCH[SP|P0AEL3, 250, 94, 92, 70, 5, 1]|
+entericidin A by blastp|6|BLASTP_MATCH[SP|P56551, 130, 93, 92, 60, 5, 1]|
+YoeB namespace within TIGR02116 family, stringent by BLASTP|6|BLASTP_MATCH[SP|P69349, 320, 95, 92, 65, 5, 1]|
+YefM from TIGR01552 subfamily by BLASTP|6|BLASTP_MATCH[SP|P69346, 250, 95, 92, 60, 5, 1] || (BLASTP_NEAR_BLASTP[SP|P69346, 175, 95, 92, 40, 5, 1, 100, SP|P69349, 320, 95, 92, 65, 5, 1])|
+CheZ by single-hit BLASTP|6|BLASTP_MATCH[SP|P0A9H9, 300, 95, 92, 35, 5, 1]|
+CheW, stringently to 50 % by BLASTP|6|BLASTP_MATCH[SP|P0A964, 400, 95, 92, 50, 5, 1]|
+chemotaxis methyltransferase CheR by blastp < 50 percent.|6|BLASTP_MATCH[SP|P07364, 550, 95, 92, 45, 5, 1]|
+CheY by blastp > 50 percent identity|6|BLASTP_MATCH[SP|P0AE69, 400, 95, 92, 50, 5, 1]|
+CheA, very stringent by blastp|6|BLASTP_MATCH[SP|P07363, 1850, 95, 92, 60, 5, 1]|
+PacA, does O-acetylation of peptidoglycan at a C-6 position, by STRINGENT blastp|6|BLASTP_MATCH[GB|AAY67451.1, 2000, 95, 92, 85, 5, 1]|
+YopJ, Yesrinia-specific name, super-high thresholds|7|BLASTP_MATCH[SP|P31498, 1200, 95, 92, 85, 5, 1]|
+|7|BLASTP_MATCH[SP|O68703, 1697, 95, 92, 98, 5, 1]|
+maltose-and-related-substrates O-acetyltransferase, high stringency, enzyme acts broader than name.|6|BLASTP_MATCH[SP|P77791, 725, 95, 92, 75, 5, 1]|
+2-methyleneglutarate mutase|6|BLASTP_MATCH[SP|Q59268, 2500, 95, 92, 80, 5, 1]|
+nicotinate dehydrogenase, FAD-binding subunit (high stringency BLAST)|6|BLASTP_MATCH[GB|ABC88396.1, 1200, 95, 92, 80, 5, 1]|
+sucrose-6-phosphate hydrolase (ScrB) by BLASTP vs. Strep. mutans ScrB|7|BLASTP_MATCH[SP|P13522, 1500, 95, 92, 62, 5, 1]|
+nicotinate dehydrogenase, 2[2Fe-2S] subunit by stringent BLASTP|6|BLASTP_MATCH[GB|ABC88397.1, 700, 95, 92, 80, 5, 1]|
+|6|BLASTP_MATCH[SP|P14407, 2600, 95, 92, 92.00, 5, 1]|
+phage terminase, small subunit, Enterobacteria phage D6 family|6|BLASTP_MATCH[GB|AAV84946.1, 115, 60, 60, 20, 15, 1]|
+enamidase (nicotinate fermentation a la E. barkeri) by stringent BLASTP|6|BLASTP_MATCH[GB|ABC88401.1, 1600, 95, 92, 80, 5, 1]|
+Glycoporin from enterobacteria; contains OMP signal and lipoprotein motif, but lacks similarity to other porins|8|BLASTP_MATCH[GB|AAB71432.1, 1200, 95, 92, 53.00, 5, 1]|
+putative enamidase, off preliminary characterization in ntbj01 (in text of PMID:16894175)|8|BLASTP_MATCH[GB|BAC49095.1, 1250, 95, 92, 63, 5, 1]|
+putative nicotinate dehydrogenase as in Bradyrhizobium japonicum, by STRINGENT BLASTP|8|BLASTP_MATCH[GB|BAC51426.1, 3500, 95, 92, 80, 5, 1]|
+mycobactin biosynthesis enzyme MbtG FIRST PASS|5|BLASTP_MATCH[SP|Q1B6B3, 1500, 96, 96, 66, 2, 1]|
+2-oxoglutarate dehydrogenase, E1 component|7|THIS_HMM_HIT[TIGR00239] && GEN_STATE[GenProp0082, Bacillus]|
+protoporphyrinogen oxidase|7|DEFAULT_METHOD[SP|P32397] && GEN_STATE[GenProp0082, Bacillus]|
+chlorate reductase ClrB subunit, record-setting stringency vs. selenate enzyme, BLASTP.|6|BLASTP_MATCH[SP|P60069, 1800, 95, 92, 95, 5, 1]|
+chlorate reductase gamma (heme b) subunit, VERY HIGH STRINGENCY|6|BLASTP_MATCH[SP|P60000, 1100, 95, 92, 90, 5, 1]|
+Default-mode rule, to work eventually with HMM for VioE|9|DEFAULT_METHOD[OMNI|NTL01CV3272] && GEN_PROP[GenProp0823, 0.15]|
+default-mode rule, to be part of violacein biosynthesis GenProp0823|9|DEFAULT_METHOD[OMNI|NTL01CV3271]|
+selenate reductase, heme b subunit (SerC) - high stringency BLASTP|6|BLASTP_MATCH[SP|Q9S1G7, 1100, 95, 92, 90, 5, 1]|
+phosphoglucomutase by BLASTP (a narrow Neisseria clade)|7|BLASTP_MATCH[SP|P40391, 2000, 95, 92, 90, 5, 1]|
+BLASTP MATCH thiol:disulfide interchange protein DsbA|6|BLASTP_MATCH[SP|P0AEG4, 1070, 95, 92, 99, 5, 1]|
+DEMO rule for NEW METHOD - HMM_plus_Lineage GenProp0006=superkingdom|7|THIS_HMM_HIT[TIGR00060] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L3 by HMM in BACTERIA|7|THIS_HMM_HIT[PF00297] && GEN_STATE[GenProp0006,Bacteria]|
+chaperone/aminopeptidase HchA,|6|BLASTP_MATCH[SP|P31658, 800, 95, 92, 54, 4, 1]|
+autotransporter serine protease AusI by stringent BLASTP|7|BLASTP_MATCH[GB|ABB99956.1, 6000, 90, 90, 90, 5, 1] || BLASTP_OPT_MATCH[GB|ABB99956.1, -gapW 120, 6000, 90, 90, 90, 5, 1]|
+recombination-associated protein RdgC, general, vs. E. coli, permissive BLASTP|6|BLASTP_MATCH[SP|P36767, 425, 94, 90, 32, 5, 1]|
+Append mode rule, overules equivalog, special for RdgC in Neisseria, stringent BLASTP|7|BLASTP_MATCH[SP|O87408, 1200, 95, 92, 90, 5, 1]|
+EngA (Essential Neisseria GTPase A) by moderate BLASTP|6|BLASTP_MATCH[OMNI|NMB_0852, 1000, 95, 88, 45, 5, 1]|
+NspA (neisserial surface protein A) by stringent BLASTP, in Opa family of OMP porins.|6|BLASTP_MATCH[GB|AAD53284.1, 750, 95, 92, 90, 5, 1]|
+1,3-propanediol dehydrogenase by strong blastp|6|BLASTP_MATCH[SP|P45513, 1600, 95, 95, 80, 5, 1]|
+glycerol dehydratase reactivase, small subunit, by BLAST|6|BLASTP_MATCH[GB|AAB48847.1, 325, 95, 92, 60, 5, 1]|
+glycerol dehydratase, gamma (small) subunit, BLASTP, stringent, from Citrobacter|6|BLASTP_MATCH[GB|AAB48852.1, 450, 95, 92, 65, 5, 1]|
+glycerol dehydratase reactivase large subunit by BLAST.|6|BLASTP_MATCH[GB|AAB48853.1, 2100, 95, 94, 70, 5, 1]|
+glycerol dehydrase, beta subunit by stringent blastp to two different characterized|6|BLASTP_MATCH[GB|AAB48851.1, 675, 95, 92, 75, 5, 1] || BLASTP_MATCH[GB|AAC27923.1, 650, 95, 92, 72, 5, 1]|
+site-specific DNA-methyltransferase (adenine-specific), type II restriction system HpyAXII|7|BLASTP_MATCH[GB|AAD06032.1, 1400, 90, 90, 85, 3, 1]|
+glycerol dehydratase, alpha subunit, stringent BLASTP from Citrobacter fr.|6|BLASTP_MATCH[SP|P45514, 2300, 95, 92, 80, 5, 1]|
+L-serine ammonia-lyase, isozyme TdcG, by high stringency BLASTP|7|BLASTP_MATCH[SP|P42630, 1850, 96, 94, 82, 5, 1]|
+multifunctional CCA protein SUPERHEAVILY MULTI-CHARACTERIZED so HIGH STRINGENCY|6|BLASTP_MATCH[SP|P06961, 1900, 96, 95, 85, 5, 1]|
+archaeal pink high-potential Rieske-type [2Fe-2S] protein sulredoxin|6|BLASTP_MATCH[SP|Q9HH83, 450, 96, 92, 80, 5, 1]|
+D-lactate dehydrogenase, fermentative|7|BLASTP_MATCH[SP|P52643, 1247, 95, 90, 72, 5, 1]|
+D-lactate dehydrogenase, aerobic|6|BLASTP_MATCH[SP|P06149, 1830, 95, 90, 60, 5, 1]|
+N-acetylglucosamine kinase, stringent BLASTP at 60 percent|6|BLASTP_MATCH[SP|P75959, 1000, 96, 96, 60, 5, 1]|
+anhydro-N-acetylmuramic acid kinase, moderate stringency because we reannotated PF03702|6|BLASTP_MATCH[SP|P77570, 800, 95, 93, 45, 5, 1]|
+peptidylprolyl isomerase by BLASTP.|6|BLASTP_MATCH[SP|P0AFL3, 520, 95, 95, 57, 5, 1] || BLASTP_MATCH[OMNI|NMB_1262, 700, 95, 95, 75, 5, 1]|
+deoxyadenosine kinase of Mycoplasmas, stringent by BLASTP|6|BLASTP_MATCH[GB|CAC85213.1, 750, 95, 92, 85, 5, 1]|
+glycerol-3-phosphate oxidase by blast only|6|BLASTP_MATCH[GB|CAM11334.1, 950, 95, 92, 50.00, 5, 1]|
+subtilosin-A by default method|6|DEFAULT_METHOD[SP|O07623]|
+circular bacteriocin, gassericin-A family|8|BLASTP_MATCH[GB|BAA22261.1, 125, 70, 70, 40, 5, 1]|
+cell division protein FtsZ (the long form of most alpha-Proteobacteria) by BLAST.|6|BLASTP_MATCH[SP|O31314, 1200, 95, 95, 50, 5, 1]|
+BLAST_P MATCH LgtB|6|BLASTP_MATCH[GB|AAM33867.1, 1079, 90, 92, 84, 5, 1]|
+phosphoribulokinase as in R. sphaeroides, stringent BLASTP while ignoring Calvin operon context|6|BLASTP_MATCH[SP|P12033, 1000, 95, 92, 70, 5, 0]|
+beta-1,4-glucosyltransferase LgtF, Neisseria-only stringency by blastp.|6|BLASTP_MATCH[GB|AAC44647.1, 1050, 95, 92, 80, 5, 1]|
+50S ribosomal protein L6 by HMM in BACTERIA|7|THIS_HMM_HIT[PF00347] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L10 by HMM in BACTERIA|7|THIS_HMM_HIT[PF00466] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L4 by HMM in BACTERIA|7|THIS_HMM_HIT[PF00573] && GEN_STATE[GenProp0006,Bacteria]|
+lipopolysaccharide N-acetylglucosaminyltransferase (RfaK, Neisseria) by 90 percent blast|6|BLASTP_MATCH[GB|AAC44648.1, 1500, 95, 92, 90, 5, 1]|
+peptidylprolyl isomerase B, the cytosolic one, in Proteobacteria, stringent BLASTP.|6|BLASTP_MATCH[SP|P23869, 550, 95, 95, 62, 5, 1] || BLASTP_MATCH[GB|AAU47776.1, 540, 95, 95, 62, 5, 1] || BLASTP_MATCH[GB|CAM08224.1, 530, 95, 95, 63, 5, 1]|
+geranyltranstransferase IspA, proteobacteria, separating from homolog IspB.|6|BLASTP_MATCH[SP|P22939, 650, 95, 94, 50, 5, 1]|
+polyprenyl-diphosphate synthase IspB, by BLASTP, with number of IPP repeats VERY species-dependient.|8|BLASTP_MATCH[SP|P0AD57, 625, 95, 94, 44, 5, 1]|
+BLAST_P MATCH LgtE|6|BLASTP_MATCH[GB|AAM33866.1, 1200, 90, 92, 84, 5, 1]|
+BLAST_P MATCH LgtA|6|BLASTP_MATCH[GB|AAM33869.1, 1710, 90, 85, 95, 5, 1]|
+Mycoplasma mycoides immunodominant protein p72 as equivalog by BLASTP|6|BLASTP_MATCH[SP|P55801, 2400, 95, 92, 90, 5, 1]|
+enterobactin biosynthesis proofreading thioesterase EntH, stringent BLASTP|6|BLASTP_MATCH[SP|P0A8Y8, 600, 95, 92, 82, 5, 1]|
+L-serine ammonia-lyase, isozyme sdaA, by high-stringency BLASTP|7|BLASTP_MATCH[SP|P16095, 1950, 95, 92, 82, 5, 1]|
+L-serine ammonia-lyase, isozyme sdaB, high-stringency BLASTP|7|BLASTP_MATCH[SP|P30744, 2050, 96, 95, 88, 3, 1]|
+Cas4/Cas1 fusion protein by BLASTP with length-match criteria of 0.86 / 0.86|6|BLASTP_MATCH[GB|AAR33392.1, 550, 86, 86, 100.00, 5, 0]|
+beta-1,4-galactosyltransferase LgtH by 85-percent BLASTP|6|BLASTP_MATCH[GB|AAN08516.1, 1200, 97, 97, 87.5, 5, 1]|
+alpha-1,4-galactosyltransferase LgtC, Neisseria tight version, BLASTP|7|BLASTP_MATCH[GB|AAK85146.1, 1475, 96, 96, 85, 5, 1]|
+D-alanyl-lipoteichoic acid biosynthesis protein DltD, blastp-stingent for Baciillus-only|6|BLASTP_MATCH[SP|P39578, 925, 95, 92, 42, 5, 1]|
+maltose regulon activator MalT by BLASTP.|6|BLASTP_MATCH[SP|P06993, 2100, 95, 92, 45, 5, 1]|
+ribosomal RNA pseudouridine synthase, Rlu family but longer, by BLAST|8|BLASTP_MATCH[GB|AAO08206.1, 1000, 95, 92, 45, 5, 0]|
+maltose regulon regulatory protein MalI, by high strincency BLASTP|6|BLASTP_MATCH[SP|P18811, 1000, 95, 92, 85, 5, 1]|
+D-alanyl-lipoteichoic acid biosynthesis protein DltB, blastp-stingent for Baciillus-only|6|BLASTP_MATCH[SP|P39580, 1150, 95, 92, 56, 5, 1]|
+OmpG, a monomeric porin, by BLASTP|6|BLASTP_MATCH[SP|P76045, 1200, 95, 92, 80, 5, 1]|
+DcuA, by blastp, high stringency alone or lower next to TIGR00839|6|BLASTP_MATCH[SP|P0ABN5, 1750, 95, 92, 80, 5, 1] || (BLASTP_MATCH[SP|P0ABN5, 1100, 95, 92, 50, 5, 1] && NEAR_HMM_HIT[500, TIGR00839])|
+iron-sulfur cluster repair protein RIC - add pathogen terms if pathogen|7|THIS_HMM_HIT[TIGR03652] && GEN_STATE[GenProp0008, YES] && GEN_STATE[GenProp0006, Bacteria]|
+surface layer protein|7|BLASTP_MATCH[RF|NP_781157.1, 4500, 95, 85, 80, 10, 1]|
+DcuB, by blastp, high stringency alone or lower next to a fumarate hydratase|6|BLASTP_MATCH[SP|P0ABN9, 1550, 95, 92, 70, 5, 1] || BLASTP_NEAR_BLASTP[SP|P0ABN9, 1250, 95, 92, 55, 5, 1, 500, SP|P14407, 1400, 95, 92, 50, 5, 1]|
+L-lactate dehydrogenase rule for gamma proteobacteria|6|BLASTP_MATCH[SP|P33232, 1410, 95, 92, 70.00, 5, 1]|
+phage lysis timing protein LysB|6|BLASTP_MATCH[SP|P51770, 650, 95, 92, 90, 5, 1]|
+Enterobacteriaceae-specific arabinose-5-phosphate isomerase|6|BLASTP_MATCH[SP|P45395, 1200, 95, 92, 73.00, 5, 1]|
+DcuA family, subfamily level but splits DcuA group from DcuB group|8|BLASTP_MATCH[SP|P0ABN5, 1000, 95, 92, 46, 5, 0]|
+phage lysis timing protein, LysB family, BLASTP to below 30 percent identity.|8|BLASTP_MATCH[SP|P51770, 110, 90, 90, 30, 6, 1]|
+anaerobically-expressed short-chain-fatty-acid--CoA ligase|6|BLASTP_MATCH[SP|P38135, 2700, 95, 92, 94.00, 5, 1]|
+BLASTP_MATCH outer membrane protein N OmpN family|6|BLASTP_MATCH[SP|P77747, 600, 75, 75, 57, 5, 1]|
+ferric enterobactin ABC transporter, ATP-binding protein, STRONG BLASTP|6|BLASTP_MATCH[SP|P23878, 1150, 96, 94, 87, 5, 1]|
+ferric enterobactin ABC transporter, permease protein FepG, BLASTP 81 percent|6|BLASTP_MATCH[SP|P23877, 1350, 97, 97, 81, 5, 1]|
+ferric enterobactin ABC transporter, permease protein FepD, BLASTP 84 percent|6|BLASTP_MATCH[SP|P23876, 1350, 96, 95, 84.0, 3, 1]|
+2,3-dihydro-2,3-dihydroxybenzoate dehydrogenase, stringent BLASTP, the EntA group for Enterobactin Biosynthesis process.|6|BLASTP_MATCH[SP|P15047, 1050, 98, 96, 85, 3, 1]|
+isochorismatase/enterobactin synthetase, STRINGENT BLASTP|6|BLASTP_MATCH[SP|P0ADI4, 1250, 97, 97, 86, 5, 1]|
+isochorismate synthase EntC by BLASTP 75 percent.|6|BLASTP_MATCH[SP|P0AEJ2, 1500, 96, 95, 75, 5, 1]|
+enterobactin biosynthesis phosphopantetheinyl transferase EntD by BLASTP|6|BLASTP_MATCH[SP|P19925, 425, 95, 92, 52, 5, 1]|
+enterobactin exporter EntS (major facilitator) ,stringent BLASTP|6|BLASTP_MATCH[SP|P24077, 1650, 96, 96, 82, 5, 1]|
+Enterobacteriaceae-specific [acyl-carrier-protein] phosphodiesterase|6|BLASTP_MATCH[SP|P21515, 550, 95, 92, 56.00, 5, 1]|
+enterobactin synthetase, component EntE, BLASTP at 80 percent, maybe a bit too narrow.|7|BLASTP_MATCH[SP|P10378, 2100, 96, 96, 80, 5, 1]|
+enterobactin synthetase, component EntF by BLASTP|6|BLASTP_MATCH[SP|P11454, 5000, 96, 96, 75, 5, 1]|
+malleobactin sigma factor by stringent BLASTP (exclude ornibactin).|6|BLASTP_MATCH[RF|YP_108387.1, 900, 95, 86, 90, 5, 1]|
+yersiniabactin import subunit YbtQ|6|BLASTP_MATCH[GB|CAL20553.1, 2500, 95, 95, 90, 3, 1]|
+yersiniabactin import subunit YbtP|6|THIS_BLAST_HIT[RF|NP_993009.1, 800, 95, 95, 80, 5, 1]|
+yersiniabactin transcriptional regulator YbtA, stringent BLASTP|6|BLASTP_MATCH[RF|NP_993008.1, 1400, 96, 96, 85, 3, 1]|
+yersiniabactin biosynthesis enzyme HMWP2 by strict blastp|6|THIS_BLAST_HIT[GB|CAA21390.1, 3000, 95, 95, 80, 5, 1]|
+yersiniabactin biosynthesis enzyme HMWP1, BLASTP|6|THIS_BLAST_HIT[GB|CAA73127.1, 4000, 95, 92, 80, 5, 1]|
+yersiniabactin biosynthesis salycil-AMP ligase YbtE/Irp5 from Y. pestis or P. syringae|7|THIS_BLAST_HIT[RF|NP_993003.1, 600, 95, 95, 80, 3, 1] || THIS_BLAST_HIT[GB|AAZ37347.1, 600, 95, 95, 80, 3, 1]|
+yersiniabactin synthetase, YbtU component, BLASTP 90 percent|6|THIS_BLAST_HIT[GB|AAS61882.1, 550, 93, 95, 80, 4, 1]|
+yersiniabactin biosynthesis thioesterase YbtT, BLASTP|6|THIS_BLAST_HIT[GB|CAL20547.1, 350, 95, 95, 80, 4, 1]|
+yersiniabactin region putative transporter YbtX|8|THIS_BLAST_HIT[GB|CAL12650.1, 400, 97, 90, 80, 3, 1]|
+bifunctional salicylate synthase YbtS, BLASTP OVERRULE level for yersiniabactin biosynthesis.|7|THIS_BLAST_HIT[GB|CAB46570.1, 800, 96, 96, 80, 3, 1]|
+vibrioferrin biosynthesis enzyme PvsE (per se) BLASTP 90 percent|6|BLASTP_MATCH[GB|BAC63005.1, 1800, 95, 95, 90, 4, 1]|
+subfamily level rule for PvsE family citrate siderophore biosynthesis, from vibrioferrin example.|8|BLASTP_MATCH[GB|BAC16548.1, 750, 95, 92, 40, 5, 1]|
+GlpE, a rhodanese (EC 2.8.1.1) among glycerol metab. genes, BLASTP 56 percent|6|BLASTP_MATCH[SP|P0A6V5, 310, 92, 92, 56, 3, 1]|
+citrate-derived siderophore exporter, PvsC family|8|BLASTP_MATCH[GB|BAC16546.1, 550, 93, 93, 38, 4, 1]|
+TonB-dependent outer membrane ferric citrate transporter FecA by BLASTP|6|BLASTP_MATCH[SP|P13036, 3250, 95, 92, 77, 3, 1]|
+periplasmic binding protein FecB, BLASTP|6|BLASTP_MATCH[SP|P15028, 1000, 96, 96, 65, 3, 1]|
+permease protein FecC BLASTP 70 percent.|6|BLASTP_MATCH[SP|P15030, 1150, 96, 96, 70, 3, 1]|
+permease protein FecD, BLASTP|6|BLASTP_MATCH[SP|P15029, 1100, 96, 94, 64, 3, 1]|
+ATP-binding protein FecE|6|BLASTP_MATCH[SP|P15031, 875, 96, 96, 65, 3, 1]|
+bifunctional salicylate synthase MbtI (mycobactin biosynthesis) by BLASTP|7|BLASTP_MATCH[SP|Q7D785, 1400, 96, 96, 60, 5, 1]|
+sulfurtransferase involved in thiouridine biosynthesis at tRNA wobble positions.|6|BLASTP_MATCH[SP|Q3YW58, 345, 95, 92, 78, 5, 1]|
+mycobactin biosynthesis enzyme MbtC SUBFAMILY COMPLETE|5|BLASTP_MATCH[OMNI|MT_2450, 1500, 95, 92, 70, 5, 1]|
+mycobactin-specific salicyl-AMP ligase BLASTP for FIRST-PASS|5|BLASTP_MATCH[OMNI|MT_2452, 1750, 94, 92, 62, 3, 1]|
+mycobactin biosynthesis enzyme MbtD FIRST-PASS|5|BLASTP_MATCH[OMNI|MT_2449, 2000, 95, 92, 46, 5, 1]|
+peptide synthetase MbtE FIRST PASS|5|BLASTP_MATCH[GB|ABR06734.1, 5100, 90, 90, 62, 3, 1] || BLASTP_OPT_MATCH[GB|ABR06734.1, -gapW 160, 5100, 90, 90, 62, 3, 1]|
+mycobactin biosynthesis enzyme MbtB (probable phenyloxazoline synthase) BLASTP, length-flexible.|5|BLASTP_MATCH[SP|P71717, 3200, 95, 80, 56, 5, 1]|
+mycobactin biosynthesis peptide synthetase MbtF FIRST PASS|5|BLASTP_MATCH[OMNI|MT_2447, 4000, 95, 95, 60, 3, 1] || BLASTP_OPT_MATCH[OMNI|MT_2447, -gapW 120, 4000, 95, 95, 60, 3, 1]|
+MbtH as mycobactin biosynthesis protein of unknown function|6|BLASTP_MATCH[SP|O05821, 350, 96, 96, 90, 2, 1]|
+salicyl-AMP ligase, PchD family, BLASTP 61 percent for pyochelin AND RELATED.|6|BLASTP_MATCH[GB|AAD55799.1, 1650, 95, 92, 61, 5, 1]|
+salicyl-AMP ligase, specifically PchD|7|BLASTP_MATCH[GB|AAD55799.1, 2250, 96, 96, 80, 2, 1]|
+isochorismate synthase PchA, stringent for pyochelin (per se) specificity.|7|BLASTP_MATCH[SP|Q51508, 2000, 97, 97, 80, 2, 1]|
+isochorismate synthase, family of PchA, lower stringency than PchA per se BLASTP at 45|6|BLASTP_MATCH[SP|Q51508, 950, 94, 94, 45, 2, 1]|
+siderophore biosynthesis editing thioesterase, PchC family|8|BLASTP_MATCH[GB|ABJ13502.1, 575, 92, 91, 50, 2, 1]|
+pyochelin synthetase PchE, full-length match for pyochelin property marker use BLASTP 54|6|BLASTP_MATCH[GB|AAD55800.1, 3600, 97, 97, 54, 5, 1]|
+enterobactin esterase Fes, BLASTP 62 percent, vs. paralogous enterobactin esterases.|6|BLASTP_MATCH[SP|P13039, 1300, 95, 92, 62, 2, 1]|
+enterobactin esterase IroD, one of several paralogs, BLASTP 62 percent|6|BLASTP_MATCH[GB|CAC43426.1, 1300, 95, 92, 62, 5, 1]|
+sucrose operon repressor for enteric bacteria.|6|BLASTP_MATCH[SP|P37076, 1100, 95, 92, 63.00, 5, 1]|
+cellulose biosynthesis protein BcsF, BLASTP, small and uncharacterized.|6|BLASTP_MATCH[SP|P0ADJ5, 150, 82, 80, 50, 5, 1]|
+UDP-N-acetylglucosamine 4-epimerase for E. coli and Salmonella|6|BLASTP_MATCH[SP|Q8X7P7, 1640, 95, 92, 93, 5, 1]|
+purine ribonucleoside efflux pump NepI|6|BLASTP_MATCH[SP|P0ADL2, 1800, 95, 92, 99, 5, 1]|
+enterobactin trilactone esterase IroE, stringent BLASTP, and expect neighborhood.|6|BLASTP_MATCH[GB|CAE55721.1, 1200, 95, 92, 80, 2, 1]|
+siderophore-modifying hydrolase, IroE family, next to siderophore receptor, complete as putative|8|BLASTP_MATCH[GB|CAE55721.1, 200, 75, 75, 26, 5, 1] && NEAR_HMM_HIT[200, TIGR01783]|
+aerobactin synthase, IucA component by blastp|6|BLASTP_MATCH[SP|Q47316, 1200, 95, 92, 60, 5, 1]|
+aerobactin synthase, IucC component by blastp|6|BLASTP_MATCH[SP|Q47318, 1900, 95, 92, 65, 5, 1]|
+N-acetylmuramoyl-L-alanine amidase AmiB by high stringency BLASTP|7|BLASTP_MATCH[SP|P26365, 1800, 95, 92, 80, 5, 1]|
+ferric aerobactin receptor IutA, BLASTP 63 percent|6|BLASTP_MATCH[SP|P14542, 2400, 95, 95, 63, 2, 1]|
+isochorismate pyruvate-lyase, class for pyochelin/related products biosynthesis BLASPT 60|6|BLASTP_MATCH[SP|Q51507, 310, 95, 84, 60, 3, 1]|
+isochorismate pyruvate-lyase PchB per se, BLASTP 80|7|BLASTP_MATCH[SP|Q51507, 425, 96, 96, 80, 3, 1]|
+pyochelin synthetase PchF, should make pyochelin PER SE, BLASTP 59 percent|6|BLASTP_MATCH[GB|AAG07613.1, 5000, 96, 96, 59, 2, 1]|
+N-acetylmuramoyl-L-alanine amidase AmiA by high stringency BLASTP|7|BLASTP_MATCH[SP|P36548, 1275, 95, 92, 90, 5, 1]|
+PTS-dependent dihydroxyacetone kinase operon proteobacterial regulator DhaR|6|BLASTP_MATCH[SP|P76016, 2100, 96, 96, 68, 2, 1] || (BLASTP_MATCH[SP|P76016, 800, 95, 93, 30, 2, 1] && NEAR_HMM_HIT[2000, TIGR02363])|
+BLASTP_MATCH dihydroxyacetone kinase DhaM|6|BLASTP_MATCH[SP|P37349, 2000, 95, 92, 95, 5, 1]|
+transcriptional activator NhaR by BLASTP_near_HMM|6|BLASTP_MATCH[SP|P0A9G2, 975, 95, 92, 61, 2, 1] && NEAR_HMM_HIT[1500, TIGR00773]|
+ferrichrome-iron receptor FhuA, BLASTP from multiple sources.|6|BLASTP_MATCH[SP|P06971, 3000, 95, 92, 75, 3, 1] || BLASTP_MATCH[GB|CAA74355.1, 3000, 95, 92, 75, 3, 1] || BLASTP_MATCH[GB|ABB64869.1, 3000, 95, 92, 75, 3, 1]|
+ferrichrome transport ATP-binding protein FhuC by BLASTP_near_HMM|6|BLASTP_MATCH[SP|P07821, 760, 95, 95, 55, 3, 1] && NEAR_HMM_HIT[2500, TIGR01783]|
+ferrichrome-binding periplasmic protein FhuD BLASTP_MATCH|6|BLASTP_MATCH[SP|P07822, 1200, 95, 95, 85, 3, 1]|
+xanthosine operon regulatory protein XapR by BLASTP 80 percent, stringent.|6|BLASTP_MATCH[SP|P23841, 1200, 95, 95, 80, 2, 1]|
+hemin transport protein HmuS by BLASTP|6|BLASTP_MATCH[SP|Q56990, 1030, 95, 90, 60, 5, 1]|
+hemin import ATP-binding protein HmuV by BLASTP|6|BLASTP_MATCH[SP|Q56993, 600, 95, 92, 55, 3, 1]|
+oligopeptide ABC transporter, ATP-binding protein OppD by BLASTP|6|BLASTP_MATCH[SP|P76027, 850, 95, 92, 52, 5, 1]|
+TraM as in gec12|9|BLASTP_MATCH[SP|P10026, 200, 95, 92, 35, 2, 1]|
+traJ, regulator outside operon, EQUIV_NOT_GOLD|9|BLASTP_MATCH[SP|P05837, 700, 90, 92, 65, 5, 1]|
+superoxide dismutase (Mn) by BLASTP|6|BLASTP_MATCH[SP|P00448, 718, 95, 92, 63, 2, 1]|
+RsmE by BLASTP, higher stringency than HMM, covers the Proteobacteria|6|BLASTP_MATCH[SP|P0AGL7, 800, 95, 92, 60, 5, 1]|
+cardiolipin synthetase by BLASTP|6|BLASTP_MATCH[SP|P0A6H8, 1635, 95, 95, 62.35, 3, 1]|
+carnitinyl-CoA dehydratase by BLASTP|6|BLASTP_MATCH[SP|P31551, 1100, 82, 95, 82, 3, 1]|
+long-chain-fatty-acid--CoA ligase by BLASTP|6|BLASTP_MATCH[SP|P69451, 2000, 92, 92, 70, 2, 1]|
+glycerophosphoryl diester phosphodiesterase GlpQ by BLAST_P|6|BLASTP_MATCH[SP|P09394, 1400, 95, 92, 72, 3, 1] && NEAR_HMM_HIT[1500, TIGR00712]|
+petrobactin biosynthesis protein AsbB, stringent BLASTP|10|BLASTP_MATCH[GB|AAT54154.1, 2500, 96, 96, 80, 2, 1]|
+petrobactin biosynthesis protein AsbA, stringent BLASTP|10|BLASTP_MATCH[RF|NP_844387.1, 2500, 96, 96, 80, 2, 1]|
+3,4-dihydroxybenzoic acid-AMP ligase AsbC (petrobactin biosynthesis)|7|BLASTP_MATCH[GB|AAT59659.1, 1700, 96, 96, 80, 2, 1]|
+petrobactin biosynthesis aryl carrier protein AsbD|6|BLASTP_MATCH[GB|AAT62764.1, 350, 95, 95, 80, 2, 1]|
+petrobactin biosynthesis protein AsbE|10|BLASTP_MATCH[GB|AAU18452.1, 1350, 96, 96, 80, 2, 1]|
+petrobactin biosynthesis protein AsbF BLASTP 80 percent|10|BLASTP_MATCH[GB|AAU18453.1, 1100, 96, 96, 80, 2, 1]|
+periplasmic nitrate reductase, NapH by BLASTP|6|BLASTP_MATCH[SP|P33934, 965, 97, 96, 58, 3, 1]|
+periplasmic nitrate reductase, NapG by BLASTP|6|BLASTP_MATCH[SP|P0AAL3, 800, 92, 90, 69, 5, 1]|
+aerotaxis receptor|6|BLASTP_MATCH[SP|P50466, 1850, 97, 97, 75, 2, 1]|
+aerotaxis receptor (from Vibrio aer-2,|6|BLASTP_MATCH[GB|AAF96559.1, 1450, 95, 96, 55, 3, 1]|
+N-acetylneuraminic acid porin NanC by 80 percent match|6|BLASTP_MATCH[SP|P69856, 1000, 96, 96, 80, 2, 1]|
+FO synthase, bifunctional fused version as in Mycobacterium smegmatis, BLAST 62 percent.|7|BLASTP_MATCH[OMNI|MSMEG_5126, 2500, 95, 95, 62, 3, 1]|
+DnaA initiator-associating protein DiaA, by DEFAULT_METHOD, should be above 85 percent|7|DEFAULT_METHOD[SP|P66817]|
+serine-pyruvate transaminase by BLAST (as in Thermotoga)|6|BLASTP_MATCH[GB|AAD36471.1, 1500, 95, 92, 80, 3, 1]|
+hydroxypyruvate reductase (serine reduction as in Thermotoga) by BLASTP|6|BLASTP_MATCH[GB|AAD36472.1, 1200, 95, 93, 80, 5, 1]|
+mycolic acid biosynthesis species-specific methyltransferase MSMEG0913, stringent BLASTP|7|BLASTP_MATCH[OMNI|MSMEG_0913, 1200, 95, 95, 80, 3, 1]|
+methanesulfonate sulfonatase MsuD|7|DEFAULT_METHOD[GB|AAB82564.1]|
+50S ribosomal protein L25 by HMM in BACTERIA|7|THIS_HMM_HIT[PF01386] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L35 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR00001] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L28 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR00009] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L29 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR00012] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L17 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR00059] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S1, rpsA by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR00717] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L21 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR00061] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L27 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR00062] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L9 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR00158] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L7/L12 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR00855] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L36 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01022] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S2, rpsB by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR01011] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L33 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01023] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L19 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01024] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L34 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01030] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L32 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01031] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L20 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01032] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L22 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01044] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L13 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01066] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L14 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01067] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L15 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01071] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L24 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01079] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L16 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01164] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L1 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01169] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L2 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01171] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L30 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01308] && GEN_STATE[GenProp0006,Bacteria]|
+50S ribosomal protein L11 by HMM in BACTERIA|7|THIS_HMM_HIT[TIGR01632] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S3, rpsC by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR01009] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S4, rpsD by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR01017] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S5, rpsE by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR01021] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S6, rpsF by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR00166] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S7, rpsG by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR01029] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S8, rpsH by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[PF00410] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S9, rpsI by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[PF00380] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S10, rpsJ by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR01049] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S11, rpsK by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[PF00411] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S12, rpsL by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR00981] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S13p, rpsM by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[PF00416] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S14p, rpsN by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[PF00253] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S15, rpsO by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR00952] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S16, rpsP by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR00002] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S17, rpsQ by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[PF00366] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S18, rpsR by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR00165] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S20, rpsT by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR00029] && GEN_STATE[GenProp0006,Bacteria]|
+ribosomal protein S21, rpsU by HMM in superkingdom BACTERIA|7|THIS_HMM_HIT[TIGR00030] && GEN_STATE[GenProp0006,Bacteria]|
+butyrate--acetoacetate CoA-transferase, subunit B|7|BLASTP_MATCH[GB|AAD54948.1, 800, 95, 92, 80, 3, 1] || BLASTP_MATCH[SP|P23673, 850, 95, 92, 80, 3, 1]|
+butyraldehyde dehydrogenase|6|BLASTP_MATCH[GB|AAP42563.1, 1900, 95, 92, 80, 3, 1]|
+formate dehydrogenase accessory protein FdhD|7|THIS_HMM_HIT[TIGR00129] && NEAR_HMM_HIT[4000, TIGR01591]|
+type II site-specific deoxyribonuclease HpyAXIIR|7|BLASTP_MATCH[GB|AAD06022.1, 1000, 90, 90, 85, 3, 1]|
+C-terminal processing peptidase|6|BLASTP_MATCH[SP|Q44879, 700, 78, 68, 40, 5, 1]|
+type III secretion effector BopA|7|BLASTP_MATCH[GB|AAU46023.1, 2000, 95, 95, 80, 3, 1]|
+actin-based motility protein BimA|7|BLASTP_MATCH[GB|AAU46917.1, 1500, 85, 85, 80, 10, 1]|
+N-3-hydroxy-octanoyl homoserine lactone synthase BmaI3|7|BLASTP_MATCH[GB|CAH39043.1, 800, 95, 85, 80, 5, 1]|
+N-3-hydroxy-octanoyl homoserine lactone receptor BmaR3|7|BLASTP_MATCH[RF|YP_001025820.1, 1000, 95, 95, 85, 3, 1]|
+bacteriocin biosynthesis cyclodehydratase, SagC family|8|BLASTP_MATCH[GB|ABK83869.1, 700, 80, 80, 35, 10, 1]|
+bacteriocin, heterocyclic type|8|BLASTP_MATCH[GB|ABK83867.1, 165, 75, 75, 55, 6, 1]|
+bifunctional protein BirA|7|THIS_HMM_HIT[TIGR00121] && THIS_HMM_HIT[TIGR00122]|
+nucleoside kinase, PFK-B family|9|BLASTP_MATCH[GB|ABC38537.1, 1400, 95, 92, 86, 3, 1]|
+accessory Sec system protein Asp5|6|BLASTP_MATCH[GB|AAK75830.1, 150, 92, 92, 40, 5, 1] && GEN_STATE[GenProp0078, Firmicutes]|
+accessory Sec system protein Asp4|6|BLASTP_MATCH[GB|AAK75831.1, 160, 94, 94, 50, 5, 1] && GEN_STATE[GenProp0078, Firmicutes]|
+alanine racemase, spore-specifc|7|THIS_BLAST_HIT[RF|YP_026523, 625, 80,  95, 95, 5, 1]|
+inosine-uridine preferring nucleoside hydrolase family protein|7|THIS_BLAST_HIT[GB|AAS41838.1, 500, 95, 95, 80, 5, 0]|
+exosporium protein C|9|THIS_BLAST_HIT[GB|AAP42649.1, 200, 92, 70, 60, 5, 0] && GEN_STATE[GenProp0079, Bacilli]|
+exosporium protein E|9|THIS_BLAST_HIT[GB|AAP42717.1, 400, 95, 92, 80, 5, 0]|
+exosporium protein F|9|THIS_BLAST_HIT[GB|AAN85821.1, 260, 95, 92, 87, 5, 0]|
+exosporium protein G|9|THIS_BLAST_HIT[GB|AAM76786.1, 70, 90, 90, 70, 5, 0]|
+exosporium protein J|9|THIS_BLAST_HIT[GB|AAN85822.1, 225, 90, 90, 80, 6, 0]|
