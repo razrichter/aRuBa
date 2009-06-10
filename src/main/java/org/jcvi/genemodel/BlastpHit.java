@@ -22,6 +22,30 @@ public class BlastpHit {
 		this.query = query;
 		this.hitId = hitId;
 	}
+	
+	
+	public BlastpHit(Feature query, String hitId, double eValue, double score,
+			double bitScore, double pValue, int queryStart, int queryEnd,
+			int queryStrand, int hitLength, int hitStart, int hitEnd,
+			int hitStrand, double percentSimilarity, double percentIdentity) {
+		super();
+		this.query = query;
+		this.hitId = hitId;
+		this.eValue = eValue;
+		this.score = score;
+		this.bitScore = bitScore;
+		this.pValue = pValue;
+		this.queryStart = queryStart;
+		this.queryEnd = queryEnd;
+		this.queryStrand = queryStrand;
+		this.hitLength = hitLength;
+		this.hitStart = hitStart;
+		this.hitEnd = hitEnd;
+		this.hitStrand = hitStrand;
+		this.percentSimilarity = percentSimilarity;
+		this.percentIdentity = percentIdentity;
+	}
+
 
 	public Feature getQuery() {
 		return query;
@@ -102,6 +126,14 @@ public class BlastpHit {
 	public int getHitLength() {
 		return hitLength;
 	}
+	
+	public double getHitPercentLength() {
+		return 100*(hitEnd-hitStart)/hitLength;
+	}
+	public double getQueryPercentLength() {
+		return 100*(queryEnd-queryStart)/query.getLength();
+	}
+		
 
 	public int getHitStart() {
 		return hitStart;
@@ -141,6 +173,10 @@ public class BlastpHit {
 
 	public void setPercentIdentity(double percentIdentity) {
 		this.percentIdentity = percentIdentity;
+	}
+	
+	public double getHitQueryLengthRatio() {
+		return 100*Math.abs((hitEnd - hitStart)/(queryEnd-queryStart) - 1);
 	}
 
 }

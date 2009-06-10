@@ -1,5 +1,6 @@
 package org.jcvi.annotationrules;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import org.drools.KnowledgeBase;
@@ -42,7 +43,7 @@ public class RulesEngine {
 
 	public boolean addResource(String rfile, ResourceType rtype) {
 		if (!kbuilder.hasErrors()) {
-			kbuilder.add(ResourceFactory.newClassPathResource(rfile), rtype);
+			kbuilder.add(ResourceFactory.newUrlResource(rfile), rtype);
 			KnowledgeBuilderErrors errors = kbuilder.getErrors();
 			if (errors.size() > 0) {
 				for (KnowledgeBuilderError error : errors) {
@@ -61,6 +62,12 @@ public class RulesEngine {
 		return false;
 	}
 
+	public void addFact(Object fact) {
+		ArrayList<Object> facts = new ArrayList<Object>();
+		facts.add(fact);
+		addFacts(facts);
+	}
+	
 	public void addFacts(Iterable<Object> facts) {
 		if (ksession == null)
 			ksession = kbase.newStatefulKnowledgeSession();

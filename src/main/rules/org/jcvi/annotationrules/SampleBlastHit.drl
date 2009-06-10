@@ -1,0 +1,43 @@
+#created on: Jun 10, 2009
+package org.jcvi.annotationrules;
+
+import org.jcvi.genemodel.*;
+
+#declare any global variables here
+
+rule "Simple BlastP Hit Rule"
+	
+	when
+		hit : BlastpHit( hitId == "RF|NP_844922.1" )
+		
+	then 
+		System.out.println("Simple BlastP Hit Rule "); // + hit.hitId);
+		
+end
+
+
+rule "Complete BlastP Hit Rule"
+no-loop true
+
+	when
+		hit : BlastpHit( hitId == "RF|NP_844922.1",
+			bitScore >= 160, hitPercentLength >= 90,
+			queryPercentLength >= 90,  percentIdentity >= 80,
+			hitQueryLengthRatio <= 5 )
+		
+	then
+	
+	    # set go_ids = GO:0043592 GO:0003674 GO:0008150
+	    # set ec_num = NULL
+	    # set role_ids = 705
+	    # set com_name = exosporium protein K
+	    # set gene_sym = exsK
+		
+		System.out.println("Complete BlastP Hit Rule");
+		System.out.println("hitPercentLength " + hit.getHitPercentLength());
+    	hit.getQuery().setName("exsK");
+		update( hit );
+		
+end
+
+

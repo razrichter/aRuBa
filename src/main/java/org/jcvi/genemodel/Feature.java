@@ -5,6 +5,7 @@ import org.jcvi.genemodel.FeatureType;
 public class Feature {
 	private String featureId;
 	private SourceMolecule source;
+	public String name;
 	private int start;
 	private int end;
 	private int strand;
@@ -35,6 +36,15 @@ public class Feature {
 		this.featureId = featureId;
 	}
 
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public SourceMolecule getSource() {
 		return source;
 	}
@@ -63,6 +73,9 @@ public class Feature {
 		return strand;
 	}
 
+	public int getLength() {
+		return end - start;
+	}
 	public void setStrand(int strand) {
 		this.strand = strand;
 	}
