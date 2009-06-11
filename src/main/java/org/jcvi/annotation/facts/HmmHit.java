@@ -1,4 +1,4 @@
-package org.jcvi.genemodel;
+package org.jcvi.annotation.facts;
 
 public class HmmHit {
 	public static final int WEAK = 1;

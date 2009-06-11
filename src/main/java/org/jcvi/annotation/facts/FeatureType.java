@@ -1,4 +1,4 @@
-package org.jcvi.genemodel;
+package org.jcvi.annotation.facts;
 
 public class FeatureType {
 	public static final int ORF = 1;

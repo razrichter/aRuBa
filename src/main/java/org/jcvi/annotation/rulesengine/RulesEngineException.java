@@ -1,4 +1,4 @@
-package org.jcvi.annotationrules;
+package org.jcvi.annotation.rulesengine;
 
 public class RulesEngineException extends RuntimeException {
 

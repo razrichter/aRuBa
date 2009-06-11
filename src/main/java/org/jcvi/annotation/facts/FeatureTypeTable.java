@@ -1,4 +1,4 @@
-package org.jcvi.genemodel;
+package org.jcvi.annotation.facts;
 
 import java.util.Collection;
 import java.util.HashMap;

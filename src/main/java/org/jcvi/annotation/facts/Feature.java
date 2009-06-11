@@ -1,15 +1,19 @@
-package org.jcvi.genemodel;
+package org.jcvi.annotation.facts;
 
-import org.jcvi.genemodel.FeatureType;
+import java.util.ArrayList;
+
+import org.jcvi.annotation.facts.Annotation;
+import org.jcvi.annotation.facts.FeatureType;
 
 public class Feature {
 	private String featureId;
 	private SourceMolecule source;
-	public String name;
 	private int start;
 	private int end;
 	private int strand;
 	private int type; // Feature type
+	private Annotation assignedAnnotation;
+	private ArrayList<Annotation> assertedAnnotations = new ArrayList<Annotation>();
 
 	public Feature(String featureId, int type) {
 		super();
@@ -28,21 +32,32 @@ public class Feature {
 		this.type = type;
 	}
 
+	public Annotation getAssignedAnnotation() {
+		return assignedAnnotation;
+	}
+
+	public void setAssignedAnnotation(Annotation assignedAnnotation) {
+		this.assignedAnnotation = assignedAnnotation;
+	}
+
+	public ArrayList<Annotation> getAssertedAnnotations() {
+		return assertedAnnotations;
+	}
+
+	public void addAssertedAnnotation(Annotation annotation) {
+		this.assertedAnnotations.add(annotation);
+	}
+
+	public void removeAssertedAnnotation(Annotation annotation) {
+		this.assertedAnnotations.remove(annotation);
+	}
+	
 	public String getFeatureId() {
 		return featureId;
 	}
 
 	public void setFeatureId(String featureId) {
 		this.featureId = featureId;
-	}
-
-	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public SourceMolecule getSource() {

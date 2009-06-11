@@ -1,4 +1,4 @@
-package org.jcvi.annotationrules;
+package org.jcvi.annotation.rulesengine;
 
 import java.util.ArrayList;
 import java.util.HashMap;
