@@ -1,12 +1,14 @@
 package org.jcvi.annotation.dao;
 
+import java.util.ArrayList;
+
 import org.jcvi.annotation.facts.Feature;
 
 public interface FeatureDAO {
 
 	// Reading methods	
 	Feature getFeature(String featureId);
-	Iterable<Feature> getFeatures();
+	ArrayList<Feature> getFeatures();
 	
 	
 	// Writing (CRUD) methods

@@ -1,24 +1,101 @@
 package org.jcvi.annotation.dao.factory;
 import org.jcvi.annotation.dao.*;
 import java.sql.*;
+// import com.sybase.jdbc.*;
 
 public class SmallGenomeDAOFactory extends DAOFactory {
 
-	private static String DBURL = "jdbc:odbc:SYBASE";
-	private static String USER = "access";
-	private static String PSWD = "access";
-	private static Connection conn = null;
+	private Connection conn = null;
+	private String driver = "com.sybase.jdbc3.jdbc.SybDriver";
+	private String url = "jdbc:sybase:Tds:SYBTIGR";
+	private String port = "2025";
+	private String dbname = "common";
+	private String user = "access";
+	private String password = "access";
 	
-	public static Connection createConnection() {
+	// The constructor and getFeatureDAO methods are called by the DAOFactory
+	
+	// Constructor
+	public SmallGenomeDAOFactory() {
+		super();
+		conn = this.createConnection();
+	}
+	
+	// Getting our SmallGenomeFeatureDAO
+	public FeatureDAO getFeatureDAO() {
+		return new SmallGenomeFeatureDAO(conn);
+	}
+	public FeatureDAO getFeatureDAO(String dbname) {
+		this.dbname = dbname;
+		conn = this.createConnection();
+		return new SmallGenomeFeatureDAO(conn);
+	}
+
+	// Getters and Setters
+	public Connection getConn() {
+		return conn;
+	}
+	public void setConn(Connection conn) {
+		this.conn = conn;
+	}
+	public String getDriver() {
+		return driver;
+	}
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getPort() {
+		return port;
+	}
+	public void setPort(String port) {
+		this.port = port;
+	}
+	public String getDbname() {
+		return dbname;
+	}
+	public void setDbname(String dbname) {
+		this.dbname = dbname;
+	}
+	public String getUser() {
+		return user;
+	}
+	public void setUser(String user) {
+		this.user = user;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	// Database stuff
+	public boolean loadJdbcDriver() {
+		
+		// only necessary prior to JDBC 4.0
+		try {
+			Class.forName( driver ).newInstance();
+			return true;
+		}
+		catch ( Exception e ){
+			e.printStackTrace();
+		}
+		return false;
+	}
+	public Connection createConnection() {
+		
+		// Load the JDBC driver
+		loadJdbcDriver();
 		
 		try {
-			// Load the JDBC driver
-			// Class.forName(DRIVER); // only necessary prior to JDBC 4.0
-			System.out.println("Attempting database connection " + DBURL);
+			conn = DriverManager.getConnection(url + ":" + port + "/" + dbname, user, password);
 			
-			// Establish the database connection
-			conn = DriverManager.getConnection(DBURL, USER, PSWD);
-
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
@@ -27,15 +104,4 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 		return conn;
 	}
 	
-	public static Connection getCon() {
-		return conn;
-	}
-
-	public static void setCon(Connection conn) {
-		SmallGenomeDAOFactory.conn = conn;
-	}
-
-	public FeatureDAO getFeatureDAO() {
-		return new SmallGenomeFeatureDAO();
-	}
 }

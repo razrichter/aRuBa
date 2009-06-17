@@ -1,9 +1,7 @@
 package org.jcvi.annotation.facts;
 
 import java.util.ArrayList;
-
 import org.jcvi.annotation.facts.Annotation;
-import org.jcvi.annotation.facts.FeatureType;
 
 public class Feature {
 	private String featureId;
@@ -11,18 +9,29 @@ public class Feature {
 	private int start;
 	private int end;
 	private int strand;
-	private int type; // Feature type
+	private String type; // Feature type
 	private Annotation assignedAnnotation;
 	private ArrayList<Annotation> assertedAnnotations = new ArrayList<Annotation>();
 
-	public Feature(String featureId, int type) {
+	public Feature(String featureId, String type) {
 		super();
 		this.featureId = featureId;
 		this.type = type;
 	}
+	
+	// Constructor without requiring a source molecule
+	public Feature(String featureId, String type, int start, int end, int strand) {
+		super();
+		this.featureId = featureId;
+		this.type = type;
+		this.start = start;
+		this.end = end;
+		this.strand = strand;
+	}
 
-	public Feature(String featureId, SourceMolecule source, int start, int end,
-			int strand, int type) {
+	// Constructor with source molecule
+	public Feature(String featureId, String type, int start, int end, int strand,
+			SourceMolecule source) {
 		super();
 		this.featureId = featureId;
 		this.source = source;
@@ -95,11 +104,11 @@ public class Feature {
 		this.strand = strand;
 	}
 
-	public int getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(int type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 

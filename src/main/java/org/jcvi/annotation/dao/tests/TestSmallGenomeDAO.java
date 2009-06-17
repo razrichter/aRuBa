@@ -4,39 +4,50 @@ import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import java.sql.Connection;
+import java.util.ArrayList;
+
 import org.jcvi.annotation.dao.*;
 import org.jcvi.annotation.dao.factory.*;
 import org.jcvi.annotation.facts.Feature;
 
 public class TestSmallGenomeDAO extends TestCase {
 
-	private DAOFactory smallGenomeDAOFactory;
+	private SmallGenomeDAOFactory sgDAOFactory;
 	private FeatureDAO featureDAO;
 	
 	@Before
 	public void setUp() throws Exception {
 		
 		// get our Small Genome DAO Factory
-		smallGenomeDAOFactory = DAOFactory.getDAOFactory(DAOFactory.SMALLGENOME);
-	
-		// Get our FeatureDAO
-		featureDAO = smallGenomeDAOFactory.getFeatureDAO();
+		sgDAOFactory = (SmallGenomeDAOFactory) DAOFactory.getDAOFactory(DAOFactory.SMALLGENOME);
+		// sgDAOFactory = new SmallGenomeDAOFactory();
 		
+		// Get our FeatureDAO and connect to gb6 database
+		featureDAO = sgDAOFactory.getFeatureDAO("gb6");
+		
+		// Get our evidence DAOs (hmmSmallGenomeDAO, blastSmallGenomeDAO)
 		// hmmDAO = smallGenomeDAOFactory.getHmmDAO();
 
-		SmallGenomeDAOFactory.createConnection();
-		
-		// Connection conn = SmallGenomeDAOFactory.
-		// SmallGenomeDAOFactory.createConnection()
-	
 	}
 	
 	public void testGetFeature() {
-		Feature f = featureDAO.getFeature("abc");
-		assertEquals(f.getFeatureId(), "abc");
+		Feature f = featureDAO.getFeature("GBAA_pXO2_0003");
+		assertEquals(f.getFeatureId(), "GBAA_pXO2_0003");
+	}
+	public void testGetFeatureFalseCase() {
+		Feature f = featureDAO.getFeature("no_such_feature");
+		assertTrue(f == null);
+	}
+	public void testGetFeatureIdFalseCase() {
+		Feature f = featureDAO.getFeature("GBAA_pXO2_0003");
+		assertFalse(f.getFeatureId() == "abc");
 	}
 	
-
+	public void testGetFeatures() {
+		ArrayList<Feature> features = featureDAO.getFeatures();
+		assertTrue(features.size() > 0);
+	}
+	
 	
 	@After
 	public void tearDown() throws Exception {
