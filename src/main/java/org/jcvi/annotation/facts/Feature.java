@@ -112,4 +112,23 @@ public class Feature {
 		this.type = type;
 	}
 
+	public String toString() {
+		return this.type + "|" + this.featureId;
+	}
+
+	// @Override equals method
+	public boolean equals(Object o) {
+		
+		if (o instanceof Feature) {
+			
+			Feature f = (Feature) o;
+			if (f.getFeatureId().equals(featureId) &&
+					f.getType().equals(type)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
 }

@@ -2,6 +2,8 @@ package org.jcvi.annotation.dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 import org.jcvi.annotation.facts.Feature;
 
 public class SmallGenomeFeatureDAO implements FeatureDAO {
@@ -64,9 +66,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 					end = start;
 					start = tmp;
 				}
-
 				feature = new Feature(code, type, start, end, strand);
-
 				rs.close();
 				stmt.close();
 			}
@@ -81,62 +81,87 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 	}
 	
 	@Override
-	public ArrayList<Feature> getFeatures() {
+	public Iterator<Feature> getFeatures() {
 		return getFeatures(codingFeatureTypes, isCurrent);
 	}
 	
-	public ArrayList<Feature> getFeatures(ArrayList<String> featureTypes, int isCurrent) {
+	public Iterator<Feature> getFeatures(ArrayList<String> featureTypes, int isCurrent) {
 		
 		String sql = "SELECT a.feat_name, a.asmbl_id, a.feat_type, a.end5, a.end3, a.sequence, a.protein " +
 			"FROM asm_feature AS a JOIN stan AS s ON s.asmbl_id = a.asmbl_id " +
 			"AND s.iscurrent=" + isCurrent;
 			
-		Iterator<String> iter = featureTypes.iterator();
+		Iterator<String> types = featureTypes.iterator();
 		if (featureTypes.size() > 0) {
 			sql += "WHERE ";
-			while (iter.hasNext()) {
-				String type = iter.next().toString();
+			while (types.hasNext()) {
+				String type = types.next().toString();
 				String operator = (type.substring(0, 1).equals("%")) ? "LIKE" : "=";
 				sql += "a.feat_type " + operator + " '" + type + "'";
-				if (iter.hasNext()) { 
+				if (types.hasNext()) { 
 					sql += " OR ";
 				}
 			}			
 		}
-		
-		// Get our ArrayList of feature objects
-		ArrayList<Feature> features = new ArrayList<Feature>();
+
 		try {
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);
-			
-			while (rs.next()) {
-				String featureId = rs.getString(1);
-				String type = rs.getString(3);
-				int start = rs.getInt(4);
-				int end = rs.getInt(5);
-				int strand = 1;
-				if (end < start) {
-					strand = -1;
-					int tmp = end;
-					end = start;
-					start = tmp;
-				}
-
-				Feature f = new Feature(featureId, type, start, end, strand);
-				features.add(f);
-			}
-			
-			rs.close();
-			stmt.close();
+			final ResultSet rs = stmt.executeQuery(sql);
+			return this.getFeatureIteratorByResultSet(rs);
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
 		}
-		return features;
+		return null;	
 	}
 
-
+	public Iterator<Feature> getFeatureIteratorByResultSet(final ResultSet rs) {
+		
+		// Use an anonymous inner class to return an Iterator of Feature objects
+		return new Iterator<Feature>() {	
+			private Feature feature = null;
+			
+			public boolean hasNext() {
+				// Get/Set the next feature object
+				if (feature == null) feature = next();
+				return (feature == null) ? false : true;
+			}
+			public Feature next() {
+				
+				if (feature != null) {
+					Feature featureTmp = feature;
+					feature = null;
+					return featureTmp;
+				}
+				
+				try {
+					if (rs.next()) {
+						String featureId = rs.getString(1);
+						String type = rs.getString(3);
+						int start = rs.getInt(4);
+						int end = rs.getInt(5);
+						int strand = 1;
+						if (end < start) {
+							strand = -1;
+							int tmp = end;
+							end = start;
+							start = tmp;
+						}
+						return new Feature(featureId, type, start, end, strand);
+					}
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				return null;
+			}
+			public void remove() {
+				throw new UnsupportedOperationException("no remove allowed from Feature Iterator");
+			}
+		};
+	}
+	
+		
 }
