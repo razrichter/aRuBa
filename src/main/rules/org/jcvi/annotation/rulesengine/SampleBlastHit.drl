@@ -34,19 +34,15 @@ no-loop true
 	    a.setAssertionType(Annotation.EXACT);
 	    # set go_ids = GO:0043592 GO:0003674 GO:0008150
 	    a.addGoIds(Arrays.asList("GO:0043592","GO:0003674","GO:0008150"));
-	    # set ec_num = NULL
-	    # set role_ids = 705
+	    // a.setEcNum(null);
 	    a.addRoleId("705");
-	    # set com_name = exosporium protein K
 	    a.setCommonName("exosporium protein K");
-	    # set gene_sym = exsK
 	    a.setGeneSymbol("exsK");
 	    hit.getQuery().addAssertedAnnotation(a);
 		
 		System.out.println("Complete BlastP Hit Rule");
 		System.out.println("hitPercentLength " + hit.getHitPercentLength());
 		update( hit );
-		
 end
 
 

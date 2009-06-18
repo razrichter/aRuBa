@@ -3,16 +3,21 @@ package org.jcvi.annotation.dao.tests;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
+
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.jcvi.annotation.dao.*;
 import org.jcvi.annotation.dao.factory.*;
+import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
 
 public class TestSmallGenomeDAO extends TestCase {
 
 	private SmallGenomeDAOFactory sgDAOFactory;
-	private FeatureDAO featureDAO;
+	private SmallGenomeFeatureDAO featureDAO;
+	private SmallGenomeAnnotationDAO annotationDAO;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -21,8 +26,11 @@ public class TestSmallGenomeDAO extends TestCase {
 		// sgDAOFactory = (SmallGenomeDAOFactory) DAOFactory.getDAOFactory(DAOFactory.SMALLGENOME);
 		sgDAOFactory = new SmallGenomeDAOFactory();
 		
-		// Get our FeatureDAO and connect to gb6 database
+		// Get our Feature DAO (connect to gb6 database)
 		featureDAO = sgDAOFactory.getFeatureDAO("gb6");
+		
+		// Get our Annotation DAO
+		annotationDAO = sgDAOFactory.getAnnotationDAO("gb6");
 		
 		// Get our evidence DAOs (hmmSmallGenomeDAO, blastSmallGenomeDAO)
 		// hmmDAO = smallGenomeDAOFactory.getHmmDAO();
@@ -31,7 +39,7 @@ public class TestSmallGenomeDAO extends TestCase {
 	
 	public void testGetFeature() {
 		Feature f = featureDAO.getFeature("GBAA_pXO2_0003");
-		assertEquals(f.getFeatureId(), "GBAA_pXO2_0003");
+		assertEquals(f.getName(), "GBAA_pXO2_0003");
 	}
 	public void testGetFeatureFalseCase() {
 		Feature f = featureDAO.getFeature("no_such_feature");
@@ -39,18 +47,35 @@ public class TestSmallGenomeDAO extends TestCase {
 	}
 	public void testGetFeatureIdFalseCase() {
 		Feature f = featureDAO.getFeature("GBAA_pXO2_0003");
-		assertFalse(f.getFeatureId() == "abc");
+		assertFalse(f.getName() == "abc");
 	}
 	
 	public void testGetFeatures() {
 		Iterator<Feature> features = featureDAO.getFeatures();
 		assertTrue(features.hasNext());
-		
+		/*
 		while (features.hasNext()) {
 			System.out.println(features.next());
 		}
+		*/
 	}
 	
+	public void testGetAnnotations() {
+		Iterator<Annotation> annotations = annotationDAO.getAnnotations();
+		assertTrue(annotations.hasNext());
+	}
+	
+	public void testGetFeatureAnnotations() {
+		Feature f = featureDAO.getFeatureById(172227);
+		Iterator<Annotation> annotations = annotationDAO.getAnnotations(f);
+		assertTrue(annotations.hasNext());
+	}
+	
+	public void testGetAnnotationRoleIds() {
+		Feature f = featureDAO.getFeatureById(172227);
+		List<String> roleIds = annotationDAO.getRoleIds(f.getName());
+		assertTrue(roleIds.contains("188"));
+	}
 	
 	@After
 	public void tearDown() throws Exception {

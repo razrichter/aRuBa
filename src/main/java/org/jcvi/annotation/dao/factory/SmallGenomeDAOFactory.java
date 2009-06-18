@@ -21,16 +21,26 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 		conn = this.createConnection();
 	}
 	
-	// Getting our SmallGenomeFeatureDAO
-	public FeatureDAO getFeatureDAO() {
+	// Generate a new FeatureDAO
+	public SmallGenomeFeatureDAO getFeatureDAO() {
 		return new SmallGenomeFeatureDAO(conn);
 	}
-	public FeatureDAO getFeatureDAO(String dbname) {
+	public SmallGenomeFeatureDAO getFeatureDAO(String dbname) {
 		this.dbname = dbname;
 		conn = this.createConnection();
 		return new SmallGenomeFeatureDAO(conn);
 	}
 
+	// Generate a new AnnotationDAO
+	public SmallGenomeAnnotationDAO getAnnotationDAO() {
+		return new SmallGenomeAnnotationDAO(conn);
+	}
+	public SmallGenomeAnnotationDAO getAnnotationDAO(String dbname) {
+		this.dbname = dbname;
+		conn = this.createConnection();
+		return new SmallGenomeAnnotationDAO(conn);
+	}
+	
 	// Getters and Setters
 	public Connection getConn() {
 		return conn;

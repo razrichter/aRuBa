@@ -23,6 +23,7 @@ public class TestBlastPHitRule extends TestCase {
 	
 	@Before
 	public void setUp() throws Exception {
+		
 		engine = new RulesEngine();
 		URL url = engine.getClass().getResource("/org/jcvi/annotation/rulesengine/SampleBlastHit.drl");
 		engine.addResource(url.toString(), ResourceType.DRL);

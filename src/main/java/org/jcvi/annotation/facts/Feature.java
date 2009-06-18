@@ -1,18 +1,22 @@
 package org.jcvi.annotation.facts;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import org.jcvi.annotation.facts.Annotation;
 
 public class Feature {
 	private String featureId;
 	private SourceMolecule source;
+	private String name;
 	private int start;
 	private int end;
 	private int strand;
 	private String type; // Feature type
 	private Annotation assignedAnnotation;
-	private ArrayList<Annotation> assertedAnnotations = new ArrayList<Annotation>();
-
+	private List<Annotation> assertedAnnotations = new ArrayList<Annotation>();
+	// private List<Rule> firedRules = new ArrayList<String>();
+		
 	public Feature(String featureId, String type) {
 		super();
 		this.featureId = featureId;
@@ -31,14 +35,16 @@ public class Feature {
 
 	// Constructor with source molecule
 	public Feature(String featureId, String type, int start, int end, int strand,
+			String name) {
+		this(featureId, type, start, end, strand);
+		this.setName(name);
+	}
+	
+	// Constructor with source molecule
+	public Feature(String featureId, String type, int start, int end, int strand,
 			SourceMolecule source) {
-		super();
-		this.featureId = featureId;
-		this.source = source;
-		this.start = start;
-		this.end = end;
-		this.strand = strand;
-		this.type = type;
+		this(featureId, type, start, end, strand);
+		this.setSource(source);
 	}
 
 	public Annotation getAssignedAnnotation() {
@@ -49,7 +55,7 @@ public class Feature {
 		this.assignedAnnotation = assignedAnnotation;
 	}
 
-	public ArrayList<Annotation> getAssertedAnnotations() {
+	public List<Annotation> getAssertedAnnotations() {
 		return assertedAnnotations;
 	}
 
@@ -67,6 +73,13 @@ public class Feature {
 
 	public void setFeatureId(String featureId) {
 		this.featureId = featureId;
+	}
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public SourceMolecule getSource() {
