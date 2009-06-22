@@ -9,7 +9,7 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 	private String driver = "com.sybase.jdbc3.jdbc.SybDriver";
 	private String url = "jdbc:sybase:Tds:SYBTIGR";
 	private String port = "2025";
-	private String dbname = "common";
+	private String dbname;
 	private String user = "access";
 	private String password = "access";
 	
@@ -17,17 +17,15 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 	
 	// Constructor
 	public SmallGenomeDAOFactory() {
-		super();
-		conn = this.createConnection();
+	}
+	
+	public SmallGenomeDAOFactory(String dbname) {
+		this.dbname = dbname;
 	}
 	
 	// Generate a new FeatureDAO
 	public SmallGenomeFeatureDAO getFeatureDAO() {
-		return new SmallGenomeFeatureDAO(conn);
-	}
-	public SmallGenomeFeatureDAO getFeatureDAO(String dbname) {
-		this.dbname = dbname;
-		conn = this.createConnection();
+		this.createConnection();
 		return new SmallGenomeFeatureDAO(conn);
 	}
 

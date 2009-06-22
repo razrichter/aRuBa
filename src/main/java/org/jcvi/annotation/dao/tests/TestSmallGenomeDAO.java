@@ -3,8 +3,6 @@ package org.jcvi.annotation.dao.tests;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
-
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -24,11 +22,11 @@ public class TestSmallGenomeDAO extends TestCase {
 		
 		// get our Small Genome DAO Factory
 		// sgDAOFactory = (SmallGenomeDAOFactory) DAOFactory.getDAOFactory(DAOFactory.SMALLGENOME);
-		sgDAOFactory = new SmallGenomeDAOFactory();
+		sgDAOFactory = new SmallGenomeDAOFactory("gb6");
 		
 		// Get our Feature DAO (connect to gb6 database)
-		featureDAO = sgDAOFactory.getFeatureDAO("gb6");
-		
+		featureDAO = sgDAOFactory.getFeatureDAO();
+				
 		// Get our Annotation DAO
 		annotationDAO = sgDAOFactory.getAnnotationDAO("gb6");
 		
@@ -53,11 +51,6 @@ public class TestSmallGenomeDAO extends TestCase {
 	public void testGetFeatures() {
 		Iterator<Feature> features = featureDAO.getFeatures();
 		assertTrue(features.hasNext());
-		/*
-		while (features.hasNext()) {
-			System.out.println(features.next());
-		}
-		*/
 	}
 	
 	public void testGetAnnotations() {
