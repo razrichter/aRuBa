@@ -1,14 +1,9 @@
 package org.jcvi.annotation.rulesengine.test;
 
-
-import java.io.InputStream;
+import junit.framework.TestCase;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import junit.framework.TestCase;
-
 import org.drools.builder.ResourceType;
 import org.junit.After;
 import org.junit.Before;
