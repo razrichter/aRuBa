@@ -1,10 +1,6 @@
 package org.jcvi.annotation.dao;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-
-import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.GoTerm;
 

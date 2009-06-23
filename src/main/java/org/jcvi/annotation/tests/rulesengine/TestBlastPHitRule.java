@@ -1,4 +1,4 @@
-package org.jcvi.annotation.rulesengine.test;
+package org.jcvi.annotation.tests.rulesengine;
 
 import junit.framework.TestCase;
 import java.net.URL;
@@ -80,7 +80,7 @@ public class TestBlastPHitRule extends TestCase {
 	}
 	
 	public void testSampleBlastConfidence() {
-		assertEquals(ann.getConfidence(), 80);
+		assertEquals(ann.getConfidence(), 80.0);
 	}
 	
 	@After
