@@ -1,0 +1,36 @@
+#created on: Jun 10, 2009
+package org.jcvi.annotation.rules;
+import org.jcvi.annotation.facts.*;
+import java.util.Arrays;
+
+#declare any global variables here
+
+rule "BlastP Hit with a Taxonomy Restriction"
+no-loop true
+
+	when
+		hit : BlastpHit( hitId == "RF|NP_844922.1",
+			bitScore >= 160, hitPercentLength >= 90,
+			queryPercentLength >= 90,  percentIdentity >= 80,
+			hitQueryLengthRatio <= 5, query.source.genome.id == "bac" )
+		
+	then
+	    
+	    Annotation a = new Annotation("Complete BlastP Hit Rule");
+	    a.setConfidence(80.0);
+	    a.setSpecificity(Annotation.EQUIVALOG);
+	    a.setAssertionType(Annotation.EXACT);
+	    # set go_ids = GO:0043592 GO:0003674 GO:0008150
+	    a.addGoIds(Arrays.asList("GO:0043592","GO:0003674","GO:0008150"));
+	    // a.setEcNum(null);
+	    a.addRoleId("705");
+	    a.setCommonName("exosporium protein K");
+	    a.setGeneSymbol("exsK");
+	    hit.getQuery().addAssertedAnnotation(a);
+		
+		System.out.println("Complete BlastP Hit Rule");
+		System.out.println("hitPercentLength " + hit.getHitPercentLength());
+		update( hit );
+end
+
+

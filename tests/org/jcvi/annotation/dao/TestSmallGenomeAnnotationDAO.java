@@ -10,7 +10,7 @@ import org.jcvi.annotation.dao.factory.*;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
 
-public class TestSmallGenomeDAO extends TestCase {
+public class TestSmallGenomeAnnotationDAO extends TestCase {
 
 	private SmallGenomeDAOFactory sgDAOFactory;
 	private SmallGenomeFeatureDAO featureDAO;
@@ -61,17 +61,6 @@ public class TestSmallGenomeDAO extends TestCase {
 		Feature f = featureDAO.getFeatureById(172227);
 		Iterator<Annotation> annotations = annotationDAO.getAnnotations(f);
 		assertTrue(annotations.hasNext());
-	}
-
-	public void testGetAnnotationRoleIdsByFeature() {
-		Feature f = featureDAO.getFeatureById(172227);
-		Iterator<Annotation> annotations = annotationDAO.getAnnotations(f);
-		Annotation annot = annotations.next();
-		List<String> roleIds = annot.getRoleIds();
-		for (String roleId : roleIds) {
-			System.out.println(roleId);
-		}
-		assertTrue(roleIds.size() > 1);
 	}
 	
 	public void testGetAnnotationRoleIds() {

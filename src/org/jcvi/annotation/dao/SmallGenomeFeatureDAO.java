@@ -2,6 +2,7 @@ package org.jcvi.annotation.dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
@@ -9,7 +10,7 @@ import org.jcvi.annotation.facts.Feature;
 public class SmallGenomeFeatureDAO implements FeatureDAO {
 
 	private Connection conn;
-	private ArrayList<String> codingFeatureTypes = new ArrayList<String>();
+	private List<String> codingFeatureTypes = new ArrayList<String>();
 	private int isCurrent = 1;
 	
 	public SmallGenomeFeatureDAO() {
@@ -28,11 +29,11 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 	public void setConn(Connection conn) {
 		this.conn = conn;
 	}
-	public ArrayList<String> getCodingFeatureTypes() {
+	public List<String> getCodingFeatureTypes() {
 		return codingFeatureTypes;
 	}
 
-	public void setCodingFeatureTypes(ArrayList<String> codingFeatureTypes) {
+	public void setCodingFeatureTypes(List<String> codingFeatureTypes) {
 		this.codingFeatureTypes = codingFeatureTypes;
 	}
 
@@ -100,7 +101,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		return getFeatures(codingFeatureTypes, isCurrent);
 	}
 	
-	public Iterator<Feature> getFeatures(ArrayList<String> featureTypes, int isCurrent) {
+	public Iterator<Feature> getFeatures(List<String> featureTypes, int isCurrent) {
 		
 		String sql = "SELECT a.feat_id, a.feat_name, a.asmbl_id, a.feat_type, a.end5, a.end3, a.sequence, a.protein " +
 			"FROM asm_feature AS a JOIN stan AS s ON s.asmbl_id = a.asmbl_id " +

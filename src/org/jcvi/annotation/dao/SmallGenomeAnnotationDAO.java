@@ -45,7 +45,7 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 	@Override
 	public Iterator<Annotation> getAnnotations() {
 
-		String sql = "SELECT i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
+		String sql = "SELECT a.feat_id, i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
 		" WHERE a.feat_name = i.feat_name AND s.asmbl_id = a.asmbl_id" +
 		" AND s.iscurrent=" + this.isCurrent;
 		
@@ -54,7 +54,7 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 
 	public Iterator<Annotation> getAnnotations(Feature feature) {
 		
-		String sql = "SELECT i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
+		String sql = "SELECT a.feat_id, i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
 				" WHERE a.feat_name = i.feat_name AND s.asmbl_id = a.asmbl_id" +
 				" AND s.iscurrent=" + this.isCurrent +
 				" AND a.feat_id=" + feature.getFeatureId();
@@ -99,14 +99,17 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 				try {
 					if (rs.next()) {
 						Annotation nextAnnot = new Annotation(conn.toString());
-						nextAnnot.setCommonName(rs.getString(1));
-						nextAnnot.setGeneSymbol(rs.getString(2));
-						nextAnnot.setEcNumber(rs.getString(3));
+						nextAnnot.setCommonName(rs.getString(2));
+						nextAnnot.setGeneSymbol(rs.getString(3));
+						nextAnnot.setEcNumber(rs.getString(4));
+						
+						String featureId = rs.getString(1);
 						
 						// TODO: Add Go Terms to Annotation
 						
-						// TODO: Add RoleIds to Annotation
-						
+						// Add RoleIds to Annotation
+						List<String> roleIds = getRoleIds(featureId);
+						nextAnnot.addRoleIds(roleIds);
 						
 						return nextAnnot;
 					}

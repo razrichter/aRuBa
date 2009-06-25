@@ -1,14 +1,19 @@
 package org.jcvi.annotation.rulesengine;
 
-import junit.framework.TestCase;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import junit.framework.TestCase;
+
 import org.drools.builder.ResourceType;
+import org.jcvi.annotation.facts.Annotation;
+import org.jcvi.annotation.facts.BlastpHit;
+import org.jcvi.annotation.facts.Feature;
+import org.jcvi.annotation.facts.Genome;
+import org.jcvi.annotation.facts.SourceMolecule;
 import org.junit.After;
 import org.junit.Before;
-import org.jcvi.annotation.facts.*;
-import org.jcvi.annotation.rulesengine.*;
 
 public class TestBlastPHitRule extends TestCase {
 
@@ -20,10 +25,12 @@ public class TestBlastPHitRule extends TestCase {
 	public void setUp() throws Exception {
 		
 		engine = new RulesEngine();
-		URL url = engine.getClass().getResource("/org/jcvi/annotation/rulesengine/SampleBlastHit.drl");
+		URL url = engine.getClass().getResource("/org/jcvi/annotation/rules/TestBlastAndTaxRestriction.drl");
 		engine.addResource(url.toString(), ResourceType.DRL);
 
 		this.orf = new Feature("testorf", "ORF", 0, 110, 1, new SourceMolecule(new Genome("bac"), "1"));
+		
+		System.out.println("testing query" + orf.getSource().getGenome().getId());
 		
 		// Only hit1 should evaluate true according to our SampleBlastHit rule
 		BlastpHit hit1 = new BlastpHit(orf, "RF|NP_844922.1", 0.001, 170, 170, 0.002,
@@ -33,10 +40,10 @@ public class TestBlastPHitRule extends TestCase {
 		BlastpHit hit3 = new BlastpHit(orf, "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 1000, 100, 205, 1, 95.0, 82.0);
 		
+		engine.addFact(orf);
 		engine.addFact(hit1);
 		engine.addFact(hit2);
 		engine.addFact(hit3);
-		engine.addFact(orf);
 		engine.fireAllRules();
 		this.ann = orf.getAssertedAnnotations().get(0);
 	}
