@@ -1,5 +1,5 @@
 #created on: Jun 10, 2009
-package org.jcvi.annotation.rulesengine;
+package org.jcvi.annotation.rules;
 import org.jcvi.annotation.facts.*;
 import java.util.Arrays;
 

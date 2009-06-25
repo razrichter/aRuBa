@@ -1,4 +1,4 @@
-package org.jcvi.annotation.tests.dao;
+package org.jcvi.annotation.dao;
 
 import junit.framework.TestCase;
 import org.junit.After;

@@ -1,4 +1,4 @@
-package org.jcvi.annotation.tests.rulesengine;
+package org.jcvi.annotation.rulesengine;
 
 import junit.framework.TestCase;
 import java.net.URL;
