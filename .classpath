@@ -7,5 +7,6 @@
 	<classpathentry kind="con" path="DROOLS/Drools"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="C:/SOFTWARE/jconn3.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/BioJava 1.7"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
