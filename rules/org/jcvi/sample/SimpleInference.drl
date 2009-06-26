@@ -1,0 +1,37 @@
+#created on: Jun 26, 2009
+package org.jcvi.sample
+
+#list any import classes here.
+import org.jcvi.sample.facts.*
+import java.util.Set
+
+
+#declare any global variables here
+global Set assertedFacts
+
+
+
+rule "A and B implies C"
+	
+	when
+		$a : Fact(name == "A")
+		$b : Fact(name == "B")
+	then
+	   Fact c = Fact.create("C");
+	   assertedFacts.add(c); 
+	   insert(c);
+		
+		
+end
+
+rule "A and D implies not B"
+	#include attributes such as "salience" here...
+	when
+		$a : Fact(name == "A")
+		$d : Fact(name == "D")
+		$b : Fact(name == "B")
+	then 
+        assertedFacts.remove($b);
+		retract($b);
+		
+end
