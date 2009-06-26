@@ -40,6 +40,11 @@ public class RulesEngine {
 		this.debug = debug;
 		this.logFilename = logFilename;
 	}
+	
+	public RulesEngine(boolean debug) {
+		this();
+		this.debug = debug;
+	}
 
 	public boolean addResource(String rfile, ResourceType rtype) {
 		if (!kbuilder.hasErrors()) {
@@ -77,6 +82,13 @@ public class RulesEngine {
 		}
 	}
 
+	public void addGlobal(String key, Object obj) {
+		if (ksession == null) {
+			ksession = kbase.newStatefulKnowledgeSession();
+		}
+		ksession.setGlobal(key,obj);
+	}
+
 	public void addGlobals(HashMap<String, Object> global) {
 		if (ksession == null)
 			ksession = kbase.newStatefulKnowledgeSession();
@@ -84,23 +96,29 @@ public class RulesEngine {
 			ksession.setGlobal(globalKey, global.get(globalKey));
 		}
 	}
+	
 
 	public void fireAllRules() throws RulesEngineException {
 		if (ksession == null) {
 			throw new RulesEngineException(
 					"Invalid attempt to fire rules without instantiating a knowledge session.");
 		}
-		logger = (logFilename == null) 
-				? KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession) 
-				: KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFilename);
+		if (logFilename != null) {
+			logger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFilename);
+		} 
 
 		if (debug) {
+			if (logFilename == null) {
+				logger = KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
+			}
 			ksession.addEventListener(new DebugWorkingMemoryEventListener());
 		}
 		ksession.fireAllRules();
 		ksession.dispose();
 		ksession = null;
-		logger.close();
+		if (logger != null) {
+			logger.close();
+		}
 	}
 
 }
