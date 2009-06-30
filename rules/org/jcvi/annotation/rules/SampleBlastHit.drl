@@ -8,7 +8,7 @@ import java.util.Arrays;
 rule "Simple BlastP Hit Rule"
 	
 	when
-		hit : BlastpHit( hitId == "RF|NP_844922.1" )
+		hit : BlastHit( program == "blastp", hitId == "RF|NP_844922.1" )
 		
 	then 
 		System.out.println("Simple BlastP Hit Rule "); // + hit.hitId);
@@ -20,7 +20,7 @@ rule "Complete BlastP Hit Rule"
 no-loop true
 
 	when
-		hit : BlastpHit( hitId == "RF|NP_844922.1",
+		hit : BlastHit(program == "blastp", hitId == "RF|NP_844922.1",
 			bitScore >= 160, hitPercentLength >= 90,
 			queryPercentLength >= 90,  percentIdentity >= 80,
 			hitQueryLengthRatio <= 5 )

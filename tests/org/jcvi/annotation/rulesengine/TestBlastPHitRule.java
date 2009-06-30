@@ -8,7 +8,7 @@ import junit.framework.TestCase;
 
 import org.drools.builder.ResourceType;
 import org.jcvi.annotation.facts.Annotation;
-import org.jcvi.annotation.facts.BlastpHit;
+import org.jcvi.annotation.facts.BlastHit;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.SourceMolecule;
@@ -33,11 +33,11 @@ public class TestBlastPHitRule extends TestCase {
 		System.out.println("testing query" + orf.getSource().getGenome().getId());
 		
 		// Only hit1 should evaluate true according to our SampleBlastHit rule
-		BlastpHit hit1 = new BlastpHit("blastp",orf, "RF|NP_844922.1", 0.001, 170, 170, 0.002,
+		BlastHit hit1 = new BlastHit("blastp",orf, "RF|NP_844922.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 110, 100, 205, 1, 95.0, 82.0);
-		BlastpHit hit2 = new BlastpHit("blastp",orf, "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
+		BlastHit hit2 = new BlastHit("blastp",orf, "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 110, 100, 205, 1, 95.0, 82.0);
-		BlastpHit hit3 = new BlastpHit("blastp",orf, "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
+		BlastHit hit3 = new BlastHit("blastp",orf, "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 1000, 100, 205, 1, 95.0, 82.0);
 		
 		engine.addFact(orf);

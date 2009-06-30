@@ -9,7 +9,7 @@ rule "BlastP Hit with a Taxonomy Restriction"
 no-loop true
 
 	when
-		hit : BlastpHit( hitId == "RF|NP_844922.1",
+		hit : BlastHit( program == "blastp", hitId == "RF|NP_844922.1",
 			bitScore >= 160, hitPercentLength >= 90,
 			queryPercentLength >= 90,  percentIdentity >= 80,
 			hitQueryLengthRatio <= 5, query.source.genome.id == "bac" )
