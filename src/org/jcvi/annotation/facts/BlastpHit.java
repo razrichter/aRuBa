@@ -1,6 +1,7 @@
 package org.jcvi.annotation.facts;
 
 public class BlastpHit {
+	private String program;
 	private Feature query;
 	private String hitId;
 	private double eValue;
@@ -24,11 +25,12 @@ public class BlastpHit {
 	}
 	
 	
-	public BlastpHit(Feature query, String hitId, double eValue, double score,
+	public BlastpHit(String program, Feature query, String hitId, double eValue, double score,
 			double bitScore, double pValue, int queryStart, int queryEnd,
 			int queryStrand, int hitLength, int hitStart, int hitEnd,
 			int hitStrand, double percentSimilarity, double percentIdentity) {
 		super();
+		this.program = program;
 		this.query = query;
 		this.hitId = hitId;
 		this.eValue = eValue;
@@ -44,6 +46,16 @@ public class BlastpHit {
 		this.hitStrand = hitStrand;
 		this.percentSimilarity = percentSimilarity;
 		this.percentIdentity = percentIdentity;
+	}
+
+
+	public String getProgram() {
+		return program;
+	}
+
+
+	public void setProgram(String program) {
+		this.program = program;
 	}
 
 
