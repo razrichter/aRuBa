@@ -7,7 +7,8 @@ import org.jcvi.annotation.facts.Annotation;
 
 public class Feature {
 	private String featureId;
-	private SourceMolecule source;
+	//private taxon NCBITaxon;
+	private Feature source;
 	private String name;
 	private int start;
 	private int end;
@@ -44,7 +45,7 @@ public class Feature {
 	public Feature(String featureId, String type, int start, int end, int strand,
 			SourceMolecule source) {
 		this(featureId, type, start, end, strand);
-		this.setSource(source);
+		// this.setSource(source);
 	}
 
 	public Annotation getAssignedAnnotation() {
@@ -82,11 +83,11 @@ public class Feature {
 		this.name = name;
 	}
 
-	public SourceMolecule getSource() {
+	public Feature getSource() {
 		return source;
 	}
 
-	public void setSource(SourceMolecule source) {
+	public void setSource(Feature source) {
 		this.source = source;
 	}
 

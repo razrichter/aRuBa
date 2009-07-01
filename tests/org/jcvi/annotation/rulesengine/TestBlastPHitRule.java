@@ -30,8 +30,6 @@ public class TestBlastPHitRule extends TestCase {
 
 		this.orf = new Feature("testorf", "ORF", 0, 110, 1, new SourceMolecule(new Genome("bac"), "1"));
 		
-		System.out.println("testing query" + orf.getSource().getGenome().getId());
-		
 		// Only hit1 should evaluate true according to our SampleBlastHit rule
 		BlastHit hit1 = new BlastHit("blastp",orf, "RF|NP_844922.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 110, 100, 205, 1, 95.0, 82.0);

@@ -44,6 +44,14 @@ public class TestSimpleInference extends TestCase {
 		assertFalse(facts.contains(Fact.create("C")));
 	}
 
+	public void testADoesExist() {
+		assertTrue(facts.contains(Fact.create("A")));
+	}
+
+	public void testDDoesExist() {
+		assertTrue(facts.contains(Fact.create("D")));
+	}
+
 	@After
 	public void tearDown() throws Exception {
 		engine = null;
