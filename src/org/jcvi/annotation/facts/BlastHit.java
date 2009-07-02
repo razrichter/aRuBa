@@ -8,6 +8,7 @@ public class BlastHit {
     private double score;
     private double bitScore;
     private double pValue;
+    private int alignmentLength;
     private int queryLength;
     private int queryStart;
     private int queryEnd;
@@ -77,11 +78,11 @@ public class BlastHit {
         this.hitId = hitId;
     }
 
-    public double geteValue() {
+    public double getEValue() {
         return eValue;
     }
 
-    public void seteValue(double eValue) {
+    public void setEValue(double eValue) {
         this.eValue = eValue;
     }
 
@@ -107,6 +108,14 @@ public class BlastHit {
 
     public void setBitScore(double bitScore) {
         this.bitScore = bitScore;
+    }
+
+    public int getAlignmentLength() {
+        return alignmentLength;
+    }
+
+    public void setAlignmentLength(int alignmentLength) {
+        this.alignmentLength = alignmentLength;
     }
 
     public int getQueryLength() {
