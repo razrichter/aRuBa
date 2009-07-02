@@ -20,11 +20,12 @@ rule "Complete BlastP Hit Rule"
 no-loop true
 
 	when
-		hit : BlastHit(program == "blastp", hitId == "RF|NP_844922.1",
+		hit : BlastHit(program == "blastp", hitId == "RF|NP_844922.1", 
+		    $queryId : queryId,
 			bitScore >= 160, hitPercentLength >= 90,
 			queryPercentLength >= 90,  percentIdentity >= 80,
 			hitQueryLengthRatio <= 5 )
-		
+		feat : Feature(featureId == $queryId)
 	then
 	    
 	    Annotation a = new Annotation("Complete BlastP Hit Rule");
@@ -37,11 +38,11 @@ no-loop true
 	    a.addRoleId("705");
 	    a.setCommonName("exosporium protein K");
 	    a.setGeneSymbol("exsK");
-	    hit.getQuery().addAssertedAnnotation(a);
+	    feat.addAssertedAnnotation(a);
 		
 		System.out.println("Complete BlastP Hit Rule");
 		System.out.println("hitPercentLength " + hit.getHitPercentLength());
-		update( hit );
+		update( feat );
 end
 
 

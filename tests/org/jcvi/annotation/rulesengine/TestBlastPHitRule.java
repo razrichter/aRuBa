@@ -25,18 +25,21 @@ public class TestBlastPHitRule extends TestCase {
 	public void setUp() throws Exception {
 		
 		engine = new RulesEngine();
-		URL url = engine.getClass().getResource("/org/jcvi/annotation/rules/TestBlastAndTaxRestriction.drl");
+		URL url = engine.getClass().getResource("../rules/TestBlastAndTaxRestriction.drl");
 		engine.addResource(url.toString(), ResourceType.DRL);
 
 		this.orf = new Feature("testorf", "ORF", 0, 110, 1, new SourceMolecule(new Genome("bac"), "1"));
 		
 		// Only hit1 should evaluate true according to our SampleBlastHit rule
-		BlastHit hit1 = new BlastHit("blastp",orf, "RF|NP_844922.1", 0.001, 170, 170, 0.002,
+		BlastHit hit1 = new BlastHit("blastp","testorf", "RF|NP_844922.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 110, 100, 205, 1, 95.0, 82.0);
-		BlastHit hit2 = new BlastHit("blastp",orf, "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
+		hit1.setQueryLength(orf.getLength());
+		BlastHit hit2 = new BlastHit("blastp","testorf", "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 110, 100, 205, 1, 95.0, 82.0);
-		BlastHit hit3 = new BlastHit("blastp",orf, "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
+        hit2.setQueryLength(orf.getLength());
+		BlastHit hit3 = new BlastHit("blastp","testorf", "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 1000, 100, 205, 1, 95.0, 82.0);
+        hit2.setQueryLength(orf.getLength());
 		
 		engine.addFact(orf);
 		engine.addFact(hit1);
