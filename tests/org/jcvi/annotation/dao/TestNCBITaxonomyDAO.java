@@ -1,47 +1,58 @@
 package org.jcvi.annotation.dao;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
-import org.jcvi.annotation.facts.Taxon;
-import org.jcvi.annotation.dao.NCBITaxonomyDAO;
 
 import junit.framework.TestCase;
+
+import org.jcvi.annotation.facts.Taxon;
+import org.junit.Before;
 
 public class TestNCBITaxonomyDAO extends TestCase {
 
 	// Taxonomy names and nodes file are downloaded from
 	// ftp://ftp.ncbi.nih.gov/pub/taxonomy/
-	private String nodesFile = "nodes.dmp";
-	private String namesFile = "names.dmp";
+	BufferedReader namesReader;
+	BufferedReader nodesReader;
 	public TreeMap<Integer, Taxon> taxMap = new TreeMap<Integer, Taxon>();
+	private NCBITaxonomyDAO taxonomyDAO;
 	
-	public void testGetTaxonomyMap() {
-
-		// Create our names and nodes Buffered Readers
-		InputStream nameStream = this.getClass().getResourceAsStream(namesFile);
-		BufferedReader nameReader = new BufferedReader(new InputStreamReader(nameStream));
-		InputStream nodeStream = this.getClass().getResourceAsStream(nodesFile);
-		BufferedReader nodeReader = new BufferedReader(new InputStreamReader(nodeStream));
-
-		// Load our taxonomy TreeMap
-		NCBITaxonomyDAO taxonomyDAO = new NCBITaxonomyDAO(nameReader, nodeReader);
-		taxonomyDAO.setNameClassFilter("scientific name");
-		
-		TreeMap<Integer, Taxon> taxMap = taxonomyDAO.loadTaxonomyMap();
-		System.out.println("Number of Taxons: " + taxMap.size());
-
-		// Let's print out the hierarchy for the root node
-		Taxon t = taxMap.get(new Integer(43485));
-		System.out.println("Taxonomy hierarchy:" + t.getIdHierarchy(taxMap));
-
-		/*
-		System.out.println("Load Names...");
-		taxonomyDAO.loadNames();
-		TreeMap<Integer, Taxon> taxMap = taxonomyDAO.getTaxonomyMap();
-		System.out.println("Taxonomy: " + taxMap.size() + " names");
-		System.out.print("Load Nodes Information... ");
-		taxonomyDAO.loadNodes(false);
-		System.out.println("complete.");
-		*/
+	@Before
+	public void setUp() throws Exception {
+		// Setup our taxonomy DAO
+		URL namesUrl = this.getClass().getResource("names.dmp");
+		URL nodesFile = this.getClass().getResource("nodes.dmp");
+		taxonomyDAO = new NCBITaxonomyDAO(namesUrl, nodesFile);
 	}
+	
+	public void testGetTaxon() {
+		Taxon taxon = taxonomyDAO.getTaxon("Geosporobacter");
+		assertEquals(taxon.getTaxonId(), 390805);
+	}
+	
+	public void testGetParents() {
 
+		// Test the various ways of defining a new Taxon object
+		Taxon t1 = new Taxon(new Integer(390805));
+		Taxon t2 = taxonomyDAO.getTaxon(390805);
+		Taxon t3 = taxonomyDAO.getTaxon("Geosporobacter");
+		
+		// Test the parents (should include Firmicutes and Clostridia)
+		taxonomyDAO.getParents(t1);
+		assertTrue(t1.getParentIds().contains(186801)); 
+		// assertTrue(t1.getParentNames().contains("Clostridia"));
+
+		taxonomyDAO.getParents(t2);
+		assertTrue(t2.getParentIds().contains(1239)); 
+		// assertTrue(t3.getParentNames().contains("Firmicutes"));
+
+		taxonomyDAO.getParents(t3);
+		assertTrue(t3.getParentIds().contains(1239)); 
+
+	}
 }

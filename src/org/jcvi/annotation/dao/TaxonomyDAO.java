@@ -4,8 +4,8 @@ import org.jcvi.annotation.facts.Taxon;
 
 public interface TaxonomyDAO {
 
-	TreeMap<Integer, Taxon> getTaxonomyMap();
-
+	TreeMap<Integer, Taxon> loadTaxonomyMap();
+	TreeMap<Integer, Taxon> loadTaxonomyMap(String taxonName);
 }
 
 
