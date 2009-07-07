@@ -1,30 +1,16 @@
 package org.jcvi.annotation.dao;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeMap;
-
 import junit.framework.TestCase;
-
 import org.jcvi.annotation.facts.Taxon;
 import org.junit.Before;
 
 public class TestNCBITaxonomyDAO extends TestCase {
-
-	// Taxonomy names and nodes file are downloaded from
-	// ftp://ftp.ncbi.nih.gov/pub/taxonomy/
-	BufferedReader namesReader;
-	BufferedReader nodesReader;
-	public TreeMap<Integer, Taxon> taxMap = new TreeMap<Integer, Taxon>();
 	private NCBITaxonomyDAO taxonomyDAO;
 	
 	@Before
 	public void setUp() throws Exception {
 		// Setup our taxonomy DAO
+		// Downloaded from ftp://ftp.ncbi.nih.gov/pub/taxonomy/
 		URL namesUrl = this.getClass().getResource("names.dmp");
 		URL nodesFile = this.getClass().getResource("nodes.dmp");
 		taxonomyDAO = new NCBITaxonomyDAO(namesUrl, nodesFile);
