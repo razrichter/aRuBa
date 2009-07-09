@@ -1,6 +1,8 @@
 package org.jcvi.annotation.utils;
 import java.util.UUID;
 
+import org.biojavax.bio.seq.RichSequence;
+import org.jcvi.annotation.facts.Taxon;
 public class BiojavaConvertor 
 {
 	public static org.jcvi.annotation.facts.Feature convertBiojavaFeatureToAnnotationFeature(org.biojava.bio.seq.StrandedFeature biojavaFeature){
@@ -11,7 +13,20 @@ public class BiojavaConvertor
 				feature.setStart(biojavaFeature.getLocation().getMin());
 				feature.setEnd(biojavaFeature.getLocation().getMax());
 		}
-		feature.setStrand(biojavaFeature.getStrand().getValue());		
+		feature.setStrand(biojavaFeature.getStrand().getValue());
 		return feature;
 	}
+	
+	
+
+	public static org.jcvi.annotation.facts.Feature convertRichSequenceToFeature(RichSequence richFeature,String type) {
+		
+		org.jcvi.annotation.facts.Feature feature = new org.jcvi.annotation.facts.Feature(richFeature.getIdentifier(), richFeature.getAlphabet().getName());		
+		Taxon taxon = new Taxon(richFeature.getTaxon().getNCBITaxID(), richFeature.getTaxon().getDisplayName());
+		feature.setTaxon(taxon);
+		return feature;
+	}
+
+	
+	
 }

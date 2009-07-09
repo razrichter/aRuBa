@@ -7,7 +7,7 @@ public interface FeatureDAO {
 
 	// Reading methods	
 	Feature getFeature(String featureId);
-	Iterator<Feature> getFeatures();
+	Iterator<Feature> getFeatures() throws Exception;
 	
 	// Writing (CRUD) methods
 	// boolean addFeature(Feature feat);
