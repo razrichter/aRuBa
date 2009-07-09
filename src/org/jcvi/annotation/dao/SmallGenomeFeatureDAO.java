@@ -3,17 +3,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
-import org.jcvi.annotation.facts.Genome;
 
 public class SmallGenomeFeatureDAO implements FeatureDAO {
 
 	private Connection conn;
 	private List<String> codingFeatureTypes = new ArrayList<String>();
 	private int isCurrent = 1;
-	private Genome genome;
 	
 	public SmallGenomeFeatureDAO() {
 		// Our default types of coding features
@@ -47,41 +44,6 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		this.isCurrent = isCurrent;
 	}
 
-	// Get the Genome object based on the current Small Genome connection
-	public Genome getGenome() {
-		
-		// Get the genome once, as long as the database connection is unchanged
-		if (genome != null && genome instanceof Genome) {
-			return genome;
-		}
-		
-		String sql = "SELECT id, organism_name, taxon_id FROM new_project";
-		Connection conn = this.getConn(); 
-		
-		try {
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);
-			if (rs.next()) {
-				String genomeId = rs.getString(1);
-				String organismName = rs.getString(2);
-				String taxonId = rs.getString(3);
-				genome = new Genome(genomeId, organismName);
-				
-				// Get the taxon object for this genome
-				
-				rs.close();
-				stmt.close();
-			}
-			
-		} catch (SQLException e) {
-			for (Throwable t : e) {
-				t.printStackTrace();
-			}
-		}
-		return genome;
-		
-	}
-	
 	@Override
 	public Feature getFeature(String name) {
 		String sql = "SELECT feat_id, feat_name, feat_type, end5, end3, sequence, protein " +

@@ -31,14 +31,15 @@ public class TestNCBITaxonomyDAO extends TestCase {
 		// Test the parents (should include Firmicutes and Clostridia)
 		taxonomyDAO.getParents(t1);
 		assertTrue(t1.getParentIds().contains(186801)); 
-		// assertTrue(t1.getParentNames().contains("Clostridia"));
+		assertTrue(t1.getParentNames().contains("Clostridia"));
 
 		taxonomyDAO.getParents(t2);
 		assertTrue(t2.getParentIds().contains(1239)); 
-		// assertTrue(t3.getParentNames().contains("Firmicutes"));
+		assertTrue(t2.getParentNames().contains("Firmicutes"));
 
 		taxonomyDAO.getParents(t3);
-		assertTrue(t3.getParentIds().contains(1239)); 
+		assertTrue(t3.getParentIds().contains(1239));
+		assertTrue(t3.getParentNames().contains("Firmicutes"));
 
 	}
 }

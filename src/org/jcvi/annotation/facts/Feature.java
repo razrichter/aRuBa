@@ -7,7 +7,7 @@ import org.jcvi.annotation.facts.Annotation;
 
 public class Feature {
 	private String featureId;
-	//private taxon NCBITaxon;
+	private Taxon taxon;
 	private Feature source;
 	private String name;
 	private int start;
@@ -24,7 +24,7 @@ public class Feature {
 		this.type = type;
 	}
 	
-	// Constructor without requiring a source molecule
+	// Constructor with coordinates
 	public Feature(String featureId, String type, int start, int end, int strand) {
 		super();
 		this.featureId = featureId;
@@ -41,11 +41,11 @@ public class Feature {
 		this.setName(name);
 	}
 	
-	// Constructor with source molecule
-	public Feature(String featureId, String type, int start, int end, int strand,
-			SourceMolecule source) {
-		this(featureId, type, start, end, strand);
-		// this.setSource(source);
+	public Taxon getTaxon() {
+		return taxon;
+	}
+	public void setTaxon(Taxon taxon) {
+		this.taxon = taxon;
 	}
 
 	public Annotation getAssignedAnnotation() {

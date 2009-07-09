@@ -3,8 +3,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.TreeMap;
+import java.util.Map;
+
 import org.jcvi.annotation.facts.Taxon;
 
 public class NCBITaxonomyDAO implements TaxonomyDAO {
@@ -12,7 +14,7 @@ public class NCBITaxonomyDAO implements TaxonomyDAO {
 	private URL namesUrl;
 	private URL nodesUrl;
 	private String nameClassFilter;
-	private TreeMap<Integer, Taxon> taxonomyMap = new TreeMap<Integer, Taxon>();
+	private Map<Integer, Taxon> taxonomyMap = new HashMap<Integer, Taxon>();
 
 	public NCBITaxonomyDAO() {
 		super();
@@ -48,11 +50,11 @@ public class NCBITaxonomyDAO implements TaxonomyDAO {
 		this.nameClassFilter = nameClassFilter;
 	}
 
-	public TreeMap<Integer, Taxon> getTaxonomyMap() {
+	public Map<Integer, Taxon> getTaxonomyMap() {
 		return taxonomyMap;
 	}
 
-	public void setTaxonomyMap(TreeMap<Integer, Taxon> taxonomyMap) {
+	public void setTaxonomyMap(Map<Integer, Taxon> taxonomyMap) {
 		this.taxonomyMap = taxonomyMap;
 	}
 
@@ -60,20 +62,20 @@ public class NCBITaxonomyDAO implements TaxonomyDAO {
 	 * Load the complete taxonomy
 	 */
 	@Override
-	public TreeMap<Integer, Taxon> loadTaxonomyMap() {
+	public Map<Integer, Taxon> loadTaxonomyMap() {
 		loadNames();
 		loadNodes();
 		return taxonomyMap;
 	}
 	
 	@Override
-	public TreeMap<Integer, Taxon> loadTaxonomyMap(String taxonName) {
+	public Map<Integer, Taxon> loadTaxonomyMap(String taxonName) {
 		Taxon taxon = getTaxon(taxonName);
 		return this.loadTaxonomyMap(taxon);
 	}
 	
 	// Load the taxonomy map for this taxon
-	public TreeMap<Integer, Taxon> loadTaxonomyMap(Taxon taxon) {
+	public Map<Integer, Taxon> loadTaxonomyMap(Taxon taxon) {
 		
 		// Get the taxon and its relatives (parents only for now)
 		List<Taxon> parents = this.getParents(taxon);
@@ -93,7 +95,7 @@ public class NCBITaxonomyDAO implements TaxonomyDAO {
 		loadNodes(true);
 	}
 	
-	public TreeMap<Integer, Taxon> loadNodes(boolean addIfNotFound) {
+	public Map<Integer, Taxon> loadNodes(boolean addIfNotFound) {
  
         try {
             BufferedReader nodesRdr = new BufferedReader(new InputStreamReader(
@@ -151,7 +153,7 @@ public class NCBITaxonomyDAO implements TaxonomyDAO {
 	            
 			    // Set the scientific name and/or synonyms
 			    if (nameClass.equals("scientific name")) {
-			    	// t.setName(name);
+			    	t.setName(name);
 				} else if (addSynonyms) {
 					// t.addName(name);
 				}
@@ -221,7 +223,7 @@ public class NCBITaxonomyDAO implements TaxonomyDAO {
 	            String name = parts[1].trim();
 	            Integer taxonId = Integer.valueOf(parts[0].trim());
 	            if (name.equalsIgnoreCase(taxonName.trim()))
-	            	return new Taxon(taxonId);
+	            	return new Taxon(taxonId, name);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

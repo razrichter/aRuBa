@@ -5,7 +5,7 @@ import java.util.List;
 public class Taxon {
 	private int taxonId;
 	private String name; // Scientific name
-	// private List<String> names = new ArrayList<String>();
+	private List<String> names = new ArrayList<String>();
 	private int parentTaxonId;
 	private List<Taxon> parents;
 	private String rank;

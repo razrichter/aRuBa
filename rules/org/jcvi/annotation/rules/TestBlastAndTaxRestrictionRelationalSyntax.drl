@@ -8,6 +8,8 @@ import java.util.Arrays;
 rule "BlastP Hit with a Taxonomy Restriction"
 no-loop true
 
+no-loop true
+
 	when
 		hit : BlastHit( program == "blastp", hitId == "RF|NP_844922.1",
 		    $queryId : queryId,
@@ -34,5 +36,3 @@ no-loop true
 		// System.out.println("Rule fires for hit " + hit.getHitId());		
 		update( hit );
 end
-
-

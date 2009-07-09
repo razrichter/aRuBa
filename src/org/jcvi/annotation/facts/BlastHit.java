@@ -207,8 +207,9 @@ public class BlastHit {
     }
 
     public double getHitQueryLengthRatio() {
-        return 100 * Math
-                .abs((hitEnd - hitStart) / (queryEnd - queryStart) - 1);
-    }
-
+    	// Need to cast to doubles, otherwise division of ints returns ints
+    	double hitLength = Math.abs(hitEnd - hitStart);
+    	double queryLength = Math.abs(queryEnd - queryStart);
+     	return 100 * Math.abs((hitLength/queryLength) - 1);
+     }
 }
