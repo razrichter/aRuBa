@@ -6,6 +6,7 @@ import java.util.Arrays;
 #declare any global variables here
 
 rule "Simple BlastP Hit Rule"
+no-loop true
 	
 	when
 		hit : BlastHit( program == "blastp", hitId == "RF|NP_844922.1" )
@@ -24,7 +25,7 @@ no-loop true
 		    $queryId : queryId,
 			bitScore >= 160, hitPercentLength >= 90,
 			queryPercentLength >= 90,  percentIdentity >= 80,
-			hitQueryLengthRatio <= 5 )
+			hitQueryLengthRatio <= 5.1 )
 		feat : Feature(featureId == $queryId)
 	then
 	    

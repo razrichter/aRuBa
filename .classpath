@@ -8,6 +8,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/BioJava 1.7"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Sybase jConnect-6.0"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/BioJava"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Apache Commons CLI 1.2"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

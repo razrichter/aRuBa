@@ -1,8 +1,7 @@
 package org.jcvi.annotation.rulesengine;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.Map;
+
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.KnowledgeBuilder;
@@ -68,17 +67,14 @@ public class RulesEngine {
 	}
 
 	public void addFact(Object fact) {
-		ArrayList<Object> facts = new ArrayList<Object>();
-		facts.add(fact);
-		addFacts(facts);
+        if (ksession == null)
+            ksession = kbase.newStatefulKnowledgeSession();
+        ksession.insert(fact);
 	}
 	
-	public void addFacts(Iterable<Object> facts) {
-		if (ksession == null)
-			ksession = kbase.newStatefulKnowledgeSession();
-		for (Iterator<Object> iter = facts.iterator(); iter.hasNext();) {
-			Object fact = iter.next();
-			ksession.insert(fact);
+	public void addFacts(Iterable< ? extends Object> facts) {
+		for (Object fact : facts) {
+			addFact(fact);
 		}
 	}
 
@@ -89,7 +85,7 @@ public class RulesEngine {
 		ksession.setGlobal(key,obj);
 	}
 
-	public void addGlobals(HashMap<String, Object> global) {
+	public void addGlobals(Map<String, ? extends Object> global) {
 		if (ksession == null)
 			ksession = kbase.newStatefulKnowledgeSession();
 		for (String globalKey : global.keySet()) {
