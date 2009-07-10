@@ -43,26 +43,26 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 	}
 
 	@Override
-	public Iterator<Annotation> getAnnotations() {
+	public Iterator<Annotation> iterator() {
 
 		String sql = "SELECT a.feat_id, i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
 		" WHERE a.feat_name = i.feat_name AND s.asmbl_id = a.asmbl_id" +
 		" AND s.iscurrent=" + this.isCurrent;
 		
-		return getAnnotationsBySQL(sql);
+		return iteratorBySQL(sql);
 	}
 
-	public Iterator<Annotation> getAnnotations(Feature feature) {
+	public Iterator<Annotation> iterator(Feature feature) {
 		
 		String sql = "SELECT a.feat_id, i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
 				" WHERE a.feat_name = i.feat_name AND s.asmbl_id = a.asmbl_id" +
 				" AND s.iscurrent=" + this.isCurrent +
 				" AND a.feat_id=" + feature.getFeatureId();
 		
-		return getAnnotationsBySQL(sql);
+		return iteratorBySQL(sql);
 	}
 	
-	public Iterator<Annotation> getAnnotationsBySQL(String sql) {
+	public Iterator<Annotation> iteratorBySQL(String sql) {
 
 		try {
 			Statement stmt = conn.createStatement();

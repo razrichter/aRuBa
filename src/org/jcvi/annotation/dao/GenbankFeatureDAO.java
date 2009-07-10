@@ -9,7 +9,6 @@ import org.biojavax.Namespace;
 import org.biojavax.RichObjectFactory;
 import org.biojavax.bio.seq.RichSequence;
 import org.biojavax.bio.seq.RichSequenceIterator;
-import org.jcvi.annotation.exceptions.GenbankFileIOException;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.utils.BiojavaConvertor;
 
@@ -46,15 +45,15 @@ public class GenbankFeatureDAO implements FeatureDAO {
 	}
 
 	@Override
-	public Iterator<Feature> getFeatures()throws Exception {
+	public Iterator<Feature> iterator() {
 		if(this.genbankFileName == null)
 			return new ArrayList<Feature>().iterator();
-		return getFeatures(this.genbankFileName);
+		return iterator(this.genbankFileName);
 	}
 	
 	
 	
-	public Iterator<Feature> getFeatures(String genbankFileName) throws GenbankFileIOException {
+	public Iterator<Feature> iterator(String genbankFileName) throws DaoException {
 		if(this.genbankFileName != genbankFileName){
 			//need to reset features if passing in a different file;
 			this.genbankFileName = genbankFileName;
@@ -91,18 +90,18 @@ public class GenbankFeatureDAO implements FeatureDAO {
 						
 					}
 					catch(Exception e){
-						throw(new GenbankFileIOException("failed to parsing genbank file " + this.genbankFileName));
+						throw(new DaoException("failed to parsing genbank file " + this.genbankFileName));
 					}
 				}
 				br.close(); 
 			}catch(IOException e){				
-				throw(new GenbankFileIOException("failed to open genbank file " + this.genbankFileName));
+				throw(new DaoException("failed to open genbank file " + this.genbankFileName));
 			}finally{
 				if(br != null)
 					try {
 						br.close();
 					} catch (IOException e) {
-						throw(new GenbankFileIOException("failed to close genbank file " + this.genbankFileName));
+						throw(new DaoException("failed to close genbank file " + this.genbankFileName));
 					}
 			}
 			
@@ -110,10 +109,10 @@ public class GenbankFeatureDAO implements FeatureDAO {
 		return featureList.iterator();	
 	}
 
-	public Iterator<Feature> getSourceFeatures(){
+	public Iterator<Feature> sourceFeatureIterator(){
 		if(sourceFeatureList == null){
 			try {
-				getFeatures();
+				iterator();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

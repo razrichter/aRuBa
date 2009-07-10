@@ -39,7 +39,7 @@ public class SmallGenomeGoTermDAO implements GoTermDAO {
 	}
 
 	@Override
-	public Iterator<GoTerm> getGoTerms() {
+	public Iterator<GoTerm> iterator() {
 
 		String sql = "SELECT go.feat_name, go.go_id, go.qualifier, ev.ev_code, ev.evidence, ev.with_ev, ev.secondary_NCBI_taxon_id" +
 				" FROM go_role_link go, go_evidence ev, asm_feature a" +
@@ -47,10 +47,10 @@ public class SmallGenomeGoTermDAO implements GoTermDAO {
 				" AND s.asmbl_id = a.asmbl_id" +
 				" AND s.iscurrent = " + this.isCurrent;
 		
-		return getGoTermsBySQL(sql);
+		return iteratorBySQL(sql);
 	}
 
-	public Iterator<GoTerm> getGoTerms(Feature feature) {
+	public Iterator<GoTerm> iterator(Feature feature) {
 		
 		String sql = "SELECT go.go_id, go.qualifier, ev.ev_code, ev.evidence, ev.with_ev, ev.secondary_NCBI_taxon_id" +
 		" FROM go_role_link go, go_evidence ev, asm_feature a" +
@@ -59,10 +59,10 @@ public class SmallGenomeGoTermDAO implements GoTermDAO {
 		" AND s.iscurrent = " + this.isCurrent +
 		" AND a.feat_id=" + feature.getFeatureId();
 		
-		return getGoTermsBySQL(sql);
+		return iteratorBySQL(sql);
 	}
 	
-	public Iterator<GoTerm> getGoTermsBySQL(String sql) {
+	public Iterator<GoTerm> iteratorBySQL(String sql) {
 
 		try {
 			Statement stmt = conn.createStatement();

@@ -48,25 +48,24 @@ public class TestSmallGenomeDAO extends TestCase {
 	}
 	
 	public void testGetFeatures() {
-		Iterator<Feature> features = featureDAO.getFeatures();
-		assertTrue(features.hasNext());
+		for (Feature f : featureDAO) {
+			assertTrue(f instanceof Feature);
+			break;
+		}
 	}
 	
 	public void testGetAnnotations() {
-		Iterator<Annotation> annotations = annotationDAO.getAnnotations();
-		assertTrue(annotations.hasNext());
+		assertTrue(annotationDAO.iterator().next() instanceof Annotation);
 	}
 	
 	public void testGetFeatureAnnotations() {
-		Feature f = featureDAO.getFeatureById(172227);
-		Iterator<Annotation> annotations = annotationDAO.getAnnotations(f);
-		assertTrue(annotations.hasNext());
+		Feature feat = featureDAO.getFeatureById(172227);
+		assertTrue(annotationDAO.iterator(feat).next() instanceof Annotation);
 	}
 
 	public void testGetAnnotationRoleIdsByFeature() {
-		Feature f = featureDAO.getFeatureById(172227);
-		Iterator<Annotation> annotations = annotationDAO.getAnnotations(f);
-		Annotation annot = annotations.next();
+		Feature feat = featureDAO.getFeatureById(172227);
+		Annotation annot = annotationDAO.iterator(feat).next();
 		List<String> roleIds = annot.getRoleIds();
 		for (String roleId : roleIds) {
 			System.out.println(roleId);

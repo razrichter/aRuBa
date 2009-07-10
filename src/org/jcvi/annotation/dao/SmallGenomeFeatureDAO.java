@@ -22,6 +22,11 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		this.conn = conn;
 	}
 
+	@Override
+	public Iterator<Feature> iterator() {
+		return iterator(codingFeatureTypes, isCurrent);
+	}
+
 	public Connection getConn() {
 		return conn;
 	}
@@ -53,7 +58,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 	}
 	
 	public Feature getFeatureById(int featureId) {
-		String sql = "SELECT feat_id, feat_name, feat_type, end5, end3, sequence, protein " +
+		String sql = "SELECT feat_id, feat_name, feat_type, end5, end3 " +
 					"FROM asm_feature WHERE feat_id=" + featureId;
 		
 		return getFeatureBySQL(sql);
@@ -68,8 +73,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 
-			// TODO: Get our genome object, N/A
-			// TODO: Set the taxonomy for our genome
+			// TODO: Set the taxon
 			
 			if (rs.next()) {
 				String featureId = rs.getString(1);
@@ -99,12 +103,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		return feature;
 	}
 	
-	@Override
-	public Iterator<Feature> getFeatures() {
-		return getFeatures(codingFeatureTypes, isCurrent);
-	}
-	
-	public Iterator<Feature> getFeatures(List<String> featureTypes, int isCurrent) {
+	public Iterator<Feature> iterator(List<String> featureTypes, int isCurrent) {
 		
 		String sql = "SELECT a.feat_id, a.feat_name, a.asmbl_id, a.feat_type, a.end5, a.end3, a.sequence, a.protein " +
 			"FROM asm_feature AS a JOIN stan AS s ON s.asmbl_id = a.asmbl_id " +
@@ -270,5 +269,4 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			}
 		};
 	}
-
 }

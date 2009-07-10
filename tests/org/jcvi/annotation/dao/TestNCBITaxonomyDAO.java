@@ -1,5 +1,8 @@
 package org.jcvi.annotation.dao;
 import java.net.URL;
+import java.util.Collection;
+import java.util.List;
+
 import junit.framework.TestCase;
 import org.jcvi.annotation.facts.Taxon;
 import org.junit.Before;
@@ -23,16 +26,17 @@ public class TestNCBITaxonomyDAO extends TestCase {
 	
 	public void testGetParents() {
 
+		// Test getting the full taxonomy
+		assertTrue(taxonomyDAO.iterator().next() instanceof Taxon);
+
 		// Test the various ways of defining a new Taxon object
-		Taxon t1 = new Taxon(new Integer(390805));
+		Taxon t1 = new Taxon(new Integer(9999999));
 		Taxon t2 = taxonomyDAO.getTaxon(390805);
 		Taxon t3 = taxonomyDAO.getTaxon("Geosporobacter");
 		
 		// Test the parents (should include Firmicutes and Clostridia)
-		taxonomyDAO.getParents(t1);
-		assertTrue(t1.getParentIds().contains(186801)); 
-		assertTrue(t1.getParentNames().contains("Clostridia"));
-
+		assertFalse(taxonomyDAO.hasTaxon(t1));
+		
 		taxonomyDAO.getParents(t2);
 		assertTrue(t2.getParentIds().contains(1239)); 
 		assertTrue(t2.getParentNames().contains("Firmicutes"));
@@ -40,6 +44,6 @@ public class TestNCBITaxonomyDAO extends TestCase {
 		taxonomyDAO.getParents(t3);
 		assertTrue(t3.getParentIds().contains(1239));
 		assertTrue(t3.getParentNames().contains("Firmicutes"));
-
+		
 	}
 }

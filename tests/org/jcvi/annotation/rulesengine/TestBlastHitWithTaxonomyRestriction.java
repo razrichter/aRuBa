@@ -37,6 +37,7 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 		URL nodesFile = this.getClass().getResource("../dao/nodes.dmp");
 		taxonomyDAO = new NCBITaxonomyDAO(namesUrl, nodesFile);
 		taxon = taxonomyDAO.getTaxon("Geosporobacter");
+		taxonomyDAO.getParents(taxon);
 		orf.setTaxon(taxon);
 
 		// Create our hits (only hit1 evalutes to true)
@@ -62,52 +63,30 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 	}
 	
 	public void testGetTaxon() {
+		// Test taxon assignment
 		assertEquals(taxon.getTaxonId(), 390805);
 		assertEquals(taxon.getName(), "Geosporobacter");
-	}
 
-	public void testSampleBlastCommonName() {
+		// Test Annotation results
 		assertEquals(ann.getCommonName(), "exosporium protein K");
-	}
-	public void testSampleBlastGeneSymbol() {
 		assertEquals(ann.getGeneSymbol(), "exsK");
-	}
-	
-	public void testSampleBlastGeneSymbolFails2() {
 		assertFalse(ann.getGeneSymbol() == "not_gene_symbol");
-	}
-
-	public void testSampleBlastEcNumber() {
 		assertEquals(ann.getEcNumber(), null);
-	}
-	public void testSampleBlastGoIds() {
+		assertEquals(ann.getSpecificity(), Annotation.EQUIVALOG);
+		assertEquals(ann.getAssertionType(), Annotation.EXACT);
+		assertEquals(ann.getConfidence(), 80.0);
+
 		ArrayList<String> goIds = new ArrayList<String>();
 		goIds.add("GO:0043592"); 
 		goIds.add("GO:0003674");
 		goIds.add("GO:0008150");
 		assertEquals(goIds, ann.getGoIds());
-	}
-	public void testSampleBlastRoleIds() {
+
 		List<String> roleIds = ann.getRoleIds();
 		assertTrue(roleIds.contains("705"));
-	}
-	
-	public void testSampleBlastGeneSymbolFails() {
-		assertFalse(ann.getGeneSymbol() == "not_gene_symbol");
-	}
-	
-	public void testSampleBlastSpecificity() {
-		 assertEquals(ann.getSpecificity(), Annotation.EQUIVALOG);
+
 	}
 
-	public void testSampleBlastAssertionType() {
-		assertEquals(ann.getAssertionType(), Annotation.EXACT);
-	}
-	
-	public void testSampleBlastConfidence() {
-		assertEquals(ann.getConfidence(), 80.0);
-	}
-	
 	@After
 	public void tearDown() throws Exception {
 		engine = null;

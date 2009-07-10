@@ -6,8 +6,8 @@ public class Taxon {
 	private int taxonId;
 	private String name; // Scientific name
 	private List<String> names = new ArrayList<String>();
-	private int parentTaxonId;
-	private List<Taxon> parents;
+	private Taxon parent;
+	private List<Taxon> children;
 	private String rank;
 		
 	// Constructors
@@ -37,8 +37,6 @@ public class Taxon {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	/*
 	public List<String> getNames() {
 		return names;
 	}
@@ -48,16 +46,7 @@ public class Taxon {
 	public void setNames(List<String> names) {
 		this.names = names;
 	}
-	*/
 	
-	public int getParentTaxonId() {
-		return parentTaxonId;
-	}
-
-	public void setParentTaxonId(int parentTaxonId) {
-		this.parentTaxonId = parentTaxonId;
-	}
-
 	public String getRank() {
 		return rank;
 	}
@@ -66,11 +55,35 @@ public class Taxon {
 		this.rank = rank;
 	}
 	
-    public List<Taxon> getParents() {
-		return parents;
+    public Taxon getParent() {
+		return parent;
 	}
-	public void setParents(List<Taxon> parents) {
-		this.parents = parents;
+	public void setParent(Taxon parent) {
+		this.parent = parent;
+	}
+	public List<Taxon> getChildren() {
+		return children;
+	}
+	public void setChildren(List<Taxon> children) {
+		this.children = children;
+	}
+	public List<Taxon> getParents() {
+    	List<Taxon> parents = new ArrayList<Taxon>();
+    	
+    	Taxon testp = this.getParent();
+    	if (testp == null) {
+    		System.out.println("parent is null.");
+    	}
+    	
+    	Taxon p = this;
+      	while ((p = p.getParent()) != null) {
+     		
+      		// Avoid endless loop if child's parent is itself
+     		if (parents.contains(p)) break;
+     		
+     		parents.add(p);
+     	}
+      	return parents;
 	}
 
     public List<Integer> getParentIds() {

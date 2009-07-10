@@ -1,9 +1,7 @@
 package org.jcvi.annotation.dao;
 
 import static org.junit.Assert.*;
-
 import org.junit.*;
-import java.util.*;
 import org.jcvi.annotation.facts.*;
 
 public class TestGenbankFeatureDAO {
@@ -12,34 +10,17 @@ public class TestGenbankFeatureDAO {
 	
 	@Before
 	public void setUp(){
-		String fileName = "c:/CP000855.gb";
+		String fileName = "/org/jcvi/annotation/dao/CP000855.gb";
 		gbFeatureDAO = new GenbankFeatureDAO(fileName);
 	}
 	
 	@Test
-	public void testGetFeatures() {
-		
-		try {
-			for(Iterator<Feature> fi = gbFeatureDAO.getFeatures();fi.hasNext();){
-				Feature feature = fi.next();
-				System.out.println(feature.getFeatureId() + "\t" + feature.getType() + "\t" + feature.getStart() + "\t" + feature.getEnd() +  "\t" + feature.getStrand());
-			}
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}		
+	public void testIterator() {
+		assertTrue(gbFeatureDAO.iterator().next() instanceof Feature);
 	}
 
 	@Test
-	public void testGetSourceFeatures(){
-		try {
-			for(Iterator<Feature> fi = gbFeatureDAO.getSourceFeatures();fi.hasNext();){
-				Feature feature = fi.next();
-				System.out.println(feature.getFeatureId() + "\t" + feature.getType() + "\t" + feature.getStart() + "\t" + feature.getEnd() +  "\t" + feature.getTaxon().getName());
-			}
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}		
+	public void testSourceFeatureIterator(){
+		assertTrue(gbFeatureDAO.sourceFeatureIterator().next() instanceof Feature);
 	}
 }

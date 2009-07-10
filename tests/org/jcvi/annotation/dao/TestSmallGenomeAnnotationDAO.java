@@ -1,14 +1,12 @@
 package org.jcvi.annotation.dao;
 
-import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Before;
-import java.util.Iterator;
 import java.util.List;
-
-import org.jcvi.annotation.dao.factory.*;
+import junit.framework.TestCase;
+import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
+import org.junit.After;
+import org.junit.Before;
 
 public class TestSmallGenomeAnnotationDAO extends TestCase {
 
@@ -48,19 +46,18 @@ public class TestSmallGenomeAnnotationDAO extends TestCase {
 	}
 	
 	public void testGetFeatures() {
-		Iterator<Feature> features = featureDAO.getFeatures();
-		assertTrue(features.hasNext());
+		for (Feature f : featureDAO) {
+			assertTrue(f instanceof Feature);
+		}
 	}
 	
 	public void testGetAnnotations() {
-		Iterator<Annotation> annotations = annotationDAO.getAnnotations();
-		assertTrue(annotations.hasNext());
+		assertTrue(annotationDAO.iterator().next() instanceof Annotation);
 	}
 	
 	public void testGetFeatureAnnotations() {
-		Feature f = featureDAO.getFeatureById(172227);
-		Iterator<Annotation> annotations = annotationDAO.getAnnotations(f);
-		assertTrue(annotations.hasNext());
+		Feature feat = featureDAO.getFeatureById(172227);
+		assertTrue(annotationDAO.iterator(feat).next() instanceof Annotation);
 	}
 	
 	public void testGetAnnotationRoleIds() {

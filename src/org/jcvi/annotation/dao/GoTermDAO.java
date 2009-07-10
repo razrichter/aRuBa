@@ -2,11 +2,12 @@ package org.jcvi.annotation.dao;
 import java.util.Iterator;
 import org.jcvi.annotation.facts.GoTerm;
 
-public interface GoTermDAO {
+public interface GoTermDAO extends Iterable<GoTerm> {
 
 	// Reading methods	
 	GoTerm getGoTerm(String annotId);
-	Iterator<GoTerm> getGoTerms();
+	
+	Iterator<GoTerm> iterator();
 
 }
 

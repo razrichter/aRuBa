@@ -16,8 +16,10 @@ no-loop true
 			bitScore >= 160, hitPercentLength >= 90,
 			queryPercentLength >= 90,  percentIdentity >= 80,
 			hitQueryLengthRatio <= 5.1)
-		// feat : Feature(featureId == $queryId, taxon.parents.name == "Firmicutes" )
-		feat : Feature(featureId == $queryId, taxon.name == "Geosporobacter" )	
+		feat : Feature(featureId == $queryId, taxon.parentNames contains "Firmicutes")
+		
+		// feat : Feature(featureId == $queryId, taxon.name == "Geosporobacter" )	
+		
 		
 	then
 	    
