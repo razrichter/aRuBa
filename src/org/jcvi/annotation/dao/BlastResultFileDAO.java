@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.biojava.bio.program.sax.BlastLikeSAXParser;
 import org.biojava.bio.program.ssbind.SeqSimilarityAdapter;
@@ -63,8 +64,14 @@ public class BlastResultFileDAO implements BlastDAO {
 		blastHits.addAll(scHandler.getBlastHits());
 	}
 
-	public ArrayList<BlastHit> getHits() {
-		return blastHits;
-	}
+    @Override
+    public Iterator<BlastHit> iterator() {
+        return blastHits.iterator();
+    }
+    
+    public ArrayList<BlastHit> getHits() {
+        return blastHits;
+    }
+
 
 }

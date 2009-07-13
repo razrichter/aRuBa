@@ -2,11 +2,9 @@ package org.jcvi.annotation.dao;
 
 import org.jcvi.annotation.facts.BlastHit;
 
-public interface BlastDAO {
-	// Reading methods	
-	// BlastHit getHit(String BlastHitId);
-	Iterable<BlastHit> getHits();
+public interface BlastDAO extends Iterable<BlastHit> {
 	
+    Iterable<BlastHit> getHits();
 	// Writing (CRUD) methods
 	// boolean addHit(BlastHit hit);
 	// boolean deleteHit(BlastHit hit);
