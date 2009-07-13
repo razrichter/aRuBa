@@ -19,7 +19,7 @@ public class BiojavaConvertor
 	
 	
 
-	public static org.jcvi.annotation.facts.Feature convertRichSequenceToFeature(RichSequence richFeature,String type) {
+	public static org.jcvi.annotation.facts.Feature convertRichSequenceToFeature(RichSequence richFeature) {
 		
 		org.jcvi.annotation.facts.Feature feature = new org.jcvi.annotation.facts.Feature(richFeature.getIdentifier(), richFeature.getAlphabet().getName());		
 		Taxon taxon = new Taxon(richFeature.getTaxon().getNCBITaxID(), richFeature.getTaxon().getDisplayName());
