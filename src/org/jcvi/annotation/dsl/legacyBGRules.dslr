@@ -1,0 +1,24 @@
+package org.jcvi.annotation.dsl;
+import org.jcvi.annotation.facts.*;
+
+expander legacyBGTranslator.dsl
+
+rule exosporium protein K
+	when
+		geneA has hit(blastp to RF|NP_844922.1)
+			bitScore >= 160
+			hitPercentLength >= 90
+			queryPercentLength >= 90
+			percentIdentity >= 80
+			hitQueryLengthRation <= 5
+	
+	then
+		annotate geneA
+			set com_name 'exosporium protein K'
+			set gene_sym 'exsK'
+			set ec_num ''
+			set role_ids 705
+			set go_ids 'GO:0043592', 'GO:0003674', 'GO:0008150'
+			set specifity INIT_EQUIV
+			set confidence 96
+end
