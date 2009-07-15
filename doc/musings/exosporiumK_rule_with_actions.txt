@@ -1,0 +1,6 @@
+exosporium protein K;INIT_EQUIV;96;THIS_BLAST_HIT[RF|NP_844922.1, 160, 90, 90, 80, 5, 0]
+    ec_num;REPLACE;
+    role_ids;REPLACE;705
+    gene_sym;REPLACE;exsK
+    com_name;REPLACE;exosporium protein K
+    go_ids;REPLACE;GO:0043592 GO:0003674 GO:0008150
