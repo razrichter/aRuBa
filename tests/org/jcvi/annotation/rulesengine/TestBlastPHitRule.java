@@ -22,9 +22,16 @@ public class TestBlastPHitRule extends TestCase {
 	public void setUp() throws Exception {
 		
 		engine = new RulesEngine();
+		
+		URL dslUrl = engine.getClass().getResource("../rules/legacyBGTranslator.dsl");
+		URL dslrUrl = engine.getClass().getResource("../rules/legacyBGRules.dslr");
+		engine.addResource(dslUrl.toString(), ResourceType.DSL);
+		engine.addResource(dslrUrl.toString(), ResourceType.DSLR);
+		/*
 		URL url = engine.getClass().getResource("../rules/SampleBlastHit.drl");
 		engine.addResource(url.toString(), ResourceType.DRL);
-
+		*/
+		
 		orf = new Feature("testorf", "ORF", 0, 110, 1);
 		
 		// Only hit1 should evaluate true according to our SampleBlastHit rule
@@ -58,7 +65,7 @@ public class TestBlastPHitRule extends TestCase {
 	}
 
 	public void testSampleBlastEcNumber() {
-		assertEquals(ann.getEcNumber(), null);
+		assertEquals("", ann.getEcNumber());
 	}
 	public void testSampleBlastGoIds() {
 		ArrayList<String> goIds = new ArrayList<String>();
@@ -77,7 +84,7 @@ public class TestBlastPHitRule extends TestCase {
 	}
 	
 	public void testSampleBlastSpecificity() {
-		 assertEquals(ann.getSpecificity(), Annotation.EQUIVALOG);
+		 assertEquals(ann.getSpecificity(), Annotation.INIT_EQUIV);
 	}
 
 	public void testSampleBlastAssertionType() {
@@ -85,7 +92,7 @@ public class TestBlastPHitRule extends TestCase {
 	}
 	
 	public void testSampleBlastConfidence() {
-		assertEquals(ann.getConfidence(), 80.0);
+		assertEquals(ann.getConfidence(), 96.0);
 	}
 	
 	@After

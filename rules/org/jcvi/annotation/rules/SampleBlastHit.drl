@@ -30,8 +30,8 @@ no-loop true
 	then
 	    
 	    Annotation a = new Annotation("Complete BlastP Hit Rule");
-	    a.setConfidence(80.0);
-	    a.setSpecificity(Annotation.EQUIVALOG);
+	    a.setConfidence(96.0);
+	    a.setSpecificity(Annotation.INIT_EQUIV);
 	    a.setAssertionType(Annotation.EXACT);
 	    # set go_ids = GO:0043592 GO:0003674 GO:0008150
 	    a.addGoIds(Arrays.asList("GO:0043592","GO:0003674","GO:0008150"));

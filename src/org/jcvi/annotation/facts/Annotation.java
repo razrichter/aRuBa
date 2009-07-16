@@ -1,6 +1,6 @@
 package org.jcvi.annotation.facts;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Annotation {
@@ -11,6 +11,7 @@ public class Annotation {
 	
 	// specificity constants
 	public static final int EQUIVALOG = 100;
+	public static final int INIT_EQUIV = 95;
 	public static final int DOMAIN = 70;
 	
 	private String source;
@@ -24,6 +25,10 @@ public class Annotation {
 	private ArrayList<String> goIds = new ArrayList<String>();
 
 	
+	public Annotation() {
+		super();
+	}
+
 	public Annotation(String source) {
 		super();
 		this.source = source;
@@ -101,6 +106,9 @@ public class Annotation {
 			this.roleIds.add(o);
 		}
 	}
+	public void addRoleIds(String roleIdString) {
+		addRoleIds(Arrays.asList(roleIdString.split(",")));
+	}
 	
 	public void addRoleId(String roleId) {
 		this.roleIds.add(roleId);		
@@ -114,6 +122,10 @@ public class Annotation {
 		for (String o : goIds) {
 			this.goIds.add(o);
 		}
+	}
+	
+	public void addGoIds(String goIdsString) {
+		addGoIds(Arrays.asList(goIdsString.split(",")));
 	}
 	
 	public void addGoId(String goId) {
