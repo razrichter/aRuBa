@@ -1,7 +1,5 @@
 package org.jcvi.annotation.dao.factory;
 
-import org.jcvi.annotation.dao.FeatureDAO;
-import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 
 public abstract class DAOFactory {
 	
@@ -12,7 +10,7 @@ public abstract class DAOFactory {
 	public static final int HMMFILE = 4;
 	
 	// Any DAOFactory should implement the following method(s)
-	public abstract FeatureDAO getFeatureDAO();
+	// public abstract FeatureDAO getFeatureDAO();
 	
 	public static DAOFactory getDAOFactory(int factoryName) {
 		

@@ -42,6 +42,16 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 		return null;
 	}
 
+	public Iterable<Annotation> getAnnotations(Feature feat) {
+		List<Annotation> annotations = new ArrayList<Annotation>();
+		Annotation ann;
+		Iterator<Annotation> iter = this.iterator(feat);
+		while ((ann = iter.next()) != null) {
+			annotations.add(ann);
+		}
+		return annotations;
+	}
+	
 	@Override
 	public Iterator<Annotation> iterator() {
 
@@ -79,7 +89,7 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 
 	public Iterator<Annotation> getAnnotationIterator(final ResultSet rs) {
 		
-		// Use an anonymous inner class to return an Iterator of Feature objects
+		// Use an anonymous inner class to return an Iterator of Annotation objects
 		return new Iterator<Annotation>() {	
 			private Annotation annot = null;
 			
@@ -108,7 +118,7 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 						// TODO: Add Go Terms to Annotation
 						
 						// Add RoleIds to Annotation
-						List<String> roleIds = getRoleIds(featureId);
+						List<String> roleIds = getRoleIds(Integer.parseInt(featureId));
 						nextAnnot.addRoleIds(roleIds);
 						
 						return nextAnnot;
@@ -124,14 +134,24 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 			}
 		};
 	}
-
 	public List<String> getRoleIds(String featureName) {
+		String sql = "SELECT r.role_id FROM role_link r, asm_feature a, stan s" +
+		" WHERE a.feat_name = r.feat_name AND s.asmbl_id = a.asmbl_id" +
+		" AND s.iscurrent = " + isCurrent +
+		" AND a.feat_name='" + featureName + "'";
+		return getRoleIdsBySQL(sql);
+	}
+	
+	public List<String> getRoleIds(int featureId) {
 		
 		String sql = "SELECT r.role_id FROM role_link r, asm_feature a, stan s" +
 				" WHERE a.feat_name = r.feat_name AND s.asmbl_id = a.asmbl_id" +
 				" AND s.iscurrent = " + isCurrent +
-				" AND a.feat_name='" + featureName + "'";
+				" AND a.feat_id=" + featureId; //  + "'";
+		return getRoleIdsBySQL(sql);
+	}
 
+	public List<String> getRoleIdsBySQL(String sql) {
 		ArrayList<String> roleIds = new ArrayList<String>();
 		
 		try {

@@ -26,8 +26,14 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 		
 		// Setup our rules engine
 		engine = new RulesEngine();
+		/*
 		URL url = engine.getClass().getResource("../rules/TestBlastAndTaxRestriction.drl");
 		engine.addResource(url.toString(), ResourceType.DRL);
+		*/
+		URL dslUrl = engine.getClass().getResource("../rules/legacyBGTranslator.dsl");
+		URL dslrUrl = engine.getClass().getResource("../rules/legacyBGRules.dslr");
+		engine.addResource(dslUrl.toString(), ResourceType.DSL);
+		engine.addResource(dslrUrl.toString(), ResourceType.DSLR);
 
 		// Create our Feature
 		orf = new Feature("testorf", "ORF", 0, 110, 1);
@@ -71,7 +77,7 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 		assertEquals(ann.getCommonName(), "exosporium protein K");
 		assertEquals(ann.getGeneSymbol(), "exsK");
 		assertFalse(ann.getGeneSymbol() == "not_gene_symbol");
-		assertEquals(ann.getEcNumber(), null);
+		assertEquals(ann.getEcNumber(), "");
 		assertEquals(ann.getSpecificity(), Annotation.EQUIVALOG);
 		assertEquals(ann.getAssertionType(), Annotation.EXACT);
 		assertEquals(ann.getConfidence(), 80.0);

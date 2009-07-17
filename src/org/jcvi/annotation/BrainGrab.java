@@ -1,12 +1,10 @@
 package org.jcvi.annotation;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -25,7 +23,7 @@ public class BrainGrab {
 
     private static final String sampleCommand = "braingrab -D <database> blastfile.out|directory ...";
     private static final String rulesFile = "/org/jcvi/annotation/rules/BrainGrabChangeSet.xml";
-    private static final ResourceType rulesType = ResourceType.CHANGE_SET;
+    private static final ResourceType rulesType = ResourceType.ChangeSet;
     private static Boolean debug = false;
     
     private RulesEngine engine;

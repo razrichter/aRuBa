@@ -27,7 +27,8 @@ public class TestBlastResultFileDAO extends TestCase{
     public void testMultipleHits() {
         ArrayList<BlastHit> hits = multipleHitsDAO.getHits();
         assertEquals(hits.size(), 250);
-        BlastHit hit = hits.get(0);
+        
+        BlastHit hit = multipleHitsDAO.iterator().next();
         assertEquals(hit.getProgram(), "ncbi-blastp");
         assertEquals(hit.getQueryId(), "clostox_0006");
         assertEquals(hit.getHitId(), "GB|ABC26002.1|83628244|DQ310546");

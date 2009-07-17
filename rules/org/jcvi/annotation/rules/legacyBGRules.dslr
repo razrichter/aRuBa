@@ -2,7 +2,7 @@ package org.jcvi.annotation.rules;
 import org.jcvi.annotation.facts.*;
 expander legacyBGTranslator.dsl
 
-rule 'exosporium protein K rule'
+rule "exosporium protein K rule"
 	when
 		There is a blastp hit to RF|NP_844922.1
 			-with bitScore >= 160
@@ -10,7 +10,7 @@ rule 'exosporium protein K rule'
 			-with queryPercentLength >= 90
 			-with percentIdentity >= 80
 			-with hitQueryLengthRatio <= 5.1
-	
+		
 	then
 		assert annotation
 			set source exosporium protein K rule
@@ -23,4 +23,28 @@ rule 'exosporium protein K rule'
 			set specificity INIT_EQUIV
 			set confidence 96
 end
+
+rule "BlastP Hit with a Taxonomy Restriction"
+	when
+		There is a feature geneA
+		geneA has taxon Firmicutes
+		geneA has a blastp hit to RF|NP_844922.1
+			-with bitScore >= 160
+			-with hitPercentLength >= 90
+			-with queryPercentLength >= 90
+			-with percentIdentity >= 80
+			-with hitQueryLengthRatio <= 5.1
+	then
+		assert annotation on geneA
+			set source exosporium protein K rule
+			set common name exosporium protein K
+			set gene symbol exsK
+			set ec number 
+			set assertion type EXACT
+			set role ids 705
+			set go ids GO:0043592,GO:0003674,GO:0008150
+			set specificity INIT_EQUIV
+			set confidence 96
+end
+
 

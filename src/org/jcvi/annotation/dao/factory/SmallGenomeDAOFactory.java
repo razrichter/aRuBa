@@ -25,18 +25,21 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 	
 	// Generate a new FeatureDAO
 	public SmallGenomeFeatureDAO getFeatureDAO() {
-		this.createConnection();
-		return new SmallGenomeFeatureDAO(conn);
+		return new SmallGenomeFeatureDAO(this.createConnection());
 	}
 
 	// Generate a new AnnotationDAO
 	public SmallGenomeAnnotationDAO getAnnotationDAO() {
-		return new SmallGenomeAnnotationDAO(conn);
+		return new SmallGenomeAnnotationDAO(this.createConnection());
 	}
 	public SmallGenomeAnnotationDAO getAnnotationDAO(String dbname) {
 		this.dbname = dbname;
-		conn = this.createConnection();
-		return new SmallGenomeAnnotationDAO(conn);
+		return new SmallGenomeAnnotationDAO(this.createConnection());
+	}
+	
+	// Generate a Taxonomy DAO
+	public SmallGenomeTaxonomyDAO getTaxonomyDAO() {
+		return new SmallGenomeTaxonomyDAO(this.createConnection());
 	}
 	
 	// Getters and Setters
@@ -103,7 +106,6 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 		
 		try {
 			conn = DriverManager.getConnection(url + ":" + port + "/" + dbname, user, password);
-			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();

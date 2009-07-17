@@ -64,7 +64,6 @@ public class BlastResultFileDAO implements BlastDAO {
 		blastHits.addAll(scHandler.getBlastHits());
 	}
 
-    @Override
     public Iterator<BlastHit> iterator() {
         return blastHits.iterator();
     }

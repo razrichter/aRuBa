@@ -3,7 +3,6 @@ package org.jcvi.annotation.dao;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
-import java.util.Iterator;
 import java.util.List;
 
 import org.jcvi.annotation.dao.factory.*;
@@ -65,17 +64,16 @@ public class TestSmallGenomeDAO extends TestCase {
 
 	public void testGetAnnotationRoleIdsByFeature() {
 		Feature feat = featureDAO.getFeatureById(172227);
-		Annotation annot = annotationDAO.iterator(feat).next();
-		List<String> roleIds = annot.getRoleIds();
-		for (String roleId : roleIds) {
-			System.out.println(roleId);
+		for (Annotation annot : annotationDAO.getAnnotations(feat)) {
+			List<String> roleIds = annot.getRoleIds();
+			assertTrue(roleIds.size() > 0);
 		}
-		assertTrue(roleIds.size() > 1);
 	}
 	
 	public void testGetAnnotationRoleIds() {
-		Feature f = featureDAO.getFeatureById(172227);
-		List<String> roleIds = annotationDAO.getRoleIds(f.getName());
+		List<String> roleIds = annotationDAO.getRoleIds("GBAA_pXO1_0083");
+		assertTrue(roleIds.contains("188"));
+		roleIds = annotationDAO.getRoleIds(172227);
 		assertTrue(roleIds.contains("188"));
 	}
 	

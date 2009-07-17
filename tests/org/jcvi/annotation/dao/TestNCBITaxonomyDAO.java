@@ -1,8 +1,5 @@
 package org.jcvi.annotation.dao;
 import java.net.URL;
-import java.util.Collection;
-import java.util.List;
-
 import junit.framework.TestCase;
 import org.jcvi.annotation.facts.Taxon;
 import org.junit.Before;

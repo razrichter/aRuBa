@@ -1,7 +1,6 @@
 #created on: Jun 10, 2009
 package org.jcvi.annotation.rules;
 import org.jcvi.annotation.facts.*;
-import java.util.Arrays;
 
 #declare any global variables here
 
@@ -9,13 +8,13 @@ rule "BlastP Hit with a Taxonomy Restriction"
 no-loop true
 
 	when
+		feature : Feature( )
+		taxon : Taxon( parentNames contains "Firmicutes" ) from feature.taxon
 		hit : BlastHit( program == "blastp", hitId == "RF|NP_844922.1",
-		    $queryId : queryId,
+		    queryId == feature.featureId,
 			bitScore >= 160, hitPercentLength >= 90,
 			queryPercentLength >= 90,  percentIdentity >= 80,
 			hitQueryLengthRatio <= 5.1)
-		feat : Feature(featureId == $queryId, taxon.parentNames contains "Firmicutes")
-		//feat : Feature(featureId == $queryId, taxon.name == "Geosporobacter" )	
 		
 	then
 	    
@@ -24,12 +23,12 @@ no-loop true
 	    a.setSpecificity(Annotation.EQUIVALOG);
 	    a.setAssertionType(Annotation.EXACT);
 	    # set go_ids = GO:0043592 GO:0003674 GO:0008150
-	    a.addGoIds(Arrays.asList("GO:0043592","GO:0003674","GO:0008150"));
-	    // a.setEcNum(null);
+	    a.addGoIds("GO:0043592,GO:0003674,GO:0008150");
+	    a.setEcNumber("");
 	    a.addRoleId("705");
 	    a.setCommonName("exosporium protein K");
 	    a.setGeneSymbol("exsK");
-	   	feat.addAssertedAnnotation(a);
+	   	feature.addAssertedAnnotation(a);
 		
 		// System.out.println("Rule fires for hit " + hit.getHitId());		
 		update( hit );
