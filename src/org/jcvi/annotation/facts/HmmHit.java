@@ -1,57 +1,62 @@
 package org.jcvi.annotation.facts;
 
-import java.util.HashMap;
-
-public class HmmHit {
+public class HmmHit extends HomologyHit {
 	public static final int WEAK = 1;
 	public static final int STRONG = 2;
-
-	// evidence e, 
-	// e.feat_name -> name
-	// e.accession -> accession
-	// e.id => hitId
 	
-	private Feature query;
-	private String hitId;
-	private String name; 
-	private String accession;
-	private double totalScore;
+	private String name; 		// evidence.feat_name
+	private String accession;	// evidence.accession
 	private double domainScore;
-	private int queryStart;
-	private int queryEnd;
-	private int queryStrand;
-	
-	/*
 	private int hitStrength;
+	/*
 	private String algorithm;
 	private String algorithmVersion;
 	private HashMap<String, String> parameters; 
 	private HashMap<String, String> statistics;
 	*/
 
-	public HmmHit(String hitId) {
-		super();
-		this.hitId = hitId;
+	// Constructors
+    public HmmHit() {
+    	super();
+    }
+    public HmmHit(String queryId, String hitId) {
+        super(queryId, hitId);
+    }
+    public HmmHit(String queryId, String hitId,
+    		int queryStart, int queryEnd, int queryStrand) {
+    	super(queryId, hitId, queryStart, queryEnd, queryStrand);
+    }
+    public HmmHit(String queryId, int queryStart, int queryEnd, int queryStrand,
+    				String hitId, int hitStart, int hitEnd, int hitStrand) {
+    	super(queryId, hitId, queryStart, queryEnd, queryStrand);
+    	this.hitStart = hitStart;
+    	this.hitEnd = hitEnd;
+    	this.hitStrand = hitStrand;
+    }
+    
+    public String getName() {
+		return name;
 	}
-
-	public HmmHit(Feature query, String hitId) {
-		this(hitId);
-		this.query = query;
-		this.hitId = hitId;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public String getHitId() {
-		return hitId;
+	public String getAccession() {
+		return accession;
 	}
-	public void setHitId(String hitId) {
-		this.hitId = hitId;
+	public void setAccession(String accession) {
+		this.accession = accession;
 	}
-	public Feature getQuery() {
-		return query;
+	public double getDomainScore() {
+		return domainScore;
 	}
-	public void setQuery(Feature query) {
-		this.query = query;
+	public void setDomainScore(double domainScore) {
+		this.domainScore = domainScore;
 	}
-
+	public int getHitStrength() {
+		return hitStrength;
+	}
+	public void setHitStrength(int hitStrength) {
+		this.hitStrength = hitStrength;
+	}
 	
 }

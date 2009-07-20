@@ -74,13 +74,13 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 		assertEquals(taxon.getName(), "Geosporobacter");
 
 		// Test Annotation results
-		assertEquals(ann.getCommonName(), "exosporium protein K");
-		assertEquals(ann.getGeneSymbol(), "exsK");
+		assertEquals("exosporium protein K", ann.getCommonName());
+		assertEquals("exsK", ann.getGeneSymbol());
 		assertFalse(ann.getGeneSymbol() == "not_gene_symbol");
-		assertEquals(ann.getEcNumber(), "");
-		assertEquals(ann.getSpecificity(), Annotation.EQUIVALOG);
-		assertEquals(ann.getAssertionType(), Annotation.EXACT);
-		assertEquals(ann.getConfidence(), 80.0);
+		assertEquals("", ann.getEcNumber());
+		assertEquals(Annotation.INIT_EQUIV, ann.getSpecificity());
+		assertEquals(Annotation.EXACT, ann.getAssertionType());
+		assertEquals(96.0, ann.getConfidence());
 
 		ArrayList<String> goIds = new ArrayList<String>();
 		goIds.add("GO:0043592"); 

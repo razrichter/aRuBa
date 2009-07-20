@@ -1,5 +1,6 @@
 package org.jcvi.annotation.dao.factory;
 import org.jcvi.annotation.dao.*;
+
 import java.sql.*;
 // import com.sybase.jdbc.*;
 
@@ -41,7 +42,10 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 	public SmallGenomeTaxonomyDAO getTaxonomyDAO() {
 		return new SmallGenomeTaxonomyDAO(this.createConnection());
 	}
-	
+	// Generate a HmmHit DAO
+	public SmallGenomeHmmHitDAO getHmmHitDAO() {
+		return new SmallGenomeHmmHitDAO(this.createConnection());
+	}	
 	// Getters and Setters
 	public Connection getConn() {
 		return conn;
@@ -113,5 +117,5 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 		}
 		return conn;
 	}
-	
+
 }
