@@ -4,7 +4,8 @@ expander legacyBGTranslator.dsl
 
 rule "exosporium protein K rule"
 	when
-		There is a blastp hit to RF|NP_844922.1
+        there is a feature geneA
+        geneA has a blastp hit to RF|NP_844922.1
 			-with bitScore >= 160
 			-with hitPercentLength >= 90
 			-with queryPercentLength >= 90
@@ -12,7 +13,7 @@ rule "exosporium protein K rule"
 			-with hitQueryLengthRatio <= 5.1
 		
 	then
-		assert annotation
+		assert annotation on geneA
 			set source exosporium protein K rule
 			set common name exosporium protein K
 			set gene symbol exsK
