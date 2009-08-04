@@ -23,7 +23,7 @@ public class TestBlastPHitRule extends TestCase {
 		
 		engine = new RulesEngine();
 		
-		URL dslUrl = engine.getClass().getResource("../rules/legacyBGTranslator.dsl");
+		URL dslUrl = engine.getClass().getResource("../rules/BrainGrabRulesTranslator.dsl");
 		URL dslrUrl = engine.getClass().getResource("../rules/legacyBGRules.dslr");
 		engine.addResource(dslUrl.toString(), ResourceType.DSL);
 		engine.addResource(dslrUrl.toString(), ResourceType.DSLR);
@@ -45,6 +45,7 @@ public class TestBlastPHitRule extends TestCase {
 				100, 200, 1, 1000, 100, 205, 1, 95.0, 82.0);
         hit2.setQueryLength(orf.getLength());
 		
+        
 		engine.addFact(orf);
 		engine.addFact(hit1);
 		engine.addFact(hit2);
