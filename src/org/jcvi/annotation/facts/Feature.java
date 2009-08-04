@@ -13,6 +13,7 @@ public class Feature {
 	private int start;
 	private int end;
 	private int strand;
+	private boolean isCircular = false;
 	private String type; // Feature type
 	private Annotation assignedAnnotation;
 	private List<Annotation> assertedAnnotations = new ArrayList<Annotation>();
@@ -117,7 +118,12 @@ public class Feature {
 	public void setStrand(int strand) {
 		this.strand = strand;
 	}
-
+	public boolean isCircular() {
+		return isCircular;
+	}
+	public void setCircular(boolean isCircular) {
+		this.isCircular = isCircular;
+	}
 	public String getType() {
 		return type;
 	}
@@ -126,6 +132,26 @@ public class Feature {
 		this.type = type;
 	}
 
+	public int getDistance(String sourceId, int start, int end, boolean isCircular) {
+		if (this.source.getFeatureId() == sourceId) {
+			// Check for overlaps
+			if ((end > this.start && start < this.end) || (end > this.start && start < this.end)) {
+				return 0;
+			} else if (end < this.start) {
+				return this.start - end;
+			} else if (start > this.end) {
+				return start - this.end;
+			}
+		}
+		return -1;		
+	}
+	public int getDistance(Feature f) {
+		return getDistance(f.getSource().getFeatureId(), f.getStart(), f.getEnd(), f.getSource().isCircular());
+	}
+	public boolean isWithin(Feature f, int maxDist) {
+		int dist = this.getDistance(f);
+		return (dist != -1 && dist < maxDist);
+	}
 	public String toString() {
 		return this.type + "|" + this.featureId;
 	}
@@ -136,12 +162,11 @@ public class Feature {
 		if (o instanceof Feature) {
 			
 			Feature f = (Feature) o;
-			if (f.getFeatureId().equals(featureId) &&
-					f.getType().equals(type)) {
+			if (f.getFeatureId().equals(featureId)) {
+					//&& f.getType().equals(type)) {
 				return true;
 			}
 		}
-		
 		return false;
 	}
 

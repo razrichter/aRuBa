@@ -8,12 +8,6 @@ public class HmmHit extends HomologyHit {
 	private String accession;	// evidence.accession
 	private double domainScore;
 	private int hitStrength;
-	/*
-	private String algorithm;
-	private String algorithmVersion;
-	private HashMap<String, String> parameters; 
-	private HashMap<String, String> statistics;
-	*/
 
 	// Constructors
     public HmmHit() {
@@ -24,7 +18,10 @@ public class HmmHit extends HomologyHit {
     }
     public HmmHit(String queryId, String hitId,
     		int queryStart, int queryEnd, int queryStrand) {
-    	super(queryId, hitId, queryStart, queryEnd, queryStrand);
+    	super(queryId, hitId);
+    	this.queryStart = queryStart;
+    	this.queryEnd = queryEnd;
+    	this.queryStrand = queryStrand;
     }
     public HmmHit(String queryId, int queryStart, int queryEnd, int queryStrand,
     				String hitId, int hitStart, int hitEnd, int hitStrand) {
