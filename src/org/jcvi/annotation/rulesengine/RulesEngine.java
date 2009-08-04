@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
+import org.drools.builder.DecisionTableConfiguration;
 import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderError;
 import org.drools.builder.KnowledgeBuilderErrors;
@@ -23,7 +24,8 @@ public class RulesEngine {
 	private String logFilename;
 	private boolean debug = false;
 	private KnowledgeRuntimeLogger logger;
-
+	
+	
 	public RulesEngine() {
 		kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
 		kbase = KnowledgeBaseFactory.newKnowledgeBase();
@@ -43,6 +45,19 @@ public class RulesEngine {
 	public RulesEngine(boolean debug) {
 		this();
 		this.debug = debug;
+	}
+
+	public KnowledgeBase getKbase() {
+		return kbase;
+	}
+	public void setKbase(KnowledgeBase kbase) {
+		this.kbase = kbase;
+	}
+	public KnowledgeBuilder getKbuilder() {
+		return kbuilder;
+	}
+	public void setKbuilder(KnowledgeBuilder kbuilder) {
+		this.kbuilder = kbuilder;
 	}
 
 	public boolean addResource(String rfile, ResourceType rtype) {
@@ -66,6 +81,29 @@ public class RulesEngine {
 		return false;
 	}
 
+	// Adding Decision Tables
+	public boolean addResource(String rfile, ResourceType rtype, DecisionTableConfiguration dtconfig) {
+		if (!kbuilder.hasErrors()) {
+			kbuilder.add(ResourceFactory.newUrlResource(rfile), rtype, dtconfig);
+
+			KnowledgeBuilderErrors errors = kbuilder.getErrors();
+			if (errors.size() > 0) {
+				for (KnowledgeBuilderError error : errors) {
+					System.err.println(error);
+				}
+				throw new IllegalArgumentException(
+						"Could not parse knowledge in " + rfile);
+			} else {
+				kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
+				return true;
+			}
+		} else {
+			System.err
+					.println("Attempt to addResource on a KnowledgeBase that already has errors.");
+		}
+		return false;
+	}
+	
 	public void addFact(Object fact) {
         if (ksession == null)
             ksession = kbase.newStatefulKnowledgeSession();
@@ -117,4 +155,5 @@ public class RulesEngine {
 		}
 	}
 
+	
 }
