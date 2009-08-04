@@ -47,13 +47,12 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 				"e.curated = 1 AND e.assignby != 'sgc3'" +
 			"))";
 	}
-	
-	public String getHmmHitByIdSQL(String hitId) {
+
+	public String getHmmHitSQL(String hitId) {
 		return getHmmHitSQL() + " AND e.accession='" + hitId + "'";
 	}
-	
 	public HmmHit getHmmHit(String hitId) {
-		Iterator<HmmHit> iter = iteratorBySQL(getHmmHitByIdSQL(hitId));
+		Iterator<HmmHit> iter = iteratorBySQL(getHmmHitSQL(hitId));
 		return iter.next();
 	}
 	
@@ -73,7 +72,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 	public Iterator<HmmHit> iterator() {
 		return iteratorBySQL(getHmmHitSQL());
 	}
-
+	
 	public Iterator<HmmHit> getHitIterator(final ResultSet rs) {
 		
 		// Use an anonymous inner class to return an Iterator of Feature objects
@@ -136,6 +135,5 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 				throw new UnsupportedOperationException("no remove allowed from HmmHit Iterator");
 			}
 		};
-	}
-	
+	}	
 }
