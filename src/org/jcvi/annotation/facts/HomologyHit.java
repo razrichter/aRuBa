@@ -1,5 +1,7 @@
 package org.jcvi.annotation.facts;
 
+import java.text.DecimalFormat;
+
 
 public class HomologyHit {
 	protected String program;
@@ -32,7 +34,7 @@ public class HomologyHit {
         this.queryStrand = queryStrand;
     }
     
-    public String getProgram() {
+	public String getProgram() {
         return program;
     }
     public void setProgram(String program) {
@@ -125,6 +127,8 @@ public class HomologyHit {
     	// Need to cast to doubles, otherwise int/int returns an int
     	double hitLength = Math.abs(hitEnd - hitStart);
     	double queryLength = Math.abs(queryEnd - queryStart);
-     	return 100 * Math.abs((hitLength/queryLength) - 1);
+     	double ratio = 100 * Math.abs((hitLength/queryLength) - 1);
+     	// round to two decimal places
+      	return Double.valueOf(new DecimalFormat("#.##").format(ratio));
      }
 }
