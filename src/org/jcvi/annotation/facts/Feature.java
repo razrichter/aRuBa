@@ -19,9 +19,12 @@ public class Feature {
 	private List<Annotation> assertedAnnotations = new ArrayList<Annotation>();
 	// private List<Rule> firedRules = new ArrayList<String>();
 		
-	public Feature(String featureId, String type) {
+	public Feature(String featureId) {
 		super();
 		this.featureId = featureId;
+	}
+	public Feature(String featureId, String type) {
+		this(featureId);
 		this.type = type;
 	}
 	
@@ -69,6 +72,9 @@ public class Feature {
 		this.assertedAnnotations.remove(annotation);
 	}
 	
+	public List<String> getGoIds() {
+		return this.getAssignedAnnotation().getGoIds();
+	}
 	public String getFeatureId() {
 		return featureId;
 	}

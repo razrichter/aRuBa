@@ -49,17 +49,17 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 		BlastHit hit1 = new BlastHit("blastp","testorf", "RF|NP_844922.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 110, 100, 205, 1, 95.0, 82.0);
 		hit1.setQueryLength(orf.getLength());
-		hit1.setQuery(orf);
+		// hit1.setQuery(orf);
 		
 		BlastHit hit2 = new BlastHit("blastp","testorf", "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 110, 100, 205, 1, 95.0, 82.0);
         hit2.setQueryLength(orf.getLength());
-		hit2.setQuery(orf);
+		// hit2.setQuery(orf);
 		
         BlastHit hit3 = new BlastHit("blastp","testorf", "RF|NOT_IT.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 1000, 100, 205, 1, 95.0, 82.0);
         hit2.setQueryLength(orf.getLength());
-        hit3.setQuery(orf);
+        // hit3.setQuery(orf);
         
         // Add to our knowledgebase
         engine.addFact(taxon);

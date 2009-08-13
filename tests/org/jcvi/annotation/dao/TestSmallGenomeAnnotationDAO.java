@@ -34,7 +34,7 @@ public class TestSmallGenomeAnnotationDAO extends TestCase {
 	
 	public void testGetFeature() {
 		Feature f = featureDAO.getFeature("GBAA_pXO2_0003");
-		assertEquals(f.getName(), "GBAA_pXO2_0003");
+		assertEquals(f.getFeatureId(), "GBAA_pXO2_0003");
 	}
 	public void testGetFeatureFalseCase() {
 		Feature f = featureDAO.getFeature("no_such_feature");
@@ -42,7 +42,7 @@ public class TestSmallGenomeAnnotationDAO extends TestCase {
 	}
 	public void testGetFeatureIdFalseCase() {
 		Feature f = featureDAO.getFeature("GBAA_pXO2_0003");
-		assertFalse(f.getName() == "abc");
+		assertFalse(f.getFeatureId().equals("abc"));
 	}
 	
 	public void testGetFeatures() {
@@ -56,14 +56,30 @@ public class TestSmallGenomeAnnotationDAO extends TestCase {
 	}
 	
 	public void testGetFeatureAnnotations() {
-		Feature feat = featureDAO.getFeatureById(172227);
-		assertTrue(annotationDAO.iterator(feat).next() instanceof Annotation);
+		assertTrue(annotationDAO.iterator("GBAA_pXO2_0015").next() instanceof Annotation);
 	}
 	
 	public void testGetAnnotationRoleIds() {
-		Feature f = featureDAO.getFeatureById(172227);
-		List<String> roleIds = annotationDAO.getRoleIds(f.getName());
-		assertTrue(roleIds.contains("188"));
+		Feature f = featureDAO.getFeature("GBAA_pXO2_0015");
+		List<String> roleIds = annotationDAO.getRoleIds(f.getFeatureId());
+		assertTrue(roleIds.contains("156"));
+	}
+	
+	public void testGetAnnotationGoIds() {
+		Feature f = new Feature("GBAA_pXO2_0015");
+		List<String> goIds = annotationDAO.getGoIds(f.getFeatureId());
+		assertTrue(goIds.contains("GO:0008150"));
+		
+		// Add the GO Ids to the annotation
+		Annotation annot = new Annotation();
+		annot.addGoIds(goIds);
+		
+		// Assert annotation on the feature
+		f.setAssignedAnnotation(annot);
+		
+		// Test that there is an asserted annotation
+		// with a GO assignment matching what we expect
+		assertTrue(f.getGoIds().contains("GO:0008150"));
 	}
 	
 	@After

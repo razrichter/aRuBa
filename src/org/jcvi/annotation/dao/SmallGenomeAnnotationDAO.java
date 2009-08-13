@@ -55,19 +55,23 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 	@Override
 	public Iterator<Annotation> iterator() {
 
-		String sql = "SELECT a.feat_id, i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
+		String sql = "SELECT a.feat_name, i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
 		" WHERE a.feat_name = i.feat_name AND s.asmbl_id = a.asmbl_id" +
 		" AND s.iscurrent=" + this.isCurrent;
 		
 		return iteratorBySQL(sql);
 	}
-
+	
 	public Iterator<Annotation> iterator(Feature feature) {
+		return iterator(feature.getFeatureId());
+	}
+	
+	public Iterator<Annotation> iterator(String featureId) {
 		
-		String sql = "SELECT a.feat_id, i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
+		String sql = "SELECT a.feat_name, i.com_name, i.gene_sym, i.ec# FROM asm_feature a, ident i, stan s" +
 				" WHERE a.feat_name = i.feat_name AND s.asmbl_id = a.asmbl_id" +
 				" AND s.iscurrent=" + this.isCurrent +
-				" AND a.feat_id=" + feature.getFeatureId();
+				" AND a.feat_name='" + featureId + "'";
 		
 		return iteratorBySQL(sql);
 	}
@@ -109,16 +113,17 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 				try {
 					if (rs.next()) {
 						Annotation nextAnnot = new Annotation(conn.toString());
+						String featureId = rs.getString(1);
 						nextAnnot.setCommonName(rs.getString(2));
 						nextAnnot.setGeneSymbol(rs.getString(3));
 						nextAnnot.setEcNumber(rs.getString(4));
 						
-						String featureId = rs.getString(1);
-						
-						// TODO: Add Go Terms to Annotation
+						// Add Go Terms to Annotation
+						List<String> goIds = getGoIds(featureId);
+						nextAnnot.addGoIds(goIds);						
 						
 						// Add RoleIds to Annotation
-						List<String> roleIds = getRoleIds(Integer.parseInt(featureId));
+						List<String> roleIds = getRoleIds(featureId);
 						nextAnnot.addRoleIds(roleIds);
 						
 						return nextAnnot;
@@ -134,23 +139,45 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 			}
 		};
 	}
-	public List<String> getRoleIds(String featureName) {
+	
+	// GO Terms
+	public List<String> getGoIds(String featureId) {
+		
+		String sql = "SELECT go.go_id " +
+			"FROM go_role_link as go " +
+			"JOIN asm_feature as a ON a.feat_name = go.feat_name " +
+			"JOIN stan as s ON s.asmbl_id = a.asmbl_id " +
+			"AND s.iscurrent=" + isCurrent +
+			" AND go.feat_name='" + featureId + "'";
+		return getGoIdsBySQL(sql);		
+	}
+	public List<String> getGoIdsBySQL(String sql) {
+
+		ArrayList<String> goIds = new ArrayList<String>();
+		try {
+			Statement stmt = conn.createStatement();
+			final ResultSet rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				goIds.add(rs.getString(1));
+			}
+			
+		} catch (SQLException e) {
+			for (Throwable t : e) {
+				t.printStackTrace();
+			}
+		}
+		return goIds;	
+	}
+	
+	// Role Ids
+	public List<String> getRoleIds(String featureId) {
 		String sql = "SELECT r.role_id FROM role_link r, asm_feature a, stan s" +
 		" WHERE a.feat_name = r.feat_name AND s.asmbl_id = a.asmbl_id" +
 		" AND s.iscurrent = " + isCurrent +
-		" AND a.feat_name='" + featureName + "'";
+		" AND a.feat_name='" + featureId + "'";
 		return getRoleIdsBySQL(sql);
 	}
 	
-	public List<String> getRoleIds(int featureId) {
-		
-		String sql = "SELECT r.role_id FROM role_link r, asm_feature a, stan s" +
-				" WHERE a.feat_name = r.feat_name AND s.asmbl_id = a.asmbl_id" +
-				" AND s.iscurrent = " + isCurrent +
-				" AND a.feat_id=" + featureId; //  + "'";
-		return getRoleIdsBySQL(sql);
-	}
-
 	public List<String> getRoleIdsBySQL(String sql) {
 		ArrayList<String> roleIds = new ArrayList<String>();
 		

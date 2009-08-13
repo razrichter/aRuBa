@@ -21,8 +21,8 @@ public class Annotation {
 	private String commonName;
 	private String geneSymbol;
 	private String ecNumber;
-	private ArrayList<String> roleIds = new ArrayList<String>();
-	private ArrayList<String> goIds = new ArrayList<String>();
+	private List<String> roleIds = new ArrayList<String>();
+	private List<String> goIds = new ArrayList<String>();
 
 	
 	public Annotation() {
@@ -97,7 +97,7 @@ public class Annotation {
 		this.ecNumber = ecNumber;
 	}
 
-	public ArrayList<String> getRoleIds() {
+	public List<String> getRoleIds() {
 		return roleIds;
 	}
 
@@ -114,7 +114,7 @@ public class Annotation {
 		this.roleIds.add(roleId);		
 	}
 
-	public ArrayList<String> getGoIds() {
+	public List<String> getGoIds() {
 		return goIds;
 	}
 

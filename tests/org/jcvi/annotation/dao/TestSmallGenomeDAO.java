@@ -73,8 +73,6 @@ public class TestSmallGenomeDAO extends TestCase {
 	public void testGetAnnotationRoleIds() {
 		List<String> roleIds = annotationDAO.getRoleIds("GBAA_pXO1_0083");
 		assertTrue(roleIds.contains("188"));
-		roleIds = annotationDAO.getRoleIds(172227);
-		assertTrue(roleIds.contains("188"));
 	}
 	
 	@After

@@ -50,16 +50,16 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 	}
 
 	@Override
-	public Feature getFeature(String name) {
-		String sql = "SELECT feat_id, feat_name, feat_type, end5, end3, sequence, protein " +
-					"FROM asm_feature WHERE feat_name='" + name + "'";
+	public Feature getFeature(String featureId) {
+		String sql = "SELECT feat_name, feat_type, end5, end3 " +
+					"FROM asm_feature WHERE feat_name='" + featureId + "'";
 		
 		return getFeatureBySQL(sql);
 	}
 	
-	public Feature getFeatureById(int featureId) {
-		String sql = "SELECT feat_id, feat_name, feat_type, end5, end3 " +
-					"FROM asm_feature WHERE feat_id=" + featureId;
+	public Feature getFeatureById(int feat_id) {
+		String sql = "SELECT feat_name, feat_type, end5, end3 " +
+					"FROM asm_feature WHERE feat_id=" + feat_id;
 		
 		return getFeatureBySQL(sql);
 	}
@@ -77,10 +77,9 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			
 			if (rs.next()) {
 				String featureId = rs.getString(1);
-				String name = rs.getString(2);
-				String type = rs.getString(3);
-				int start = rs.getInt(4);
-				int end = rs.getInt(5);
+				String type = rs.getString(2);
+				int start = rs.getInt(3);
+				int end = rs.getInt(4);
 				int strand = 1;
 				if (end < start) {
 					strand = -1;
@@ -88,7 +87,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 					end = start;
 					start = tmp;
 				}
-				feature = new Feature(featureId, type, start, end, strand, name);
+				feature = new Feature(featureId, type, start, end, strand);
 				
 				rs.close();
 				stmt.close();
