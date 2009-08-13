@@ -16,6 +16,7 @@ import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 
+
 public class RulesEngine {
 
 	private KnowledgeBase kbase;
@@ -24,7 +25,6 @@ public class RulesEngine {
 	private String logFilename;
 	private boolean debug = false;
 	private KnowledgeRuntimeLogger logger;
-	
 	
 	public RulesEngine() {
 		kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
@@ -65,11 +65,7 @@ public class RulesEngine {
 			kbuilder.add(ResourceFactory.newUrlResource(rfile), rtype);
 			KnowledgeBuilderErrors errors = kbuilder.getErrors();
 			if (errors.size() > 0) {
-				for (KnowledgeBuilderError error : errors) {
-					System.err.println(error);
-				}
-				throw new IllegalArgumentException(
-						"Could not parse knowledge in " + rfile);
+				throw new RulesResourceException(ResourceFactory.newUrlResource(rfile), errors);
 			} else {
 				kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
 				return true;
