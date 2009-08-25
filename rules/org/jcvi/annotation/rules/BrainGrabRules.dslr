@@ -25,6 +25,25 @@ rule "exosporium protein K rule"
 			set confidence 96
 end
 
+rule "Blast Hit using equivalog level, default method"
+	when
+        there is a feature geneA
+        geneA has a blastp hit to RF|NP_844922.1 
+        	-at equivalog level
+		
+		
+	then
+		print rule fired
+end
+
+rule "Blast Hit using subfamily default method"
+	when
+        there is a blastp hit to RF|NP_844922.1 at subfamily level	
+		
+	then
+		print rule fired
+end
+
 rule "BlastP Hit with a Taxonomy Restriction"
 	when
 		There is a feature geneA
