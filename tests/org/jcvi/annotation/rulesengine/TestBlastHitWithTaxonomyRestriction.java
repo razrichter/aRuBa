@@ -1,14 +1,13 @@
 package org.jcvi.annotation.rulesengine;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import junit.framework.TestCase;
+import java.util.Map;
 
+import junit.framework.TestCase;
 import org.drools.builder.DecisionTableConfiguration;
 import org.drools.builder.DecisionTableInputType;
-import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
 import org.drools.compiler.DecisionTableFactory;
@@ -16,6 +15,7 @@ import org.jcvi.annotation.dao.NCBITaxonomyDAO;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.BlastHit;
 import org.jcvi.annotation.facts.Feature;
+import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.Taxon;
 import org.junit.After;
 import org.junit.Before;
@@ -27,6 +27,7 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 	private Annotation ann;
 	private NCBITaxonomyDAO taxonomyDAO;
 	private Taxon taxon;
+	private Genome genome;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -37,14 +38,16 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 		// Create our Feature
 		orf = new Feature("testorf", "ORF", 0, 110, 1);
 
-		// Assign a taxon to our Feature
+		// Assign a genome with taxon to our Feature
 		URL namesUrl = this.getClass().getResource("../dao/names.dmp");
 		URL nodesFile = this.getClass().getResource("../dao/nodes.dmp");
 		taxonomyDAO = new NCBITaxonomyDAO(namesUrl, nodesFile);
 		taxon = taxonomyDAO.getTaxon("Geosporobacter");
 		taxonomyDAO.getParents(taxon);
-		orf.setTaxon(taxon);
-
+		
+		genome = new Genome(taxon);
+		orf.setGenome(genome);
+				
 		// Create our hits (only hit1 evalutes to true)
 		BlastHit hit1 = new BlastHit("blastp","testorf", "RF|NP_844922.1", 0.001, 170, 170, 0.002,
 				100, 200, 1, 110, 100, 205, 1, 95.0, 82.0);

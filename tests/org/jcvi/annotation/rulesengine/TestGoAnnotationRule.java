@@ -9,6 +9,7 @@ import org.jcvi.annotation.dao.SmallGenomeAnnotationDAO;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
+import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.Taxon;
 import org.junit.After;
 import org.junit.Before;
@@ -18,6 +19,7 @@ public class TestGoAnnotationRule extends TestCase {
 	private RulesEngine engine;
 	private Feature feat;
 	private Taxon taxon;
+	private Genome genome;
 	private Annotation annot = new Annotation();
 	private SmallGenomeAnnotationDAO annotationDAO;
 	
@@ -44,7 +46,8 @@ public class TestGoAnnotationRule extends TestCase {
 		NCBITaxonomyDAO taxonomyDAO = new NCBITaxonomyDAO(namesUrl, nodesFile);
 		taxon = taxonomyDAO.getTaxon("Geosporobacter");
 		taxonomyDAO.getParents(taxon);
-		feat.setTaxon(taxon);
+		genome = new Genome(taxon);
+		feat.setGenome(genome);
 		
 		// Get the current annotations on this feature object
 		SmallGenomeDAOFactory sgDAOFactory = new SmallGenomeDAOFactory("gb6");

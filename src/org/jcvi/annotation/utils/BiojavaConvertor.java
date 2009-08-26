@@ -2,6 +2,7 @@ package org.jcvi.annotation.utils;
 import java.util.UUID;
 
 import org.biojavax.bio.seq.RichSequence;
+import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.Taxon;
 public class BiojavaConvertor 
 {
@@ -23,7 +24,8 @@ public class BiojavaConvertor
 		
 		org.jcvi.annotation.facts.Feature feature = new org.jcvi.annotation.facts.Feature(richFeature.getIdentifier(), richFeature.getAlphabet().getName());		
 		Taxon taxon = new Taxon(richFeature.getTaxon().getNCBITaxID(), richFeature.getTaxon().getDisplayName());
-		feature.setTaxon(taxon);
+		Genome genome = new Genome(taxon);
+		feature.setGenome(genome);
 		return feature;
 	}
 

@@ -1,8 +1,13 @@
 package org.jcvi.annotation.dao.factory;
-import org.jcvi.annotation.dao.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import org.jcvi.annotation.dao.SmallGenomeAnnotationDAO;
+import org.jcvi.annotation.dao.SmallGenomeFeatureDAO;
+import org.jcvi.annotation.dao.SmallGenomeHmmHitDAO;
+import org.jcvi.annotation.dao.SmallGenomePropertyDAO;
+import org.jcvi.annotation.dao.SmallGenomeTaxonomyDAO;
 
-import java.sql.*;
-// import com.sybase.jdbc.*;
 
 public class SmallGenomeDAOFactory extends DAOFactory {
 
@@ -36,6 +41,15 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 	public SmallGenomeAnnotationDAO getAnnotationDAO(String dbname) {
 		this.dbname = dbname;
 		return new SmallGenomeAnnotationDAO(this.createConnection());
+	}
+
+	// Genome Property DAO
+	public SmallGenomePropertyDAO getGenomePropertyDAO() {
+		return new SmallGenomePropertyDAO(this.createConnection(), this.dbname);
+	}
+	
+	public SmallGenomePropertyDAO getGenomePropertyDAO(String dbname) {
+		return new SmallGenomePropertyDAO(this.createConnection(), dbname);
 	}
 	
 	// Generate a Taxonomy DAO

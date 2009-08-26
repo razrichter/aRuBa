@@ -73,7 +73,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 
-			// TODO: Set the taxon
+			// TODO: Set the genome, and assign genome properties to genome 
 			
 			if (rs.next()) {
 				String featureId = rs.getString(1);

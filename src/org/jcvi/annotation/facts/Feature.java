@@ -2,12 +2,13 @@ package org.jcvi.annotation.facts;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.jcvi.annotation.facts.Annotation;
 
 public class Feature {
 	private String featureId;
-	private Taxon taxon;
+	private Genome genome;
 	private Feature source;
 	private String name;
 	private int start;
@@ -15,6 +16,7 @@ public class Feature {
 	private int strand;
 	private boolean isCircular = false;
 	private String type; // Feature type
+	private List<Map<String, Object>> properties = new ArrayList<Map<String, Object>>();
 	private Annotation assignedAnnotation;
 	private List<Annotation> assertedAnnotations = new ArrayList<Annotation>();
 	// private List<Rule> firedRules = new ArrayList<String>();
@@ -45,17 +47,28 @@ public class Feature {
 		this.setName(name);
 	}
 	
+	public Genome getGenome() {
+		return genome;
+	}
+	public void setGenome(Genome genome) {
+		this.genome = genome;
+	}
 	public Taxon getTaxon() {
-		return taxon;
+		return this.genome.getTaxon();
 	}
-	public void setTaxon(Taxon taxon) {
-		this.taxon = taxon;
+	
+	public List<Map<String, Object>> getProperties() {
+		return properties;
 	}
-
+	public void setProperties(List<Map<String, Object>> properties) {
+		this.properties = properties;
+	}
+	public void addProperty(Map<String,Object> prop) {
+		this.properties.add(prop);
+	}
 	public Annotation getAssignedAnnotation() {
 		return assignedAnnotation;
 	}
-
 	public void setAssignedAnnotation(Annotation assignedAnnotation) {
 		this.assignedAnnotation = assignedAnnotation;
 	}

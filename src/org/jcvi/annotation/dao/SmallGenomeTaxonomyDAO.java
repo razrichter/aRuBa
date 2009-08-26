@@ -52,7 +52,7 @@ public class SmallGenomeTaxonomyDAO extends GenericTaxonomyDAO {
 	}
 	public Taxon getTaxonBySQL(String sql) throws DaoException {
 		Taxon taxon = null;
-		System.out.println(sql);
+		//System.out.println(sql);
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);

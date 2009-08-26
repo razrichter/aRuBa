@@ -94,7 +94,7 @@ public class GenbankFeatureDAO implements FeatureDAO {
 						if(this.codingFeatureTypes.indexOf(biojavaFeature.getType()) != -1){
 							Feature feature = BiojavaConvertor.convertBiojavaFeatureToAnnotationFeature(biojavaFeature);
 							feature.setSource(sourceFeature);
-							feature.setTaxon(sourceFeature.getTaxon());
+							feature.setGenome(sourceFeature.getGenome());
 							featureList.add(feature);
 						}
 
