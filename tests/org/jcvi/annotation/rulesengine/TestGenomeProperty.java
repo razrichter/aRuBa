@@ -76,14 +76,15 @@ public class TestGenomeProperty extends TestCase {
 	
 	public void testDrl() {
 		
-		URL drlUrl = engine.getClass().getResource("../rules/TestGenomePropertyRule.drl");
-		engine.addResource(drlUrl.toString(), ResourceType.DRL);
-		/*
+		// URL drlUrl = engine.getClass().getResource("../rules/TestGenomePropertyRule.drl");
+		// engine.addResource(drlUrl.toString(), ResourceType.DRL);
+		
+		// /*
 		URL dslUrl = engine.getClass().getResource("../rules/BrainGrabRulesTranslator.dsl");
 		URL dslrUrl = engine.getClass().getResource("../rules/BrainGrabRules.dslr");
 		engine.addResource(dslUrl.toString(), ResourceType.DSL);
 		engine.addResource(dslrUrl.toString(), ResourceType.DSLR);
-		*/
+		// */
 		
 		engine.fireAllRules();
 

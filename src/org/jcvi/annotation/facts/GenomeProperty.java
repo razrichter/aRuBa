@@ -3,7 +3,12 @@ import java.util.HashMap;
 
 public class GenomeProperty extends HashMap<String, Object> {
 
-	private static final long serialVersionUID = 1L;
-
+	public GenomeProperty() {
+		super();
+	}
+	public GenomeProperty(Object id) {
+		super();
+		this.put("id", id);
+	}
 }
 

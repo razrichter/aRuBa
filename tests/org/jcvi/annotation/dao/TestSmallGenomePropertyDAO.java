@@ -5,6 +5,7 @@ import java.util.Map;
 
 import junit.framework.TestCase;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
+import org.jcvi.annotation.facts.GenomeProperty;
 import org.junit.After;
 import org.junit.Before;
 
@@ -35,7 +36,7 @@ public class TestSmallGenomePropertyDAO extends TestCase {
 	public void testGetAllProperties() {
 		
 		// Test that number of properties is roughly what we expect
-		List<Map<String, Object>> properties = genomePropertyDAO.getProperties();
+		List<GenomeProperty> properties = genomePropertyDAO.getProperties();
 		assertTrue(properties.size() > 600);
 		
 		// Get some random genome property, and test its contained in the list
@@ -50,6 +51,7 @@ public class TestSmallGenomePropertyDAO extends TestCase {
 	
 	public void testGetAllPropertiesIterator() {
 		for (Map<String, Object> prop : genomePropertyDAO) {
+			System.out.println(prop.getClass().getName());
 			assertTrue(prop.containsKey("id"));
 			assertTrue(prop.containsKey("value"));
 		}
