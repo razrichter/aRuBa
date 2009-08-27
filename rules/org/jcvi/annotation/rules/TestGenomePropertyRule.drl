@@ -6,7 +6,7 @@ import java.util.Map;
 # Legacy rule: (THIS_GO_TERM[GO:0030435] || THIS_GO_TERM[GO:0043936]) && GEN_PROP[GenProp0610, 0.6] && GEN_STATE[GenProp0078, Firmicutes]
 rule "endospore formers rule"
     when
-    	genProp : Map( this["id"]=="GenProp0610", this["value"] >= 0.6 )
+    	genProp : GenomeProperty( this["id"]=="GenProp0610", this["value"] >= 0.6 )
         geneA : Feature( properties contains genProp )
 	 	Taxon( parentNames contains "Firmicutes") from geneA.taxon
 		annot : Annotation( (goIds contains "GO:0030435") || (goIds contains "GO:0043936") ) from 	geneA.assignedAnnotation
@@ -15,6 +15,4 @@ rule "endospore formers rule"
     	annot.setSource(kcontext.getRule().getName());
  	    annot.setCommonName("endospore former");
 end
-
-
 

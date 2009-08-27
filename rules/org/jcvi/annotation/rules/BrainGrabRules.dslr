@@ -121,4 +121,17 @@ rule "Testing relational approach to specifying above rule"
         set common name endospore on annot
 end
 
-
+rule "endospore formers rule"
+    when
+    	there is a genome property gProp
+    		-with key id as GenProp0610
+    		-with key value at least 0.6
+    	there is a feature geneA with genome property gProp
+    	geneA has taxon Firmicutes
+    	geneA has annotation annot
+    		-with GO term GO:0030435 or GO term GO:0043936
+ 		
+    then
+    	set source rule name on annot
+    	set common name endospore former on annot
+end
