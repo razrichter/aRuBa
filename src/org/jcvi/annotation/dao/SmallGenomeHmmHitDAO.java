@@ -1,4 +1,5 @@
 package org.jcvi.annotation.dao;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,12 +7,22 @@ import java.sql.Statement;
 import java.util.Iterator;
 
 import org.jcvi.annotation.facts.HmmHit;
+import org.jcvi.annotation.dao.HmmCutoffTableDAO;
+import org.jcvi.annotation.dao.HmmCutoffTableDAO.HmmCutoff;
+
 
 public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 
 	private Connection conn;
+	private HmmCutoffTableDAO cutoffTable; 
 	
 	public SmallGenomeHmmHitDAO() {
+	    try {
+            cutoffTable = new HmmCutoffTableDAO();
+        }
+        catch (IOException e) {
+            cutoffTable = null;
+        }
 	}
 	public SmallGenomeHmmHitDAO(Connection conn) {
 		this();
@@ -123,6 +134,22 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 									hitId, hitStart, hitEnd, hitStrand);
 						hit.setScore(score);
 						hit.setDomainScore(domainScore);
+						if (cutoffTable != null) {
+						    HmmCutoff cutoff = cutoffTable.get(hitId);
+						    if (cutoff != null) {
+    						    if (cutoff.isAboveTrustedCutoff(score,
+                                        domainScore)) {
+                                    hit.setStrongHit();
+                                }
+                                else if (cutoff.isAboveNoiseCutoff(score,
+                                        domainScore)) {
+                                    hit.setWeakHit();
+                                }
+                                else {
+                                    hit.setNonHit();
+                                }
+						    }
+						}
 						return hit;
 					}
 					

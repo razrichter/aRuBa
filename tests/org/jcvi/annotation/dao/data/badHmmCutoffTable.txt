@@ -1,0 +1,2 @@
+TE00001	family	test	test hmm information line	number_goes here	10	-50	0	-100.0
+

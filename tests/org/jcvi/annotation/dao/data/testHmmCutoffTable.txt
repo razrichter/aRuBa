@@ -1,0 +1,4 @@
+#hmm_acc	iso_type	hmm_name	hmm_com_name	hmm_len	trusted_cutoff	noise_cutoff	trusted_cutoff2	noise_cutoff2
+
+TE00001	family	test	test hmm information line	100	10	-50	0	-100.0
+
