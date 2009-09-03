@@ -1,13 +1,12 @@
 package org.jcvi.annotation.facts;
 
+import org.jcvi.annotation.facts.HomologyHit.HitStrengthType;
+
 public class HmmHit extends HomologyHit {
-	public static final int WEAK = 1;
-	public static final int STRONG = 2;
 	
 	private String name; 		// evidence.feat_name
 	private String accession;	// evidence.accession
 	private double domainScore;
-	private int hitStrength;
 
 	// Constructors
     public HmmHit() {
@@ -48,12 +47,6 @@ public class HmmHit extends HomologyHit {
 	}
 	public void setDomainScore(double domainScore) {
 		this.domainScore = domainScore;
-	}
-	public int getHitStrength() {
-		return hitStrength;
-	}
-	public void setHitStrength(int hitStrength) {
-		this.hitStrength = hitStrength;
 	}
 	
 }
