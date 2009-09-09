@@ -1,7 +1,5 @@
 package org.jcvi.annotation.facts;
 
-import org.jcvi.annotation.facts.HomologyHit.HitStrengthType;
-
 public class HmmHit extends HomologyHit {
 	
 	private String name; 		// evidence.feat_name
@@ -14,10 +12,12 @@ public class HmmHit extends HomologyHit {
     }
     public HmmHit(String queryId, String hitId) {
         super(queryId, hitId);
+        this.program = "hmm";
     }
     public HmmHit(String queryId, String hitId,
     		int queryStart, int queryEnd, int queryStrand) {
     	super(queryId, hitId);
+    	this.program = "hmm";
     	this.queryStart = queryStart;
     	this.queryEnd = queryEnd;
     	this.queryStrand = queryStrand;
@@ -25,6 +25,7 @@ public class HmmHit extends HomologyHit {
     public HmmHit(String queryId, int queryStart, int queryEnd, int queryStrand,
     				String hitId, int hitStart, int hitEnd, int hitStrand) {
     	super(queryId, hitId, queryStart, queryEnd, queryStrand);
+    	this.program = "hmm";
     	this.hitStart = hitStart;
     	this.hitEnd = hitEnd;
     	this.hitStrand = hitStrand;

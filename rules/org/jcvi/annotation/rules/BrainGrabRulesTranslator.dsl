@@ -10,6 +10,12 @@
 [when][]There =there
 [when][]equivalog-level=equivalog level
 [when][]sub-family=subfamily
+[when][] above-trusted = strong 
+[when][] above_trusted = strong 
+[when][] above trusted = strong 
+[when][] above-noise = weak 
+[when][] above_noise = weak 
+[when][] above noise = weak 
 
 # there is a feature geneA with genome property gProp --> geneA : Feature( properties contains genProp )
 [when][]there is a feature {featureName:\S+} with genome property {propName}={featureName} : Feature( properties contains {propName} )
@@ -37,14 +43,24 @@
 
 
 # Allow for any generic comparator specification (eg. equivalog or subfamily level)
-[when][]there is a {program:\S+} hit to {subjectId:(\S+)} with {comparator}=BlastHit( program == "{program}", hitId == "{subjectId}", {comparator})
-[when][]{feature} with {program:\S+} hit to {hitId:(\S+)} with {comparator}=BlastHit( program == "{program}", hitId == "{hitId}", queryId == {feature}.featureId, {comparator})
+[when][homologyHit]there is a {program:\S+} hit to {subjectId:(\S+)} with {comparator}={program}HomologyHit( program == "{program}", hitId == "{subjectId}", {comparator})
+[when][homologyHit]{feature} with {program:\S+} hit to {hitId:(\S+)} with {comparator}={program}HomologyHit( program == "{program}", hitId == "{hitId}", queryId == {feature}.featureId, {comparator})
 
-[when][]there is a {program:\S+} hit to {subjectId:(\S+)}=BlastHit( program == "{program}", hitId == "{subjectId}")
-[when][]{feature} with {program:\S+} hit to {hitId:(\S+)}=BlastHit( program == "{program}", hitId == "{hitId}", queryId == {feature}.featureId)
-[when][]-with parent {taxonName}=parentNames contains "{taxonName}"
-[when][]-with GO term {goId:([A-Z]+:){1}[0-9]{6,}}=(goIds contains "{goId}")
-[when][]GO term {goId:([A-Z]+:){1}[0-9]{6,}}=(goIds contains "{goId}")
+# Strong or weak hits
+[when][homologyHit]there is a strong {program:\S+} hit to {subjectId:(\S+)}={program}HomologyHit( program == "{program}", hitId == "{subjectId}", aboveTrustedHit == true)
+[when][homologyHit]there is a weak {program:\S+} hit to {subjectId:(\S+)}={program}HomologyHit( program == "{program}", hitId == "{subjectId}", aboveNoiseHit == true)
+[when][homologyHit]{feature} with strong {program:\S+} hit to {subjectId:(\S+)}={program}HomologyHit( program == "{program}", hitId == "{subjectId}", queryId == {feature}.featureId, aboveTrustedHit == true)
+[when][homologyHit]{feature} with weak {program:\S+} hit to {subjectId:(\S+)}={program}HomologyHit( program == "{program}", hitId == "{subjectId}", queryId == {feature}.featureId, aboveNoiseHit == true)
+
+
+[when][homologyHit]there is a {program:\S+} hit to {subjectId:(\S+)}={program}HomologyHit( program == "{program}", hitId == "{subjectId}")
+[when][homologyHit]{feature} with {program:\S+} hit to {hitId:(\S+)}={program}HomologyHit( program == "{program}", hitId == "{hitId}", queryId == {feature}.featureId)
+[when][homologyHit] {program:\S*blast\S*}HomologyHit=BlastHit
+[when][homologyHit] {program:\S*hmm\S*}HomologyHit=HmmHit
+
+[when][homologyHit]-with parent {taxonName}=parentNames contains "{taxonName}"
+[when][homologyHit]-with GO term {goId:([A-Z]+:){1}[0-9]{6,}}=(goIds contains "{goId}")
+[when][homologyHit]GO term {goId:([A-Z]+:){1}[0-9]{6,}}=(goIds contains "{goId}")
 #[when][]-where query is {feature}=queryId == {feature}.featureId
 [when][]-with taxon {txn}=taxon=={txn}
 [when][]-with annotation {annot}=assignedAnnotation=={annot}
@@ -72,6 +88,7 @@
 
 #[then][]{expression} on {variable}={variable}.{expression}
 [then][]assert annotation on {featureName}=Annotation ann=new Annotation(kcontext.getRule().getName()); {featureName}.addAssertedAnnotation(ann);
+[then][]assert annotation {annotName} on {featureName}=Annotation {annotName}=new Annotation(kcontext.getRule().getName()); {featureName}.addAssertedAnnotation({annotName});
 [then][]assert annotation {annotName}=Annotation {annotName}=new Annotation(kcontext.getRule().getName());
 [then][]assert annotation=Annotation ann=new Annotation(kcontext.getRule().getName());
 [then][]set source rule name on {variable}={variable}.setSource(rule name);
