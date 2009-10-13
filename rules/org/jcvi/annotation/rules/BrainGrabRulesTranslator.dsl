@@ -40,9 +40,22 @@
 # genome property
 [when][]there is a genome property {propName:\S+} with id {propId:\S+}={propName} : GenomeProperty( this["id"]=="{propId}" )
 [when][]there is a genome property {propName:\S+}={propName} : GenomeProperty( )
+# property
+[when][]there is a "{propKey}" property {propName:\S+}={propName}: Map( this["{propKey}"] == 1 )
 
+# hmm hit
+[when][]there is a hmm hit to {subjectId:(\S+)}=HmmHit ( hitId == "{subjectId}")
 
 # Allow for any generic comparator specification (eg. equivalog or subfamily level)
+[when][]there is a {program:\S+} hit to {subjectId:(\S+)} with {comparator}=BlastHit( program == "{program}", hitId == "{subjectId}", {comparator})
+
+# Feature with hmm hit
+[when][]{feature} with hmm hit to {hitId:(\S+)}=HmmHit( hitId == "{hitId}", queryId == {feature}.featureId )
+[when][]{feature} with hmm hit to {hitId:(\S+)} with {comparator}=HmmHit( hitId == "{hitId}", queryId == {feature}.featureId, {comparator})
+
+# Feature with blast hit
+[when][]{feature} with {program:\S+} hit to {hitId:(\S+)} with {comparator}=BlastHit( program == "{program}", hitId == "{hitId}", queryId == {feature}.featureId, {comparator})
+
 [when][homologyHit]there is a {program:\S+} hit to {subjectId:(\S+)} with {comparator}={program}HomologyHit( program == "{program}", hitId == "{subjectId}", {comparator})
 [when][homologyHit]{feature} with {program:\S+} hit to {hitId:(\S+)} with {comparator}={program}HomologyHit( program == "{program}", hitId == "{hitId}", queryId == {feature}.featureId, {comparator})
 
@@ -65,7 +78,7 @@
 [when][]-with taxon {txn}=taxon=={txn}
 [when][]-with annotation {annot}=assignedAnnotation=={annot}
 [when][]-with genome property {propName}=properties contains {propName}
-
+[when][]-with property {propName}=properties contains {propName}
 
 # equilvalog-level means hit at 80% identity, 95 % of query protein length, 95 % of target protein length, max 5 % difference in length of matched regions
 [when][]equivalog level=percentIdentity>=80, queryPercentLength>=90, hitPercentLength>=95, hitQueryLengthRatio<=5
@@ -87,10 +100,16 @@
 #[when][]-with {field:\S+} {value}={parameter}=={value}
 
 #[then][]{expression} on {variable}={variable}.{expression}
+
 [then][]assert annotation on {featureName}=Annotation ann=new Annotation(kcontext.getRule().getName()); {featureName}.addAssertedAnnotation(ann);
 [then][]assert annotation {annotName} on {featureName}=Annotation {annotName}=new Annotation(kcontext.getRule().getName()); {featureName}.addAssertedAnnotation({annotName});
 [then][]assert annotation {annotName}=Annotation {annotName}=new Annotation(kcontext.getRule().getName());
 [then][]assert annotation=Annotation ann=new Annotation(kcontext.getRule().getName());
+
+# properties (cannot mix mvel with dsl, so we need to handle this in Java)
+# [then][]new "{propKey:\S+}" property {propName}={propName} = [ "{propKey}": 1 ];
+[then][]new "{propKey:\S+}" property {propName}=Map<String,Object> {propName} = new HashMap<String,Object>(); {propName}.put("{propKey}", 1);
+
 [then][]set source rule name on {variable}={variable}.setSource(rule name);
 [then][]set source {value} on {variable}={variable}.setSource("{value}");
 [then][]set gene symbol {value} on {variable}={variable}.setGeneSymbol("{value}");
@@ -101,6 +120,9 @@
 [then][]set confidence {value} on {variable}={variable}.setConfidence({value});
 [then][]set role ids {value} on {variable}={variable}.addRoleIds("{value}");
 [then][]set go ids {value} on {variable}={variable}.addGoIds("{value}");
+
+[then][]add property {prop} to {variable}={variable}.addProperty({prop});
+
 
 # I think we want to remove this approach below since 
 # it assumes named variable "ann"
