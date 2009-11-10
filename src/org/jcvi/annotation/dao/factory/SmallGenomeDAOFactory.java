@@ -45,11 +45,12 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 
 	// Genome Property DAO
 	public SmallGenomePropertyDAO getGenomePropertyDAO() {
-		return new SmallGenomePropertyDAO(this.createConnection(), this.dbname);
+		return new SmallGenomePropertyDAO();
 	}
 	
 	public SmallGenomePropertyDAO getGenomePropertyDAO(String dbname) {
-		return new SmallGenomePropertyDAO(this.createConnection(), dbname);
+		this.setDbname(dbname);
+		return new SmallGenomePropertyDAO(dbname);
 	}
 	
 	// Generate a Taxonomy DAO

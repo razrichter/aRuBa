@@ -9,15 +9,12 @@ import java.util.List;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 import org.drools.builder.ResourceType;
-
 import org.jcvi.annotation.dao.BlastResultFileDAO;
-import org.jcvi.annotation.dao.FeatureDAO;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
@@ -27,7 +24,7 @@ public class BrainGrab {
 
     private static final String sampleCommand = "braingrab -D <database> [-r <rule_file|directory>] blastfile.out|directory ...";
     private static final String rulesFile = "/org/jcvi/annotation/rules/BrainGrabChangeSet.xml";
-    private static final ResourceType rulesType = ResourceType.CHANGE_SET;
+    private static final ResourceType rulesType = ResourceType.ChangeSet;
     private static Boolean debug = false;
     private ArrayList<Feature> features = new ArrayList<Feature>();
     
@@ -49,23 +46,24 @@ public class BrainGrab {
     }
     
     private void addSmallGenome(String dbName) {
-        SmallGenomeDAOFactory sgFactory = new SmallGenomeDAOFactory(dbName);
+    	System.out.println("Loading facts from Small Genome database " + dbName + "...");
+    	SmallGenomeDAOFactory sgFactory = new SmallGenomeDAOFactory(dbName);
+    	
         // Add Genome Features
-        FeatureDAO featureLoader = sgFactory.getFeatureDAO();
-        // for (Feature feat : featureLoader.getFeatures() ) {
-        //     engine.addFact(feat);
-        // }
-        for (Feature f : featureLoader) {
-            features.add(f);
-        }
-        engine.addFacts(featureLoader);
-        
-        // Add Genome HMMs
-        engine.addFacts(sgFactory.getHmmHitDAO());
-        
+        int count = engine.addFacts(sgFactory.getFeatureDAO());
+    	System.out.println("  " + count + " features");
+    	        
+    	// Add annotations
+    	count = engine.addFacts(sgFactory.getAnnotationDAO());
+    	System.out.println("  " + count + " annotations");
+    	
+    	// Add Genome HMMs
+    	count = engine.addFacts(sgFactory.getHmmHitDAO());
+        System.out.println("  " + count + " HMM hits");
+    	
         // Add Genome Properties
-        engine.addFacts(sgFactory.getGenomePropertyDAO());
-        
+        count = engine.addFacts(sgFactory.getGenomePropertyDAO("gb6"));
+        System.out.println("  " + count + " genome properties");
     }
     
     
@@ -82,6 +80,7 @@ public class BrainGrab {
     }
     
     public static List<String> filesFromPaths(String[] filesOrDirs) {
+    	
     	ArrayList<String> files = new ArrayList<String>();
     	for (String fileOrDir : filesOrDirs) {
     		File stat = new File(fileOrDir);
@@ -125,14 +124,12 @@ public class BrainGrab {
         options.addOption("h","help",false, "Print this message");
         options.addOption("D", "database", true, "Small Genome Database id (required)");
         options.addOption("debug",false,"Debug output");
-        //options.addOption("r", "rule", false, "Rule File/Directory");
-        Option ruleOption = OptionBuilder.withLongOpt("rule")
-        	.hasArgs()
-        	.withDescription("override rules to run")
-        	.create("r");
-        
-        options.addOption(ruleOption);
-        		
+        OptionBuilder.withLongOpt("rule");
+		OptionBuilder.hasArgs();
+		OptionBuilder.withDescription("override rules to run");
+		options.addOption(OptionBuilder.create("r"));
+     
+         		
         // options.addOption(OptionBuilder.withLongOpt("blast").hasArgs().withDescription("add Blast Result File or Directory").create('b'));
         
         
@@ -165,8 +162,13 @@ public class BrainGrab {
         
         String[] ruleArgs = cmd.getOptionValues("rule");
         BrainGrab bg;
+        
+        // Give a rules file
         if (ruleArgs.length > 0) {
         	List<String> ruleFiles = filesFromPaths(ruleArgs);
+        	for (String f : ruleFiles) {
+        		System.out.println("rule " + f.toString());
+        	}
         	bg = new BrainGrab(ruleFiles);
         }
         else {
@@ -174,10 +176,11 @@ public class BrainGrab {
         }
 
         // String[] blastArgs = cmd.getOptionValues("blast");
-        
-        
+
         bg.addSmallGenome(dbName);
         bg.addSearchFiles(cmd.getArgs());
+
+        // Fire rules
         bg.run();
         
         for (Feature f : bg.features) {
@@ -209,7 +212,7 @@ public class BrainGrab {
                 ArrayList<String> annotations = new ArrayList<String>();
                 annotations.addAll(Arrays.asList(
                         a.getCommonName(), a.getGeneSymbol(),
-                        a.getEcNumber(), 
+                        "EC Numbers (" + join(a.getEcNumbers(), ",") + ")",
                         "GO IDs (" + join(a.getGoIds(), ",") + ")",
                         "Role IDs (" + join(a.getRoleIds(),",") + ")"
                     ));

@@ -2,7 +2,6 @@ package org.jcvi.annotation.dao;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.jcvi.annotation.facts.Taxon;

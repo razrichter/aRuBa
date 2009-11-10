@@ -252,7 +252,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 						Annotation nextAnnot = new Annotation(conn.toString());
 						nextAnnot.setCommonName(rs.getString(1));
 						nextAnnot.setGeneSymbol(rs.getString(2));
-						nextAnnot.setEcNumber(rs.getString(3));
+						nextAnnot.setEcNumbers(rs.getString(3));
 						
 						
 						return nextAnnot;

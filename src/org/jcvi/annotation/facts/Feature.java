@@ -19,7 +19,6 @@ public class Feature {
 	private List<Map<String, Object>> properties = new ArrayList<Map<String, Object>>();
 	private Annotation assignedAnnotation;
 	private List<Annotation> assertedAnnotations = new ArrayList<Annotation>();
-	// private List<Rule> firedRules = new ArrayList<String>();
 		
 	public Feature(String featureId) {
 		super();
@@ -41,6 +40,13 @@ public class Feature {
 	}
 
 	// Constructor with source molecule
+	public Feature(String featureId, String type, int start, int end, int strand,
+			Feature source) {
+		this(featureId, type, start, end, strand);
+		this.setSource(source);
+	}
+
+	// Constructor with name
 	public Feature(String featureId, String type, int start, int end, int strand,
 			String name) {
 		this(featureId, type, start, end, strand);
@@ -151,6 +157,15 @@ public class Feature {
 		this.type = type;
 	}
 
+	public boolean hasOverlap(Feature f) {
+		if (this.source == f.getSource()) {
+			if ((f.getEnd() > this.start && f.getStart() < this.end) 
+					|| (f.getEnd() > this.start && f.getStart() < this.end)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	public int getDistance(String sourceId, int start, int end, boolean isCircular) {
 		if (this.source.getFeatureId() == sourceId) {
 			// Check for overlaps
@@ -173,6 +188,10 @@ public class Feature {
 	}
 	public String toString() {
 		return this.type + "|" + this.featureId;
+	}
+	
+	public boolean isSameDirection(Feature f1, Feature f2) {
+		return (f1.getStrand() == f2.getStrand());
 	}
 
 	// @Override equals method

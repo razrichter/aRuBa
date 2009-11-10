@@ -1,14 +1,12 @@
 package org.jcvi.annotation.dao;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Iterator;
 
-import org.jcvi.annotation.facts.HmmHit;
-import org.jcvi.annotation.dao.HmmCutoffTableDAO;
 import org.jcvi.annotation.dao.HmmCutoffTableDAO.HmmCutoff;
+import org.jcvi.annotation.facts.HmmHit;
 
 
 public class SmallGenomeHmmHitDAO implements HmmHitDAO {
@@ -17,12 +15,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 	private HmmCutoffTableDAO cutoffTable; 
 	
 	public SmallGenomeHmmHitDAO() {
-	    try {
-            cutoffTable = new HmmCutoffTableDAO();
-        }
-        catch (IOException e) {
-            cutoffTable = null;
-        }
+		super();
 	}
 	public SmallGenomeHmmHitDAO(Connection conn) {
 		this();

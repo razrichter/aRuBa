@@ -116,7 +116,7 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 						String featureId = rs.getString(1);
 						nextAnnot.setCommonName(rs.getString(2));
 						nextAnnot.setGeneSymbol(rs.getString(3));
-						nextAnnot.setEcNumber(rs.getString(4));
+						nextAnnot.setEcNumbers(rs.getString(4));
 						
 						// Add Go Terms to Annotation
 						List<String> goIds = getGoIds(featureId);

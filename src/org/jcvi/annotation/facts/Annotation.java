@@ -20,7 +20,7 @@ public class Annotation {
 	private int assertionType;
 	private String commonName;
 	private String geneSymbol;
-	private String ecNumber;
+	private List<String> ecNumbers = new ArrayList<String>();
 	private List<String> roleIds = new ArrayList<String>();
 	private List<String> goIds = new ArrayList<String>();
 
@@ -89,18 +89,33 @@ public class Annotation {
 		this.geneSymbol = geneSymbol;
 	}
 
-	public String getEcNumber() {
-		return ecNumber;
+	// ec numbers
+	public List<String> getEcNumbers() {
+		return ecNumbers;
 	}
-
-	public void setEcNumber(String ecNumber) {
-		this.ecNumber = ecNumber;
+	public void addEcNumbers(List<String> ecNumbers) {
+		for (String o : ecNumbers) {
+			this.ecNumbers.add(o);
+		}
 	}
-
+	public void addEcNumbers(String ecNumberString) {
+		addEcNumbers(Arrays.asList(ecNumberString.split(",")));
+	}
+	public void addEcNumber(String ecNumber) {
+		this.ecNumbers.add(ecNumber);		
+	}
+	public void setEcNumbers(List<String> ecNumbers) {
+		this.ecNumbers = ecNumbers;
+	}
+	public void setEcNumbers(String ecNumberString) {
+		if (ecNumberString != null)
+			setEcNumbers(Arrays.asList(ecNumberString.split(",")));
+	}
+	
+	// role ids
 	public List<String> getRoleIds() {
 		return roleIds;
 	}
-
 	public void addRoleIds(List<String> roleIds) {
 		for (String o : roleIds) {
 			this.roleIds.add(o);
@@ -109,11 +124,23 @@ public class Annotation {
 	public void addRoleIds(String roleIdString) {
 		addRoleIds(Arrays.asList(roleIdString.split(",")));
 	}
-	
 	public void addRoleId(String roleId) {
 		this.roleIds.add(roleId);		
 	}
+	public void setRoleIds(List<String> roleIds) {
+		this.roleIds = roleIds;
+	}
+	public void setRoleIds(String roleIdString) {
+		setRoleIds(Arrays.asList(roleIdString.split(",")));
+	}
 
+	// go ids
+	public void setGoIds(List<String> goIds) {
+		this.goIds = goIds;
+	}
+	public void setGoIds(String goIdsString) {
+		setGoIds(Arrays.asList(goIdsString.split(",")));
+	}
 	public List<String> getGoIds() {
 		return goIds;
 	}
