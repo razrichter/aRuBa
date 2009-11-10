@@ -56,6 +56,11 @@ public class TestHmmHitRule extends TestCase {
         engine.addFact(hit3);
         engine.addFact(hit4);
         engine.fireAllRules();
+
+        URL fullDslrUrl = engine.getClass().getResource("../rules/BrainGrabRules.dslr");
+		engine.addResource(fullDslrUrl.toString(), ResourceType.DSL);
+		engine.fireAllRules();
+
     }
 
     @After
@@ -70,7 +75,7 @@ public class TestHmmHitRule extends TestCase {
         assertTrue(orf.getAssertedAnnotations().size() == 1);
         Annotation ann = orf.getAssertedAnnotations().get(0);
         assertTrue(ann.getCommonName().equals("precorrin-6Y C5,15-methyltransferase (decarboxylating)"));
-        assertTrue(ann.getEcNumber().equals("2.1.1.132"));
+        assertTrue(ann.getEcNumbers().equals("2.1.1.132"));
         assertTrue(ann.getGeneSymbol().equals("cobL"));
         // TODO: I don't know how to properly check this. contains looks at object id, List.equals() does as well
         // assertEquals(Arrays.asList("GO:0046140", "GO:0009236", "GO:0046025"), ann.getGoIds());

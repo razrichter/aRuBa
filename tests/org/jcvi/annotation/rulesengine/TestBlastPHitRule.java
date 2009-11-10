@@ -66,7 +66,7 @@ public class TestBlastPHitRule extends TestCase {
 	}
 
 	public void testSampleBlastEcNumber() {
-		assertEquals("", ann.getEcNumber());
+		assertEquals("", ann.getEcNumbers());
 	}
 	public void testSampleBlastGoIds() {
 		ArrayList<String> goIds = new ArrayList<String>();

@@ -1,21 +1,14 @@
 package org.jcvi.annotation.rulesengine;
-import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import junit.framework.TestCase;
-import org.drools.builder.DecisionTableConfiguration;
-import org.drools.builder.DecisionTableInputType;
-import org.drools.builder.KnowledgeBuilderFactory;
+
 import org.drools.builder.ResourceType;
-import org.drools.compiler.DecisionTableFactory;
 import org.jcvi.annotation.dao.NCBITaxonomyDAO;
 import org.jcvi.annotation.dao.SmallGenomePropertyDAO;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
-import org.jcvi.annotation.facts.BlastHit;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.Taxon;
@@ -76,15 +69,15 @@ public class TestGenomeProperty extends TestCase {
 	
 	public void testDrl() {
 		
-		// URL drlUrl = engine.getClass().getResource("../rules/TestGenomePropertyRule.drl");
-		// engine.addResource(drlUrl.toString(), ResourceType.DRL);
+		URL drlUrl = engine.getClass().getResource("../rules/TestGenomePropertyRule.drl");
+		engine.addResource(drlUrl.toString(), ResourceType.DRL);
 		
-		// /*
+		/*
 		URL dslUrl = engine.getClass().getResource("../rules/BrainGrabRulesTranslator.dsl");
 		URL dslrUrl = engine.getClass().getResource("../rules/BrainGrabRules.dslr");
 		engine.addResource(dslUrl.toString(), ResourceType.DSL);
 		engine.addResource(dslrUrl.toString(), ResourceType.DSLR);
-		// */
+		*/
 		
 		engine.fireAllRules();
 

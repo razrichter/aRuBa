@@ -3,8 +3,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import junit.framework.TestCase;
 import org.drools.builder.DecisionTableConfiguration;
 import org.drools.builder.DecisionTableInputType;
@@ -89,7 +87,7 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 		assertEquals("exosporium protein K", ann.getCommonName());
 		assertEquals("exsK", ann.getGeneSymbol());
 		assertFalse(ann.getGeneSymbol() == "not_gene_symbol");
-		assertEquals("", ann.getEcNumber());
+		assertEquals("", ann.getEcNumbers());
 		assertEquals(Annotation.INIT_EQUIV, ann.getSpecificity());
 		assertEquals(Annotation.EXACT, ann.getAssertionType());
 		assertEquals(96.0, ann.getConfidence());

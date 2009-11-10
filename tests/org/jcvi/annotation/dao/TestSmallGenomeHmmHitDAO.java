@@ -1,13 +1,9 @@
 package org.jcvi.annotation.dao;
 import junit.framework.TestCase;
+import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
+import org.jcvi.annotation.facts.HmmHit;
 import org.junit.After;
 import org.junit.Before;
-import java.util.List;
-
-import org.jcvi.annotation.dao.factory.*;
-import org.jcvi.annotation.facts.Annotation;
-import org.jcvi.annotation.facts.Feature;
-import org.jcvi.annotation.facts.HmmHit;
 
 public class TestSmallGenomeHmmHitDAO extends TestCase {
 

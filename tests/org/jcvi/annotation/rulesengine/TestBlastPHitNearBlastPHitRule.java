@@ -2,11 +2,10 @@ package org.jcvi.annotation.rulesengine;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 import junit.framework.TestCase;
+
 import org.drools.builder.ResourceType;
-import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.BlastHit;
 import org.jcvi.annotation.facts.Feature;
 import org.junit.After;
