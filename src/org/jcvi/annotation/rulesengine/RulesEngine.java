@@ -106,12 +106,17 @@ public class RulesEngine {
         ksession.insert(fact);
 	}
 	
-	public void addFacts(Iterable< ? extends Object> facts) {
+	public int addFacts(Iterable< ? extends Object> facts) {
+		int count = 0;
 		for (Object fact : facts) {
 			addFact(fact);
+			count++;
 		}
+		return count;
 	}
 
+	
+	
 	public void addGlobal(String key, Object obj) {
 		if (ksession == null) {
 			ksession = kbase.newStatefulKnowledgeSession();
@@ -133,16 +138,19 @@ public class RulesEngine {
 			throw new RulesEngineException(
 					"Invalid attempt to fire rules without instantiating a knowledge session.");
 		}
+		
 		if (logFilename != null) {
 			logger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFilename);
-		} 
-
+		}
+		
 		if (debug) {
 			if (logFilename == null) {
 				logger = KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
 			}
 			ksession.addEventListener(new DebugWorkingMemoryEventListener());
 		}
+		
+		
 		ksession.fireAllRules();
 		ksession.dispose();
 		ksession = null;
