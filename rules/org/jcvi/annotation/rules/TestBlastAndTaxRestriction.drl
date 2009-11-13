@@ -23,7 +23,7 @@ no-loop true
 	    a.setSpecificity(Annotation.EQUIVALOG);
 	    a.setAssertionType(Annotation.EXACT);
 	    a.addGoIds("GO:0043592,GO:0003674,GO:0008150");
-	    a.setEcNumber("");
+	    a.setEcNumbers("");
 	    a.addRoleIds("705");
 	    a.setCommonName("exosporium protein K");
 	    a.setGeneSymbol("exsK");
