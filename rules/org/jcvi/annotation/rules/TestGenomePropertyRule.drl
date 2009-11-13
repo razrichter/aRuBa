@@ -3,6 +3,7 @@ package org.jcvi.annotation.rules;
 import org.jcvi.annotation.facts.*;
 import java.util.Map;
 
+dialect "mvel"
 # Legacy rule: (THIS_GO_TERM[GO:0030435] || THIS_GO_TERM[GO:0043936]) && GEN_PROP[GenProp0610, 0.6] && GEN_STATE[GenProp0078, Firmicutes]
 
 rule "endospore formers rule"
