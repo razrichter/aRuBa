@@ -24,7 +24,7 @@ public class BrainGrab {
 
     private static final String sampleCommand = "braingrab -D <database> [-r <rule_file|directory>] blastfile.out|directory ...";
     private static final String rulesFile = "/org/jcvi/annotation/rules/BrainGrabChangeSet.xml";
-    private static final ResourceType rulesType = ResourceType.ChangeSet;
+    private static final ResourceType rulesType = ResourceType.CHANGE_SET;
     private static Boolean debug = false;
     private ArrayList<Feature> features = new ArrayList<Feature>();
     
