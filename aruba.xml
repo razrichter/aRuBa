@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project RulesBasedAnnotation">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/Users/rrichter/workspaces/drools/RulesBasedAnnotation/run/aruba.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="org.jcvi.annotation.Aruba"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="/Users/rrichter/workspaces/drools/RulesBasedAnnotation/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/antlr-runtime.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/drools-api.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/drools-compiler.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/drools-core.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/drools-decisiontables.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/drools-jsr94.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/drools-templates.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/joda-time.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/jsr94.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/jxl.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/mvel2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/xpp3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/xpp3_min.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/java/Drools-5.0/xstream.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Applications/eclipse-galileo/plugins/org.junit4_4.5.0.v20090824/junit.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Applications/eclipse-galileo/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/workspaces/drools/RulesBasedAnnotation/lib/biojava.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/workspaces/drools/RulesBasedAnnotation/lib/commons-cli-1.2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/workspaces/drools/RulesBasedAnnotation/lib/jconn3.jar"/>
+        </jar>
+    </target>
+</project>
