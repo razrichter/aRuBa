@@ -1,0 +1,24 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2481 DEFAULT_METHOD[GB|ACA53876.1]
+rule "xanthine dehydrogenase family protein, iron-sulfur binding subunit after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA53876.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2481");
+	 a.setGoIds("GO:0006118,GO:0008152,GO:0009055,GO:0016491");
+	 a.setRoleIds("112,703");
+	 a.setCommonName("xanthine dehydrogenase family protein, iron-sulfur binding subunit");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

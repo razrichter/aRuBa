@@ -1,0 +1,29 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2529 THIS_BLAST_HIT[GB|AAS44195.1, 1200, 95, 92, 75, 5, 1] && THIS_HMM_HIT[TIGR00963] && GEN_STATE[GenProp0081, Bacillaceae]
+rule "preprotein translocase, SecA subunit"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAS44195.1', 
+			bitScore >= 1200,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 75,
+			hitQueryLengthRatio <= 5 
+		)
+	 and
+	 hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00963' )
+	 and
+	 txn1 : Taxon( parentNames contains 'Bacillaceae' )
+	gene1 : Feature( featureId == blast_hit1.queryId, taxon == txn1, featureId == hmm_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2529");
+	 a.setGoIds("GO:0009306,GO:0015450");
+	 a.setCommonName("preprotein translocase, SecA subunit");
+	 a.setRoleIds("97,187");
+	 a.setGeneSymbol("secA1");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

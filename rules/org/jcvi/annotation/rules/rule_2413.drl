@@ -1,0 +1,24 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2413 (THIS_GO_TERM[GO:0030435] || THIS_GO_TERM[GO:0043936]) && GEN_PROP[GenProp0610, 0.6] && GEN_STATE[GenProp0078, Firmicutes]
+rule "upgade GO process for endospore formers from sporulation to endospore"
+ when
+	(
+	 annot1 : Annotation( goIds contains 'GO:0030435' )
+	 or
+	 annot2 : Annotation( goIds contains 'GO:0043936' )
+	 )
+	 and
+	 genprop1 : GenomeProperty( this['id'] == 'GenProp0610', this['value'] >= 0.6 )
+ and
+	 txn1 : Taxon( parentNames contains 'Firmicutes' )
+	gene1 : Feature( assignedAnnotation == annot1, assignedAnnotation == annot2, taxon == txn1, properties contains genprop1 )
+	
+ then
+	 Annotation a = new Annotation("2413");
+	 a.addGoIds("GO:0034301");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

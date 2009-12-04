@@ -1,0 +1,22 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2614 THIS_HMM_HIT[TIGR00398] && GENOME_HMM_HIT[TIGR00399] && !THIS_HMM_HIT[TIGR00399]
+rule "methionyl-tRNA synthetase, alpha subunit"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00398' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00399' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	not HmmHit( program=='hmm', hitId=='TIGR00399', queryId == gene1.featureId )
+	
+ then
+	 Annotation a = new Annotation("2614");
+	 a.setGoIds("GO:0004825,GO:0006431");
+	 a.setEcNumbers("6.1.1.10");
+	 a.setCommonName("methionyl-tRNA synthetase, alpha subunit");
+	 a.setRoleIds("137");
+	 a.setGeneSymbol("metS");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

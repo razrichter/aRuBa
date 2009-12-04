@@ -1,0 +1,24 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2515 DEFAULT_METHOD[GB|ACA53965.1]
+rule "spore coat protein, CotS family after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA53965.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2515");
+	 a.setGoIds("GO:0005554,GO:0042243,GO:0043593");
+	 a.setRoleIds("705");
+	 a.setCommonName("spore coat protein, CotS family");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2485 DEFAULT_METHOD[GB|ACA55714.1]
+rule "dimethylamine corrinoid protein"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA55714.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2485");
+	 a.setGoIds("GO:0008168,GO:0015948");
+	 a.setCommonName("dimethylamine corrinoid protein");
+	 a.setRoleIds("159");
+	 a.setGeneSymbol("mtbC");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

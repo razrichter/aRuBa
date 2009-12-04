@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2634 THIS_BLAST_HIT[SP|P60061, 650, 95, 92, 82, 3, 0]
+rule "arginine/agmatine antiporter"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P60061', 
+			bitScore >= 650,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 82,
+			hitQueryLengthRatio <= 3 
+		)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2634");
+	 a.setGoIds("GO:0015300,GO:0016020,GO:0015171,GO:0009268,GO:0006865");
+	 a.setRoleIds("142,149");
+	 a.setCommonName("arginine/agmatine antiporter");
+	 a.setGeneSymbol("adiC");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

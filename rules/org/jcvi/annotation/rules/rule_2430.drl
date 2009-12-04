@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2430 DEFAULT_METHOD[GB|ACA54161.1]
+rule "ABC transporter, ATP-binding protein, SagG family after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA54161.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2430");
+	 a.setGoIds("GO:0006810,GO:0009405,GO:0042626");
+	 a.setRoleIds("147,187");
+	 a.setCommonName("heterocyclic bacteriocin ABC transporter, ATP-binding protein SagG");
+	 a.setGeneSymbol("sagG");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

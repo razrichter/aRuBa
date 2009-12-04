@@ -1,0 +1,22 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2674 THIS_HMM_HIT[TIGR03827] && GEN_STATE[GenProp0078, Euryarchaeota]
+rule "beta-lysine N-acetyltransferase"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR03827' )
+	 and
+	 txn1 : Taxon( parentNames contains 'Euryarchaeota' )
+	gene1 : Feature( taxon == txn1, featureId == hmm_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2674");
+	 a.setGoIds("GO:0016747,GO:0042398");
+	 a.setEcNumbers("2.3.1.-");
+	 a.setRoleIds("149");
+	 a.setCommonName("beta-lysine N-acetyltransferase");
+	 a.setGeneSymbol("ablB");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

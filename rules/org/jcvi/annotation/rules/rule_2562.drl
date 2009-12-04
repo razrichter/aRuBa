@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2562 DEFAULT_METHOD[GB|ACA54482.1]
+rule "flagellar biosynthesis protein FlhG after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA54482.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2562");
+	 a.setGoIds("GO:0000166,GO:0009296,GO:0060286");
+	 a.setRoleIds("188");
+	 a.setCommonName("flagellar biosynthesis protein FlhG");
+	 a.setGeneSymbol("flhG");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

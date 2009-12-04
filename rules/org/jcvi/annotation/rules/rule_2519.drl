@@ -1,0 +1,26 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2519 DEFAULT_METHOD[RF|YP_001388430.1]
+rule "glucose-1-phosphate cytidylyltransferase after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001388430.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2519");
+	 a.setGoIds("GO:0009103,GO:0047343");
+	 a.setEcNumbers("2.7.7.33");
+	 a.setRoleIds("90");
+	 a.setCommonName("glucose-1-phosphate cytidylyltransferase");
+	 a.setGeneSymbol("rfbF");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

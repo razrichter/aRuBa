@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2552 DEFAULT_METHOD[GB|ACA54775.1]
+rule "undecaprenyl-phosphate galactose phosphotransferase after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA54775.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2552");
+	 a.setGoIds("GO:0009243,GO:0047360");
+	 a.setRoleIds("90");
+	 a.setCommonName("undecaprenyl-phosphate galactose phosphotransferase");
+	 a.setGeneSymbol("rfbP");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

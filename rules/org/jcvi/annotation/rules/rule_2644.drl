@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2644 THIS_BLAST_HIT[GB|AAG59332.1, 500, 95, 92, 60, 5, 0]
+rule "cadaverine:lysine antiporter"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAG59332.1', 
+			bitScore >= 500,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 60,
+			hitQueryLengthRatio <= 5 
+		)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2644");
+	 a.setGoIds("GO:0005887,GO:0015497,GO:0015837");
+	 a.setRoleIds("71");
+	 a.setCommonName("cadaverine:lysine antiporter");
+	 a.setGeneSymbol("cadB");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

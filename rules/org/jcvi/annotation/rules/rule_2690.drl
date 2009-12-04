@@ -1,0 +1,22 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2690 THIS_HMM_HIT[TIGR03846] && GENOME_HMM_HIT[TIGR03845] && !THIS_HMM_HIT[TIGR03845]
+rule "sulfopyruvate decarboxylase, beta subunit"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR03846' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR03845' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	not HmmHit( program=='hmm', hitId=='TIGR03845', queryId == gene1.featureId )
+	
+ then
+	 Annotation a = new Annotation("2690");
+	 a.setGoIds("GO:0050545,GO:0019295");
+	 a.setEcNumbers("4.1.1.79");
+	 a.setRoleIds("76,159");
+	 a.setCommonName("sulfopyruvate decarboxylase, beta subunit");
+	 a.setGeneSymbol("comE");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

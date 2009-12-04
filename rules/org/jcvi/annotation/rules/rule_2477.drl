@@ -1,0 +1,26 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2477 DEFAULT_METHOD[GB|ACA53975.1]
+rule "glycine reductase complex component C, alpha subunit after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA53975.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2477");
+	 a.setGoIds("GO:0006544,GO:0030699,GO:0030700");
+	 a.setEcNumbers("1.21.4.2");
+	 a.setRoleIds("109");
+	 a.setCommonName("glycine reductase complex component C, alpha subunit");
+	 a.setGeneSymbol("grdD");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

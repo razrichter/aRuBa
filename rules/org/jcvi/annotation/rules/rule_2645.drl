@@ -1,0 +1,39 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2645 THIS_BLAST_HIT[GB|AAQ16631.1, 1250, 95, 92, 85, 5, 0] || (THIS_BLAST_HIT[GB|AAQ16631.1, 900, 95, 92, 60, 5, 1] || NEAR_HMM_HIT[500,TIGR00905])
+rule "lysine decarboxylase CadA"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAQ16631.1', 
+			bitScore >= 1250,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 85,
+			hitQueryLengthRatio <= 5 
+		)
+	 or
+	 (
+	 blast_hit2 : BlastHit( program=='blastp', hitId=='GB|AAQ16631.1', 
+			bitScore >= 900,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 60,
+			hitQueryLengthRatio <= 5 
+		)
+	 or
+	 hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00905' )
+	 )
+	gene1 : Feature( featureId == blast_hit1.queryId, featureId == blast_hit2.queryId, featureId == hmm_hit1.queryId )
+	gene2 : Feature( eval(gene2.isWithin(gene1, 500)) )
+	
+ then
+	 Annotation a = new Annotation("2645");
+	 a.setEcNumbers("4.1.1.18");
+	 a.setRoleIds("149");
+	 a.setCommonName("lysine decarboxylase CadA");
+	 a.setGeneSymbol("cadA");
+	 a.addGoIds("GO:0006885,GO:0008923,GO:0046440");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

@@ -1,0 +1,26 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2454 DEFAULT_METHOD[GB|ACA55211.1]
+rule "hydroxyethylthiazole kinase after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA55211.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2454");
+	 a.setGoIds("GO:0004417,GO:0009228");
+	 a.setEcNumbers("2.7.1.50");
+	 a.setRoleIds("162");
+	 a.setCommonName("hydroxyethylthiazole kinase");
+	 a.setGeneSymbol("thiM");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

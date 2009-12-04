@@ -1,0 +1,21 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2281 THIS_HMM_HIT[PF00281] && GEN_STATE[GenProp0006,Bacteria]
+rule "50S ribosomal protein L5 by HMM in BACTERIA"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF00281' )
+	 and
+	 txn1 : Taxon( parentNames contains 'Bacteria' )
+	gene1 : Feature( taxon == txn1, featureId == hmm_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2281");
+	 a.setGoIds("GO:0003735,GO:0006412,GO:0022625");
+	 a.setRoleIds("158");
+	 a.setGeneSymbol("rplE");
+	 a.setCommonName("50S ribosomal protein L5");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

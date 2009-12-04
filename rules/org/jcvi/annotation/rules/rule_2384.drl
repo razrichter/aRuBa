@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2384 THIS_BLAST_HIT[GB|AAN85821.1, 260, 95, 92, 87, 5, 0]
+rule "exosporium protein F"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAN85821.1', 
+			bitScore >= 260,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 87,
+			hitQueryLengthRatio <= 5 
+		)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2384");
+	 a.setRoleIds("705");
+	 a.setCommonName("exosporium protein F");
+	 a.setGeneSymbol("exsF");
+	 a.addGoIds("GO:0043592,GO:0003674,GO:0008150");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

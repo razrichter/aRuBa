@@ -1,0 +1,24 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2465 DEFAULT_METHOD[RF|YP_001387651.1]
+rule "putative serine-type D-Ala-D-Ala carboxypeptidase"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001387651.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2465");
+	 a.setGoIds("GO:0000270,GO:0009002");
+	 a.setRoleIds("89");
+	 a.setCommonName("putative serine-type D-Ala-D-Ala carboxypeptidase");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

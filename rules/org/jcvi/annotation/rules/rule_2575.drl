@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2575 DEFAULT_METHOD[GB|CAL84263.1]
+rule "flagellar glycosylation island glycosyltransferase, CBO2702 family"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|CAL84263.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2575");
+	 a.setEcNumbers("2.4.1.-");
+	 a.setRoleIds("91");
+	 a.setCommonName("flagellar glycosylation island glycosyltransferase, CBO2702 family");
+	 a.addGoIds("GO:0005975,GO:0016757");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

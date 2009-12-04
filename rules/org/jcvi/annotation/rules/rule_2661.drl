@@ -1,0 +1,26 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2661 THIS_BLAST_HIT[GB|BAB21508.1, 300, 85, 85, 50, 5, 0]
+rule "protein-glutaminase"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|BAB21508.1', 
+			bitScore >= 300,
+			hitPercentLength >= 85,
+			queryPercentLength >= 85,  
+			percentIdentity >= 50,
+			hitQueryLengthRatio <= 5 
+		)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2661");
+	 a.setEcNumbers("3.5.1.-");
+	 a.setCommonName("protein-glutaminase");
+	 a.setGeneSymbol("prgA");
+	 a.addGoIds("GO:0016811");
+	 a.addRoleIds("189");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

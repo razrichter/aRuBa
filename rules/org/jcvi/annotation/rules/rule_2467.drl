@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2467 DEFAULT_METHOD[RF|YP_001781411.1]
+rule "pyrimidine-nucleoside phosphorylase"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781411.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2467");
+	 a.setGoIds("GO:0016154,GO:0043097");
+	 a.setEcNumbers("2.4.2.2");
+	 a.setCommonName("pyrimidine-nucleoside phosphorylase");
+	 a.setRoleIds("127");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

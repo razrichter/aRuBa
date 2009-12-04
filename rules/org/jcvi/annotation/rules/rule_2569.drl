@@ -1,0 +1,24 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2569 DEFAULT_METHOD[SP|P0AGI8]
+rule "putative Trk system potassium uptake protein TrkA"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P0AGI8', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2569");
+	 a.setGoIds("GO:0006813,GO:0015079");
+	 a.setRoleIds("145");
+	 a.setCommonName("putative Trk system potassium uptake protein TrkA");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

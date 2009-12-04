@@ -1,0 +1,21 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2585 THIS_HMM_HIT[TIGR01129] && THIS_HMM_HIT[TIGR00966]
+rule "protein-export membrane protein SecDF"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01129' )
+	 and
+	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00966' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	
+ then
+	 Annotation a = new Annotation("2585");
+	 a.setGoIds("GO:0015450,GO:0043952,GO:0031522");
+	 a.setCommonName("protein-export membrane protein SecDF");
+	 a.setRoleIds("97");
+	 a.setGeneSymbol("secDF");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

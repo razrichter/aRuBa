@@ -1,0 +1,26 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2501 DEFAULT_METHOD[RF|YP_001781623.1]
+rule "cytosine deaminase"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781623.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2501");
+	 a.setGoIds("GO:0004131,GO:0008655");
+	 a.setEcNumbers("3.5.4.1");
+	 a.setRoleIds("127");
+	 a.setCommonName("cytosine deaminase");
+	 a.setGeneSymbol("codA");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

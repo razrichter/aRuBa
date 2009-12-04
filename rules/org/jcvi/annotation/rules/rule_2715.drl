@@ -1,0 +1,20 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2715 THIS_HMM_HIT[PF00158] && THIS_HMM_HIT[PF01590] && THIS_HMM_HIT[PF02954]
+rule "GAF-modulated sigma-54-dependent Fis-type transcriptional regulator by HMM domain trio."
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF00158' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='PF01590' )
+	hmm_hit3 : HmmHit( program=='hmm', hitId=='PF02954' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId, featureId == hmm_hit3.queryId )
+	
+ then
+	 Annotation a = new Annotation("2715");
+	 a.setRoleIds("261,263");
+	 a.setCommonName("GAF-modulated sigma-54-dependent Fis-type transcriptional regulator");
+	 a.addGoIds("GO:0003700,GO:0005515,GO:0006355");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

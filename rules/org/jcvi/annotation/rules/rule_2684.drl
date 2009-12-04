@@ -1,0 +1,22 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2684 THIS_HMM_HIT[PF06192] && NEAR_HMM_HIT[1000, TIGR01409] && !NEAR_HMM_HIT[5000, TIGR02164]
+rule "TorD homolog that is not TorD itself because it is not near TorA."
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF06192' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01409' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	gene2 : Feature( eval(gene2.isWithin(gene1, 1000)) )
+	not HmmHit( program=='hmm', hitId=='5000', queryId == gene2.featureId )
+	
+ then
+	 Annotation a = new Annotation("2684");
+	 a.setGeneSymbol("NULL");
+	 a.setRoleIds("95,97");
+	 a.setCommonName("TAT-signal peptide-binding chaperone, TorD family");
+	 a.addGoIds("GO:0051082,GO:0043953");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

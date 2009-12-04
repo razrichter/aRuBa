@@ -1,0 +1,29 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2688 THIS_BLAST_HIT[GB|AAG31690.1, 360, 95, 92, 80, 3, 0] && THIS_HMM_HIT[PF02909] && THIS_HMM_HIT[PF00440]
+rule "pristinamycin resistance transcriptional repressor Pip"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAG31690.1', 
+			bitScore >= 360,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 80,
+			hitQueryLengthRatio <= 3 
+		)
+	 and
+	 hmm_hit1 : HmmHit( program=='hmm', hitId=='PF02909' )
+	 and
+	 hmm_hit2 : HmmHit( program=='hmm', hitId=='PF00440' )
+	gene1 : Feature( featureId == blast_hit1.queryId, featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	
+ then
+	 Annotation a = new Annotation("2688");
+	 a.setCommonName("pristinamycin resistance transcriptional repressor Pip");
+	 a.setGeneSymbol("pip");
+	 a.setGoIds("GO:0051606,GO:0003700,GO:0006355,GO:0043565");
+	 a.setRoleIds("261,94");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

@@ -1,0 +1,22 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2671 THIS_HMM_HIT[TIGR00512] && THIS_HMM_HIT[TIGR03328]
+rule "S-methyl-5-thioribose-1-phosphate isomerase/methylthioribulose-1-phosphate dehydratase"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00512' )
+	 and
+	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR03328' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	
+ then
+	 Annotation a = new Annotation("2671");
+	 a.setGoIds("GO:0046523,GO:0016835,GO:0019509");
+	 a.setEcNumbers("5.3.1.23 4.2.-.-");
+	 a.setCommonName("S-methyl-5-thioribose-1-phosphate isomerase/methylthioribulose-1-phosphate dehydratase");
+	 a.setRoleIds("71");
+	 a.setGeneSymbol("mtnAB");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

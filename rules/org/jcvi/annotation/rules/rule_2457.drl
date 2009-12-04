@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2457 DEFAULT_METHOD[GB|ACA45815.1]
+rule "streptolysin associated protein SagB after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA45815.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2457");
+	 a.setGoIds("GO:0009405,GO:0015465,GO:0052331");
+	 a.setRoleIds("187");
+	 a.setCommonName("streptolysin associated protein SagB");
+	 a.setGeneSymbol("sagB");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

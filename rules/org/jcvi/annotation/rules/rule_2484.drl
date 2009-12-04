@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2484 DEFAULT_METHOD[RF|YP_001781510.1]
+rule "tungstate ABC transporter, tungstate-binding protein"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781510.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2484");
+	 a.setGoIds("GO:0070614,GO:0008509,GO:0043168,GO:0043190");
+	 a.setRoleIds("143");
+	 a.setCommonName("tungstate ABC transporter, tungstate-binding protein");
+	 a.setGeneSymbol("tupA");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

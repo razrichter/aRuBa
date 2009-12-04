@@ -1,0 +1,26 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2444 DEFAULT_METHOD[GB|EDK34415.1]
+rule "N-carbamyl-L-cysteine amidohydrolase after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|EDK34415.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2444");
+	 a.setGoIds("GO:0006508,GO:0050538");
+	 a.setEcNumbers("3.5.1.87");
+	 a.setRoleIds("102,138");
+	 a.setCommonName("N-carbamyl-L-cysteine amidohydrolase");
+	 a.setGeneSymbol("atcC");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

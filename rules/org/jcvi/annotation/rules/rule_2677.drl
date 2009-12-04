@@ -1,0 +1,26 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2677 THIS_BLAST_HIT[GB|CAD66853.1, 160, 95, 92, 50, 3, 0]
+rule "GTP cyclohydrolase I"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|CAD66853.1', 
+			bitScore >= 160,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 50,
+			hitQueryLengthRatio <= 3 
+		)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2677");
+	 a.setGoIds("GO:0003934,GO:0046654");
+	 a.setEcNumbers("3.5.4.16");
+	 a.setRoleIds("78");
+	 a.setCommonName("GTP cyclohydrolase I");
+	 a.setGeneSymbol("folE");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

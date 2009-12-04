@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2437 DEFAULT_METHOD[RF|YP_001781252.1]
+rule "collagenase after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781252.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2437");
+	 a.setGoIds("GO:0006508,GO:0051405");
+	 a.setEcNumbers("3.4.24.3");
+	 a.setRoleIds("138");
+	 a.setCommonName("collagenase");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

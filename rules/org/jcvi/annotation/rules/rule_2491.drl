@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2491 DEFAULT_METHOD[RF|YP_001781578.1]
+rule "putative aspartate aminotransferase"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781578.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2491");
+	 a.setGoIds("GO:0004069,GO:0006532");
+	 a.setEcNumbers("2.6.1.1");
+	 a.setRoleIds("71");
+	 a.setCommonName("putative aspartate aminotransferase");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

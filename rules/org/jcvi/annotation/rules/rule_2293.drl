@@ -1,0 +1,21 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2293 THIS_HMM_HIT[TIGR00062] && GEN_STATE[GenProp0006,Bacteria]
+rule "50S ribosomal protein L27 by HMM in BACTERIA"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00062' )
+	 and
+	 txn1 : Taxon( parentNames contains 'Bacteria' )
+	gene1 : Feature( taxon == txn1, featureId == hmm_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2293");
+	 a.setRoleIds("158");
+	 a.setCommonName("50S ribosomal protein L27");
+	 a.setGeneSymbol("rpmA");
+	 a.setGoIds("GO:0003735,GO:0006412,GO:0022625");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

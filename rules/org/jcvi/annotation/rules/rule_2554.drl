@@ -1,0 +1,26 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2554 DEFAULT_METHOD[GB|ACA55208.1]
+rule "cardiolipin synthase after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA55208.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2554");
+	 a.setGoIds("GO:0004620,GO:0008808,GO:0009395");
+	 a.setEcNumbers("2.7.8.-");
+	 a.setRoleIds("176");
+	 a.setCommonName("cardiolipin synthase");
+	 a.setGeneSymbol("cls");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2469 DEFAULT_METHOD[RF|YP_001781434.1]
+rule "putative geranyltranstransferase"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781434.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2469");
+	 a.setGoIds("GO:0004337,GO:0008299");
+	 a.setEcNumbers("2.5.1.10");
+	 a.setRoleIds("81");
+	 a.setCommonName("putative geranyltranstransferase");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

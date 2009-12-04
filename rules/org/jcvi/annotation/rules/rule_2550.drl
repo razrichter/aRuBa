@@ -1,0 +1,24 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2550 DEFAULT_METHOD[GB|ACA56915.1]
+rule "exopolysaccharide biosynthesis protein after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA56915.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2550");
+	 a.setGoIds("GO:0000271,GO:0003824");
+	 a.setRoleIds("90");
+	 a.setCommonName("exopolysaccharide biosynthesis protein");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

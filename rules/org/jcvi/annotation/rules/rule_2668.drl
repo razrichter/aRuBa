@@ -1,0 +1,22 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2668 THIS_HMM_HIT[TIGR00313] && THIS_HMM_HIT[TIGR01140]
+rule "threonine-phosphate decarboxylase/cobyric acid synthase"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00313' )
+	 and
+	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01140' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	
+ then
+	 Annotation a = new Annotation("2668");
+	 a.setGoIds("GO:0048472,GO:0051921,GO:0009236,GO:0005737");
+	 a.setEcNumbers("4.1.1.81 6.3.5.10");
+	 a.setCommonName("threonine-phosphate decarboxylase/cobyric acid synthase");
+	 a.setRoleIds("79");
+	 a.setGeneSymbol("cobDQ");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

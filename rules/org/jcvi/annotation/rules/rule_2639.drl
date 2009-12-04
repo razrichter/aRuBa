@@ -1,0 +1,27 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2639 THIS_BLAST_HIT[GB|ABG86187.1, 1600, 95, 92, 70, 3, 0] && NEAR_HMM_HIT[100,TIGR00541]
+rule "putative histidine/histamine antiporter by genomic context"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABG86187.1', 
+			bitScore >= 1600,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 70,
+			hitQueryLengthRatio <= 3 
+		)
+	 and
+	 hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00541' )
+	gene1 : Feature( featureId == blast_hit1.queryId, featureId == hmm_hit1.queryId )
+	gene2 : Feature( eval(gene2.isWithin(gene1, 100)) )
+	
+ then
+	 Annotation a = new Annotation("2639");
+	 a.setRoleIds("142");
+	 a.setCommonName("putative histidine/histamine antiporter");
+	 a.addGoIds("GO:0015297,GO:0006865,GO:0015171");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

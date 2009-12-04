@@ -1,0 +1,21 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2622 THIS_HMM_HIT[PF01174] && NEAR_HMM_HIT[500,TIGR00343]
+rule "pyridoxal phosphate synthase, Pdx2 subunit"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF01174' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00343' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	gene2 : Feature( eval(gene2.isWithin(gene1, 500)) )
+	
+ then
+	 Annotation a = new Annotation("2622");
+	 a.setRoleIds("83");
+	 a.setCommonName("pyridoxal 5'-phosphate synthase, glutaminase subunit Pdx2");
+	 a.setGeneSymbol("pdxT");
+	 a.addGoIds("GO:0042823");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

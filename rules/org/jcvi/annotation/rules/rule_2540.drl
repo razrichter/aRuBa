@@ -1,0 +1,24 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2540 DEFAULT_METHOD[GB|ABS39510.1]
+rule "small, acid-soluble spore protein beta after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS39510.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2540");
+	 a.setGoIds("GO:0003690,GO:0006265,GO:0030436");
+	 a.setRoleIds("705");
+	 a.setCommonName("small, acid-soluble spore protein beta");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

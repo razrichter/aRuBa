@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2652 DEFAULT_METHOD[SP|P46889]
+rule "DNA translocase FtsK"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P46889', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2652");
+	 a.setGoIds("GO:0000910,GO:0015616");
+	 a.setRoleIds("93");
+	 a.setCommonName("DNA translocase FtsK");
+	 a.setGeneSymbol("ftsK");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

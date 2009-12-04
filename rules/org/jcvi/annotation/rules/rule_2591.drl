@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2591 DEFAULT_METHOD[SP|P44886]
+rule "acyl-coenzyme A thioesterase, broad-specificity"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P44886', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2591");
+	 a.setEcNumbers("3.1.2.-");
+	 a.setCommonName("acyl-coenzyme A thioesterase, broad-specificity");
+	 a.setGeneSymbol("yciA");
+	 a.addGoIds("GO:0016790");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

@@ -1,0 +1,24 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2277 DEFAULT_METHOD[GB|AAG04413.1]
+rule "2-nitropropane dioxygenase, plastic rule based on NTL03PA01025|PA1024 GB|AAG04413.1"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAG04413.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2277");
+	 a.setCommonName("2-nitropropane dioxygenase");
+	 a.setEcNumbers("1.13.11.32");
+	 a.setGoIds("GO:0008152,GO:0016491");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

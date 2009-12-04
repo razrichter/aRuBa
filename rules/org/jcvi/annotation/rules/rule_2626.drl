@@ -1,0 +1,22 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2626 THIS_HMM_HIT[TIGR01111] && THIS_HMM_HIT[TIGR01149]
+rule "tetrahydromethanopterin S-methyltransferase, subunit A/G"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01111' )
+	 and
+	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01149' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	
+ then
+	 Annotation a = new Annotation("2626");
+	 a.setGoIds("GO:0006814,GO:0016020,GO:0019386,GO:0030269");
+	 a.setEcNumbers("2.1.1.86");
+	 a.setRoleIds("145,184");
+	 a.setCommonName("tetrahydromethanopterin S-methyltransferase, subunit A/G");
+	 a.setGeneSymbol("mtrAG");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

@@ -1,0 +1,31 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2629 THIS_BLAST_HIT[GB|AAF72509.1, 1795, 85, 85, 85, 10, 0] && THIS_HMM_HIT[PF05738] && THIS_HMM_HIT[TIGR01168] && THIS_HMM_HIT[TIGR01167]
+rule "serine-aspartate repeat-containing protein F"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAF72509.1', 
+			bitScore >= 1795,
+			hitPercentLength >= 85,
+			queryPercentLength >= 85,  
+			percentIdentity >= 85,
+			hitQueryLengthRatio <= 10 
+		)
+	 and
+	 hmm_hit1 : HmmHit( program=='hmm', hitId=='PF05738' )
+	 and
+	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01168' )
+	 and
+	 hmm_hit3 : HmmHit( program=='hmm', hitId=='TIGR01167' )
+	gene1 : Feature( featureId == blast_hit1.queryId, featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId, featureId == hmm_hit3.queryId )
+	
+ then
+	 Annotation a = new Annotation("2629");
+	 a.setGeneSymbol("sdrF");
+	 a.setCommonName("serine-aspartate repeat-containing protein F");
+	 a.setRoleIds("88");
+	 a.addGoIds("GO:0006931,GO:0005518");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

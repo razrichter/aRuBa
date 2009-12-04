@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2636 THIS_BLAST_HIT[RF|NP_301087.1, 350, 95, 92, 80, 5, 0]
+rule "arginine decarboxylase, pyruvoyl-dependent"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|NP_301087.1', 
+			bitScore >= 350,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 80,
+			hitQueryLengthRatio <= 5 
+		)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2636");
+	 a.setEcNumbers("4.1.1.19");
+	 a.setCommonName("arginine decarboxylase, pyruvoyl-dependent");
+	 a.setGeneSymbol("aaxB");
+	 a.addGoIds("GO:0008792");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

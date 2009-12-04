@@ -1,0 +1,22 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2664 THIS_HMM_HIT[TIGR02363] && THIS_HMM_HIT[TIGR02365]
+rule "dihydroxyacetone kinase, K/L subunit"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR02363' )
+	 and
+	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02365' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	
+ then
+	 Annotation a = new Annotation("2664");
+	 a.setGoIds("GO:0008152:,,GO:0016301:");
+	 a.setEcNumbers("2.7.1.-");
+	 a.setCommonName("dihydroxyacetone kinase, subunit I/II");
+	 a.setRoleIds("703");
+	 a.setGeneSymbol("dhaKL");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

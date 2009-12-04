@@ -1,0 +1,32 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2685 (THIS_HMM_HIT[PF06192] && NEAR_HMM_HIT[1000, TIGR02164]) || THIS_BLAST_HIT[SP|P36662, 300, 95, 92, 80, 5, 0]
+rule "TorA-specific chaperone TorD, based on TorA proximity or exact match"
+ when
+	(
+	 hmm_hit1 : HmmHit( program=='hmm', hitId=='PF06192' )
+	 and
+	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02164' )
+	 )
+	 or
+	 blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P36662', 
+			bitScore >= 300,
+			hitPercentLength >= 95,
+			queryPercentLength >= 92,  
+			percentIdentity >= 80,
+			hitQueryLengthRatio <= 5 
+		)
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	gene2 : Feature( featureId == blast_hit1.queryId, eval(gene2.isWithin(gene1, 1000)) )
+	
+ then
+	 Annotation a = new Annotation("2685");
+	 a.setGoIds("GO:0051082,GO:0006457,GO:0043953");
+	 a.setRoleIds("95,97");
+	 a.setCommonName("TorA-specific chaperone TorD");
+	 a.setGeneSymbol("torD");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

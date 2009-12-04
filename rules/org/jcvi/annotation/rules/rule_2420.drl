@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2420 DEFAULT_METHOD[RF|YP_001386702.1]
+rule "putative thiamine pyridinylase I after MGAT curation Clostridium"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001386702.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2420");
+	 a.setGoIds("GO:0009230,GO:0050332");
+	 a.setEcNumbers("2.5.1.2");
+	 a.setRoleIds("102");
+	 a.setCommonName("putative thiamine pyridinylase I");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

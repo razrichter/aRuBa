@@ -1,0 +1,22 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2623 THIS_HMM_HIT[TIGR01750] && THIS_HMM_HIT[TIGR00325]
+rule "UDP-3-O-[3-hydroxymyristoyl] N-acetylglucosamine deacetylase/beta-hydroxyacyl-(acyl-carrier-protein) dehydratase FabZ"
+ when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01750' )
+	 and
+	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00325' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+	
+ then
+	 Annotation a = new Annotation("2623");
+	 a.setGoIds("GO:0006633,GO:0008759,GO:0009245,GO:0016836");
+	 a.setEcNumbers("3.5.1.- 4.2.1.-");
+	 a.setCommonName("UDP-3-O-[3-hydroxymyristoyl] N-acetylglucosamine deacetylase/beta-hydroxyacyl-(acyl-carrier-protein) dehydratase FabZ");
+	 a.setRoleIds("90,176");
+	 a.setGeneSymbol("lpxC/fabZ");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

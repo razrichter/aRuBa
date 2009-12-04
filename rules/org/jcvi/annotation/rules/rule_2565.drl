@@ -1,0 +1,25 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2565 DEFAULT_METHOD[SP|Q01398]
+rule "putative haloacetate dehalogenase"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|Q01398', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1 
+			)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	
+ then
+	 Annotation a = new Annotation("2565");
+	 a.setGoIds("GO:0018785,GO:0070276");
+	 a.setEcNumbers("3.8.1.3");
+	 a.setRoleIds("184");
+	 a.setCommonName("putative haloacetate dehalogenase");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end

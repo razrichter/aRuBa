@@ -1,0 +1,32 @@
+#created on: Dec 1, 2009
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2415 THIS_BLAST_HIT[GB|AAF87749.1, 30, 80, 80, 30, 5, 0] && THIS_BLAST_HIT[GB|CAL81549.1, 60, 80, 80, 50, 5, 0]
+rule "bacteriocin, boticin B family"
+ when
+	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAF87749.1', 
+			bitScore >= 30,
+			hitPercentLength >= 80,
+			queryPercentLength >= 80,  
+			percentIdentity >= 30,
+			hitQueryLengthRatio <= 5 
+		)
+	 and
+	 blast_hit2 : BlastHit( program=='blastp', hitId=='GB|CAL81549.1', 
+			bitScore >= 60,
+			hitPercentLength >= 80,
+			queryPercentLength >= 80,  
+			percentIdentity >= 50,
+			hitQueryLengthRatio <= 5 
+		)
+	gene1 : Feature( featureId == blast_hit1.queryId, featureId == blast_hit2.queryId )
+	
+ then
+	 Annotation a = new Annotation("2415");
+	 a.setGoIds("GO:0030152,GO:0003674");
+	 a.setRoleIds("94");
+	 a.setCommonName("bacteriocin, boticin B family");
+	 gene1.addAssertedAnnotation(a);
+	 update(gene1);
+end
