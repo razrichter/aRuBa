@@ -1,0 +1,88 @@
+
+##############################################################################
+##                                                                          ##
+##  Set your default Java to 1.6											##
+##                                                                          ##
+##############################################################################
+# All the required libraries are in the repo. However, if you want to use Eclipse 
+# to do development you need to do a few more things. If you are on a Suse box, 
+# add 'use java160' to your .cshrc or .profile, and log out and in. 
+use java160
+
+
+##############################################################################
+##                                                                          ##
+##  Checkout the SVN Repository                                             ##
+##  http://svn.jcvi.org/ANNOTATION/RulesBasedAnnotation/trunk               ##
+##                                                                          ##
+##############################################################################
+# We recommend using the SVN Explorer plug-in for Eclipse
+
+# After checking out the project
+# Copy the directory (don't move it, or you'll throw off your checkout) in 
+# lib/drools-5.0 to somewhere outside the project area (e.g. ~/lib/java/drools-5.0). 
+# The only reason we have to do this is because the Drools plugin demands a 
+# runtime outside of the project space.
+
+# Add a Drools Installed Runtime 
+# from the preferences menu Drools..Installed Drools Runtime that points to 
+# the directory you just copied.
+
+
+##############################################################################
+##                                                                          ##
+##  Using the Groovy Shell                                                  ##
+##                                                                          ##
+##############################################################################
+
+# Launch the groovy shell and provide the classpath to the self-contained aruba.jar
+groovysh -classpath /path/to/aruba.jar 
+
+
+##############################################################################
+##                                                                          ##
+##  Using the Groovy Console                                                ##
+##                                                                          ##
+##############################################################################
+
+# Edit $GROOVY_HOME/conf/groovy-starter.conf to load the Aruba.jar
+load /path/to/aruba.jar
+
+# Start Groovy Console
+# Copy and paste the Groovy script below in the console and 
+# select Run from the Script pulldown in the top main menu.
+# If the import statement fails, check that the first step 
+# was completed properly.
+
+
+##############################################################################
+##                                                                          ##
+##  Sample Groovy script for running Aruba                                  ##
+##                                                                          ##
+##############################################################################
+
+import org.jcvi.annotation.Aruba;
+
+// Create a new instance of our Aruba class
+a = new Aruba();
+
+// Load BrainGrab rules
+a.addDefaultRules();
+
+// Or, load rules by providing a path to a Drools rules file
+a.addRuleByFile('/path/to/sample/rules/test.drl');
+
+// Load some facts from the Small Genome Database
+a.addSmallGenome('gb6');
+
+// Fire our rules
+a.run();
+
+// Try a different genome
+a.addSmallGenome('gb5');
+
+// Load some more rules
+a.addRuleByFile('/usr/local/devel/ANNOTATION/naxelrod/Aruba/rules/TestBlastAndTaxRestriction.drl');
+
+// Fire our rules again
+a.run();
