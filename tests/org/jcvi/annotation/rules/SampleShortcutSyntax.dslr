@@ -1,0 +1,25 @@
+package org.jcvi.annotation.rules;
+import org.jcvi.annotation.facts.*;
+import java.util.Map;
+expander BrainGrabRulesTranslator.dsl;
+
+rule "Identify Intein containing genes"
+    when
+    	geneA : Feature
+    	hmm_hit(geneA, "TIGR01445")
+		hmm_hit(geneA, "TIGR01443")
+    then
+    	new attribute("intein", geneA)
+end
+
+rule " twinarg toxin_antitoxin rule"
+    when
+    	geneA : Feature
+    	geneB : Feature
+    	hmm_hit(geneA, "TIGR02607")
+    	hmm_hit(geneB, "PF05015")
+    	near(geneA, geneB, 100)
+    then
+    	new cohort("toxin_antitoxin", geneA, geneB)
+end
+	

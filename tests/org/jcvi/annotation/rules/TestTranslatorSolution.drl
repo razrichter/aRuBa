@@ -1,0 +1,50 @@
+#created on: Jun 10, 2009
+package org.jcvi.annotation.rules;
+import org.jcvi.annotation.facts.*;
+
+# Translating legacy rule
+# (THIS_GO_TERM[GO:0030435] || THIS_GO_TERM[GO:0043936]) && GEN_PROP[GenProp0610, 0.6] && GEN_STATE[GenProp0078, Firmicutes]
+
+rule "goal solution"
+    when
+ 		( 
+			annot : Annotation( goIds contains 'GO:0030435' )
+			or 
+			annot : Annotation( goIds contains 'GO:0043936' )
+		) 
+		and 
+		(
+			 gProp : GenomeProperty( this['id'] == 'GenProp0610', this['value'] >= 0.6 )
+		)
+		
+		//and 
+		//(
+		//	 txn : Taxon( parentNames contains 'Firmicutes' )
+		//)
+    	geneA : Feature( assignedAnnotation==annot, properties contains gProp //, taxon == txn  
+    					)
+ 		
+    then
+    	System.out.println(kcontext.getRule().getName());
+end
+
+rule "test solution"
+    when
+		(
+		 	annot : Annotation( goIds contains 'GO:0030435' )
+		 	or
+		 	annot : Annotation( goIds contains 'GO:0043936' )
+		 )
+		 and
+		 	genprop : GenomeProperty( this['id'] == 'GenProp0610', this['value'] >= 0.6 )
+		 and
+		 	txn : Taxon(parentNames contains 'Firmicutes' )
+    	
+    	geneA : Feature( assignedAnnotation == annot, taxon == txn, 
+    				properties contains genprop )
+  		
+    then
+    	System.out.println(kcontext.getRule().getName());
+end
+
+

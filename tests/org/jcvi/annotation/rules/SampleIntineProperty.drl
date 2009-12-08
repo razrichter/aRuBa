@@ -1,0 +1,24 @@
+#created on: Oct 27, 2009
+package org.jcvi.annotation.rules
+
+#list any import classes here.
+import org.jcvi.annotation.facts.*;
+
+rule "Identify Intein containing genes"
+	
+	when
+        geneA 	: Feature( )
+ 		// intein N-terminal splicing region
+		hitN	:	HmmHit( hitId == "TIGR01445", queryId == geneA.featureId )
+		//  intein C-terminal splicing region
+ 		hitC	:	HmmHit( hitId == "TIGR01443", queryId == geneA.featureId)
+		
+		
+
+	then 
+		Map inteinProp = new Map[ "intein": geneA.getGeneSymbol() ];
+		geneA.addProperty(inteinProp);
+		insert(inteinProp);
+		modify(geneA);
+		
+end

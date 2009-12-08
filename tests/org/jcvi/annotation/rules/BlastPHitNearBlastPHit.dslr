@@ -1,0 +1,33 @@
+package org.jcvi.annotation.rules;
+import org.jcvi.annotation.facts.*;
+expander BrainGrabRulesTranslator.dsl;
+
+# spore maturation protein B|9|THIS_BLAST_HIT[SP|P35158, 175, 95, 92, 50, 5, 0] && NEAR_BLAST_HIT[800, SP|P35150, 275, 95, 92, 40, 5, 0]|
+rule "BlastP Hit near BlastP hit"
+    when
+        there is a feature geneA
+        geneA has a blastp hit to SP|P35158
+            -with bitScore >= 175
+            -with hitPercentLength >= 95
+            -with queryPercentLength >= 92
+            -with percentIdentity >= 50
+            -with hitQueryLengthRatio <= 5.0
+        there is a feature geneB within 2 kb of geneA
+        geneB has a blastp hit to SP|P35150
+            -with bitScore >= 275
+            -with hitPercentLength >= 95
+            -with queryPercentLength >= 92
+            -with percentIdentity >= 40
+            -with hitQueryLengthRatio <= 5.0
+    then
+        assert annotation on geneA
+            set source BlastP Hit near BlastP hit
+            set common name spore maturation protein B
+            set gene symbol spmB
+            set ec number 
+            set assertion type PARTIAL
+            set role ids 705
+            set go ids GO:0034301
+            set specificity INIT_EQUIV
+            set confidence 96
+end

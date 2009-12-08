@@ -1,0 +1,51 @@
+#created on: Oct 19, 2009
+package org.jcvi.annotation.rules;
+import org.jcvi.annotation.facts.*;
+
+
+rule "Sample trans-coupling rule"
+	
+	# # 2 genes in same direction 
+	# with start codon of one overlapping stop of the other
+	# Let's call B downstream of A
+	when
+		geneA : Feature()
+		geneB : Feature( 
+					strand == geneA.strand 
+					and 
+					(
+						(strand == 1, geneA.end == start + 3 )
+					or
+						(strand == -1, geneA.end == start - 3)
+					)
+				)
+		
+	then 
+		Feature transCoupleFeat = new Feature(i++, "transcouple");
+		insert(transCoupleFeat);
+		
+		// Relationship called "part_of" such that geneA and geneB are "part_of" our component
+		FeatureRelationship relation1 = new FeatureRelationship(geneA, transCoupleFeat, "part_of");
+		FeatureRelationship relation2 = new FeatureRelationship(geneB, transCoupleFeat, "part_of");
+		
+		// property on the relationship
+		
+		
+		transCoupleFeat.addRelationship(relation1);
+		transCoupleFeat.addRelationship(relation2);
+		
+		insert(relation1);
+		insert(relation2);	
+end
+
+rule "something"
+	when
+		transCouple : Feature(type == "transcouple")
+		
+	then
+end
+		
+
+# (strand == 1 && geneA upstream of geneB) or 
+# (geneA downstream of geneB )
+

@@ -1,0 +1,12 @@
+//This is a package configuration file
+//Add imports, globals etc here which will be used by all the rule assets in this folder.
+package org.jcvi.annotation.rules;
+import org.jcvi.annotation.facts.*;
+import org.jcvi.annotation.facts.Annotation;
+import org.jcvi.annotation.facts.BlastHit;
+import org.jcvi.annotation.facts.Feature;
+import org.jcvi.annotation.facts.Genome;
+import org.jcvi.annotation.facts.GenomeProperty;
+import org.jcvi.annotation.facts.GoTerm;
+import org.jcvi.annotation.facts.HmmHit;
+import org.jcvi.annotation.facts.Taxon;

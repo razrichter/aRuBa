@@ -1,0 +1,52 @@
+package org.jcvi.annotation.rules;
+import org.jcvi.annotation.facts.*;
+import java.util.*;
+
+# if (HMM_HIT(ARG1, TIGR02607) && HMM_HIT(ARG2, PF05015) && CLOSE(ARG1, ARG2, 100)) 
+# then assert (TOXIN_ANTITOXIN(ARG1, ARG2)
+rule "sample property rule toxin antitoxin"
+dialect "mvel"
+no-loop true
+
+	# if (HMM_HIT(ARG1, TIGR02607) && HMM_HIT(ARG2, PF05015) && CLOSE(ARG1, ARG2, 100))
+    when
+        geneA : Feature( )
+ 		HmmHit( hitId == "TIGR02607", queryId == geneA.featureId)
+        geneB : Feature( eval(geneB.isWithin(geneA, 100 )) )
+ 		HmmHit( hitId == "PF05015", queryId == geneB.featureId )
+    then
+    	System.out.println(kcontext.getRule().getName());
+    	
+    	// Handle defining the pair as a type of feature
+    	Feature mypair = new Feature(i++, "generic_pair"); // generic_cohort
+    	
+    	// Define these two genes as children of the pair
+    	mypair.addChild(geneA);
+    	mypair.addChild(geneB);
+    	
+    	// Give the pair a property
+    	Property prop = new Map[ "TOXIN_ANTITOXIN": 1 ];
+    	badSignalP = [ "bad_signalp": 1 ];
+      	mypair.addProperty(badSignalP);
+      	
+    	//geneB.addProperty(toxinProp);
+    	insert(x);
+    	modify(geneA);
+    	modify(geneB);
+end
+
+rule "sample rule that is activated when there is a twinarg toxin_antitoxin"
+dialect "mvel"
+no-loop true
+
+	when
+		badSignalP: Map( this["bad_signalp"] == 1 )
+		geneA : Feature( properties contains badSignalP )
+		HmmHit( hitId == "TIGR02607", queryId == geneA.featureId)
+	then
+		System.out.println(kcontext.getRule().getName());
+		someProp = [ "SOMETHING": 1 ];
+		gene.addProperty(someProp);
+end
+
+

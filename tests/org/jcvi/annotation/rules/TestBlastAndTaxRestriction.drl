@@ -1,0 +1,32 @@
+#created on: Jun 10, 2009
+package org.jcvi.annotation.rules;
+import org.jcvi.annotation.facts.*;
+
+#declare any global variables here
+
+rule "BlastP Hit with a Taxonomy Restriction"
+no-loop true
+
+	dialect "mvel"
+	when
+		Taxon( txn : parentNames)
+		Genome( anyFirmicute : taxon == txn )
+		feature : Feature( genome == anyFirmicute , goIds == "GO:0008150"  || == "GO:0043936" )
+		BlastHit( hitId == "RF|NP_844922.1" , program == "blastp" , percentIdentity >= "80" , hitQueryLengthRatio <= "5" , queryId == ( feature.featureId ) )
+	then	    
+	    Annotation a = new Annotation("Complete BlastP Hit Rule");
+	    a.setConfidence(80.0);
+	    a.setSpecificity(Annotation.EQUIVALOG);
+	    a.setAssertionType(Annotation.EXACT);
+	    a.addGoIds("GO:0043592,GO:0003674,GO:0008150");
+	    a.setEcNumbers("");
+	    a.addRoleIds("705");
+	    a.setCommonName("exosporium protein K");
+	    a.setGeneSymbol("exsK");
+	   	feature.addAssertedAnnotation(a);
+		
+		// System.out.println("Rule fires for hit " + hit.getHitId());		
+		//update( hit );
+end
+
+
