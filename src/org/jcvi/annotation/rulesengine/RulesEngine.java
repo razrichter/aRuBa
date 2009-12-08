@@ -1,7 +1,8 @@
 package org.jcvi.annotation.rulesengine;
 
+import java.io.File;
+import java.io.StringReader;
 import java.util.Map;
-
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.DecisionTableConfiguration;
@@ -11,6 +12,7 @@ import org.drools.builder.KnowledgeBuilderErrors;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
 import org.drools.event.rule.DebugWorkingMemoryEventListener;
+import org.drools.io.Resource;
 import org.drools.io.ResourceFactory;
 import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
@@ -29,7 +31,8 @@ public class RulesEngine {
 	public RulesEngine() {
 		kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
 		kbase = KnowledgeBaseFactory.newKnowledgeBase();
-	}
+        ksession = kbase.newStatefulKnowledgeSession();	
+    }
 
 	public RulesEngine(String logFilename) {
 		this();
@@ -60,12 +63,33 @@ public class RulesEngine {
 		this.kbuilder = kbuilder;
 	}
 
+	// Quick way to add a rule for development purposes
+	public boolean addRule(String rule) {
+		Resource res = ResourceFactory.newReaderResource(new StringReader(rule));
+		return this.addResource(res, ResourceType.DRL);
+	}
+	
 	public boolean addResource(String rfile, ResourceType rtype) {
+		File f = new File(rfile);
+		if (f.exists()) {
+			if (f.canRead()) {
+				Resource r = ResourceFactory.newFileResource(f);
+				return this.addResource(r, rtype);
+			} else {
+				System.out.println("Error: " + f.getName() + " is unreadable.");
+			}
+		} else {
+			System.out.println("Error: " + f.getName() + " does not exist.");
+		}
+		return false;
+	}
+	
+	public boolean addResource(Resource resource, ResourceType resourceType) {
 		if (!kbuilder.hasErrors()) {
-			kbuilder.add(ResourceFactory.newUrlResource(rfile), rtype);
+			kbuilder.add(resource, resourceType);
 			KnowledgeBuilderErrors errors = kbuilder.getErrors();
 			if (errors.size() > 0) {
-				throw new RulesResourceException(ResourceFactory.newUrlResource(rfile), errors);
+				throw new RulesResourceException(resource, errors);
 			} else {
 				kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
 				return true;
@@ -101,8 +125,6 @@ public class RulesEngine {
 	}
 	
 	public void addFact(Object fact) {
-        if (ksession == null)
-            ksession = kbase.newStatefulKnowledgeSession();
         ksession.insert(fact);
 	}
 	
@@ -131,8 +153,19 @@ public class RulesEngine {
 			ksession.setGlobal(globalKey, global.get(globalKey));
 		}
 	}
-	
 
+	public void shutdown() throws RulesEngineException {
+		
+		// Free up resources from stateful knowledge session
+		ksession.dispose();
+		ksession = null;
+
+		if (logger != null) {
+			logger.close();
+		}
+	
+	}
+	
 	public void fireAllRules() throws RulesEngineException {
 		if (ksession == null) {
 			throw new RulesEngineException(
@@ -152,12 +185,5 @@ public class RulesEngine {
 		
 		
 		ksession.fireAllRules();
-		ksession.dispose();
-		ksession = null;
-		if (logger != null) {
-			logger.close();
-		}
 	}
-
-	
 }
