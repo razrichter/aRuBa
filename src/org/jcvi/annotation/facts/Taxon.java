@@ -11,6 +11,9 @@ public class Taxon {
 	private String rank;
 		
 	// Constructors
+	public Taxon() {
+		super();
+	}
 	public Taxon(int taxonId) {
 		super();
 		this.taxonId = taxonId;
@@ -70,11 +73,7 @@ public class Taxon {
 	public List<Taxon> getParents() {
     	List<Taxon> parents = new ArrayList<Taxon>();
     	
-    	Taxon testp = this.getParent();
-    	if (testp == null) {
-    		System.out.println("parent is null.");
-    	}
-    	
+    	Taxon testp = this.getParent();    	
     	Taxon p = this;
       	while ((p = p.getParent()) != null) {
      		

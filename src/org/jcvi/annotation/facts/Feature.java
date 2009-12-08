@@ -8,7 +8,7 @@ import org.jcvi.annotation.facts.Annotation;
 
 public class Feature {
 	private String featureId;
-	private Genome genome;
+	private Genome genome = new Genome();
 	private Feature source;
 	private String name;
 	private int start;

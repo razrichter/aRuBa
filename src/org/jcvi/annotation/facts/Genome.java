@@ -2,13 +2,17 @@ package org.jcvi.annotation.facts;
 import java.util.Map;
 
 public class Genome {
-	private Taxon taxon;
+	private Taxon taxon = new Taxon();
 	private Map<String, Object> properties;
 	
 	// Constructor
 	public Genome(Taxon taxon) {
 		super();
 		this.taxon = taxon;
+	}
+
+	public Genome() {
+		super();
 	}
 
 	public Taxon getTaxon() {
