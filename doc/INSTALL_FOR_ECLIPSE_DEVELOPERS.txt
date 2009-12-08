@@ -1,0 +1,68 @@
+
+                     Getting Started with Aruba in Eclipse
+                            Installation Instructions
+
+
+==================================================
+QUICK START GUIDE
+==================================================
+
+* Install Eclipse Galileo
+* Install Eclipse plugins
+	- Subclipse http://subclipse.tigris.org/update_1.6.x
+	- GEF http://download.eclipse.org/tools/gef/updates/releases/
+	- Drools IDE http://downloads.jboss.com/drools/updatesite3.4/
+* Checkout the Rules-Based Annotation repository
+
+
+==================================================
+(1) Install Eclipse
+==================================================
+
+Download the latest stable version of the Eclipse IDE for Java EE Developers
+http://www.eclipse.org/downloads/
+
+To install Elipse plug-ins using an update site, launch Eclipse and
+Select Help > Install New Software. The install dialog will appear.
+Click add and type in the name and update site for the plugin
+
+In your Eclipse install directory, update the eclipse.ini file to 
+increase memory allocation and permanent generation max size of the JDK.
+This is necessary for large sets of rules  
+See https://hudson.jboss.org/hudson/job/drools/lastSuccessfulBuild/artifact/trunk/target/docs/drools-expert/html/ch07.html#d0e6943
+
+==================================================
+(2) Subclipse Plugin - Subversion plugin for Eclipse
+==================================================
+http://subclipse.tigris.org/
+As of the time of this writing, the update site is at
+Use the update site: http://subclipse.tigris.org/update_1.6.x
+
+==================================================
+(3) GEF (Graphical Editing Framework) Plugin
+==================================================
+Choose the latest stable version of the GEF plug-in (required by Drools IDE)
+http://download.eclipse.org/tools/gef/updates/releases/
+
+==================================================
+(4) JBoss Rules Plugin
+==================================================
+Find the Drools IDE Update Site in the 5.x version of the Drools documentation
+http://www.jboss.org/drools/downloads.html
+As of the time of this writing, the update site is at
+http://downloads.jboss.com/drools/updatesite3.4/
+
+==================================================
+(5) Checkout the Rules-Based Annotation Repository
+==================================================
+In Eclipse, select Window -> Show View -> SVN Repositories
+Click the "Add SVN Repository" button on the top of the SVN 
+Repositories panel.  Enter the project URL in the location box
+http://svn.jcvi.org/ANNOTATION/RulesBasedAnnotation/trunk
+and click finish.
+
+Right-click on the trunk directory in your SVN Repositories
+window, and select "Checkout".  Select "Checkout
+as a Java Project", select the Head Revision, and click finish.
+
+
