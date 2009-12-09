@@ -2,6 +2,7 @@ package org.jcvi.annotation.rulesengine;
 
 import java.io.File;
 import java.io.StringReader;
+import java.net.URL;
 import java.util.Map;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
@@ -33,21 +34,14 @@ public class RulesEngine {
 		kbase = KnowledgeBaseFactory.newKnowledgeBase();
         ksession = kbase.newStatefulKnowledgeSession();	
     }
-
-	public RulesEngine(String logFilename) {
+	public RulesEngine(String logfile) {
 		this();
-		this.logFilename = logFilename;
+		this.setFileLogger(logfile);
 	}
-
-	public RulesEngine(String logFilename, boolean debug) {
-		this();
-		this.debug = debug;
-		this.logFilename = logFilename;
-	}
-	
 	public RulesEngine(boolean debug) {
 		this();
-		this.debug = debug;
+		if (debug) 
+			this.setConsoleLogger();
 	}
 
 	public KnowledgeBase getKbase() {
@@ -61,6 +55,18 @@ public class RulesEngine {
 	}
 	public void setKbuilder(KnowledgeBuilder kbuilder) {
 		this.kbuilder = kbuilder;
+	}
+	public StatefulKnowledgeSession getKsession() {
+		return ksession;
+	}
+	public void setKsession(StatefulKnowledgeSession ksession) {
+		this.ksession = ksession;
+	}
+	public KnowledgeRuntimeLogger getLogger() {
+		return logger;
+	}
+	public void setLogger(KnowledgeRuntimeLogger logger) {
+		this.logger = logger;
 	}
 
 	// Quick way to add a rule for development purposes
@@ -82,6 +88,11 @@ public class RulesEngine {
 			System.out.println("Error: " + f.getName() + " does not exist.");
 		}
 		return false;
+	}
+	
+	public boolean addResource(URL rurl, ResourceType rtype) {
+		Resource r = ResourceFactory.newUrlResource(rurl);
+		return this.addResource(r, rtype);
 	}
 	
 	public boolean addResource(Resource resource, ResourceType resourceType) {
@@ -136,8 +147,6 @@ public class RulesEngine {
 		}
 		return count;
 	}
-
-	
 	
 	public void addGlobal(String key, Object obj) {
 		if (ksession == null) {
@@ -166,15 +175,14 @@ public class RulesEngine {
 	
 	}
 	
+	public void setFileLogger(String file) {
+		this.setLogger(KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFilename));
+	}
+	public void setConsoleLogger() {
+		this.setLogger(KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession));
+	}
+	
 	public void fireAllRules() throws RulesEngineException {
-		if (ksession == null) {
-			throw new RulesEngineException(
-					"Invalid attempt to fire rules without instantiating a knowledge session.");
-		}
-		
-		if (logFilename != null) {
-			logger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFilename);
-		}
 		
 		if (debug) {
 			if (logFilename == null) {

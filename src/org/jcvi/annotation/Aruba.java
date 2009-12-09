@@ -1,5 +1,6 @@
 package org.jcvi.annotation;
 import java.io.File;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,6 +15,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 import org.drools.builder.ResourceType;
+import org.drools.io.Resource;
+import org.drools.io.ResourceFactory;
 import org.jcvi.annotation.dao.BlastResultFileDAO;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
@@ -22,30 +25,55 @@ import org.jcvi.annotation.rulesengine.RulesEngine;
 
 public class Aruba {
 
-    private static final String sampleCommand = "braingrab -D <database> [-r <rule_file|directory>] blastfile.out|directory ...";
-    private static final String rulesFile = "/org/jcvi/annotation/rules/BrainGrabChangeSet.xml";
-    private static final ResourceType rulesType = ResourceType.CHANGE_SET;
+    private static final String sampleCommand = "aruba -D <database> [-r <rule_file|directory>] [-l <log_file>] blastfile.out|directory ...";
+	private static final String rulesChangeSet = "/org/jcvi/annotation/rules/BraingrabChangeSet.xml";
     private static Boolean debug = false;
     private ArrayList<Feature> features = new ArrayList<Feature>();
-    
     private RulesEngine engine;
     
     public Aruba() {
         super();
         this.engine = new RulesEngine();
-        // Add Rules Resources
-        engine.addResource(this.getClass().getResource(rulesFile).toString(), rulesType);
-    }
-
+        //this.addDefaultRules();
+  }
+	public Aruba(String rulesFile) {
+		this();
+		engine.addResource(rulesFile, ResourceType.DRL);
+	}
     public Aruba(List<String> ruleFiles) {
-    	super();
-    	this.engine = new RulesEngine();
+    	this();
     	for (String file : ruleFiles) {
     		engine.addResource(file, ResourceType.DRL);
     	}
     }
-    
-    private void addSmallGenome(String dbName) {
+  
+    public RulesEngine getEngine() {
+		return engine;
+	}
+	public static String getRulesChangeSet() {
+		return rulesChangeSet;
+	}
+
+	// Adding Rules
+	public boolean addDefaultRules() {
+		return engine.addResource(this.getClass().getResource(rulesChangeSet), 
+				ResourceType.CHANGE_SET);
+ 	}
+	public boolean addRuleByFile(String file, ResourceType type) {
+    	return this.engine.addResource(file, type);
+	}
+	public boolean addRuleByFile(String file) {
+    	return engine.addResource(file, ResourceType.DRL);
+	}
+	public boolean addRuleByString(String ruleStr) {
+		Resource res = ResourceFactory.newReaderResource(new StringReader(ruleStr));
+		return engine.addResource(res, ResourceType.DRL);
+	}
+	
+	
+	// Adding Facts
+	private void addSmallGenome(String dbName) {
+		
     	System.out.println("Loading facts from Small Genome database " + dbName + "...");
     	SmallGenomeDAOFactory sgFactory = new SmallGenomeDAOFactory(dbName);
     	
@@ -62,7 +90,7 @@ public class Aruba {
         System.out.println("  " + count + " HMM hits");
     	
         // Add Genome Properties
-        count = engine.addFacts(sgFactory.getGenomePropertyDAO("gb6"));
+        count = engine.addFacts(sgFactory.getGenomePropertyDAO(dbName));
         System.out.println("  " + count + " genome properties");
     }
     
@@ -78,7 +106,9 @@ public class Aruba {
     private void run() {
         engine.fireAllRules();
     }
-    
+    private void shutdown() {
+    	engine.shutdown();
+    }
     public static List<String> filesFromPaths(String[] filesOrDirs) {
     	
     	ArrayList<String> files = new ArrayList<String>();
@@ -124,15 +154,13 @@ public class Aruba {
         options.addOption("h","help",false, "Print this message");
         options.addOption("D", "database", true, "Small Genome Database id (required)");
         options.addOption("debug",false,"Debug output");
+        options.addOption("l","log", false, "Log file");
         OptionBuilder.withLongOpt("rule");
 		OptionBuilder.hasArgs();
 		OptionBuilder.withDescription("override rules to run");
 		options.addOption(OptionBuilder.create("r"));
-     
-         		
-        // options.addOption(OptionBuilder.withLongOpt("blast").hasArgs().withDescription("add Blast Result File or Directory").create('b'));
-        
-        
+        // options.addOption(OptionBuilder.withLongOpt("blast").hasArgs().withDescription("add Blast Result File or Directory").create('b'));  
+		
         CommandLineParser parser = new PosixParser();
         CommandLine cmd = null;
         try {
@@ -150,6 +178,7 @@ public class Aruba {
             f.printHelp(sampleCommand, options);
             System.exit(0);
         }
+        
         if (cmd.hasOption("debug")) {
             debug = true;
         }
@@ -160,35 +189,47 @@ public class Aruba {
             System.exit(1);
         }
         
-        String[] ruleArgs = cmd.getOptionValues("rule");
-        Aruba rb;
-        
-        // Give a rules file
-        if (ruleArgs.length > 0) {
+        // Create an instance of our Aruba engine
+        Aruba aruba = new Aruba();
+
+        // Log to file or console if requested
+        String logFile = cmd.getOptionValue("log");
+        if (logFile != null) {
+        	aruba.engine.setFileLogger(logFile);
+        } else if (debug) {
+        	aruba.engine.setConsoleLogger();
+        }
+       
+        // Add rules
+       String[] ruleArgs = cmd.getOptionValues("rule");
+       if (ruleArgs == null || ruleArgs.length ==0) {
+        	aruba.addDefaultRules();
+        } else {
         	List<String> ruleFiles = filesFromPaths(ruleArgs);
         	for (String f : ruleFiles) {
-        		System.out.println("rule " + f.toString());
-        	}
-        	rb = new Aruba(ruleFiles);
-        }
-        else {
-            rb = new Aruba();
+           		System.out.println("Adding rule file... " + f.toString());
+           		aruba.addRuleByFile(f);
+         	}
         }
 
-        // String[] blastArgs = cmd.getOptionValues("blast");
-
-        rb.addSmallGenome(dbName);
-        rb.addSearchFiles(cmd.getArgs());
+        // Add Small Genome database
+        aruba.addSmallGenome(dbName);
+        
+        // Add facts from search results (Blast, HMM)
+        aruba.addSearchFiles(cmd.getArgs());
 
         // Fire rules
-        rb.run();
+        aruba.run();
         
-        for (Feature f : rb.features) {
+        for (Feature f : aruba.features) {
             String annotation = getFeatureAnnotationText(f);
             if ( ! annotation.equals("") ) {
                 System.out.print(annotation);
             }
         }
+        
+        // End the StatefulKnowledgeSession
+        aruba.shutdown();
         
     }
 
