@@ -1,5 +1,6 @@
 package org.jcvi.annotation;
 import java.io.File;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,6 +19,7 @@ import org.drools.builder.ResourceType;
 import org.drools.io.Resource;
 import org.drools.io.ResourceFactory;
 import org.jcvi.annotation.dao.BlastResultFileDAO;
+import org.jcvi.annotation.dao.GenbankFeatureDAO;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
@@ -72,26 +74,44 @@ public class Aruba {
 	
 	
 	// Adding Facts
-	private void addSmallGenome(String dbName) {
+	private int addBlast(String fileOrDir) {
+		return engine.addFacts(new BlastResultFileDAO(fileOrDir));
+	}
+
+	/* TODO: Alex, HmmResultFileDAO needs to be written
+	private int addHmm(String fileOrDir) {
+		return engine.addFacts(new HmmResultFileDAO(fileOrDir));
+	}
+	*/
+	
+	private int addGenbank(String file) {
+		InputStreamReader gbReader = new InputStreamReader(this.getClass().getResourceAsStream("CP000855.gb"));       
+		return engine.addFacts(new GenbankFeatureDAO(gbReader));
+	}
+	private int addSmallGenome(String dbName) {
 		
     	System.out.println("Loading facts from Small Genome database " + dbName + "...");
     	SmallGenomeDAOFactory sgFactory = new SmallGenomeDAOFactory(dbName);
     	
+    	int total = 0;
+    	
         // Add Genome Features
-        int count = engine.addFacts(sgFactory.getFeatureDAO());
+        int count = total = engine.addFacts(sgFactory.getFeatureDAO());
     	System.out.println("  " + count + " features");
     	        
     	// Add annotations
-    	count = engine.addFacts(sgFactory.getAnnotationDAO());
+    	total += count = engine.addFacts(sgFactory.getAnnotationDAO());
     	System.out.println("  " + count + " annotations");
     	
     	// Add Genome HMMs
-    	count = engine.addFacts(sgFactory.getHmmHitDAO());
+    	total += count = engine.addFacts(sgFactory.getHmmHitDAO());
         System.out.println("  " + count + " HMM hits");
     	
         // Add Genome Properties
-        count = engine.addFacts(sgFactory.getGenomePropertyDAO(dbName));
+        total += count = engine.addFacts(sgFactory.getGenomePropertyDAO(dbName));
         System.out.println("  " + count + " genome properties");
+        
+        return total;
     }
     
     
@@ -224,7 +244,7 @@ public class Aruba {
         for (Feature f : aruba.features) {
             String annotation = getFeatureAnnotationText(f);
             if ( ! annotation.equals("") ) {
-                System.out.print(annotation);
+            	System.out.print(annotation);
             }
         }
         
