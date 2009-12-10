@@ -325,7 +325,7 @@
 		<resource source="classpath:org/jcvi/annotation/rules/rule_2431.drl" type="DRL" />
 		<resource source="classpath:org/jcvi/annotation/rules/rule_2574.drl" type="DRL" />
 		<resource source="classpath:org/jcvi/annotation/rules/rule_2600.drl" type="DRL" />
-		<resource source="classpath:org/jcvi/annotation/rules/rule_2645.drl" type="DRL" />
+<!--		<resource source="classpath:org/jcvi/annotation/rules/rule_2645.drl" type="DRL" />-->
 		<resource source="classpath:org/jcvi/annotation/rules/rule_2515.drl" type="DRL" />
 		<resource source="classpath:org/jcvi/annotation/rules/rule_2542.drl" type="DRL" />
 		<resource source="classpath:org/jcvi/annotation/rules/rule_2417.drl" type="DRL" />
@@ -382,6 +382,7 @@
 		<resource source="classpath:org/jcvi/annotation/rules/rule_2669.drl" type="DRL" />
 		<resource source="classpath:org/jcvi/annotation/rules/rule_2304.drl" type="DRL" />
 		<resource source="classpath:org/jcvi/annotation/rules/rule_2653.drl" type="DRL" />
+
 <!--		<resource source="classpath:org/jcvi/annotation/rules/rule_2700.drl" type="DRL" />-->
 <!--		<resource source="classpath:org/jcvi/annotation/rules/rule_2716.drl" type="DRL" />-->
 <!--		<resource source="classpath:org/jcvi/annotation/rules/rule_2717.drl" type="DRL" />-->
