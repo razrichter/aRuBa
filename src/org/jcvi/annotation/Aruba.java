@@ -71,7 +71,17 @@ public class Aruba {
 		Resource res = ResourceFactory.newReaderResource(new StringReader(ruleStr));
 		return engine.addResource(res, ResourceType.DRL);
 	}
-	
+
+	/*
+	private void testLog() {
+		WorkingMemoryEventListener listener = new WorkingMemoryEventListener() {
+			public void objectInserted(ObjectInsertedEvent event) {
+				System.out.println("OBJECT INSERTED " + event.getObject().toString());
+			}
+		};
+		engine.getKsession().addEventListener(listener);
+	}
+	*/
 	
 	// Adding Facts
 	private int addBlast(String fileOrDir) {
@@ -121,6 +131,13 @@ public class Aruba {
             BlastResultFileDAO blast = new BlastResultFileDAO(file);
             engine.addFacts(blast);
         }
+    }
+    
+    private void log() {
+    	engine.setConsoleLogger();
+    }
+    private void log(String logFile) {
+    	engine.setFileLogger(logFile);
     }
     
     private void run() {
@@ -215,9 +232,11 @@ public class Aruba {
         // Log to file or console if requested
         String logFile = cmd.getOptionValue("log");
         if (logFile != null) {
-        	aruba.engine.setFileLogger(logFile);
+        	aruba.log(logFile);
+        	//aruba.engine.setFileLogger(logFile);
         } else if (debug) {
-        	aruba.engine.setConsoleLogger();
+        	aruba.log();
+        	//aruba.engine.setConsoleLogger();
         }
        
         // Add rules
