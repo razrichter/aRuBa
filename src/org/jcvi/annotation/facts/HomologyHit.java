@@ -188,4 +188,10 @@ public class HomologyHit {
     public void setNonHit() {
         this.hitStrength = HitStrengthType.BELOW_NOISE;
     }
+
+	@Override
+	public String toString() {
+		return "HomologyHit [program=" + program
+				+ ", hitId=" + hitId + ", queryId=" + queryId + "]";
+	}
 }
