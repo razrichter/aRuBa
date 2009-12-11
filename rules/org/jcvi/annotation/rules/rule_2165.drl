@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2165 THIS_BLAST_HIT[GB|CAL20547.1, 350, 95, 95, 80, 4, 1]
 rule "yersiniabactin biosynthesis thioesterase YbtT, BLASTP"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|CAL20547.1', 
 			bitScore >= 350,

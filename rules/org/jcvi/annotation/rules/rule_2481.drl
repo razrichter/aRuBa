@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2481 DEFAULT_METHOD[GB|ACA53876.1]
 rule "xanthine dehydrogenase family protein, iron-sulfur binding subunit after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA53876.1', 
 				bitScore >= 160,

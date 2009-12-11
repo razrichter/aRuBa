@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2689 THIS_HMM_HIT[TIGR03845] && THIS_HMM_HIT[TIGR03846]
 rule "sulfopyruvate decarboxylase"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR03845' )
 	 and

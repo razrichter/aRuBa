@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2336 DEFAULT_METHOD[OMNI|NTL01CV3272] && GEN_PROP[GenProp0823, 0.15]
 rule "Default-mode rule, to work eventually with HMM for VioE"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='OMNI|NTL01CV3272', 
 				bitScore >= 160,

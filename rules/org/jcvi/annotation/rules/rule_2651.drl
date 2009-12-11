@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2651 THIS_BLAST_HIT[GB|BAE48259.1, 650, 95, 95, 60, 3, 0]
 rule "hemagglutinin component HA-70, botulinum neurotoxin complex"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|BAE48259.1', 
 			bitScore >= 650,

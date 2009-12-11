@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2547 DEFAULT_METHOD[RF|YP_001783178.1]
 rule "putative peptidyl-prolyl cis-trans isomerase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001783178.1', 
 				bitScore >= 160,

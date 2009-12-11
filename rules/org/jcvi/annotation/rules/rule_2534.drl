@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2534 DEFAULT_METHOD[GB|ABS41727.1]
 rule "core tail protein after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS41727.1', 
 				bitScore >= 160,

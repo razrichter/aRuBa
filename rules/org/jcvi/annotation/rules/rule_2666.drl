@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2666 THIS_HMM_HIT[TIGR00088] && THIS_HMM_HIT[TIGR00151]
 rule "tRNA (guanine-N1)-methyltransferase/2C-methyl-D-erythritol 2,4-cyclodiphosphate synthase"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00088' )
 	 and

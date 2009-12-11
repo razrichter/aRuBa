@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2520 DEFAULT_METHOD[RF|YP_001781847.1]
 rule "glycerate kinase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781847.1', 
 				bitScore >= 160,

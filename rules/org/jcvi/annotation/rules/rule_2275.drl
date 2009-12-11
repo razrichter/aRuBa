@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2275 DEFAULT_METHOD[GB|AAB82564.1]
 rule "methanesulfonate sulfonatase MsuD"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAB82564.1', 
 				bitScore >= 160,

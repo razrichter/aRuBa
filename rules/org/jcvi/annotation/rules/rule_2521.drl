@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2521 DEFAULT_METHOD[SP|Q0TPS3]
 rule "polyribonucleotide nucleotidyltransferase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|Q0TPS3', 
 				bitScore >= 160,

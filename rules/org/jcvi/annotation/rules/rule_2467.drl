@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2467 DEFAULT_METHOD[RF|YP_001781411.1]
 rule "pyrimidine-nucleoside phosphorylase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781411.1', 
 				bitScore >= 160,

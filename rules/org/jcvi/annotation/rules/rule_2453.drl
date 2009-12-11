@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2453 DEFAULT_METHOD[GB|BAB16890.1]
 rule "chitinase A MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|BAB16890.1', 
 				bitScore >= 160,

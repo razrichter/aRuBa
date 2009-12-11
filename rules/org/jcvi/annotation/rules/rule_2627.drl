@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2627 THIS_BLAST_HIT[RF|YP_021914.2, 251, 85, 85, 50, 10, 0] && THIS_HMM_HIT[PF05738] && THIS_HMM_HIT[TIGR01167]
 rule "LPXTG-anchored collagen adhesion protein"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_021914.2', 
 			bitScore >= 251,

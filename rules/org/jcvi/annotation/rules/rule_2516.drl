@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2516 DEFAULT_METHOD[GB|ACA44725.1]
 rule "flagellin after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA44725.1', 
 				bitScore >= 160,

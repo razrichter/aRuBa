@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2617 THIS_HMM_HIT[TIGR01115] && THIS_HMM_HIT[TIGR01157]
 rule "photosynthetic reaction center, L/M subunits"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01115' )
 	 and

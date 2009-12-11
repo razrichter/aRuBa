@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2428 DEFAULT_METHOD[RF|YP_001779856.1]
 rule "central glycolytic genes regulator after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001779856.1', 
 				bitScore >= 160,

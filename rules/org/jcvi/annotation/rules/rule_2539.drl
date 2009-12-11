@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2539 DEFAULT_METHOD[SP|P27346]
 rule "glutamate dehydrogenase, NAD-specific after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P27346', 
 				bitScore >= 160,

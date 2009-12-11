@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2579 THIS_BLAST_HIT[GB|AAT82533.1, 125, 80, 80, 55, 5, 1]
 rule "sortase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAT82533.1', 
 			bitScore >= 125,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2556 DEFAULT_METHOD[SP|O86447]
 rule "putative coniferyl aldehyde dehydrogenase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|O86447', 
 				bitScore >= 160,

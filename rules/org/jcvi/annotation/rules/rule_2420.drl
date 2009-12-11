@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2420 DEFAULT_METHOD[RF|YP_001386702.1]
 rule "putative thiamine pyridinylase I after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001386702.1', 
 				bitScore >= 160,

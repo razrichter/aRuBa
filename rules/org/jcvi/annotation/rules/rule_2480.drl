@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2480 DEFAULT_METHOD[SP|A0Q074|]
 rule "pyrimidine operon regulatory protein/uracil phosphoribosyltransferase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|A0Q074|', 
 				bitScore >= 160,

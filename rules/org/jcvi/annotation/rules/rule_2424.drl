@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2424 DEFAULT_METHOD[GB|ACA45093.1]
 rule "N-carbamyl-L-cysteine amidohydrolase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA45093.1', 
 				bitScore >= 160,

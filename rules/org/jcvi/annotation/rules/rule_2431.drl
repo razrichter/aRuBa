@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2431 DEFAULT_METHOD[GB|ABS39988.1]
 rule "glutamine-dependent NAD(+) synthetase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS39988.1', 
 				bitScore >= 160,

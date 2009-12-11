@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2638 THIS_BLAST_HIT[GB|AAD19170.1, 400, 96, 90, 45, 7, 0]
 rule "outer membrane porin AaxA in arginine-agmatine exchange system for acid resistance"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAD19170.1', 
 			bitScore >= 400,

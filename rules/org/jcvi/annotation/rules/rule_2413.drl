@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2413 (THIS_GO_TERM[GO:0030435] || THIS_GO_TERM[GO:0043936]) && GEN_PROP[GenProp0610, 0.6] && GEN_STATE[GenProp0078, Firmicutes]
 rule "upgade GO process for endospore formers from sporulation to endospore"
+no-loop true
  when
 	(
 	 annot1 : Annotation( goIds contains 'GO:0030435' )

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2676 THIS_BLAST_HIT[GB:AAT29114.1, 140, 95, 92, 80, 3, 1]
 rule "transition state transcriptional regulatory protein AbrB"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB:AAT29114.1', 
 			bitScore >= 140,

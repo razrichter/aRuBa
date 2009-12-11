@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2515 DEFAULT_METHOD[GB|ACA53965.1]
 rule "spore coat protein, CotS family after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA53965.1', 
 				bitScore >= 160,

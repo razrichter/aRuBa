@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2543 DEFAULT_METHOD[RF|YP_001781881.1]
 rule "choloylglycine hydrolase family protein"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781881.1', 
 				bitScore >= 160,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2586 THIS_HMM_HIT[TIGR00151] && THIS_HMM_HIT[TIGR00453]
 rule "2C-methyl-D-erythritol 2,4-cyclodiphosphate synthase/4-diphosphocytidyl-2C-methyl-D-erythritol synthase"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00151' )
 	 and

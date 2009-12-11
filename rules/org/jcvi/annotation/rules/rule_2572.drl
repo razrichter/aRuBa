@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2572 DEFAULT_METHOD[RF|ZP_03568276.1]
 rule "sortase variant motif VPYMG cell wall-anchored repeat protein"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|ZP_03568276.1', 
 				bitScore >= 160,

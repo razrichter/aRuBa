@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2548 DEFAULT_METHOD[GB|ABS42747.1]
 rule "triacylglycerol lipase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS42747.1', 
 				bitScore >= 160,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2162 THIS_BLAST_HIT[GB|CAA73127.1, 4000, 95, 92, 80, 5, 1]
 rule "yersiniabactin biosynthesis enzyme HMWP1, BLASTP"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|CAA73127.1', 
 			bitScore >= 4000,

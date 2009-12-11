@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2435 THIS_BLAST_HIT[GB|AAU17901.1, 300, 95, 92, 80, 5, 0]
 rule "putative thiamin salvage enzyme TenA"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAU17901.1', 
 			bitScore >= 300,

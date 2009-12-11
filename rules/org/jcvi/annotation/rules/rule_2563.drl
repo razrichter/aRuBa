@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2563 DEFAULT_METHOD[SP|P0AEG1]
 rule "dipeptide ABC transporter, permease protein DppC"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P0AEG1', 
 				bitScore >= 160,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2648 THIS_BLAST_HIT[GB|AAY93880.1, 550, 94, 92, 70, 3, 0] || (THIS_HMM_HIT[TIGR00905] && NEAR_HMM_HIT[6000, TIGR01078] && NEAR_HMM_HIT[6000, TIGR00658] &&  NEAR_HMM_HIT[6000, TIGR00746])
 rule "arginine/ornithine antiporter"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAY93880.1', 
 			bitScore >= 550,

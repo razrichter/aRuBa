@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2475 DEFAULT_METHOD[RF|YP_001781500.1]
 rule "aldehyde ferredoxin oxidoreductase, tungsten-containing"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781500.1', 
 				bitScore >= 160,

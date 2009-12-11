@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2652 DEFAULT_METHOD[SP|P46889]
 rule "DNA translocase FtsK"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P46889', 
 				bitScore >= 160,

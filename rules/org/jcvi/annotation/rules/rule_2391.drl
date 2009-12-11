@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2391 THIS_HMM_HIT[TIGR02469] && THIS_HMM_HIT[TIGR02467]
 rule "precorrin-6Y C5,15-methyltransferase (decarboxylating)"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR02469' )
 	 and

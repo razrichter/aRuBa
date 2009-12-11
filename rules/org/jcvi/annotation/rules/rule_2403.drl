@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2403 THIS_BLAST_HIT[GB|AAP12212.1, 450, 95, 92, 80, 5, 0]
 rule "transcriptional regulator PlcR"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAP12212.1', 
 			bitScore >= 450,

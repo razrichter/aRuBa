@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2289 THIS_HMM_HIT[TIGR00012] && GEN_STATE[GenProp0006,Bacteria]
 rule "50S ribosomal protein L29 by HMM in BACTERIA"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00012' )
 	 and

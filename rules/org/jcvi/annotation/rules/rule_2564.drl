@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2564 DEFAULT_METHOD[SP|P76010]
 rule "motility regulatory protein YcgR"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P76010', 
 				bitScore >= 160,

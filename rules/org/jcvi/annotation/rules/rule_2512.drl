@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2512 DEFAULT_METHOD[SP|P45693]
 rule "stage V sporulation protein S"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P45693', 
 				bitScore >= 160,

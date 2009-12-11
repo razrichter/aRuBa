@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2461 DEFAULT_METHOD[RF|YP_001787037.1]
 rule "TPP-dependent acetoin dehydrogenase complex, E2 component, dihydrolipoyllysine-residue acetyltransferase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001787037.1', 
 				bitScore >= 160,

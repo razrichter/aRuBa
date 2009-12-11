@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2432 DEFAULT_METHOD[RF|YP_001779892.1]
 rule "putative lysine-specific permease after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001779892.1', 
 				bitScore >= 160,

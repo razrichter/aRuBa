@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2581 THIS_BLAST_HIT[GB|ABP53663.1, 400, 85, 85, 50, 10, 0] && THIS_HMM_HIT[TIGR01167]
 rule "LPXTG-anchored RCC1-type repeat protein"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABP53663.1', 
 			bitScore >= 400,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2631 DEFAULT_METHOD[GB|AAF10419.1]
 rule "5-nitroimidazole-class antibiotic resistance protein"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAF10419.1', 
 				bitScore >= 160,

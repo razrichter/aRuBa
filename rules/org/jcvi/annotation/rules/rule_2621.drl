@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2621 THIS_HMM_HIT[TIGR00780] && THIS_HMM_HIT[TIGR00781]
 rule "cytochrome c oxidase, cbb3-type, subunits I/II"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00780' )
 	 and

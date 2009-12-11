@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2503 DEFAULT_METHOD[GB|ACA55393.1]
 rule "protein-glutamine gamma-glutamyltransferase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA55393.1', 
 				bitScore >= 160,

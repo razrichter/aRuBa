@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2531 DEFAULT_METHOD[GB|ABS42678.1]
 rule "negative regulator of flagellin synthesis FlgM after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS42678.1', 
 				bitScore >= 160,

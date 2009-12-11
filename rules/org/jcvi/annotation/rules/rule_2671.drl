@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2671 THIS_HMM_HIT[TIGR00512] && THIS_HMM_HIT[TIGR03328]
 rule "S-methyl-5-thioribose-1-phosphate isomerase/methylthioribulose-1-phosphate dehydratase"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00512' )
 	 and

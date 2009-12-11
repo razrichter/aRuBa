@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2330 THIS_HMM_HIT[TIGR00165] && GEN_STATE[GenProp0006,Bacteria]
 rule "ribosomal protein S18, rpsR by HMM in superkingdom BACTERIA"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00165' )
 	 and

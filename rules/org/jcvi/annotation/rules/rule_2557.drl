@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2557 DEFAULT_METHOD[SP|P23847]
 rule "dipeptide ABC transporter, periplasmic dipeptide-binding protein DppA"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P23847', 
 				bitScore >= 160,

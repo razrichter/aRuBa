@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2499 DEFAULT_METHOD[GB|ACA54005.1]
 rule "putative hydroxyethylthiazole kinase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA54005.1', 
 				bitScore >= 160,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2655 DEFAULT_METHOD[SP|P63201]
 rule "glutamate-based acid resistance transcriptional activator GadW"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P63201', 
 				bitScore >= 160,

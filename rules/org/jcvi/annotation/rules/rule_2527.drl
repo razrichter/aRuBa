@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2527 DEFAULT_METHOD[GB|EDK33034.1]
 rule "glutamine-dependent NAD(+) synthetase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|EDK33034.1', 
 				bitScore >= 160,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2440 DEFAULT_METHOD[GB|ABS39976.1]
 rule "sulfite reductase, subunit A after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS39976.1', 
 				bitScore >= 160,

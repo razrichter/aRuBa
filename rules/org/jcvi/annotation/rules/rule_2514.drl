@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2514 DEFAULT_METHOD[GB|ACA55601.1]
 rule "aspartate aminotransferase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA55601.1', 
 				bitScore >= 160,

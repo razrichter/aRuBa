@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2479 DEFAULT_METHOD[GB|ACA53818.1]
 rule "aldolase, AraD/FucA family after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA53818.1', 
 				bitScore >= 160,

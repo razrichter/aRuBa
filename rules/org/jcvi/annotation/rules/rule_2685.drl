@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2685 (THIS_HMM_HIT[PF06192] && NEAR_HMM_HIT[1000, TIGR02164]) || THIS_BLAST_HIT[SP|P36662, 300, 95, 92, 80, 5, 0]
 rule "TorA-specific chaperone TorD, based on TorA proximity or exact match"
+no-loop true
  when
 	(
 	 hmm_hit1 : HmmHit( program=='hmm', hitId=='PF06192' )

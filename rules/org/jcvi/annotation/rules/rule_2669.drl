@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2669 THIS_BLAST_HIT[GB|AAK46051.1, 900, 92, 92, 80, 5, 0]
 rule "nitrate reductase-related protein NarX"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAK46051.1', 
 			bitScore >= 900,

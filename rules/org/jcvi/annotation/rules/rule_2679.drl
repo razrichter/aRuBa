@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2679 THIS_BLAST_HIT[GB|BAA85309.1, 290, 95, 92, 66, 3, 0]
 rule "copper resistance response regulator CopR"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|BAA85309.1', 
 			bitScore >= 290,

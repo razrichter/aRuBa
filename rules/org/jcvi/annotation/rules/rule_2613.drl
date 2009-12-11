@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2613 THIS_HMM_HIT[TIGR00884] && THIS_HMM_HIT[TIGR00888]
 rule "GMP synthase (glutamine-hydrolyzing)"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00884' )
 	 and

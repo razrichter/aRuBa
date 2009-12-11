@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2494 DEFAULT_METHOD[GB|ABS40524.1]
 rule "deoxyribonucleoside regulator"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS40524.1', 
 				bitScore >= 160,

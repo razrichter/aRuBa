@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2635 THIS_BLAST_HIT[SP|P28629, 1200, 95, 95, 80, 3, 0]
 rule "arginine decarboxylase, acid-induced (adiA)."
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P28629', 
 			bitScore >= 1200,

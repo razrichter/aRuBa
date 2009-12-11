@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2459 DEFAULT_METHOD[GB|ACA57525.1]
 rule "bontoxilysin A after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA57525.1', 
 				bitScore >= 160,

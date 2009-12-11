@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2448 DEFAULT_METHOD[RF|YP_001781264.1]
 rule "TPP-dependent acetoin dehydrogenase complex, E1 component, beta subunit"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781264.1', 
 				bitScore >= 160,

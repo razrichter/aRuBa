@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2474 DEFAULT_METHOD[GB|BAA74792.1]
 rule "nitrate reductase, iron-sulfur subunit"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|BAA74792.1', 
 				bitScore >= 160,

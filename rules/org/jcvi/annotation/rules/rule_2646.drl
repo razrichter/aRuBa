@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2646 (NEAR_HMM_HIT[1000, TIGR00905] && THIS_BLAST_HIT[GB|AAC73787.1, 950, 95, 92, 65, 5, 0]) || THIS_BLAST_HIT[GB|AAC73787.1, 1200, 95, 92, 80, 5, 0]
 rule "ornithine decarboxylase SpeF"
+no-loop true
  when
 	(
 	 hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00905' )

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2339 DEFAULT_METHOD[SP|O07623]
 rule "subtilosin-A by default method"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|O07623', 
 				bitScore >= 160,

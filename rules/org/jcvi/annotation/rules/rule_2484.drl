@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2484 DEFAULT_METHOD[RF|YP_001781510.1]
 rule "tungstate ABC transporter, tungstate-binding protein"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781510.1', 
 				bitScore >= 160,

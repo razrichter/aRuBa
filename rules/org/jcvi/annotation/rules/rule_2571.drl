@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2571 DEFAULT_METHOD[RF|ZP_03568752.1] && GEN_STATE[GenProp0006, Bacteria]
 rule "LPXTG-motif cell wall anchored repeat protein"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|ZP_03568752.1', 
 				bitScore >= 160,

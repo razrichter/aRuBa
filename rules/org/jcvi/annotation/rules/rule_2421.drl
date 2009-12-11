@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2421 DEFAULT_METHOD[GB|ABK62540.1]
 rule "precorrin-8X methylmutase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABK62540.1', 
 				bitScore >= 160,

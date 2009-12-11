@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2389 THIS_BLAST_HIT[RF|NP_843710.1, 270, 95, 92, 90, 5, 1]
 rule "spore coat protein Y"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|NP_843710.1', 
 			bitScore >= 270,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2537 DEFAULT_METHOD[GB|ABS41906.1]
 rule "putative F-pilin acetylation protein TraX after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS41906.1', 
 				bitScore >= 160,

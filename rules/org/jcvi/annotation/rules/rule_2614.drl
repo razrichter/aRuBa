@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2614 THIS_HMM_HIT[TIGR00398] && GENOME_HMM_HIT[TIGR00399] && !THIS_HMM_HIT[TIGR00399]
 rule "methionyl-tRNA synthetase, alpha subunit"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00398' )
 	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00399' )

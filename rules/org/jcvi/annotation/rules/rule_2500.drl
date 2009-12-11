@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2500 DEFAULT_METHOD[GB|ACA45288.1]
 rule "dihydroorotate dehydrogenase, electron transfer subunit"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA45288.1', 
 				bitScore >= 160,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2715 THIS_HMM_HIT[PF00158] && THIS_HMM_HIT[PF01590] && THIS_HMM_HIT[PF02954]
 rule "GAF-modulated sigma-54-dependent Fis-type transcriptional regulator by HMM domain trio."
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF00158' )
 	hmm_hit2 : HmmHit( program=='hmm', hitId=='PF01590' )

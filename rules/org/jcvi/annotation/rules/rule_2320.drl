@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2320 THIS_HMM_HIT[PF00410] && GEN_STATE[GenProp0006,Bacteria]
 rule "ribosomal protein S8, rpsH by HMM in superkingdom BACTERIA"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF00410' )
 	 and

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2486 DEFAULT_METHOD[GB|ABS40789.1]
 rule "Trk system potassium uptake protein TrkA after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS40789.1', 
 				bitScore >= 160,

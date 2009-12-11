@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2465 DEFAULT_METHOD[RF|YP_001387651.1]
 rule "putative serine-type D-Ala-D-Ala carboxypeptidase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001387651.1', 
 				bitScore >= 160,

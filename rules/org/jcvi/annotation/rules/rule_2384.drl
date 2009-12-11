@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2384 THIS_BLAST_HIT[GB|AAN85821.1, 260, 95, 92, 87, 5, 0]
 rule "exosporium protein F"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAN85821.1', 
 			bitScore >= 260,

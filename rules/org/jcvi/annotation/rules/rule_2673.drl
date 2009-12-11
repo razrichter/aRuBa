@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2673 GEN_PROP[GenProp0038, 0.55] && THIS_HMM_HIT_UNIQUE[PF01227] && !GENOME_HMM_HIT[TIGR00063]
 rule "GTP cyclohydrolase I when PF01227 hits but TIGR00063 misses, with GenProp support"
+no-loop true
  when
 	genprop1 : GenomeProperty( this['id'] == 'GenProp0038', this['value'] >= 0.55 )
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF01227' )

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2423 DEFAULT_METHOD[RF|YP_001386738.1] && GEN_STATE[GenProp0079, Clostridia]
 rule "bontoxilysin after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001386738.1', 
 				bitScore >= 160,

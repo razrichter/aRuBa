@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2578 DEFAULT_METHOD[SP|Q47155]
 rule "DNA polymerase IV"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|Q47155', 
 				bitScore >= 160,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2565 DEFAULT_METHOD[SP|Q01398]
 rule "putative haloacetate dehalogenase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|Q01398', 
 				bitScore >= 160,

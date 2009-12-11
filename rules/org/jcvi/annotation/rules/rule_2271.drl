@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2271 DEFAULT_METHOD[SP|P66817]
 rule "DnaA initiator-associating protein DiaA, by DEFAULT_METHOD, should be above 85 percent"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P66817', 
 				bitScore >= 160,

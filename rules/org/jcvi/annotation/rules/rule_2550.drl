@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2550 DEFAULT_METHOD[GB|ACA56915.1]
 rule "exopolysaccharide biosynthesis protein after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA56915.1', 
 				bitScore >= 160,

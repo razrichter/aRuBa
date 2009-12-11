@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2323 THIS_HMM_HIT[PF00411] && GEN_STATE[GenProp0006,Bacteria]
 rule "ribosomal protein S11, rpsK by HMM in superkingdom BACTERIA"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF00411' )
 	 and

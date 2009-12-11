@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2634 THIS_BLAST_HIT[SP|P60061, 650, 95, 92, 82, 3, 0]
 rule "arginine/agmatine antiporter"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P60061', 
 			bitScore >= 650,

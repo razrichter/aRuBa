@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2380 THIS_BLAST_HIT[RF|YP_026523, 625, 80,  95, 95, 5, 1]
 rule "alanine racemase, spore-specifc"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_026523', 
 			bitScore >= 625,

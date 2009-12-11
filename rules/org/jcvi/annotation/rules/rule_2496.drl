@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2496 DEFAULT_METHOD[GB|ACA40331.1]
 rule "major cold shock protein CspA"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA40331.1', 
 				bitScore >= 160,

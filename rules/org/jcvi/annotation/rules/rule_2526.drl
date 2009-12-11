@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2526 DEFAULT_METHOD[GB|ACA55266.1]
 rule "N(5)-(carboxyethyl)ornithine synthase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA55266.1', 
 				bitScore >= 160,

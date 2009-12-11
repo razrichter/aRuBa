@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2439 DEFAULT_METHOD[GB|AAN17729.1]
 rule "glycerol dehydrogenase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAN17729.1', 
 				bitScore >= 160,

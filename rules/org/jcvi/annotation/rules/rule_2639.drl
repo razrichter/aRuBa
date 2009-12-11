@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2639 THIS_BLAST_HIT[GB|ABG86187.1, 1600, 95, 92, 70, 3, 0] && NEAR_HMM_HIT[100,TIGR00541]
 rule "putative histidine/histamine antiporter by genomic context"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABG86187.1', 
 			bitScore >= 1600,

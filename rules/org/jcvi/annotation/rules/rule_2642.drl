@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2642 NEAR_HMM_HIT[2000, TIGR00541] && THIS_BLAST_HIT[GB|AAV65955.1, 550, 92, 92, 70, 5, 0]
 rule "histidine:histamine antiporter"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00541' )
 	 and

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2458 DEFAULT_METHOD[GB|ABS40086.1]
 rule "streptolysin associated protein SagD after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS40086.1', 
 				bitScore >= 160,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2688 THIS_BLAST_HIT[GB|AAG31690.1, 360, 95, 92, 80, 3, 0] && THIS_HMM_HIT[PF02909] && THIS_HMM_HIT[PF00440]
 rule "pristinamycin resistance transcriptional repressor Pip"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAG31690.1', 
 			bitScore >= 360,

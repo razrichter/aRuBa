@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2532 DEFAULT_METHOD[GB|AAO36263.1]
 rule "chemotaxis protein CheC acter MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAO36263.1', 
 				bitScore >= 160,

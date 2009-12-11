@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2478 DEFAULT_METHOD[GB|ACA57104.1]
 rule "S-methyl-5-thioribose-1-phosphate isomerase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA57104.1', 
 				bitScore >= 160,

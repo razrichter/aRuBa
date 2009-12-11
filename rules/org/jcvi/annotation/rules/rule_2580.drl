@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2580 THIS_BLAST_HIT[GB|AAS83518.1, 50, 95, 92, 96.35, 5, 0]
 rule "integrase, Bacteroides conjugative transposon family"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAS83518.1', 
 			bitScore >= 50,

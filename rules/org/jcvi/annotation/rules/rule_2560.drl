@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2560 DEFAULT_METHOD[GB|ACA56606.1]
 rule "chemotaxis protein MotB after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA56606.1', 
 				bitScore >= 160,

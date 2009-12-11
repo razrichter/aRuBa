@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2167 THIS_BLAST_HIT[GB|CAB46570.1, 800, 96, 96, 80, 3, 1]
 rule "bifunctional salicylate synthase YbtS, BLASTP OVERRULE level for yersiniabactin biosynthesis."
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|CAB46570.1', 
 			bitScore >= 800,

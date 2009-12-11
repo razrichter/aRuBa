@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2647 THIS_BLAST_HIT[SP|P0AAF1, 625, 95, 92, 70, 3, 0]
 rule "putrescine-ornithine antiporter"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P0AAF1', 
 			bitScore >= 625,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2644 THIS_BLAST_HIT[GB|AAG59332.1, 500, 95, 92, 60, 5, 0]
 rule "cadaverine:lysine antiporter"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAG59332.1', 
 			bitScore >= 500,

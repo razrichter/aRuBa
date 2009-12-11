@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2536 DEFAULT_METHOD[SP|P19940]
 rule "RNA polymerase sigma-G factor"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P19940', 
 				bitScore >= 160,

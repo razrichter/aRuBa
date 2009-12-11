@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2554 DEFAULT_METHOD[GB|ACA55208.1]
 rule "cardiolipin synthase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA55208.1', 
 				bitScore >= 160,

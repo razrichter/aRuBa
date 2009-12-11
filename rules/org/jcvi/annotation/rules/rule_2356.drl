@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2356 DEFAULT_METHOD[SP|P32397] && GEN_STATE[GenProp0082, Bacillus]
 rule "protoporphyrinogen oxidase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P32397', 
 				bitScore >= 160,

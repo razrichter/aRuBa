@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2600 THIS_HMM_HIT[TIGR00325] && THIS_HMM_HIT[TIGR01750]
 rule "UDP-3-O-3-hydroxymyristoyl N-acetylglucosamine deacetylase/(3R)-hydroxymyristoyl-(acyl-carrier-protein) dehydratase"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00325' )
 	 and

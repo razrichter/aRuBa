@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2636 THIS_BLAST_HIT[RF|NP_301087.1, 350, 95, 92, 80, 5, 0]
 rule "arginine decarboxylase, pyruvoyl-dependent"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|NP_301087.1', 
 			bitScore >= 350,

@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2164 THIS_BLAST_HIT[GB|AAS61882.1, 550, 93, 95, 80, 4, 1]
 rule "yersiniabactin synthetase, YbtU component, BLASTP 90 percent"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAS61882.1', 
 			bitScore >= 550,

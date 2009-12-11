@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2417 THIS_BLAST_HIT[GB|AAW88442.1, 1250, 95, 92, 67, 6, 0]
 rule "cell wall-anchored surface protein LrrG"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAW88442.1', 
 			bitScore >= 1250,

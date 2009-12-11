@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2691 THIS_BLAST_HIT[SP|Q58820, 360, 95, 92, 55, 3, 0] && GEN_STATE[GenProp0006, Archaea]
 rule "L-sulfolactate dehydrogenase ComC by BLAST"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|Q58820', 
 			bitScore >= 360,

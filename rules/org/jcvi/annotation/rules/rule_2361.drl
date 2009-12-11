@@ -4,13 +4,15 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2361 THIS_HMM_HIT[PF00121] && THIS_HMM_HIT[TIGR00419]
 rule "triose-phosphate isomerase"
+no-loop true
  when
-	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF00121' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00419' )
-	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+ 	 //gene1 : Feature()
+	 hmm_hit1 : HmmHit( hitId=='PF00121')
+	 hmm_hit2 : HmmHit( hitId=='TIGR00419')
+	 gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
 	
  then
+ 	 System.out.println(gene1);
 	 Annotation a = new Annotation("2361");
 	 a.setGoIds("GO:0004807,GO:0006096,GO:0006098");
 	 a.setEcNumbers("5.3.1.1");

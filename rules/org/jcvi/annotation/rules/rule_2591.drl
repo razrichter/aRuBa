@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2591 DEFAULT_METHOD[SP|P44886]
 rule "acyl-coenzyme A thioesterase, broad-specificity"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P44886', 
 				bitScore >= 160,

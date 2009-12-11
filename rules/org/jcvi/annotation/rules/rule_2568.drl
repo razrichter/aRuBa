@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2568 DEFAULT_METHOD[SP|O32221]
 rule "copper chaperone CopZ"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|O32221', 
 				bitScore >= 160,

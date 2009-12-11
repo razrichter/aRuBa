@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2382 THIS_BLAST_HIT[GB|AAP42649.1, 200, 92, 70, 60, 5, 0] && GEN_STATE[GenProp0079, Bacilli]
 rule "exosporium protein C"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAP42649.1', 
 			bitScore >= 200,

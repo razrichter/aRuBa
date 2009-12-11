@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2426 DEFAULT_METHOD[RF|YP_001387112.1]
 rule "beta-amylase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001387112.1', 
 				bitScore >= 160,

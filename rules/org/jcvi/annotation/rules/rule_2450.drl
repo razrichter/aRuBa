@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2450 DEFAULT_METHOD[GB|ACA56090.1]
 rule "dipeptidase MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA56090.1', 
 				bitScore >= 160,

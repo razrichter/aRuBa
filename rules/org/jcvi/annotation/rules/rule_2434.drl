@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2434 DEFAULT_METHOD[GB|ACA53790.1]
 rule "pyridoxal-phosphate-dependent aminotransferase family after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA53790.1', 
 				bitScore >= 160,

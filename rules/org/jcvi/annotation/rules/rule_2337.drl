@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2337 DEFAULT_METHOD[OMNI|NTL01CV3271]
 rule "default-mode rule, to be part of violacein biosynthesis GenProp0823"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='OMNI|NTL01CV3271', 
 				bitScore >= 160,

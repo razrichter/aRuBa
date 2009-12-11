@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2616 THIS_HMM_HIT[TIGR02460] && THIS_HMM_HIT[TIGR02461]
 rule "mannosyl-3-phosphoglycerate synthase/mannosyl-3-phosphoglycerate phosphatase"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR02460' )
 	 and

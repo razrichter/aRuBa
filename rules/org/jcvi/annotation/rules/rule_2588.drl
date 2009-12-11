@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2588 THIS_HMM_HIT[TIGR01344] && THIS_HMM_HIT[TIGR01346]
 rule "malate synthase A/isocitrate lyase"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01344' )
 	 and

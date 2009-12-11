@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2658 THIS_HMM_HIT[PF01584]  && !THIS_HMM_HIT[PF02518] && !THIS_HMM_HIT[PF01627]
 rule "chemotaxis protein CheW"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF01584' )
 	gene1 : Feature( featureId == hmm_hit1.queryId )

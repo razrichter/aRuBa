@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2483 DEFAULT_METHOD[GB|AAK80070.1]
 rule "uracil permease"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAK80070.1', 
 				bitScore >= 160,

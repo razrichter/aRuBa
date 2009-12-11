@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2567 DEFAULT_METHOD[SP|P0ACJ0]
 rule "leucine-responsive regulatory protein"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P0ACJ0', 
 				bitScore >= 160,

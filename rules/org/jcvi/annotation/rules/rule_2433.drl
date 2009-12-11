@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2433 DEFAULT_METHOD[RF|YP_001779931.1]
 rule "maltose-6'-phosphate glucosidase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001779931.1', 
 				bitScore >= 160,

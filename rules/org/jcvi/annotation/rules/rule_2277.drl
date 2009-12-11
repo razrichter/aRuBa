@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2277 DEFAULT_METHOD[GB|AAG04413.1]
 rule "2-nitropropane dioxygenase, plastic rule based on NTL03PA01025|PA1024 GB|AAG04413.1"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAG04413.1', 
 				bitScore >= 160,

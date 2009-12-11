@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2422 THIS_BLAST_HIT[RF|YP_001386735.1, 450, 93, 93, 78, 5, 0]
 rule "hemagglutinin component HA33 after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001386735.1', 
 			bitScore >= 450,

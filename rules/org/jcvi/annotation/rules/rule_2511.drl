@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2511 DEFAULT_METHOD[GB|ACA44514.1]
 rule "ATP-dependent RNA helicase DbpA after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA44514.1', 
 				bitScore >= 160,

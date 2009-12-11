@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2713 THIS_BLAST_HIT[OMNI|NTL02MT00710, 375, 95, 91, 60, 4, 0]
 rule "cysteine-type sulfatase aerobic maturase by BLAST"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='OMNI|NTL02MT00710', 
 			bitScore >= 375,

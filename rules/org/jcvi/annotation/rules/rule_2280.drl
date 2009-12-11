@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2280 THIS_HMM_HIT[PF00276] && GEN_STATE[GenProp0006,Bacteria]
 rule "L23 by HMM in Bacteria"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF00276' )
 	 and

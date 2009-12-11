@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2693 THIS_BLAST_HIT[RF|YP_055749.1, 700, 95, 92, 80, 5, 0]
 rule "polyunsaturated fatty acid isomerase, conjugated linoleic acid-producing by strong BLAST"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_055749.1', 
 			bitScore >= 700,

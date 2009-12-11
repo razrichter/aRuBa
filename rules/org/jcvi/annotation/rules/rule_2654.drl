@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2654 NEAR_HMM_HIT[1000, TIGR03811] && THIS_BLAST_HIT[GB|AAO80460.1, 550, 95, 92, 60, 5, 0]
 rule "tyrosine-tyramine antiporter"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR03811' )
 	 and

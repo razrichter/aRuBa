@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2577 DEFAULT_METHOD[SP|P24828]
 rule "aminopeptidase"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P24828', 
 				bitScore >= 160,

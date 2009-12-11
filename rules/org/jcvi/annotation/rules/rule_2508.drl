@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2508 DEFAULT_METHOD[RF|YP_001781804.1]
 rule "putative (R)-2-hydroxyglutaryl-CoA dehydratase, beta subunit"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781804.1', 
 				bitScore >= 160,

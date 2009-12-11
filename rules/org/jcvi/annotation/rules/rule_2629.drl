@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2629 THIS_BLAST_HIT[GB|AAF72509.1, 1795, 85, 85, 85, 10, 0] && THIS_HMM_HIT[PF05738] && THIS_HMM_HIT[TIGR01168] && THIS_HMM_HIT[TIGR01167]
 rule "serine-aspartate repeat-containing protein F"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAF72509.1', 
 			bitScore >= 1795,

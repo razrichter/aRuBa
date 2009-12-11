@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2166 THIS_BLAST_HIT[GB|CAL12650.1, 400, 97, 90, 80, 3, 1]
 rule "yersiniabactin region putative transporter YbtX"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|CAL12650.1', 
 			bitScore >= 400,

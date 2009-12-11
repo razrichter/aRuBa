@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2444 DEFAULT_METHOD[GB|EDK34415.1]
 rule "N-carbamyl-L-cysteine amidohydrolase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|EDK34415.1', 
 				bitScore >= 160,

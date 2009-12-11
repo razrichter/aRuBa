@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2456 DEFAULT_METHOD[GB|ACA54656.1]
 rule "high-affinity branched-chain amino acid ABC transporter, permease protein"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA54656.1', 
 				bitScore >= 160,

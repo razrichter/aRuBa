@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2620 THIS_HMM_HIT[TIGR02400] && THIS_HMM_HIT[TIGR00685]
 rule "alpha,alpha-trehalose-phosphate synthase (UDP-forming)/trehalose-phosphatase"
+no-loop true
  when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR02400' )
 	 and

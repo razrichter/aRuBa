@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2418 DEFAULT_METHOD[RF|YP_001781222.1]
 rule "putative lantibiotic biosynthesis sensor histidine kinase after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781222.1', 
 				bitScore >= 160,

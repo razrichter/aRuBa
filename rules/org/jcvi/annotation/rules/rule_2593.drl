@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2593 DEFAULT_METHOD[GB|CAL84266.1]
 rule "flagellar glycosylation island glycosyltransferase, CBO2705 family"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|CAL84266.1', 
 				bitScore >= 160,

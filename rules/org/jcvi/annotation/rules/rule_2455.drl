@@ -4,6 +4,7 @@ import org.jcvi.annotation.facts.*;
 
 // rule 2455 DEFAULT_METHOD[GB|ACA44534.1]
 rule "exonuclease SbcCD, C subunit after MGAT curation Clostridium"
+no-loop true
  when
 	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA44534.1', 
 				bitScore >= 160,
