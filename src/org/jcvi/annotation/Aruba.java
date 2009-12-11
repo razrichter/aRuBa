@@ -106,7 +106,10 @@ public class Aruba {
     	int total = 0;
     	
         // Add Genome Features
-        int count = total = engine.addFacts(sgFactory.getFeatureDAO());
+    	for (Feature f : sgFactory.getFeatureDAO()) {
+    		features.add(f); // save features for later reporting
+    	}
+        int count = total = engine.addFacts(features);
     	System.out.println("  " + count + " features");
     	        
     	// Add annotations
