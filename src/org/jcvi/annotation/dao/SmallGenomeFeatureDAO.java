@@ -155,7 +155,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 				
 				try {
 					if (rs.next()) {
-						String featureId = rs.getString(1);
+						String featureId = rs.getString(2);
 						String name = rs.getString(2);
 						String type = rs.getString(4);
 						int start = rs.getInt(5);
