@@ -26,5 +26,5 @@ then
 	a.setConfidence(95);
 	a.setSpecificity(SpecificityType.OVER_EQUIV);
 	gene1.addAssertedAnnotation(a);
-	update(gene1);
+	//update(gene1);
 end
