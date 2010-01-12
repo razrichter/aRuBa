@@ -39,5 +39,5 @@ then
 	a.setConfidence(97);
 	a.setSpecificity(SpecificityType.OVER_EQUIV);
 	gene1.addAssertedAnnotation(a);
-	//update(gene1);
+	modify(gene1);
 end
