@@ -41,5 +41,5 @@ then
 	a.setConfidence(97);
 	a.setSpecificity(SpecificityType.EQUIVALOG);
 	gene1.addAssertedAnnotation(a);
-	modify(gene1);
+	update(gene1);
 end
