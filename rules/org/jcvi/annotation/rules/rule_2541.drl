@@ -1,26 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2541 DEFAULT_METHOD[GB|ACA44719.1]
-rule "5-nitroimidazole antibiotic resistance protein NimB after MGAT curation Clostridium"
+rule "2541|5-nitroimidazole antibiotic resistance protein NimB after MGAT curation Clostridium"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA44719.1', 
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ACA44719.1', 
 				bitScore >= 160,
 				hitPercentLength >= 90,
 				queryPercentLength >= 90,  
 				percentIdentity >= 80,
-				hitQueryLengthRatio <= 5.1 
-			)
+				hitQueryLengthRatio <= 5.1)
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2541");
-	 a.setGoIds("GO:0003824,GO:0046677");
-	 a.setRoleIds("94");
-	 a.setCommonName("5-nitroimidazole-class antibiotic resistance protein");
-	 a.setGeneSymbol("nim");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2541");
+	a.setCommonName("5-nitroimidazole-class antibiotic resistance protein");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("nim");
+	a.setGoIds("GO:0003824,GO:0046677");
+	a.setRoleIds("94");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

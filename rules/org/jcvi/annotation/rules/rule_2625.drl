@@ -1,23 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2625 THIS_HMM_HIT[TIGR01498] && THIS_HMM_HIT[TIGR00525]
-rule "dihydroneopterin aldolase/2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase"
+rule "2625|dihydroneopterin aldolase/2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01498' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00525' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00525' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-	
- then
-	 Annotation a = new Annotation("2625");
-	 a.setGoIds("GO:0003848,GO:0004150,GO:0006760,GO:0009396");
-	 a.setEcNumbers("4.1.2.25 2.7.6.3");
-	 a.setCommonName("dihydroneopterin aldolase/2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase");
-	 a.setRoleIds("78");
-	 a.setGeneSymbol("folBK");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2625");
+	a.setCommonName("dihydroneopterin aldolase/2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase");
+	a.setEcNumbers("4.1.2.25 2.7.6.3");
+	a.setGeneSymbol("folBK");
+	a.setGoIds("GO:0003848,GO:0004150,GO:0006760,GO:0009396");
+	a.setRoleIds("78");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

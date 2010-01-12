@@ -1,22 +1,24 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
-// rule # rule 2678 THIS_HMM_HIT[TIGR03834] && THIS_HMM_HIT[TIGR03836]
-rule "cytadherence high molecular weight protein 1"
+// rule 2678 THIS_HMM_HIT[TIGR03834] && THIS_HMM_HIT[TIGR03836]
+rule "2678|cytadherence high molecular weight protein 1"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR03834' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR03836' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR03836' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-	
- then
-	 Annotation a = new Annotation("2678");
-	 a.setRoleIds("91,187,188");
-	 a.setCommonName("cytadherence high molecular weight protein 1");
-	 a.setGeneSymbol("hmw1");
-	 a.addGoIds("GO:0016337,GO:0048870");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2678");
+	a.setCommonName("cytadherence high molecular weight protein 1");
+	a.setGeneSymbol("hmw1");
+	a.addGoIds("GO:0016337,GO:0048870");
+	a.setRoleIds("91,187,188");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

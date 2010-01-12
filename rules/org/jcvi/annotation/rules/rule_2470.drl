@@ -1,43 +1,56 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2470 THIS_BLAST_HIT[GB|ABG85605.1, 600, 95, 95, 60, 5, 0] || THIS_BLAST_HIT[GB|AAA91091.1, 600, 95, 95, 60, 5, 0] || THIS_BLAST_HIT[GB|ABS32746.1, 600, 95, 95, 60, 5, 0]
-rule "glyceraldehyde-3-phosphate dehydrogenase (NADP+) after MGAT curation Clostridium"
+rule "2470|glyceraldehyde-3-phosphate dehydrogenase (NADP+) after MGAT curation Clostridium"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABG85605.1', 
-			bitScore >= 600,
-			hitPercentLength >= 95,
-			queryPercentLength >= 95,  
-			percentIdentity >= 60,
-			hitQueryLengthRatio <= 5 
+when
+	(
+		blast_hit : BlastHit( program=='blastp', 
+				hitId=='GB|ABG85605.1', 
+				bitScore >= 600, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 60, 
+				hitQueryLengthRatio <= 5 )
+		gene1 : Feature( featureId == blast_hit.queryId )
+	)
+	or
+	(
+		(
+			blast_hit : BlastHit( program=='blastp', 
+				hitId=='GB|AAA91091.1', 
+				bitScore >= 600, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 60, 
+				hitQueryLengthRatio <= 5 )
+			gene1 : Feature( featureId == blast_hit.queryId )
 		)
-	 or
-	 blast_hit2 : BlastHit( program=='blastp', hitId=='GB|AAA91091.1', 
-			bitScore >= 600,
-			hitPercentLength >= 95,
-			queryPercentLength >= 95,  
-			percentIdentity >= 60,
-			hitQueryLengthRatio <= 5 
+		or
+		(
+			blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ABS32746.1', 
+				bitScore >= 600, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 60, 
+				hitQueryLengthRatio <= 5 )
+			gene1 : Feature( featureId == blast_hit1.queryId )
 		)
-	 or
-	 blast_hit3 : BlastHit( program=='blastp', hitId=='GB|ABS32746.1', 
-			bitScore >= 600,
-			hitPercentLength >= 95,
-			queryPercentLength >= 95,  
-			percentIdentity >= 60,
-			hitQueryLengthRatio <= 5 
-		)
-	gene1 : Feature( featureId == blast_hit1.queryId, featureId == blast_hit2.queryId, featureId == blast_hit3.queryId )
-	
- then
-	 Annotation a = new Annotation("2470");
-	 a.setGoIds("GO:0006094,GO:0006096,GO:0008886,GO:0019682");
-	 a.setEcNumbers("1.2.1.9");
-	 a.setRoleIds("116");
-	 a.setCommonName("glyceraldehyde-3-phosphate dehydrogenase (NADP+)");
-	 a.setGeneSymbol("gapN");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+	)
+
+
+then
+	Annotation a = new Annotation("2470");
+	a.setCommonName("glyceraldehyde-3-phosphate dehydrogenase (NADP+)");
+	a.setEcNumbers("1.2.1.9");
+	a.setGeneSymbol("gapN");
+	a.setGoIds("GO:0006094,GO:0006096,GO:0008886,GO:0019682");
+	a.setRoleIds("116");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

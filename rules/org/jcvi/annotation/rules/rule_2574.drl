@@ -1,24 +1,27 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2574 DEFAULT_METHOD[GB|ABS33279.1   	]
-rule "flagellar glycosylation island protein, CBO2701 family"
+rule "2574|flagellar glycosylation island protein, CBO2701 family"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS33279.1', 
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ABS33279.1', 
 				bitScore >= 160,
 				hitPercentLength >= 90,
 				queryPercentLength >= 90,  
 				percentIdentity >= 80,
-				hitQueryLengthRatio <= 5.1 
-			)
+				hitQueryLengthRatio <= 5.1)
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2574");
-	 a.setRoleIds("91");
-	 a.setCommonName("flagellar glycosylation island protein, CBO2701 family");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2574");
+	a.setCommonName("flagellar glycosylation island protein, CBO2701 family");
+	a.setRoleIds("91");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.INIT_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

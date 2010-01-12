@@ -1,25 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2509 DEFAULT_METHOD[RF|YP_001781805.1]
-rule "putative (R)-2-hydroxyglutaryl-CoA dehydratase, alpha subunit"
+rule "2509|putative (R)-2-hydroxyglutaryl-CoA dehydratase, alpha subunit"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001781805.1', 
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='RF|YP_001781805.1', 
 				bitScore >= 160,
 				hitPercentLength >= 90,
 				queryPercentLength >= 90,  
 				percentIdentity >= 80,
-				hitQueryLengthRatio <= 5.1 
-			)
+				hitQueryLengthRatio <= 5.1)
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2509");
-	 a.setGoIds("GO:0019665,GO:0043717");
-	 a.setRoleIds("109,114");
-	 a.setCommonName("putative (R)-2-hydroxyglutaryl-CoA dehydratase, alpha subunit");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2509");
+	a.setCommonName("putative (R)-2-hydroxyglutaryl-CoA dehydratase, alpha subunit");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol(" ");
+	a.setGoIds("GO:0019665,GO:0043717");
+	a.setRoleIds("109,114");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

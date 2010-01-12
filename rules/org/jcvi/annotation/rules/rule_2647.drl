@@ -1,26 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2647 THIS_BLAST_HIT[SP|P0AAF1, 625, 95, 92, 70, 3, 0]
-rule "putrescine-ornithine antiporter"
+rule "2647|putrescine-ornithine antiporter"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P0AAF1', 
-			bitScore >= 625,
-			hitPercentLength >= 95,
-			queryPercentLength >= 92,  
-			percentIdentity >= 70,
-			hitQueryLengthRatio <= 3 
-		)
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='SP|P0AAF1', 
+				bitScore >= 625, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 70, 
+				hitQueryLengthRatio <= 3 )
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2647");
-	 a.setGoIds("GO:0015496,GO:0015171,GO:0016020");
-	 a.setCommonName("putrescine-ornithine antiporter");
-	 a.setGeneSymbol("potE");
-	 a.addRoleIds("142");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2647");
+	a.setCommonName("putrescine-ornithine antiporter");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("potE");
+	a.setGoIds("GO:0015496,GO:0015171,GO:0016020");
+	a.addRoleIds("142");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

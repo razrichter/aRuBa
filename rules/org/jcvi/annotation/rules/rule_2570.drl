@@ -1,25 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2570 DEFAULT_METHOD[SP|P00195]
-rule "ferredoxin, 4Fe-4S"
+rule "2570|ferredoxin, 4Fe-4S"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P00195', 
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='SP|P00195', 
 				bitScore >= 160,
 				hitPercentLength >= 90,
 				queryPercentLength >= 90,  
 				percentIdentity >= 80,
-				hitQueryLengthRatio <= 5.1 
-			)
+				hitQueryLengthRatio <= 5.1)
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2570");
-	 a.setGoIds("GO:0005506,GO:0006118,GO:0009055,GO:0055114");
-	 a.setRoleIds("112");
-	 a.setCommonName("ferredoxin, 4Fe-4S");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2570");
+	a.setCommonName("ferredoxin, 4Fe-4S");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol(" ");
+	a.setGoIds("GO:0005506,GO:0006118,GO:0009055,GO:0055114");
+	a.setRoleIds("112");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

@@ -1,25 +1,29 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2417 THIS_BLAST_HIT[GB|AAW88442.1, 1250, 95, 92, 67, 6, 0]
-rule "cell wall-anchored surface protein LrrG"
+rule "2417|cell wall-anchored surface protein LrrG"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAW88442.1', 
-			bitScore >= 1250,
-			hitPercentLength >= 95,
-			queryPercentLength >= 92,  
-			percentIdentity >= 67,
-			hitQueryLengthRatio <= 6 
-		)
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAW88442.1', 
+				bitScore >= 1250, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 67, 
+				hitQueryLengthRatio <= 6 )
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2417");
-	 a.setCommonName("cell wall-anchored surface protein LrrG");
-	 a.setGeneSymbol("lrrG");
-	 a.addRoleIds("91");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2417");
+	a.setCommonName("cell wall-anchored surface protein LrrG");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("lrrG");
+	a.addRoleIds("91");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.INIT_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

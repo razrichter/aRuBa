@@ -1,22 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2618 THIS_HMM_HIT[TIGR01103] && THIS_HMM_HIT[TIGR03500]
-rule "flagellar biosynthetic protein FliO/FliP"
+rule "2618|flagellar biosynthetic protein FliO/FliP"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01103' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR03500' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR03500' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-	
- then
-	 Annotation a = new Annotation("2618");
-	 a.setGoIds("GO:0001539,GO:0008565,GO:0009296");
-	 a.setRoleIds("188");
-	 a.setCommonName("flagellar biosynthetic protein FliO/FliP");
-	 a.setGeneSymbol("fliOP");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2618");
+	a.setCommonName("flagellar biosynthetic protein FliO/FliP");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("fliOP");
+	a.setGoIds("GO:0001539,GO:0008565,GO:0009296");
+	a.setRoleIds("188");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

@@ -1,23 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2376 THIS_HMM_HIT[TIGR00121] && THIS_HMM_HIT[TIGR00122]
-rule "bifunctional protein BirA"
+rule "2376|bifunctional protein BirA"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00121' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00122' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00122' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-	
- then
-	 Annotation a = new Annotation("2376");
-	 a.setGoIds("GO:0003700,GO:0004077,GO:0006355,GO:0018065,GO:0006768");
-	 a.setEcNumbers("6.3.4.15");
-	 a.setCommonName("bifunctional protein BirA");
-	 a.setRoleIds("140,261");
-	 a.setGeneSymbol("birA");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2376");
+	a.setCommonName("bifunctional protein BirA");
+	a.setEcNumbers("6.3.4.15");
+	a.setGeneSymbol("birA");
+	a.setGoIds("GO:0003700,GO:0004077,GO:0006355,GO:0018065,GO:0006768");
+	a.setRoleIds("140,261");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

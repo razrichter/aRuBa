@@ -1,26 +1,29 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2161 THIS_BLAST_HIT[GB|CAA21390.1, 3000, 95, 95, 80, 5, 1]
-rule "yersiniabactin biosynthesis enzyme HMWP2 by strict blastp"
+rule "2161|yersiniabactin biosynthesis enzyme HMWP2 by strict blastp"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|CAA21390.1', 
-			bitScore >= 3000,
-			hitPercentLength >= 95,
-			queryPercentLength >= 95,  
-			percentIdentity >= 80,
-			hitQueryLengthRatio <= 5 
-		)
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|CAA21390.1', 
+				bitScore >= 3000, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 80, 
+				hitQueryLengthRatio <= 5 )
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2161");
-	 a.setCommonName("yersiniabactin synthetase, HMWP2 component");
-	 a.setGeneSymbol("irp2");
-	 a.setRoleIds("707");
-	 a.addGoIds("GO:0003824,GO:0008168,GO:0019184,GO:0019290");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2161");
+	a.setCommonName("yersiniabactin synthetase, HMWP2 component");
+	a.setGeneSymbol("irp2");
+	a.addGoIds("GO:0003824,GO:0008168,GO:0019184,GO:0019290");
+	a.setRoleIds("707");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

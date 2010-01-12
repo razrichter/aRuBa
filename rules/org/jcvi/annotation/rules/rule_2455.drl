@@ -1,26 +1,29 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2455 DEFAULT_METHOD[GB|ACA44534.1]
-rule "exonuclease SbcCD, C subunit after MGAT curation Clostridium"
+rule "2455|exonuclease SbcCD, C subunit after MGAT curation Clostridium"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ACA44534.1', 
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ACA44534.1', 
 				bitScore >= 160,
 				hitPercentLength >= 90,
 				queryPercentLength >= 90,  
 				percentIdentity >= 80,
-				hitQueryLengthRatio <= 5.1 
-			)
+				hitQueryLengthRatio <= 5.1)
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2455");
-	 a.setGoIds("GO:0004527,GO:0006260,GO:0006310");
-	 a.setRoleIds("132");
-	 a.setCommonName("exonuclease SbcCD, C subunit");
-	 a.setGeneSymbol("sbcC");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2455");
+	a.setCommonName("exonuclease SbcCD, C subunit");
+	a.setGeneSymbol("sbcC");
+	a.setGoIds("GO:0004527,GO:0006260,GO:0006310");
+	a.setRoleIds("132");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

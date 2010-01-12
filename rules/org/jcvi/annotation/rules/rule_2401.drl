@@ -1,26 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2401 THIS_BLAST_HIT[GB|AAQ57625.1, 1500, 90, 90, 80, 5, 1]
-rule "outer membrane protein IcsA"
+rule "2401|outer membrane protein IcsA"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAQ57625.1', 
-			bitScore >= 1500,
-			hitPercentLength >= 90,
-			queryPercentLength >= 90,  
-			percentIdentity >= 80,
-			hitQueryLengthRatio <= 5 
-		)
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAQ57625.1', 
+				bitScore >= 1500, 
+				hitPercentLength >= 90, 
+				queryPercentLength >= 90, 
+				percentIdentity >= 80, 
+				hitQueryLengthRatio <= 5 )
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2401");
-	 a.setGoIds("GO:0015474,GO:0005515,GO:0009405,GO:0008565,GO:0019867,GO:0070358");
-	 a.setRoleIds("187");
-	 a.setCommonName("outer membrane protein IcsA");
-	 a.setGeneSymbol("icsA");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2401");
+	a.setCommonName("outer membrane protein IcsA");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("icsA");
+	a.setGoIds("GO:0015474,GO:0005515,GO:0009405,GO:0008565,GO:0019867,GO:0070358");
+	a.setRoleIds("187");
+	a.setConfidence(98);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

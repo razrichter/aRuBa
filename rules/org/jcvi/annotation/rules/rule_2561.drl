@@ -1,26 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2561 DEFAULT_METHOD[GB|ABS41391.1]
-rule "flagellar biosynthesis protein FlhF after MGAT curation Clostridium"
+rule "2561|flagellar biosynthesis protein FlhF after MGAT curation Clostridium"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS41391.1', 
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ABS41391.1', 
 				bitScore >= 160,
 				hitPercentLength >= 90,
 				queryPercentLength >= 90,  
 				percentIdentity >= 80,
-				hitQueryLengthRatio <= 5.1 
-			)
+				hitQueryLengthRatio <= 5.1)
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2561");
-	 a.setGoIds("GO:0003924,GO:0005525,GO:0009296,GO:0060286");
-	 a.setRoleIds("188");
-	 a.setCommonName("flagellar biosynthesis protein FlhF");
-	 a.setGeneSymbol("flhF");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2561");
+	a.setCommonName("flagellar biosynthesis protein FlhF");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("flhF");
+	a.setGoIds("GO:0003924,GO:0005525,GO:0009296,GO:0060286");
+	a.setRoleIds("188");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

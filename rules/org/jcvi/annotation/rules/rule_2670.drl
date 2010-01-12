@@ -1,23 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2670 THIS_HMM_HIT[TIGR03328] && THIS_HMM_HIT[TIGR03333]
-rule "2-hydroxy-3-keto-5-methylthiopentenyl-1-phosphate phosphatase/methylthioribulose-1-phosphate dehydratase"
+rule "2670|2-hydroxy-3-keto-5-methylthiopentenyl-1-phosphate phosphatase/methylthioribulose-1-phosphate dehydratase"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR03328' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR03333' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR03333' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-	
- then
-	 Annotation a = new Annotation("2670");
-	 a.setGoIds("GO:0016791,GO:0016835,GO:0019509");
-	 a.setEcNumbers("3.1.3.- 4.2.-.-");
-	 a.setCommonName("2-hydroxy-3-keto-5-methylthiopentenyl-1-phosphate phosphatase/methylthioribulose-1-phosphate dehydratase");
-	 a.setRoleIds("71,106");
-	 a.setGeneSymbol("mtnXB");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2670");
+	a.setCommonName("2-hydroxy-3-keto-5-methylthiopentenyl-1-phosphate phosphatase/methylthioribulose-1-phosphate dehydratase");
+	a.setEcNumbers("3.1.3.- 4.2.-.-");
+	a.setGeneSymbol("mtnXB");
+	a.setGoIds("GO:0016791,GO:0016835,GO:0019509");
+	a.setRoleIds("71,106");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

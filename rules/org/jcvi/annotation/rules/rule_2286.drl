@@ -1,22 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2286 THIS_HMM_HIT[PF01386] && GEN_STATE[GenProp0006,Bacteria]
-rule "50S ribosomal protein L25 by HMM in BACTERIA"
+rule "2286|50S ribosomal protein L25 by HMM in BACTERIA"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF01386' )
-	 and
-	 txn1 : Taxon( parentNames contains 'Bacteria' )
+	txn1 : Taxon( parentNames contains 'Bacteria' )
 	gene1 : Feature( taxon == txn1, featureId == hmm_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2286");
-	 a.setRoleIds("158");
-	 a.setCommonName("50S ribosomal protein L25");
-	 a.setGeneSymbol("rplY");
-	 a.setGoIds("GO:0003735,GO:0006412,GO:0022625,GO:0019843");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2286");
+	a.setCommonName("50S ribosomal protein L25");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("rplY");
+	a.setGoIds("GO:0003735,GO:0006412,GO:0022625,GO:0019843");
+	a.setRoleIds("158");
+	a.setConfidence();
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

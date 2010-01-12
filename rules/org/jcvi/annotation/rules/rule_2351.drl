@@ -1,22 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2351 THIS_HMM_HIT[TIGR00129] && NEAR_HMM_HIT[4000, TIGR01591]
-rule "formate dehydrogenase accessory protein FdhD"
+rule "2351|formate dehydrogenase accessory protein FdhD"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00129' )
-    hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01591' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01591' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
 	gene2 : Feature( eval(gene2.isWithin(gene1, 4000)) )
-	
- then
-	 Annotation a = new Annotation("2351");
-	 a.setRoleIds("110,112");
-	 a.setCommonName("formate dehydrogenase accessory protein FdhD");
-	 a.setGeneSymbol("fdhD");
-	 a.addGoIds("GO:0008863,GO:0009326,GO:0015942");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2351");
+	a.setCommonName("formate dehydrogenase accessory protein FdhD");
+	a.setGeneSymbol("fdhD");
+	a.addGoIds("GO:0008863,GO:0009326,GO:0015942");
+	a.setRoleIds("110,112");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

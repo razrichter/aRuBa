@@ -1,22 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2607 THIS_HMM_HIT[TIGR02857] && THIS_HMM_HIT[TIGR02868]
-rule "thiol reductant ABC exporter, CydCD subunit"
+rule "2607|thiol reductant ABC exporter, CydCD subunit"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR02857' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02868' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02868' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-	
- then
-	 Annotation a = new Annotation("2607");
-	 a.setGoIds("GO:0033230,GO:0033228,GO:0005887,GO:0005524,GO:0055051");
-	 a.setRoleIds("142");
-	 a.setCommonName("thiol reductant ABC exporter, CydCD fusion protein");
-	 a.setGeneSymbol("cydCD");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2607");
+	a.setCommonName("thiol reductant ABC exporter, CydCD fusion protein");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("cydCD");
+	a.setGoIds("GO:0033230,GO:0033228,GO:0005887,GO:0005524,GO:0055051");
+	a.setRoleIds("142");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

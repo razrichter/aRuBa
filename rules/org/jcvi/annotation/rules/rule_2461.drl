@@ -1,27 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2461 DEFAULT_METHOD[RF|YP_001787037.1]
-rule "TPP-dependent acetoin dehydrogenase complex, E2 component, dihydrolipoyllysine-residue acetyltransferase after MGAT curation Clostridium"
+rule "2461|TPP-dependent acetoin dehydrogenase complex, E2 component, dihydrolipoyllysine-residue acetyltransferase after MGAT curation Clostridium"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='RF|YP_001787037.1', 
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='RF|YP_001787037.1', 
 				bitScore >= 160,
 				hitPercentLength >= 90,
 				queryPercentLength >= 90,  
 				percentIdentity >= 80,
-				hitQueryLengthRatio <= 5.1 
-			)
+				hitQueryLengthRatio <= 5.1)
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2461");
-	 a.setCommonName("TPP-dependent acetoin dehydrogenase complex, E2 component, dihydrolipoyllysine-residue acetyltransferase");
-	 a.setGeneSymbol("acoC");
-	 a.addGoIds("GO:0004742,GO:0045150");
-	 a.addEcNumbers("2.3.1.12");
-	 a.addRoleIds("110,114");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2461");
+	a.setCommonName("TPP-dependent acetoin dehydrogenase complex, E2 component, dihydrolipoyllysine-residue acetyltransferase");
+	a.addEcNumbers("2.3.1.12");
+	a.setGeneSymbol("acoC");
+	a.addGoIds("GO:0004742,GO:0045150");
+	a.addRoleIds("110,114");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

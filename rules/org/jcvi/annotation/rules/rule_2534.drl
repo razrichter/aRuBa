@@ -1,25 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2534 DEFAULT_METHOD[GB|ABS41727.1]
-rule "core tail protein after MGAT curation Clostridium"
+rule "2534|core tail protein after MGAT curation Clostridium"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|ABS41727.1', 
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ABS41727.1', 
 				bitScore >= 160,
 				hitPercentLength >= 90,
 				queryPercentLength >= 90,  
 				percentIdentity >= 80,
-				hitQueryLengthRatio <= 5.1 
-			)
+				hitQueryLengthRatio <= 5.1)
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2534");
-	 a.setGoIds("GO:0005198,GO:0019038,GO:0019068");
-	 a.setRoleIds("152");
-	 a.setCommonName("core tail protein");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2534");
+	a.setCommonName("core tail protein");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol(" ");
+	a.setGoIds("GO:0005198,GO:0019038,GO:0019068");
+	a.setRoleIds("152");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

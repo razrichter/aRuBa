@@ -1,22 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2603 THIS_HMM_HIT[TIGR02665] && THIS_HMM_HIT[TIGR00176]
-rule "molybdopterin-guanine dinucleotide biosynthesis protein MobAB"
+rule "2603|molybdopterin-guanine dinucleotide biosynthesis protein MobAB"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR02665' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00176' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00176' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-	
- then
-	 Annotation a = new Annotation("2603");
-	 a.setGoIds("GO:0003824,GO:0005525,GO:0006777");
-	 a.setCommonName("molybdopterin-guanine dinucleotide biosynthesis protein MobAB");
-	 a.setRoleIds("82");
-	 a.setGeneSymbol("mobAB");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2603");
+	a.setCommonName("molybdopterin-guanine dinucleotide biosynthesis protein MobAB");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("mobAB");
+	a.setGoIds("GO:0003824,GO:0005525,GO:0006777");
+	a.setRoleIds("82");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

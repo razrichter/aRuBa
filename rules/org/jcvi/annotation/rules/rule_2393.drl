@@ -1,20 +1,22 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2393 THIS_HMM_HIT[TIGR00476] && GEN_PROP[GenProp0692, 0.7]
-rule "selenide, water dikinase: GO terms for selenouridine"
+rule "2393|selenide, water dikinase: GO terms for selenouridine"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00476' )
-	 and
-	 genprop1 : GenomeProperty( this['id'] == 'GenProp0692', this['value'] >= 0.7 )
-gene1 : Feature( properties contains genprop1, featureId == hmm_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2393");
-	 a.addGoIds("GO:0004756,GO:0070329");
-	 a.addRoleIds("168");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+	genprop1 : GenomeProperty( this['id'] == 'GenProp0692', this['value'] >= 0.7 )
+	gene1 : Feature( properties contains genprop1, featureId == hmm_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2393");
+	a.addGoIds("GO:0004756,GO:0070329");
+	a.addRoleIds("168");
+	a.setConfidence(99);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

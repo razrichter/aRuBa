@@ -1,26 +1,29 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2580 THIS_BLAST_HIT[GB|AAS83518.1, 50, 95, 92, 96.35, 5, 0]
-rule "integrase, Bacteroides conjugative transposon family"
+rule "2580|integrase, Bacteroides conjugative transposon family"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|AAS83518.1', 
-			bitScore >= 50,
-			hitPercentLength >= 95,
-			queryPercentLength >= 92,  
-			percentIdentity >= 96.35,
-			hitQueryLengthRatio <= 5 
-		)
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAS83518.1', 
+				bitScore >= 50, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 96.35, 
+				hitQueryLengthRatio <= 5 )
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2580");
-	 a.setGoIds("GO:0015074,GO:0009037");
-	 a.setRoleIds("154");
-	 a.setCommonName("integrase, Bacteroides conjugative transposon family");
-	 a.setGeneSymbol("int");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2580");
+	a.setCommonName("integrase, Bacteroides conjugative transposon family");
+	a.setGeneSymbol("int");
+	a.setGoIds("GO:0015074,GO:0009037");
+	a.setRoleIds("154");
+	a.setConfidence(98);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

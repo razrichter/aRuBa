@@ -1,26 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2564 DEFAULT_METHOD[SP|P76010]
-rule "motility regulatory protein YcgR"
+rule "2564|motility regulatory protein YcgR"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='SP|P76010', 
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='SP|P76010', 
 				bitScore >= 160,
 				hitPercentLength >= 90,
 				queryPercentLength >= 90,  
 				percentIdentity >= 80,
-				hitQueryLengthRatio <= 5.1 
-			)
+				hitQueryLengthRatio <= 5.1)
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2564");
-	 a.setGoIds("GO:0001539,GO:0005737,GO:0019932,GO:0030553,GO:0051270");
-	 a.setRoleIds("188,264,710");
-	 a.setCommonName("motility regulatory protein YcgR");
-	 a.setGeneSymbol("ycgR");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2564");
+	a.setCommonName("motility regulatory protein YcgR");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("ycgR");
+	a.setGoIds("GO:0001539,GO:0005737,GO:0019932,GO:0030553,GO:0051270");
+	a.setRoleIds("188,264,710");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

@@ -1,23 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2683 THIS_HMM_HIT[PF06192] && NEAR_HMM_HIT[2000,TIGR01409]
-rule "TorD homolog near Twin-Arg protein implies chaperone activity, so set GO terms accordingly"
+rule "2683|TorD homolog near Twin-Arg protein implies chaperone activity, so set GO terms accordingly"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF06192' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01409' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01409' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
 	gene2 : Feature( eval(gene2.isWithin(gene1, 2000)) )
-	
- then
-	 Annotation a = new Annotation("2683");
-	 a.setCommonName("NULL");
-	 a.setGeneSymbol("NULL");
-	 a.addGoIds("GO:0051082,GO:0043953");
-	 a.addRoleIds("95,97");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2683");
+	a.setCommonName("NULL");
+	a.setGeneSymbol("NULL");
+	a.addGoIds("GO:0051082,GO:0043953");
+	a.addRoleIds("95,97");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.INIT_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

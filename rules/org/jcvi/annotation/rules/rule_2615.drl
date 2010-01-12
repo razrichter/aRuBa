@@ -1,22 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2615 THIS_HMM_HIT[TIGR00399] && GENOME_HMM_HIT[TIGR00398] && !THIS_HMM_HIT[TIGR00398]
-rule "methionyl-tRNA synthetase, beta subunit"
+rule "2615|methionyl-tRNA synthetase, beta subunit"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00399' )
 	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00398' )
-	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
 	not HmmHit( program=='hmm', hitId=='TIGR00398', queryId == gene1.featureId )
-	
- then
-	 Annotation a = new Annotation("2615");
-	 a.setGoIds("GO:0004825,GO:0006431");
-	 a.setEcNumbers("6.1.1.10");
-	 a.setCommonName("methionyl-tRNA synthetase, beta subunit");
-	 a.setRoleIds("137");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+
+then
+	Annotation a = new Annotation("2615");
+	a.setCommonName("methionyl-tRNA synthetase, beta subunit");
+	a.setEcNumbers("6.1.1.10");
+	a.setGoIds("GO:0004825,GO:0006431");
+	a.setRoleIds("137");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

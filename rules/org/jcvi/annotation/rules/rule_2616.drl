@@ -1,23 +1,25 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2616 THIS_HMM_HIT[TIGR02460] && THIS_HMM_HIT[TIGR02461]
-rule "mannosyl-3-phosphoglycerate synthase/mannosyl-3-phosphoglycerate phosphatase"
+rule "2616|mannosyl-3-phosphoglycerate synthase/mannosyl-3-phosphoglycerate phosphatase"
 no-loop true
- when
+when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR02460' )
-	 and
-	 hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02461' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02461' )
 	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-	
- then
-	 Annotation a = new Annotation("2616");
-	 a.setGoIds("GO:0050504,GO:0050531,GO:0051479");
-	 a.setEcNumbers("2.4.1.217 3.1.3.70");
-	 a.setCommonName("mannosyl-3-phosphoglycerate synthase/mannosyl-3-phosphoglycerate phosphatase");
-	 a.setRoleIds("119");
-	 a.setGeneSymbol("mpgSP");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2616");
+	a.setCommonName("mannosyl-3-phosphoglycerate synthase/mannosyl-3-phosphoglycerate phosphatase");
+	a.setEcNumbers("2.4.1.217 3.1.3.70");
+	a.setGeneSymbol("mpgSP");
+	a.setGoIds("GO:0050504,GO:0050531,GO:0051479");
+	a.setRoleIds("119");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end

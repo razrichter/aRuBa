@@ -1,27 +1,30 @@
-#created on: Dec 1, 2009
+#created on: Jan 12, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
 // rule 2675 THIS_BLAST_HIT[GB|CAD66854.1, 800, 95, 92, 65, 5, 0]
-rule "dihydropteroate synthase/dihydroneopterin aldolase/2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase"
+rule "2675|dihydropteroate synthase/dihydroneopterin aldolase/2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase"
 no-loop true
- when
-	blast_hit1 : BlastHit( program=='blastp', hitId=='GB|CAD66854.1', 
-			bitScore >= 800,
-			hitPercentLength >= 95,
-			queryPercentLength >= 92,  
-			percentIdentity >= 65,
-			hitQueryLengthRatio <= 5 
-		)
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|CAD66854.1', 
+				bitScore >= 800, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 65, 
+				hitQueryLengthRatio <= 5 )
 	gene1 : Feature( featureId == blast_hit1.queryId )
-	
- then
-	 Annotation a = new Annotation("2675");
-	 a.setGoIds("GO:0004156,GO:0004150,GO:0003848,GO:0046654");
-	 a.setEcNumbers("2.5.1.15 4.1.2.25 2.7.6.3");
-	 a.setCommonName("dihydropteroate synthase/dihydroneopterin aldolase/2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase");
-	 a.setRoleIds("78");
-	 a.setGeneSymbol("folPBK");
-	 gene1.addAssertedAnnotation(a);
-	 update(gene1);
+
+
+then
+	Annotation a = new Annotation("2675");
+	a.setCommonName("dihydropteroate synthase/dihydroneopterin aldolase/2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase");
+	a.setEcNumbers("2.5.1.15 4.1.2.25 2.7.6.3");
+	a.setGeneSymbol("folPBK");
+	a.setGoIds("GO:0004156,GO:0004150,GO:0003848,GO:0046654");
+	a.setRoleIds("78");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	modify(gene1);
 end
