@@ -1,4 +1,4 @@
-#created on: Jan 12, 2010
+#created on: Jan 13, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
@@ -15,7 +15,6 @@ then
 	Annotation a = new Annotation("2716");
 	has_intein_prop : Map( this['type']: 'gene_attribute', this['has_intein']: 1 );
 	gene1.addProperty(has_intein_prop);
-	a.setConfidence();
 	a.setSpecificity(SpecificityType.ASSERT_GENE);
 	insert(has_intein_prop);
 end

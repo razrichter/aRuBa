@@ -1,4 +1,4 @@
-#created on: Jan 12, 2010
+#created on: Jan 13, 2010
 package org.jcvi.annotation.rules
 import org.jcvi.annotation.facts.*;
 
@@ -18,7 +18,6 @@ then
 	a.setGeneSymbol("rplV");
 	a.setGoIds("GO:0003735,GO:0006412,GO:0022625,GO:0019843");
 	a.setRoleIds("158");
-	a.setConfidence();
 	a.setSpecificity(SpecificityType.OVER_EQUIV);
 	gene1.addAssertedAnnotation(a);
 	update(gene1);
