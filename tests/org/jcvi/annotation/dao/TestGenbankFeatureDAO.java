@@ -16,7 +16,7 @@ public class TestGenbankFeatureDAO {
 	@Before
 	public void setUp(){
 		//String fileName = "c:/CP000855.gb";
-		gbInputStreamReader = new InputStreamReader(this.getClass().getResourceAsStream("CP000855.gb"));       
+		gbInputStreamReader = new InputStreamReader(this.getClass().getResourceAsStream("data/CP000855.gb"));       
 		gbFeatureDAO = new GenbankFeatureDAO(gbInputStreamReader);
 		
 		

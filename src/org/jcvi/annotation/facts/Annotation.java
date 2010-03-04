@@ -16,7 +16,7 @@ public class Annotation {
 	
 	private String source;
 	private double confidence;
-	private int specificity;
+	private SpecificityType specificity;
 	private int assertionType;
 	private String commonName;
 	private String geneSymbol;
@@ -34,7 +34,7 @@ public class Annotation {
 		this.source = source;
 	}
 
-	public Annotation(String source, double confidence, int specificity) {
+	public Annotation(String source, double confidence, SpecificityType specificity) {
 		super();
 		this.source = source;
 		this.confidence = confidence;
@@ -57,14 +57,13 @@ public class Annotation {
 		this.confidence = confidence;
 	}
 
-	public int getSpecificity() {
+	public SpecificityType getSpecificity() {
 		return specificity;
 	}
 
-	public void setSpecificity(int specificity) {
-		this.specificity = specificity;
+	public void setSpecificity(SpecificityType specType) {
+		this.specificity = specType;
 	}
-
 	public int getAssertionType() {
 		return assertionType;
 	}
@@ -158,5 +157,7 @@ public class Annotation {
 	public void addGoId(String goId) {
 		this.goIds.add(goId);
 	}
-
+	public String toString() {
+		return this.getClass().getName() + "." + this.getGeneSymbol() + "." + this.getCommonName();
+	}
 }

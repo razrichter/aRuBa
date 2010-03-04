@@ -37,7 +37,7 @@ public class Aruba {
         super();
         this.engine = new RulesEngine();
         //this.addDefaultRules();
-  }
+   }
 	public Aruba(String rulesFile) {
 		this();
 		engine.addResource(rulesFile, ResourceType.DRL);
@@ -106,6 +106,7 @@ public class Aruba {
     	int total = 0;
     	
         // Add Genome Features
+    	System.out.println("Adding features...");
     	for (Feature f : sgFactory.getFeatureDAO()) {
     		features.add(f); // save features for later reporting
     	}
@@ -236,10 +237,8 @@ public class Aruba {
         String logFile = cmd.getOptionValue("log");
         if (logFile != null) {
         	aruba.log(logFile);
-        	//aruba.engine.setFileLogger(logFile);
         } else if (debug) {
         	aruba.log();
-        	//aruba.engine.setConsoleLogger();
         }
        
         // Add rules
@@ -253,7 +252,7 @@ public class Aruba {
            		aruba.addRuleByFile(f);
          	}
         }
-
+               	
         // Add Small Genome database
         aruba.addSmallGenome(dbName);
         
@@ -268,6 +267,15 @@ public class Aruba {
             if ( ! annotation.equals("") ) {
             	System.out.print(annotation);
             }
+        }
+        
+        // Print the list of rule hits
+        System.out.println("Rule Hits");
+        for (Feature f : aruba.features) {
+        	List<Annotation> assertedAnnotations = f.getAssertedAnnotations();
+        	for (Annotation a : assertedAnnotations) {
+        		System.out.println(a.getSource() + " " + f.getName());
+        	}
         }
         
         // End the StatefulKnowledgeSession

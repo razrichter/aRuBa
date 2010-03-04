@@ -18,6 +18,7 @@ import org.jcvi.annotation.facts.Taxon;
 import org.junit.After;
 import org.junit.Before;
 
+@SuppressWarnings("restriction")
 public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 
 	private RulesEngine engine;
@@ -77,6 +78,7 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 		engine.addResource(dslUrl.toString(), ResourceType.DSL);
 		engine.addResource(dslrUrl.toString(), ResourceType.DSLR);
 		engine.fireAllRules();
+		
 		this.ann = orf.getAssertedAnnotations().get(0);
 
 		// Test taxon assignment
@@ -103,7 +105,6 @@ public class TestBlastHitWithTaxonomyRestriction extends TestCase {
 
 	}
 	
-	@SuppressWarnings("restriction")
 	public void testDecisionTable() {
 		
 		// Requires the DecisionTableConfiguration class

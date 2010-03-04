@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.GenomeProperty;
 
 public class SmallGenomePropertyDAO implements PropertyDAO {
@@ -18,7 +16,7 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 	// Standard connection parameters (like SmallGenomeDAOFactory)
 	private Connection conn = null;
 	private String driver = "com.sybase.jdbc3.jdbc.SybDriver";
-	private String url = "jdbc:sybase:Tds:SYBTIGR";
+	private String url = "jdbc:sybase:Tds:SYBPROD"; // sybprd (Sybase server), SYBPROD (host)
 	private String port = "2025";
 	private String dbname = "common";
 	private String user = "access";

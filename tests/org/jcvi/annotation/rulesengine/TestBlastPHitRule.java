@@ -25,7 +25,7 @@ public class TestBlastPHitRule extends TestCase {
 		
 		URL dslUrl = engine.getClass().getResource("../rules/BrainGrabRulesTranslator.dsl");
 		URL dslrUrl = engine.getClass().getResource("../rules/BrainGrabRules.dslr");
-		engine.addResource(dslUrl.toString(), ResourceType.DSL);
+		System.out.println(engine.addResource(dslUrl.toString(), ResourceType.DSL));
 		engine.addResource(dslrUrl.toString(), ResourceType.DSLR);
 		/*
 		URL url = engine.getClass().getResource("../rules/SampleBlastHit.drl");

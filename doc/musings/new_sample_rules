@@ -1,0 +1,16 @@
+# 1) divergon
+# 2 genes in opposite orientation, within 500bp
+# store actual distance x, identifiers of two genes
+
+# 2) collision
+# 2 genes pointing at each other and overlapping (in coding region)
+# then
+# store length of overlap, identifiers of two genes
+
+# 3) trans-coupling 
+# 2 genes in same direction with start codon of one overlapping stop of the other
+# then
+#   store identity of two genes and
+#   overlap distance
+
+# 3) and has a hit to sequence_id

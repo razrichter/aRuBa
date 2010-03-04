@@ -1,0 +1,3 @@
+if (HMM_HIT(ARG1, TIGR02607) && HMM_HIT(ARG2, PF05015) && CLOSE(ARG1, ARG2, 100)) then assert (TOXIN_ANTITOXIN(ARG1, ARG2)
+haft@lserver1 % if (TWINARG(ARG1) and TOXIN_ANTITOXIN(ARG1) then assert (SOMETHING, ARG1).
+haft@lserver1 % THIS ==>  ARG1,    NEAR ==> ARG2,   can introduce ARG3, can assert for any ARG[n].

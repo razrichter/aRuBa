@@ -24,7 +24,7 @@ http://www.eclipse.org/downloads/
 
 To install Elipse plug-ins using an update site, launch Eclipse and
 Select Help > Install New Software. The install dialog will appear.
-Click add and type in the name and update site for the plugin
+Click add and type in the name and update site for the plugin.
 
 In your Eclipse install directory, update the eclipse.ini file to 
 increase memory allocation and permanent generation max size of the JDK.
@@ -53,7 +53,21 @@ As of the time of this writing, the update site is at
 http://downloads.jboss.com/drools/updatesite3.4/
 
 ==================================================
-(5) Checkout the Rules-Based Annotation Repository
+(5) Add Drools installed runtime for Eclipse
+==================================================
+
+a.) copy the directory drools-5.0 to somewhere 
+outside the project area (e.g. ~/lib/java/drools-5.0).
+(Don't move it, or you'll throw off your checkout.)
+
+b.) Add a Drools Installed Runtime 
+In Eclipse, select Window -> Preferences -> Drools -> Installed Drools Runtimes
+Click "Add".  In the dialog, click "Create a new Drools runtime", and 
+select the directory you just copied.  Check the box next to the runtime.
+
+
+==================================================
+(6) Checkout the Rules-Based Annotation Repository
 ==================================================
 In Eclipse, select Window -> Show View -> SVN Repositories
 Click the "Add SVN Repository" button on the top of the SVN 
@@ -64,5 +78,7 @@ and click finish.
 Right-click on the trunk directory in your SVN Repositories
 window, and select "Checkout".  Select "Checkout
 as a Java Project", select the Head Revision, and click finish.
+
+
 
 

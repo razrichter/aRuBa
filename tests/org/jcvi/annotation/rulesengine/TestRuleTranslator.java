@@ -1,15 +1,10 @@
 package org.jcvi.annotation.rulesengine;
 
 import java.net.URL;
-import java.util.List;
 import junit.framework.TestCase;
 import org.drools.builder.ResourceType;
-import org.jcvi.annotation.dao.NCBITaxonomyDAO;
-import org.jcvi.annotation.dao.SmallGenomeAnnotationDAO;
-import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
-import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.GenomeProperty;
 import org.jcvi.annotation.facts.Taxon;
 import org.junit.After;
@@ -20,9 +15,7 @@ public class TestRuleTranslator extends TestCase {
 	private RulesEngine engine;
 	private Feature feat;
 	private Taxon taxon;
-	private Genome genome;
 	private Annotation annot = new Annotation();
-	private SmallGenomeAnnotationDAO annotationDAO;
 	
 	@Before
 	public void setUp() throws Exception {

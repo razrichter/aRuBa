@@ -13,7 +13,7 @@ public class SmallGenomeDAOFactory extends DAOFactory {
 
 	private Connection conn = null;
 	private String driver = "com.sybase.jdbc3.jdbc.SybDriver";
-	private String url = "jdbc:sybase:Tds:SYBTIGR";
+	private String url = "jdbc:sybase:Tds:SYBPROD";
 	private String port = "2025";
 	private String dbname;
 	private String user = "access";

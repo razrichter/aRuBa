@@ -73,7 +73,6 @@ public class Taxon {
 	public List<Taxon> getParents() {
     	List<Taxon> parents = new ArrayList<Taxon>();
     	
-    	Taxon testp = this.getParent();    	
     	Taxon p = this;
       	while ((p = p.getParent()) != null) {
      		

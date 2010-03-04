@@ -183,9 +183,16 @@ public class Feature {
 		return getDistance(f.getSource().getFeatureId(), f.getStart(), f.getEnd(), f.getSource().isCircular());
 	}
 	public boolean isWithin(Feature f, int maxDist) {
+		if (f == null 
+				|| this.getSource() == null
+				|| f.getSource() == null 
+				|| f.getSource().getFeatureId() != this.getSource().getFeatureId()) {
+			return false;
+		}
 		int dist = this.getDistance(f);
 		return (dist != -1 && dist < maxDist);
 	}
+	
 	public String toString() {
 		return this.type + "|" + this.featureId;
 	}
