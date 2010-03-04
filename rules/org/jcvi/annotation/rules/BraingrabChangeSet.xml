@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <change-set xmlns='http://drools.org/drools-5.0/change-set'>
-<add><!--
+<add>
+	<resource source="classpath:org/jcvi/annotation/rules/rule_2685.drl" type="DRL" />
+	<resource source="classpath:org/jcvi/annotation/rules/rule_2648.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2645.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2646.drl" type="DRL" />
-	<resource source="classpath:org/jcvi/annotation/rules/rule_2648.drl" type="DRL" />
-	<resource source="classpath:org/jcvi/annotation/rules/rule_2685.drl" type="DRL" />
-
-	--><resource source="classpath:org/jcvi/annotation/rules/rule_2159.drl" type="DRL" />
+	<resource source="classpath:org/jcvi/annotation/rules/rule_2159.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2161.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2162.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2163.drl" type="DRL" />

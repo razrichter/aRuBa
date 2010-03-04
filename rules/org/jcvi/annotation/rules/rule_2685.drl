@@ -6,24 +6,24 @@ import org.jcvi.annotation.facts.*;
 rule "2685|TorA-specific chaperone TorD, based on TorA proximity or exact match"
 no-loop true
 when
-	(
-		hmm_hit1 : HmmHit( program=='hmm', hitId=='PF06192' )
-		hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02164' )
-		gene1 : Feature( featureId == hmm_hit1.queryId )
-		gene2 : Feature( featureId == hmm_hit2.queryId, eval(gene2.isWithin(gene1, 1000)) )
+	(or
+		(and
+			hmm_hit1 : HmmHit( program=='hmm', hitId=='PF06192' )
+			hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02164' )
+			gene1 : Feature( featureId == hmm_hit1.queryId )
+			gene2 : Feature( featureId == hmm_hit2.queryId, eval(gene2.isWithin(gene1, 1000)) )
+		)
+		(and
+			blast_hit1 : BlastHit( program=='blastp', 
+					hitId=='SP|P36662', 
+					bitScore >= 300, 
+					hitPercentLength >= 95, 
+					queryPercentLength >= 92, 
+					percentIdentity >= 80, 
+					hitQueryLengthRatio <= 5 )
+			gene1 : Feature( featureId == blast_hit1.queryId )
+		)
 	)
-	or
-	(
-		blast_hit1 : BlastHit( program=='blastp', 
-				hitId=='SP|P36662', 
-				bitScore >= 300, 
-				hitPercentLength >= 95, 
-				queryPercentLength >= 92, 
-				percentIdentity >= 80, 
-				hitQueryLengthRatio <= 5 )
-		gene1 : Feature( featureId == blast_hit1.queryId )
-	)
-
 
 then
 	Annotation a = new Annotation("2685");

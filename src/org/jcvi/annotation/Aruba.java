@@ -30,6 +30,7 @@ public class Aruba {
     private static final String sampleCommand = "aruba -D <database> [-r <rule_file|directory>] [-l <log_file>] blastfile.out|directory ...";
 	private static final String rulesChangeSet = "/org/jcvi/annotation/rules/BraingrabChangeSet.xml";
     private static Boolean debug = false;
+    private String DEFAULT_OUTPUT = "annotations";
     private ArrayList<Feature> features = new ArrayList<Feature>();
     private RulesEngine engine;
     
@@ -196,6 +197,7 @@ public class Aruba {
         options.addOption("D", "database", true, "Small Genome Database id (required)");
         options.addOption("debug",false,"Debug output");
         options.addOption("l","log", false, "Log file");
+        options.addOption("o", "output", false, "Output formats (annotations, rules)");
         OptionBuilder.withLongOpt("rule");
 		OptionBuilder.hasArgs();
 		OptionBuilder.withDescription("override rules to run");
@@ -233,6 +235,11 @@ public class Aruba {
         // Create an instance of our Aruba engine
         Aruba aruba = new Aruba();
 
+        String output = cmd.getOptionValue("output");
+        if (output == null) {
+        	output = aruba.DEFAULT_OUTPUT;
+        }
+
         // Log to file or console if requested
         String logFile = cmd.getOptionValue("log");
         if (logFile != null) {
@@ -262,28 +269,51 @@ public class Aruba {
         // Fire rules
         aruba.run();
         
-        for (Feature f : aruba.features) {
-            String annotation = getFeatureAnnotationText(f);
-            if ( ! annotation.equals("") ) {
-            	System.out.print(annotation);
-            }
-        }
-        
-        // Print the list of rule hits
-        System.out.println("Rule Hits");
-        for (Feature f : aruba.features) {
-        	List<Annotation> assertedAnnotations = f.getAssertedAnnotations();
-        	for (Annotation a : assertedAnnotations) {
-        		System.out.println(a.getSource() + " " + f.getName());
-        	}
-        }
+        // show outputs
+        aruba.printOutputReports(output);
         
         // End the StatefulKnowledgeSession
         aruba.shutdown();
         
     }
 
-    private static String getFeatureAnnotationText(Feature f) {
+    private void printOutputReports(String outputChars) {
+		for (String output :  outputChars.split(",")) {
+			output.trim();
+			if (output == "annotations" || output == "annot") {
+				annotationsReport();
+			} else if (output == "rules") {
+				hitsReport();
+			//} else if (output == "gff") {
+			//	gffReport();
+			
+			} else {
+				// TODO: throw an error here
+				System.err.println("Error: Unknown output format (" + output + "). Skipping.");
+			}
+			
+		}
+			
+	}
+    
+    private void annotationsReport() {
+        for (Feature f : features) {
+            String annotation = getFeatureAnnotationText(f);
+            if ( ! annotation.equals("") ) {
+            	System.out.print(annotation);
+            }
+        }		
+	}
+    private void hitsReport() {
+        for (Feature f : features) {
+        	List<Annotation> assertedAnnotations = f.getAssertedAnnotations();
+        	for (Annotation a : assertedAnnotations) {
+        		System.out.println(a.getSource() + " " + f.getName());
+        	}
+        }		
+	}
+    
+	private static String getFeatureAnnotationText(Feature f) {
         StringBuilder output = new StringBuilder();
         List<Annotation> assertedAnnotations = f.getAssertedAnnotations();
         if (assertedAnnotations.size() > 0 || debug) {

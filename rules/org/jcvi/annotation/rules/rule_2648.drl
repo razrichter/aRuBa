@@ -6,19 +6,18 @@ import org.jcvi.annotation.facts.*;
 rule "2648|arginine/ornithine antiporter"
 no-loop true
 when
-	(
-		blast_hit : BlastHit( program=='blastp', 
-				hitId=='GB|AAY93880.1', 
-				bitScore >= 550, 
-				hitPercentLength >= 94, 
-				queryPercentLength >= 92, 
-				percentIdentity >= 70, 
-				hitQueryLengthRatio <= 3 )
-		gene1 : Feature( featureId == blast_hit.queryId )
-	)
-	or
-	(
-		(
+	(or
+		(and
+			blast_hit : BlastHit( program=='blastp', 
+					hitId=='GB|AAY93880.1', 
+					bitScore >= 550, 
+					hitPercentLength >= 94, 
+					queryPercentLength >= 92, 
+					percentIdentity >= 70, 
+					hitQueryLengthRatio <= 3 )
+			gene1 : Feature( featureId == blast_hit.queryId )
+		)
+		(and
 			hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00905' )
 			hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01078' )
 			hmm_hit3 : HmmHit( program=='hmm', hitId=='TIGR00658' )
@@ -29,8 +28,6 @@ when
 			gene4 : Feature( featureId == hmm_hit4.queryId, eval(gene4.isWithin(gene3, 6000)) )
 		)
 	)
-
-
 then
 	Annotation a = new Annotation("2648");
 	a.setCommonName("arginine/ornithine antiporter");
