@@ -8,10 +8,9 @@ no-loop true
 when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR02363' )
 	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02364' )
-	not HmmHit( program=='hmm', hitId=='TIGR02365', queryId == gene2.featureId )
-	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-	gene2 : Feature( eval(gene2.isWithin(gene1, 2000)) )
-
+	gene1 : Feature( featureId == hmm_hit1.queryId )
+	gene2 : Feature( featureId == hmm_hit2.queryId, eval(gene2.isWithin(gene1, 2000)) )
+	not HmmHit( program=='hmm', hitId=='TIGR02365', queryId == gene1.featureId )
 
 then
 	Annotation a = new Annotation("2602");

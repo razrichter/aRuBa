@@ -6,7 +6,7 @@ import org.jcvi.annotation.facts.*;
 rule "2681|copper-sensing transcriptional repressor CsoR"
 no-loop true
 when
-	(
+	(or
 		blast_hit : BlastHit( program=='blastp', 
 				hitId=='GB|CAB15357.1', 
 				bitScore >= 136, 
@@ -14,10 +14,6 @@ when
 				queryPercentLength >= 92, 
 				percentIdentity >= 62, 
 				hitQueryLengthRatio <= 5 )
-		gene1 : Feature( featureId == blast_hit.queryId )
-	)
-	or
-	(
 		blast_hit1 : BlastHit( program=='blastp', 
 				hitId=='GB|AAS42666.1', 
 				bitScore >= 134, 
@@ -25,8 +21,8 @@ when
 				queryPercentLength >= 92, 
 				percentIdentity >= 62, 
 				hitQueryLengthRatio <= 5 )
-		gene1 : Feature( featureId == blast_hit1.queryId )
 	)
+	gene1 : Feature( featureId == blast_hit.queryId )
 
 
 then

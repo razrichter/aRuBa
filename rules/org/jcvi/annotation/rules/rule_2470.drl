@@ -6,7 +6,7 @@ import org.jcvi.annotation.facts.*;
 rule "2470|glyceraldehyde-3-phosphate dehydrogenase (NADP+) after MGAT curation Clostridium"
 no-loop true
 when
-	(
+	(or
 		blast_hit : BlastHit( program=='blastp', 
 				hitId=='GB|ABG85605.1', 
 				bitScore >= 600, 
@@ -14,32 +14,22 @@ when
 				queryPercentLength >= 95, 
 				percentIdentity >= 60, 
 				hitQueryLengthRatio <= 5 )
-		gene1 : Feature( featureId == blast_hit.queryId )
-	)
-	or
-	(
-		(
-			blast_hit : BlastHit( program=='blastp', 
+		blast_hit : BlastHit( program=='blastp', 
 				hitId=='GB|AAA91091.1', 
 				bitScore >= 600, 
 				hitPercentLength >= 95, 
 				queryPercentLength >= 95, 
 				percentIdentity >= 60, 
 				hitQueryLengthRatio <= 5 )
-			gene1 : Feature( featureId == blast_hit.queryId )
-		)
-		or
-		(
-			blast_hit1 : BlastHit( program=='blastp', 
+		blast_hit1 : BlastHit( program=='blastp', 
 				hitId=='GB|ABS32746.1', 
 				bitScore >= 600, 
 				hitPercentLength >= 95, 
 				queryPercentLength >= 95, 
 				percentIdentity >= 60, 
 				hitQueryLengthRatio <= 5 )
-			gene1 : Feature( featureId == blast_hit1.queryId )
-		)
 	)
+	gene1 : Feature( featureId == blast_hit1.queryId )
 
 
 then

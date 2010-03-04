@@ -19,8 +19,8 @@ when
 then
 	Annotation a = new Annotation("2693");
 	a.setCommonName("polyunsaturated fatty acid isomerase, conjugated linoleic acid-producing");
-	a.smartenEcNumbers("5.3.-.-");
-	a.smartenGoIds("GO:0016860,GO:0006631,GO:0050660");
+	a.setEcNumbers("5.3.-.-");
+	a.setGoIds("GO:0016860,GO:0006631,GO:0050660");
 	a.setRoleIds("176");
 	a.setConfidence(97);
 	a.setSpecificity(SpecificityType.EQUIVALOG);

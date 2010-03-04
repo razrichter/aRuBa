@@ -14,9 +14,8 @@ when
 				queryPercentLength >= 92, 
 				percentIdentity >= 60, 
 				hitQueryLengthRatio <= 5 )
-	gene1 : Feature( featureId == hmm_hit1.queryId )
-	gene2 : Feature( featureId == blast_hit1.queryId, eval(gene2.isWithin(gene1, 1000)) )
-
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	gene2 : Feature( featureId == hmm_hit1.queryId, eval(gene2.isWithin(gene1, 1000)) )
 
 then
 	Annotation a = new Annotation("2654");

@@ -6,27 +6,25 @@ import org.jcvi.annotation.facts.*;
 rule "2163|yersiniabactin biosynthesis salycil-AMP ligase YbtE/Irp5 from Y. pestis or P. syringae"
 no-loop true
 when
-	(
-		blast_hit : BlastHit( program=='blastp', 
-				hitId=='RF|NP_993003.1', 
-				bitScore >= 600, 
-				hitPercentLength >= 95, 
-				queryPercentLength >= 95, 
-				percentIdentity >= 80, 
-				hitQueryLengthRatio <= 3 )
-		gene1 : Feature( featureId == blast_hit.queryId )
+	(or
+			blast_hit : BlastHit( program=='blastp', 
+					hitId=='RF|NP_993003.1', 
+					bitScore >= 600, 
+					hitPercentLength >= 95, 
+					queryPercentLength >= 95, 
+					percentIdentity >= 80, 
+					hitQueryLengthRatio <= 3 )
+
+			blast_hit1 : BlastHit( program=='blastp', 
+					hitId=='GB|AAZ37347.1', 
+					bitScore >= 600, 
+					hitPercentLength >= 95, 
+					queryPercentLength >= 95, 
+					percentIdentity >= 80, 
+					hitQueryLengthRatio <= 3 )
 	)
-	or
-	(
-		blast_hit1 : BlastHit( program=='blastp', 
-				hitId=='GB|AAZ37347.1', 
-				bitScore >= 600, 
-				hitPercentLength >= 95, 
-				queryPercentLength >= 95, 
-				percentIdentity >= 80, 
-				hitQueryLengthRatio <= 3 )
-		gene1 : Feature( featureId == blast_hit1.queryId )
-	)
+	gene1 : Feature( featureId == blast_hit.queryId )
+	
 
 
 then

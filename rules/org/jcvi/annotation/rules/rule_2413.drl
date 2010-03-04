@@ -6,21 +6,10 @@ import org.jcvi.annotation.facts.*;
 rule "2413|upgade GO process for endospore formers from sporulation to endospore"
 no-loop true
 when
-	(
-		(
-			annot : Annotation( goIds contains 'GO:0030435' )
-			gene1 : Feature( assignedAnnotation == annot )
-		)
-		or
-		(
-			annot1 : Annotation( goIds contains 'GO:0043936' )
-			gene1 : Feature( assignedAnnotation == annot1 )
-		)
-		genprop1 : GenomeProperty( this['id'] == 'GenProp0610', this['value'] >= 0.6 )
-		txn1 : Taxon( parentNames contains 'Firmicutes' )
-		gene1 : Feature( taxon == txn1, properties contains genprop1 )
-	)
-
+	annot1 : Annotation( goIds contains 'GO:0030435' || goIds contains 'GO:0043936' )
+	genprop1 : GenomeProperty( this['id'] == 'GenProp0610', this['value'] >= 0.6 )
+	txn1 : Taxon( parentNames contains 'Firmicutes' )
+	gene1 : Feature( assignedAnnotation == annot1, taxon == txn1, properties contains genprop1 )
 
 then
 	Annotation a = new Annotation("2413");

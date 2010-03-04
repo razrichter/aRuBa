@@ -9,8 +9,8 @@ when
 	(
 		hmm_hit1 : HmmHit( program=='hmm', hitId=='PF06192' )
 		hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02164' )
-		gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-		gene2 : Feature( eval(gene2.isWithin(gene1, 1000)) )
+		gene1 : Feature( featureId == hmm_hit1.queryId )
+		gene2 : Feature( featureId == hmm_hit2.queryId, eval(gene2.isWithin(gene1, 1000)) )
 	)
 	or
 	(
@@ -21,7 +21,7 @@ when
 				queryPercentLength >= 92, 
 				percentIdentity >= 80, 
 				hitQueryLengthRatio <= 5 )
-		gene2 : Feature( featureId == blast_hit1.queryId )
+		gene1 : Feature( featureId == blast_hit1.queryId )
 	)
 
 

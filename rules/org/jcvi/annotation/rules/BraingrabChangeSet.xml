@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <change-set xmlns='http://drools.org/drools-5.0/change-set'>
-<add>
-	<resource source="classpath:org/jcvi/annotation/rules/rule_2159.drl" type="DRL" />
+<add><!--
+	<resource source="classpath:org/jcvi/annotation/rules/rule_2645.drl" type="DRL" />
+	<resource source="classpath:org/jcvi/annotation/rules/rule_2646.drl" type="DRL" />
+	<resource source="classpath:org/jcvi/annotation/rules/rule_2648.drl" type="DRL" />
+	<resource source="classpath:org/jcvi/annotation/rules/rule_2685.drl" type="DRL" />
+
+	--><resource source="classpath:org/jcvi/annotation/rules/rule_2159.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2161.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2162.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2163.drl" type="DRL" />
@@ -310,10 +315,7 @@
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2639.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2642.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2644.drl" type="DRL" />
-	<resource source="classpath:org/jcvi/annotation/rules/rule_2645.drl" type="DRL" />
-	<resource source="classpath:org/jcvi/annotation/rules/rule_2646.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2647.drl" type="DRL" />
-	<resource source="classpath:org/jcvi/annotation/rules/rule_2648.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2650.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2651.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2652.drl" type="DRL" />
@@ -346,7 +348,6 @@
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2682.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2683.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2684.drl" type="DRL" />
-	<resource source="classpath:org/jcvi/annotation/rules/rule_2685.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2686.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2687.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/rule_2688.drl" type="DRL" />

@@ -7,9 +7,9 @@ rule "2436|biotin-[acetyl-CoA-carboxylase] ligase (NOT with repressor domain)"
 no-loop true
 when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00121' )
+	gene1 : Feature( featureId == hmm_hit1.queryId )
 	not HmmHit( program=='hmm', hitId=='PF08279', queryId == gene1.featureId )
 	not HmmHit( program=='hmm', hitId=='TIGR00122', queryId == gene1.featureId )
-	gene1 : Feature( featureId == hmm_hit1.queryId )
 
 
 then

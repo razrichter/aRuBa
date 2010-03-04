@@ -14,8 +14,8 @@ when
 				percentIdentity >= 70, 
 				hitQueryLengthRatio <= 3 )
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00541' )
-	gene1 : Feature( featureId == blast_hit1.queryId, featureId == hmm_hit1.queryId )
-	gene2 : Feature( eval(gene2.isWithin(gene1, 100)) )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	gene2 : Feature( featureId == hmm_hit1.queryId, eval(gene2.isWithin(gene1, 100)) )
 
 
 then

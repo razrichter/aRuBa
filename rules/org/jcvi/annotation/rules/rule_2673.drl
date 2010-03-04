@@ -8,9 +8,9 @@ no-loop true
 when
 	genprop1 : GenomeProperty( this['id'] == 'GenProp0038', this['value'] >= 0.55 )
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF01227' )
-	not HmmHit( program=='hmm', hitId=='TIGR00063', queryId == gene1.featureId )
 	gene1 : Feature( featureId == hmm_hit1.queryId, properties contains genprop1 )
-
+	gene2 : Feature( genome == gene1.genome )
+	not HmmHit( program=='hmm', hitId=='TIGR00063', queryId == gene2.featureId )
 
 then
 	Annotation a = new Annotation("2673");

@@ -7,9 +7,9 @@ rule "2658|chemotaxis protein CheW"
 no-loop true
 when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF01584' )
+	gene1 : Feature( featureId == hmm_hit1.queryId )
 	not HmmHit( program=='hmm', hitId=='PF02518', queryId == gene1.featureId )
 	not HmmHit( program=='hmm', hitId=='PF01627', queryId == gene1.featureId )
-	gene1 : Feature( featureId == hmm_hit1.queryId )
 
 
 then

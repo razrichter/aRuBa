@@ -8,9 +8,9 @@ no-loop true
 when
 	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR03846' )
 	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR03845' )
+	gene1 : Feature( featureId == hmm_hit1.queryId )
+	gene2 : Feature( featureId == hmm_hit2.queryId, genome == gene1.genome )
 	not HmmHit( program=='hmm', hitId=='TIGR03845', queryId == gene1.featureId )
-	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
-
 
 then
 	Annotation a = new Annotation("2690");

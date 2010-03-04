@@ -6,30 +6,28 @@ import org.jcvi.annotation.facts.*;
 rule "2645|lysine decarboxylase CadA"
 no-loop true
 when
-	(
-		blast_hit : BlastHit( program=='blastp', 
-				hitId=='GB|AAQ16631.1', 
-				bitScore >= 1250, 
-				hitPercentLength >= 95, 
-				queryPercentLength >= 92, 
-				percentIdentity >= 85, 
-				hitQueryLengthRatio <= 5 )
-		gene1 : Feature( featureId == blast_hit.queryId )
-	)
-	or
-	(
-		(
+	(or
+		(and
+			blast_hit : BlastHit( program=='blastp', 
+					hitId=='GB|AAQ16631.1', 
+					bitScore >= 1250, 
+					hitPercentLength >= 95, 
+					queryPercentLength >= 92, 
+					percentIdentity >= 85, 
+					hitQueryLengthRatio <= 5 )
+			gene1 : Feature( featureId == blast_hit.queryId )
+		)
+		(or
 			(
-				blast_hit : BlastHit( program=='blastp', 
-				hitId=='GB|AAQ16631.1', 
-				bitScore >= 900, 
-				hitPercentLength >= 95, 
-				queryPercentLength >= 92, 
-				percentIdentity >= 60, 
-				hitQueryLengthRatio <= 5 )
+				blast_hit : BlastHit( program=='blastp',
+							hitId=='GB|AAQ16631.1',
+							bitScore >= 900,
+							hitPercentLength >= 95,
+							queryPercentLength >= 92,
+							percentIdentity >= 60,
+							hitQueryLengthRatio <= 5 )
 				gene1 : Feature( featureId == blast_hit.queryId )
 			)
-			or
 			(
 				hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00905' )
 				gene1 : Feature( featureId == hmm_hit1.queryId )

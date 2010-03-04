@@ -20,8 +20,8 @@ when
 				queryPercentLength >= 92, 
 				percentIdentity >= 40, 
 				hitQueryLengthRatio <= 5 )
-	gene1 : Feature( featureId == blast_hit2.queryId, featureId == blast_hit1.queryId )
-	gene2 : Feature( eval(gene2.isWithin(gene1, 800)) )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+	gene2 : Feature( featureId == blast_hit2.queryId, eval(gene2.isWithin(gene1, 800)) )
 
 
 then
