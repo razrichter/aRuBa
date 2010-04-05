@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+// Should this be an abstract class?
 public class Relationship {
 
 	protected Object subject;
 	protected Object object;
-	protected String type;
+	protected RelationshipType type;
 	protected List<Map<String, Object>> properties = new ArrayList<Map<String, Object>>();
 	
-	public Relationship(Object subject, Object object, String type) {
+	public Relationship(Object subject, RelationshipType type, Object object) {
 		super();
 		this.setSubject(subject);
 		this.setObject(object);
@@ -29,10 +30,10 @@ public class Relationship {
 	public void setObject(Object object) {
 		this.object = object;
 	}
-	public String getType() {
+	public RelationshipType getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(RelationshipType type) {
 		this.type = type;
 	}
 	public List<Map<String, Object>> getProperties() {

@@ -5,8 +5,8 @@ public class FeatureRelationship extends Relationship {
 	protected Feature subject;
 	protected Feature object;
 	
-	public FeatureRelationship(Feature subject, Feature object, String type) {
-		super(subject, object, type);
+	public FeatureRelationship(Feature subject, RelationshipType type, Feature object) {
+		super(subject, type, object);
 	}
 
 	public Feature getSubject() {

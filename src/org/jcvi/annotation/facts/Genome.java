@@ -27,4 +27,7 @@ public class Genome {
 	public void setProperties(Map<String, Object> properties) {
 		this.properties = properties;
 	}
+	public void addProperty(String key, Object value) {
+		this.properties.put(key, value);
+	}
 }

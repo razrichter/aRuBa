@@ -20,6 +20,7 @@ import org.drools.io.Resource;
 import org.drools.io.ResourceFactory;
 import org.jcvi.annotation.dao.BlastResultFileDAO;
 import org.jcvi.annotation.dao.GenbankFeatureDAO;
+import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
@@ -94,6 +95,10 @@ public class Aruba {
 		return engine.addFacts(new HmmResultFileDAO(fileOrDir));
 	}
 	*/
+	private int addRdf(String file) {
+		RdfFactDAO loader = new RdfFactDAO(file);
+		return loader.getTotalFacts();
+	}
 	
 	private int addGenbank(String file) {
 		InputStreamReader gbReader = new InputStreamReader(this.getClass().getResourceAsStream("CP000855.gb"));       
@@ -288,7 +293,7 @@ public class Aruba {
 			//	gffReport();
 			
 			} else {
-				// TODO: throw an error here
+				// should throw an error here
 				System.err.println("Error: Unknown output format (" + output + "). Skipping.");
 			}
 			

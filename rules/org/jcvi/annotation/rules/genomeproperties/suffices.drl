@@ -1,0 +1,42 @@
+#created on: Apr 5, 2010
+package org.jcvi.annoation.rules.genomeproperties
+import org.jcvi.annotation.facts.*;
+
+rule "FeatureProperty sufficient_for GenomeProperty"
+	
+	when
+		# there is a featureproperty that is sufficient_for a genome property
+		genomeprop	 	: GenomeProperty()
+		featureprop	 	: FeatureProperty()
+		relationship	: PropertyRelationship(
+							subject 	== featureprop, 
+							type	 	== RelationshipType.SUFFICIENT_FOR, 
+							object 		== genomeprop )
+							
+		genome			: Genome()
+		feature			: Feature (properties contains featureprop, genome == genome)
+	
+	then 
+		# assert the genome property on the genome
+		genome.addProperty(genomeprop);
+		
+end
+
+rule "GenomeProperty sufficient_for GenomeProperty"	
+	when
+		# there is a GenomeProperty1 that is sufficient_for GenomeProperty2,
+		# for every genome that contains GenomeProperty1
+		genomeprop1	 	: GenomeProperty()
+		genomeprop2	 	: GenomeProperty()
+		relationship	: PropertyRelationship(
+							subject 	== genomeprop1, 
+							type	 	== RelationshipType.SUFFICIENT_FOR, 
+							object 		== genomeprop2 )
+							
+		genome			: Genome( properties contains genomeprop1 )
+	
+	then 
+		# add GenomeProperty2 on the genome
+		genome.addProperty(genomeprop2);		
+end
+
