@@ -30,4 +30,20 @@ public class Genome {
 	public void addProperty(String key, Object value) {
 		this.properties.put(key, value);
 	}
+	public void removeProperty(String key) {
+		this.properties.remove(key);
+	}
+	
+	public void addProperty(FeatureProperty p) {
+		this.properties.put(p.get("id").toString(), p);
+	}
+	public void addProperty(GenomeProperty p) {
+		this.properties.put(p.get("id").toString(), p);
+	}
+	public void removeProperty(GenomeProperty p) {
+		this.properties.remove(p.get("id").toString());
+	}
+	public void removeProperty(FeatureProperty p) {
+		this.properties.remove(p.get("id").toString());
+	}
 }
