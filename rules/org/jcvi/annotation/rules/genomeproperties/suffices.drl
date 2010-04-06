@@ -13,8 +13,8 @@ rule "FeatureProperty sufficient_for GenomeProperty"
 							type	 	== RelationshipType.SUFFICIENT_FOR, 
 							object 		== genomeprop )
 							
-		genome			: Genome()
-		feature			: Feature (properties contains featureprop, genome == genome)
+		genome			: Genome( properties contains genomeprop )
+		feature			: Feature( properties contains featureprop, genome == genome )
 	
 	then 
 		# assert the genome property on the genome
