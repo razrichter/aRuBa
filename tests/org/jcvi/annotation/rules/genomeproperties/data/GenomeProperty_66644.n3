@@ -1,0 +1,31 @@
+@prefix gp: <urn:genome_properties:instances:> .
+@prefix : <urn:genome_properties:ontology:> .
+
+gp:GenomeProperty_66644
+	a	:GenomeProperty;
+	:name	"66644";
+	:type	"system";
+	:description	"radical SAM/uncharacterized protein TIGR03936 system";
+.
+gp:FeatureProperty_63238
+	a	:FeatureProperty;
+	:name	"63238";
+	:required_by	gp:GenomeProperty_66644;
+.
+gp:FeatureProperty_63239
+	a	:FeatureProperty;
+	:name	"63239";
+	:required_by	gp:GenomeProperty_66644;
+.
+gp:FeatureProperty_TIGR03936
+	a	:FeatureProperty;
+	:name	"TIGR03936";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63238;
+.
+gp:FeatureProperty_TIGR03960
+	a	:FeatureProperty;
+	:name	"TIGR03960";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63239;
+.

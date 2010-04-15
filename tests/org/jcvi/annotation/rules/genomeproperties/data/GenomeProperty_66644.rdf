@@ -1,0 +1,30 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="urn:genome_properties:ontology:"
+    xmlns:gp="urn:genome_properties:instances:">
+  <GenomeProperty rdf:about="urn:genome_properties:instances:GenomeProperty_66644">
+    <name>66644</name>
+    <type>system</type>
+    <description>radical SAM/uncharacterized protein TIGR03936 system</description>
+  </GenomeProperty>
+  <FeatureProperty rdf:about="urn:genome_properties:instances:FeatureProperty_TIGR03936">
+    <name>TIGR03936</name>
+    <type>HMM</type>
+    <sufficient_for>
+      <FeatureProperty rdf:about="urn:genome_properties:instances:FeatureProperty_63238">
+        <name>63238</name>
+        <required_by>gp:GenomeProperty_66644</required_by>
+      </FeatureProperty>
+    </sufficient_for>
+  </FeatureProperty>
+  <FeatureProperty rdf:about="urn:genome_properties:instances:FeatureProperty_TIGR03960">
+    <name>TIGR03960</name>
+    <type>HMM</type>
+    <sufficient_for>
+      <FeatureProperty rdf:about="urn:genome_properties:instances:FeatureProperty_63239">
+        <name>63239</name>
+        <required_by>gp:GenomeProperty_66644</required_by>
+      </FeatureProperty>
+    </sufficient_for>
+  </FeatureProperty>
+</rdf:RDF>

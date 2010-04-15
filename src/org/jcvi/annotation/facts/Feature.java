@@ -201,6 +201,22 @@ public class Feature {
 		return (f1.getStrand() == f2.getStrand());
 	}
 
+	public void removeProperty(GenomeProperty p) {
+		this.removeProperty(p.get("id").toString());
+	}
+	public void removeProperty(FeatureProperty p) {
+		this.removeProperty(p.get("id").toString());
+	}
+	public void removeProperty(String id) {
+		Map<String, Object> prop;
+		for (int i=0; i < this.properties.size(); i++) {
+			prop = this.properties.get(i);
+			if (prop.containsKey("id") && prop.get("id").equals(id)) {
+				this.properties.remove(i);
+			}
+		}
+	}
+	
 	// @Override equals method
 	public boolean equals(Object o) {
 		

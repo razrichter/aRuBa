@@ -20,16 +20,32 @@ public class RdfFileDAO implements RdfDAO {
 		super();
 		addRdfFile(inFile);
 	}
-
+	public RdfFileDAO(String inFile, String lang) {
+		super();
+		addRdfFile(inFile, lang);
+	}
+	public RdfFileDAO(URL inUrl, String lang) {
+		super();
+		addRdfFile(inUrl, lang);
+	}
+	
+	// Add RDF files, or files of other RDF languages
 	public void addRdfFile(String inFile) {
 		URL inUrl = this.getClass().getResource(inFile);
 		addRdfFile(inUrl);
+	}
+	public void addRdfFile(String inFile, String lang) {
+		URL inUrl = this.getClass().getResource(inFile);
+		addRdfFile(inUrl, lang);
 	}
 	
 	public void addRdfFile(URL inUrl) {
 		model.read(inUrl.toString());
 	}
-
+	public void addRdfFile(URL inUrl, String lang) {
+		model.read(inUrl.toString(), lang);
+	}
+	
 	// An iterable of com.hp.hpl.jena.rdf.model.Statement objects
     public Iterator<Statement> iterator() {
         return model.listStatements();

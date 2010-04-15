@@ -1,0 +1,19 @@
+@prefix gp: <urn:genome_properties:instances:> .
+@prefix : <urn:genome_properties:ontology:> .
+
+{ :thermostat :temp :high } log:implies { :heating :power "0" } .
+
+{?x family:parent ?y. ?y family:brother ?z} => {?x family:uncle ?z}.
+
+{	
+	?fp :sufficient_for ?gp. 
+	?fp a :FeatureProperty. 
+	?gp a :GenomeProperty. 
+	?feature a :Feature.
+	?feature :properties ?fp.
+	?genome a :Genome.
+	?feature :genome ?genome.
+} => {
+	genome :properties ?gp
+}
+

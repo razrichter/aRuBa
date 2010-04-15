@@ -1,12 +1,8 @@
 package org.jcvi.annotation.dao;
 
 import java.net.URL;
-import java.util.ArrayList;
-
 import junit.framework.TestCase;
-
 import org.jcvi.annotation.rulesengine.RulesEngine;
-import org.junit.Before;
 import org.junit.Test;
 
 public class TestRdfFactDAO extends TestCase {
@@ -17,18 +13,34 @@ public class TestRdfFactDAO extends TestCase {
 	
 	@Test
 	public void testRdfConverter() {
-		URL rdfUrl = this.getClass().getResource("data/genomeproperties.rdf");
+		String url = "data/genomeproperties.rdf";
+		URL rdfUrl = this.getClass().getResource(url);
 		dao = new RdfFactDAO(rdfUrl);
 		
-		// dao: an iterable of facts
+		// RdfFactDAO is an iterable of facts
 		engine.addFacts(dao);
 		
-		assertTrue(dao instanceof org.jcvi.annotation.dao.RdfFactDAO);
-		assertEquals(12931, dao.getTotalFacts());
-		assertEquals(902, dao.getNumGenomeProperties());
-		assertEquals(6078, dao.getNumFeatureProperties());
-		assertEquals(5951, dao.getRelationships().size());
-		assertEquals(12931, dao.getTotalFacts());
+		assertTrue(dao instanceof RdfFactDAO);
+		assertEquals(908, dao.getNumGenomeProperties());
+		assertEquals(5624, dao.getNumFeatureProperties());
+		assertEquals(6005, dao.getRelationships().size());
+		assertEquals(12537, dao.getTotalFacts());
+	}
+	
+	@Test
+	public void testN3Converter() {
+		String url = "data/genomeproperties.n3";
+		URL rdfUrl = this.getClass().getResource(url);
+		dao = new RdfFactDAO(rdfUrl, "N3");
+		
+		// RdfFactDAO is an iterable of facts
+		engine.addFacts(dao);
+		
+		assertTrue(dao instanceof RdfFactDAO);
+		assertEquals(908, dao.getNumGenomeProperties());
+		assertEquals(5624, dao.getNumFeatureProperties());
+		assertEquals(6005, dao.getRelationships().size());
+		assertEquals(12537, dao.getTotalFacts());
 	}
 
 }

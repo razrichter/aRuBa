@@ -28,6 +28,8 @@ import org.jcvi.annotation.rulesengine.RulesEngine;
 
 public class Aruba {
 
+	//TODO: Explicit options for loading Blast and HMM files
+	
     private static final String sampleCommand = "aruba -D <database> [-r <rule_file|directory>] [-l <log_file>] blastfile.out|directory ...";
 	private static final String rulesChangeSet = "/org/jcvi/annotation/rules/BraingrabChangeSet.xml";
     private static Boolean debug = false;

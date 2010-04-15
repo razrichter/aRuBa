@@ -13,9 +13,9 @@ public class TestRDFFileDAO extends TestCase {
 	
 	@Before
 	public void setUp() throws Exception {
-		URL rdfUrl = this.getClass().getResource("data/genomeproperties.rdf");
-		//URL rdfUrl = this.getClass().getResource("data/genomeproperties.n3");
-		rdfDao = new RdfFileDAO(rdfUrl);
+		//URL rdfUrl = this.getClass().getResource("data/genomeproperties.rdf");
+		URL rdfUrl = this.getClass().getResource("data/genomeproperties.n3");
+		rdfDao = new RdfFileDAO(rdfUrl, "N3");
 	}
 	
 	@Test
