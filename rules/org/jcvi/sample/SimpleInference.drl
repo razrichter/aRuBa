@@ -9,8 +9,6 @@ import java.util.Set
 #declare any global variables here
 global Set assertedFacts
 
-
-
 rule "A and B implies C"
 	
 	when

@@ -5,19 +5,23 @@ import org.jcvi.annotation.facts.*;
 rule "FeatureProperty required_by GenomeProperty"
 	
 	when
-		# there does not exist a FeatureProperty that is required_by a GenomeProperty and
-		# the GenomeProperty has been assigned,
-		# then, if the GenomeProperty has been assig, it should be retracted from the feature.genome
-		featureprop	 	:not( FeatureProperty() )
+		# If a GenomeProperty has been assigned, and 
+		# the GenomeProperty requires a FeatureProperty, and
+		# there does not exist a Feature containing such a FeatureProperty
+		# then it should be removed from the properties associated with the genome
+		featureprop	 	:FeatureProperty()
 		genomeprop	 	:GenomeProperty()
 		relationship	:PropertyRelationship(
 							subject 	== featureprop, 
 							type	 	== RelationshipType.REQUIRED_BY, 
 							object 		== genomeprop )
 		genome			: Genome( properties contains genomeprop )
-		feature			: Feature( properties contains featureprop, genome == genome )
+		not( Feature( properties contains featureprop, genome == genome ) )
 		
  	then 
 		# remove the genome property on the genome
-		genome.removeProperty(genomeprop);	
+		System.out.println("Removing genomeprop " + genomeprop.toString());
+		System.out.println("  since it requires missing FeatureProperty " + featureprop.toString());
+		genome.removeProperty(genomeprop);
+		update(genome);
 end

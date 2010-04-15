@@ -2,6 +2,27 @@
 package org.jcvi.annoation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 
+rule "FeatureProperty sufficient_for FeatureProperty"
+	
+	when
+		# there is a featureproperty that is sufficient_for a genome property
+		featureprop1	: FeatureProperty()
+		featureprop2	: FeatureProperty()
+		relationship	: PropertyRelationship(
+							subject 	== featureprop1, 
+							type	 	== RelationshipType.SUFFICIENT_FOR, 
+							object 		== featureprop2 )
+							
+		feature			: Feature( properties contains featureprop1 )
+	
+	then 
+		# assert the feature property on the feature
+		System.out.println("Assigning featureprop " + featureprop2.toString());
+		feature.addProperty(featureprop2);
+		// Assign featureprop2.value = 1
+		update(feature);
+end
+	
 rule "FeatureProperty sufficient_for GenomeProperty"
 	
 	when
@@ -13,13 +34,18 @@ rule "FeatureProperty sufficient_for GenomeProperty"
 							type	 	== RelationshipType.SUFFICIENT_FOR, 
 							object 		== genomeprop )
 							
-		genome			: Genome( properties contains genomeprop )
+		genome			: Genome()
 		feature			: Feature( properties contains featureprop, genome == genome )
 	
 	then 
 		# assert the genome property on the genome
-		genome.addProperty(genomeprop);
+		System.out.println("Assigning genomeprop " + genomeprop.toString());
 		
+		// genomeprop.value = 1
+		feature.addProperty(genomeprop);
+		genome.addProperty(genomeprop);
+		update(genome);
+		update(feature);
 end
 
 rule "GenomeProperty sufficient_for GenomeProperty"	
@@ -34,9 +60,16 @@ rule "GenomeProperty sufficient_for GenomeProperty"
 							object 		== genomeprop2 )
 							
 		genome			: Genome( properties contains genomeprop1 )
-	
+		feature			: Feature( properties contains genomeprop1, genome == genome )
+		
 	then 
 		# add GenomeProperty2 on the genome
-		genome.addProperty(genomeprop2);		
+		# For any feature that is a component of genomeprop1, then it is a component of genomeprop2
+		System.out.println("Assigning genomeprop " + genomeprop2.toString());
+		// genomeprop2.value = 1
+		feature.addProperty(genomeprop2);
+		genome.addProperty(genomeprop2);
+		update(genome);
+		update(feature);
 end
 
