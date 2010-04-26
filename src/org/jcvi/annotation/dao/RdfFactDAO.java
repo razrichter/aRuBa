@@ -212,7 +212,6 @@ public class RdfFactDAO implements Iterable<Object> {
 							// TODO: use propNode, and figure out a more robust way 
 							// to determine its value
 							else if (key.equals("threshold")) {
-								System.out.println("threshold " + value);
 								genomeProperty.setThreshold(value);
 							}
 							else if (!(key.equals("name") || (key.equals("type") && value.equals(ontologyNs + "GenomeProperty")))) {
