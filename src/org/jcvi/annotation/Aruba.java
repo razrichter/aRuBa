@@ -69,7 +69,7 @@ public class Aruba {
 		options.addOption("h", "hmm", false, "Path to HMM file or directory");
 		options.addOption("r", "rdf", false, "Path to RDF file or directory");
 		options.addOption("g", "genbank", false, "Path to Genbank file or directory");
-		options.addOption("use-braingrab-rules",false,"Use default BrainGrab rules");
+		options.addOption("defaultrules",false,"Use default BrainGrab rules");
 		options.addOption("debug",false,"Debug output");
 		options.addOption("l","log", false, "Log file");
 		options.addOption("o", "output", false, "Output formats (annotations, rules)");
