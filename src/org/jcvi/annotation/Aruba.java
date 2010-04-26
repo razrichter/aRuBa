@@ -2,6 +2,7 @@ package org.jcvi.annotation;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.io.StringReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -70,7 +71,8 @@ public class Aruba {
 		options.addOption("h", "hmm", false, "Path to HMM file or directory");
 		options.addOption("r", "rdf", false, "Path to RDF file or directory");
 		options.addOption("g", "genbank", false, "Path to Genbank file or directory");
-		options.addOption("defaultrules",false,"Use default BrainGrab rules");
+		options.addOption("braingrab",false,"Load BrainGrab rules");
+		options.addOption("genomeproperties",false,"Load facts and rules for Genome Properties");
 		options.addOption("debug",false,"Debug output");
 		options.addOption("l","log", false, "Log file");
 		options.addOption("o", "output", false, "Output formats (annotations, rules)");
@@ -127,8 +129,13 @@ public class Aruba {
 		// Add rules
 		aruba.addDroolsFiles(cmd.getOptionValues("rule"));
 
+		// Add facts and rules for Genome Properties
+		if (cmd.hasOption("braingrab")) {
+			aruba.addGenomeProperties();
+		}
+
 		// Add default braingrab rules
-		if (cmd.hasOption("use-braingrab-rules")) {
+		if (cmd.hasOption("braingrab")) {
 			aruba.addDefaultRules();
 		}
 
@@ -200,6 +207,15 @@ public class Aruba {
 		return engine.addFacts(new HMMResultFileDAO(file));
 	}
 
+	private int addGenomeProperties() {
+		// Add rules associated with Genome Properties
+		addGenomePropertiesRules();
+		
+		// Add facts about Genome Properties from Notation3 file
+		URL n3Url = this.getClass().getResource("dao/data/genomeproperties.n3");
+		RdfFactDAO dao = new RdfFactDAO(n3Url, "N3");
+		return addRdf(dao);
+	}
 	private int addRdf(RdfFactDAO dao) {
 		engine.addFacts(dao);
 		return dao.getTotalFacts();

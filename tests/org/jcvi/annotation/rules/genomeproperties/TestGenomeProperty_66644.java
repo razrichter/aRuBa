@@ -1,10 +1,8 @@
 package org.jcvi.annotation.rules.genomeproperties;
 
 import java.net.URL;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import junit.framework.TestCase;
 
 import org.drools.builder.ResourceType;
@@ -25,7 +23,7 @@ public class TestGenomeProperty_66644 extends TestCase {
 	
     @Before
     public void setUp() throws Exception {
-		URL rdfUrl = this.getClass().getResource("data/GenomeProperty_66644.rdf");
+		// URL rdfUrl = this.getClass().getResource("data/GenomeProperty_66644.rdf");
 		URL n3Url = this.getClass().getResource("data/GenomeProperty_66644.n3");
 		dao = new RdfFactDAO(n3Url, "N3");
 		engine.addFacts(dao);
