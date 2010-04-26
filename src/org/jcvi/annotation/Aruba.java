@@ -288,20 +288,22 @@ public class Aruba {
 	public static List<String> filesFromPaths(String[] filesOrDirs) {
 
 		ArrayList<String> files = new ArrayList<String>();
-		for (String fileOrDir : filesOrDirs) {
-			File stat = new File(fileOrDir);
-			if ( ! stat.exists() ) {
-				System.err.println("Error: File '"+ fileOrDir + "' does not exist. Skipping.");
-			}
-			else if ( ! stat.canRead() ) {
-				System.err.println("Error: File '" + fileOrDir + "' cannot be read. Skipping.");
-			}
-			else if (stat.isFile() && stat.length() > 0) {
-				files.add(fileOrDir);
-			}
-			else if (stat.isDirectory()) {
-				for (File f: stat.listFiles()) {
-					files.add(f.getPath());
+		if (filesOrDirs != null) {
+			for (String fileOrDir : filesOrDirs) {
+				File stat = new File(fileOrDir);
+				if ( ! stat.exists() ) {
+					System.err.println("Error: File '"+ fileOrDir + "' does not exist. Skipping.");
+				}
+				else if ( ! stat.canRead() ) {
+					System.err.println("Error: File '" + fileOrDir + "' cannot be read. Skipping.");
+				}
+				else if (stat.isFile() && stat.length() > 0) {
+					files.add(fileOrDir);
+				}
+				else if (stat.isDirectory()) {
+					for (File f: stat.listFiles()) {
+						files.add(f.getPath());
+					}
 				}
 			}
 		}
