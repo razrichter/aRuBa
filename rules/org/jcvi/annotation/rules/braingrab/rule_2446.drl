@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2446 DEFAULT_METHOD[GB|EDK35801.1]
+rule "2446|sigma-K factor processing regulatory protein BofA after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|EDK35801.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2446");
+	a.setCommonName("sigma-K factor processing regulatory protein BofA");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("bofA");
+	a.setGoIds("GO:0016987,GO:0030435,GO:0042601");
+	a.setRoleIds("129,705");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

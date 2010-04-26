@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2402 THIS_BLAST_HIT[GB|AAL03447.1, 500, 80, 70, 70, 10, 0]
+rule "2402|actin-based motility protein RickA"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAL03447.1', 
+				bitScore >= 500, 
+				hitPercentLength >= 80, 
+				queryPercentLength >= 70, 
+				percentIdentity >= 70, 
+				hitQueryLengthRatio <= 10 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2402");
+	a.setCommonName("actin-based motility protein RickA");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("rickA");
+	a.setGoIds("GO:0070358,GO:0030260,GO:0005515");
+	a.setRoleIds("187");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

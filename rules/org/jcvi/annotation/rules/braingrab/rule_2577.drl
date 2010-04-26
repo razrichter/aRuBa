@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2577 DEFAULT_METHOD[SP|P24828]
+rule "2577|aminopeptidase"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='SP|P24828', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2577");
+	a.setCommonName("aminopeptidase");
+	a.setEcNumbers("3.4.11.-");
+	a.setGeneSymbol(" ");
+	a.setGoIds("GO:0004177,GO:0006508");
+	a.setRoleIds("138");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

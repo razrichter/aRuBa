@@ -1,0 +1,29 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2166 THIS_BLAST_HIT[GB|CAL12650.1, 400, 97, 90, 80, 3, 1]
+rule "2166|yersiniabactin region putative transporter YbtX"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|CAL12650.1', 
+				bitScore >= 400, 
+				hitPercentLength >= 97, 
+				queryPercentLength >= 90, 
+				percentIdentity >= 80, 
+				hitQueryLengthRatio <= 3 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2166");
+	a.setCommonName("yersiniabactin region putative transporter YbtX");
+	a.setGeneSymbol("ybtX");
+	a.setGoIds("GO:0005215,GO:0005887,GO:0006810");
+	a.setRoleIds("141");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

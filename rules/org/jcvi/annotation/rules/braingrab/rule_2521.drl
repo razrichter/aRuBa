@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2521 DEFAULT_METHOD[SP|Q0TPS3]
+rule "2521|polyribonucleotide nucleotidyltransferase"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='SP|Q0TPS3', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2521");
+	a.setCommonName("polyribonucleotide nucleotidyltransferase");
+	a.setEcNumbers("2.7.7.8");
+	a.setGeneSymbol("pnpA");
+	a.setGoIds("GO:0004654,GO:0030420");
+	a.setRoleIds("134");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

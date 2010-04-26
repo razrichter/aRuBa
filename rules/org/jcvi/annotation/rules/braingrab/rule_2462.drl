@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2462 DEFAULT_METHOD[RF|YP_001781267.1]
+rule "2462|TPP-dependent acetoin dehydrogenase complex, E3 component, dihydrolipoyl dehydrogenase after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='RF|YP_001781267.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2462");
+	a.setCommonName("TPP-dependent acetoin dehydrogenase complex, E3 component, dihydrolipoyl dehydrogenase");
+	a.setEcNumbers("1.8.1.4");
+	a.setGeneSymbol("acoL");
+	a.setGoIds("GO:0004148,GO:0045150");
+	a.setRoleIds("110,114");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

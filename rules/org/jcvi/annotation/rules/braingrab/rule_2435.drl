@@ -1,0 +1,29 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2435 THIS_BLAST_HIT[GB|AAU17901.1, 300, 95, 92, 80, 5, 0]
+rule "2435|putative thiamin salvage enzyme TenA"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAU17901.1', 
+				bitScore >= 300, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 80, 
+				hitQueryLengthRatio <= 5 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2435");
+	a.setCommonName("putative thiamin salvage enzyme TenA");
+	a.setGeneSymbol("tenA");
+	a.setGoIds("GO:0006772,GO:0016787");
+	a.setRoleIds("162");
+	a.setConfidence(96);
+	a.setSpecificity(SpecificityType.INIT_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

@@ -1,0 +1,23 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2658 THIS_HMM_HIT[PF01584]  && !THIS_HMM_HIT[PF02518] && !THIS_HMM_HIT[PF01627]
+rule "2658|chemotaxis protein CheW"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF01584' )
+	gene1 : Feature( featureId == hmm_hit1.queryId )
+	not HmmHit( program=='hmm', hitId=='PF02518', queryId == gene1.featureId )
+	not HmmHit( program=='hmm', hitId=='PF01627', queryId == gene1.featureId )
+
+
+then
+	Annotation a = new Annotation("2658");
+	a.addGoIds("GO:0004871");
+	a.addRoleIds("188");
+	a.setConfidence(90);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

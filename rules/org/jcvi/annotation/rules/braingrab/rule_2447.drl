@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2447 DEFAULT_METHOD[GB|EDK35754.1]
+rule "2447|spore maturation protein SpmA after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|EDK35754.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2447");
+	a.setCommonName("spore maturation protein SpmA");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("spmA");
+	a.setGoIds("GO:0016021,GO:0030435,GO:0030436");
+	a.setRoleIds("705");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

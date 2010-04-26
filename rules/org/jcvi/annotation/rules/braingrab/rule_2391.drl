@@ -1,0 +1,25 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2391 THIS_HMM_HIT[TIGR02469] && THIS_HMM_HIT[TIGR02467]
+rule "2391|precorrin-6Y C5,15-methyltransferase (decarboxylating)"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR02469' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR02467' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+
+then
+	Annotation a = new Annotation("2391");
+	a.setCommonName("precorrin-6Y C5,15-methyltransferase (decarboxylating)");
+	a.setEcNumbers("2.1.1.132");
+	a.setGeneSymbol("cobL");
+	a.setGoIds("GO:0046140,GO:0009236,GO:0046025");
+	a.setRoleIds("79");
+	a.setConfidence(96);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

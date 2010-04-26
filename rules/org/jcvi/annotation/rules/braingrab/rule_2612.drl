@@ -1,0 +1,25 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2612 THIS_HMM_HIT[TIGR00506] && THIS_HMM_HIT[TIGR00505]
+rule "2612|riboflavin biosynthesis bifunctional protein RibBA"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00506' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00505' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+
+then
+	Annotation a = new Annotation("2612");
+	a.setCommonName("riboflavin biosynthesis bifunctional protein RibBA");
+	a.setEcNumbers("4.1.99.12 3.5.4.25");
+	a.setGeneSymbol("ribBA");
+	a.setGoIds("GO:0003935,GO:0008686,GO:0009231");
+	a.setRoleIds("85");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

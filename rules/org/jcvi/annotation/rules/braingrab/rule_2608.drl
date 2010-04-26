@@ -1,0 +1,25 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2608 THIS_HMM_HIT[TIGR01283] && THIS_HMM_HIT[TIGR01285]
+rule "2608|nitrogenase MoFe cofactor biosynthesis protein NifEN"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01283' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01285' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+
+then
+	Annotation a = new Annotation("2608");
+	a.setCommonName("nitrogenase MoFe cofactor biosynthesis protein NifEN");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("nifEN");
+	a.setGoIds("GO:0009108,GO:0009399,GO:0005488");
+	a.setRoleIds("76,179");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

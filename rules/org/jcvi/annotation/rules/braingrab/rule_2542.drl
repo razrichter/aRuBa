@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2542 DEFAULT_METHOD[GB|ACA45891.1]
+rule "2542|5-nitroimidazole antibiotic resistance protein NimA after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ACA45891.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2542");
+	a.setCommonName("5-nitroimidazole antibiotic resistance protein NimA");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("nimA");
+	a.setGoIds("GO:0003824,GO:0046677");
+	a.setRoleIds("94");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

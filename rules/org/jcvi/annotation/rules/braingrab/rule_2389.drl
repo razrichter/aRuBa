@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2389 THIS_BLAST_HIT[RF|NP_843710.1, 270, 95, 92, 90, 5, 1]
+rule "2389|spore coat protein Y"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='RF|NP_843710.1', 
+				bitScore >= 270, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 90, 
+				hitQueryLengthRatio <= 5 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2389");
+	a.setCommonName("spore coat protein Y");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("cotY");
+	a.setGoIds("GO:0043592,GO:0003674,GO:0030436");
+	a.setRoleIds("705");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

@@ -1,0 +1,29 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2651 THIS_BLAST_HIT[GB|BAE48259.1, 650, 95, 95, 60, 3, 0]
+rule "2651|hemagglutinin component HA-70, botulinum neurotoxin complex"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|BAE48259.1', 
+				bitScore >= 650, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 60, 
+				hitQueryLengthRatio <= 3 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2651");
+	a.setCommonName("hemagglutinin component HA-70, botulinum neurotoxin complex");
+	a.setGeneSymbol("ha70");
+	a.setGoIds("GO:0009405,GO:0050827");
+	a.setRoleIds("94,187");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

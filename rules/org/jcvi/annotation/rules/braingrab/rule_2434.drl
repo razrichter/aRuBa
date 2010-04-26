@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2434 DEFAULT_METHOD[GB|ACA53790.1]
+rule "2434|pyridoxal-phosphate-dependent aminotransferase family after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ACA53790.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2434");
+	a.setCommonName("pyridoxal-phosphate-dependent aminotransferase");
+	a.setEcNumbers("2.6.1.-");
+	a.setGeneSymbol(" ");
+	a.setGoIds("GO:0008483,GO:0008152");
+	a.setRoleIds("71");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.JOC_MGAT_SUBFAM);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

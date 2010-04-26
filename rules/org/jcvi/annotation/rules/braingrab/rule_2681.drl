@@ -1,0 +1,38 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2681 THIS_BLAST_HIT[GB|CAB15357.1, 136, 95, 92, 62, 5, 0] || THIS_BLAST_HIT[GB|AAS42666.1, 134, 95, 92, 62, 5, 0]
+rule "2681|copper-sensing transcriptional repressor CsoR"
+no-loop true
+when
+	(or
+		blast_hit : BlastHit( program=='blastp', 
+				hitId=='GB|CAB15357.1', 
+				bitScore >= 136, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 62, 
+				hitQueryLengthRatio <= 5 )
+		blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAS42666.1', 
+				bitScore >= 134, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 62, 
+				hitQueryLengthRatio <= 5 )
+	)
+	gene1 : Feature( featureId == blast_hit.queryId )
+
+
+then
+	Annotation a = new Annotation("2681");
+	a.setCommonName("copper-sensing transcriptional repressor CsoR");
+	a.setGeneSymbol("csoR");
+	a.setGoIds("GO:0046688,GO:0016481,GO:0016566");
+	a.setRoleIds("261");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

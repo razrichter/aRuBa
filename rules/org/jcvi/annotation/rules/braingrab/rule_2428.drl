@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2428 DEFAULT_METHOD[RF|YP_001779856.1]
+rule "2428|central glycolytic genes regulator after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='RF|YP_001779856.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2428");
+	a.setCommonName("central glycolytic genes regulator");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("cggR");
+	a.setGoIds("GO:0030528,GO:0045820");
+	a.setRoleIds("116,261");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

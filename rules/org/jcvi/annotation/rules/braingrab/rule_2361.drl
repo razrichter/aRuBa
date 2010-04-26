@@ -1,0 +1,25 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2361 THIS_HMM_HIT[PF00121] && THIS_HMM_HIT[TIGR00419]
+rule "2361|triose-phosphate isomerase"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='PF00121' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00419' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+
+then
+	Annotation a = new Annotation("2361");
+	a.setCommonName("triose-phosphate isomerase");
+	a.setEcNumbers("5.3.1.1");
+	a.setGeneSymbol("tpiA");
+	a.setGoIds("GO:0004807,GO:0006096,GO:0006098");
+	a.setRoleIds("116");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

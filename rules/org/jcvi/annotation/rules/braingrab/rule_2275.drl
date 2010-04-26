@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2275 DEFAULT_METHOD[GB|AAB82564.1]
+rule "2275|methanesulfonate sulfonatase MsuD"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAB82564.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2275");
+	a.setCommonName("methanesulfonate sulfonatase MsuD");
+	a.setEcNumbers("1.14.14.5");
+	a.setGeneSymbol("msuD");
+	a.setGoIds("GO:0008726,GO:0019694");
+	a.setRoleIds("106");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

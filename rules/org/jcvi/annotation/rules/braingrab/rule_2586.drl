@@ -1,0 +1,25 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2586 THIS_HMM_HIT[TIGR00151] && THIS_HMM_HIT[TIGR00453]
+rule "2586|2C-methyl-D-erythritol 2,4-cyclodiphosphate synthase/4-diphosphocytidyl-2C-methyl-D-erythritol synthase"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00151' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00453' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+
+then
+	Annotation a = new Annotation("2586");
+	a.setCommonName("2C-methyl-D-erythritol 2,4-cyclodiphosphate synthase/4-diphosphocytidyl-2C-methyl-D-erythritol synthase");
+	a.setEcNumbers("2.7.7.60 4.6.1.12");
+	a.setGeneSymbol("ispDF");
+	a.setGoIds("GO:0050518,GO:0019288,GO:0008685");
+	a.setRoleIds("76");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

@@ -1,0 +1,29 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2164 THIS_BLAST_HIT[GB|AAS61882.1, 550, 93, 95, 80, 4, 1]
+rule "2164|yersiniabactin synthetase, YbtU component, BLASTP 90 percent"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAS61882.1', 
+				bitScore >= 550, 
+				hitPercentLength >= 93, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 80, 
+				hitQueryLengthRatio <= 4 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2164");
+	a.setCommonName("yersiniabactin synthetase, YbtU component");
+	a.setGeneSymbol("ybtU");
+	a.addGoIds("GO:0019290,GO:0003824");
+	a.setRoleIds("707");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

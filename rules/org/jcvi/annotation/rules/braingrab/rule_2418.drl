@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2418 DEFAULT_METHOD[RF|YP_001781222.1]
+rule "2418|putative lantibiotic biosynthesis sensor histidine kinase after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='RF|YP_001781222.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2418");
+	a.setCommonName("putative lantibiotic biosynthesis sensor histidine kinase");
+	a.setEcNumbers("2.7.13.3");
+	a.setGeneSymbol(" ");
+	a.setGoIds("GO:0000155,GO:0000160,GO:0004673,GO:0030651");
+	a.setRoleIds("94,263,699");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

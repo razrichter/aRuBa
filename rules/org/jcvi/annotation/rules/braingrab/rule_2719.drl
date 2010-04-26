@@ -1,0 +1,29 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2719 THIS_BLAST_HIT[GB|CAB60261.1, 200, 85, 85, 22, 5, 0]
+rule "2719|lantibiotic-class bacteriocin formation enzyme, MrsM family"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|CAB60261.1', 
+				bitScore >= 200, 
+				hitPercentLength >= 85, 
+				queryPercentLength >= 85, 
+				percentIdentity >= 22, 
+				hitQueryLengthRatio <= 5 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2719");
+	a.setCommonName("lantibiotic-class bacteriocin formation protein, MrsM family");
+	a.setGeneSymbol("lanM");
+	a.setGoIds("GO:0018081,GO:0018193,GO:0009403");
+	a.setRoleIds("94");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

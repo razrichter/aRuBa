@@ -1,0 +1,25 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2621 THIS_HMM_HIT[TIGR00780] && THIS_HMM_HIT[TIGR00781]
+rule "2621|cytochrome c oxidase, cbb3-type, subunits I/II"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00780' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00781' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+
+then
+	Annotation a = new Annotation("2621");
+	a.setCommonName("cytochrome c oxidase, cbb3-type, subunits I/II");
+	a.setEcNumbers("1.9.3.1");
+	a.setGeneSymbol("ccoNO");
+	a.setGoIds("GO:0004129,GO:0055114");
+	a.setRoleIds("112");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

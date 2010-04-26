@@ -1,0 +1,31 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2691 THIS_BLAST_HIT[SP|Q58820, 360, 95, 92, 55, 3, 0] && GEN_STATE[GenProp0006, Archaea]
+rule "2691|L-sulfolactate dehydrogenase ComC by BLAST"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='SP|Q58820', 
+				bitScore >= 360, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 55, 
+				hitQueryLengthRatio <= 3 )
+	txn1 : Taxon( parentNames contains 'Archaea' )
+	gene1 : Feature( featureId == blast_hit1.queryId, taxon == txn1 )
+
+
+then
+	Annotation a = new Annotation("2691");
+	a.setCommonName("L-sulfolactate dehydrogenase");
+	a.setEcNumbers("1.1.1.272");
+	a.setGeneSymbol("comC");
+	a.setGoIds("GO:0019295,GO:0050578");
+	a.setRoleIds("76,159");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

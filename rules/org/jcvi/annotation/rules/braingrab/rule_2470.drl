@@ -1,0 +1,46 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2470 THIS_BLAST_HIT[GB|ABG85605.1, 600, 95, 95, 60, 5, 0] || THIS_BLAST_HIT[GB|AAA91091.1, 600, 95, 95, 60, 5, 0] || THIS_BLAST_HIT[GB|ABS32746.1, 600, 95, 95, 60, 5, 0]
+rule "2470|glyceraldehyde-3-phosphate dehydrogenase (NADP+) after MGAT curation Clostridium"
+no-loop true
+when
+	(or
+		blast_hit : BlastHit( program=='blastp', 
+				hitId=='GB|ABG85605.1', 
+				bitScore >= 600, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 60, 
+				hitQueryLengthRatio <= 5 )
+		blast_hit : BlastHit( program=='blastp', 
+				hitId=='GB|AAA91091.1', 
+				bitScore >= 600, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 60, 
+				hitQueryLengthRatio <= 5 )
+		blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ABS32746.1', 
+				bitScore >= 600, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 60, 
+				hitQueryLengthRatio <= 5 )
+	)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2470");
+	a.setCommonName("glyceraldehyde-3-phosphate dehydrogenase (NADP+)");
+	a.setEcNumbers("1.2.1.9");
+	a.setGeneSymbol("gapN");
+	a.setGoIds("GO:0006094,GO:0006096,GO:0008886,GO:0019682");
+	a.setRoleIds("116");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

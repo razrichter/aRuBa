@@ -1,0 +1,23 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+import java.util.HashMap;
+
+// rule 2716 THIS_HMM_HIT[TIGR01445] && THIS_HMM_HIT[TIGR01443]
+rule "2716|Assertion that gene has intein"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01445' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01443' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+then
+	Annotation a = new Annotation("2716");
+	HashMap<String, Object> hasInteinProp = new HashMap<String, Object>();
+	hasInteinProp.put("type", "gene_attribute");
+	hasInteinProp.put("has_intein", 1);
+	//hasInteinProp : Map( this["type"]: "gene_attribute", this["has_intein"]: "1" );
+	gene1.addProperty(hasInteinProp);
+	insert(hasInteinProp);
+	update(gene1);
+end

@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2451 DEFAULT_METHOD[GB|ACA55236.1]
+rule "2451|ATP-dependent nuclease subunit A after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|ACA55236.1', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2451");
+	a.setCommonName("ATP-dependent nuclease subunit A");
+	a.setEcNumbers("3.6.1.-");
+	a.setGeneSymbol("addA");
+	a.setGoIds("GO:0004003,GO:0004527,GO:0006259");
+	a.setRoleIds("132");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

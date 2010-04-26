@@ -1,0 +1,25 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2666 THIS_HMM_HIT[TIGR00088] && THIS_HMM_HIT[TIGR00151]
+rule "2666|tRNA (guanine-N1)-methyltransferase/2C-methyl-D-erythritol 2,4-cyclodiphosphate synthase"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR00088' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR00151' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+
+then
+	Annotation a = new Annotation("2666");
+	a.setCommonName("tRNA (guanine-N1)-methyltransferase/2C-methyl-D-erythritol 2,4-cyclodiphosphate synthase");
+	a.setEcNumbers("2.1.1.31 4.6.1.12");
+	a.setGeneSymbol("trmD/ispF");
+	a.setGoIds("GO:0009019,GO:0008685,GO:0019288,GO:0006400");
+	a.setRoleIds("76,168");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

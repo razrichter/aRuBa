@@ -1,0 +1,29 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2422 THIS_BLAST_HIT[RF|YP_001386735.1, 450, 93, 93, 78, 5, 0]
+rule "2422|hemagglutinin component HA33 after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='RF|YP_001386735.1', 
+				bitScore >= 450, 
+				hitPercentLength >= 93, 
+				queryPercentLength >= 93, 
+				percentIdentity >= 78, 
+				hitQueryLengthRatio <= 5 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2422");
+	a.setCommonName("hemagglutinin component HA-33, botulinum neutotoxin complex");
+	a.setEcNumbers(" ");
+	a.setGoIds("GO:0009405,GO:0030246");
+	a.setRoleIds("187");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

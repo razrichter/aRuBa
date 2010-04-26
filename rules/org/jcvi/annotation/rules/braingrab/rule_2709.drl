@@ -1,0 +1,20 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2709 THIS_HMM_HIT[TIGR03667]
+rule "2709|F420-binding GO term by HMM TIGR03667"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR03667' )
+	gene1 : Feature( featureId == hmm_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2709");
+	a.addGoIds("GO:0070967");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.FAMILY_COMPLETE);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

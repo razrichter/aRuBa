@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2713 THIS_BLAST_HIT[OMNI|NTL02MT00710, 375, 95, 91, 60, 4, 0]
+rule "2713|cysteine-type sulfatase aerobic maturase by BLAST"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='OMNI|NTL02MT00710', 
+				bitScore >= 375, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 91, 
+				percentIdentity >= 60, 
+				hitQueryLengthRatio <= 4 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2713");
+	a.setCommonName("cysteine-type sulfatase aerobic maturase");
+	a.setEcNumbers("1.-.-.-");
+	a.setGeneSymbol("fge");
+	a.setGoIds("GO:0018198,GO:0018307");
+	a.setRoleIds("140");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

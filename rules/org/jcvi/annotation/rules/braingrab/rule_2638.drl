@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2638 THIS_BLAST_HIT[GB|AAD19170.1, 400, 96, 90, 45, 7, 0]
+rule "2638|outer membrane porin AaxA in arginine-agmatine exchange system for acid resistance"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAD19170.1', 
+				bitScore >= 400, 
+				hitPercentLength >= 96, 
+				queryPercentLength >= 90, 
+				percentIdentity >= 45, 
+				hitQueryLengthRatio <= 7 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2638");
+	a.setCommonName("outer membrane porin AaxA");
+	a.setEcNumbers(" ");
+	a.setGeneSymbol("aaxA");
+	a.addGoIds("GO:0015288,GO:0009279");
+	a.setRoleIds("149");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIV_BY_GENE_SYM);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2382 THIS_BLAST_HIT[GB|AAP42649.1, 200, 92, 70, 60, 5, 0] && GEN_STATE[GenProp0079, Bacilli]
+rule "2382|exosporium protein C"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAP42649.1', 
+				bitScore >= 200, 
+				hitPercentLength >= 92, 
+				queryPercentLength >= 70, 
+				percentIdentity >= 60, 
+				hitQueryLengthRatio <= 5 )
+	txn1 : Taxon( parentNames contains 'Bacilli' )
+	gene1 : Feature( featureId == blast_hit1.queryId, taxon == txn1 )
+
+
+then
+	Annotation a = new Annotation("2382");
+	a.setCommonName("exosporium protein C");
+	a.setGeneSymbol("exsC");
+	a.addGoIds("GO:0003674,GO:0008150,GO:0043592");
+	a.addRoleIds("705");
+	a.setConfidence(95);
+	a.setSpecificity(SpecificityType.INIT_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

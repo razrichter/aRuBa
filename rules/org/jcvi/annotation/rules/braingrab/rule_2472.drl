@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2472 DEFAULT_METHOD[SP|P54935]
+rule "2472|glycine reductase complex component C, beta subunit after MGAT curation Clostridium"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='SP|P54935', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2472");
+	a.setCommonName("glycine reductase complex component C, beta subunit");
+	a.setEcNumbers("1.21.4.2");
+	a.setGeneSymbol("grdC");
+	a.setGoIds("GO:0006544,GO:0030699,GO:0030700");
+	a.setRoleIds("109");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

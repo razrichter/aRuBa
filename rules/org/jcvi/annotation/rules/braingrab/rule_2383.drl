@@ -1,0 +1,29 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2383 THIS_BLAST_HIT[GB|AAP42717.1, 400, 95, 92, 80, 5, 0]
+rule "2383|exosporium protein E"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAP42717.1', 
+				bitScore >= 400, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 92, 
+				percentIdentity >= 80, 
+				hitQueryLengthRatio <= 5 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2383");
+	a.setCommonName("exosporium protein E");
+	a.setGeneSymbol("exsE");
+	a.addGoIds("GO:0043592,GO:0003674,GO:0008150");
+	a.setRoleIds("705");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.INIT_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

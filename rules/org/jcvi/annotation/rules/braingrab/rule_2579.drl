@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2579 THIS_BLAST_HIT[GB|AAT82533.1, 125, 80, 80, 55, 5, 1]
+rule "2579|sortase"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='GB|AAT82533.1', 
+				bitScore >= 125, 
+				hitPercentLength >= 80, 
+				queryPercentLength >= 80, 
+				percentIdentity >= 55, 
+				hitQueryLengthRatio <= 5 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2579");
+	a.setCommonName("sortase");
+	a.setEcNumbers("3.-.-.-");
+	a.setGeneSymbol("srtA");
+	a.setGoIds("GO:0005575,GO:0008233,GO:0045184,GO:0051605");
+	a.setRoleIds("88,97");
+	a.setConfidence(95);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

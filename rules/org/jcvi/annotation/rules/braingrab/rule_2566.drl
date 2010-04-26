@@ -1,0 +1,30 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2566 DEFAULT_METHOD[SP|P13703]
+rule "2566|hydroxymethylglutaryl-CoA lyase"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='SP|P13703', 
+				bitScore >= 160,
+				hitPercentLength >= 90,
+				queryPercentLength >= 90,  
+				percentIdentity >= 80,
+				hitQueryLengthRatio <= 5.1)
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2566");
+	a.setCommonName("hydroxymethylglutaryl-CoA lyase");
+	a.setEcNumbers("4.1.3.4");
+	a.setGeneSymbol("mvaB");
+	a.setGoIds("GO:0004419,GO:0006520");
+	a.setRoleIds("109");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

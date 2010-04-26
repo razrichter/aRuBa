@@ -1,0 +1,29 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule #rule 2159 THIS_BLAST_HIT[RF|NP_993009.1, 800, 95, 95, 80, 5, 1]
+rule "2159|yersiniabactin import subunit YbtP"
+no-loop true
+when
+	blast_hit1 : BlastHit( program=='blastp', 
+				hitId=='RF|NP_993009.1', 
+				bitScore >= 800, 
+				hitPercentLength >= 95, 
+				queryPercentLength >= 95, 
+				percentIdentity >= 80, 
+				hitQueryLengthRatio <= 5 )
+	gene1 : Feature( featureId == blast_hit1.queryId )
+
+
+then
+	Annotation a = new Annotation("2159");
+	a.setCommonName("yersiniabactin ABC transporter, ATP-binding/permease protein");
+	a.setGeneSymbol("ybtP");
+	a.addGoIds("GO:0015891,GO:0042626,GO:0043190");
+	a.setRoleIds("145");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.EQUIVALOG);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end

@@ -1,0 +1,24 @@
+#created on: Jan 13, 2010
+package org.jcvi.annotation.rules
+import org.jcvi.annotation.facts.*;
+
+// rule 2588 THIS_HMM_HIT[TIGR01344] && THIS_HMM_HIT[TIGR01346]
+rule "2588|malate synthase A/isocitrate lyase"
+no-loop true
+when
+	hmm_hit1 : HmmHit( program=='hmm', hitId=='TIGR01344' )
+	hmm_hit2 : HmmHit( program=='hmm', hitId=='TIGR01346' )
+	gene1 : Feature( featureId == hmm_hit1.queryId, featureId == hmm_hit2.queryId )
+
+
+then
+	Annotation a = new Annotation("2588");
+	a.setCommonName("malate synthase A/isocitrate lyase");
+	a.setEcNumbers("2.3.3.9 4.1.3.1");
+	a.setGoIds("GO:0004474,GO:0004451,GO:0006099");
+	a.setRoleIds("120");
+	a.setConfidence(97);
+	a.setSpecificity(SpecificityType.OVER_EQUIV);
+	gene1.addAssertedAnnotation(a);
+	update(gene1);
+end
