@@ -1,12 +1,18 @@
 package org.jcvi.annotation.facts;
 
-public class FeatureRelationship extends Relationship {
+import java.util.HashMap;
+
+public class FeatureRelationship {
 
 	protected Feature subject;
 	protected Feature object;
+	protected RelationshipType type;
 	
 	public FeatureRelationship(Feature subject, RelationshipType type, Feature object) {
-		super(subject, type, object);
+		super();
+		this.setSubject(subject);
+		this.setType(type);
+		this.setObject(object);
 	}
 
 	public Feature getSubject() {
@@ -15,6 +21,14 @@ public class FeatureRelationship extends Relationship {
 	public void setSubject(Feature subject) {
 		this.subject = subject;
 	}
+	public RelationshipType getType() {
+		return type;
+	}
+	
+	public void setType(RelationshipType type) {
+		this.type = type;
+	}
+
 	public Feature getObject() {
 		return object;
 	}

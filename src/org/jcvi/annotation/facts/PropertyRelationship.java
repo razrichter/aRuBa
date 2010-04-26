@@ -1,44 +1,36 @@
 package org.jcvi.annotation.facts;
 
-import java.util.HashMap;
+public class PropertyRelationship {
 
-public class PropertyRelationship implements Relationship {
-
-	private HashMap<String, Object> subject;
-	private HashMap<String, Object> object;
+	private Property subject;
+	private Property object;
 	private RelationshipType type;
 	
-	public PropertyRelationship(HashMap<String, Object> subject, RelationshipType type, HashMap<String, Object> object) {
+	public PropertyRelationship(Property subject, RelationshipType type, Property object) {
 		super();
 		this.setSubject(subject);
 		this.setType(type);
 		this.setObject(object);
 	}
 
-	@Override
-	public HashMap<String, Object> getSubject() {
+	public Property getSubject() {
 		return subject;
 	}
-	@Override
-	public void setSubject(HashMap<String, Object> subject) {
+	public void setSubject(Property subject) {
 		this.subject = subject;
 	}
 
-	@Override
 	public RelationshipType getType() {
 		return type;
 	}
-	@Override
 	public void setType(RelationshipType type) {
 		this.type = type;
 	}
 	
-	@Override
-	public HashMap<String, Object> getObject() {
+	public Property getObject() {
 		return object;
 	}
-	@Override
-	public void setObject(HashMap<String, Object> object) {
+	public void setObject(Property object) {
 		this.object = object;
 	}
 }

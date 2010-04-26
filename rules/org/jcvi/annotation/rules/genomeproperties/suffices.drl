@@ -3,6 +3,7 @@ package org.jcvi.annoation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 
 rule "FeatureProperty sufficient_for FeatureProperty"
+no-loop true
 	
 	when
 		# there is a featureproperty that is sufficient_for a genome property

@@ -8,18 +8,13 @@ import java.util.List;
  * This is a flyweight class for caching equivalent GenomeProperty objects
  */
 
-public class GenomeProperty extends HashMap<String, Object> {
+public class GenomeProperty extends Property {
 
 	private static HashMap<String, GenomeProperty> propsCache = new HashMap<String, GenomeProperty>();
-
-	private GenomeProperty() {
-		super();
-	}
-	private GenomeProperty(Object id) {
-		super();
-		this.put("id", id);
-	}
 	
+	public GenomeProperty(String id) {
+		super(id);
+	}
 	
 	public static Collection<GenomeProperty> getProperties() {
 		return propsCache.values();
@@ -37,12 +32,12 @@ public class GenomeProperty extends HashMap<String, Object> {
 	
 	public boolean equals(GenomeProperty p) {
 		if (p instanceof GenomeProperty) {
-			return p.get("id").equals(this.get("id"));
+			return p.getId().equals(this.getId());
 		}
 		return false;
 	}
 	public int hashCode() {
-		return this.get("id").hashCode();
+		return this.getId().hashCode();
 	}
 }
 

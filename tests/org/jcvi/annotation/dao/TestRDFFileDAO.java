@@ -23,7 +23,7 @@ public class TestRDFFileDAO extends TestCase {
 		Iterator<Statement> iter = rdfDao.iterator();
 		assertTrue(iter.hasNext());
 		assertEquals("com.hp.hpl.jena.rdf.model.impl.StatementImpl", iter.next().getClass().getName());
-		
+		/*
 		for (Statement stmt : rdfDao) {
 			RDFNode subject = stmt.getSubject();
 			RDFNode object = stmt.getObject();
@@ -34,5 +34,6 @@ public class TestRDFFileDAO extends TestCase {
 					+ object.toString()
 			);
 		}
+		*/
 	}
 }

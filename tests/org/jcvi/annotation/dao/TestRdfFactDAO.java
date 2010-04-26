@@ -10,12 +10,11 @@ public class TestRdfFactDAO extends TestCase {
 	private RdfFactDAO dao;
 	private RulesEngine engine = new RulesEngine();
 	
-	
 	@Test
 	public void testRdfConverter() {
-		String url = "data/genomeproperties.rdf";
+		String url = "data/genomeproperties.n3";
 		URL rdfUrl = this.getClass().getResource(url);
-		dao = new RdfFactDAO(rdfUrl);
+		dao = new RdfFactDAO(rdfUrl, "N3");
 		
 		// RdfFactDAO is an iterable of facts
 		engine.addFacts(dao);

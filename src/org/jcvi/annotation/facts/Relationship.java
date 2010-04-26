@@ -5,10 +5,10 @@ import java.util.HashMap;
 public interface Relationship {
 
 	Object getSubject();
-	void setSubject(HashMap<String, Object> subject);
+	void setSubject(Object subject);
 
 	Object getObject();
-	void setObject(HashMap<String, Object> object);
+	void setObject(Object object);
 	
 	RelationshipType getType();
 	void setType(RelationshipType type);

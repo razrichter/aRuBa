@@ -5,6 +5,7 @@ gp:GenomeProperty_66644
 	a	:GenomeProperty;
 	:name	"66644";
 	:type	"system";
+	:threshold	"0";
 	:description	"radical SAM/uncharacterized protein TIGR03936 system";
 .
 gp:FeatureProperty_63238

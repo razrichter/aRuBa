@@ -1,0 +1,46 @@
+#created on: Apr 6, 2010
+package org.jcvi.annotation.rules.genomeproperties
+import org.jcvi.annotation.facts.*;
+
+rule "GenomeProperty when threshold == 0"
+	
+	when
+		# If GenomeProperty.threshold == 0, 
+		# then all steps are required
+		featureprop	 	:FeatureProperty()
+		genomeprop	 	:GenomeProperty( this["threshold"] == 0 )
+		relationship	:PropertyRelationship(
+							subject 	== featureprop, 
+							type	 	== RelationshipType.REQUIRED_BY, 
+							object 		== genomeprop )
+		genome			: Genome( properties contains genomeprop )
+		not( Feature( properties contains featureprop, genome == genome ) )
+		
+ 	then 
+		# remove the genome property on the genome
+		System.out.println("Removing genomeprop " + genomeprop.toString());
+		System.out.println("  since it requires missing FeatureProperty " + featureprop.toString());
+		genome.removeProperty(genomeprop);
+		update(genome);
+end
+
+rule "GenomeProperty above threshold"
+	
+	when
+		# If GenomeProperty.threshold == 0, 
+		# then all steps are required
+		genomeprop	 	:GenomeProperty( this["threshold"] > 0 )
+		numComponents	: Number ( )
+				from accumulate( FeatureProperty(
+		  
+
+		
+ 	then 
+		# remove the genome property on the genome
+		System.out.println("Removing genomeprop " + genomeprop.toString());
+		System.out.println("  since it requires missing FeatureProperty " + featureprop.toString());
+		genome.removeProperty(genomeprop);
+   		modify (
+   			genomeprop["value"] = numComponents
+   		);
+end

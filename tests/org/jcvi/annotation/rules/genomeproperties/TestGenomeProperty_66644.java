@@ -89,7 +89,7 @@ public class TestGenomeProperty_66644 extends TestCase {
 	}
 
 	@Test
-	public void testRequiredByPredicate() {
+	public void testRequiredByPredicateWithZeroOfTwoRequiredProperties() {
 		
 		/*
 		 * FeatureProperty_63238 required_by GenomeProperty_66644
@@ -123,7 +123,7 @@ public class TestGenomeProperty_66644 extends TestCase {
 		engine.fireAllRules();
 		
 		// After, we expect our genome property to be removed
-		assertEquals(0, genome.getProperties().size());
+		assertEquals(1, genome.getProperties().size());
 		
 	}
 
@@ -146,6 +146,8 @@ public class TestGenomeProperty_66644 extends TestCase {
 		Feature feature = new Feature("123");
 		FeatureProperty featureprop1 = FeatureProperty.create("63238");
 		FeatureProperty featureprop2 = FeatureProperty.create("63239");
+		featureprop1.put("value", 1.0);
+		featureprop2.put("value", 0.5);
 		feature.setGenome(genome);
 	
 		// Test with 1 of 2 required properties
@@ -165,7 +167,7 @@ public class TestGenomeProperty_66644 extends TestCase {
 		engine.fireAllRules();
 		
 		// After, we expect our genome property to be removed
-		assertEquals(0, genome.getProperties().size());
+		assertEquals(1, genome.getProperties().size());
 	}
 
 	@Test
