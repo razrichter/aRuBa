@@ -5,6356 +5,6377 @@ gp:GenomeProperty_66565
 	a	:GenomeProperty;
 	:name	"66565";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"1-acylglycerol-3-phosphate biosynthesis, PlsX/Y pathway";
 .
 gp:GenomeProperty_66636
 	a	:GenomeProperty;
 	:name	"66636";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"2,3-diaminopropionic acid biosynthesis";
 .
 gp:GenomeProperty_60439
 	a	:GenomeProperty;
 	:name	"60439";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"2-aminoethylphosphonate (AEP) ABC transporter, type I, PhnSTUV";
 .
 gp:GenomeProperty_60449
 	a	:GenomeProperty;
 	:name	"60449";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"2-aminoethylphosphonate (AEP) ABC transporter, type II";
 .
 gp:GenomeProperty_57225
 	a	:GenomeProperty;
 	:name	"57225";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"2-aminoethylphosphonate catabolism to acetaldehyde";
 .
 gp:GenomeProperty_60440
 	a	:GenomeProperty;
 	:name	"60440";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"2-aminoethylphosphonate catabolism via phosphonoacetate";
 .
 gp:GenomeProperty_60448
 	a	:GenomeProperty;
 	:name	"60448";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"2-aminoethylphosphonate utilization";
 .
 gp:GenomeProperty_66570
 	a	:GenomeProperty;
 	:name	"66570";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"2-oxoacid--acceptor oxidoreductase, 2 subunit form";
 .
 gp:GenomeProperty_66569
 	a	:GenomeProperty;
 	:name	"66569";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"2-oxoacid--ferredoxin oxidoreductase";
 .
 gp:GenomeProperty_66567
 	a	:GenomeProperty;
 	:name	"66567";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"2-oxoacid--ferredoxin oxidoreductase, multisubunit form";
 .
 gp:GenomeProperty_58355
 	a	:GenomeProperty;
 	:name	"58355";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"2-oxoglutarate dehydrogenase system";
 .
 gp:GenomeProperty_60430
 	a	:GenomeProperty;
 	:name	"60430";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"4-hydroxybenzoyl-CoA reductase";
 .
 gp:GenomeProperty_57214
 	a	:GenomeProperty;
 	:name	"57214";
 	:type	"pathway";
-	:threshold	3;
+	:threshold	"3";
 	:property	"4-hydroxyphenylacetate degradation";
 .
 gp:GenomeProperty_57243
 	a	:GenomeProperty;
 	:name	"57243";
 	:type	"summary";
-	:threshold	0;
+	:threshold	"0";
 	:property	"5-aminolevulinate biosynthesis";
 .
 gp:GenomeProperty_55193
 	a	:GenomeProperty;
 	:name	"55193";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"5-aminolevulinate biosynthesis (glutamate pathway)";
 .
 gp:GenomeProperty_55199
 	a	:GenomeProperty;
 	:name	"55199";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"5-aminolevulinate biosynthesis from succinyl-CoA and glycine";
 .
 gp:GenomeProperty_58207
 	a	:GenomeProperty;
 	:name	"58207";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"6S RNA (eubacterial RNA polymerase regulator)";
 .
 gp:GenomeProperty_64521
 	a	:GenomeProperty;
 	:name	"64521";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"7,8-didemethyl-8-hydroxy-5-deazariboflavin (FO) biosynthesis";
 .
 gp:GenomeProperty_58354
 	a	:GenomeProperty;
 	:name	"58354";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"A1/A0 ATPase";
 .
 gp:GenomeProperty_60456
 	a	:GenomeProperty;
 	:name	"60456";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"AMP metabolism using type III Rubisco";
 .
 gp:GenomeProperty_57231
 	a	:GenomeProperty;
 	:name	"57231";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ATP synthases";
 .
 gp:GenomeProperty_66563
 	a	:GenomeProperty;
 	:name	"66563";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ATP-dependent protease HslVU";
 .
 gp:GenomeProperty_60479
 	a	:GenomeProperty;
 	:name	"60479";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Acidobacterial ADOP/PadR gene pairs";
 .
 gp:GenomeProperty_66622
 	a	:GenomeProperty;
 	:name	"66622";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Actinobacterial uncharacterized trio";
 .
 gp:GenomeProperty_64522
 	a	:GenomeProperty;
 	:name	"64522";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CMP-N-acetylneuraminate biosynthesis from UDP-N-acetylglucosamine";
 .
 gp:GenomeProperty_64525
 	a	:GenomeProperty;
 	:name	"64525";
 	:type	"metapath";
-	:threshold	3;
+	:threshold	"3";
 	:property	"CMP-pseudaminic acid biosynthesis from UDP-N-acetylglucosamine";
 .
 gp:GenomeProperty_57303
 	a	:GenomeProperty;
 	:name	"57303";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR RAMP module";
 .
 gp:GenomeProperty_2003
 	a	:GenomeProperty;
 	:name	"2003";
 	:type	"guild";
-	:threshold	1;
+	:threshold	"1";
 	:property	"CRISPR region";
 .
 gp:GenomeProperty_60396
 	a	:GenomeProperty;
 	:name	"60396";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Aferr subtype";
 .
 gp:GenomeProperty_57306
 	a	:GenomeProperty;
 	:name	"57306";
 	:type	"system";
-	:threshold	4;
+	:threshold	"4";
 	:property	"CRISPR system, Apern subtype (Archaea specific)";
 .
 gp:GenomeProperty_60411
 	a	:GenomeProperty;
 	:name	"60411";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Cyano subtype";
 .
 gp:GenomeProperty_58194
 	a	:GenomeProperty;
 	:name	"58194";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Dpsyc subtype";
 .
 gp:GenomeProperty_57300
 	a	:GenomeProperty;
 	:name	"57300";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Dvulg subtype";
 .
 gp:GenomeProperty_57302
 	a	:GenomeProperty;
 	:name	"57302";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Ecoli subtype";
 .
 gp:GenomeProperty_57307
 	a	:GenomeProperty;
 	:name	"57307";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Hmari subtype";
 .
 gp:GenomeProperty_57305
 	a	:GenomeProperty;
 	:name	"57305";
 	:type	"system";
-	:threshold	3;
+	:threshold	"3";
 	:property	"CRISPR system, Mtube subtype (RAMP-like)";
 .
 gp:GenomeProperty_57301
 	a	:GenomeProperty;
 	:name	"57301";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Nmeni subtype";
 .
 gp:GenomeProperty_64496
 	a	:GenomeProperty;
 	:name	"64496";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Pging subtype";
 .
 gp:GenomeProperty_57304
 	a	:GenomeProperty;
 	:name	"57304";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Tneap subtype";
 .
 gp:GenomeProperty_57298
 	a	:GenomeProperty;
 	:name	"57298";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Ypest subtype";
 .
 gp:GenomeProperty_2017
 	a	:GenomeProperty;
 	:name	"2017";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Calvin cycle";
 .
 gp:GenomeProperty_58184
 	a	:GenomeProperty;
 	:name	"58184";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"D-xylose utilization (conversion to D-xylulose-5-phosphate)";
 .
 gp:GenomeProperty_62492
 	a	:GenomeProperty;
 	:name	"62492";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DMSO reductase family type II enzyme";
 .
 gp:GenomeProperty_4026
 	a	:GenomeProperty;
 	:name	"4026";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DNA GC content";
 .
 gp:GenomeProperty_29143
 	a	:GenomeProperty;
 	:name	"29143";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DNA dinucleotide thermophily metric RR+YY-RY-YR";
 .
 gp:GenomeProperty_60426
 	a	:GenomeProperty;
 	:name	"60426";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DNA gyrase";
 .
 gp:GenomeProperty_4017
 	a	:GenomeProperty;
 	:name	"4017";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DNA handling";
 .
 gp:GenomeProperty_4057
 	a	:GenomeProperty;
 	:name	"4057";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DNA metabolism";
 .
 gp:GenomeProperty_57251
 	a	:GenomeProperty;
 	:name	"57251";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DNA polymerase III, bacterial";
 .
 gp:GenomeProperty_4056
 	a	:GenomeProperty;
 	:name	"4056";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DNA repair";
 .
 gp:GenomeProperty_4027
 	a	:GenomeProperty;
 	:name	"4027";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DNA size (megabases)";
 .
 gp:GenomeProperty_60428
 	a	:GenomeProperty;
 	:name	"60428";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DNA sulfur modification system dnd";
 .
 gp:GenomeProperty_64532
 	a	:GenomeProperty;
 	:name	"64532";
 	:type	"test";
-	:threshold	0;
+	:threshold	"0";
 	:property	"DegV-YloV-CgtA system";
 .
 gp:GenomeProperty_66641
 	a	:GenomeProperty;
 	:name	"66641";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"E. coli exopolysaccharide biosynthesis clusters";
 .
 gp:GenomeProperty_64527
 	a	:GenomeProperty;
 	:name	"64527";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Enterococcus/Aeromonas extended locus";
 .
 gp:GenomeProperty_58193
 	a	:GenomeProperty;
 	:name	"58193";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Entner-Doudoroff pathway";
 .
 gp:GenomeProperty_58210
 	a	:GenomeProperty;
 	:name	"58210";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"F and P-type conjugation systems (type IV secretion), common components";
 .
 gp:GenomeProperty_58214
 	a	:GenomeProperty;
 	:name	"58214";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"F-type conjugation system";
 .
 gp:GenomeProperty_58209
 	a	:GenomeProperty;
 	:name	"58209";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"F-type conjugation system (type IV secretion) specific components";
 .
 gp:GenomeProperty_4099
 	a	:GenomeProperty;
 	:name	"4099";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"F1/F0 ATPase";
 .
 gp:GenomeProperty_60417
 	a	:GenomeProperty;
 	:name	"60417";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"F1F0 ATPase, Methanosarcina type";
 .
 gp:GenomeProperty_60410
 	a	:GenomeProperty;
 	:name	"60410";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"FtsH/HflKC protease complex";
 .
 gp:GenomeProperty_57216
 	a	:GenomeProperty;
 	:name	"57216";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"GABA utilization";
 .
 gp:GenomeProperty_51165
 	a	:GenomeProperty;
 	:name	"51165";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"GatABC aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase complex";
 .
 gp:GenomeProperty_60397
 	a	:GenomeProperty;
 	:name	"60397";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"H4MPT-linked C1 transfer pathway";
 .
 gp:GenomeProperty_2002
 	a	:GenomeProperty;
 	:name	"2002";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"HMM hit percentage";
 .
 gp:GenomeProperty_66552
 	a	:GenomeProperty;
 	:name	"66552";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Heme scavenging from hemoglobin, Bacillus-type";
 .
 gp:GenomeProperty_57248
 	a	:GenomeProperty;
 	:name	"57248";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"IDEAL status";
 .
 gp:GenomeProperty_2028
 	a	:GenomeProperty;
 	:name	"2028";
 	:type	"summary";
-	:threshold	0;
+	:threshold	"0";
 	:property	"IPP biosynthesis";
 .
 gp:GenomeProperty_2030
 	a	:GenomeProperty;
 	:name	"2030";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"IPP biosynthesis via deoxyxylulose";
 .
 gp:GenomeProperty_2029
 	a	:GenomeProperty;
 	:name	"2029";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"IPP biosynthesis via mevalonate";
 .
 gp:GenomeProperty_53182
 	a	:GenomeProperty;
 	:name	"53182";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"KDO(2)-lipid A (Re LPS) biosynthesis and delivery";
 .
 gp:GenomeProperty_53181
 	a	:GenomeProperty;
 	:name	"53181";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"LPS inner core biosynthesis, ketodeoxyoctonate and heptose type";
 .
 gp:GenomeProperty_24134
 	a	:GenomeProperty;
 	:name	"24134";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Leloir pathway (galactose/glucose interconversion)";
 .
 gp:GenomeProperty_66640
 	a	:GenomeProperty;
 	:name	"66640";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Leptospira exopolysaccharide biosynthesis clusters";
 .
 gp:GenomeProperty_58179
 	a	:GenomeProperty;
 	:name	"58179";
 	:type	"meta-prop";
-	:threshold	0;
+	:threshold	"0";
 	:property	"META-- Property profile - taxonomic lineage specificity";
 .
 gp:GenomeProperty_58251
 	a	:GenomeProperty;
 	:name	"58251";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Mustellidae (weasel and ferret-like) associated niche";
 .
 gp:GenomeProperty_66617
 	a	:GenomeProperty;
 	:name	"66617";
 	:type	"null";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Mycoplasma terminal organelle";
 .
 gp:GenomeProperty_66606
 	a	:GenomeProperty;
 	:name	"66606";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"N(epsilon)-acetyl-beta-lysine biosynthesis";
 .
 gp:GenomeProperty_2039
 	a	:GenomeProperty;
 	:name	"2039";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"NAD(P) biosynthesis from L-aspartate and DHAP";
 .
 gp:GenomeProperty_9129
 	a	:GenomeProperty;
 	:name	"9129";
 	:type	"system";
-	:threshold	3;
+	:threshold	"3";
 	:property	"NADH dehydrogenase I";
 .
 gp:GenomeProperty_58348
 	a	:GenomeProperty;
 	:name	"58348";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"NADH dehydrogenase, Sno(Mnh)ABCDEFG)";
 .
 gp:GenomeProperty_4109
 	a	:GenomeProperty;
 	:name	"4109";
 	:type	"system";
-	:threshold	2;
+	:threshold	"2";
 	:property	"Na+-translocating NADH-quinone reductase";
 .
 gp:GenomeProperty_64497
 	a	:GenomeProperty;
 	:name	"64497";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Neisseria lipooligosaccharide, lacto-N-neotetraose biosynthesis";
 .
 gp:GenomeProperty_58211
 	a	:GenomeProperty;
 	:name	"58211";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"P-type conjugation system (type IV secretion) specific components";
 .
 gp:GenomeProperty_57244
 	a	:GenomeProperty;
 	:name	"57244";
 	:type	"pathema";
-	:threshold	0;
+	:threshold	"0";
 	:property	"PATHEMA-- Beta-lactamases";
 .
 gp:GenomeProperty_57221
 	a	:GenomeProperty;
 	:name	"57221";
 	:type	"pathema";
-	:threshold	0;
+	:threshold	"0";
 	:property	"PATHEMA-- multi-drug efflux pump";
 .
 gp:GenomeProperty_4061
 	a	:GenomeProperty;
 	:name	"4061";
 	:type	"system";
-	:threshold	2;
+	:threshold	"2";
 	:property	"PTS transport system";
 .
 gp:GenomeProperty_66582
 	a	:GenomeProperty;
 	:name	"66582";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ParB-rel/ThiF-rel cassette PRTRC";
 .
 gp:GenomeProperty_4029
 	a	:GenomeProperty;
 	:name	"4029";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent A (Ala)";
 .
 gp:GenomeProperty_4030
 	a	:GenomeProperty;
 	:name	"4030";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent C (Cys)";
 .
 gp:GenomeProperty_4031
 	a	:GenomeProperty;
 	:name	"4031";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent D (Asp)";
 .
 gp:GenomeProperty_4032
 	a	:GenomeProperty;
 	:name	"4032";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent E (Glu)";
 .
 gp:GenomeProperty_4033
 	a	:GenomeProperty;
 	:name	"4033";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent F (Phe)";
 .
 gp:GenomeProperty_4034
 	a	:GenomeProperty;
 	:name	"4034";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent G (Gly)";
 .
 gp:GenomeProperty_4035
 	a	:GenomeProperty;
 	:name	"4035";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent H (His)";
 .
 gp:GenomeProperty_4036
 	a	:GenomeProperty;
 	:name	"4036";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent I (Ile)";
 .
 gp:GenomeProperty_4037
 	a	:GenomeProperty;
 	:name	"4037";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent K (Lys)";
 .
 gp:GenomeProperty_4038
 	a	:GenomeProperty;
 	:name	"4038";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent L (Leu)";
 .
 gp:GenomeProperty_4039
 	a	:GenomeProperty;
 	:name	"4039";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent M (Met)";
 .
 gp:GenomeProperty_4040
 	a	:GenomeProperty;
 	:name	"4040";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent N (Asn)";
 .
 gp:GenomeProperty_4041
 	a	:GenomeProperty;
 	:name	"4041";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent P (Pro)";
 .
 gp:GenomeProperty_4042
 	a	:GenomeProperty;
 	:name	"4042";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent Q (Gln)";
 .
 gp:GenomeProperty_4043
 	a	:GenomeProperty;
 	:name	"4043";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent R (Arg)";
 .
 gp:GenomeProperty_4044
 	a	:GenomeProperty;
 	:name	"4044";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent S (Ser)";
 .
 gp:GenomeProperty_4045
 	a	:GenomeProperty;
 	:name	"4045";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent T (Thr)";
 .
 gp:GenomeProperty_4046
 	a	:GenomeProperty;
 	:name	"4046";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent V (Val)";
 .
 gp:GenomeProperty_4047
 	a	:GenomeProperty;
 	:name	"4047";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent W (Trp)";
 .
 gp:GenomeProperty_4048
 	a	:GenomeProperty;
 	:name	"4048";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Percent Y (Tyr)";
 .
 gp:GenomeProperty_49154
 	a	:GenomeProperty;
 	:name	"49154";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Potassium-transporting ATPase KdpFABC";
 .
 gp:GenomeProperty_66626
 	a	:GenomeProperty;
 	:name	"66626";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"RNA ligase/unknown protein pair";
 .
 gp:GenomeProperty_66547
 	a	:GenomeProperty;
 	:name	"66547";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"RNA metabolism";
 .
 gp:GenomeProperty_57250
 	a	:GenomeProperty;
 	:name	"57250";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"RNA polymerase, bacterial";
 .
 gp:GenomeProperty_53192
 	a	:GenomeProperty;
 	:name	"53192";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Resistance to Reactive Oxygen Species (ROS)";
 .
 gp:GenomeProperty_4119
 	a	:GenomeProperty;
 	:name	"4119";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"Rnf-type electron transport complex";
 .
 gp:GenomeProperty_2004
 	a	:GenomeProperty;
 	:name	"2004";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"S-layer";
 .
 gp:GenomeProperty_66539
 	a	:GenomeProperty;
 	:name	"66539";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"S-layer homology domain-mediated cell wall binding";
 .
 gp:GenomeProperty_53179
 	a	:GenomeProperty;
 	:name	"53179";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"SMC-ScpA-ScpB complex";
 .
 gp:GenomeProperty_55191
 	a	:GenomeProperty;
 	:name	"55191";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"SOS response";
 .
 gp:GenomeProperty_53187
 	a	:GenomeProperty;
 	:name	"53187";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"Sec system preprotein translocase";
 .
 gp:GenomeProperty_64506
 	a	:GenomeProperty;
 	:name	"64506";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Shewanella target property";
 .
 gp:GenomeProperty_64507
 	a	:GenomeProperty;
 	:name	"64507";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Shewanella-type decaheme system";
 .
 gp:GenomeProperty_60393
 	a	:GenomeProperty;
 	:name	"60393";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Shine-Dalgarno sequence";
 .
 gp:GenomeProperty_58360
 	a	:GenomeProperty;
 	:name	"58360";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Sigma-54 (RpoN) systems";
 .
 gp:GenomeProperty_2015
 	a	:GenomeProperty;
 	:name	"2015";
 	:type	"metapath";
-	:threshold	5;
+	:threshold	"5";
 	:property	"TCA cycle";
 .
 gp:GenomeProperty_58192
 	a	:GenomeProperty;
 	:name	"58192";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"TEMP-exopolysaccharide";
 .
 gp:GenomeProperty_49158
 	a	:GenomeProperty;
 	:name	"49158";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"TRAP-T (tripartite ATP-independent periplasmic transporters) family transporters";
 .
 gp:GenomeProperty_4081
 	a	:GenomeProperty;
 	:name	"4081";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Tat (Sec-independent) protein export";
 .
 gp:GenomeProperty_4025
 	a	:GenomeProperty;
 	:name	"4025";
 	:type	"taxonomy";
-	:threshold	0;
+	:threshold	"0";
 	:property	"TaxID";
 .
 gp:GenomeProperty_66649
 	a	:GenomeProperty;
 	:name	"66649";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"SAM pair and friends";
 .
 gp:GenomeProperty_66650
 	a	:GenomeProperty;
 	:name	"66650";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"CRISPR system, Myxan subtype";
+.
+gp:GenomeProperty_66652
+	a	:GenomeProperty;
+	:name	"66652";
+	:type	"pathway";
+	:threshold	"0";
+	:property	"UDP-GlcNAc3N biosynthesis, GnnAB system";
+.
+gp:GenomeProperty_66653
+	a	:GenomeProperty;
+	:name	"66653";
+	:type	"guild";
+	:threshold	"0";
+	:property	"Leptospira core LPS elements";
 .
 gp:GenomeProperty_58215
 	a	:GenomeProperty;
 	:name	"58215";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Ti-type conjugation system";
 .
 gp:GenomeProperty_58267
 	a	:GenomeProperty;
 	:name	"58267";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Tol-Pal system";
 .
 gp:GenomeProperty_58268
 	a	:GenomeProperty;
 	:name	"58268";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"TonB-dependent transport";
 .
 gp:GenomeProperty_60478
 	a	:GenomeProperty;
 	:name	"60478";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"UDP-N-acetylglucosamine biosynthesis from fructose-6-phosphate";
 .
 gp:GenomeProperty_58200
 	a	:GenomeProperty;
 	:name	"58200";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Unknown biological process";
 .
 gp:GenomeProperty_51173
 	a	:GenomeProperty;
 	:name	"51173";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"V-type ATPase";
 .
 gp:GenomeProperty_60389
 	a	:GenomeProperty;
 	:name	"60389";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"Verrucomicrobium spinosum paralogous operon";
 .
 gp:GenomeProperty_66572
 	a	:GenomeProperty;
 	:name	"66572";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"accessory Sec system for serine-rich glycoprotein transport";
 .
 gp:GenomeProperty_58204
 	a	:GenomeProperty;
 	:name	"58204";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"acetate -- acetyl-CoA interconversions";
 .
 gp:GenomeProperty_60482
 	a	:GenomeProperty;
 	:name	"60482";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"acetate production from acetylphosphate";
 .
 gp:GenomeProperty_58203
 	a	:GenomeProperty;
 	:name	"58203";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"acetyl-CoA -- acetate interconversion via acetyl phosphate";
 .
 gp:GenomeProperty_58205
 	a	:GenomeProperty;
 	:name	"58205";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"acetyl-CoA biosynthesis from acetate, direct";
 .
 gp:GenomeProperty_55190
 	a	:GenomeProperty;
 	:name	"55190";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"acetyl-CoA carboxylase complex";
 .
 gp:GenomeProperty_60394
 	a	:GenomeProperty;
 	:name	"60394";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"acetyltransferase/synthase/peptidase cassette";
 .
 gp:GenomeProperty_58329
 	a	:GenomeProperty;
 	:name	"58329";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"acidophile";
 .
 gp:GenomeProperty_66576
 	a	:GenomeProperty;
 	:name	"66576";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"actin-based motility of invasive bacteria";
 .
 gp:GenomeProperty_58218
 	a	:GenomeProperty;
 	:name	"58218";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"addAB pathway";
 .
 gp:GenomeProperty_57310
 	a	:GenomeProperty;
 	:name	"57310";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"addiction module, ParE class";
 .
 gp:GenomeProperty_57311
 	a	:GenomeProperty;
 	:name	"57311";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"addiction module, RelE-RelB class";
 .
 gp:GenomeProperty_57309
 	a	:GenomeProperty;
 	:name	"57309";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"addiction module, hig class";
 .
 gp:GenomeProperty_57308
 	a	:GenomeProperty;
 	:name	"57308";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"addiction modules";
 .
 gp:GenomeProperty_60475
 	a	:GenomeProperty;
 	:name	"60475";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"adenosine monophosphate (AMP) biosynthesis from inosine monophosphate (IMP)";
 .
 gp:GenomeProperty_64501
 	a	:GenomeProperty;
 	:name	"64501";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"aerobactin biosynthesis";
 .
 gp:GenomeProperty_58320
 	a	:GenomeProperty;
 	:name	"58320";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"aerobe, obligate macroaerophilic";
 .
 gp:GenomeProperty_58337
 	a	:GenomeProperty;
 	:name	"58337";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"aerobic electron transfer (transport) chain, ETC";
 .
 gp:GenomeProperty_58336
 	a	:GenomeProperty;
 	:name	"58336";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"aerobic respiration";
 .
 gp:GenomeProperty_60466
 	a	:GenomeProperty;
 	:name	"60466";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"agmatine to putrescine via N-carbamoylputrescine";
 .
 gp:GenomeProperty_58296
 	a	:GenomeProperty;
 	:name	"58296";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"air borne transmission";
 .
 gp:GenomeProperty_66623
 	a	:GenomeProperty;
 	:name	"66623";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"alcohol ABC transporter, PedABC-type";
 .
 gp:GenomeProperty_58330
 	a	:GenomeProperty;
 	:name	"58330";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"alkaliphile";
 .
 gp:GenomeProperty_60402
 	a	:GenomeProperty;
 	:name	"60402";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"alkylhydroperoxide reductase AhpCF (peroxiredoxin)";
 .
 gp:GenomeProperty_60412
 	a	:GenomeProperty;
 	:name	"60412";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"allantoin catabolism to glyoxalate and urea";
 .
 gp:GenomeProperty_60413
 	a	:GenomeProperty;
 	:name	"60413";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"allantoin catabolism to oxamate and carbamoyl-phosphate";
 .
 gp:GenomeProperty_58266
 	a	:GenomeProperty;
 	:name	"58266";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"alligator or crocodile (Crocodilia) associated niche";
 .
 gp:GenomeProperty_57258
 	a	:GenomeProperty;
 	:name	"57258";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"alpha-ribazole biosynthesis from nicotinate mononucleotide and dimethylbenzimidazole";
 .
 gp:GenomeProperty_4049
 	a	:GenomeProperty;
 	:name	"4049";
 	:type	"summary";
-	:threshold	0;
+	:threshold	"0";
 	:property	"amino acid abundance (order)";
 .
 gp:GenomeProperty_4068
 	a	:GenomeProperty;
 	:name	"4068";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"amino acid biosynthesis";
 .
 gp:GenomeProperty_60462
 	a	:GenomeProperty;
 	:name	"60462";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"amino acid catabolism";
 .
 gp:GenomeProperty_60459
 	a	:GenomeProperty;
 	:name	"60459";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"amino acid metabolism";
 .
 gp:GenomeProperty_60461
 	a	:GenomeProperty;
 	:name	"60461";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"amino acid salvage";
 .
 gp:GenomeProperty_60401
 	a	:GenomeProperty;
 	:name	"60401";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"anaerobe, aerotolerant";
 .
 gp:GenomeProperty_58323
 	a	:GenomeProperty;
 	:name	"58323";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"anaerobe, obligate";
 .
 gp:GenomeProperty_58363
 	a	:GenomeProperty;
 	:name	"58363";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"anaerobic dimethyl sulfoxide reductase";
 .
 gp:GenomeProperty_60465
 	a	:GenomeProperty;
 	:name	"60465";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"anaerobic glycerol-3-phosphate dehydrogenase complex";
 .
 gp:GenomeProperty_66646
 	a	:GenomeProperty;
 	:name	"66646";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"anaerobic sulfatase/maturase system";
 .
 gp:GenomeProperty_66585
 	a	:GenomeProperty;
 	:name	"66585";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"anchored repeat-class ABC transporter, P. acnes type";
 .
 gp:GenomeProperty_64494
 	a	:GenomeProperty;
 	:name	"64494";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"anhydro-N-acetylmuramic acid to N-acetylglucosamine-phosphate";
 .
 gp:GenomeProperty_58223
 	a	:GenomeProperty;
 	:name	"58223";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"animal (Metazoa) associated niche";
 .
 gp:GenomeProperty_58242
 	a	:GenomeProperty;
 	:name	"58242";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"animal aural (ear) tract";
 .
 gp:GenomeProperty_58233
 	a	:GenomeProperty;
 	:name	"58233";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"animal blood system";
 .
 gp:GenomeProperty_58236
 	a	:GenomeProperty;
 	:name	"58236";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"animal central nervous system";
 .
 gp:GenomeProperty_58229
 	a	:GenomeProperty;
 	:name	"58229";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"animal gastrointestinal (GI) tract";
 .
 gp:GenomeProperty_58230
 	a	:GenomeProperty;
 	:name	"58230";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"animal genitourinary (GU) tract";
 .
 gp:GenomeProperty_58234
 	a	:GenomeProperty;
 	:name	"58234";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"animal lymphatic system";
 .
 gp:GenomeProperty_58231
 	a	:GenomeProperty;
 	:name	"58231";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"animal oral cavity";
 .
 gp:GenomeProperty_58228
 	a	:GenomeProperty;
 	:name	"58228";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"animal respiratory tract";
 .
 gp:GenomeProperty_58291
 	a	:GenomeProperty;
 	:name	"58291";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"aquatic niche";
 .
 gp:GenomeProperty_58271
 	a	:GenomeProperty;
 	:name	"58271";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"arachnid (Arachnida) associated niche";
 .
 gp:GenomeProperty_66560
 	a	:GenomeProperty;
 	:name	"66560";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"archaeal core gene set, 1 or more per genome";
 .
 gp:GenomeProperty_66559
 	a	:GenomeProperty;
 	:name	"66559";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"archaeal core gene set, exactly 1 per genome";
 .
 gp:GenomeProperty_66543
 	a	:GenomeProperty;
 	:name	"66543";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"archaeal-only core gene set";
 .
 gp:GenomeProperty_4028
 	a	:GenomeProperty;
 	:name	"4028";
 	:type	"test";
-	:threshold	0;
+	:threshold	"0";
 	:property	"arginine biosynthesis from glutatmate via N-acetylglutamate";
 .
 gp:GenomeProperty_4059
 	a	:GenomeProperty;
 	:name	"4059";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"arginine biosynthesis from ornithine, carbamoyl-p and aspartate";
 .
 gp:GenomeProperty_57297
 	a	:GenomeProperty;
 	:name	"57297";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"arginine catabolism to glutamate via arginine succinyltransferase (AST)";
 .
 gp:GenomeProperty_58365
 	a	:GenomeProperty;
 	:name	"58365";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"arginine degradation via citrulline, ATP-generating";
 .
 gp:GenomeProperty_58199
 	a	:GenomeProperty;
 	:name	"58199";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"arsenical resistance system";
 .
 gp:GenomeProperty_58198
 	a	:GenomeProperty;
 	:name	"58198";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"arsenite oxidase";
 .
 gp:GenomeProperty_58263
 	a	:GenomeProperty;
 	:name	"58263";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"arthropod (Arthropoda) associated niche";
 .
 gp:GenomeProperty_44147
 	a	:GenomeProperty;
 	:name	"44147";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"aspartate semialdehyde biosynthesis from aspartate";
 .
 gp:GenomeProperty_58181
 	a	:GenomeProperty;
 	:name	"58181";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"attenuation system-- tryptophanase";
 .
 gp:GenomeProperty_64510
 	a	:GenomeProperty;
 	:name	"64510";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacillibactin (corynebactin) biosynthesis";
 .
 gp:GenomeProperty_58288
 	a	:GenomeProperty;
 	:name	"58288";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacteria associated niche";
 .
 gp:GenomeProperty_53184
 	a	:GenomeProperty;
 	:name	"53184";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacterial cell division septum system";
 .
 gp:GenomeProperty_64529
 	a	:GenomeProperty;
 	:name	"64529";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacterial core gene set, 1 or more per genome";
 .
 gp:GenomeProperty_64528
 	a	:GenomeProperty;
 	:name	"64528";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacterial core gene set, exactly 1 per genome";
 .
 gp:GenomeProperty_66584
 	a	:GenomeProperty;
 	:name	"66584";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacterio-opsin system";
 .
 gp:GenomeProperty_24137
 	a	:GenomeProperty;
 	:name	"24137";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"bacteriochlorophyll biosynthesis from chlorophyllide a";
 .
 gp:GenomeProperty_66629
 	a	:GenomeProperty;
 	:name	"66629";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacteriocin system, Burkholderia type";
 .
 gp:GenomeProperty_64537
 	a	:GenomeProperty;
 	:name	"64537";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacteriocin system, TIGR01847 leader group";
 .
 gp:GenomeProperty_66589
 	a	:GenomeProperty;
 	:name	"66589";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacteriocin system, TIGR03793 leader group";
 .
 gp:GenomeProperty_66553
 	a	:GenomeProperty;
 	:name	"66553";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacteriocin system, circular bacteriocin group";
 .
 gp:GenomeProperty_64536
 	a	:GenomeProperty;
 	:name	"64536";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacteriocin system, heterocycle biosynthesis group";
 .
 gp:GenomeProperty_64538
 	a	:GenomeProperty;
 	:name	"64538";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacteriocin system, lactococcin 972 group";
 .
 gp:GenomeProperty_64539
 	a	:GenomeProperty;
 	:name	"64539";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacteriocin system, linocin M18 group";
 .
 gp:GenomeProperty_66628
 	a	:GenomeProperty;
 	:name	"66628";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bacteriocin, lantibiotic family";
 .
 gp:GenomeProperty_60436
 	a	:GenomeProperty;
 	:name	"60436";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"benzoate catabolism BoxABC pathway";
 .
 gp:GenomeProperty_60429
 	a	:GenomeProperty;
 	:name	"60429";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"benzoyl-CoA reductase";
 .
 gp:GenomeProperty_57271
 	a	:GenomeProperty;
 	:name	"57271";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"beta-ketoadipate degradation to succinyl-CoA and acetyl-CoA";
 .
 gp:GenomeProperty_29144
 	a	:GenomeProperty;
 	:name	"29144";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"biofilm participation";
 .
 gp:GenomeProperty_4005
 	a	:GenomeProperty;
 	:name	"4005";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"biological niche";
 .
 gp:GenomeProperty_4004
 	a	:GenomeProperty;
 	:name	"4004";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"biosynthesis";
 .
 gp:GenomeProperty_2018
 	a	:GenomeProperty;
 	:name	"2018";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"biotin biosynthesis";
 .
 gp:GenomeProperty_58247
 	a	:GenomeProperty;
 	:name	"58247";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"bird (Aves) associated niche";
 .
 gp:GenomeProperty_60434
 	a	:GenomeProperty;
 	:name	"60434";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"botulinum toxin system";
 .
 gp:GenomeProperty_60383
 	a	:GenomeProperty;
 	:name	"60383";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"boutique sorting systems";
 .
 gp:GenomeProperty_66639
 	a	:GenomeProperty;
 	:name	"66639";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"butyryl-CoA to butyrate, acetate CoA-transferase pathway";
 .
 gp:GenomeProperty_66638
 	a	:GenomeProperty;
 	:name	"66638";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"butyryl-CoA to butyrate, phosphotransbutyrylase pathway";
 .
 gp:GenomeProperty_60404
 	a	:GenomeProperty;
 	:name	"60404";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"c-type cytochrome biogenesis, system I";
 .
 gp:GenomeProperty_60406
 	a	:GenomeProperty;
 	:name	"60406";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"c-type cytochrome biogenesis, system II";
 .
 gp:GenomeProperty_66637
 	a	:GenomeProperty;
 	:name	"66637";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"capreomycidine biosynthesis";
 .
 gp:GenomeProperty_4003
 	a	:GenomeProperty;
 	:name	"4003";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"capsule";
 .
 gp:GenomeProperty_64524
 	a	:GenomeProperty;
 	:name	"64524";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"carbohydrate biosynthesis";
 .
 gp:GenomeProperty_66593
 	a	:GenomeProperty;
 	:name	"66593";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"carbon fixation";
 .
 gp:GenomeProperty_64512
 	a	:GenomeProperty;
 	:name	"64512";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"carbon fixation via 3-hydroxypropionate and 4-hydroxybutyrate";
 .
 gp:GenomeProperty_66594
 	a	:GenomeProperty;
 	:name	"66594";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"carbon metabolism";
 .
 gp:GenomeProperty_58248
 	a	:GenomeProperty;
 	:name	"58248";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"carnivore (Carnivora) associated niche";
 .
 gp:GenomeProperty_58249
 	a	:GenomeProperty;
 	:name	"58249";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cat (Felidae) associated niche";
 .
 gp:GenomeProperty_19134
 	a	:GenomeProperty;
 	:name	"19134";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"catabolism";
 .
 gp:GenomeProperty_60435
 	a	:GenomeProperty;
 	:name	"60435";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"catechol meta-cleavage pathway";
 .
 gp:GenomeProperty_60438
 	a	:GenomeProperty;
 	:name	"60438";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"catechol ortho-cleavage upper pathway";
 .
 gp:GenomeProperty_58253
 	a	:GenomeProperty;
 	:name	"58253";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cattle (Bos) associated niche";
 .
 gp:GenomeProperty_4014
 	a	:GenomeProperty;
 	:name	"4014";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cell motility";
 .
 gp:GenomeProperty_49155
 	a	:GenomeProperty;
 	:name	"49155";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cell shape";
 .
 gp:GenomeProperty_4010
 	a	:GenomeProperty;
 	:name	"4010";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cell surface component";
 .
 gp:GenomeProperty_49149
 	a	:GenomeProperty;
 	:name	"49149";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cellular growth, organization and division";
 .
 gp:GenomeProperty_60384
 	a	:GenomeProperty;
 	:name	"60384";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"cellulose biosynthesis";
 .
 gp:GenomeProperty_4013
 	a	:GenomeProperty;
 	:name	"4013";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"central intermediary metabolism";
 .
 gp:GenomeProperty_57232
 	a	:GenomeProperty;
 	:name	"57232";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"chaperone system-- DnaK-DnaJ-GrpE";
 .
 gp:GenomeProperty_57233
 	a	:GenomeProperty;
 	:name	"57233";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"chaperone system-- GroEL/GroES";
 .
 gp:GenomeProperty_57234
 	a	:GenomeProperty;
 	:name	"57234";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"chaperone system-- thermosome/prefoldin";
 .
 gp:GenomeProperty_58333
 	a	:GenomeProperty;
 	:name	"58333";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"chemoautotroph";
 .
 gp:GenomeProperty_2008
 	a	:GenomeProperty;
 	:name	"2008";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"chemotaxis";
 .
 gp:GenomeProperty_62490
 	a	:GenomeProperty;
 	:name	"62490";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"chemotaxis response-regulator system";
 .
 gp:GenomeProperty_24141
 	a	:GenomeProperty;
 	:name	"24141";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"chlorophyll biosynthesis from chlorophyllide a";
 .
 gp:GenomeProperty_24135
 	a	:GenomeProperty;
 	:name	"24135";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"chlorophyllide a biosynthesis from protoporphyrin IX";
 .
 gp:GenomeProperty_60476
 	a	:GenomeProperty;
 	:name	"60476";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"choline ABC transporter, ChoXWV family";
 .
 gp:GenomeProperty_60477
 	a	:GenomeProperty;
 	:name	"60477";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"choline sulfate utilization";
 .
 gp:GenomeProperty_1
 	a	:GenomeProperty;
 	:name	"1";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"chorismate biosynthesis via shikimate";
 .
 gp:GenomeProperty_58190
 	a	:GenomeProperty;
 	:name	"58190";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"circadian clock system KaiABC";
 .
 gp:GenomeProperty_60398
 	a	:GenomeProperty;
 	:name	"60398";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"citrate lyase system";
 .
 gp:GenomeProperty_4020
 	a	:GenomeProperty;
 	:name	"4020";
 	:type	"taxonomy";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class";
 .
 gp:GenomeProperty_57277
 	a	:GenomeProperty;
 	:name	"57277";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class I (aerobic) ribonucleotide reductase";
 .
 gp:GenomeProperty_57278
 	a	:GenomeProperty;
 	:name	"57278";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class II (B12-dependent) ribonucleotide reductase";
 .
 gp:GenomeProperty_57279
 	a	:GenomeProperty;
 	:name	"57279";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class III (anaerobic) ribonucleotide reductase";
 .
 gp:GenomeProperty_58151
 	a	:GenomeProperty;
 	:name	"58151";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Actinobacteria (class)";
 .
 gp:GenomeProperty_58164
 	a	:GenomeProperty;
 	:name	"58164";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Alphaproteobacteria";
 .
 gp:GenomeProperty_58149
 	a	:GenomeProperty;
 	:name	"58149";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Aquificae (class)";
 .
 gp:GenomeProperty_58159
 	a	:GenomeProperty;
 	:name	"58159";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Archaeoglobi";
 .
 gp:GenomeProperty_58170
 	a	:GenomeProperty;
 	:name	"58170";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Bacilli";
 .
 gp:GenomeProperty_58166
 	a	:GenomeProperty;
 	:name	"58166";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Bacteroides";
 .
 gp:GenomeProperty_58153
 	a	:GenomeProperty;
 	:name	"58153";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Bacteroides (class)";
 .
 gp:GenomeProperty_58148
 	a	:GenomeProperty;
 	:name	"58148";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Betaproteobacteria";
 .
 gp:GenomeProperty_58167
 	a	:GenomeProperty;
 	:name	"58167";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Chlamydiae (class)";
 .
 gp:GenomeProperty_58169
 	a	:GenomeProperty;
 	:name	"58169";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Chlorobia";
 .
 gp:GenomeProperty_58175
 	a	:GenomeProperty;
 	:name	"58175";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Clostridia";
 .
 gp:GenomeProperty_58155
 	a	:GenomeProperty;
 	:name	"58155";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Deinococci";
 .
 gp:GenomeProperty_58165
 	a	:GenomeProperty;
 	:name	"58165";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Deltaproteobacteria";
 .
 gp:GenomeProperty_58156
 	a	:GenomeProperty;
 	:name	"58156";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Epsilonproteobacteria";
 .
 gp:GenomeProperty_58171
 	a	:GenomeProperty;
 	:name	"58171";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Gammaproteobacteria";
 .
 gp:GenomeProperty_58158
 	a	:GenomeProperty;
 	:name	"58158";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Halobacteria";
 .
 gp:GenomeProperty_58147
 	a	:GenomeProperty;
 	:name	"58147";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Methanobacteria";
 .
 gp:GenomeProperty_58162
 	a	:GenomeProperty;
 	:name	"58162";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Methanococci";
 .
 gp:GenomeProperty_58161
 	a	:GenomeProperty;
 	:name	"58161";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Methanopyri";
 .
 gp:GenomeProperty_58150
 	a	:GenomeProperty;
 	:name	"58150";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Mollicutes";
 .
 gp:GenomeProperty_58152
 	a	:GenomeProperty;
 	:name	"58152";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Planctomycetacia";
 .
 gp:GenomeProperty_58157
 	a	:GenomeProperty;
 	:name	"58157";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Sphingobacteria";
 .
 gp:GenomeProperty_58168
 	a	:GenomeProperty;
 	:name	"58168";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Spirochaetes (class)";
 .
 gp:GenomeProperty_58174
 	a	:GenomeProperty;
 	:name	"58174";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Thermococci";
 .
 gp:GenomeProperty_58173
 	a	:GenomeProperty;
 	:name	"58173";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Thermomicrobia (class)";
 .
 gp:GenomeProperty_58160
 	a	:GenomeProperty;
 	:name	"58160";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Thermoplasmata";
 .
 gp:GenomeProperty_58163
 	a	:GenomeProperty;
 	:name	"58163";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Thermoprotei";
 .
 gp:GenomeProperty_58154
 	a	:GenomeProperty;
 	:name	"58154";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- Verrucomicrobiae";
 .
 gp:GenomeProperty_58172
 	a	:GenomeProperty;
 	:name	"58172";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"class-- magnetotactic cocci";
 .
 gp:GenomeProperty_57239
 	a	:GenomeProperty;
 	:name	"57239";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"clpXP degradation machine";
 .
 gp:GenomeProperty_57272
 	a	:GenomeProperty;
 	:name	"57272";
 	:type	"counter";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cobalamin-utilizing enzymes";
 .
 gp:GenomeProperty_57265
 	a	:GenomeProperty;
 	:name	"57265";
 	:type	"system";
-	:threshold	2;
+	:threshold	"2";
 	:property	"cobalt import system (ABC transporter-- 3.A.1.18.1)";
 .
 gp:GenomeProperty_57268
 	a	:GenomeProperty;
 	:name	"57268";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cobalt import system (CbtAB - proposed)";
 .
 gp:GenomeProperty_57270
 	a	:GenomeProperty;
 	:name	"57270";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cobalt import system (CbtC - proposed)";
 .
 gp:GenomeProperty_57266
 	a	:GenomeProperty;
 	:name	"57266";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cobalt import system (adapted nickel transporters)";
 .
 gp:GenomeProperty_57267
 	a	:GenomeProperty;
 	:name	"57267";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cobalt import systems";
 .
 gp:GenomeProperty_4054
 	a	:GenomeProperty;
 	:name	"4054";
 	:type	"pathway";
-	:threshold	10;
+	:threshold	"10";
 	:property	"cobyrinic acid diamide biosynthesis, aerobic pathway";
 .
 gp:GenomeProperty_57263
 	a	:GenomeProperty;
 	:name	"57263";
 	:type	"pathway";
-	:threshold	3;
+	:threshold	"3";
 	:property	"cobyrinic acid diamide biosynthesis, anaerobic pathway";
 .
 gp:GenomeProperty_49153
 	a	:GenomeProperty;
 	:name	"49153";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"coenzyme A biosynthesis from pantothenate";
 .
 gp:GenomeProperty_57262
 	a	:GenomeProperty;
 	:name	"57262";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"coenzyme B12 biosynthesis - overview";
 .
 gp:GenomeProperty_57257
 	a	:GenomeProperty;
 	:name	"57257";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"coenzyme B12 biosynthesis from cob(II)yrinate diamide";
 .
 gp:GenomeProperty_64520
 	a	:GenomeProperty;
 	:name	"64520";
 	:type	"metapath";
-	:threshold	1;
+	:threshold	"1";
 	:property	"coenzyme F420 biosynthesis";
 .
 gp:GenomeProperty_2
 	a	:GenomeProperty;
 	:name	"2";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"coenzyme F420 utilization";
 .
 gp:GenomeProperty_66619
 	a	:GenomeProperty;
 	:name	"66619";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"coenzyme M biosynthesis";
 .
 gp:GenomeProperty_49152
 	a	:GenomeProperty;
 	:name	"49152";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"coenzyme PQQ biosynthesis";
 .
 gp:GenomeProperty_49166
 	a	:GenomeProperty;
 	:name	"49166";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cofactor biosynthesis";
 .
 gp:GenomeProperty_58278
 	a	:GenomeProperty;
 	:name	"58278";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"commensal";
 .
 gp:GenomeProperty_58269
 	a	:GenomeProperty;
 	:name	"58269";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"community-associated niche";
 .
 gp:GenomeProperty_57299
 	a	:GenomeProperty;
 	:name	"57299";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"competence-related genes";
 .
 gp:GenomeProperty_58306
 	a	:GenomeProperty;
 	:name	"58306";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"congenital transmission";
 .
 gp:GenomeProperty_66586
 	a	:GenomeProperty;
 	:name	"66586";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"conjugative transposon, Bacteroides type";
 .
 gp:GenomeProperty_58382
 	a	:GenomeProperty;
 	:name	"58382";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"conserved syntenic region";
 .
 gp:GenomeProperty_66618
 	a	:GenomeProperty;
 	:name	"66618";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"copper homeostasis system CopRS/CopABCD";
 .
 gp:GenomeProperty_58202
 	a	:GenomeProperty;
 	:name	"58202";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"copper resistance system-- CopZA";
 .
 gp:GenomeProperty_3
 	a	:GenomeProperty;
 	:name	"3";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"count of DNA molecules";
 .
 gp:GenomeProperty_49163
 	a	:GenomeProperty;
 	:name	"49163";
 	:type	"summary";
-	:threshold	0;
+	:threshold	"0";
 	:property	"count of TRAP transporter clusters";
 .
 gp:GenomeProperty_4
 	a	:GenomeProperty;
 	:name	"4";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"count of predicted proteins";
 .
 gp:GenomeProperty_5
 	a	:GenomeProperty;
 	:name	"5";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"count of tRNAs";
 .
 gp:GenomeProperty_58270
 	a	:GenomeProperty;
 	:name	"58270";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"crustacean (Crustacea) associated niche";
 .
 gp:GenomeProperty_39145
 	a	:GenomeProperty;
 	:name	"39145";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cyanophycin-like storage polymers";
 .
 gp:GenomeProperty_60433
 	a	:GenomeProperty;
 	:name	"60433";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cyclohexa-1,5-diene-1-carbonyl-CoA to 3-hydroxypimelyl-CoA, dch/had/oah pathway";
 .
 gp:GenomeProperty_57293
 	a	:GenomeProperty;
 	:name	"57293";
 	:type	"summary";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cysteine biosynthesis";
 .
 gp:GenomeProperty_55194
 	a	:GenomeProperty;
 	:name	"55194";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cysteine biosynthesis from serine";
 .
 gp:GenomeProperty_57292
 	a	:GenomeProperty;
 	:name	"57292";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cysteine biosynthesis, tRNA-dependent";
 .
 gp:GenomeProperty_58345
 	a	:GenomeProperty;
 	:name	"58345";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cytochrome (quinone) oxidase, aa3 type, QoxABCD";
 .
 gp:GenomeProperty_58342
 	a	:GenomeProperty;
 	:name	"58342";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cytochrome (quinone) oxidase, bd type";
 .
 gp:GenomeProperty_58343
 	a	:GenomeProperty;
 	:name	"58343";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"cytochrome (quinone) oxidase, bo type";
 .
 gp:GenomeProperty_60422
 	a	:GenomeProperty;
 	:name	"60422";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cytochrome b558/566";
 .
 gp:GenomeProperty_58340
 	a	:GenomeProperty;
 	:name	"58340";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cytochrome c based oxygen reduction and quinone re-oxidation";
 .
 gp:GenomeProperty_60409
 	a	:GenomeProperty;
 	:name	"60409";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cytochrome c nitrite reductase NrfHA";
 .
 gp:GenomeProperty_58208
 	a	:GenomeProperty;
 	:name	"58208";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cytochrome c oxidase, cbb3-type";
 .
 gp:GenomeProperty_58339
 	a	:GenomeProperty;
 	:name	"58339";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"cytochrome c oxidase, mitochondrial, caa3-type";
 .
 gp:GenomeProperty_58338
 	a	:GenomeProperty;
 	:name	"58338";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"cytochrome c reductase";
 .
 gp:GenomeProperty_49165
 	a	:GenomeProperty;
 	:name	"49165";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"dTDP-L-rhamnose biosynthesis from glucose-1-phosphate";
 .
 gp:GenomeProperty_66597
 	a	:GenomeProperty;
 	:name	"66597";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"decarboxylation/antiport proton-motive cycle-- arginine-agmatine";
 .
 gp:GenomeProperty_66595
 	a	:GenomeProperty;
 	:name	"66595";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"decarboxylation/antiport proton-motive cycle-- aspartate-alanine";
 .
 gp:GenomeProperty_66604
 	a	:GenomeProperty;
 	:name	"66604";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"decarboxylation/antiport proton-motive cycle-- glutamate-GABA";
 .
 gp:GenomeProperty_66600
 	a	:GenomeProperty;
 	:name	"66600";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"decarboxylation/antiport proton-motive cycle-- histidine-histamine";
 .
 gp:GenomeProperty_66598
 	a	:GenomeProperty;
 	:name	"66598";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"decarboxylation/antiport proton-motive cycle-- lysine-cadaverine";
 .
 gp:GenomeProperty_66599
 	a	:GenomeProperty;
 	:name	"66599";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"decarboxylation/antiport proton-motive cycle-- ornithine-putrescine";
 .
 gp:GenomeProperty_66603
 	a	:GenomeProperty;
 	:name	"66603";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"decarboxylation/antiport proton-motive cycle-- tyrosine-tyramine";
 .
 gp:GenomeProperty_58292
 	a	:GenomeProperty;
 	:name	"58292";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"decaying organic material niche";
 .
 gp:GenomeProperty_14132
 	a	:GenomeProperty;
 	:name	"14132";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"degradation of tyrosine via homogentisate";
 .
 gp:GenomeProperty_57291
 	a	:GenomeProperty;
 	:name	"57291";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"detoxification";
 .
 gp:GenomeProperty_55210
 	a	:GenomeProperty;
 	:name	"55210";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"direct repair";
 .
 gp:GenomeProperty_34144
 	a	:GenomeProperty;
 	:name	"34144";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"dissimilatory sulfate reduction";
 .
 gp:GenomeProperty_58250
 	a	:GenomeProperty;
 	:name	"58250";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"dog (Canidae) associated niche";
 .
 gp:GenomeProperty_58377
 	a	:GenomeProperty;
 	:name	"58377";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ectoine ABC transporter EhuABCD";
 .
 gp:GenomeProperty_57256
 	a	:GenomeProperty;
 	:name	"57256";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ectoine biosynthesis";
 .
 gp:GenomeProperty_58379
 	a	:GenomeProperty;
 	:name	"58379";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ectoine catabolism";
 .
 gp:GenomeProperty_4120
 	a	:GenomeProperty;
 	:name	"4120";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"electron transport";
 .
 gp:GenomeProperty_58335
 	a	:GenomeProperty;
 	:name	"58335";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"endospore formation marker gene set";
 .
 gp:GenomeProperty_4011
 	a	:GenomeProperty;
 	:name	"4011";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"energy metabolism";
 .
 gp:GenomeProperty_64499
 	a	:GenomeProperty;
 	:name	"64499";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"enterobactin (enterochelin) biosynthesis";
 .
 gp:GenomeProperty_58286
 	a	:GenomeProperty;
 	:name	"58286";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"epicellular growth";
 .
 gp:GenomeProperty_57282
 	a	:GenomeProperty;
 	:name	"57282";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"ethanolamine catabolism to acetaldehyde";
 .
 gp:GenomeProperty_57280
 	a	:GenomeProperty;
 	:name	"57280";
 	:type	"system";
-	:threshold	4;
+	:threshold	"4";
 	:property	"ethanolamine degradation organelle";
 .
 gp:GenomeProperty_55209
 	a	:GenomeProperty;
 	:name	"55209";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"excision repair";
 .
 gp:GenomeProperty_58378
 	a	:GenomeProperty;
 	:name	"58378";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"exosortase-associated polysaccharide biosynthesis, type 1";
 .
 gp:GenomeProperty_58381
 	a	:GenomeProperty;
 	:name	"58381";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"exosortase-associated polysaccharide biosynthesis, type 2";
 .
 gp:GenomeProperty_66575
 	a	:GenomeProperty;
 	:name	"66575";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"exosporium";
 .
 gp:GenomeProperty_58275
 	a	:GenomeProperty;
 	:name	"58275";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"experimental properties";
 .
 gp:GenomeProperty_58327
 	a	:GenomeProperty;
 	:name	"58327";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"extremophile";
 .
 gp:GenomeProperty_58324
 	a	:GenomeProperty;
 	:name	"58324";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"facultative anaerobe";
 .
 gp:GenomeProperty_58284
 	a	:GenomeProperty;
 	:name	"58284";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"facultative intracellular growth";
 .
 gp:GenomeProperty_58281
 	a	:GenomeProperty;
 	:name	"58281";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"facultative mutualist";
 .
 gp:GenomeProperty_4022
 	a	:GenomeProperty;
 	:name	"4022";
 	:type	"taxonomy";
-	:threshold	0;
+	:threshold	"0";
 	:property	"family";
 .
 gp:GenomeProperty_57287
 	a	:GenomeProperty;
 	:name	"57287";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"fatty acid biosynthesis";
 .
 gp:GenomeProperty_60407
 	a	:GenomeProperty;
 	:name	"60407";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"fatty acid biosynthesis from acetyl-CoA";
 .
 gp:GenomeProperty_57286
 	a	:GenomeProperty;
 	:name	"57286";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"fermentation";
 .
 gp:GenomeProperty_64502
 	a	:GenomeProperty;
 	:name	"64502";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ferric citrate transport system";
 .
 gp:GenomeProperty_58262
 	a	:GenomeProperty;
 	:name	"58262";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"fish associated niche";
 .
 gp:GenomeProperty_7
 	a	:GenomeProperty;
 	:name	"7";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagella";
 .
 gp:GenomeProperty_57273
 	a	:GenomeProperty;
 	:name	"57273";
 	:type	"metapath";
-	:threshold	5;
+	:threshold	"5";
 	:property	"flagella, bacterial type";
 .
 gp:GenomeProperty_66609
 	a	:GenomeProperty;
 	:name	"66609";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar assembly apparatus";
 .
 gp:GenomeProperty_66608
 	a	:GenomeProperty;
 	:name	"66608";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar basal body complex";
 .
 gp:GenomeProperty_66614
 	a	:GenomeProperty;
 	:name	"66614";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar components of unknown function";
 .
 gp:GenomeProperty_66607
 	a	:GenomeProperty;
 	:name	"66607";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar export apparatus";
 .
 gp:GenomeProperty_66610
 	a	:GenomeProperty;
 	:name	"66610";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar filament and hook complex";
 .
 gp:GenomeProperty_66605
 	a	:GenomeProperty;
 	:name	"66605";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar motor stator complex";
 .
 gp:GenomeProperty_66611
 	a	:GenomeProperty;
 	:name	"66611";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar motor switch (rotor) complex";
 .
 gp:GenomeProperty_66615
 	a	:GenomeProperty;
 	:name	"66615";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar operon proteins found in restricted phylogenetic ranges";
 .
 gp:GenomeProperty_66613
 	a	:GenomeProperty;
 	:name	"66613";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar post-translational modification components";
 .
 gp:GenomeProperty_66612
 	a	:GenomeProperty;
 	:name	"66612";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"flagellar regulation";
 .
 gp:GenomeProperty_58294
 	a	:GenomeProperty;
 	:name	"58294";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"food borne transmission";
 .
 gp:GenomeProperty_58287
 	a	:GenomeProperty;
 	:name	"58287";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"formaldehyde detoxification, glutathione-dependent";
 .
 gp:GenomeProperty_60408
 	a	:GenomeProperty;
 	:name	"60408";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"formate-dependent nitrite reductase, seven-gene type";
 .
 gp:GenomeProperty_60420
 	a	:GenomeProperty;
 	:name	"60420";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"fructose utilization as fructose-1,6-bisphosphate";
 .
 gp:GenomeProperty_58183
 	a	:GenomeProperty;
 	:name	"58183";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"fucose catabolism";
 .
 gp:GenomeProperty_60484
 	a	:GenomeProperty;
 	:name	"60484";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"fumarate reductase complex";
 .
 gp:GenomeProperty_9119
 	a	:GenomeProperty;
 	:name	"9119";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"functional gene clustering - property level";
 .
 gp:GenomeProperty_60443
 	a	:GenomeProperty;
 	:name	"60443";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"galactarate utilization via 2-oxoglutarate semialdehyde";
 .
 gp:GenomeProperty_60442
 	a	:GenomeProperty;
 	:name	"60442";
 	:type	"system";
-	:threshold	2;
+	:threshold	"2";
 	:property	"galactarate utilization via tartronate semi-aldehyde";
 .
 gp:GenomeProperty_19133
 	a	:GenomeProperty;
 	:name	"19133";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"galactose-6-phosphate degradation via tagatose-6-phosphate";
 .
 gp:GenomeProperty_58185
 	a	:GenomeProperty;
 	:name	"58185";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"gas vesicle";
 .
 gp:GenomeProperty_58352
 	a	:GenomeProperty;
 	:name	"58352";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"gene pair involved in iron and oxygen metabolism";
 .
 gp:GenomeProperty_60437
 	a	:GenomeProperty;
 	:name	"60437";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"generic phosphonates utilization";
 .
 gp:GenomeProperty_4006
 	a	:GenomeProperty;
 	:name	"4006";
 	:type	"root";
-	:threshold	0;
+	:threshold	"0";
 	:property	"genome properties";
 .
 gp:GenomeProperty_4023
 	a	:GenomeProperty;
 	:name	"4023";
 	:type	"taxonomy";
-	:threshold	0;
+	:threshold	"0";
 	:property	"genus";
 .
 gp:GenomeProperty_66554
 	a	:GenomeProperty;
 	:name	"66554";
 	:type	"test";
-	:threshold	0;
+	:threshold	"0";
 	:property	"genus-filtered organisms";
 .
 gp:GenomeProperty_4069
 	a	:GenomeProperty;
 	:name	"4069";
 	:type	"test";
-	:threshold	0;
+	:threshold	"0";
 	:property	"gid-HMM";
 .
 gp:GenomeProperty_64509
 	a	:GenomeProperty;
 	:name	"64509";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"gliding motility, Bacteroidetes type";
 .
 gp:GenomeProperty_60445
 	a	:GenomeProperty;
 	:name	"60445";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"glucarate utilization via 2-oxoglutarate semialdehyde";
 .
 gp:GenomeProperty_60444
 	a	:GenomeProperty;
 	:name	"60444";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"glucarate utilization via tartronate semi-aldehyde";
 .
 gp:GenomeProperty_60421
 	a	:GenomeProperty;
 	:name	"60421";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"glucose utilization as fructose-1,6-bisphosphate";
 .
 gp:GenomeProperty_57252
 	a	:GenomeProperty;
 	:name	"57252";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"glucosylglycerol biosynthesis";
 .
 gp:GenomeProperty_2012
 	a	:GenomeProperty;
 	:name	"2012";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"glutathione biosynthesis";
 .
 gp:GenomeProperty_64493
 	a	:GenomeProperty;
 	:name	"64493";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"glycerol fermentation to  1,3-propanediol, using glycerol dehydratase";
 .
 gp:GenomeProperty_24138
 	a	:GenomeProperty;
 	:name	"24138";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"glycine betaine biosynthesis from choline";
 .
 gp:GenomeProperty_49160
 	a	:GenomeProperty;
 	:name	"49160";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"glycine cleavage system";
 .
 gp:GenomeProperty_49150
 	a	:GenomeProperty;
 	:name	"49150";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"glycogen system";
 .
 gp:GenomeProperty_60418
 	a	:GenomeProperty;
 	:name	"60418";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"glycolysis";
 .
 gp:GenomeProperty_60472
 	a	:GenomeProperty;
 	:name	"60472";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"glyoxalase pathway, glutathione dependent";
 .
 gp:GenomeProperty_60416
 	a	:GenomeProperty;
 	:name	"60416";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"glyoxalate conversion to phosphoglycerate";
 .
 gp:GenomeProperty_2005
 	a	:GenomeProperty;
 	:name	"2005";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"glyoxylate shunt";
 .
 gp:GenomeProperty_2006
 	a	:GenomeProperty;
 	:name	"2006";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"group I intron";
 .
 gp:GenomeProperty_2007
 	a	:GenomeProperty;
 	:name	"2007";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"group II intron";
 .
 gp:GenomeProperty_58322
 	a	:GenomeProperty;
 	:name	"58322";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"growth in the absence of oxygen";
 .
 gp:GenomeProperty_58321
 	a	:GenomeProperty;
 	:name	"58321";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"growth in the presence of oxygen";
 .
 gp:GenomeProperty_60424
 	a	:GenomeProperty;
 	:name	"60424";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"guanine monophosphate (GMP) biosynthesis from inosine monophosphate (IMP)";
 .
 gp:GenomeProperty_66647
 	a	:GenomeProperty;
 	:name	"66647";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"gut marker rSAM pair";
 .
 gp:GenomeProperty_58326
 	a	:GenomeProperty;
 	:name	"58326";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"halophile";
 .
 gp:GenomeProperty_19
 	a	:GenomeProperty;
 	:name	"19";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"heme biosynthesis from 5-aminolevulinate";
 .
 gp:GenomeProperty_66556
 	a	:GenomeProperty;
 	:name	"66556";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"heme uptake system, NEAT-domain mediated";
 .
 gp:GenomeProperty_58375
 	a	:GenomeProperty;
 	:name	"58375";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"heterocyst-related ABC exporter DevBCA";
 .
 gp:GenomeProperty_4050
 	a	:GenomeProperty;
 	:name	"4050";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"histidine biosynthesis from ribose-5-phosphate";
 .
 gp:GenomeProperty_24136
 	a	:GenomeProperty;
 	:name	"24136";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"histidine degradation to glutamate";
 .
 gp:GenomeProperty_64518
 	a	:GenomeProperty;
 	:name	"64518";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"homocysteine regeneration from S-adenosylhomocysteine";
 .
 gp:GenomeProperty_62489
 	a	:GenomeProperty;
 	:name	"62489";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"hopanoid lipid biosynthesis";
 .
 gp:GenomeProperty_58256
 	a	:GenomeProperty;
 	:name	"58256";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"horse (Equus) associated niche";
 .
 gp:GenomeProperty_58243
 	a	:GenomeProperty;
 	:name	"58243";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"host range";
 .
 gp:GenomeProperty_58222
 	a	:GenomeProperty;
 	:name	"58222";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"host-associated niche";
 .
 gp:GenomeProperty_58225
 	a	:GenomeProperty;
 	:name	"58225";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"host-independent niche";
 .
 gp:GenomeProperty_58244
 	a	:GenomeProperty;
 	:name	"58244";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"host-symbiote relationship types";
 .
 gp:GenomeProperty_58261
 	a	:GenomeProperty;
 	:name	"58261";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"human associated niche";
 .
 gp:GenomeProperty_58282
 	a	:GenomeProperty;
 	:name	"58282";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"human gastrointestinal (GI) tract";
 .
 gp:GenomeProperty_57295
 	a	:GenomeProperty;
 	:name	"57295";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"human oral cavity";
 .
 gp:GenomeProperty_49151
 	a	:GenomeProperty;
 	:name	"49151";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"hybrid NRPS-PKS natural pruduct biosynthesis genes";
 .
 gp:GenomeProperty_66642
 	a	:GenomeProperty;
 	:name	"66642";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"hydrogenase, [FeFe]-dependent";
 .
 gp:GenomeProperty_66643
 	a	:GenomeProperty;
 	:name	"66643";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"hydrogenase, mono-iron type";
 .
 gp:GenomeProperty_60451
 	a	:GenomeProperty;
 	:name	"60451";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"hydrogenase, nickel and F420-dependent";
 .
 gp:GenomeProperty_58319
 	a	:GenomeProperty;
 	:name	"58319";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"hyperthermophile";
 .
 gp:GenomeProperty_58298
 	a	:GenomeProperty;
 	:name	"58298";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"initial sites of transmission to host";
 .
 gp:GenomeProperty_58264
 	a	:GenomeProperty;
 	:name	"58264";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"insect (Insecta) associated niche";
 .
 gp:GenomeProperty_58235
 	a	:GenomeProperty;
 	:name	"58235";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"insect bacteriome (symbiotic organ)";
 .
 gp:GenomeProperty_58238
 	a	:GenomeProperty;
 	:name	"58238";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"insect larvae";
 .
 gp:GenomeProperty_66558
 	a	:GenomeProperty;
 	:name	"66558";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"integral membrane mystery pair";
 .
 gp:GenomeProperty_66583
 	a	:GenomeProperty;
 	:name	"66583";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"integrating conjugative element, PFGI-1 class";
 .
 gp:GenomeProperty_66579
 	a	:GenomeProperty;
 	:name	"66579";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"integration host factor";
 .
 gp:GenomeProperty_9
 	a	:GenomeProperty;
 	:name	"9";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"integrative genetic element";
 .
 gp:GenomeProperty_55202
 	a	:GenomeProperty;
 	:name	"55202";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"integron";
 .
 gp:GenomeProperty_10
 	a	:GenomeProperty;
 	:name	"10";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"inteins";
 .
 gp:GenomeProperty_58380
 	a	:GenomeProperty;
 	:name	"58380";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"intracellular sulfur oxidation";
 .
 gp:GenomeProperty_57274
 	a	:GenomeProperty;
 	:name	"57274";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"intracellular survival";
 .
 gp:GenomeProperty_57284
 	a	:GenomeProperty;
 	:name	"57284";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"intracytoplasmic membranes";
 .
 gp:GenomeProperty_58273
 	a	:GenomeProperty;
 	:name	"58273";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"intrinsic pathogen";
 .
 gp:GenomeProperty_29145
 	a	:GenomeProperty;
 	:name	"29145";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"intrinsic pathogen of animals";
 .
 gp:GenomeProperty_58289
 	a	:GenomeProperty;
 	:name	"58289";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"intrinsic pathogen of bacteria";
 .
 gp:GenomeProperty_8
 	a	:GenomeProperty;
 	:name	"8";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"intrinsic pathogen of humans";
 .
 gp:GenomeProperty_66601
 	a	:GenomeProperty;
 	:name	"66601";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ion-motive antiporter cycles";
 .
 gp:GenomeProperty_66548
 	a	:GenomeProperty;
 	:name	"66548";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"iron metabolism";
 .
 gp:GenomeProperty_60467
 	a	:GenomeProperty;
 	:name	"60467";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"iron-sulfur cluster assembly CsdA-CsdE system";
 .
 gp:GenomeProperty_60470
 	a	:GenomeProperty;
 	:name	"60470";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"iron-sulfur cluster assembly NIF system";
 .
 gp:GenomeProperty_14130
 	a	:GenomeProperty;
 	:name	"14130";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"iron-sulfur cluster assembly SUF system";
 .
 gp:GenomeProperty_14131
 	a	:GenomeProperty;
 	:name	"14131";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"iron-sulfur cluster assembly iscSUA-hscBA-fdx system";
 .
 gp:GenomeProperty_19132
 	a	:GenomeProperty;
 	:name	"19132";
 	:type	"summary";
-	:threshold	0;
+	:threshold	"0";
 	:property	"iron-sulfur cluster assembly systems";
 .
 gp:GenomeProperty_44149
 	a	:GenomeProperty;
 	:name	"44149";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"isoleucine biosynthesis from threonine and pyruvate";
 .
 gp:GenomeProperty_66581
 	a	:GenomeProperty;
 	:name	"66581";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lantibiotic system, gallidermin/epidermin family";
 .
 gp:GenomeProperty_44151
 	a	:GenomeProperty;
 	:name	"44151";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"leucine biosynthesis from pyruvate and acetyl-CoA";
 .
 gp:GenomeProperty_58328
 	a	:GenomeProperty;
 	:name	"58328";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lifestyle";
 .
 gp:GenomeProperty_66566
 	a	:GenomeProperty;
 	:name	"66566";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lipid biosynthesis";
 .
 gp:GenomeProperty_57285
 	a	:GenomeProperty;
 	:name	"57285";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lipopolysaccharide biosynthesis";
 .
 gp:GenomeProperty_53185
 	a	:GenomeProperty;
 	:name	"53185";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lipoprotein localization system lolABCDE";
 .
 gp:GenomeProperty_2043
 	a	:GenomeProperty;
 	:name	"2043";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lipoprotein system lgt/lsp/lnt";
 .
 gp:GenomeProperty_60473
 	a	:GenomeProperty;
 	:name	"60473";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lipoyl-protein attachment";
 .
 gp:GenomeProperty_60486
 	a	:GenomeProperty;
 	:name	"60486";
 	:type	"metapath";
-	:threshold	2;
+	:threshold	"2";
 	:property	"lycopene biosynthesis from IPP";
 .
 gp:GenomeProperty_51177
 	a	:GenomeProperty;
 	:name	"51177";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lysine biosynthesis";
 .
 gp:GenomeProperty_51171
 	a	:GenomeProperty;
 	:name	"51171";
 	:type	"pathway";
-	:threshold	6;
+	:threshold	"6";
 	:property	"lysine biosynthesis via alpha-aminoadipate (AAA pathway)";
 .
 gp:GenomeProperty_4067
 	a	:GenomeProperty;
 	:name	"4067";
 	:type	"metapath";
-	:threshold	1;
+	:threshold	"1";
 	:property	"lysine biosynthesis via diaminopimelate (DAP)";
 .
 gp:GenomeProperty_64517
 	a	:GenomeProperty;
 	:name	"64517";
 	:type	"metapath";
-	:threshold	4;
+	:threshold	"4";
 	:property	"lysine biosynthesis via diaminopimelate (DAP) utilizing ammonia and NADPH";
 .
 gp:GenomeProperty_64515
 	a	:GenomeProperty;
 	:name	"64515";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lysine biosynthesis via diaminopimelate (DAP), acetylated branch";
 .
 gp:GenomeProperty_64514
 	a	:GenomeProperty;
 	:name	"64514";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"lysine biosynthesis via diaminopimelate (DAP), succinylated branch";
 .
 gp:GenomeProperty_60400
 	a	:GenomeProperty;
 	:name	"60400";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"malonate decarboxylase";
 .
 gp:GenomeProperty_57269
 	a	:GenomeProperty;
 	:name	"57269";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mannosylglycerate biosynthesis";
 .
 gp:GenomeProperty_66546
 	a	:GenomeProperty;
 	:name	"66546";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"marine environment";
 .
 gp:GenomeProperty_66625
 	a	:GenomeProperty;
 	:name	"66625";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"markers of thermophily";
 .
 gp:GenomeProperty_60392
 	a	:GenomeProperty;
 	:name	"60392";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"membrane-associated monooxygenase (methane/ammonia)";
 .
 gp:GenomeProperty_66564
 	a	:GenomeProperty;
 	:name	"66564";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"menaquinone biosynthesis";
 .
 gp:GenomeProperty_2040
 	a	:GenomeProperty;
 	:name	"2040";
 	:type	"pathway";
-	:threshold	3;
+	:threshold	"3";
 	:property	"menaquinone biosynthesis via SEPHCHC";
 .
 gp:GenomeProperty_66557
 	a	:GenomeProperty;
 	:name	"66557";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"menaquinone biosynthesis via futalosine";
 .
 gp:GenomeProperty_58315
 	a	:GenomeProperty;
 	:name	"58315";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mesophile";
 .
 gp:GenomeProperty_17
 	a	:GenomeProperty;
 	:name	"17";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"metabolism";
 .
 gp:GenomeProperty_58332
 	a	:GenomeProperty;
 	:name	"58332";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"metalotolerant";
 .
 gp:GenomeProperty_2013
 	a	:GenomeProperty;
 	:name	"2013";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"methane utilization";
 .
 gp:GenomeProperty_11
 	a	:GenomeProperty;
 	:name	"11";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"methanogenesis";
 .
 gp:GenomeProperty_60450
 	a	:GenomeProperty;
 	:name	"60450";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"methanogenesis marker set";
 .
 gp:GenomeProperty_44148
 	a	:GenomeProperty;
 	:name	"44148";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"methionine biosynthesis from homoserine";
 .
 gp:GenomeProperty_60460
 	a	:GenomeProperty;
 	:name	"60460";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"methionine salvage enolase-phosphate pair MtnW/MtnX";
 .
 gp:GenomeProperty_60457
 	a	:GenomeProperty;
 	:name	"60457";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"methionine salvage from methylthioadenosine";
 .
 gp:GenomeProperty_60447
 	a	:GenomeProperty;
 	:name	"60447";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"methyl-coenzyme M reductase";
 .
 gp:GenomeProperty_60458
 	a	:GenomeProperty;
 	:name	"60458";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"methylthioadenosine to methylthioribose-1-phosphate via MTR";
 .
 gp:GenomeProperty_58226
 	a	:GenomeProperty;
 	:name	"58226";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"metrics of biological environment";
 .
 gp:GenomeProperty_58325
 	a	:GenomeProperty;
 	:name	"58325";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"microaerophile";
 .
 gp:GenomeProperty_49147
 	a	:GenomeProperty;
 	:name	"49147";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"minCDE system";
 .
 gp:GenomeProperty_55201
 	a	:GenomeProperty;
 	:name	"55201";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mismatch repair";
 .
 gp:GenomeProperty_66616
 	a	:GenomeProperty;
 	:name	"66616";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mobilization system MobA/MobB/MobC";
 .
 gp:GenomeProperty_58293
 	a	:GenomeProperty;
 	:name	"58293";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mode of transmission to host";
 .
 gp:GenomeProperty_51169
 	a	:GenomeProperty;
 	:name	"51169";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"molybdate ABC transporter";
 .
 gp:GenomeProperty_58191
 	a	:GenomeProperty;
 	:name	"58191";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"molybdopterin biosynthesis";
 .
 gp:GenomeProperty_58258
 	a	:GenomeProperty;
 	:name	"58258";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mouse (Mus) associated niche";
 .
 gp:GenomeProperty_49148
 	a	:GenomeProperty;
 	:name	"49148";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mreBCD system";
 .
 gp:GenomeProperty_58279
 	a	:GenomeProperty;
 	:name	"58279";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mutualist";
+.
+gp:GenomeProperty_66651
+	a	:GenomeProperty;
+	:name	"66651";
+	:type	"system";
+	:threshold	"0";
+	:property	"mycothiol system";
 .
 gp:GenomeProperty_64503
 	a	:GenomeProperty;
 	:name	"64503";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mycobactin biosynthesis";
 .
 gp:GenomeProperty_60481
 	a	:GenomeProperty;
 	:name	"60481";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"mycothiol biosynthesis";
 .
 gp:GenomeProperty_4018
 	a	:GenomeProperty;
 	:name	"4018";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"natural products biosynthesis";
 .
 gp:GenomeProperty_18
 	a	:GenomeProperty;
 	:name	"18";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"natural transformation";
 .
 gp:GenomeProperty_58237
 	a	:GenomeProperty;
 	:name	"58237";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nematode (worm) gut";
 .
 gp:GenomeProperty_58219
 	a	:GenomeProperty;
 	:name	"58219";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nickel import ABC transporter";
 .
 gp:GenomeProperty_49159
 	a	:GenomeProperty;
 	:name	"49159";
 	:type	"system";
-	:threshold	2;
+	:threshold	"2";
 	:property	"nickel-dependent hydrogenase";
 .
 gp:GenomeProperty_62491
 	a	:GenomeProperty;
 	:name	"62491";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nicotinate fermentation to pyruvate and propionate";
 .
 gp:GenomeProperty_66627
 	a	:GenomeProperty;
 	:name	"66627";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nitrile hydratase";
 .
 gp:GenomeProperty_2011
 	a	:GenomeProperty;
 	:name	"2011";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nitrogen fixation";
 .
 gp:GenomeProperty_53180
 	a	:GenomeProperty;
 	:name	"53180";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nitrogen metabolism";
 .
 gp:GenomeProperty_58357
 	a	:GenomeProperty;
 	:name	"58357";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nitrogenase, Fe-only";
 .
 gp:GenomeProperty_58359
 	a	:GenomeProperty;
 	:name	"58359";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nitrogenase, Mo-containing";
 .
 gp:GenomeProperty_58358
 	a	:GenomeProperty;
 	:name	"58358";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nitrogenase, V-containing";
 .
 gp:GenomeProperty_58217
 	a	:GenomeProperty;
 	:name	"58217";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nonhomologous end-joining, bacterial type";
 .
 gp:GenomeProperty_4139
 	a	:GenomeProperty;
 	:name	"4139";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nucleic acid metabolism";
 .
 gp:GenomeProperty_66544
 	a	:GenomeProperty;
 	:name	"66544";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nucleoside catabolism/utilization pathways";
 .
 gp:GenomeProperty_49167
 	a	:GenomeProperty;
 	:name	"49167";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nucleotide biosynthesis";
 .
 gp:GenomeProperty_66545
 	a	:GenomeProperty;
 	:name	"66545";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nucleotide catabolism/utilization pathways";
 .
 gp:GenomeProperty_4055
 	a	:GenomeProperty;
 	:name	"4055";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nucleotide excision repair";
 .
 gp:GenomeProperty_55200
 	a	:GenomeProperty;
 	:name	"55200";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"nucleotide excision repair, alternative pathway";
 .
 gp:GenomeProperty_64534
 	a	:GenomeProperty;
 	:name	"64534";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"number of ambiguous nucleotide characters";
 .
 gp:GenomeProperty_58283
 	a	:GenomeProperty;
 	:name	"58283";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"obligate intracellular growth";
 .
 gp:GenomeProperty_58280
 	a	:GenomeProperty;
 	:name	"58280";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"obligate mutualist";
 .
 gp:GenomeProperty_58277
 	a	:GenomeProperty;
 	:name	"58277";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"opportunistic pathogen";
 .
 gp:GenomeProperty_2024
 	a	:GenomeProperty;
 	:name	"2024";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"optimal growth temperature (centigrade)";
 .
 gp:GenomeProperty_2023
 	a	:GenomeProperty;
 	:name	"2023";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"optimal pH";
 .
 gp:GenomeProperty_2025
 	a	:GenomeProperty;
 	:name	"2025";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"optimum salinity (%)";
 .
 gp:GenomeProperty_4021
 	a	:GenomeProperty;
 	:name	"4021";
 	:type	"taxonomy";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order";
 .
 gp:GenomeProperty_58123
 	a	:GenomeProperty;
 	:name	"58123";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Acholeplasmatales";
 .
 gp:GenomeProperty_58124
 	a	:GenomeProperty;
 	:name	"58124";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Acidithiobacillales";
 .
 gp:GenomeProperty_58080
 	a	:GenomeProperty;
 	:name	"58080";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Acidobacteriales";
 .
 gp:GenomeProperty_58077
 	a	:GenomeProperty;
 	:name	"58077";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Actinomycetales";
 .
 gp:GenomeProperty_58053
 	a	:GenomeProperty;
 	:name	"58053";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Aeromonadales";
 .
 gp:GenomeProperty_58091
 	a	:GenomeProperty;
 	:name	"58091";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Alteromonadales";
 .
 gp:GenomeProperty_58103
 	a	:GenomeProperty;
 	:name	"58103";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Aquificales";
 .
 gp:GenomeProperty_58088
 	a	:GenomeProperty;
 	:name	"58088";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Archaeoglobales";
 .
 gp:GenomeProperty_58078
 	a	:GenomeProperty;
 	:name	"58078";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Bacillales";
 .
 gp:GenomeProperty_58117
 	a	:GenomeProperty;
 	:name	"58117";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Bacteroidales";
 .
 gp:GenomeProperty_58112
 	a	:GenomeProperty;
 	:name	"58112";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Bdellovibrionales";
 .
 gp:GenomeProperty_58076
 	a	:GenomeProperty;
 	:name	"58076";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Bifidobacteriales";
 .
 gp:GenomeProperty_58052
 	a	:GenomeProperty;
 	:name	"58052";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Burkholderiales";
 .
 gp:GenomeProperty_58093
 	a	:GenomeProperty;
 	:name	"58093";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Campylobacterales";
 .
 gp:GenomeProperty_58056
 	a	:GenomeProperty;
 	:name	"58056";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Cardiobacteriales";
 .
 gp:GenomeProperty_58092
 	a	:GenomeProperty;
 	:name	"58092";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Caulobacterales";
 .
 gp:GenomeProperty_58114
 	a	:GenomeProperty;
 	:name	"58114";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Chlamydiales";
 .
 gp:GenomeProperty_58064
 	a	:GenomeProperty;
 	:name	"58064";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Chlorobiales";
 .
 gp:GenomeProperty_58071
 	a	:GenomeProperty;
 	:name	"58071";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Chloroflexales";
 .
 gp:GenomeProperty_58086
 	a	:GenomeProperty;
 	:name	"58086";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Chroococcales";
 .
 gp:GenomeProperty_58061
 	a	:GenomeProperty;
 	:name	"58061";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Chrysiogenales";
 .
 gp:GenomeProperty_58089
 	a	:GenomeProperty;
 	:name	"58089";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Clostridiales";
 .
 gp:GenomeProperty_58067
 	a	:GenomeProperty;
 	:name	"58067";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Deinococcales";
 .
 gp:GenomeProperty_58121
 	a	:GenomeProperty;
 	:name	"58121";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Desulfobacterales";
 .
 gp:GenomeProperty_58062
 	a	:GenomeProperty;
 	:name	"58062";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Desulfovibrionales";
 .
 gp:GenomeProperty_58099
 	a	:GenomeProperty;
 	:name	"58099";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Desulfurococcales";
 .
 gp:GenomeProperty_58107
 	a	:GenomeProperty;
 	:name	"58107";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Desulfuromonadales";
 .
 gp:GenomeProperty_58060
 	a	:GenomeProperty;
 	:name	"58060";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Dictyoglomales";
 .
 gp:GenomeProperty_58073
 	a	:GenomeProperty;
 	:name	"58073";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Enterobacteriales";
 .
 gp:GenomeProperty_58101
 	a	:GenomeProperty;
 	:name	"58101";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Fibrobacterales";
 .
 gp:GenomeProperty_58106
 	a	:GenomeProperty;
 	:name	"58106";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Fusobacteriales";
 .
 gp:GenomeProperty_58068
 	a	:GenomeProperty;
 	:name	"58068";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Halobacteriales";
 .
 gp:GenomeProperty_58070
 	a	:GenomeProperty;
 	:name	"58070";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Lactobacillales";
 .
 gp:GenomeProperty_58069
 	a	:GenomeProperty;
 	:name	"58069";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Legionellales";
 .
 gp:GenomeProperty_58100
 	a	:GenomeProperty;
 	:name	"58100";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Magnetococcus";
 .
 gp:GenomeProperty_58095
 	a	:GenomeProperty;
 	:name	"58095";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Methanobacterales";
 .
 gp:GenomeProperty_58082
 	a	:GenomeProperty;
 	:name	"58082";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Methanococcales";
 .
 gp:GenomeProperty_58113
 	a	:GenomeProperty;
 	:name	"58113";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Methanopyrales";
 .
 gp:GenomeProperty_58085
 	a	:GenomeProperty;
 	:name	"58085";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Methanosarcinales";
 .
 gp:GenomeProperty_58090
 	a	:GenomeProperty;
 	:name	"58090";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Methylococcales";
 .
 gp:GenomeProperty_58059
 	a	:GenomeProperty;
 	:name	"58059";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Mycoplasmatales";
 .
 gp:GenomeProperty_58109
 	a	:GenomeProperty;
 	:name	"58109";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Myxococcales";
 .
 gp:GenomeProperty_58079
 	a	:GenomeProperty;
 	:name	"58079";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Neisseriales";
 .
 gp:GenomeProperty_58084
 	a	:GenomeProperty;
 	:name	"58084";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Nitrosomonadales";
 .
 gp:GenomeProperty_58119
 	a	:GenomeProperty;
 	:name	"58119";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Nostocales";
 .
 gp:GenomeProperty_58065
 	a	:GenomeProperty;
 	:name	"58065";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Pasteurellales";
 .
 gp:GenomeProperty_58122
 	a	:GenomeProperty;
 	:name	"58122";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Planctomycetales";
 .
 gp:GenomeProperty_58097
 	a	:GenomeProperty;
 	:name	"58097";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Prochlorophytes";
 .
 gp:GenomeProperty_58094
 	a	:GenomeProperty;
 	:name	"58094";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Pseudomonadales";
 .
 gp:GenomeProperty_58118
 	a	:GenomeProperty;
 	:name	"58118";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Ralstoniales";
 .
 gp:GenomeProperty_58074
 	a	:GenomeProperty;
 	:name	"58074";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Rhizobales";
 .
 gp:GenomeProperty_58057
 	a	:GenomeProperty;
 	:name	"58057";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Rhizobiales";
 .
 gp:GenomeProperty_58104
 	a	:GenomeProperty;
 	:name	"58104";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Rhodobacterales";
 .
 gp:GenomeProperty_58066
 	a	:GenomeProperty;
 	:name	"58066";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Rhodocyclales";
 .
 gp:GenomeProperty_58111
 	a	:GenomeProperty;
 	:name	"58111";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Rickettsiales";
 .
 gp:GenomeProperty_58102
 	a	:GenomeProperty;
 	:name	"58102";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Sphingobacteriales";
 .
 gp:GenomeProperty_58054
 	a	:GenomeProperty;
 	:name	"58054";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Sphingomonadales";
 .
 gp:GenomeProperty_58096
 	a	:GenomeProperty;
 	:name	"58096";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Spirochaetales";
 .
 gp:GenomeProperty_58116
 	a	:GenomeProperty;
 	:name	"58116";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Sulfolobales";
 .
 gp:GenomeProperty_58110
 	a	:GenomeProperty;
 	:name	"58110";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Symbiobacterium";
 .
 gp:GenomeProperty_58108
 	a	:GenomeProperty;
 	:name	"58108";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Thermales";
 .
 gp:GenomeProperty_58055
 	a	:GenomeProperty;
 	:name	"58055";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Thermoanaerobacteriales";
 .
 gp:GenomeProperty_58083
 	a	:GenomeProperty;
 	:name	"58083";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Thermococcales";
 .
 gp:GenomeProperty_58105
 	a	:GenomeProperty;
 	:name	"58105";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Thermomicrobiales";
 .
 gp:GenomeProperty_58075
 	a	:GenomeProperty;
 	:name	"58075";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Thermoplasmatales";
 .
 gp:GenomeProperty_58098
 	a	:GenomeProperty;
 	:name	"58098";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Thermoproteales";
 .
 gp:GenomeProperty_58063
 	a	:GenomeProperty;
 	:name	"58063";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Thermotogales";
 .
 gp:GenomeProperty_58081
 	a	:GenomeProperty;
 	:name	"58081";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Thiotrichales";
 .
 gp:GenomeProperty_58058
 	a	:GenomeProperty;
 	:name	"58058";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Verrucomicrobiales";
 .
 gp:GenomeProperty_58120
 	a	:GenomeProperty;
 	:name	"58120";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Vibrionales";
 .
 gp:GenomeProperty_58072
 	a	:GenomeProperty;
 	:name	"58072";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- Xanthomonadales";
 .
 gp:GenomeProperty_58087
 	a	:GenomeProperty;
 	:name	"58087";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- unclassified Gammaproteobacteria";
 .
 gp:GenomeProperty_58115
 	a	:GenomeProperty;
 	:name	"58115";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"order-- unclassified chloroflexi";
 .
 gp:GenomeProperty_4060
 	a	:GenomeProperty;
 	:name	"4060";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ornithine biosynthesis from glutamate, acetylated branch";
 .
 gp:GenomeProperty_57255
 	a	:GenomeProperty;
 	:name	"57255";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"osmolyte biosynthesis";
 .
 gp:GenomeProperty_12
 	a	:GenomeProperty;
 	:name	"12";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"outer membrane";
 .
 gp:GenomeProperty_60453
 	a	:GenomeProperty;
 	:name	"60453";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"outer membrane protein assembly complex";
 .
 gp:GenomeProperty_60446
 	a	:GenomeProperty;
 	:name	"60446";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"oxalate degradation";
 .
 gp:GenomeProperty_13
 	a	:GenomeProperty;
 	:name	"13";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"oxygen requirement";
 .
 gp:GenomeProperty_4066
 	a	:GenomeProperty;
 	:name	"4066";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pantothenate biosynthesis from aspartate and 2-oxoisovalerate";
 .
 gp:GenomeProperty_60487
 	a	:GenomeProperty;
 	:name	"60487";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"para-aminobenzoic acid (PABA) biosynthesis from chorismate";
 .
 gp:GenomeProperty_58274
 	a	:GenomeProperty;
 	:name	"58274";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pathogen";
 .
 gp:GenomeProperty_2014
 	a	:GenomeProperty;
 	:name	"2014";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pathogen of plants";
 .
 gp:GenomeProperty_4062
 	a	:GenomeProperty;
 	:name	"4062";
 	:type	"pathway";
-	:threshold	4;
+	:threshold	"4";
 	:property	"pentose phosphate cycle";
 .
 gp:GenomeProperty_60391
 	a	:GenomeProperty;
 	:name	"60391";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"peptide chain release operon, RctB-like/PrfH";
 .
 gp:GenomeProperty_39147
 	a	:GenomeProperty;
 	:name	"39147";
 	:type	"metapath";
-	:threshold	2;
+	:threshold	"2";
 	:property	"peptidoglycan(murein) biosynthesis";
 .
 gp:GenomeProperty_51178
 	a	:GenomeProperty;
 	:name	"51178";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"periplasmic nitrate reductase";
 .
 gp:GenomeProperty_64511
 	a	:GenomeProperty;
 	:name	"64511";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"petrobactin biosynthesis";
 .
 gp:GenomeProperty_58374
 	a	:GenomeProperty;
 	:name	"58374";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phage shock protein regulon";
 .
 gp:GenomeProperty_53186
 	a	:GenomeProperty;
 	:name	"53186";
 	:type	"guild";
-	:threshold	1;
+	:threshold	"1";
 	:property	"phage-- major features";
 .
 gp:GenomeProperty_53188
 	a	:GenomeProperty;
 	:name	"53188";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"phenylacetic acid catabolism";
 .
 gp:GenomeProperty_2021
 	a	:GenomeProperty;
 	:name	"2021";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phenylalanine biosynthesis from chorismate";
 .
 gp:GenomeProperty_51167
 	a	:GenomeProperty;
 	:name	"51167";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phosphate ABC transporter (pstSCAB-phoU)";
 .
 gp:GenomeProperty_57228
 	a	:GenomeProperty;
 	:name	"57228";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phosphonate catabolism";
 .
 gp:GenomeProperty_57222
 	a	:GenomeProperty;
 	:name	"57222";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phosphonates ABC transport";
 .
 gp:GenomeProperty_57215
 	a	:GenomeProperty;
 	:name	"57215";
 	:type	"system";
-	:threshold	2;
+	:threshold	"2";
 	:property	"phosphonates C-P lyase system";
 .
 gp:GenomeProperty_60452
 	a	:GenomeProperty;
 	:name	"60452";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phosphonoacetaldehyde biosynthesis from phosphoenolpyruvate";
 .
 gp:GenomeProperty_57229
 	a	:GenomeProperty;
 	:name	"57229";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phosphorus metabolism";
 .
 gp:GenomeProperty_2009
 	a	:GenomeProperty;
 	:name	"2009";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"photosynthesis";
 .
 gp:GenomeProperty_57288
 	a	:GenomeProperty;
 	:name	"57288";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"photosynthetic cofactor biosynthesis";
 .
 gp:GenomeProperty_60388
 	a	:GenomeProperty;
 	:name	"60388";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"photosynthetic reaction center, alphaproteobacterial type";
 .
 gp:GenomeProperty_60386
 	a	:GenomeProperty;
 	:name	"60386";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"photosystem I";
 .
 gp:GenomeProperty_60387
 	a	:GenomeProperty;
 	:name	"60387";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"photosystem II";
 .
 gp:GenomeProperty_58334
 	a	:GenomeProperty;
 	:name	"58334";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phototroph";
 .
 gp:GenomeProperty_4019
 	a	:GenomeProperty;
 	:name	"4019";
 	:type	"taxonomy";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum";
 .
 gp:GenomeProperty_58140
 	a	:GenomeProperty;
 	:name	"58140";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Acidobacteria";
 .
 gp:GenomeProperty_58134
 	a	:GenomeProperty;
 	:name	"58134";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Actinobacteria";
 .
 gp:GenomeProperty_58133
 	a	:GenomeProperty;
 	:name	"58133";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Aquificae";
 .
 gp:GenomeProperty_58138
 	a	:GenomeProperty;
 	:name	"58138";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Bacteroidetes";
 .
 gp:GenomeProperty_58132
 	a	:GenomeProperty;
 	:name	"58132";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Chlamydiae";
 .
 gp:GenomeProperty_58146
 	a	:GenomeProperty;
 	:name	"58146";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Chlorobi";
 .
 gp:GenomeProperty_58144
 	a	:GenomeProperty;
 	:name	"58144";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Chloroflexi";
 .
 gp:GenomeProperty_58125
 	a	:GenomeProperty;
 	:name	"58125";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Chrysiogenetes";
 .
 gp:GenomeProperty_58128
 	a	:GenomeProperty;
 	:name	"58128";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Crenarchaeota";
 .
 gp:GenomeProperty_58126
 	a	:GenomeProperty;
 	:name	"58126";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Cyanobacteria";
 .
 gp:GenomeProperty_58135
 	a	:GenomeProperty;
 	:name	"58135";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Deinococcus-Thermus";
 .
 gp:GenomeProperty_58137
 	a	:GenomeProperty;
 	:name	"58137";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Dictyoglomi";
 .
 gp:GenomeProperty_58141
 	a	:GenomeProperty;
 	:name	"58141";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Euryarchaeota";
 .
 gp:GenomeProperty_58130
 	a	:GenomeProperty;
 	:name	"58130";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Fibrobacteres";
 .
 gp:GenomeProperty_58143
 	a	:GenomeProperty;
 	:name	"58143";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Firmicutes";
 .
 gp:GenomeProperty_58127
 	a	:GenomeProperty;
 	:name	"58127";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Fusobacteria";
 .
 gp:GenomeProperty_58142
 	a	:GenomeProperty;
 	:name	"58142";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Planctomycetes";
 .
 gp:GenomeProperty_58129
 	a	:GenomeProperty;
 	:name	"58129";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Proteobacteria";
 .
 gp:GenomeProperty_58131
 	a	:GenomeProperty;
 	:name	"58131";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Spirochaetes";
 .
 gp:GenomeProperty_58145
 	a	:GenomeProperty;
 	:name	"58145";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Thermomicrobia";
 .
 gp:GenomeProperty_58139
 	a	:GenomeProperty;
 	:name	"58139";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Thermotogae";
 .
 gp:GenomeProperty_58136
 	a	:GenomeProperty;
 	:name	"58136";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"phylum-- Verrucomicrobia";
 .
 gp:GenomeProperty_58255
 	a	:GenomeProperty;
 	:name	"58255";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pig (Sus) associated niche";
 .
 gp:GenomeProperty_58224
 	a	:GenomeProperty;
 	:name	"58224";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"plant (Viridiplantae) associated niche";
 .
 gp:GenomeProperty_58240
 	a	:GenomeProperty;
 	:name	"58240";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"plant fruit";
 .
 gp:GenomeProperty_58239
 	a	:GenomeProperty;
 	:name	"58239";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"plant leaf";
 .
 gp:GenomeProperty_58232
 	a	:GenomeProperty;
 	:name	"58232";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"plant root nodule";
 .
 gp:GenomeProperty_66550
 	a	:GenomeProperty;
 	:name	"66550";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"poly(gamma-glutamic acid)";
 .
 gp:GenomeProperty_66634
 	a	:GenomeProperty;
 	:name	"66634";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"poly-beta-1,6 N-acetyl-D-glucosamine system, IcaADBC type";
 .
 gp:GenomeProperty_66635
 	a	:GenomeProperty;
 	:name	"66635";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"poly-beta-1,6 N-acetyl-D-glucosamine system, PgaABCD type";
 .
 gp:GenomeProperty_58372
 	a	:GenomeProperty;
 	:name	"58372";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"polyamine ABC transporter";
 .
 gp:GenomeProperty_2037
 	a	:GenomeProperty;
 	:name	"2037";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"polyhydroxyalkanoic acids";
 .
 gp:GenomeProperty_14
 	a	:GenomeProperty;
 	:name	"14";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"polyketide biosynthesis, type I";
 .
 gp:GenomeProperty_15
 	a	:GenomeProperty;
 	:name	"15";
 	:type	"test";
-	:threshold	0;
+	:threshold	"0";
 	:property	"polyketide biosynthesis, type II";
 .
 gp:GenomeProperty_66568
 	a	:GenomeProperty;
 	:name	"66568";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"polyphosphate kinase/exopolyphosphatase system";
 .
 gp:GenomeProperty_58189
 	a	:GenomeProperty;
 	:name	"58189";
 	:type	"operon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"polysaccharide degradation operons";
 .
 gp:GenomeProperty_60405
 	a	:GenomeProperty;
 	:name	"60405";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"preQ0 biosynthesis from GTP";
 .
 gp:GenomeProperty_58260
 	a	:GenomeProperty;
 	:name	"58260";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"primate associated niche";
 .
 gp:GenomeProperty_57283
 	a	:GenomeProperty;
 	:name	"57283";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"prokaryotic N-terminal cleavage/methylation, type IV pilin-like";
 .
 gp:GenomeProperty_4052
 	a	:GenomeProperty;
 	:name	"4052";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"proline biosynthesis from glutamate";
 .
 gp:GenomeProperty_2032
 	a	:GenomeProperty;
 	:name	"2032";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"prophage regions";
 .
 gp:GenomeProperty_57226
 	a	:GenomeProperty;
 	:name	"57226";
 	:type	"summary";
-	:threshold	0;
+	:threshold	"0";
 	:property	"propionyl-CoA catabolism";
 .
 gp:GenomeProperty_57227
 	a	:GenomeProperty;
 	:name	"57227";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"propionyl-CoA catabolism via methylcitric acid";
 .
 gp:GenomeProperty_66624
 	a	:GenomeProperty;
 	:name	"66624";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"proposed F420-0 transporter";
 .
 gp:GenomeProperty_64523
 	a	:GenomeProperty;
 	:name	"64523";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"proposed N-acetyl sugar amidation module WbuXYZ";
 .
 gp:GenomeProperty_60464
 	a	:GenomeProperty;
 	:name	"60464";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"proposed phosphonate catabolism pathway HpnWXZ";
 .
 gp:GenomeProperty_66562
 	a	:GenomeProperty;
 	:name	"66562";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"proteasome, bacterial";
 .
 gp:GenomeProperty_66561
 	a	:GenomeProperty;
 	:name	"66561";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"proteasome-targeting modification by pupylation";
 .
 gp:GenomeProperty_4064
 	a	:GenomeProperty;
 	:name	"4064";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein average length";
 .
 gp:GenomeProperty_51175
 	a	:GenomeProperty;
 	:name	"51175";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein biosynthesis";
 .
 gp:GenomeProperty_57289
 	a	:GenomeProperty;
 	:name	"57289";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein degradation";
 .
 gp:GenomeProperty_57236
 	a	:GenomeProperty;
 	:name	"57236";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein folding";
 .
 gp:GenomeProperty_57235
 	a	:GenomeProperty;
 	:name	"57235";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein metabolism";
 .
 gp:GenomeProperty_4016
 	a	:GenomeProperty;
 	:name	"4016";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein modification, prosthetic groups and cofactors";
 .
 gp:GenomeProperty_57290
 	a	:GenomeProperty;
 	:name	"57290";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein repair";
 .
 gp:GenomeProperty_66573
 	a	:GenomeProperty;
 	:name	"66573";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein sorting system, KxYKxGKxW class";
 .
 gp:GenomeProperty_57313
 	a	:GenomeProperty;
 	:name	"57313";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein sorting system, PEP-CTERM/exosortase class";
 .
 gp:GenomeProperty_58353
 	a	:GenomeProperty;
 	:name	"58353";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein sorting system, YSIRK/GS class";
 .
 gp:GenomeProperty_66587
 	a	:GenomeProperty;
 	:name	"66587";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein sorting system, proteobacterial dedicated sortase type";
 .
 gp:GenomeProperty_60395
 	a	:GenomeProperty;
 	:name	"60395";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein sorting system, putative, exosortase-related";
 .
 gp:GenomeProperty_58351
 	a	:GenomeProperty;
 	:name	"58351";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein sorting system, sortase type, LPXTG/SrtA class";
 .
 gp:GenomeProperty_60390
 	a	:GenomeProperty;
 	:name	"60390";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein sorting system, sortase type, SrtB class";
 .
 gp:GenomeProperty_49161
 	a	:GenomeProperty;
 	:name	"49161";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protein transport";
 .
 gp:GenomeProperty_58201
 	a	:GenomeProperty;
 	:name	"58201";
 	:type	"guild";
-	:threshold	1;
+	:threshold	"1";
 	:property	"protein-coding palindromic elements";
 .
 gp:GenomeProperty_57312
 	a	:GenomeProperty;
 	:name	"57312";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"proteins with local high density of single amino acids";
 .
 gp:GenomeProperty_57261
 	a	:GenomeProperty;
 	:name	"57261";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protocatechuate degradation to beta-ketoadipate";
 .
 gp:GenomeProperty_55198
 	a	:GenomeProperty;
 	:name	"55198";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protoheme from protoporphyrin IX";
 .
 gp:GenomeProperty_55197
 	a	:GenomeProperty;
 	:name	"55197";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"protoporphyrin IX biosynthesis from uroporphyrinogen III";
 .
 gp:GenomeProperty_58316
 	a	:GenomeProperty;
 	:name	"58316";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"psychrophile";
 .
 gp:GenomeProperty_58317
 	a	:GenomeProperty;
 	:name	"58317";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"psychrotrophe (facultative psychrophile)";
 .
 gp:GenomeProperty_4051
 	a	:GenomeProperty;
 	:name	"4051";
 	:type	"pathway";
-	:threshold	4;
+	:threshold	"4";
 	:property	"purine (inosine-5'-phosphate) biosynthesis from ribose-5-phosphate";
 .
 gp:GenomeProperty_60427
 	a	:GenomeProperty;
 	:name	"60427";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"purine catabolism via urate, xanthine and allantoin";
 .
 gp:GenomeProperty_66549
 	a	:GenomeProperty;
 	:name	"66549";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"putative Na--solute symporter two-gene cassette";
 .
 gp:GenomeProperty_58371
 	a	:GenomeProperty;
 	:name	"58371";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"putrescine biosynthesis";
 .
 gp:GenomeProperty_58368
 	a	:GenomeProperty;
 	:name	"58368";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"putrescine biosynthesis from arginine utilizing agmatinase";
 .
 gp:GenomeProperty_58369
 	a	:GenomeProperty;
 	:name	"58369";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"putrescine biosynthesis from arginine via ornithine";
 .
 gp:GenomeProperty_58370
 	a	:GenomeProperty;
 	:name	"58370";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"putrescine biosynthesis from glutamate via ornithine";
 .
 gp:GenomeProperty_58373
 	a	:GenomeProperty;
 	:name	"58373";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"putrescine degradation to 4-aminobutyrate";
 .
 gp:GenomeProperty_60488
 	a	:GenomeProperty;
 	:name	"60488";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"putrescine degradation to GABA via gamma-glutamylation";
 .
 gp:GenomeProperty_64504
 	a	:GenomeProperty;
 	:name	"64504";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pyochelin biosynthesis";
 .
 gp:GenomeProperty_66591
 	a	:GenomeProperty;
 	:name	"66591";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pyridoxal phosphate biosynthesis, Pdx1/Pdx2 pathway";
 .
 gp:GenomeProperty_66590
 	a	:GenomeProperty;
 	:name	"66590";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pyridoxal phosphate biosynthesis, PdxA/PdxJ pathway";
 .
 gp:GenomeProperty_49169
 	a	:GenomeProperty;
 	:name	"49169";
 	:type	"pathway";
-	:threshold	4;
+	:threshold	"4";
 	:property	"pyrimidine (uridine-5'-phosphate) de novo biosynthesis";
 .
 gp:GenomeProperty_66541
 	a	:GenomeProperty;
 	:name	"66541";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pyrimidine utilization  operon, RutABCDEFGR";
 .
 gp:GenomeProperty_4089
 	a	:GenomeProperty;
 	:name	"4089";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pyrrolysine";
 .
 gp:GenomeProperty_60483
 	a	:GenomeProperty;
 	:name	"60483";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pyruvate conversion to propionate, anaerobic, FAD/NAD-regenerating";
 .
 gp:GenomeProperty_57260
 	a	:GenomeProperty;
 	:name	"57260";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"pyruvate fermentation to acetoin";
 .
 gp:GenomeProperty_4008
 	a	:GenomeProperty;
 	:name	"4008";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"quantitative content";
 .
 gp:GenomeProperty_60403
 	a	:GenomeProperty;
 	:name	"60403";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"queuosine (Q-tRNA) biosynthesis from preQ0";
 .
 gp:GenomeProperty_66630
 	a	:GenomeProperty;
 	:name	"66630";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"quinohemoprotein amine dehydrogenase";
 .
 gp:GenomeProperty_66577
 	a	:GenomeProperty;
 	:name	"66577";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"quorum-sensing, Bacillus PlcR-PapR system";
 .
 gp:GenomeProperty_60485
 	a	:GenomeProperty;
 	:name	"60485";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"quorum-sensing, autoinducer-2 system";
 .
 gp:GenomeProperty_66645
 	a	:GenomeProperty;
 	:name	"66645";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"radical SAM Actinobacterial system";
 .
 gp:GenomeProperty_66648
 	a	:GenomeProperty;
 	:name	"66648";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"radical SAM Y_X(10)_GDL system";
 .
 gp:GenomeProperty_66644
 	a	:GenomeProperty;
 	:name	"66644";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"radical SAM/uncharacterized protein TIGR03936 system";
 .
 gp:GenomeProperty_66631
 	a	:GenomeProperty;
 	:name	"66631";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"radical SAM/uracil DNA glycosylase system";
 .
 gp:GenomeProperty_58331
 	a	:GenomeProperty;
 	:name	"58331";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"radiotolerant";
 .
 gp:GenomeProperty_58259
 	a	:GenomeProperty;
 	:name	"58259";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"rat (Rattus) associated niche";
 .
 gp:GenomeProperty_55192
 	a	:GenomeProperty;
 	:name	"55192";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"recBCD pathway";
 .
 gp:GenomeProperty_58216
 	a	:GenomeProperty;
 	:name	"58216";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"recFOR recombination pathway";
 .
 gp:GenomeProperty_49164
 	a	:GenomeProperty;
 	:name	"49164";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"reduction of oxidized methionine";
 .
 gp:GenomeProperty_58276
 	a	:GenomeProperty;
 	:name	"58276";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"regulatory systems";
 .
 gp:GenomeProperty_58245
 	a	:GenomeProperty;
 	:name	"58245";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"relationship to host cell";
 .
 gp:GenomeProperty_24139
 	a	:GenomeProperty;
 	:name	"24139";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"release factor 2 programmed frameshift";
 .
 gp:GenomeProperty_58212
 	a	:GenomeProperty;
 	:name	"58212";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"repABC-type alpha-proteobacterial replicon(s)";
 .
 gp:GenomeProperty_64535
 	a	:GenomeProperty;
 	:name	"64535";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"replication initiation, bacterial";
 .
 gp:GenomeProperty_58265
 	a	:GenomeProperty;
 	:name	"58265";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"reptile (Reptilia) associated niche";
 .
 gp:GenomeProperty_24143
 	a	:GenomeProperty;
 	:name	"24143";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"resistance to mercury";
 .
 gp:GenomeProperty_58362
 	a	:GenomeProperty;
 	:name	"58362";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"respiratory nitrate reductase";
 .
 gp:GenomeProperty_66602
 	a	:GenomeProperty;
 	:name	"66602";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"response to acid (low pH) environment";
 .
 gp:GenomeProperty_66592
 	a	:GenomeProperty;
 	:name	"66592";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"response to external environment";
 .
 gp:GenomeProperty_58187
 	a	:GenomeProperty;
 	:name	"58187";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"response to stress";
 .
 gp:GenomeProperty_58180
 	a	:GenomeProperty;
 	:name	"58180";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"restriction enzyme system, type I";
 .
 gp:GenomeProperty_2016
 	a	:GenomeProperty;
 	:name	"2016";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"reverse TCA cycle";
 .
 gp:GenomeProperty_58182
 	a	:GenomeProperty;
 	:name	"58182";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"rhamnose catabolism";
 .
 gp:GenomeProperty_66540
 	a	:GenomeProperty;
 	:name	"66540";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"rho-dependent termination";
 .
 gp:GenomeProperty_4065
 	a	:GenomeProperty;
 	:name	"4065";
 	:type	"manual";
-	:threshold	0;
+	:threshold	"0";
 	:property	"riboflavin biosynthesis";
 .
 gp:GenomeProperty_4053
 	a	:GenomeProperty;
 	:name	"4053";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"riboflavin, FAD and FMN from GTP and ribulose-5-P";
 .
 gp:GenomeProperty_57275
 	a	:GenomeProperty;
 	:name	"57275";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ribonucleotide reduction";
 .
 gp:GenomeProperty_64531
 	a	:GenomeProperty;
 	:name	"64531";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ribosome biogenesis proteins, bacteria";
 .
 gp:GenomeProperty_49156
 	a	:GenomeProperty;
 	:name	"49156";
 	:type	"system";
-	:threshold	10;
+	:threshold	"10";
 	:property	"ribosome, bacterial, large subunit";
 .
 gp:GenomeProperty_49157
 	a	:GenomeProperty;
 	:name	"49157";
 	:type	"system";
-	:threshold	8;
+	:threshold	"8";
 	:property	"ribosome, bacterial, small subunit";
 .
 gp:GenomeProperty_60399
 	a	:GenomeProperty;
 	:name	"60399";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ribulose monophosphate pathway";
 .
 gp:GenomeProperty_58257
 	a	:GenomeProperty;
 	:name	"58257";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"rodent (Rodentia) associated niche";
 .
 gp:GenomeProperty_58272
 	a	:GenomeProperty;
 	:name	"58272";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"roundworm (Nematoda) associated niche";
 .
 gp:GenomeProperty_58252
 	a	:GenomeProperty;
 	:name	"58252";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ruminant (Ruminantia) associated niche";
 .
 gp:GenomeProperty_58241
 	a	:GenomeProperty;
 	:name	"58241";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ruminant (Ruminantia) rumen";
 .
 gp:GenomeProperty_51176
 	a	:GenomeProperty;
 	:name	"51176";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"ruvABC Holliday junction complex";
 .
 gp:GenomeProperty_60454
 	a	:GenomeProperty;
 	:name	"60454";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"selenium-dependent molybdenum hydroxylase system";
 .
 gp:GenomeProperty_16
 	a	:GenomeProperty;
 	:name	"16";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"selenocysteine system";
 .
 gp:GenomeProperty_64526
 	a	:GenomeProperty;
 	:name	"64526";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"selenocysteinyl-tRNA, PSTK/SepSecS pathway";
 .
 gp:GenomeProperty_60419
 	a	:GenomeProperty;
 	:name	"60419";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"selenouridine-containing tRNA";
 .
 gp:GenomeProperty_4007
 	a	:GenomeProperty;
 	:name	"4007";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"selfish genetic elements";
 .
 gp:GenomeProperty_58220
 	a	:GenomeProperty;
 	:name	"58220";
 	:type	"calculated";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sequenced plasmids";
 .
 gp:GenomeProperty_58254
 	a	:GenomeProperty;
 	:name	"58254";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sheep or goat (Caprinae) associated niche";
 .
 gp:GenomeProperty_64498
 	a	:GenomeProperty;
 	:name	"64498";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"siderophore biosynthesis";
 .
 gp:GenomeProperty_58361
 	a	:GenomeProperty;
 	:name	"58361";
 	:type	"guild";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sigma-70 systems";
 .
 gp:GenomeProperty_53183
 	a	:GenomeProperty;
 	:name	"53183";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"signal recognition system, bacterial";
 .
 gp:GenomeProperty_58341
 	a	:GenomeProperty;
 	:name	"58341";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"single complex oxygen reduction and quinone re-oxidation";
 .
 gp:GenomeProperty_51172
 	a	:GenomeProperty;
 	:name	"51172";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"siroheme biosynthesis from uroporphrinogen-III";
 .
 gp:GenomeProperty_58227
 	a	:GenomeProperty;
 	:name	"58227";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sites of growth within host";
 .
 gp:GenomeProperty_49162
 	a	:GenomeProperty;
 	:name	"49162";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"small molecule transport";
 .
 gp:GenomeProperty_58290
 	a	:GenomeProperty;
 	:name	"58290";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"soil associated niche";
 .
 gp:GenomeProperty_4024
 	a	:GenomeProperty;
 	:name	"4024";
 	:type	"taxonomy";
-	:threshold	0;
+	:threshold	"0";
 	:property	"species";
 .
 gp:GenomeProperty_55195
 	a	:GenomeProperty;
 	:name	"55195";
 	:type	"sgc_meta";
-	:threshold	0;
+	:threshold	"0";
 	:property	"spermidine biosynthesis from arginine (via agmatine)";
 .
 gp:GenomeProperty_58367
 	a	:GenomeProperty;
 	:name	"58367";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"spermidine biosynthesis from putrescine and S-adenosylmethionine";
 .
 gp:GenomeProperty_64519
 	a	:GenomeProperty;
 	:name	"64519";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sporadic pair TIGR03545/TIGR03546";
 .
 gp:GenomeProperty_58195
 	a	:GenomeProperty;
 	:name	"58195";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sporadically distributed four-gene operon";
 .
 gp:GenomeProperty_2031
 	a	:GenomeProperty;
 	:name	"2031";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"spore formation";
 .
 gp:GenomeProperty_64505
 	a	:GenomeProperty;
 	:name	"64505";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"staphylobactin biosynthesis";
 .
 gp:GenomeProperty_49168
 	a	:GenomeProperty;
 	:name	"49168";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"storage and structural polymer biosynthesis";
 .
 gp:GenomeProperty_39146
 	a	:GenomeProperty;
 	:name	"39146";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"storage polymer systems";
 .
 gp:GenomeProperty_24140
 	a	:GenomeProperty;
 	:name	"24140";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"sulfate reduction to sulfide, assimilatory";
 .
 gp:GenomeProperty_51168
 	a	:GenomeProperty;
 	:name	"51168";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sulfate/thiosulfate ABC transporter";
 .
 gp:GenomeProperty_58349
 	a	:GenomeProperty;
 	:name	"58349";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sulfite reductase complex, Salmonella/Clostridium type";
 .
 gp:GenomeProperty_66620
 	a	:GenomeProperty;
 	:name	"66620";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sulfopyruvate biosynthesis from phoshoenolpyruvate";
 .
 gp:GenomeProperty_66621
 	a	:GenomeProperty;
 	:name	"66621";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sulfopyruvate biosynthesis via L-cysteate";
 .
 gp:GenomeProperty_51174
 	a	:GenomeProperty;
 	:name	"51174";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"sulfur metabolism";
 .
 gp:GenomeProperty_6
 	a	:GenomeProperty;
 	:name	"6";
 	:type	"taxonomy";
-	:threshold	0;
+	:threshold	"0";
 	:property	"superkingdom";
 .
 gp:GenomeProperty_58176
 	a	:GenomeProperty;
 	:name	"58176";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"superkingdom-- Archaea";
 .
 gp:GenomeProperty_58177
 	a	:GenomeProperty;
 	:name	"58177";
 	:type	"virtual-taxon";
-	:threshold	0;
+	:threshold	"0";
 	:property	"superkingdom-- Bacteria";
 .
 gp:GenomeProperty_58213
 	a	:GenomeProperty;
 	:name	"58213";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"superoxide dismutase, nickel-type";
 .
 gp:GenomeProperty_60431
 	a	:GenomeProperty;
 	:name	"60431";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"tRNA U34 carboxymethylaminomethyl modification";
 .
 gp:GenomeProperty_57246
 	a	:GenomeProperty;
 	:name	"57246";
 	:type	"guild";
-	:threshold	1;
+	:threshold	"1";
 	:property	"tRNA aminoacylation";
 .
 gp:GenomeProperty_57247
 	a	:GenomeProperty;
 	:name	"57247";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"tRNA-Asn direct aminoacylation";
 .
 gp:GenomeProperty_51166
 	a	:GenomeProperty;
 	:name	"51166";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"tRNA-Gln direct aminoacylation";
 .
 gp:GenomeProperty_4009
 	a	:GenomeProperty;
 	:name	"4009";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"taxonomy";
 .
 gp:GenomeProperty_60455
 	a	:GenomeProperty;
 	:name	"60455";
 	:type	"test";
-	:threshold	0;
+	:threshold	"0";
 	:property	"temp_antiprofile_trial";
 .
 gp:GenomeProperty_64533
 	a	:GenomeProperty;
 	:name	"64533";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"temp_finisher";
 .
 gp:GenomeProperty_57281
 	a	:GenomeProperty;
 	:name	"57281";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"temp_type_IV_pilus";
 .
 gp:GenomeProperty_2026
 	a	:GenomeProperty;
 	:name	"2026";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"temperature environment";
 .
 gp:GenomeProperty_64530
 	a	:GenomeProperty;
 	:name	"64530";
 	:type	"test";
-	:threshold	0;
+	:threshold	"0";
 	:property	"temporary";
 .
 gp:GenomeProperty_24133
 	a	:GenomeProperty;
 	:name	"24133";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"test";
 .
 gp:GenomeProperty_57245
 	a	:GenomeProperty;
 	:name	"57245";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"test dihydroxyacetone kinase, PEP-dependent";
 .
 gp:GenomeProperty_66574
 	a	:GenomeProperty;
 	:name	"66574";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"test-TerC";
 .
 gp:GenomeProperty_66578
 	a	:GenomeProperty;
 	:name	"66578";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"test-hfq-vs-CRISPR";
 .
 gp:GenomeProperty_57220
 	a	:GenomeProperty;
 	:name	"57220";
 	:type	"pathema";
-	:threshold	0;
+	:threshold	"0";
 	:property	"testing";
 .
 gp:GenomeProperty_57223
 	a	:GenomeProperty;
 	:name	"57223";
 	:type	"pathema";
-	:threshold	0;
+	:threshold	"0";
 	:property	"testing123";
 .
 gp:GenomeProperty_2020
 	a	:GenomeProperty;
 	:name	"2020";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"tetrahydrofolate biosynthesis from GTP and PABA";
 .
 gp:GenomeProperty_57276
 	a	:GenomeProperty;
 	:name	"57276";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"tetrahydromethanopterin S-methyltransferase complex";
 .
 gp:GenomeProperty_58318
 	a	:GenomeProperty;
 	:name	"58318";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"thermophile";
 .
 gp:GenomeProperty_57249
 	a	:GenomeProperty;
 	:name	"57249";
 	:type	"summary";
-	:threshold	0;
+	:threshold	"0";
 	:property	"thiamin pyrophosphate (TPP) de novo biosynthesis";
 .
 gp:GenomeProperty_57240
 	a	:GenomeProperty;
 	:name	"57240";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"thiamine/TPP ABC transporter ThiBPQ";
 .
 gp:GenomeProperty_57242
 	a	:GenomeProperty;
 	:name	"57242";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"thiamine-- TPP from HMP-PP and HET-P";
 .
 gp:GenomeProperty_57238
 	a	:GenomeProperty;
 	:name	"57238";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"thiamine-- hydroxyethylthiazole from 1-deoxy-D-xylulose-5-phosphate, cysteine, either Tyr or Gly";
 .
 gp:GenomeProperty_57241
 	a	:GenomeProperty;
 	:name	"57241";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"thiamine-- hydroxymethylpyrimidine pyrophosphate from aminoimidazole ribotide";
 .
 gp:GenomeProperty_2022
 	a	:GenomeProperty;
 	:name	"2022";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"thiotemplate type non-ribosomal peptide biosynthesis";
 .
 gp:GenomeProperty_44146
 	a	:GenomeProperty;
 	:name	"44146";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"threonine biosynthesis from aspartate semialdehyde";
 .
 gp:GenomeProperty_53189
 	a	:GenomeProperty;
 	:name	"53189";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"tmRNA trans-translation system";
 .
 gp:GenomeProperty_4129
 	a	:GenomeProperty;
 	:name	"4129";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"transcription termination - antitermination Nus factors";
 .
 gp:GenomeProperty_55211
 	a	:GenomeProperty;
 	:name	"55211";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transcription-coupled nucleotide excision repair";
 .
 gp:GenomeProperty_58285
 	a	:GenomeProperty;
 	:name	"58285";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transient intracellular survival";
 .
 gp:GenomeProperty_60469
 	a	:GenomeProperty;
 	:name	"60469";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"translation elongation, bacterial";
 .
 gp:GenomeProperty_60468
 	a	:GenomeProperty;
 	:name	"60468";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"translation initiation, bacterial";
 .
 gp:GenomeProperty_60474
 	a	:GenomeProperty;
 	:name	"60474";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"translation termination, bacterial";
 .
 gp:GenomeProperty_58313
 	a	:GenomeProperty;
 	:name	"58313";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via casual, direct host-to-host contact";
 .
 gp:GenomeProperty_58312
 	a	:GenomeProperty;
 	:name	"58312";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via contact with soil";
 .
 gp:GenomeProperty_58307
 	a	:GenomeProperty;
 	:name	"58307";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via direct contact of host with host-independent reservoir";
 .
 gp:GenomeProperty_58297
 	a	:GenomeProperty;
 	:name	"58297";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via direct host-to-host contact";
 .
 gp:GenomeProperty_58301
 	a	:GenomeProperty;
 	:name	"58301";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via gastrointestinal (GI) tract";
 .
 gp:GenomeProperty_58311
 	a	:GenomeProperty;
 	:name	"58311";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via indirect host-to-host contact";
 .
 gp:GenomeProperty_58309
 	a	:GenomeProperty;
 	:name	"58309";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via ingestion";
 .
 gp:GenomeProperty_58314
 	a	:GenomeProperty;
 	:name	"58314";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via intimate host-to-host contact";
 .
 gp:GenomeProperty_58299
 	a	:GenomeProperty;
 	:name	"58299";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via lung tissue";
 .
 gp:GenomeProperty_58310
 	a	:GenomeProperty;
 	:name	"58310";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via non-congenital direct host-to-host contact";
 .
 gp:GenomeProperty_58302
 	a	:GenomeProperty;
 	:name	"58302";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via the genitourinary (GU) tract";
 .
 gp:GenomeProperty_58304
 	a	:GenomeProperty;
 	:name	"58304";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via the nasal passages";
 .
 gp:GenomeProperty_58303
 	a	:GenomeProperty;
 	:name	"58303";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via the oral cavity";
 .
 gp:GenomeProperty_58300
 	a	:GenomeProperty;
 	:name	"58300";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transmission via wounded dermal tissue";
 .
 gp:GenomeProperty_4012
 	a	:GenomeProperty;
 	:name	"4012";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"transport";
 .
 gp:GenomeProperty_57253
 	a	:GenomeProperty;
 	:name	"57253";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"trehalose biosynthesis, OtsAB pathway";
 .
 gp:GenomeProperty_57254
 	a	:GenomeProperty;
 	:name	"57254";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"trehalose biosynthesis, TreYZ pathway";
 .
 gp:GenomeProperty_57259
 	a	:GenomeProperty;
 	:name	"57259";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"trehalose utilization";
 .
 gp:GenomeProperty_58364
 	a	:GenomeProperty;
 	:name	"58364";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"trimethylamine N-oxide reductase system";
 .
 gp:GenomeProperty_2019
 	a	:GenomeProperty;
 	:name	"2019";
 	:type	"pathway";
-	:threshold	2;
+	:threshold	"2";
 	:property	"tryptophan biosynthesis from ribose-5-phosphate";
 .
 gp:GenomeProperty_60385
 	a	:GenomeProperty;
 	:name	"60385";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"tryptophan degradation to anthranilate";
 .
 gp:GenomeProperty_66588
 	a	:GenomeProperty;
 	:name	"66588";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"tryptophan tryptophylquinone modification of methylamine dehydrogenase";
 .
 gp:GenomeProperty_66580
 	a	:GenomeProperty;
 	:name	"66580";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"tungsten transport";
 .
 gp:GenomeProperty_2041
 	a	:GenomeProperty;
 	:name	"2041";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"type I secretion";
 .
 gp:GenomeProperty_58376
 	a	:GenomeProperty;
 	:name	"58376";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"type II restriction system,  Alw26I/Eco31I/Esp3I family";
 .
 gp:GenomeProperty_2035
 	a	:GenomeProperty;
 	:name	"2035";
 	:type	"system";
-	:threshold	1;
+	:threshold	"1";
 	:property	"type II secretion";
 .
 gp:GenomeProperty_2034
 	a	:GenomeProperty;
 	:name	"2034";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"type III secretion";
 .
 gp:GenomeProperty_2038
 	a	:GenomeProperty;
 	:name	"2038";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"type IV pilus";
 .
 gp:GenomeProperty_2036
 	a	:GenomeProperty;
 	:name	"2036";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"type IV secretion";
 .
 gp:GenomeProperty_60463
 	a	:GenomeProperty;
 	:name	"60463";
 	:type	"system";
-	:threshold	2;
+	:threshold	"2";
 	:property	"type VI secretion";
 .
 gp:GenomeProperty_66632
 	a	:GenomeProperty;
 	:name	"66632";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"type VII secretion, Actinobacteria form";
 .
 gp:GenomeProperty_66633
 	a	:GenomeProperty;
 	:name	"66633";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"type VII secretion, Firmicutes form";
 .
 gp:GenomeProperty_2027
 	a	:GenomeProperty;
 	:name	"2027";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"tyrosine biosynthesis from chorismate";
 .
 gp:GenomeProperty_14129
 	a	:GenomeProperty;
 	:name	"14129";
 	:type	"pathway";
-	:threshold	3;
+	:threshold	"3";
 	:property	"ubiquinone biosynthesis from chorismate, aerobic";
 .
 gp:GenomeProperty_58178
 	a	:GenomeProperty;
 	:name	"58178";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"uncharacterized gene pair TIGR02612/TIGR02613";
 .
 gp:GenomeProperty_58196
 	a	:GenomeProperty;
 	:name	"58196";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"uncharacterized gene pair TIGR02683/TIGR02684";
 .
 gp:GenomeProperty_58197
 	a	:GenomeProperty;
 	:name	"58197";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"uncharacterized gene pair TIGR02687/TIGR02688";
 .
 gp:GenomeProperty_60480
 	a	:GenomeProperty;
 	:name	"60480";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"uncharacterized methyltransferase-containing cassette";
 .
 gp:GenomeProperty_66596
 	a	:GenomeProperty;
 	:name	"66596";
 	:type	"null";
-	:threshold	0;
+	:threshold	"0";
 	:property	"uncharacterized protein pair with twin-arg and repeat";
 .
 gp:GenomeProperty_60415
 	a	:GenomeProperty;
 	:name	"60415";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"urate catabolism to allantoin";
 .
 gp:GenomeProperty_60471
 	a	:GenomeProperty;
 	:name	"60471";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"urea ABC transporter UrtABCDE";
 .
 gp:GenomeProperty_58206
 	a	:GenomeProperty;
 	:name	"58206";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"urea carboxylase/allophanate hydrolase pathway";
 .
 gp:GenomeProperty_66542
 	a	:GenomeProperty;
 	:name	"66542";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"urea utilization";
 .
 gp:GenomeProperty_2033
 	a	:GenomeProperty;
 	:name	"2033";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"urease";
 .
 gp:GenomeProperty_55196
 	a	:GenomeProperty;
 	:name	"55196";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"uroporhyrinogen III biosynthesis from 5-aminolevulinate";
 .
 gp:GenomeProperty_58186
 	a	:GenomeProperty;
 	:name	"58186";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"utilization of deoxynucleosides";
 .
 gp:GenomeProperty_44150
 	a	:GenomeProperty;
 	:name	"44150";
 	:type	"pathway";
-	:threshold	1;
+	:threshold	"1";
 	:property	"valine biosynthesis from pyruvate";
 .
 gp:GenomeProperty_58305
 	a	:GenomeProperty;
 	:name	"58305";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"vector borne transmission";
 .
 gp:GenomeProperty_58246
 	a	:GenomeProperty;
 	:name	"58246";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"vertebrate (Vertebrata) associated niche";
 .
 gp:GenomeProperty_64495
 	a	:GenomeProperty;
 	:name	"64495";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"very short patch repair";
 .
 gp:GenomeProperty_66551
 	a	:GenomeProperty;
 	:name	"66551";
 	:type	"pathway";
-	:threshold	0;
+	:threshold	"0";
 	:property	"violacein biosynthesis";
 .
 gp:GenomeProperty_4015
 	a	:GenomeProperty;
 	:name	"4015";
 	:type	"category";
-	:threshold	0;
+	:threshold	"0";
 	:property	"virulence";
 .
 gp:GenomeProperty_58295
 	a	:GenomeProperty;
 	:name	"58295";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"water borne transmission (direct contact)";
 .
 gp:GenomeProperty_58308
 	a	:GenomeProperty;
 	:name	"58308";
 	:type	"phenotypic";
-	:threshold	0;
+	:threshold	"0";
 	:property	"water borne transmission (ingestion)";
 .
 gp:GenomeProperty_66571
 	a	:GenomeProperty;
 	:name	"66571";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"weirdness";
 .
 gp:GenomeProperty_60425
 	a	:GenomeProperty;
 	:name	"60425";
 	:type	"metapath";
-	:threshold	0;
+	:threshold	"0";
 	:property	"xanthine catabolism to urate";
 .
 gp:GenomeProperty_58366
 	a	:GenomeProperty;
 	:name	"58366";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"xanthine dehydrogenase";
 .
 gp:GenomeProperty_60432
 	a	:GenomeProperty;
 	:name	"60432";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"xanthine dehydrogenase, bacillus type (pucABCDE)";
 .
 gp:GenomeProperty_60423
 	a	:GenomeProperty;
 	:name	"60423";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"xanthine utilization as a source of guanine-monophosphate (GMP)";
 .
 gp:GenomeProperty_64508
 	a	:GenomeProperty;
 	:name	"64508";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"xanthosine utilization system XapABR";
 .
 gp:GenomeProperty_58188
 	a	:GenomeProperty;
 	:name	"58188";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"xylan/xylobiose utilization (conversion to D-xylulose-5-phosphate)";
 .
 gp:GenomeProperty_64500
 	a	:GenomeProperty;
 	:name	"64500";
 	:type	"system";
-	:threshold	0;
+	:threshold	"0";
 	:property	"yersiniabactin biosynthesis";
 .
 gp:FeatureProperty_76
@@ -8622,6 +8643,46 @@ gp:FeatureProperty_63271
 	:name	"63271";
 	:required_by	gp:GenomeProperty_66650;
 .
+gp:FeatureProperty_63272
+	a	:FeatureProperty;
+	:name	"63272";
+	:required_by	gp:GenomeProperty_66651;
+.
+gp:FeatureProperty_63273
+	a	:FeatureProperty;
+	:name	"63273";
+	:required_by	gp:GenomeProperty_66651;
+.
+gp:FeatureProperty_63274
+	a	:FeatureProperty;
+	:name	"63274";
+	:required_by	gp:GenomeProperty_66651;
+.
+gp:FeatureProperty_63275
+	a	:FeatureProperty;
+	:name	"63275";
+	:required_by	gp:GenomeProperty_66651;
+.
+gp:FeatureProperty_63277
+	a	:FeatureProperty;
+	:name	"63277";
+	:required_by	gp:GenomeProperty_66652;
+.
+gp:FeatureProperty_63278
+	a	:FeatureProperty;
+	:name	"63278";
+	:required_by	gp:GenomeProperty_66652;
+.
+gp:FeatureProperty_63279
+	a	:FeatureProperty;
+	:name	"63279";
+	:required_by	gp:GenomeProperty_66653;
+.
+gp:FeatureProperty_63280
+	a	:FeatureProperty;
+	:name	"63280";
+	:required_by	gp:GenomeProperty_66653;
+.
 gp:FeatureProperty_15599
 	a	:FeatureProperty;
 	:name	"15599";
@@ -8911,6 +8972,11 @@ gp:FeatureProperty_35629
 	a	:FeatureProperty;
 	:name	"35629";
 	:required_by	gp:GenomeProperty_44151;
+.
+gp:FeatureProperty_63281
+	a	:FeatureProperty;
+	:name	"63281";
+	:part_of	gp:GenomeProperty_53182;
 .
 gp:FeatureProperty_35630
 	a	:FeatureProperty;
@@ -9850,7 +9916,7 @@ gp:FeatureProperty_46777
 gp:FeatureProperty_46778
 	a	:FeatureProperty;
 	:name	"46778";
-	:part_of	gp:GenomeProperty_53182;
+	:required_by	gp:GenomeProperty_53182;
 .
 gp:FeatureProperty_46779
 	a	:FeatureProperty;
@@ -12340,7 +12406,7 @@ gp:FeatureProperty_62890
 gp:FeatureProperty_63252
 	a	:FeatureProperty;
 	:name	"63252";
-	:required_by	gp:GenomeProperty_66645;
+	:part_of	gp:GenomeProperty_66645;
 .
 gp:FeatureProperty_63253
 	a	:FeatureProperty;
@@ -14346,6 +14412,11 @@ gp:FeatureProperty_63270
 	a	:FeatureProperty;
 	:name	"63270";
 	:required_by	gp:GenomeProperty_66650;
+.
+gp:FeatureProperty_63276
+	a	:FeatureProperty;
+	:name	"63276";
+	:required_by	gp:GenomeProperty_66645;
 .
 gp:FeatureProperty_53939
 	a	:FeatureProperty;
@@ -25790,6 +25861,12 @@ gp:FeatureProperty_TIGR01854
 	:type	"HMM";
 	:sufficient_for	gp:FeatureProperty_46778;
 .
+gp:FeatureProperty_PF06230
+	a	:FeatureProperty;
+	:name	"PF06230";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_46778;
+.
 gp:FeatureProperty_TIGR00682
 	a	:FeatureProperty;
 	:name	"TIGR00682";
@@ -35114,9 +35191,21 @@ gp:FeatureProperty_TIGR01455
 	:type	"HMM";
 	:sufficient_for	gp:FeatureProperty_54361;
 .
+gp:FeatureProperty_TIGR03990
+	a	:FeatureProperty;
+	:name	"TIGR03990";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_54361;
+.
 gp:FeatureProperty_TIGR01173
 	a	:FeatureProperty;
 	:name	"TIGR01173";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_54362;
+.
+gp:FeatureProperty_TIGR03991
+	a	:FeatureProperty;
+	:name	"TIGR03991";
 	:type	"HMM";
 	:sufficient_for	gp:FeatureProperty_54362;
 .
@@ -39463,4 +39552,34 @@ gp:FeatureProperty_TIGR03983
 	:name	"TIGR03983";
 	:type	"HMM";
 	:sufficient_for	gp:FeatureProperty_63270;
+.
+gp:FeatureProperty_TIGR03446
+	a	:FeatureProperty;
+	:name	"TIGR03446";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63273;
+.
+gp:FeatureProperty_TIGR03451
+	a	:FeatureProperty;
+	:name	"TIGR03451";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63273;
+.
+gp:FeatureProperty_TIGR03452
+	a	:FeatureProperty;
+	:name	"TIGR03452";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63274;
+.
+gp:FeatureProperty_TIGR03988
+	a	:FeatureProperty;
+	:name	"TIGR03988";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63275;
+.
+gp:FeatureProperty_TIGR03989
+	a	:FeatureProperty;
+	:name	"TIGR03989";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63276;
 .

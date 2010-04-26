@@ -104,11 +104,6 @@ public class Aruba {
 			debug = true;
 		}
 		String dbName = cmd.getOptionValue("database");
-		if (dbName == null) {
-			HelpFormatter f = new HelpFormatter();
-			f.printHelp(sampleCommand, options);
-			System.exit(1);
-		}
 
 		// Create an instance of our Aruba engine
 		Aruba aruba = new Aruba();
@@ -130,7 +125,7 @@ public class Aruba {
 		aruba.addDroolsFiles(cmd.getOptionValues("rule"));
 
 		// Add facts and rules for Genome Properties
-		if (cmd.hasOption("braingrab")) {
+		if (cmd.hasOption("genomeproperties")) {
 			aruba.addGenomeProperties();
 		}
 
@@ -265,6 +260,10 @@ public class Aruba {
 
 	private int addSmallGenome(String dbName) {
 
+		if (dbName == null) {
+			return 0;
+		}
+		
 		System.out.println("Loading facts from Small Genome database " + dbName + "...");
 		SmallGenomeDAOFactory sgFactory = new SmallGenomeDAOFactory(dbName);
 
