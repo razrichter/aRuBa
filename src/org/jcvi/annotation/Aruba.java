@@ -30,7 +30,8 @@ import org.jcvi.annotation.rulesengine.RulesEngine;
 public class Aruba {
 
 	private static final String sampleCommand = "aruba [ -b <blast_file|dir> -h <hmm_file|dir> -g <genbank_file|dir> -r <rdf_file|dir> -n <n3_file|dir> -r <drools_file|directory> -D <database> -l <log_file> ]  ...";
-	private static final String rulesChangeSet = "/org/jcvi/annotation/rules/BraingrabChangeSet.xml";
+	private static final String braingrabRules = "/org/jcvi/annotation/rules/braingrab/BraingrabChangeSet.xml";
+	private static final String genomePropertiesRules = "/org/jcvi/annotation/rules/genomeproperties/GenomePropertiesChangeSet.xml";
 	private static Boolean debug = false;
 	private String DEFAULT_OUTPUT = "annotations";
 	private ArrayList<Feature> features = new ArrayList<Feature>();
@@ -45,7 +46,7 @@ public class Aruba {
 		return engine;
 	}
 	public static String getRulesChangeSet() {
-		return rulesChangeSet;
+		return braingrabRules;
 	}
 
 	/*
@@ -172,7 +173,11 @@ public class Aruba {
 
 	// Adding Rules
 	public boolean addDefaultRules() {
-		return engine.addResource(this.getClass().getResource(rulesChangeSet), 
+		return engine.addResource(this.getClass().getResource(braingrabRules), 
+				ResourceType.CHANGE_SET);
+	}
+	public boolean addGenomePropertiesRules() {
+		return engine.addResource(this.getClass().getResource(genomePropertiesRules), 
 				ResourceType.CHANGE_SET);
 	}
 	public boolean addRule(String file, ResourceType type) {
