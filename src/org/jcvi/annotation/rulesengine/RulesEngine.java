@@ -140,11 +140,20 @@ public class RulesEngine {
 	}
 	
 	public int addFacts(Iterable< ? extends Object> facts) {
+		long stime = System.currentTimeMillis();
+		long total = 0;
 		int count = 0;
 		for (Object fact : facts) {
 			addFact(fact);
 			count++;
+			if (count % 1000 == 0) {
+				long etime = System.currentTimeMillis() - stime;
+				System.out.println(count + " facts added (" + etime + " ms)");
+				stime = System.currentTimeMillis();
+				total += etime;
+			}
 		}
+		System.out.println("total: " + total + " ms");
 		return count;
 	}
 	

@@ -7,6 +7,7 @@ rule "GenomeProperty value calculation"
 lock-on-active true
 salience 10
 	when
+		engineReady			: EngineReady()
 		genomeprop	 		: GenomeProperty()
 		requiredRelations	: ArrayList()
 				from collect( PropertyRelationship( type == RelationshipType.REQUIRED_BY, object == genomeprop ) )		
@@ -21,37 +22,4 @@ salience 10
   		genomeprop.put("value", fractionFilledComponents);
   		System.out.println("Setting value " + genomeprop.toString());
    		update(genomeprop);
-end
-
-rule "GenomeProperty state: none found"
-	when
-		genomeprop : GenomeProperty( value == 0 )
- 	then
- 		genomeprop.put("state", "none found");
- 		System.out.println("Setting state: " + genomeprop.get("state").toString());
-end
-
-rule "GenomeProperty state: yes"
-	when
-		genomeprop : GenomeProperty( value == 1 )
- 	then
- 		genomeprop.put("state", "yes");
- 		System.out.println("Setting state: " + genomeprop.get("state").toString());
-end
-
-rule "GenomeProperty state: not supported"
-	when
-		genomeprop : GenomeProperty( value > 0 && value < threshold )
- 	then
- 		//genomeprop.put("state", "not supported");
- 		genomeprop.setState(PropertyState.NOT_SUPPORTED);
- 		System.out.println("Setting state: " + genomeprop.get("state").toString());
-end
-
-rule "GenomeProperty state: some evidence"
-	when
-		genomeprop : GenomeProperty( value > threshold && value < 1 )
- 	then
- 		genomeprop.put("state", "some evidence");
- 		System.out.println("Setting state: " + genomeprop.get("state").toString());
 end

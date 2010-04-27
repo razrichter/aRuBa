@@ -25,6 +25,7 @@ import org.jcvi.annotation.dao.HMMResultFileDAO;
 import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
+import org.jcvi.annotation.facts.EngineReady;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.rulesengine.RulesEngine;
 
@@ -203,14 +204,41 @@ public class Aruba {
 	}
 
 	private int addGenomeProperties() {
-		// Add rules associated with Genome Properties
-		addGenomePropertiesRules();
 		
+		// Add rules associated with Genome Properties
+		System.out.println("Adding Genome Properties rules...");
+		addGenomePropertiesRules();
+		System.out.println("complete.");
+
+		System.out.println("Adding Genome Properties facts...");
 		// Add facts about Genome Properties from Notation3 file
 		URL n3Url = this.getClass().getResource("dao/data/genomeproperties.n3");
 		RdfFactDAO dao = new RdfFactDAO(n3Url, "N3");
-		return addRdf(dao);
-	}
+		int numFacts = addRdf(dao);
+		System.out.println("complete.");
+		
+		System.out.println("Adding our ReadyEngine fact instance.");
+		engine.addFact(new EngineReady());
+		System.out.println("complete.");
+		
+		return numFacts;
+}
+
+	private int addGenomePropertiesFactsFirst() {
+		
+		System.out.println("Adding Genome Properties facts before rules...");
+		// Add facts about Genome Properties from Notation3 file
+		URL n3Url = this.getClass().getResource("dao/data/genomeproperties.n3");
+		RdfFactDAO dao = new RdfFactDAO(n3Url, "N3");
+		int numFacts = addRdf(dao);
+
+		// Add rules associated with Genome Properties
+		System.out.println("Adding Genome Properties rules...");
+		addGenomePropertiesRules();
+		System.out.println("complete.");
+		
+		return numFacts;
+}
 	private int addRdf(RdfFactDAO dao) {
 		engine.addFacts(dao);
 		return dao.getTotalFacts();
