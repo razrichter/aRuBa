@@ -9,7 +9,7 @@ public class FeatureProperty extends Property {
 	
 	private static HashMap<String, FeatureProperty> propsCache = new HashMap<String, FeatureProperty>();
 	
-	public FeatureProperty(String id) {
+	private FeatureProperty(String id) {
 		super(id);
 	}
 	public static FeatureProperty create(String id) {

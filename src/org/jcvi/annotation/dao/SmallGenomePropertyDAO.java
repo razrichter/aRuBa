@@ -59,7 +59,7 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
-				property = new GenomeProperty(rs.getString(1));
+				property = GenomeProperty.create(rs.getString(1));
 				property.put("definition", rs.getString(2));
 				property.setValue(rs.getDouble(3));
 			} else {
@@ -93,7 +93,7 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 			final ResultSet rs = stmt.executeQuery(sql);
 			
 			while (rs.next()) {
-				GenomeProperty property = new GenomeProperty(rs.getString(1));
+				GenomeProperty property = GenomeProperty.create(rs.getString(1));
 				property.put("definition", rs.getString(2));
 				property.setValue(rs.getDouble(3));
 				properties.add(property);

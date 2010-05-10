@@ -166,11 +166,11 @@ public class HomologyHit {
     }
     
     public boolean isAboveTrustedHit() {
-        return hitStrength.equals(HitStrengthType.ABOVE_TRUSTED);
+        return hitStrength!=null && hitStrength.equals(HitStrengthType.ABOVE_TRUSTED);
     }
     
     public boolean isAboveNoiseHit() {
-        return hitStrength.equals(HitStrengthType.ABOVE_NOISE);
+        return hitStrength!=null &&  hitStrength.equals(HitStrengthType.ABOVE_NOISE);
     }
     
     public void setHitStrength(HitStrengthType hitStrength) {

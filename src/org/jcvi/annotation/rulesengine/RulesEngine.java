@@ -140,6 +140,14 @@ public class RulesEngine {
 	}
 	
 	public int addFacts(Iterable< ? extends Object> facts) {
+		int count = 0;
+		for (Object fact : facts) {
+			addFact(fact);
+			count++;
+		}
+		return count;
+	}
+	public int addFactsTimer(Iterable< ? extends Object> facts) {
 		long stime = System.currentTimeMillis();
 		long total = 0;
 		int count = 0;
@@ -199,8 +207,6 @@ public class RulesEngine {
 			}
 			ksession.addEventListener(new DebugWorkingMemoryEventListener());
 		}
-		
-		
 		ksession.fireAllRules();
 	}
 }

@@ -16,7 +16,7 @@ public class Feature {
 	private int strand;
 	private boolean isCircular = false;
 	private String type; // Feature type
-	private List<Map<String, Object>> properties = new ArrayList<Map<String, Object>>();
+	private List<Property> properties = new ArrayList<Property>();
 	private Annotation assignedAnnotation;
 	private List<Annotation> assertedAnnotations = new ArrayList<Annotation>();
 		
@@ -63,13 +63,13 @@ public class Feature {
 		return this.genome.getTaxon();
 	}
 	
-	public List<Map<String, Object>> getProperties() {
+	public List<Property> getProperties() {
 		return properties;
 	}
-	public void setProperties(List<Map<String, Object>> properties) {
+	public void setProperties(List<Property> properties) {
 		this.properties = properties;
 	}
-	public void addProperty(Map<String,Object> prop) {
+	public void addProperty(Property prop) {
 		this.properties.add(prop);
 	}
 	public Annotation getAssignedAnnotation() {

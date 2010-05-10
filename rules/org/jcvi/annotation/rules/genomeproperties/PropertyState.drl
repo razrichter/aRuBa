@@ -5,33 +5,34 @@ import java.util.ArrayList;
 
 rule "GenomeProperty state: none found"
 	when
-		genomeprop : GenomeProperty( value == 0 )
+		gp : GenomeProperty( value == 0, state != PropertyState.NONE_FOUND )
  	then
- 		genomeprop.put("state", "none found");
- 		System.out.println("Setting state: " + genomeprop.get("state").toString());
+ 		gp.setState(PropertyState.NONE_FOUND);
+ 		//modify( gp ) { setState(PropertyState.NONE_FOUND) };
+ 		// System.out.println(gp.getState().toString() + " " + gp.getValue() + " " + gp.getThreshold() + " " + gp.toString());
 end
 
 rule "GenomeProperty state: yes"
 	when
-		genomeprop : GenomeProperty( value == 1 )
+		gp : GenomeProperty( value == 1, state != PropertyState.YES )
  	then
- 		genomeprop.put("state", "yes");
- 		System.out.println("Setting state: " + genomeprop.get("state").toString());
+ 		gp.setState(PropertyState.YES);
+ 		System.out.println(gp.getState().toString() + " " + gp.getValue() + " " + gp.getThreshold() + " " + gp.toString());
+ 		//modify( gp ) { setState(PropertyState.YES) };
 end
 
 rule "GenomeProperty state: not supported"
 	when
-		genomeprop : GenomeProperty( value > 0 && value < threshold )
+		gp : GenomeProperty( value > 0 && value < threshold, state != PropertyState.NOT_SUPPORTED )
  	then
- 		//genomeprop.put("state", "not supported");
- 		genomeprop.setState(PropertyState.NOT_SUPPORTED);
- 		System.out.println("Setting state: " + genomeprop.get("state").toString());
+ 		gp.setState(PropertyState.NOT_SUPPORTED);
+ 		System.out.println(gp.getState().toString() + " " + gp.getValue() + " " + gp.getThreshold() + " " + gp.toString());
 end
 
 rule "GenomeProperty state: some evidence"
 	when
-		genomeprop : GenomeProperty( value > threshold && value < 1 )
+		gp : GenomeProperty( value > 0 && value > threshold && value < 1, state != PropertyState.SOME_EVIDENCE )
  	then
- 		genomeprop.put("state", "some evidence");
- 		System.out.println("Setting state: " + genomeprop.get("state").toString());
+ 		gp.setState(PropertyState.SOME_EVIDENCE);
+ 		System.out.println(gp.getState().toString() + " " + gp.getValue() + " " + gp.getThreshold() + " " + gp.toString());
 end

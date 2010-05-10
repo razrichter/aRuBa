@@ -2,75 +2,51 @@
 package org.jcvi.annoation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 
-rule "FeatureProperty sufficient_for FeatureProperty"
-no-loop true
-	
+rule "Property sufficient_for FeatureProperty"
 	when
-		# there is a featureproperty that is sufficient_for a genome property
-		featureprop1	: FeatureProperty()
-		featureprop2	: FeatureProperty()
 		relationship	: PropertyRelationship(
-							subject 	== featureprop1, 
-							type	 	== RelationshipType.SUFFICIENT_FOR, 
-							object 		== featureprop2 )
-							
-		feature			: Feature( properties contains featureprop1 )
+							prop1: 	subject, 
+							type == RelationshipType.SUFFICIENT_FOR, 
+							prop2: 	object )
+		feature			: Feature( properties contains prop1,
+								properties not contains prop2 )
 	
 	then 
-		# assert the feature property on the feature
-		System.out.println("Assigning featureprop " + featureprop2.toString());
-		feature.addProperty(featureprop2);
-		// Assign featureprop2.value = 1
-		update(feature);
+		System.out.println("Assigning prop " + prop2.toString());
+		modify( prop2 ) { setValue(1) };
+		modify( feature ) { addProperty(prop2) };
 end
 	
-rule "FeatureProperty sufficient_for GenomeProperty"
-	
+rule "Property (on Feature) sufficient_for GenomeProperty"
 	when
-		# there is a featureproperty that is sufficient_for a genome property
-		genomeprop	 	: GenomeProperty()
-		featureprop	 	: FeatureProperty()
+		prop2			: GenomeProperty()
 		relationship	: PropertyRelationship(
-							subject 	== featureprop, 
-							type	 	== RelationshipType.SUFFICIENT_FOR, 
-							object 		== genomeprop )
-							
-		genome			: Genome()
-		feature			: Feature( properties contains featureprop, genome == genome )
+							prop1: 	subject, 
+							type == RelationshipType.SUFFICIENT_FOR, 
+							object == prop2 )
+		feature			: Feature( properties contains prop1, 
+									properties not contains prop2,
+									genome : genome )
 	
 	then 
-		# assert the genome property on the genome
-		System.out.println("Assigning genomeprop " + genomeprop.toString());
-		
-		// genomeprop.value = 1
-		feature.addProperty(genomeprop);
-		genome.addProperty(genomeprop);
-		update(genome);
-		update(feature);
+		System.out.println("Assigning genomeprop " + prop2.toString());
+		modify( prop2 ) 	{ setValue(1) };
+		modify( feature ) 	{ addProperty(prop2) };
+		modify( genome ) 	{ addProperty(prop2) };
 end
 
-rule "GenomeProperty sufficient_for GenomeProperty"	
+rule "Property (on Genome) sufficient_for GenomeProperty"	
 	when
-		# there is a GenomeProperty1 that is sufficient_for GenomeProperty2,
-		# for every genome that contains GenomeProperty1
-		genomeprop1	 	: GenomeProperty()
-		genomeprop2	 	: GenomeProperty()
+		prop2			: GenomeProperty()
 		relationship	: PropertyRelationship(
-							subject 	== genomeprop1, 
-							type	 	== RelationshipType.SUFFICIENT_FOR, 
-							object 		== genomeprop2 )
-							
-		genome			: Genome( properties contains genomeprop1 )
-		feature			: Feature( properties contains genomeprop1, genome == genome )
-		
+							prop1: 	subject, 
+							type == RelationshipType.SUFFICIENT_FOR, 
+							object == prop2 )
+		genome			: Genome( properties contains prop1,
+									properties not contains prop2 )
 	then 
-		# add GenomeProperty2 on the genome
-		# For any feature that is a component of genomeprop1, then it is a component of genomeprop2
-		System.out.println("Assigning genomeprop " + genomeprop2.toString());
-		// genomeprop2.value = 1
-		feature.addProperty(genomeprop2);
-		genome.addProperty(genomeprop2);
-		update(genome);
-		update(feature);
+		System.out.println("Assigning genomeprop " + prop2.toString());
+		modify( prop2 ) 	{ setValue(1) };
+		modify( genome ) 	{ addProperty(prop2) };
 end
 

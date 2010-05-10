@@ -1,0 +1,39 @@
+#created on: Apr 6, 2010
+package org.jcvi.annotation.rules.genomeproperties
+import org.jcvi.annotation.facts.*;
+import java.util.ArrayList;
+
+rule "HMM Hit above cutoff (property exists)"
+
+	when
+		hit : HmmHit( aboveTrustedHit == true,
+						hitId : hitId, queryId : queryId )
+		p	: FeatureProperty( id == hitId )
+		f	: Feature ( featureId == queryId, properties not contains p )
+		
+		
+ 	then
+  		System.out.println("Prop exists: HMM " + hitId + " " + queryId + " " + p.getValue());
+ 		modify( p ) {
+ 			setValue(1)
+ 		};
+ 		modify( f ) { addProperty(p) };
+end
+
+rule "HMM Hit above cutoff (Property does not exist)"
+
+	when
+		hit : HmmHit( aboveTrustedHit == true,
+						hitId : hitId, queryId : queryId )
+		f	: Feature ( featureId == queryId )
+		not (exists (FeatureProperty( id == hitId )))
+		
+ 	then
+ 		FeatureProperty p = FeatureProperty.create(hitId);
+ 		p.setValue(1);
+  		System.out.println("Prop not exists: HMM " + hitId + " " + queryId + " " + p.getValue());
+ 		insert( p );
+ 		modify( f ) { addProperty(p) };
+end
+
+

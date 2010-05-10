@@ -1,6 +1,5 @@
 package org.jcvi.annotation.rulesengine;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +7,9 @@ import junit.framework.TestCase;
 
 import org.drools.builder.ResourceType;
 import org.jcvi.annotation.facts.Feature;
+import org.jcvi.annotation.facts.FeatureProperty;
 import org.jcvi.annotation.facts.HmmHit;
+import org.jcvi.annotation.facts.Property;
 import org.junit.After;
 import org.junit.Before;
 
@@ -44,7 +45,7 @@ public class TestSampleGenericPropertyRule extends TestCase {
 		HmmHit hit2 = new HmmHit("orfB", "PF05015");
 		
 		// orfA is assigned a twinarg property
-		Map<String,Object> prop = new HashMap<String,Object>();
+		Property prop = FeatureProperty.create("TWINARG"); 
 		prop.put("TWINARG", 1);
 		orfA.addProperty(prop);	
 		
@@ -57,7 +58,7 @@ public class TestSampleGenericPropertyRule extends TestCase {
 	}
 	
 	public void testOrfAToxinProperty() {
-		 List<Map<String, Object>> properties = orfA.getProperties();
+		 List<Property> properties = orfA.getProperties();
 		 boolean isAssigned = false;
 		 for (Map<String,Object> prop : properties)  {
 			 if (prop.containsKey("TOXIN_ANTITOXIN")) {
@@ -67,7 +68,7 @@ public class TestSampleGenericPropertyRule extends TestCase {
 		 assertEquals(true, isAssigned);
 	}
 	public void testOrfBToxinProperty() {
-		 List<Map<String, Object>> properties = orfB.getProperties();
+		 List<Property> properties = orfB.getProperties();
 		 boolean isAssigned = false;
 		 for (Map<String,Object> prop : properties)  {
 			 if (prop.containsKey("TOXIN_ANTITOXIN")) {
@@ -79,7 +80,7 @@ public class TestSampleGenericPropertyRule extends TestCase {
 		
 	
 	public void testSomethingPropertyOnOrfA() {
-		 List<Map<String, Object>> properties = orfA.getProperties();
+		 List<Property> properties = orfA.getProperties();
 		 boolean isAssigned = false;
 		 for (Map<String,Object> prop : properties)  {
 			 if (prop.containsKey("SOMETHING")) {
@@ -89,7 +90,7 @@ public class TestSampleGenericPropertyRule extends TestCase {
 		 assertEquals(true, isAssigned);	 
 	}
 	public void testSomethingPropertyOnOrfB() {
-		 List<Map<String, Object>> properties = orfB.getProperties();
+		 List<Property> properties = orfB.getProperties();
 		 boolean isAssigned = false;
 		 for (Map<String,Object> prop : properties)  {
 			 if (prop.containsKey("SOMETHING")) {

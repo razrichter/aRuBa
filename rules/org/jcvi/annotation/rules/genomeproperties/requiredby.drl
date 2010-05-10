@@ -4,10 +4,8 @@ import org.jcvi.annotation.facts.*;
 import java.util.ArrayList;
 
 rule "GenomeProperty value calculation"
-lock-on-active true
-salience 10
+//lock-on-active true
 	when
-		engineReady			: EngineReady()
 		genomeprop	 		: GenomeProperty()
 		requiredRelations	: ArrayList()
 				from collect( PropertyRelationship( type == RelationshipType.REQUIRED_BY, object == genomeprop ) )		
@@ -15,11 +13,27 @@ salience 10
 				from accumulate(  r : PropertyRelationship()
 					from requiredRelations,
 				sum( r.getSubject().getValue() ) )
+		eval( genomeprop.get("filled") != numFilledComponents )
+		
 
  	then 
 		double numRequiredComponents = new Double(requiredRelations.size());
-		double fractionFilledComponents = numFilledComponents / numRequiredComponents;
-  		genomeprop.put("value", fractionFilledComponents);
-  		System.out.println("Setting value " + genomeprop.toString());
-   		update(genomeprop);
-end
+		double fractionFilledComponents = (numRequiredComponents == 0) ? 0
+								: numFilledComponents / numRequiredComponents;
+  		//if (numFilledComponents > 0) {
+	  		System.out.println(numFilledComponents + "/" +
+	  				numRequiredComponents + " = " +
+	  				fractionFilledComponents + " " + 
+	  				genomeprop.toString());
+   		//}
+
+		genomeprop.put("required", numRequiredComponents);
+		genomeprop.put("filled", numFilledComponents);
+		genomeprop.setValue(fractionFilledComponents);
+		
+		// modify( genomeprop ) {
+			// put("required", numRequiredComponents),
+			// put("filled", numFilledComponents),
+			// setValue(fractionFilledComponents)
+		// };
+ end

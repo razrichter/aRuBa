@@ -11,6 +11,7 @@ import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.Genome;
+import org.jcvi.annotation.facts.Property;
 import org.jcvi.annotation.facts.Taxon;
 import org.junit.After;
 import org.junit.Before;
@@ -25,7 +26,7 @@ public class TestGenomeProperty extends TestCase {
 	private SmallGenomeDAOFactory sgDAOFactory;
 	private Taxon taxon;
 	private Genome genome;
-	private Map<String, Object> property;
+	private Property property;
 	
 	@Before
 	public void setUp() throws Exception {

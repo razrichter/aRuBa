@@ -1,9 +1,6 @@
 package org.jcvi.annotation.rules.genomeproperties;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import junit.framework.TestCase;
 
@@ -12,7 +9,6 @@ import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.FeatureProperty;
 import org.jcvi.annotation.facts.Genome;
-import org.jcvi.annotation.facts.GenomeProperty;
 import org.jcvi.annotation.rulesengine.RulesEngine;
 import org.junit.After;
 import org.junit.Before;

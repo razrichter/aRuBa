@@ -11,6 +11,7 @@ import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.FeatureProperty;
 import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.GenomeProperty;
+import org.jcvi.annotation.facts.Property;
 import org.jcvi.annotation.rulesengine.RulesEngine;
 import org.junit.After;
 import org.junit.Before;
@@ -73,8 +74,8 @@ public class TestGenomeProperty_66644 extends TestCase {
 		engine.fireAllRules();
 		
 		// Get the properties for our feature
-		List<Map<String, Object>> featureprops1 = feature1.getProperties();
-		List<Map<String, Object>> featureprops2 = feature2.getProperties();
+		List<Property> featureprops1 = feature1.getProperties();
+		List<Property> featureprops2 = feature2.getProperties();
 
 		// Test rule conditions are true
 		assertTrue(featureprops1.contains(featureprop1));

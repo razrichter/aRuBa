@@ -1,8 +1,6 @@
 package org.jcvi.annotation.facts;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 
 /*
  * This is a flyweight class for caching equivalent GenomeProperty objects
@@ -12,7 +10,7 @@ public class GenomeProperty extends Property {
 
 	private static HashMap<String, GenomeProperty> propsCache = new HashMap<String, GenomeProperty>();
 	
-	public GenomeProperty(String id) {
+	private GenomeProperty(String id) {
 		super(id);
 	}
 	

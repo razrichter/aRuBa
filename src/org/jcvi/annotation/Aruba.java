@@ -25,7 +25,6 @@ import org.jcvi.annotation.dao.HMMResultFileDAO;
 import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
-import org.jcvi.annotation.facts.EngineReady;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.rulesengine.RulesEngine;
 
@@ -155,7 +154,7 @@ public class Aruba {
 
 	}
 
-	private void printOutputReports(String outputChars) {
+	public void printOutputReports(String outputChars) {
 		for (String output :  outputChars.split(",")) {
 			output.trim();
 			if (output == "annotations" || output == "annot") {
@@ -195,98 +194,78 @@ public class Aruba {
 	}
 
 	// Adding Facts
-	private int addBlast(String file) {
+	public int addBlast(String file) {
 		return engine.addFacts(new BlastResultFileDAO(file));
 	}
 
-	private int addHmm(String file) {
+	public int addHmm(String file) {
 		return engine.addFacts(new HMMResultFileDAO(file));
 	}
 
-	private int addGenomeProperties() {
+	public int addGenomePropertiesFacts() {
 		
-		// Add rules associated with Genome Properties
-		System.out.println("Adding Genome Properties rules...");
-		addGenomePropertiesRules();
-		System.out.println("complete.");
-
+		// Add facts about Genome Properties from Notation3 file
 		System.out.println("Adding Genome Properties facts...");
-		// Add facts about Genome Properties from Notation3 file
 		URL n3Url = this.getClass().getResource("dao/data/genomeproperties.n3");
 		RdfFactDAO dao = new RdfFactDAO(n3Url, "N3");
 		int numFacts = addRdf(dao);
 		System.out.println("complete.");
-		
-		System.out.println("Adding our ReadyEngine fact instance.");
-		engine.addFact(new EngineReady());
-		System.out.println("complete.");
-		
 		return numFacts;
-}
+	}
 
-	private int addGenomePropertiesFactsFirst() {
-		
-		System.out.println("Adding Genome Properties facts before rules...");
-		// Add facts about Genome Properties from Notation3 file
-		URL n3Url = this.getClass().getResource("dao/data/genomeproperties.n3");
-		RdfFactDAO dao = new RdfFactDAO(n3Url, "N3");
-		int numFacts = addRdf(dao);
-
-		// Add rules associated with Genome Properties
-		System.out.println("Adding Genome Properties rules...");
+	public int addGenomeProperties() {
 		addGenomePropertiesRules();
-		System.out.println("complete.");
-		
-		return numFacts;
-}
-	private int addRdf(RdfFactDAO dao) {
+		return addGenomePropertiesFacts();
+	}
+
+	public int addRdf(RdfFactDAO dao) {
 		engine.addFacts(dao);
 		return dao.getTotalFacts();
 	}
-	private int addRdf(String file) {
+	public int addRdf(String file) {
 		return addRdf(new RdfFactDAO(file));
 	}
-	private int addN3(String file) {
+	public int addN3(String file) {
 		return addRdf(new RdfFactDAO(file, "N3"));
 	}
 
-	private int addGenbank(String file) {
+	public int addGenbank(String file) {
 		InputStreamReader gbReader = new InputStreamReader(this.getClass().getResourceAsStream(file));       
 		return engine.addFacts(new GenbankFeatureDAO(gbReader));
 	}
 
-	private void addDroolsFiles(String[] filesOrDirs) {
+	public void addDroolsFiles(String[] filesOrDirs) {
 		for (String file : filesFromPaths(filesOrDirs)) {
 			this.addDrools(file);
 		}
 	}
-	private void addBlastFiles(String[] filesOrDirs) {
+	public void addBlastFiles(String[] filesOrDirs) {
 		for (String file : filesFromPaths(filesOrDirs)) {
 			this.addBlast(file);
 		}
 	}
-	private void addHmmFiles(String[] filesOrDirs) {
+	public void addHmmFiles(String[] filesOrDirs) {
 		for (String file : filesFromPaths(filesOrDirs)) {
 			this.addHmm(file);
 		}
 	}
-	private void addRdfFiles(String[] filesOrDirs) {
+	public void addRdfFiles(String[] filesOrDirs) {
 		for (String file : filesFromPaths(filesOrDirs)) {
 			this.addRdf(file);
 		}
 	}    
-	private void addN3Files(String[] filesOrDirs) {
+	public void addN3Files(String[] filesOrDirs) {
 		for (String file : filesFromPaths(filesOrDirs)) {
 			this.addN3(file);
 		}
 	} 
-	private void addGenbankFiles(String[] filesOrDirs) {
+	public void addGenbankFiles(String[] filesOrDirs) {
 		for (String file : filesFromPaths(filesOrDirs)) {
 			this.addGenbank(file);
 		}
 	}  
 
-	private int addSmallGenome(String dbName) {
+	public int addSmallGenome(String dbName) {
 
 		if (dbName == null) {
 			return 0;
@@ -313,24 +292,24 @@ public class Aruba {
 		total += count = engine.addFacts(sgFactory.getHmmHitDAO());
 		System.out.println("  " + count + " HMM hits");
 
-		// Add Genome Properties
-		total += count = engine.addFacts(sgFactory.getGenomePropertyDAO(dbName));
-		System.out.println("  " + count + " genome properties");
+		// Add Genome Properties (use RDF content)
+		// total += count = engine.addFacts(sgFactory.getGenomePropertyDAO(dbName));
+		// System.out.println("  " + count + " genome properties");
 
 		return total;
 	}
 
-	private void log() {
+	public void log() {
 		engine.setConsoleLogger();
 	}
-	private void log(String logFile) {
+	public void log(String logFile) {
 		engine.setFileLogger(logFile);
 	}
 
-	private void run() {
+	public void run() {
 		engine.fireAllRules();
 	}
-	private void shutdown() {
+	public void shutdown() {
 		engine.shutdown();
 	}
 	public static List<String> filesFromPaths(String[] filesOrDirs) {
