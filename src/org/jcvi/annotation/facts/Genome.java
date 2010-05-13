@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Genome {
 	private Taxon taxon = new Taxon();
-	private List<Map<String, Object>> properties = new ArrayList<Map<String, Object>>();
+	private List<Property> properties = new ArrayList<Property>();
 	
 	// Constructor
 	public Genome(Taxon taxon) {
@@ -24,13 +24,13 @@ public class Genome {
 		this.taxon = taxon;
 	}
 	
-	public List<Map<String, Object>> getProperties() {
+	public List<Property> getProperties() {
 		return properties;
 	}
-	public void setProperties(List<Map<String, Object>> properties) {
+	public void setProperties(List<Property> properties) {
 		this.properties = properties;
 	}
-	public void addProperty(Map<String,Object> prop) {
+	public void addProperty(Property prop) {
 		this.properties.add(prop);
 	}
 	public void removeProperty(GenomeProperty p) {

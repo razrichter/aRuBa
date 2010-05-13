@@ -1,0 +1,22 @@
+@prefix gp: <urn:genome_properties:instances:> .
+@prefix : <urn:genome_properties:ontology:> .
+
+gp:GenomeProperty_66575
+	a	:GenomeProperty;
+	:name	"66575";
+	:type	"system";
+	:threshold	"0";
+	:property	"exosporium";
+.
+gp:FeatureProperty_62994
+	a	:FeatureProperty;
+	:name	"62994";
+	:required_by	gp:GenomeProperty_66575;
+.
+
+gp:FeatureProperty_TIGR03720
+	a	:FeatureProperty;
+	:name	"TIGR03720";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_62994;
+.

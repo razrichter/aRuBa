@@ -214,8 +214,9 @@ public class Aruba {
 	}
 
 	public int addGenomeProperties() {
+		int numFacts = addGenomePropertiesFacts();
 		addGenomePropertiesRules();
-		return addGenomePropertiesFacts();
+		return numFacts;
 	}
 
 	public int addRdf(RdfFactDAO dao) {

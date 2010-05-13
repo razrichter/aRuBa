@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.StringReader;
 import java.net.URL;
 import java.util.Map;
+
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.DecisionTableConfiguration;
@@ -18,6 +19,7 @@ import org.drools.io.ResourceFactory;
 import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
+import org.drools.runtime.rule.FactHandle;
 
 
 public class RulesEngine {
@@ -136,7 +138,11 @@ public class RulesEngine {
 	}
 	
 	public void addFact(Object fact) {
-        ksession.insert(fact);
+		FactHandle h = ksession.getFactHandle(fact);
+		if (h != null) {
+			ksession.retract(h);
+		}
+		ksession.insert(fact);
 	}
 	
 	public int addFacts(Iterable< ? extends Object> facts) {
@@ -180,6 +186,27 @@ public class RulesEngine {
 		}
 	}
 
+	public void setFileLogger(String file) {
+		this.setLogger(KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFilename));
+	}
+	public void setConsoleLogger() {
+		this.setLogger(KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession));
+	}
+	
+	public void fireAllRules() throws RulesEngineException {
+		if (debug) {
+			if (logFilename == null) {
+				logger = KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
+			}
+			ksession.addEventListener(new DebugWorkingMemoryEventListener());
+		}
+		ksession.fireAllRules();
+	}
+	public void fireAndDispose() throws RulesEngineException {
+		fireAllRules();
+		ksession.dispose();
+	}
+
 	public void shutdown() throws RulesEngineException {
 		
 		// Free up resources from stateful knowledge session
@@ -190,23 +217,5 @@ public class RulesEngine {
 			logger.close();
 		}
 	
-	}
-	
-	public void setFileLogger(String file) {
-		this.setLogger(KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFilename));
-	}
-	public void setConsoleLogger() {
-		this.setLogger(KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession));
-	}
-	
-	public void fireAllRules() throws RulesEngineException {
-		
-		if (debug) {
-			if (logFilename == null) {
-				logger = KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
-			}
-			ksession.addEventListener(new DebugWorkingMemoryEventListener());
-		}
-		ksession.fireAllRules();
 	}
 }

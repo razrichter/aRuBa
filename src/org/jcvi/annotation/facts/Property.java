@@ -1,9 +1,6 @@
 package org.jcvi.annotation.facts;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public abstract class Property extends HashMap<String, Object> {
 
@@ -11,7 +8,6 @@ public abstract class Property extends HashMap<String, Object> {
 	private double threshold;
 	private double value;
 	private PropertyState state;
-	private List<Feature> features = new ArrayList<Feature>();
 	
 	protected Property(String id) {
 		this.id = id;
@@ -51,14 +47,5 @@ public abstract class Property extends HashMap<String, Object> {
 	}
 	public void setStateYes() {
 		this.state = PropertyState.YES;
-	}
-	public List<Feature> getFeatures() {
-		return features;
-	}
-	public void setFeatures(List<Feature> features) {
-		this.features = features;
-	}
-	public void addFeature(Feature f) {
-		features.add(f);
 	}
 }

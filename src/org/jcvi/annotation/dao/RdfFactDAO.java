@@ -93,7 +93,7 @@ public class RdfFactDAO implements Iterable<Object> {
 	public int addDao(RdfFileDAO dao) {
 
 		model = dao.getModel();
-		System.out.println("Loading facts from RDF...");
+		System.out.println("\nLoading facts from RDF...");
 
 		// Returns a count of all facts
 		int total = 0;

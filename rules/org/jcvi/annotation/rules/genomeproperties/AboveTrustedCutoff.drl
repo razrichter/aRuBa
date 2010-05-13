@@ -13,12 +13,10 @@ rule "HMM Hit above cutoff (property exists)"
 		
 		
  	then
-  		System.out.println("Prop exists: HMM " + hitId + " " + queryId + " " + p.getValue());
- 		modify( p ) {
- 			setValue(1)
- 		};
+  		System.out.println("Assign HMM FeatureProperty " + hitId + " " + p.getValue() + " on " + f.toString());
+ 		modify( p ) { setValue(1) };
  		modify( f ) { addProperty(p) };
-end
+ end
 
 rule "HMM Hit above cutoff (Property does not exist)"
 
@@ -31,8 +29,8 @@ rule "HMM Hit above cutoff (Property does not exist)"
  	then
  		FeatureProperty p = FeatureProperty.create(hitId);
  		p.setValue(1);
-  		System.out.println("Prop not exists: HMM " + hitId + " " + queryId + " " + p.getValue());
- 		insert( p );
+  		System.out.println("Insert HMM FeatureProperty " + p.getId() + " " + p.getValue() + " on " + f.toString());
+   		insert( p );
  		modify( f ) { addProperty(p) };
 end
 

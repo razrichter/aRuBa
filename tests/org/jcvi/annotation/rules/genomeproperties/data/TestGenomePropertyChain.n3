@@ -15,11 +15,5 @@ gp:FeatureProperty_63238
 gp:FeatureProperty_63239
 	a	:FeatureProperty;
 	:name	"63239";
-	:sufficient_for	gp:GenomeProperty_66644;
-.
-gp:FeatureProperty_123
-	a	:FeatureProperty;
-	:name	"123";
 	:sufficient_for	gp:FeatureProperty_63238;
-	:sufficient_for	gp:FeatureProperty_63239;
 .

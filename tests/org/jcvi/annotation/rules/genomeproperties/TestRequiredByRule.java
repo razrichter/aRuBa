@@ -6,15 +6,15 @@ import junit.framework.TestCase;
 
 import org.drools.builder.ResourceType;
 import org.jcvi.annotation.dao.RdfFactDAO;
-import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.FeatureProperty;
 import org.jcvi.annotation.facts.Genome;
+import org.jcvi.annotation.facts.GenomeProperty;
 import org.jcvi.annotation.rulesengine.RulesEngine;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestHasSufficientButNotRequiredGenomeProperty extends TestCase {
+public class TestRequiredByRule extends TestCase {
 
 	private RdfFactDAO dao;
 	private RulesEngine engine = new RulesEngine();
@@ -24,7 +24,7 @@ public class TestHasSufficientButNotRequiredGenomeProperty extends TestCase {
 		URL n3Url = this.getClass().getResource("data/GenomePropertySufficientRequired.n3");
 		dao = new RdfFactDAO(n3Url, "N3");
 		engine.addFacts(dao);
-		
+		//engine.setConsoleLogger();
     }
 	
 	@Test
@@ -37,36 +37,39 @@ public class TestHasSufficientButNotRequiredGenomeProperty extends TestCase {
 	}
 
 	@Test
-	public void testHasSufficientButNotRequired() {
+	public void testRequiredByRule() {
 		
-		// Add our Genome Property rules
-		engine.addResource(this.getClass().getResource("suffices.drl"), ResourceType.DRL);
+		// Add our Required By rule
 		engine.addResource(this.getClass().getResource("requiredby.drl"), ResourceType.DRL);
-
-		// Init features with the subjects of each of our sufficient_for feature properties
-		Feature feature = new Feature("xyz");
-		FeatureProperty propRequired = FeatureProperty.create("63238");
-		FeatureProperty propSufficient = FeatureProperty.create("63239");
-		feature.addProperty(propSufficient);
 		
-		// Init a genome that this feature is annotated on
+		// Expectations:
+		//  1) 	There is a PropertyRelationship in the knowledgebase that expresses
+		//  	gp:FeatureProperty_63238 :required_by gp:GenomeProperty_66644, like
+		//		PropertyRelationship(FeatureProperty.create("63238"), RelationshipType.REQUIRED_BY, GenomeProperty("66644"))
+		//  2) 	The requiredby.drl will collect this relationship, and sum up the value
+		//		of the required FeatureProperty
+		// 	3)	The consequence will assign required=1, filled=1 and value=1 to the GenomeProperty
+		
 		Genome genome = new Genome();
-		feature.setGenome(genome);
+		
+		FeatureProperty propRequired = FeatureProperty.create("63238");
+		propRequired.setValue(1);
+		genome.addProperty(propRequired);
 		
 		// Add these facts to our knowledgebase
-		engine.addFact(feature);
-		engine.addFact(propRequired);
-		engine.addFact(propSufficient);
 		engine.addFact(genome);
-		
-		// Assigned genome properties before firing rules
-		assertEquals(0, genome.getProperties().size());
+		engine.addFact(propRequired);	
 		
 		// Fire our engine
-		engine.fireAllRules();
+		engine.fireAndDispose();
 		
-		// Test if the GenomeProperty was assigned
-		assertEquals(1, genome.getProperties().size());
+		// This gets this property which we expect to be in the GenomeProperty.propsCache
+		GenomeProperty gp = GenomeProperty.create("66644");
+		
+		assertEquals(1.0, propRequired.getValue());
+		assertEquals(1.0, gp.get("required"));
+		assertEquals(1.0, gp.get("filled"));
+		assertEquals(1.0, gp.getValue());
 	}
 
 	@After
