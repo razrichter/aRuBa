@@ -8,34 +8,27 @@ import java.util.HashMap;
 
 public class GenomeProperty extends Property {
 
-	private static HashMap<String, GenomeProperty> propsCache = new HashMap<String, GenomeProperty>();
-	
-	private GenomeProperty(String id) {
+	protected GenomeProperty(String id) {
 		super(id);
 	}
-	
-	public static Collection<GenomeProperty> getProperties() {
-		return propsCache.values();
-	}
 	public static GenomeProperty create(String id) {
-		if (propsCache.containsKey(id)) {
-			return propsCache.get(id);
-		} else 
-		{
-			GenomeProperty p = new GenomeProperty(id);
-			propsCache.put(id, p);
-			return p;
-		}
+		return GenomePropertyFactory.create(id);
 	}
-	
-	public boolean equals(GenomeProperty p) {
-		if (p instanceof GenomeProperty) {
-			return p.getId().equals(this.getId());
+
+	public boolean equals(Object p) {
+		if (p.getClass() == this.getClass()) {
+			GenomeProperty fp = (GenomeProperty) p;
+			return fp.getId().equals(this.getId());
 		}
 		return false;
 	}
+	
 	public int hashCode() {
 		return this.getId().hashCode();
+	}
+	
+	public String toString() {
+		return this.getClass().getName() + "_" + getId();
 	}
 }
 

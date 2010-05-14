@@ -64,7 +64,7 @@ public class Feature {
 	}
 	
 	public List<Property> getProperties() {
-		return properties;
+		return this.properties;
 	}
 	public void setProperties(List<Property> properties) {
 		this.properties = properties;

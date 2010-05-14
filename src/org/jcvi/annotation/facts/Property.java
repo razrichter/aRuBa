@@ -48,4 +48,5 @@ public abstract class Property extends HashMap<String, Object> {
 	public void setStateYes() {
 		this.state = PropertyState.YES;
 	}
+
 }

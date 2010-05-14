@@ -2,22 +2,16 @@
 package org.jcvi.annoation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 
-rule "test sufficient_for FeatureProperty"
+rule "Assign GenomeProperty on the genome whenever one of its features has the property"
 	when
-		relationship	: PropertyRelationship(
-							prop1: 	subject, 
-							type == RelationshipType.SUFFICIENT_FOR, 
-							prop2: 	object )
-		feature			: Feature( properties contains prop1 && not contains prop2  )
-			
+		p				: GenomeProperty()
+		f				: Feature( properties contains p, genome : genome )
+		g				: Genome( this == genome, properties not contains p )
 	then 
-		System.out.println("Assign " + prop2.getId() + " on feature " + feature.toString() +
-								" since " + prop1.getId() + " is sufficient." );
- 		modify( prop2 ) { setValue(1.0) };
-		modify( feature ) { addProperty(prop2) };
+		modify( g ) { addProperty(p) };
 end
 
-rule "test2 sufficient_for FeatureProperty"
+rule "generic sufficient_for Property"
 	when
 		relationship	: PropertyRelationship(
 							prop1: 	subject, 
@@ -26,45 +20,12 @@ rule "test2 sufficient_for FeatureProperty"
 		feature			: Feature( properties contains prop1 && not contains prop2 )
 			
 	then 
-		System.out.println("Subject " + prop1.getId() + " value:" + prop1.getValue() + " " + prop1.toString());
-		System.out.println("Not contains Object " + prop2.getId() + " value:" + prop2.getValue() + " " + prop2.toString());
-		System.out.println(" on feature " + feature.toString());
+		System.out.println("Sufficent Rule: assigns genomeprop " + prop2.getId() + " based on Property on Genome " + prop1.getId());
 		modify( prop2 ) { setValue(1.0) };
 		modify( feature ) { addProperty(prop2) };
 end
 
-rule "Property (on Feature) sufficient_for FeatureProperty"
-	when
-		prop2			: FeatureProperty()
-		relationship	: PropertyRelationship(
-							prop1: 	subject, 
-							type == RelationshipType.SUFFICIENT_FOR, 
-							object == prop2 )
-		feature			: Feature( properties contains prop1 && not contains prop2 )
-	
-	then 
-		System.out.println("* Sufficent Rule: assigns FeatureProperty " + prop2.getId() + " based on FeatureProperty " + prop1.getId());
-		modify( prop2 ) { setValue(1.0) };
-		modify( feature ) { addProperty(prop2) };
-end
-	
-rule "Property (on Feature) sufficient_for GenomeProperty"
-	when
-		prop2			: GenomeProperty()
-		relationship	: PropertyRelationship(
-							prop1: 	subject, 
-							type == RelationshipType.SUFFICIENT_FOR, 
-							object == prop2 )
-		feature			: Feature( properties contains prop1 && not contains prop2,
-									genome : genome )
-	
-	then 
-		System.out.println("Sufficent Rule: assigns genomeprop " + prop2.getId() + " based on Property on Feature " + prop1.getId());
-		modify( prop2 ) 	{ setValue(1.0) };
-		modify( feature ) 	{ addProperty(prop2) };
-end
-
-rule "Property (on Genome) sufficient_for GenomeProperty"	
+rule "sufficient_for GenomeProperty"	
 	when
 		prop2			: GenomeProperty()
 		relationship	: PropertyRelationship(

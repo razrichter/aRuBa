@@ -1,5 +1,7 @@
 package org.jcvi.annotation;
 
+import org.drools.builder.ResourceType;
+
 public class RunGP {
 
 	public static void main(String[] args) {

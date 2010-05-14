@@ -166,6 +166,12 @@
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>
+    <target name="GenomeProperties (1)">
+        <java classname="org.jcvi.annotation.GenomeProperties" failonerror="true" fork="yes">
+            <arg line="gb6"/>
+            <classpath refid="RulesBasedAnnotation.classpath"/>
+        </java>
+    </target>
     <target name="ParseOBOFileTest">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
@@ -192,6 +198,7 @@
             <test name="org.jcvi.annotation.dao.TestSmallGenomePropertyDAO" todir="${junit.output.dir}"/>
             <test name="org.jcvi.annotation.dao.TestSmallGenomeTaxonomyDAO" todir="${junit.output.dir}"/>
             <test name="org.jcvi.annotation.rules.genomeproperties.TestGenomeProperty_66644" todir="${junit.output.dir}"/>
+            <test name="org.jcvi.annotation.rules.genomeproperties.TestHasSufficientButNotRequiredGenomeProperty" todir="${junit.output.dir}"/>
             <test name="org.jcvi.annotation.rulesengine.TestBlastHitWithTaxonomyRestriction" todir="${junit.output.dir}"/>
             <test name="org.jcvi.annotation.rulesengine.TestBlastPHitNearBlastPHitRule" todir="${junit.output.dir}"/>
             <test name="org.jcvi.annotation.rulesengine.TestBlastPHitRule" todir="${junit.output.dir}"/>
@@ -203,6 +210,12 @@
             <test name="org.jcvi.sample.TestSimpleInference" todir="${junit.output.dir}"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
+    </target>
+    <target name="RunGP">
+        <java classname="org.jcvi.annotation.RunGP" failonerror="true" fork="yes">
+            <arg line="gb6"/>
+            <classpath refid="RulesBasedAnnotation.classpath"/>
+        </java>
     </target>
     <target name="TestBlastHitWithTaxonomyRestriction">
         <mkdir dir="${junit.output.dir}"/>
@@ -300,12 +313,36 @@
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>
+    <target name="TestGenomeProperty_66644">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.jcvi.annotation.rules.genomeproperties.TestGenomeProperty_66644" todir="${junit.output.dir}"/>
+            <classpath refid="RulesBasedAnnotation.classpath"/>
+        </junit>
+    </target>
     <target name="TestGoAnnotationRule">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="org.jcvi.annotation.rulesengine.TestGoAnnotationRule" todir="${junit.output.dir}"/>
             <jvmarg line="-Xms128m&#13;&#10;-Xmx512m"/>
+            <classpath refid="RulesBasedAnnotation.classpath"/>
+        </junit>
+    </target>
+    <target name="TestHasSufficientButNotRequiredGenomeProperty">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.jcvi.annotation.rules.genomeproperties.TestHasSufficientButNotRequiredGenomeProperty" todir="${junit.output.dir}"/>
+            <classpath refid="RulesBasedAnnotation.classpath"/>
+        </junit>
+    </target>
+    <target name="TestHmmCutoffTableDAO">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.jcvi.annotation.dao.TestHmmCutoffTableDAO" todir="${junit.output.dir}"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>
@@ -468,14 +505,6 @@
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="org.jcvi.annotation.dao.TestSmallGenomePropertyDAO" todir="${junit.output.dir}"/>
-            <classpath refid="RulesBasedAnnotation.classpath"/>
-        </junit>
-    </target>
-    <target name="TestGenomeProperty_66644">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="org.jcvi.annotation.rules.genomeproperties.TestGenomeProperty_66644" todir="${junit.output.dir}"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>

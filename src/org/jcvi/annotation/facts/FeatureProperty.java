@@ -1,40 +1,30 @@
 package org.jcvi.annotation.facts;
-import java.util.Collection;
-import java.util.HashMap;
 
 /*
  * This is a flyweight class for caching equivalent FeatureProperty objects
  */
 public class FeatureProperty extends Property {
 	
-	private static HashMap<String, FeatureProperty> propsCache = new HashMap<String, FeatureProperty>();
-	
-	private FeatureProperty(String id) {
+	protected FeatureProperty(String id) {
 		super(id);
 	}
 	public static FeatureProperty create(String id) {
-		if (propsCache.containsKey(id)) {
-			return propsCache.get(id);
-		} else 
-		{
-			FeatureProperty p = new FeatureProperty(id);
-			propsCache.put(id, p);
-			return p;
-		}
-	}
-	
-	public static Collection<FeatureProperty> getProperties() {
-		return propsCache.values();
+		return FeaturePropertyFactory.create(id);
 	}
 
-	public boolean equals(FeatureProperty p) {
-		if (p instanceof FeatureProperty) {
-			return p.getId().equals(this.getId());
+	public boolean equals(Object p) {
+		if (p.getClass() == this.getClass()) {
+			FeatureProperty fp = (FeatureProperty) p;
+			return fp.getId().equals(this.getId());
 		}
 		return false;
 	}
 	
 	public int hashCode() {
 		return this.getId().hashCode();
+	}
+	
+	public String toString() {
+		return this.getClass().getName() + "_" + getId();
 	}
 }

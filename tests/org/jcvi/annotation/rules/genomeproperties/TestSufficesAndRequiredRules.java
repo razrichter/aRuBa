@@ -103,7 +103,7 @@ public class TestSufficesAndRequiredRules extends TestCase {
 		// gp:FeatureProperty_123 sufficient_for FeatureProperty_63239
 		FeatureProperty propAssigned = FeatureProperty.create("63239");
 		assertTrue(feature.getProperties().contains(propAssigned));
-		// assertEquals(1.0, propAssigned.getValue());
+		assertEquals(1.0, propAssigned.getValue());
 		
 		// Get our GenomeProperty from the propsCache, and 
 		// test that it has been modified by Drools
@@ -246,6 +246,13 @@ public class TestSufficesAndRequiredRules extends TestCase {
 		FeatureProperty propSufficient = FeatureProperty.create("63239");
 		feature.addProperty(propSufficient);
 
+		// Init genome containing our required feature property
+		Genome genome = new Genome();
+		FeatureProperty propRequired = FeatureProperty.create("63238");
+		propRequired.setValue(1);
+		genome.addProperty(propRequired);
+		feature.setGenome(genome);
+
 		// Add these facts to our knowledgebase
 		engine.addFact(feature);
 		engine.addFact(propSufficient);	
@@ -253,13 +260,6 @@ public class TestSufficesAndRequiredRules extends TestCase {
 		// Let's test chaining the sufficient step with our required by rule, to 
 		// get an updated calculation for the Genome Property
 		
-		// Init genome containing our required feature property
-		Genome genome = new Genome();
-		FeatureProperty propRequired = FeatureProperty.create("63238");
-		propRequired.setValue(1);
-		genome.addProperty(propRequired);
-				
-		feature.setGenome(genome);
 
 		// Add these facts to our knowledgebase
 		engine.addFact(genome);
@@ -268,7 +268,6 @@ public class TestSufficesAndRequiredRules extends TestCase {
 		engine.addFact(propSufficient);	
 		
 		// Fire our engine
-		System.out.println("Fire rules...");
 		engine.fireAndDispose();
 		
 		// This gets this property which we expect to be in the GenomeProperty.propsCache
