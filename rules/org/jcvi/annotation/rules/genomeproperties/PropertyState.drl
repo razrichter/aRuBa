@@ -4,35 +4,37 @@ import org.jcvi.annotation.facts.*;
 import java.util.ArrayList;
 
 rule "GenomeProperty state: none found"
+agenda-group "report"
 	when
-		gp 		: GenomeProperty( value == 0.0, state != PropertyState.NONE_FOUND )
+		gp 		: GenomeProperty( value == 0.0 )
  	then
  		System.out.println("NONE FOUND " + gp.getValue() + " " + gp.getThreshold() + " " + gp.toString());
- 		gp.setState(PropertyState.NONE_FOUND);
- 		//modify( gp ) { setState(PropertyState.NONE_FOUND) };
+  		modify( gp ) { setState(PropertyState.NONE_FOUND) };
  end
 
 rule "GenomeProperty state: yes"
+agenda-group "report"
 	when
-		gp : GenomeProperty( value == 1.0, state != PropertyState.YES )
+		gp : GenomeProperty( value == 1.0 )
  	then
- 		gp.setState(PropertyState.YES);
  		System.out.println(gp.getState().toString() + " " + gp.getValue() + " " + gp.getThreshold() + " " + gp.toString());
- 		//modify( gp ) { setState(PropertyState.YES) };
+ 		modify( gp ) { setState(PropertyState.YES) };
 end
 
 rule "GenomeProperty state: not supported"
+agenda-group "report"
 	when
-		gp : GenomeProperty( value > 0.0 && value < threshold, state != PropertyState.NOT_SUPPORTED )
+		gp : GenomeProperty( value > 0.0 && value < threshold )
  	then
- 		gp.setState(PropertyState.NOT_SUPPORTED);
  		System.out.println(gp.getState().toString() + " " + gp.getValue() + " " + gp.getThreshold() + " " + gp.toString());
-end
+		modify( gp ) { setState(PropertyState.NOT_SUPPORTED) };
+ end
 
 rule "GenomeProperty state: some evidence"
+agenda-group "report"
 	when
-		gp : GenomeProperty( value > 0.0 && value > threshold && value < 1.0, state != PropertyState.SOME_EVIDENCE )
+		gp : GenomeProperty( value > 0.0 && value > threshold && value < 1.0 )
  	then
- 		gp.setState(PropertyState.SOME_EVIDENCE);
  		System.out.println(gp.getState().toString() + " " + gp.getValue() + " " + gp.getThreshold() + " " + gp.toString());
+ 		modify( gp ) { setState(PropertyState.SOME_EVIDENCE) };
 end

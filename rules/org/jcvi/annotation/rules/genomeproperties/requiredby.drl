@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 
 rule "GenomeProperty value calculation"
+agenda-group "calculation"
 	when
 		genomeprop	 		: GenomeProperty( filled : this["filled"] )
 		requiredRelations	: ArrayList()
-				from collect( PropertyRelationship( subject : subject, type == RelationshipType.REQUIRED_BY, object == genomeprop ) )
-		subject : Property( this == subject )		
+				from collect( PropertyRelationship( type == RelationshipType.REQUIRED_BY, object == genomeprop ) )
 		numFilledComponents	: Double( doubleValue != filled ) 
 				from accumulate(  r : PropertyRelationship()
 					from requiredRelations,

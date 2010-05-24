@@ -4,34 +4,14 @@ import org.jcvi.annotation.facts.*;
 import java.util.ArrayList;
 
 rule "HMM Hit above cutoff (property exists)"
-
+agenda-group "assignments"
 	when
 		hit : HmmHit( aboveTrustedHit == true,
 						hitId : hitId, queryId : queryId )
 		p	: FeatureProperty( id == hitId )
 		f	: Feature ( featureId == queryId, properties not contains p )
-		
-		
  	then
   		System.out.println("Assign HMM FeatureProperty " + hitId + " " + p.getValue() + " on " + f.toString());
  		modify( p ) { setValue(1) };
  		modify( f ) { addProperty(p) };
- end
-
-rule "HMM Hit above cutoff (Property does not exist)"
-
-	when
-		hit : HmmHit( aboveTrustedHit == true,
-						hitId : hitId, queryId : queryId )
-		f	: Feature ( featureId == queryId )
-		not (exists (FeatureProperty( id == hitId )))
-		
- 	then
- 		FeatureProperty p = FeatureProperty.create(hitId);
- 		p.setValue(1);
-  		System.out.println("Insert HMM FeatureProperty " + p.getId() + " " + p.getValue() + " on " + f.toString());
-   		insert( p );
- 		modify( f ) { addProperty(p) };
 end
-
-

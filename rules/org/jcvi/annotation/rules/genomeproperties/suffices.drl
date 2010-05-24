@@ -3,6 +3,7 @@ package org.jcvi.annoation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 
 rule "Assign GenomeProperty on the genome whenever one of its features has the property"
+agenda-group "assignments"
 	when
 		p				: GenomeProperty()
 		f				: Feature( properties contains p, genome : genome )
@@ -12,6 +13,7 @@ rule "Assign GenomeProperty on the genome whenever one of its features has the p
 end
 
 rule "generic sufficient_for Property"
+agenda-group "assignments"
 	when
 		relationship	: PropertyRelationship(
 							prop1: 	subject, 
@@ -26,6 +28,7 @@ rule "generic sufficient_for Property"
 end
 
 rule "sufficient_for GenomeProperty"	
+agenda-group "assignments"
 	when
 		prop2			: GenomeProperty()
 		relationship	: PropertyRelationship(
