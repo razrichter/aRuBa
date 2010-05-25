@@ -66,7 +66,7 @@ public class Aruba {
 
 		// add database option
 		options.addOption("h","help",false, "Print this message");
-		options.addOption("D", "database", true, "Small Genome Database id (required)");
+		options.addOption("d", "database", true, "Small Genome Database id (required)");
 		options.addOption("b", "blast", false, "Path to Blast file or directory");
 		options.addOption("h", "hmm", false, "Path to HMM file or directory");
 		options.addOption("r", "rdf", false, "Path to RDF file or directory");
@@ -183,10 +183,10 @@ public class Aruba {
 				ResourceType.CHANGE_SET);
 	}
 	public boolean addRule(String file, ResourceType type) {
-		return this.engine.addResource(file, type);
+		return this.engine.addResource(this.getClass().getResource(file), type);
 	}
 	public boolean addDrools(String file) {
-		return engine.addResource(file, ResourceType.DRL);
+		return this.addRule(file, ResourceType.DRL);
 	}
 	public boolean addDroolsExpression(String ruleStr) {
 		Resource res = ResourceFactory.newReaderResource(new StringReader(ruleStr));
@@ -214,9 +214,8 @@ public class Aruba {
 	}
 
 	public int addGenomeProperties() {
-		int numFacts = addGenomePropertiesFacts();
 		addGenomePropertiesRules();
-		return numFacts;
+		return addGenomePropertiesFacts();
 	}
 
 	public int addRdf(RdfFactDAO dao) {

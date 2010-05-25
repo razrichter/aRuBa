@@ -20,6 +20,7 @@ import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.rule.FactHandle;
+import org.drools.runtime.rule.WorkingMemoryEntryPoint;
 
 
 public class RulesEngine {
@@ -137,7 +138,7 @@ public class RulesEngine {
 		return false;
 	}
 	
-	public void addFact(Object fact) {
+	public synchronized void addFact(Object fact) {
 		FactHandle h = ksession.getFactHandle(fact);
 		if (h != null) {
 			ksession.retract(h);

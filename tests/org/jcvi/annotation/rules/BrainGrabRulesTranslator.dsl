@@ -31,7 +31,8 @@
 [condition][]there is a taxon {taxonName}={taxonName} : Taxon( )
 [condition][]there is a genome property {propName:\S+} with id {propId:\S+}={propName} : GenomeProperty( this["id"]=="{propId}" )
 [condition][]there is a genome property {propName:\S+}={propName} : GenomeProperty( )
-[condition][]there is a "{propKey}" property {propName:\S+}={propName}: Map( this["{propKey}"] == 1 )
+[condition][]there is a "{propId}" featureproperty {propName:\S+}={propName}: FeatureProperty( id == "{propId}" )
+[condition][]there is a "{propId}" genomeproperty {propName:\S+}={propName}: GenomeProperty( id == "{propId}" )
 [condition][]there is a hmm hit to {subjectId:(\S+)}=HmmHit ( hitId == "{subjectId}")
 [condition][]there is a {program:\S+} hit to {subjectId:(\S+)} with {comparator}=BlastHit( program == "{program}", hitId == "{subjectId}", {comparator})
 [condition][]{feature} with hmm hit to {hitId:(\S+)}=HmmHit( hitId == "{hitId}", queryId == {feature}.featureId )
@@ -68,7 +69,8 @@
 [consequence][]assert annotation {annotName} on {featureName}=Annotation {annotName}=new Annotation(kcontext.getRule().getName()); {featureName}.addAssertedAnnotation({annotName});
 [consequence][]assert annotation {annotName}=Annotation {annotName}=new Annotation(kcontext.getRule().getName());
 [consequence][]assert annotation=Annotation ann=new Annotation(kcontext.getRule().getName());
-[consequence][]new "{propKey:\S+}" property {propName}=Map<String,Object> {propName} = new HashMap<String,Object>(); {propName}.put("{propKey}", 1);
+[consequence][]new "{propKey:\S+}" featureproperty {propName}=FeatureProperty {propName} = FeatureProperty.create("{propKey}");
+[consequence][]new "{propKey:\S+}" genomeproperty {propName}=GenomeProperty {propName} = GenomeProperty.create("{propKey}");
 [consequence][]set source rule name on {variable}={variable}.setSource(rule name);
 [consequence][]set source {value} on {variable}={variable}.setSource("{value}");
 [consequence][]set gene symbol {value} on {variable}={variable}.setGeneSymbol("{value}");

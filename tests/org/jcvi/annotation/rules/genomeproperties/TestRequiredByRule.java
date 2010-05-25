@@ -67,8 +67,8 @@ public class TestRequiredByRule extends TestCase {
 		GenomeProperty gp = GenomeProperty.create("66644");
 		
 		assertEquals(1.0, propRequired.getValue());
-		assertEquals(1.0, gp.get("required"));
-		assertEquals(1.0, gp.get("filled"));
+		assertEquals(1.0, gp.getRequired());
+		assertEquals(1.0, gp.getFilled());
 		assertEquals(1.0, gp.getValue());
 	}
 

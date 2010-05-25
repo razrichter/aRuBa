@@ -7,7 +7,7 @@ public class GenomePropertyFactory {
 
 	private static HashMap<String, GenomeProperty> propsCache = new HashMap<String, GenomeProperty>();
 
-	public static GenomeProperty create(String id) {
+	public static synchronized GenomeProperty create(String id) {
 		GenomeProperty p = (GenomeProperty) propsCache.get(id);
 		if (p == null) {
 			p = new GenomeProperty(id);
@@ -16,7 +16,7 @@ public class GenomePropertyFactory {
 		return p;
 	}
 
-	public static Collection<GenomeProperty> getProperties() {
+	public static synchronized Collection<GenomeProperty> getProperties() {
 		return propsCache.values();
 	}
 

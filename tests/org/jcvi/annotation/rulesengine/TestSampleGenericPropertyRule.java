@@ -46,7 +46,7 @@ public class TestSampleGenericPropertyRule extends TestCase {
 		
 		// orfA is assigned a twinarg property
 		Property prop = FeatureProperty.create("TWINARG"); 
-		prop.put("TWINARG", 1);
+		prop.getAttributes().put("TWINARG", 1);
 		orfA.addProperty(prop);	
 		
         engine.addFact(orfA);
@@ -60,8 +60,8 @@ public class TestSampleGenericPropertyRule extends TestCase {
 	public void testOrfAToxinProperty() {
 		 List<Property> properties = orfA.getProperties();
 		 boolean isAssigned = false;
-		 for (Map<String,Object> prop : properties)  {
-			 if (prop.containsKey("TOXIN_ANTITOXIN")) {
+		 for (Property prop : properties)  {
+			 if (prop.getAttributes().containsKey("TOXIN_ANTITOXIN")) {
 				 isAssigned = true;
 			 }
 		 }
@@ -70,8 +70,8 @@ public class TestSampleGenericPropertyRule extends TestCase {
 	public void testOrfBToxinProperty() {
 		 List<Property> properties = orfB.getProperties();
 		 boolean isAssigned = false;
-		 for (Map<String,Object> prop : properties)  {
-			 if (prop.containsKey("TOXIN_ANTITOXIN")) {
+		 for (Property prop : properties)  {
+			 if (prop.getAttributes().containsKey("TOXIN_ANTITOXIN")) {
 				 isAssigned = true;
 			 }
 		 }
@@ -82,8 +82,8 @@ public class TestSampleGenericPropertyRule extends TestCase {
 	public void testSomethingPropertyOnOrfA() {
 		 List<Property> properties = orfA.getProperties();
 		 boolean isAssigned = false;
-		 for (Map<String,Object> prop : properties)  {
-			 if (prop.containsKey("SOMETHING")) {
+		 for (Property prop : properties)  {
+			 if (prop.getAttributes().containsKey("SOMETHING")) {
 				 isAssigned = true;
 			 }
 		 }
@@ -92,8 +92,8 @@ public class TestSampleGenericPropertyRule extends TestCase {
 	public void testSomethingPropertyOnOrfB() {
 		 List<Property> properties = orfB.getProperties();
 		 boolean isAssigned = false;
-		 for (Map<String,Object> prop : properties)  {
-			 if (prop.containsKey("SOMETHING")) {
+		 for (Property prop : properties)  {
+			 if (prop.getAttributes().containsKey("SOMETHING")) {
 				 isAssigned = true;
 			 }
 		 }

@@ -3,8 +3,7 @@ package org.jcvi.annotation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 import java.util.ArrayList;
 
-rule "HMM Hit above cutoff (property exists)"
-agenda-group "assignments"
+rule "HMM Hit above cutoff (Property exists)"
 	when
 		hit : HmmHit( aboveTrustedHit == true,
 						hitId : hitId, queryId : queryId )
@@ -15,3 +14,5 @@ agenda-group "assignments"
  		modify( p ) { setValue(1) };
  		modify( f ) { addProperty(p) };
 end
+
+

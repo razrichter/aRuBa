@@ -145,8 +145,8 @@ public class TestGenomeProperty_66644 extends TestCase {
 		Feature feature = new Feature("123");
 		FeatureProperty featureprop1 = FeatureProperty.create("63238");
 		FeatureProperty featureprop2 = FeatureProperty.create("63239");
-		featureprop1.put("value", 1.0);
-		featureprop2.put("value", 0.5);
+		featureprop1.setValue(1.0);
+		featureprop2.setValue(0.5);
 		feature.setGenome(genome);
 	
 		// Test with 1 of 2 required properties

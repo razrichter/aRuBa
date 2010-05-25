@@ -33,4 +33,7 @@ public class PropertyRelationship {
 	public void setObject(Property object) {
 		this.object = object;
 	}
+	public String toString() {
+		return this.subject.toString() + " " + this.getType().toString() + " " + this.object.toString();
+	}
 }

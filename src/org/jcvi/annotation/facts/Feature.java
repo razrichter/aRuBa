@@ -2,9 +2,6 @@ package org.jcvi.annotation.facts;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import org.jcvi.annotation.facts.Annotation;
 
 public class Feature {
 	private String featureId;
@@ -194,7 +191,7 @@ public class Feature {
 	}
 	
 	public String toString() {
-		return this.type + "|" + this.featureId;
+		return this.getClass().getSimpleName() + "." + this.featureId;
 	}
 	
 	public boolean isSameDirection(Feature f1, Feature f2) {
@@ -202,16 +199,16 @@ public class Feature {
 	}
 
 	public void removeProperty(GenomeProperty p) {
-		this.removeProperty(p.get("id").toString());
+		this.removeProperty(p.getId().toString());
 	}
 	public void removeProperty(FeatureProperty p) {
-		this.removeProperty(p.get("id").toString());
+		this.removeProperty(p.getId().toString());
 	}
 	public void removeProperty(String id) {
-		Map<String, Object> prop;
+		Property prop;
 		for (int i=0; i < this.properties.size(); i++) {
 			prop = this.properties.get(i);
-			if (prop.containsKey("id") && prop.get("id").equals(id)) {
+			if (prop.getId().equals(id)) {
 				this.properties.remove(i);
 			}
 		}

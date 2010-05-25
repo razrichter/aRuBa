@@ -34,16 +34,16 @@ public class Genome {
 		this.properties.add(prop);
 	}
 	public void removeProperty(GenomeProperty p) {
-		this.removeProperty(p.get("id").toString());
+		this.removeProperty(p.getId().toString());
 	}
 	public void removeProperty(FeatureProperty p) {
-		this.removeProperty(p.get("id").toString());
+		this.removeProperty(p.getId().toString());
 	}
 	public void removeProperty(String id) {
-		Map<String, Object> prop;
+		Property prop;
 		for (int i=0; i < this.properties.size(); i++) {
 			prop = this.properties.get(i);
-			if (prop.containsKey("id") && prop.get("id").equals(id)) {
+			if (prop.getId().equals(id)) {
 				this.properties.remove(i);
 			}
 		}

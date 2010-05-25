@@ -7,8 +7,8 @@ public abstract class FeaturePropertyFactory {
 	
 	private static HashMap<String, FeatureProperty> propsCache = new HashMap<String, FeatureProperty>();
 
-	public static FeatureProperty create(String id) {
-		FeatureProperty p = (FeatureProperty) propsCache.get(id);
+	public static synchronized FeatureProperty create(String id) {
+		FeatureProperty p = propsCache.get(id);
 		if (p == null) {
 			p = new FeatureProperty(id);
 			propsCache.put(id, p);
@@ -16,7 +16,7 @@ public abstract class FeaturePropertyFactory {
 		return p;
 	}
 
-	public static Collection<FeatureProperty> getProperties() {
+	public static synchronized Collection<FeatureProperty> getProperties() {
 		return propsCache.values();
 	}
 

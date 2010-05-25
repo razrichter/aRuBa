@@ -3,7 +3,6 @@ package org.jcvi.annoation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 
 rule "Assign GenomeProperty on the genome whenever one of its features has the property"
-agenda-group "assignments"
 	when
 		p				: GenomeProperty()
 		f				: Feature( properties contains p, genome : genome )
@@ -12,14 +11,13 @@ agenda-group "assignments"
 		modify( g ) { addProperty(p) };
 end
 
-rule "generic sufficient_for Property"
-agenda-group "assignments"
+rule "sufficient for Property rule"
 	when
 		relationship	: PropertyRelationship(
 							prop1: 	subject, 
 							type == RelationshipType.SUFFICIENT_FOR, 
 							prop2: 	object )
-		feature			: Feature( properties contains prop1 && not contains prop2 )
+		feature			: Feature( properties contains prop1, properties not contains prop2  )
 			
 	then 
 		System.out.println("Sufficent Rule: assigns genomeprop " + prop2.getId() + " based on Property on Genome " + prop1.getId());
@@ -27,8 +25,7 @@ agenda-group "assignments"
 		modify( feature ) { addProperty(prop2) };
 end
 
-rule "sufficient_for GenomeProperty"	
-agenda-group "assignments"
+rule "sufficient for GenomeProperty rule"	
 	when
 		prop2			: GenomeProperty()
 		relationship	: PropertyRelationship(

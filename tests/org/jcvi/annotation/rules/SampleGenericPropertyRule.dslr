@@ -1,6 +1,6 @@
 package org.jcvi.annotation.rules;
 import org.jcvi.annotation.facts.*;
-import java.util.Map;
+import org.jcvi.annotation.facts.Property;
 expander BrainGrabRulesTranslator.dsl;
 
 # (1) if (HMM_HIT(ARG1, TIGR02607) && HMM_HIT(ARG2, PF05015) && CLOSE(ARG1, ARG2, 100)) 
@@ -14,7 +14,7 @@ no-loop true
         geneB has an hmm hit to PF05015
     then
     	print rule fired
-    	new "TOXIN_ANTITOXIN" property toxinProp
+    	new "TOXIN_ANTITOXIN" featureproperty toxinProp
     	add property toxinProp to geneA
     	add property toxinProp to geneB
     	insert(toxinProp);
@@ -27,13 +27,13 @@ rule "sample rule that is activated when there is a twinarg toxin_antitoxin"
 #dialect "mvel"
 no-loop true
 	when
-		there is a "TWINARG" property twinargProp
-		there is a "TOXIN_ANTITOXIN" property toxinProp
+		there is a "TWINARG" featureproperty twinargProp
+		there is a "TOXIN_ANTITOXIN" featureproperty toxinProp
 		there is a feature gene
 			-with property twinargProp
 			-with property toxinProp
 	then
 		print rule fired
-		new "SOMETHING" property someProp
+		new "SOMETHING" featureproperty someProp
 		add property someProp to gene
 end		

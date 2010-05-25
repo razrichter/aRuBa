@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.jcvi.annotation.facts.GenomeProperty;
+import org.jcvi.annotation.facts.Property;
 
 public class SmallGenomePropertyDAO implements PropertyDAO {
 
@@ -60,7 +61,7 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				property = GenomeProperty.create(rs.getString(1));
-				property.put("definition", rs.getString(2));
+				property.setDefinition(rs.getString(2));
 				property.setValue(rs.getDouble(3));
 			} else {
 				throw new DaoException("Genome Property not found.");
@@ -94,7 +95,7 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 			
 			while (rs.next()) {
 				GenomeProperty property = GenomeProperty.create(rs.getString(1));
-				property.put("definition", rs.getString(2));
+				property.setDefinition(rs.getString(2));
 				property.setValue(rs.getDouble(3));
 				properties.add(property);
 			}
@@ -107,9 +108,9 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 		return properties;	
 	}
 
-	public Iterator<Map<String, Object>> iterator() {
+	public Iterator<Property> iterator() {
 		final Iterator<GenomeProperty> iter = getProperties().iterator();
-		return new Iterator<Map<String, Object>>() {
+		return new Iterator<Property>() {
 			public boolean hasNext() {
 				return iter.hasNext();
 			}

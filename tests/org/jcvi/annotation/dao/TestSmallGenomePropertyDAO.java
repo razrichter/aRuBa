@@ -1,11 +1,12 @@
 package org.jcvi.annotation.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import junit.framework.TestCase;
+
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.GenomeProperty;
+import org.jcvi.annotation.facts.Property;
 import org.junit.After;
 import org.junit.Before;
 
@@ -30,8 +31,8 @@ public class TestSmallGenomePropertyDAO extends TestCase {
 	}
 	
 	public void testgetProperty() {
-		Map<String, Object> property = genomePropertyDAO.getProperty("GenProp0866");
-		assertEquals("carbon metabolism", property.get("definition"));
+		Property property = genomePropertyDAO.getProperty("GenProp0866");
+		assertEquals("carbon metabolism", property.getDefinition());
 	}
 	public void testGetAllProperties() {
 		
@@ -40,20 +41,20 @@ public class TestSmallGenomePropertyDAO extends TestCase {
 		assertTrue(properties.size() > 600);
 		
 		// Get some random genome property, and test its contained in the list
-		Map<String, Object> property = genomePropertyDAO.getProperty("GenProp0812");
-		assertEquals("rho-dependent termination", property.get("definition"));
+		Property property = genomePropertyDAO.getProperty("GenProp0812");
+		assertEquals("rho-dependent termination", property.getDefinition());
 		assertTrue(properties.contains(property));
 	}
 	public void testgetPropertyValue() {
-		Map<String, Object> property = genomePropertyDAO.getProperty("GenProp0798");
-		assertTrue(property.get("value").equals(0.375));
+		Property property = genomePropertyDAO.getProperty("GenProp0798");
+		assertTrue(property.getValue() == 0.375);
 	}
 	
 	public void testGetAllPropertiesIterator() {
-		for (Map<String, Object> prop : genomePropertyDAO) {
+		for (Property prop : genomePropertyDAO) {
 			System.out.println(prop.getClass().getName());
-			assertTrue(prop.containsKey("id"));
-			assertTrue(prop.containsKey("value"));
+			assertTrue(prop.getId() != null);
+			assertTrue(prop instanceof Property);
 		}
 	}
 	

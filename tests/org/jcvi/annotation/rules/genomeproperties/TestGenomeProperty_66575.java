@@ -8,10 +8,8 @@ import org.drools.builder.ResourceType;
 import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.FeatureProperty;
-import org.jcvi.annotation.facts.FeaturePropertyFactory;
 import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.GenomeProperty;
-import org.jcvi.annotation.facts.Property;
 import org.jcvi.annotation.rulesengine.RulesEngine;
 import org.junit.After;
 import org.junit.Before;
@@ -65,11 +63,12 @@ public class TestGenomeProperty_66575 extends TestCase {
 		assertFalse(feature.getProperties().contains(propAssigned));
 		
 		// Add these facts to our knowledgebase
+		engine.setConsoleLogger();
 		engine.addFact(feature);
 		engine.addFact(propSufficient);	
-
+		
 		// Fire our engine
-		engine.fireAndDispose();
+		engine.fireAllRules();
 		
 		assertTrue(feature.getProperties().contains(propAssigned));
 		assertEquals(1.0, propAssigned.getValue());
@@ -77,8 +76,8 @@ public class TestGenomeProperty_66575 extends TestCase {
 		// and, since FeatureProperty_63238 is required by GenomeProperty_66644,
 		// this should trigger a recalculation of the GenomeProperty value
 		GenomeProperty gp = GenomeProperty.create("66575");
-		assertEquals(1.0, gp.get("required"));
-		assertEquals(1.0, gp.get("filled"));
+		assertEquals(1.0, gp.getRequired());
+		assertEquals(1.0, gp.getFilled());
 		assertEquals(1.0, gp.getValue());
 	}
 
@@ -117,8 +116,8 @@ public class TestGenomeProperty_66575 extends TestCase {
 		
 		
 		// assertEquals(1.0, featurepropAsserted.getValue());
-		assertEquals(1.0, gp.get("required"));
-		assertEquals(1.0, gp.get("filled"));
+		assertEquals(1.0, gp.getRequired());
+		assertEquals(1.0, gp.getFilled());
 		assertEquals(1.0, gp.getValue());
 	}
 

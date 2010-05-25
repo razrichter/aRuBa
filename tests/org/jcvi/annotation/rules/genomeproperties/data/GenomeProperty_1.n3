@@ -1,0 +1,136 @@
+@prefix gp: <urn:genome_properties:instances:> .
+@prefix : <urn:genome_properties:ontology:> .
+
+gp:GenomeProperty_1
+	a	:GenomeProperty;
+	:name	"1";
+	:type	"pathway";
+	:threshold	"2";
+	:property	"chorismate biosynthesis via shikimate";
+.
+
+gp:FeatureProperty_76
+	a	:FeatureProperty;
+	:name	"76";
+	:required_by	gp:GenomeProperty_1;
+.
+gp:FeatureProperty_77
+	a	:FeatureProperty;
+	:name	"77";
+	:required_by	gp:GenomeProperty_1;
+.
+gp:FeatureProperty_78
+	a	:FeatureProperty;
+	:name	"78";
+	:required_by	gp:GenomeProperty_1;
+.
+gp:FeatureProperty_79
+	a	:FeatureProperty;
+	:name	"79";
+	:required_by	gp:GenomeProperty_1;
+.
+gp:FeatureProperty_81
+	a	:FeatureProperty;
+	:name	"81";
+	:required_by	gp:GenomeProperty_1;
+.
+gp:FeatureProperty_83
+	a	:FeatureProperty;
+	:name	"83";
+	:required_by	gp:GenomeProperty_1;
+.
+gp:FeatureProperty_84
+	a	:FeatureProperty;
+	:name	"84";
+	:required_by	gp:GenomeProperty_1;
+.
+gp:FeatureProperty_PF01202
+	a	:FeatureProperty;
+	:name	"PF01202";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_76;
+.
+gp:FeatureProperty_PF01202
+	a	:FeatureProperty;
+	:name	"PF01202";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_76;
+.
+gp:FeatureProperty_TIGR01920
+	a	:FeatureProperty;
+	:name	"TIGR01920";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_76;
+.
+gp:FeatureProperty_TIGR00033
+	a	:FeatureProperty;
+	:name	"TIGR00033";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_77;
+.
+gp:FeatureProperty_TIGR01357
+	a	:FeatureProperty;
+	:name	"TIGR01357";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_78;
+.
+gp:FeatureProperty_PF01959
+	a	:FeatureProperty;
+	:name	"PF01959";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_78;
+.
+gp:FeatureProperty_TIGR00507
+	a	:FeatureProperty;
+	:name	"TIGR00507";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_79;
+.
+gp:FeatureProperty_TIGR01809
+	a	:FeatureProperty;
+	:name	"TIGR01809";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_79;
+.
+gp:FeatureProperty_TIGR01088
+	a	:FeatureProperty;
+	:name	"TIGR01088";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_81;
+.
+gp:FeatureProperty_TIGR01093
+	a	:FeatureProperty;
+	:name	"TIGR01093";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_81;
+.
+gp:FeatureProperty_TIGR00034
+	a	:FeatureProperty;
+	:name	"TIGR00034";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_83;
+.
+gp:FeatureProperty_TIGR01358
+	a	:FeatureProperty;
+	:name	"TIGR01358";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_83;
+.
+gp:FeatureProperty_TIGR01361
+	a	:FeatureProperty;
+	:name	"TIGR01361";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_83;
+.
+gp:FeatureProperty_TIGR01949
+	a	:FeatureProperty;
+	:name	"TIGR01949";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_83;
+.
+gp:FeatureProperty_TIGR01356
+	a	:FeatureProperty;
+	:name	"TIGR01356";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_84;
+.

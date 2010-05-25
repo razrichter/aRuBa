@@ -90,6 +90,17 @@ public class RdfFactDAO implements Iterable<Object> {
 		this.relationships = relationships;
 	}
 
+	public void serializeFacts() {
+		// serialize FeatureProperty objects
+		for (FeatureProperty p : this.featureProperties) {
+			System.out.println(p.toString());
+		}
+		
+		for (PropertyRelationship r : this.relationships) {
+			System.out.println(r.toString());
+		}
+	}
+	
 	public int addDao(RdfFileDAO dao) {
 
 		model = dao.getModel();
@@ -119,7 +130,6 @@ public class RdfFactDAO implements Iterable<Object> {
 		return total;
 	}
 
-	
 	private boolean addGenomeProperties() {
 
 		boolean isSuccess = true;
@@ -209,13 +219,15 @@ public class RdfFactDAO implements Iterable<Object> {
 							}
 
 
-							// TODO: use propNode, and figure out a more robust way 
-							// to determine its value
+							else if (key.equals("definition")) {
+								genomeProperty.setDefinition(value);
+							}
+							// this requires thresholds to be defined as a String rather than integer type
 							else if (key.equals("threshold")) {
 								genomeProperty.setThreshold(value);
 							}
 							else if (!(key.equals("name") || (key.equals("type") && value.equals(ontologyNs + "GenomeProperty")))) {
-								genomeProperty.put(key, value);
+								genomeProperty.getAttributes().put(key, value);
 							}
 						}
 					}
@@ -282,7 +294,7 @@ public class RdfFactDAO implements Iterable<Object> {
 						String key = propStmt.getPredicate().getLocalName();
 						RDFNode propNode = propStmt.getObject();
 						String value = propNode.toString();
-						if (key != null) {
+						if (key != null && !key.equals("name")) {
 
 							// Handle property relationships
 							if (this.relations.contains(key)) {
@@ -304,12 +316,16 @@ public class RdfFactDAO implements Iterable<Object> {
 											if (propClass.equals("FeatureProperty")) {
 												FeatureProperty parentFeatureProperty = FeatureProperty.create(propId);
 												featureProperties.add(parentFeatureProperty);
-												this.relationships.add(new PropertyRelationship(featureProperty, relation, parentFeatureProperty));
+												PropertyRelationship r = new PropertyRelationship(featureProperty, relation, parentFeatureProperty);
+												this.relationships.add(r);
+												// this.relationships.add(new PropertyRelationship(featureProperty, relation, parentFeatureProperty));
 	
 											} else if (propClass.equals("GenomeProperty")) {
 												GenomeProperty parentGenomeProperty = GenomeProperty.create(propId);
 												genomeProperties.add(parentGenomeProperty);
-												this.relationships.add(new PropertyRelationship(featureProperty, relation, parentGenomeProperty));
+												PropertyRelationship r = new PropertyRelationship(featureProperty, relation, parentGenomeProperty);
+												this.relationships.add(r);
+												//this.relationships.add(new PropertyRelationship(featureProperty, relation, parentGenomeProperty));
 											}
 										}
 									}
@@ -318,13 +334,15 @@ public class RdfFactDAO implements Iterable<Object> {
 								}
 							}
 
-							// this requires thresholds to be defined as a String
+							else if (key.equals("definition")) {
+								featureProperty.setDefinition(value);
+							}
+							// this requires thresholds to be defined as a String rather than integer type
 							else if (key.equals("threshold")) {
-								System.out.println("threshold " + value);
 								featureProperty.setThreshold(value);
 							}
-							else if (!(key.equals("name") || (key.equals("type") && value.equals(ontologyNs + "GenomeProperty")))) {
-								featureProperty.put(key, value);
+							else if (!(key.equals("name") || (key.equals("type") && value.equals(ontologyNs + "FeatureProperty")))) {
+								featureProperty.getAttributes().put(key, value);
 							}
 						}
 					}
@@ -347,7 +365,7 @@ public class RdfFactDAO implements Iterable<Object> {
 		else if (key.equals("part_of")) {
 			return RelationshipType.PART_OF;
 		}
-		System.out.println("ERROR: " + key + " relation not found");
+		System.err.println("ERROR: " + key + " relation not found");
 		return null;
 	}
 	
@@ -417,7 +435,7 @@ public class RdfFactDAO implements Iterable<Object> {
 		}
 	}
 
-	public ArrayList<Object> facts() {
+	public ArrayList<Object> getFacts() {
 		ArrayList<Object> facts = new ArrayList<Object>();
 		facts.addAll(featureProperties);
 		facts.addAll(genomeProperties);
@@ -437,6 +455,6 @@ public class RdfFactDAO implements Iterable<Object> {
 		return genomeProperties.size();
 	}
 	public Iterator<Object> iterator() {
-		return this.facts().iterator();
+		return this.getFacts().iterator();
 	}
 }

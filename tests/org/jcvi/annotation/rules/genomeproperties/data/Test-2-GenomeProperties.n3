@@ -1,0 +1,23 @@
+@prefix gp: <urn:genome_properties:instances:> .
+@prefix : <urn:genome_properties:ontology:> .
+
+gp:FeatureProperty_54098
+	a	:FeatureProperty;
+	:name	"54098";
+.
+gp:FeatureProperty_TIGR01063
+	a	:FeatureProperty;
+	:name	"TIGR01063";
+	:sufficient_for	gp:FeatureProperty_54098;
+.
+
+gp:FeatureProperty_77
+	a	:FeatureProperty;
+	:name	"77";
+.
+gp:FeatureProperty_TIGR00033
+	a	:FeatureProperty;
+	:name	"TIGR00033";
+	:sufficient_for	gp:FeatureProperty_77;
+.
+

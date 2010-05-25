@@ -2,12 +2,15 @@ package org.jcvi.annotation.facts;
 
 import java.util.HashMap;
 
-public abstract class Property extends HashMap<String, Object> {
+public abstract class Property {
 
 	private String id;
 	private double threshold;
 	private double value;
-	private PropertyState state;
+	private double filled;
+	private double required;
+	private String definition;
+	private HashMap<String, Object> attributes = new HashMap<String, Object>();
 	
 	protected Property(String id) {
 		this.id = id;
@@ -39,14 +42,31 @@ public abstract class Property extends HashMap<String, Object> {
 		this.value = new Double(value);
 	}
 
-	public PropertyState getState() {
-		return state;
+	public double getFilled() {
+		return filled;
 	}
-	public void setState(PropertyState state) {
-		this.state = state;
+	public void setFilled(double filled) {
+		this.filled = filled;
 	}
-	public void setStateYes() {
-		this.state = PropertyState.YES;
+	public double getRequired() {
+		return required;
+	}
+	public void setRequired(double required) {
+		this.required = required;
 	}
 
+	public String getDefinition() {
+		return definition;
+	}
+	public void setDefinition(String definition) {
+		this.definition = definition;
+	}
+	public HashMap<String, Object> getAttributes() {
+		return attributes;
+	}
+	public void setAttributes(HashMap<String, Object> attributes) {
+		this.attributes = attributes;
+	}
+	
+	
 }

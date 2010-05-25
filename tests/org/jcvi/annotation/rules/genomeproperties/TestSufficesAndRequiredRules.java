@@ -73,8 +73,8 @@ public class TestSufficesAndRequiredRules extends TestCase {
 		GenomeProperty gp = GenomeProperty.create("66644");
 		
 		assertEquals(1.0, propRequired.getValue());
-		assertEquals(1.0, gp.get("required"));
-		assertEquals(1.0, gp.get("filled"));
+		assertEquals(1.0, gp.getRequired());
+		assertEquals(1.0, gp.getFilled());
 		assertEquals(1.0, gp.getValue());
 	}
 
@@ -82,11 +82,6 @@ public class TestSufficesAndRequiredRules extends TestCase {
 	public void testAllRules() {
 		System.out.println("\ntestAllRules()...");
 		
-		// Add all of our genome properties rules
-		engine.addResource(this.getClass().getResource("suffices.drl"), ResourceType.DRL);
-		engine.addResource(this.getClass().getResource("requiredby.drl"), ResourceType.DRL);
-		engine.addResource(this.getClass().getResource("AboveTrustedCutoff.drl"), ResourceType.DRL);
-
 		// Init feature with our sufficient property
 		Feature feature = new Feature("xyz");
 		FeatureProperty propSufficient = FeatureProperty.create("123");
@@ -96,6 +91,13 @@ public class TestSufficesAndRequiredRules extends TestCase {
 		engine.addFact(feature);
 		engine.addFact(propSufficient);	
 		
+		// Note: If we add rules before the facts, we get the reteoo.AlphaNode cannot be 
+		// cast to AccumulateNode.AccumulateMemory error
+		// Add all of our genome properties rules
+		engine.addResource(this.getClass().getResource("suffices.drl"), ResourceType.DRL);
+		engine.addResource(this.getClass().getResource("requiredby.drl"), ResourceType.DRL);
+		engine.addResource(this.getClass().getResource("AboveTrustedCutoff.drl"), ResourceType.DRL);
+
 		// Fire our engine
 		engine.fireAndDispose();
 		
@@ -151,8 +153,8 @@ public class TestSufficesAndRequiredRules extends TestCase {
 		// and, since FeatureProperty_63238 is required by GenomeProperty_66644,
 		// this should trigger a recalculation of the GenomeProperty value
 		GenomeProperty gp = GenomeProperty.create("66644");
-		assertEquals(1.0, gp.get("required"));
-		assertEquals(1.0, gp.get("filled"));
+		assertEquals(1.0, gp.getRequired());
+		assertEquals(1.0, gp.getFilled());
 		assertEquals(1.0, gp.getValue());
 		assertTrue(feature.getProperties().contains(gp));
 	}
@@ -273,8 +275,8 @@ public class TestSufficesAndRequiredRules extends TestCase {
 		// This gets this property which we expect to be in the GenomeProperty.propsCache
 		GenomeProperty gp = GenomeProperty.create("66644");
 		assertEquals(1.0, propRequired.getValue());
-		assertEquals(1.0, gp.get("required"));
-		assertEquals(1.0, gp.get("filled"));
+		assertEquals(1.0, gp.getRequired());
+		assertEquals(1.0, gp.getFilled());
 		assertEquals(1.0, gp.getValue());
 		assertTrue(feature.getProperties().contains(gp));
 		assertTrue(genome.getProperties().contains(gp));

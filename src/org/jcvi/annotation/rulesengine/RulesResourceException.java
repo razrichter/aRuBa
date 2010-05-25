@@ -17,13 +17,17 @@ public class RulesResourceException extends RuntimeException {
 	public RulesResourceException(Throwable cause) {
 		super(cause);
 	}
-	
+
 	public RulesResourceException(String message, Throwable cause) {
 		super(message, cause);
 	}
-	
-    public RulesResourceException(Resource resource, KnowledgeBuilderErrors errors) {
-    	super("Could not parse resource in " + resource.toString() + " with errors\n" + errors.toString());
-    }
+
+	public RulesResourceException(KnowledgeBuilderErrors errors) {
+		super("KnowledgeBuilder failed with errors\n" + errors.toString());
+	}
+
+	public RulesResourceException(Resource resource, KnowledgeBuilderErrors errors) {
+		super("Could not parse resource in " + resource.toString() + " with errors\n" + errors.toString());
+	}
 
 }

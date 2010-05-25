@@ -1,6 +1,6 @@
 package org.jcvi.annotation;
 
-import org.drools.builder.ResourceType;
+import org.jcvi.annotation.facts.GenomeProperty;
 
 public class RunGP {
 
@@ -11,9 +11,13 @@ public class RunGP {
 			System.out.println("A Small Genome database is required");
 		} else {
 			Aruba a = new Aruba();
-			a.addSmallGenome(genome);
+			a.log();
+			
 			a.addGenomeProperties();
+			a.addSmallGenome(genome);
 			a.run();
+			
+			GenomeProperty.report(System.out);
 		}
 	}
 }

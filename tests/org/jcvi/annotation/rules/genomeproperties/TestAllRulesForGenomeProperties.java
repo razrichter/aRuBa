@@ -5,13 +5,10 @@ import java.net.URL;
 import junit.framework.TestCase;
 
 import org.drools.builder.ResourceType;
-import org.drools.runtime.rule.FactHandle;
 import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.FeatureProperty;
-import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.GenomeProperty;
-import org.jcvi.annotation.facts.Property;
 import org.jcvi.annotation.rulesengine.RulesEngine;
 import org.junit.After;
 import org.junit.Before;
@@ -44,10 +41,19 @@ public class TestAllRulesForGenomeProperties extends TestCase {
 	@Test
 	public void testAllRules() {
 		
+		// Init feature with our sufficient property
+		Feature feature = new Feature("xyz");
+		FeatureProperty propSufficient = FeatureProperty.create("123");
+		feature.addProperty(propSufficient);
+
+		// Add these facts to our knowledgebase
+		engine.addFact(feature);
+		engine.addFact(propSufficient);	
+
 		// Add all of our genome properties rules
 		engine.addResource(this.getClass().getResource("suffices.drl"), ResourceType.DRL);
-		engine.addResource(this.getClass().getResource("requiredby.drl"), ResourceType.DRL);
 		engine.addResource(this.getClass().getResource("AboveTrustedCutoff.drl"), ResourceType.DRL);
+		engine.addResource(this.getClass().getResource("requiredby.drl"), ResourceType.DRL);
 		//engine.addResource(this.getClass().getResource("PropertyState.drl"), ResourceType.DRL);
 		
 		// Expectations:
@@ -57,10 +63,6 @@ public class TestAllRulesForGenomeProperties extends TestCase {
 		//		will assign the consequence property to the feature
 		//  3) 	"Property (on Genome) sufficient_for GenomeProperty"
 
-		// Init feature with our sufficient property
-		Feature feature = new Feature("xyz");
-		FeatureProperty propSufficient = FeatureProperty.create("123");
-		feature.addProperty(propSufficient);
 
 		// Let's test chaining the sufficient step with our required by rule, to 
 		// get an updated calculation for the Genome Property
@@ -70,9 +72,6 @@ public class TestAllRulesForGenomeProperties extends TestCase {
 		// feature.setGenome(genome);
 		// engine.addFact(genome);
 
-		// Add these facts to our knowledgebase
-		engine.addFact(feature);
-		engine.addFact(propSufficient);	
 		
 		// Fire our engine
 		engine.fireAndDispose();
@@ -84,8 +83,8 @@ public class TestAllRulesForGenomeProperties extends TestCase {
 
 		// This gets this property which we expect to be in the GenomeProperty.propsCache
 		GenomeProperty gp = GenomeProperty.create("66644");
-		assertEquals(1.0, gp.get("required"));
-		assertEquals(1.0, gp.get("filled"));
+		assertEquals(1.0, gp.getRequired());
+		assertEquals(1.0, gp.getFilled());
 		assertEquals(1.0, gp.getValue());
 		assertTrue(feature.getProperties().contains(gp));
 		// assertTrue(genome.getProperties().contains(gp));

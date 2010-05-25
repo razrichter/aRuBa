@@ -60,7 +60,7 @@ public class TestRuleTranslator extends TestCase {
 		// feat and feat4 have the right genome property
 		Double value = 0.6;
 		GenomeProperty property = GenomeProperty.create("GenProp0610");
-		property.put("value", value);
+		property.setValue(value);
 		feat.addProperty(property);
 		feat4.addProperty(property);
 		

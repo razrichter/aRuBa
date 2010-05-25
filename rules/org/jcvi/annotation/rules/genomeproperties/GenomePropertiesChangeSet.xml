@@ -4,6 +4,5 @@
 	<resource source="classpath:org/jcvi/annotation/rules/genomeproperties/requiredby.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/genomeproperties/AboveTrustedCutoff.drl" type="DRL" />
 	<resource source="classpath:org/jcvi/annotation/rules/genomeproperties/suffices.drl" type="DRL" />
-	<resource source="classpath:org/jcvi/annotation/rules/genomeproperties/PropertyState.drl" type="DRL" />
 </add>
 </change-set>
