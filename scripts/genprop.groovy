@@ -5,12 +5,16 @@ import org.jcvi.annotation.Aruba
 a = new Aruba()
 a.log()
 
-a.addDrools('/usr/local/devel/ANNOTATION/naxelrod/Aruba/trunk/rules/org/jcvi/annotation/rules/genomeproperties/suffices.drl')
-a.addDrools('/usr/local/devel/ANNOTATION/naxelrod/Aruba/trunk/rules/org/jcvi/annotation/rules/genomeproperties/AboveTrustedCutoff.drl')
-a.addDrools('/usr/local/devel/ANNOTATION/naxelrod/Aruba/trunk/rules/org/jcvi/annotation/rules/genomeproperties/requiredby.drl')
+// a.addGenomeProperties();
+a.addDrools('/org/jcvi/annotation/rules/genomeproperties/suffices.drl')
+a.addDrools('/org/jcvi/annotation/rules/genomeproperties/AboveTrustedCutoff.drl')
 
 a.addGenomePropertiesFacts()
 
 a.addSmallGenome('gb6')
 
+a.addDrools('/org/jcvi/annotation/rules/genomeproperties/requiredby.drl')
+
 a.run()
+
+GenomeProperty.report(System.out);
