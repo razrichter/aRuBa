@@ -13,6 +13,8 @@ a.addGenomePropertiesFacts()
 
 a.addSmallGenome('gb6')
 
+a.run()
+
 a.addDrools('/org/jcvi/annotation/rules/genomeproperties/requiredby.drl')
 
 a.run()
