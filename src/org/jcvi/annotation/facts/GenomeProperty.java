@@ -1,6 +1,7 @@
 package org.jcvi.annotation.facts;
 
 import java.io.PrintStream;
+import java.text.DecimalFormat;
 
 /*
  * This is a flyweight class for caching equivalent GenomeProperty objects
@@ -51,12 +52,29 @@ public class GenomeProperty extends Property {
 			stream.println(p.toStringReport());
 		}
 	}
+	public static void detailReport(PrintStream stream) {
+		stream.println("Genome Properties Report");
+		for (GenomeProperty p : GenomePropertyFactory.getProperties()) {
+			stream.println(p.toStringDetailReport());
+		}
+	}
 	public int hashCode() {
 		return this.getId().hashCode();
 	}
 	
+	public String toStringDetailReport() {
+		DecimalFormat decimal = new DecimalFormat("0.00");
+		String report = "GenomeProperty " + this.getId() + "\n";
+		report += "  name: " + this.getAttributes().get("property") + "\n";
+		report += "  type: " + this.getAttributes().get("type") + "\n";
+		report += "  value: " + decimal.format(this.getValue()) + " (" + getFilled() + "/" + getRequired() + ")\n";
+		report += "  state: " + this.getState().toString();
+		return report;
+	}
+
 	public String toStringReport() {
-		return this.getClass().getSimpleName() + "\t" + getId() + "\t" + getValue() + "\t" + getFilled() + "/" + getRequired() + "\t" + getState().toString();
+		DecimalFormat decimal = new DecimalFormat("0.00");
+		return this.getClass().getSimpleName() + "\t" + getId() + "\t" + decimal.format(getValue()) + "\t" + getFilled() + "/" + getRequired() + "\t" + getState().toString();
 	}
 
 	public String toString() {

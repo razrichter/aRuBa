@@ -10,7 +10,7 @@ rule "HMM Hit above cutoff (Property exists)"
 		p	: FeatureProperty( id == hitId )
 		f	: Feature ( featureId == queryId, properties not contains p )
  	then
-  		System.out.println("Assign HMM FeatureProperty " + hitId + " " + p.getValue() + " on " + f.toString());
+  		//System.out.println("Assign HMM FeatureProperty " + hitId + " " + p.getValue() + " on " + f.toString());
  		modify( p ) { setValue(1) };
  		modify( f ) { addProperty(p) };
 end

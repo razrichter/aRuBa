@@ -13,11 +13,20 @@ public class RunGP {
 			Aruba a = new Aruba();
 			a.log();
 			
-			a.addGenomeProperties();
+			//a.addGenomeProperties();
+			a.addGenomePropertiesFacts();
+			a.addDrools("/org/jcvi/annotation/rules/genomeproperties/suffices.drl");
+			a.addDrools("/org/jcvi/annotation/rules/genomeproperties/AboveTrustedCutoff.drl");
+			
 			a.addSmallGenome(genome);
+
 			a.run();
 			
-			GenomeProperty.report(System.out);
+			a.addDrools("/org/jcvi/annotation/rules/genomeproperties/requiredby.drl");
+
+			a.run();
+			
+			GenomeProperty.detailReport(System.out);
 		}
 	}
 }
