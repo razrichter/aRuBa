@@ -213,8 +213,8 @@
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>
-    <target name="RunGP">
-        <java classname="org.jcvi.annotation.RunGP" failonerror="true" fork="yes">
+    <target name="RunGenomeProperties">
+        <java classname="org.jcvi.annotation.RunGenomeProperties" failonerror="true" fork="yes">
             <jvmarg line="-Xms128m&#13;&#10;-Xmx512m"/>
             <arg line="gb6"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
@@ -663,7 +663,7 @@
     <target name="create_genomeproperties_jar" depends="build">
         <jar destfile="run/genomeproperties.jar" filesetmanifest="mergewithoutmain">
             <manifest>
-                <attribute name="Main-Class" value="org.jcvi.annotation.RunGP"/>
+                <attribute name="Main-Class" value="org.jcvi.annotation.RunGenomeProperties"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="bin"/>
