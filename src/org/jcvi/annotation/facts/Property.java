@@ -1,6 +1,9 @@
 package org.jcvi.annotation.facts;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public abstract class Property {
 
@@ -11,6 +14,10 @@ public abstract class Property {
 	private double required;
 	private String definition;
 	private HashMap<String, Object> attributes = new HashMap<String, Object>();
+	private List<Property> properties = new ArrayList<Property>();
+	
+	// Lookup of child relationship to a property
+	private HashMap<RelationshipType, List<Property>> relationships = new HashMap<RelationshipType, List<Property>>();
 	
 	protected Property(String id) {
 		this.id = id;
@@ -69,4 +76,33 @@ public abstract class Property {
 	}
 	
 	
+	public HashMap<RelationshipType, List<Property>> getRelationships() {
+		return relationships;
+	}
+
+	public void setRelationships(
+			HashMap<RelationshipType, List<Property>> relationships) {
+		this.relationships = relationships;
+	}
+
+	public List<Property> getRelationshipsByType(RelationshipType type) {
+		return this.relationships.get(type);
+	}
+	public void addRelationship(RelationshipType type, Property property) {
+		if (this.relationships.containsKey(type)) {
+			this.relationships.get(type).add(property);
+		}
+		else
+		{
+			List<Property> properties = new ArrayList<Property>();
+			properties.add(property);
+			this.relationships.put(type, properties);
+		}
+		
+	}
+	
+	public String toStringReport() {
+		DecimalFormat decimal = new DecimalFormat("0.00");
+		return this.getClass().getSimpleName() + "_" + getId() + "\t" + getThreshold() + "\t" + getFilled() + "/" + getRequired() + "\t" + decimal.format(getValue());
+	}	
 }

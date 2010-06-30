@@ -21,7 +21,5 @@ rule "Test GenomeProperty filled calculation"
 			setFilled(numFilledComponents),
 			setValue(fractionFilledComponents)
 		};
-		
-		System.err.println(genomeprop.toStringReport());
 end
  

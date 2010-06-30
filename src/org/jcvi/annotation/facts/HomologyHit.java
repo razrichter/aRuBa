@@ -188,6 +188,10 @@ public class HomologyHit {
         this.hitStrength = HitStrengthType.BELOW_NOISE;
     }
     
+    public String toLocationString() {
+    	return this.getHitId() + "." + hitStart + ".." + hitEnd + "." + hitStrand+ "|" 
+    		 + this.getQueryId() + "." + queryStart + ".." + queryEnd + "." + queryStrand;
+    }
     public String toString() {
     	return this.getClass().getName() + "." 
     		+ this.getQueryId() + "." + this.getHitId();

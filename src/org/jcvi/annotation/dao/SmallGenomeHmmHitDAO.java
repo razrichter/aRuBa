@@ -135,6 +135,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 									hitId, hitStart, hitEnd, hitStrand);
 						hit.setScore(score);
 						hit.setDomainScore(domainScore);
+
 						if (cutoffTable != null) {
 						    HmmCutoff cutoff = cutoffTable.get(hitId);
 						    if (cutoff != null) {

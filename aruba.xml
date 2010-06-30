@@ -215,8 +215,6 @@
     </target>
     <target name="RunGenomeProperties">
         <java classname="org.jcvi.annotation.RunGenomeProperties" failonerror="true" fork="yes">
-            <jvmarg line="-Xms128m&#13;&#10;-Xmx512m"/>
-            <arg line="gb6"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </java>
     </target>
@@ -233,7 +231,6 @@
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="org.jcvi.annotation.rulesengine.TestBlastHitWithTaxonomyRestriction" todir="${junit.output.dir}"/>
-            <jvmarg line="-Xms128m -Xmx512m"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>
@@ -282,7 +279,6 @@
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="org.jcvi.annotation.rulesengine.TestBlastPHitRule" todir="${junit.output.dir}"/>
-            <jvmarg line="-Xms128m&#13;&#10;-Xmx512m"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>
@@ -320,7 +316,6 @@
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="org.jcvi.annotation.rulesengine.TestGenomeProperty" todir="${junit.output.dir}"/>
-            <jvmarg line="-Xms128m -Xmx512m"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>
@@ -345,7 +340,6 @@
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="org.jcvi.annotation.rulesengine.TestGoAnnotationRule" todir="${junit.output.dir}"/>
-            <jvmarg line="-Xms128m&#13;&#10;-Xmx512m"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>
@@ -386,7 +380,6 @@
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="org.jcvi.annotation.dao.TestNCBITaxonomyDAO" todir="${junit.output.dir}"/>
-            <jvmarg line="-Xms128m -Xmx512m"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>
@@ -499,7 +492,6 @@
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="org.jcvi.sample.TestSimpleInference" todir="${junit.output.dir}"/>
-            <jvmarg line="-Xms128m&#13;&#10;-Xmx512m"/>
             <classpath refid="RulesBasedAnnotation.classpath"/>
         </junit>
     </target>

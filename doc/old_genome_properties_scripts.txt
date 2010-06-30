@@ -1,0 +1,117 @@
+Alex's  growing list of scripts associated with the Genome Properties database. 
+Many of them are helper functions and don't necessarily touch the Genome Properties
+database on their own.
+It was initially started by getting a list of all files in 
+/usr/local/devel/ANNOTATION/hmm/utility 
+that were owned by either Dan Haft or Jeremy Selengut, then asking Jeremy 
+which of them were associated with Genome Properties and what they do,
+then adding them to the project.
+
+As unknowns get identified, they will be moved to categorized sections in this
+list.
+
+
+Scripts:
+	Wrappers:
+	  +---- 
+	  | all_rules_vs_one_genome
+	  | one_prop_vs_all_genomes
+	  | one_prop_vs_some_genomes
+	  | one_rule_vs_all_genomes
+	  | one_rule_vs_some_genomes
+	  +---- Evaluates rules or properties. "..._some_..." scripts only reevaluate those with YES or Some Evidence
+		Initiate_genomes_for_properties_cron.sh -- sets environment vars and runs .pl
+		Initiate_genomes_for_properties_cron.pl -- gets closed bacterial genomes not already evaluated and then runs Taxon_Loader, evaluates HMM %, and runs all_rules_vs_one_genome on each genome
+
+	Property/Rule Evalators:
+		GP_taxon_prop_loader.pl -- loads taxon properties for a genome (seems to be replaced by Taxon_*.pl, although most are assigned by this)
+		phylogenomic_util/Taxon_loader.pl -- loads taxon properties for a genome
+		phylogenomic_util/Taxon_exactifier.pl -- checks "inexact" taxon properties for possible updates in taxon db
+		rule.spl -- evaluates a rule against a genome
+		rule_new.spl -- rewrite of rule.sp
+		load_AA_percents.pl -- calculates AA percentages for a genome
+		calculate_amino_acid_composition.pl --unused (hard to read) variant of load_AA_percents.pl
+		cluster_rules.spl -- checks if HMM % OK, then runs load_cluster_info.pl, then adds/replaces property 9119 (functional gene clustering - property level)
+		load_cluster_info.sh -- sets environment vars and runs .pl
+		load_cluster_info.pl -- fills or displays cluster_link table for 1+ genomes
+		load_dinuc_thermo_metric.pl -- loads dinucleotide thermophily metric property
+		load_GC_percent.pl -- loads GC percentage property
+		load_HMM_ev_from_path_and_id.pl -- a way to manually run an hmm against all genomes and enter them into the db
+
+	Property and Property Tree Modification:
+		load_prop_lineage_specif.pl -- incomplete script to evaluate properties that are lineage-specific and set up a prop_link to ' META: Property profile - taxonomic lineage specificity'
+
+	Property Reports:
+		general_util/db_info.pl -- displays db2name and db_taxa nicely
+		general_util/db2name.pl -- displays species name and stage for a db
+		general_util/db_taxa.pl -- displays taxonomic tree for a db (from properties)
+		prop_report.pl -- dumps property tree and values for a genome
+		multi_db_prop_report.pl -- seems to do something similar to prop_report, but uglier
+		prop_evaluate.pl -- dumps property step info for all genomes
+		prop_step_evaluate.pl -- dumps property step evidence values for all genomes
+		prop_details.pl -- dumps property info, steps, links, and applicable rule
+		prop_step_align.pl -- prints fasta sequence of every locus that matches a particular prop_step. does not actually align
+		prop_step_context.pl -- gets neigboring genes to an evaluated prop_step and analyses them for most common gene order
+		property_go_report.pl -- list of ORFs with GO terms associated in a genome based on properties
+	
+	Genome Properties Utilities:
+		GenProp_backup_cron.sh -- sets ENV and runs .pl
+		GenProp_backup_cron.pl -- dumps select * runs for each table to disk
+	
+	Other DB utilities:
+		load_GO_with_prop_def_id_and_db -- displays all ORFs in a genome_db with a substring in the gene common name
+		
+	Sequence Manipulation Utilities:
+		general_util/dial -- runs dialign-t on foo.fa
+
+	SGC Utilities:
+		region_yank.pl -- simple genomic region display
+		general_util/region_yank.pl
+		general_util/searchcomname.pl -- searches for feature_name or common name
+		general_util/ORFyank.pl -- gets protein sequence fasta for ORF_id and database
+		
+	Web Tools:
+		prop_builder.cgi -- insert, view, edit properties
+
+	No Function:
+		frontend.cgi
+
+	Unknown:
+		general_util/IDEAL_primer_maker.pl
+		general_util/locus2feat_omnium.pl
+		general_util/locusyank.pl
+		general_util/make_new_blast_targets
+		general_util/medliner.pl
+		general_util/name2db.pl
+		general_util/new_load_cluster_info.pl
+		general_util/nrfoot
+		general_util/psiget
+		general_util/READ_UTIL
+		general_util/reyank
+		general_util/runner
+		general_util/seleno_parse.pl
+		general_util/t2z
+		general_util/zfilter
+		hmm_util/BER2multi.DBI
+		hmm_util/CDSyank.pl
+		hmm_util/count_HMM_hits.dbi
+		hmm_util/emitsearch
+		hmm_util/filter_fasta.pl
+		hmm_util/foot
+		hmm_util/foot2
+		hmm_util/footree
+		hmm_util/HMM_cutoff_review.pl
+		hmm_util/hmm_evidence_omnium_from_hmm.pl
+		hmm_util/hmm_evidence_omnium_from_locus.pl
+		hmm_util/hmm_remove
+		hmm_util/ifoot
+		hmm_util/iso_yank
+		hmm_util/length_dist.pl
+		hmm_util/new_isology_directory
+		hmm_util/remove_short_sequences.pl
+		phylogenomic_util/ALL_V_ALL_PROFILE_PROGRAM.pl
+		phylogenomic_util/phylo_prop_report.pl
+		phylogenomic_util/prop_binary_array_maker.pl
+		phylogenomic_util/prop_phylogenomic_analysis_loader.pl
+		phylogenomic_util/yank_prop_regions.pl
+		prop_step_evaluate.pl

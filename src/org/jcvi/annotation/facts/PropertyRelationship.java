@@ -11,6 +11,14 @@ public class PropertyRelationship {
 		this.setSubject(subject);
 		this.setType(type);
 		this.setObject(object);
+		
+		// Object need to lookup its relationships to subject property
+		// i.e. FeatureProperty requiredBy GenomeProperty
+		object.addRelationship(type, subject);
+		// if (object.getId().equals("2029")) {
+		// 	System.err.println("Add " + this.toString());
+		// }
+		
 	}
 
 	public Property getSubject() {

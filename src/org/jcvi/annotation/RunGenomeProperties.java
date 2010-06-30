@@ -11,9 +11,10 @@ import org.jcvi.annotation.facts.GenomeProperty;
 
 public class RunGenomeProperties {
 
-	private static final String sampleCommand = "genomeproperties [ -b <blast_file|dir> -h <hmm_file|dir> -g <genbank_file|dir> -r <rdf_file|dir> -n <n3_file|dir> -r <drools_file|directory> -D <database> -l <log_file> ]  ...";
+	private static final String sampleCommand = "genomeproperties [ -b <blast_file|dir> -h <hmm_file|dir> -g <genbank_file|dir> -r <rdf_file|dir> -n <n3_file|dir> -r <drools_file|directory> -d <database> -l <log_file> ]  ...";
 	private static Boolean debug = false;
-
+	private static Boolean showDetailReport = false;
+	
 	public static void main(String[] args) {
 
 		Options options = new Options();
@@ -26,6 +27,7 @@ public class RunGenomeProperties {
 		options.addOption("b", "blast", false, "Path to Blast file or directory");
 		options.addOption("r", "rdf", false, "Path to RDF file or directory");
 		options.addOption("debug",false,"Debug output");
+		options.addOption("details",false,"Show detailed Genome Properties report");
 		options.addOption("l","log", false, "Log file");
 		OptionBuilder.withLongOpt("rule");
 		OptionBuilder.hasArgs();
@@ -51,6 +53,9 @@ public class RunGenomeProperties {
 
 		if (cmd.hasOption("debug")) {
 			debug = true;
+		}
+		if (cmd.hasOption("details")) {
+			showDetailReport = true;
 		}
 		
 		// Create an instance of our Aruba engine
@@ -89,8 +94,13 @@ public class RunGenomeProperties {
 		aruba.run();
 
 		// Output the GenomeProperty detail report
-		GenomeProperty.detailReport(System.out);
-		
+		if (showDetailReport) {
+			GenomeProperty.detailReport(System.out);
+		}
+		else
+		{
+			GenomeProperty.report(System.out);
+		}
 		// End the StatefulKnowledgeSession
 		aruba.shutdown();
 	}

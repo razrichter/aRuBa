@@ -5,14 +5,35 @@ import java.util.ArrayList;
 
 rule "HMM Hit above cutoff (Property exists)"
 	when
-		hit : HmmHit( aboveTrustedHit == true,
-						hitId : hitId, queryId : queryId )
-		p	: FeatureProperty( id == hitId )
+		hit : HmmHit( aboveTrustedHit == true, queryId : queryId )
+		p	: FeatureProperty( id == hit.hitId )
 		f	: Feature ( featureId == queryId, properties not contains p )
  	then
-  		//System.out.println("Assign HMM FeatureProperty " + hitId + " " + p.getValue() + " on " + f.toString());
- 		modify( p ) { setValue(1) };
- 		modify( f ) { addProperty(p) };
+ 		//modify( p ) { setValue(1) };
+ 		//modify( f ) { addProperty(p) };
+ 		if (hit.getHitId().equals("TIGR00549") || hit.getHitId().equals("TIGR00482")) {
+ 			System.err.println("Set " + hit.getHitId() + " " + queryId);
+		}
+end
+
+rule "test1"
+	when
+		hit : HmmHit( aboveTrustedHit == true, queryId : queryId )
+		p	: FeatureProperty( id == hit.hitId )
+		f	: Feature ( featureId == queryId, properties not contains p )
+ 	then
+  		if (hit.getHitId().equals("TIGR00549") || hit.getHitId().equals("TIGR00482")) {
+   			System.err.println("test1 " + hit.getHitId() + " " + queryId);
+		}
+end
+
+rule "test2"
+	when
+		hit : HmmHit( aboveTrustedHit == true, queryId : queryId, hitId == "TIGR00549" ||  == "TIGR00482")
+		p	: FeatureProperty( id == hit.hitId )
+		f	: Feature ( featureId == queryId, properties not contains p )
+ 	then
+  		System.err.println("test2 " + hit.getHitId() + " " + queryId);
 end
 
 
