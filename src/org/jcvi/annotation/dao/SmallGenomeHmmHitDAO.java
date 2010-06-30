@@ -58,6 +58,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 			")OR (" +
 				"e.curated = 1 AND e.assignby != 'sgc3'" +
 			"))";
+			//")) AND (e.accession='TIGR00549' OR e.accession='TIGR00482')";
 	}
 
 	public String getHmmHitSQL(String hitId) {
@@ -69,6 +70,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 	}
 	
 	public Iterator<HmmHit> iteratorBySQL(String sql) {
+		System.err.println(sql);
 		try {
 			Statement stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
@@ -131,6 +133,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 							hitStart = tmpEnd;
 							hitStrand = -1;
 						}
+						
 						HmmHit hit = new HmmHit(queryId, queryStart, queryEnd, queryStrand,
 									hitId, hitStart, hitEnd, hitStrand);
 						hit.setScore(score);

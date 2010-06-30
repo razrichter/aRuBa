@@ -1,5 +1,11 @@
 package org.jcvi.annotation;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -7,7 +13,10 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
+import org.jcvi.annotation.dao.HmmCutoffTableDAO;
+import org.jcvi.annotation.dao.HmmCutoffTableDAO.HmmCutoff;
 import org.jcvi.annotation.facts.GenomeProperty;
+import org.jcvi.annotation.facts.HmmHit;
 
 public class RunGenomeProperties {
 
@@ -26,9 +35,9 @@ public class RunGenomeProperties {
 		options.addOption("h", "hmm", false, "Path to HMM file or directory");
 		options.addOption("b", "blast", false, "Path to Blast file or directory");
 		options.addOption("r", "rdf", false, "Path to RDF file or directory");
+		options.addOption("l", "log", false, "Path to log file");
 		options.addOption("debug",false,"Debug output");
 		options.addOption("details",false,"Show detailed Genome Properties report");
-		options.addOption("l","log", false, "Log file");
 		OptionBuilder.withLongOpt("rule");
 		OptionBuilder.hasArgs();
 		OptionBuilder.withDescription("Path to a rule file to load.");
@@ -63,9 +72,14 @@ public class RunGenomeProperties {
 
 		// Log to file or console if requested
 		String logFile = cmd.getOptionValue("log");
+		//System.err.println("logFile " + logFile);
+		//logFile = "C:/development/workspace/RulesBasedAnnotation/bin/org/jcvi/annotation/testing.log";
+		
 		if (logFile != null) {
+			System.err.println("Setting log file to " + logFile);
 			aruba.log(logFile);
 		} else if (debug) {
+			System.err.println("Setting to debug mode.");
 			aruba.log();
 		}
 
@@ -83,6 +97,23 @@ public class RunGenomeProperties {
 		if (dbName != null) {
 			aruba.addSmallGenome(dbName);
 		}
+		
+		/*
+		HmmHit hit1 = new HmmHit("ORF00019", "TIGR00549");
+		HmmHit hit2 = new HmmHit("ORF01734", "TIGR00482");
+		hit1.setStrongHit();
+		hit2.setStrongHit();
+		aruba.getEngine().addFact(hit1);
+		aruba.getEngine().addFact(hit2);
+		*/
+		/*
+		try {
+			loadHmmsByFile(aruba);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		*/
 		
 		// Two step process for running genome properties
 		//a.addGenomeProperties();
@@ -103,5 +134,67 @@ public class RunGenomeProperties {
 		}
 		// End the StatefulKnowledgeSession
 		aruba.shutdown();
+	}
+	
+	public static void loadHmmsByFile(Aruba aruba) throws IOException {
+		HmmCutoffTableDAO cutoffTable = new HmmCutoffTableDAO();
+		
+		String file = "C:/Documents and Settings/naxelrod/Desktop/hmms.txt";
+		FileInputStream hmmStream = new FileInputStream(file);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(hmmStream));
+		String line;
+		while ((line = reader.readLine()) != null) {
+			String[] field = line.split("\\|");
+			String queryId = field[0]; // a.feat_name
+			String hitId = field[1]; // evidence.accession
+			int queryStart = Integer.parseInt(field[2]);
+			int queryEnd = Integer.parseInt(field[3]);
+			int hitStart = Integer.parseInt(field[4]);
+			int hitEnd = Integer.parseInt(field[5]);
+			double score = Double.parseDouble(field[6]);
+			double domainScore = Double.parseDouble(field[7]);
+			
+			// convert from min, max to start, end, strand syntax
+			int queryStrand = 1;
+			if (queryStart > queryEnd) {
+				int tmpEnd = queryStart;
+				queryEnd = queryStart;
+				queryStart = tmpEnd;
+				queryStrand = -1;
+			}
+			int hitStrand = 1;
+			if (hitStart > hitEnd) {
+				int tmpEnd = hitStart;
+				hitEnd = hitStart;
+				hitStart = tmpEnd;
+				hitStrand = -1;
+			}
+			
+			HmmHit hit = new HmmHit(queryId, queryStart, queryEnd, queryStrand,
+						hitId, hitStart, hitEnd, hitStrand);
+			hit.setScore(score);
+			hit.setDomainScore(domainScore);
+
+			if (cutoffTable != null) {
+			    HmmCutoff cutoff = cutoffTable.get(hitId);
+			    if (cutoff != null) {
+				    if (cutoff.isAboveTrustedCutoff(score,
+                            domainScore)) {
+                        hit.setStrongHit();
+                    }
+                    else if (cutoff.isAboveNoiseCutoff(score,
+                            domainScore)) {
+                        hit.setWeakHit();
+                    }
+                    else {
+                        hit.setNonHit();
+                    }
+			    }
+			}
+			aruba.getEngine().addFact(hit);
+		}
+		
+		
+		
 	}
 }

@@ -26,6 +26,7 @@ import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
+import org.jcvi.annotation.facts.HmmHit;
 import org.jcvi.annotation.rulesengine.RulesEngine;
 
 public class Aruba {

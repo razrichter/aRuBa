@@ -194,6 +194,6 @@ public class HomologyHit {
     }
     public String toString() {
     	return this.getClass().getName() + "." 
-    		+ this.getQueryId() + "." + this.getHitId();
+    		+ this.getQueryId() + "." + this.getHitId() + "." + this.getHitStrength().toString() + "." + this.hashCode();
     }
 }
