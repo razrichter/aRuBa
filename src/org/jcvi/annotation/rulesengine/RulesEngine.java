@@ -188,7 +188,7 @@ public class RulesEngine {
 	}
 
 	public void setFileLogger(String file) {
-		this.setLogger(KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFilename));
+		this.setLogger(KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, file));
 	}
 	public void setConsoleLogger() {
 		this.setLogger(KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession));
