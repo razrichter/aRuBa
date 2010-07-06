@@ -62,9 +62,7 @@ public class GenomeProperty extends Property {
 	public static void detailReport(PrintStream stream) {
 		stream.println("# Genome Properties Report");
 		for (GenomeProperty p : GenomePropertyFactory.getProperties()) {
-			if (p.getId().equals("2029")) {
-				stream.println(p.toStringDetailReport());
-			}
+			stream.print(p.toStringDetailReport());
 		}
 	}
 	public int hashCode() {

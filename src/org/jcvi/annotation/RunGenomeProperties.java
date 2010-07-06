@@ -3,8 +3,10 @@ package org.jcvi.annotation;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -69,14 +71,13 @@ public class RunGenomeProperties {
 		
 		// Create an instance of our Aruba engine
 		Aruba aruba = new Aruba();
-
+		aruba.addGenomePropertiesFacts();
+		aruba.addDrools("/org/jcvi/annotation/rules/genomeproperties/suffices.drl");
+		aruba.addDrools("/org/jcvi/annotation/rules/genomeproperties/AboveTrustedCutoff.drl");
+		
 		// Log to file or console if requested
 		String logFile = cmd.getOptionValue("log");
-		//System.err.println("logFile " + logFile);
-		//logFile = "C:/development/workspace/RulesBasedAnnotation/bin/org/jcvi/annotation/testing.log";
-		
 		if (logFile != null) {
-			System.err.println("Setting log file to " + logFile);
 			aruba.log(logFile);
 		} else if (debug) {
 			System.err.println("Setting to debug mode.");
@@ -96,30 +97,9 @@ public class RunGenomeProperties {
 		String dbName = cmd.getOptionValue("database");
 		if (dbName != null) {
 			aruba.addSmallGenome(dbName);
-		}
-		
-		/*
-		HmmHit hit1 = new HmmHit("ORF00019", "TIGR00549");
-		HmmHit hit2 = new HmmHit("ORF01734", "TIGR00482");
-		hit1.setStrongHit();
-		hit2.setStrongHit();
-		aruba.getEngine().addFact(hit1);
-		aruba.getEngine().addFact(hit2);
-		*/
-		/*
-		try {
-			loadHmmsByFile(aruba);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
+		}		
 		
 		// Two step process for running genome properties
-		//a.addGenomeProperties();
-		aruba.addGenomePropertiesFacts();
-		aruba.addDrools("/org/jcvi/annotation/rules/genomeproperties/suffices.drl");
-		aruba.addDrools("/org/jcvi/annotation/rules/genomeproperties/AboveTrustedCutoff.drl");
 		aruba.run();
 		aruba.addDrools("/org/jcvi/annotation/rules/genomeproperties/requiredby.drl");
 		aruba.run();
@@ -132,8 +112,26 @@ public class RunGenomeProperties {
 		{
 			GenomeProperty.report(System.out);
 		}
-		// End the StatefulKnowledgeSession
 		aruba.shutdown();
+	}
+	
+	public static void loadSimpleHmmsByFile(Aruba aruba) throws IOException {
+		HmmCutoffTableDAO cutoffTable = new HmmCutoffTableDAO();
+		
+		String file = "C:/Documents and Settings/naxelrod/Desktop/hmms.txt";
+		FileInputStream hmmStream = new FileInputStream(file);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(hmmStream));
+		String line;
+		while ((line = reader.readLine()) != null) {
+			String[] field = line.split("\\|");
+			String queryId = field[0]; // a.feat_name
+			String hitId = field[1];
+			HmmHit hit = new HmmHit(queryId, hitId);
+			hit.setStrongHit();
+			aruba.getEngine().addFact(hit);
+		}
+		// Add another record
+		aruba.getEngine().addFact(new HmmHit("BOGUS666", "BOGUS666"));
 	}
 	
 	public static void loadHmmsByFile(Aruba aruba) throws IOException {

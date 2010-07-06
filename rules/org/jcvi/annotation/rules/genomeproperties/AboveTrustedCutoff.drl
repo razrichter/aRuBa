@@ -3,7 +3,7 @@ package org.jcvi.annotation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 import java.util.ArrayList;
 
-rule "HMM Hit above cutoff (Property exists)"
+rule "HMM Hit"
 	when
 		hit : HmmHit( aboveTrustedHit == true )
 		p	: FeatureProperty( id == hit.hitId )
@@ -11,18 +11,8 @@ rule "HMM Hit above cutoff (Property exists)"
  	then
  		modify( p ) { setValue(1) };
  		modify( f ) { addProperty(p) };
- 		if (hit.getHitId().equals("TIGR00549") || hit.getHitId().equals("TIGR00482")) {
- 			System.err.println("Set " + hit.getHitId() + " " + hit.getQueryId());
-		}
-end
-
-rule "test"
-	when
-		hit : HmmHit( aboveTrustedHit == true, hitId == "TIGR00482" || == "TIGR00549")
-		p	: FeatureProperty( id == hit.hitId )
-		f	: Feature ( featureId == hit.queryId, properties not contains p )
- 	then
-  		System.err.println("test " + p.getId() + " " + hit.getHitId() + " " + hit.getQueryId());
-end
-
+ 		//if (hit.getHitId().equals("TIGR00549")) {
+ 		//	System.err.println("HMM Hit rule: " + hit.getHitId() + " " + hit.getQueryId());
+		//}
+ end
 
