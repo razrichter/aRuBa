@@ -59,7 +59,7 @@ public class GenomeProperty extends Property {
 			if ( numFilled == 0.0 ) {
 				return PropertyState.NONE_FOUND;
 			}
-			else if ( numFilled == numRequired ) 
+			else if ( numFilled.equals(numRequired) ) 
 			{
 				return PropertyState.YES;
 			}
@@ -96,7 +96,7 @@ public class GenomeProperty extends Property {
 		String report = ">" + this.toStringReport() + "\n";
 
 		// List the properties that are <requiredBy/SufficientFor/etc> this genome property
-		DecimalFormat decimal = new DecimalFormat("0.00");
+		DecimalFormat decimal = new DecimalFormat("0.000");
 		HashMap<RelationshipType, List<Property>> relationships = this.getRelationships();
 		for (RelationshipType type : relationships.keySet()) {
 			for (Property property : relationships.get(type)) {
@@ -108,7 +108,7 @@ public class GenomeProperty extends Property {
 	}
 	
 	public String toStringReport() {
-		DecimalFormat decimal = new DecimalFormat("0.00");
+		DecimalFormat decimal = new DecimalFormat("0.000");
 		return this.getClass().getSimpleName() + "_" + getId() + "\t" + getThreshold() + "\t" + getFilled() + "/" + getRequired() + "\t" + decimal.format(getValue()) + "\t" + getState().toString();
 	}
 
