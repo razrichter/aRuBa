@@ -93,18 +93,18 @@ public class RdfFactDAO implements Iterable<Object> {
 	public void serializeFacts() {
 		// serialize FeatureProperty objects
 		for (FeatureProperty p : this.featureProperties) {
-			System.out.println(p.toString());
+			System.err.println(p.toString());
 		}
 		
 		for (PropertyRelationship r : this.relationships) {
-			System.out.println(r.toString());
+			System.err.println(r.toString());
 		}
 	}
 	
 	public int addDao(RdfFileDAO dao) {
 
 		model = dao.getModel();
-		System.out.println("\nLoading facts from RDF...");
+		System.err.println("\nLoading facts from RDF...");
 
 		// Returns a count of all facts
 		int total = 0;
@@ -114,18 +114,18 @@ public class RdfFactDAO implements Iterable<Object> {
 
 		if (this.addGenomeProperties()) {
 			int numGenomePropertiesAdded = this.getNumGenomeProperties() - numGenomePropertiesBefore;
-			System.out.println(" " + numGenomePropertiesAdded + " genome properties");
+			System.err.println(" " + numGenomePropertiesAdded + " genome properties");
 
 			// Load Feature Properties
 			int numFeaturePropertiesBefore = this.getNumFeatureProperties();
 			if (this.addFeatureProperties()) {
 				int numFeaturePropertiesAdded = this.getNumFeatureProperties() - numFeaturePropertiesBefore;
-				System.out.println(" " + numFeaturePropertiesAdded + " feature properties");
+				System.err.println(" " + numFeaturePropertiesAdded + " feature properties");
 				total = numGenomePropertiesAdded + numFeaturePropertiesAdded;
 			}
 		}
-		System.out.println(" " + this.getRelationships().size() + " relationships");
-		System.out.println(" " + this.getTotalFacts() + " total facts");
+		System.err.println(" " + this.getRelationships().size() + " relationships");
+		System.err.println(" " + this.getTotalFacts() + " total facts");
 
 		return total;
 	}
@@ -214,7 +214,7 @@ public class RdfFactDAO implements Iterable<Object> {
 										}
 									}
 								} else {
-									System.out.println("Unable to getProperty( " + propNode.toString() +" )");
+									System.err.println("Unable to getProperty( " + propNode.toString() +" )");
 								}
 							}
 
@@ -235,7 +235,7 @@ public class RdfFactDAO implements Iterable<Object> {
 			}			
 
 		} else {
-			System.out.println("No statements were found in the database");
+			System.err.println("No statements were found in the database");
 		}  
 		return isSuccess;
 	}
@@ -330,7 +330,7 @@ public class RdfFactDAO implements Iterable<Object> {
 										}
 									}
 								} else {
-									System.out.println("Unable to getProperty( " + propNode.toString() +" )");
+									System.err.println("Unable to getProperty( " + propNode.toString() +" )");
 								}
 							}
 
@@ -350,7 +350,7 @@ public class RdfFactDAO implements Iterable<Object> {
 			}			
 
 		} else {
-			System.out.println("No statements were found in the database");
+			System.err.println("No statements were found in the database");
 		}  
 		return isSuccess;
 	}
@@ -411,28 +411,16 @@ public class RdfFactDAO implements Iterable<Object> {
 					} 
 					else
 					{
-						System.out.println("Error: Unrecognized resource class " + propTypeNode.toString());
+						System.err.println("Error: Unrecognized resource class " + propTypeNode.toString());
 					}
 				}
 
 			} else {
-				System.out.println("Error: Type property is undefined for resource " + propResource.toString());
+				System.err.println("Error: Type property is undefined for resource " + propResource.toString());
 			}
 		}
 
 		return propInfo;
-	}
-
-	// Testing purposes only
-	public void testListStatements(Resource resource) {
-		System.out.println("  testListStatements( " + resource.toString() + " )");
-		Selector s = new SimpleSelector(resource, null, (RDFNode) null);
-		StmtIterator iter = model.listStatements(s);
-		while (iter.hasNext()) {
-			Statement stmt = iter.next();
-			System.out.println("   statement: " + stmt.toString());
-
-		}
 	}
 
 	public ArrayList<Object> getFacts() {

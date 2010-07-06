@@ -206,11 +206,11 @@ public class Aruba {
 	public int addGenomePropertiesFacts() {
 		
 		// Add facts about Genome Properties from Notation3 file
-		System.out.println("Adding Genome Properties facts...");
+		System.err.println("Adding Genome Properties facts...");
 		URL n3Url = this.getClass().getResource("dao/data/genomeproperties.n3");
 		RdfFactDAO dao = new RdfFactDAO(n3Url, "N3");
 		int numFacts = addRdf(dao);
-		System.out.println("complete.");
+		System.err.println("complete.");
 		return numFacts;
 	}
 
@@ -272,30 +272,30 @@ public class Aruba {
 			return 0;
 		}
 		
-		System.out.println("Loading facts from Small Genome database " + dbName + "...");
+		System.err.println("Loading facts from Small Genome database " + dbName + "...");
 		SmallGenomeDAOFactory sgFactory = new SmallGenomeDAOFactory(dbName);
 
 		int total = 0;
 
 		// Add Genome Features
-		System.out.println("Adding features...");
+		System.err.println("Adding features...");
 		for (Feature f : sgFactory.getFeatureDAO()) {
 			features.add(f); // save features for later reporting
 		}
 		int count = total = engine.addFacts(features);
-		System.out.println("  " + count + " features");
+		System.err.println("  " + count + " features");
 
 		// Add annotations
 		total += count = engine.addFacts(sgFactory.getAnnotationDAO());
-		System.out.println("  " + count + " annotations");
+		System.err.println("  " + count + " annotations");
 
 		// Add Genome HMMs
 		total += count = engine.addFacts(sgFactory.getHmmHitDAO());
-		System.out.println("  " + count + " HMM hits");
+		System.err.println("  " + count + " HMM hits");
 
 		// Add Genome Properties (use RDF content)
 		// total += count = engine.addFacts(sgFactory.getGenomePropertyDAO(dbName));
-		// System.out.println("  " + count + " genome properties");
+		// System.err.println("  " + count + " genome properties");
 
 		return total;
 	}
