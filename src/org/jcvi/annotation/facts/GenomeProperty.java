@@ -26,6 +26,29 @@ public class GenomeProperty extends Property {
 		return false;
 	}
 	
+	public double getRequired() {
+		List<Property> requiredRelations = this.getRelationshipsByType(RelationshipType.REQUIRED_BY);
+		return (requiredRelations == null) ? 0.0 : requiredRelations.size();
+	}
+	
+	public double getFilled() {
+		List<Property> requiredRelations = this.getRelationshipsByType(RelationshipType.REQUIRED_BY);
+		double numFilled = 0.0;
+		if (requiredRelations != null) {
+			for (Property property : requiredRelations) {
+				numFilled += property.getValue();
+			}
+		}
+		return numFilled;
+	}
+	public double getValue() {
+		double numRequired = this.getRequired();
+		double numFilled = this.getFilled();
+ 		return (numRequired == 0) ? 0
+				: numFilled/numRequired;
+		
+	}
+	
 	public PropertyState getState() {
 		// Double value = this.getValue();
 		Double numFilled = this.getFilled();
@@ -67,16 +90,6 @@ public class GenomeProperty extends Property {
 	}
 	public int hashCode() {
 		return this.getId().hashCode();
-	}
-	
-	public String toStringDetailReport2() {
-		DecimalFormat decimal = new DecimalFormat("0.00");
-		String report = "GenomeProperty_" + this.getId() + "\n";
-		report += "  name: " + this.getAttributes().get("property") + "\n";
-		report += "  type: " + this.getAttributes().get("type") + "\n";
-		report += "  value: " + decimal.format(this.getValue()) + " (" + getFilled() + "/" + getRequired() + ")\n";
-		report += "  state: " + this.getState().toString();
-		return report;
 	}
 	
 	public String toStringDetailReport() {

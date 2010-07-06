@@ -2,11 +2,8 @@ package org.jcvi.annotation;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -71,9 +68,7 @@ public class RunGenomeProperties {
 		
 		// Create an instance of our Aruba engine
 		Aruba aruba = new Aruba();
-		aruba.addGenomePropertiesFacts();
-		aruba.addDrools("/org/jcvi/annotation/rules/genomeproperties/suffices.drl");
-		aruba.addDrools("/org/jcvi/annotation/rules/genomeproperties/AboveTrustedCutoff.drl");
+		aruba.addGenomeProperties();
 		
 		// Log to file or console if requested
 		String logFile = cmd.getOptionValue("log");
@@ -99,9 +94,7 @@ public class RunGenomeProperties {
 			aruba.addSmallGenome(dbName);
 		}		
 		
-		// Two step process for running genome properties
-		aruba.run();
-		aruba.addDrools("/org/jcvi/annotation/rules/genomeproperties/requiredby.drl");
+		// Fire all rules
 		aruba.run();
 
 		// Output the GenomeProperty detail report
