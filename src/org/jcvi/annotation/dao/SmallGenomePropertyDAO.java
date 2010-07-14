@@ -56,8 +56,9 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 		
 		GenomeProperty property = null;
 		// System.out.println(sql);
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				property = GenomeProperty.create(rs.getString(1));
@@ -66,13 +67,13 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 			} else {
 				throw new DaoException("Genome Property not found.");
 			}
-			rs.close();
-			stmt.close();
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally {
+			this.close(stmt);
 		}
 		return property;
 	}
@@ -100,7 +101,6 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 				property.setValue(rs.getDouble(3));
 				properties.add(property);
 			}
-			stmt.close();
 
 		} catch (SQLException e) {
 			for (Throwable t : e) {

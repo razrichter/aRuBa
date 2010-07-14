@@ -68,7 +68,6 @@ public class SmallGenomeGoTermDAO implements GoTermDAO {
 		try {
 			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
-			stmt.close();
 			return this.getGoTermIterator(rs);
 			
 		} catch (SQLException e) {

@@ -83,7 +83,6 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 		try {
 			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
-			stmt.close();
 			return this.getAnnotationIterator(rs);
 			
 		} catch (SQLException e) {
@@ -167,7 +166,6 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 			while (rs.next()) {
 				goIds.add(rs.getString(1));
 			}
-			stmt.close();
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
@@ -198,7 +196,6 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 			while (rs.next()) {
 				roleIds.add(rs.getString(1));
 			}
-			stmt.close();
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {

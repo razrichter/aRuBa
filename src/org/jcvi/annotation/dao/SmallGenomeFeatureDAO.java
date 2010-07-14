@@ -91,9 +91,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 					start = tmp;
 				}
 				feature = new Feature(featureId, type, start, end, strand);
-				
 				rs.close();
-				stmt.close();
 			}
 			
 		} catch (SQLException e) {
@@ -131,7 +129,6 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		try {
 			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
-			stmt.close();
 			return this.getFeatureIterator(rs);
 			
 		} catch (SQLException e) {
@@ -211,7 +208,6 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		try {
 			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
-			stmt.close();
 			return this.getAnnotationIterator(rs);
 
 		} catch (SQLException e) {
@@ -235,7 +231,6 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		try {
 			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
-			stmt.close();
 			return this.getAnnotationIterator(rs);
 			
 		} catch (SQLException e) {

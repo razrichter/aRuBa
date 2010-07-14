@@ -206,9 +206,6 @@ public class RdfFactDAO implements Iterable<Object> {
 												FeatureProperty parentFeatureProperty = FeatureProperty.create(propId);
 												featureProperties.add(parentFeatureProperty);
 												this.relationships.add(new PropertyRelationship(genomeProperty, relation, parentFeatureProperty));
-												if (key.equals("sufficient_for")) {
-													System.err.println(key + " " + genomeProperty.toString() + " " + parentFeatureProperty.toString());
-												}
 												
 											} else if (propClass.equals("GenomeProperty")) {
 												GenomeProperty parentGenomeProperty = GenomeProperty.create(propId);

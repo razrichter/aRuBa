@@ -72,7 +72,6 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 		try {
 			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
-			stmt.close();
 			return this.getHitIterator(rs);
 			
 		} catch (SQLException e) {

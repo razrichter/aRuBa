@@ -52,9 +52,9 @@ public class SmallGenomeTaxonomyDAO extends GenericTaxonomyDAO {
 	}
 	public Taxon getTaxonBySQL(String sql) throws DaoException {
 		Taxon taxon = null;
-		//System.out.println(sql);
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				Integer taxonId = Integer.valueOf(rs.getInt(1));
@@ -67,13 +67,13 @@ public class SmallGenomeTaxonomyDAO extends GenericTaxonomyDAO {
 			} else {
 				throw new DaoException("Taxon not found.");
 			}
-			rs.close();
-			stmt.close();
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally {
+			this.close(stmt);
 		}
 		return taxon;
 	}
@@ -89,8 +89,9 @@ public class SmallGenomeTaxonomyDAO extends GenericTaxonomyDAO {
 		}
 		
 		Taxon t; Taxon p;
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
@@ -119,17 +120,25 @@ public class SmallGenomeTaxonomyDAO extends GenericTaxonomyDAO {
 					// t.addName(name);
 				}
 			}
-			rs.close();
-			stmt.close();
 			
 		} catch (SQLException e) {
 			for (Throwable tr : e) {
 				tr.printStackTrace();
 			}
+		} finally {
+			this.close(stmt);
 		}
 		return taxonomyMap;
 	}	
 	
-	
+	public void close (Statement stmt) {
+		try {
+			if (stmt != null) {
+				stmt.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}	
 	
 }
