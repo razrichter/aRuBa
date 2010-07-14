@@ -3,6 +3,7 @@
 
 gp:GenomeProperty_66565
 	a	:GenomeProperty;
+	:accession	"GenProp0837";
 	:name	"66565";
 	:type	"pathway";
 	:threshold	"0";
@@ -10,6 +11,7 @@ gp:GenomeProperty_66565
 .
 gp:GenomeProperty_66636
 	a	:GenomeProperty;
+	:accession	"GenProp0908";
 	:name	"66636";
 	:type	"pathway";
 	:threshold	"0";
@@ -17,6 +19,7 @@ gp:GenomeProperty_66636
 .
 gp:GenomeProperty_60439
 	a	:GenomeProperty;
+	:accession	"GenProp0712";
 	:name	"60439";
 	:type	"system";
 	:threshold	"0";
@@ -24,6 +27,7 @@ gp:GenomeProperty_60439
 .
 gp:GenomeProperty_60449
 	a	:GenomeProperty;
+	:accession	"GenProp0721";
 	:name	"60449";
 	:type	"system";
 	:threshold	"0";
@@ -31,6 +35,7 @@ gp:GenomeProperty_60449
 .
 gp:GenomeProperty_57225
 	a	:GenomeProperty;
+	:accession	"GenProp0238";
 	:name	"57225";
 	:type	"pathway";
 	:threshold	"0";
@@ -38,6 +43,7 @@ gp:GenomeProperty_57225
 .
 gp:GenomeProperty_60440
 	a	:GenomeProperty;
+	:accession	"GenProp0713";
 	:name	"60440";
 	:type	"pathway";
 	:threshold	"1";
@@ -45,6 +51,7 @@ gp:GenomeProperty_60440
 .
 gp:GenomeProperty_60448
 	a	:GenomeProperty;
+	:accession	"GenProp0720";
 	:name	"60448";
 	:type	"metapath";
 	:threshold	"0";
@@ -52,6 +59,7 @@ gp:GenomeProperty_60448
 .
 gp:GenomeProperty_66570
 	a	:GenomeProperty;
+	:accession	"GenProp0842";
 	:name	"66570";
 	:type	"system";
 	:threshold	"0";
@@ -59,6 +67,7 @@ gp:GenomeProperty_66570
 .
 gp:GenomeProperty_66569
 	a	:GenomeProperty;
+	:accession	"GenProp0841";
 	:name	"66569";
 	:type	"metapath";
 	:threshold	"0";
@@ -66,6 +75,7 @@ gp:GenomeProperty_66569
 .
 gp:GenomeProperty_66567
 	a	:GenomeProperty;
+	:accession	"GenProp0839";
 	:name	"66567";
 	:type	"system";
 	:threshold	"0";
@@ -73,6 +83,7 @@ gp:GenomeProperty_66567
 .
 gp:GenomeProperty_58355
 	a	:GenomeProperty;
+	:accession	"GenProp0630";
 	:name	"58355";
 	:type	"system";
 	:threshold	"0";
@@ -80,6 +91,7 @@ gp:GenomeProperty_58355
 .
 gp:GenomeProperty_60430
 	a	:GenomeProperty;
+	:accession	"GenProp0703";
 	:name	"60430";
 	:type	"system";
 	:threshold	"0";
@@ -87,6 +99,7 @@ gp:GenomeProperty_60430
 .
 gp:GenomeProperty_57214
 	a	:GenomeProperty;
+	:accession	"GenProp0231";
 	:name	"57214";
 	:type	"pathway";
 	:threshold	"3";
@@ -94,6 +107,7 @@ gp:GenomeProperty_57214
 .
 gp:GenomeProperty_55193
 	a	:GenomeProperty;
+	:accession	"GenProp0217";
 	:name	"55193";
 	:type	"pathway";
 	:threshold	"1";
@@ -101,6 +115,7 @@ gp:GenomeProperty_55193
 .
 gp:GenomeProperty_55199
 	a	:GenomeProperty;
+	:accession	"GenProp0223";
 	:name	"55199";
 	:type	"pathway";
 	:threshold	"0";
@@ -108,6 +123,7 @@ gp:GenomeProperty_55199
 .
 gp:GenomeProperty_58207
 	a	:GenomeProperty;
+	:accession	"GenProp0482";
 	:name	"58207";
 	:type	"system";
 	:threshold	"0";
@@ -115,6 +131,7 @@ gp:GenomeProperty_58207
 .
 gp:GenomeProperty_64521
 	a	:GenomeProperty;
+	:accession	"GenProp0792";
 	:name	"64521";
 	:type	"pathway";
 	:threshold	"0";
@@ -122,6 +139,7 @@ gp:GenomeProperty_64521
 .
 gp:GenomeProperty_58354
 	a	:GenomeProperty;
+	:accession	"GenProp0629";
 	:name	"58354";
 	:type	"system";
 	:threshold	"0";
@@ -129,6 +147,7 @@ gp:GenomeProperty_58354
 .
 gp:GenomeProperty_60456
 	a	:GenomeProperty;
+	:accession	"GenProp0728";
 	:name	"60456";
 	:type	"pathway";
 	:threshold	"0";
@@ -136,6 +155,7 @@ gp:GenomeProperty_60456
 .
 gp:GenomeProperty_66563
 	a	:GenomeProperty;
+	:accession	"GenProp0835";
 	:name	"66563";
 	:type	"system";
 	:threshold	"0";
@@ -143,6 +163,7 @@ gp:GenomeProperty_66563
 .
 gp:GenomeProperty_60479
 	a	:GenomeProperty;
+	:accession	"GenProp0751";
 	:name	"60479";
 	:type	"system";
 	:threshold	"0";
@@ -150,6 +171,7 @@ gp:GenomeProperty_60479
 .
 gp:GenomeProperty_66622
 	a	:GenomeProperty;
+	:accession	"GenProp0894";
 	:name	"66622";
 	:type	"system";
 	:threshold	"0";
@@ -157,6 +179,7 @@ gp:GenomeProperty_66622
 .
 gp:GenomeProperty_64522
 	a	:GenomeProperty;
+	:accession	"GenProp0793";
 	:name	"64522";
 	:type	"metapath";
 	:threshold	"0";
@@ -164,6 +187,7 @@ gp:GenomeProperty_64522
 .
 gp:GenomeProperty_64525
 	a	:GenomeProperty;
+	:accession	"GenProp0796";
 	:name	"64525";
 	:type	"metapath";
 	:threshold	"3";
@@ -171,6 +195,7 @@ gp:GenomeProperty_64525
 .
 gp:GenomeProperty_57303
 	a	:GenomeProperty;
+	:accession	"GenProp0316";
 	:name	"57303";
 	:type	"system";
 	:threshold	"0";
@@ -178,6 +203,7 @@ gp:GenomeProperty_57303
 .
 gp:GenomeProperty_2003
 	a	:GenomeProperty;
+	:accession	"GenProp0021";
 	:name	"2003";
 	:type	"guild";
 	:threshold	"1";
@@ -185,6 +211,7 @@ gp:GenomeProperty_2003
 .
 gp:GenomeProperty_60396
 	a	:GenomeProperty;
+	:accession	"GenProp0670";
 	:name	"60396";
 	:type	"system";
 	:threshold	"0";
@@ -192,6 +219,7 @@ gp:GenomeProperty_60396
 .
 gp:GenomeProperty_57306
 	a	:GenomeProperty;
+	:accession	"GenProp0319";
 	:name	"57306";
 	:type	"system";
 	:threshold	"4";
@@ -199,6 +227,7 @@ gp:GenomeProperty_57306
 .
 gp:GenomeProperty_60411
 	a	:GenomeProperty;
+	:accession	"GenProp0685";
 	:name	"60411";
 	:type	"system";
 	:threshold	"0";
@@ -206,6 +235,7 @@ gp:GenomeProperty_60411
 .
 gp:GenomeProperty_58194
 	a	:GenomeProperty;
+	:accession	"GenProp0469";
 	:name	"58194";
 	:type	"system";
 	:threshold	"0";
@@ -213,6 +243,7 @@ gp:GenomeProperty_58194
 .
 gp:GenomeProperty_57300
 	a	:GenomeProperty;
+	:accession	"GenProp0313";
 	:name	"57300";
 	:type	"system";
 	:threshold	"0";
@@ -220,6 +251,7 @@ gp:GenomeProperty_57300
 .
 gp:GenomeProperty_57302
 	a	:GenomeProperty;
+	:accession	"GenProp0315";
 	:name	"57302";
 	:type	"system";
 	:threshold	"0";
@@ -227,6 +259,7 @@ gp:GenomeProperty_57302
 .
 gp:GenomeProperty_57307
 	a	:GenomeProperty;
+	:accession	"GenProp0320";
 	:name	"57307";
 	:type	"system";
 	:threshold	"0";
@@ -234,6 +267,7 @@ gp:GenomeProperty_57307
 .
 gp:GenomeProperty_57305
 	a	:GenomeProperty;
+	:accession	"GenProp0318";
 	:name	"57305";
 	:type	"system";
 	:threshold	"3";
@@ -241,6 +275,7 @@ gp:GenomeProperty_57305
 .
 gp:GenomeProperty_66650
 	a	:GenomeProperty;
+	:accession	"GenProp0922";
 	:name	"66650";
 	:type	"system";
 	:threshold	"0";
@@ -248,6 +283,7 @@ gp:GenomeProperty_66650
 .
 gp:GenomeProperty_57301
 	a	:GenomeProperty;
+	:accession	"GenProp0314";
 	:name	"57301";
 	:type	"system";
 	:threshold	"0";
@@ -255,6 +291,7 @@ gp:GenomeProperty_57301
 .
 gp:GenomeProperty_64496
 	a	:GenomeProperty;
+	:accession	"GenProp0768";
 	:name	"64496";
 	:type	"system";
 	:threshold	"0";
@@ -262,6 +299,7 @@ gp:GenomeProperty_64496
 .
 gp:GenomeProperty_57304
 	a	:GenomeProperty;
+	:accession	"GenProp0317";
 	:name	"57304";
 	:type	"system";
 	:threshold	"0";
@@ -269,6 +307,7 @@ gp:GenomeProperty_57304
 .
 gp:GenomeProperty_57298
 	a	:GenomeProperty;
+	:accession	"GenProp0310";
 	:name	"57298";
 	:type	"system";
 	:threshold	"0";
@@ -276,6 +315,7 @@ gp:GenomeProperty_57298
 .
 gp:GenomeProperty_66647
 	a	:GenomeProperty;
+	:accession	"GenProp0919";
 	:name	"66647";
 	:type	"system";
 	:threshold	"0";
@@ -283,6 +323,7 @@ gp:GenomeProperty_66647
 .
 gp:GenomeProperty_58184
 	a	:GenomeProperty;
+	:accession	"GenProp0459";
 	:name	"58184";
 	:type	"system";
 	:threshold	"0";
@@ -290,6 +331,7 @@ gp:GenomeProperty_58184
 .
 gp:GenomeProperty_62492
 	a	:GenomeProperty;
+	:accession	"GenProp0764";
 	:name	"62492";
 	:type	"system";
 	:threshold	"0";
@@ -297,6 +339,7 @@ gp:GenomeProperty_62492
 .
 gp:GenomeProperty_60426
 	a	:GenomeProperty;
+	:accession	"GenProp0699";
 	:name	"60426";
 	:type	"system";
 	:threshold	"0";
@@ -304,6 +347,7 @@ gp:GenomeProperty_60426
 .
 gp:GenomeProperty_57251
 	a	:GenomeProperty;
+	:accession	"GenProp0263";
 	:name	"57251";
 	:type	"system";
 	:threshold	"0";
@@ -311,6 +355,7 @@ gp:GenomeProperty_57251
 .
 gp:GenomeProperty_60428
 	a	:GenomeProperty;
+	:accession	"GenProp0701";
 	:name	"60428";
 	:type	"system";
 	:threshold	"0";
@@ -318,6 +363,7 @@ gp:GenomeProperty_60428
 .
 gp:GenomeProperty_66641
 	a	:GenomeProperty;
+	:accession	"GenProp0913";
 	:name	"66641";
 	:type	"guild";
 	:threshold	"0";
@@ -325,6 +371,7 @@ gp:GenomeProperty_66641
 .
 gp:GenomeProperty_64527
 	a	:GenomeProperty;
+	:accession	"GenProp0798";
 	:name	"64527";
 	:type	"system";
 	:threshold	"0";
@@ -332,6 +379,7 @@ gp:GenomeProperty_64527
 .
 gp:GenomeProperty_58193
 	a	:GenomeProperty;
+	:accession	"GenProp0468";
 	:name	"58193";
 	:type	"pathway";
 	:threshold	"0";
@@ -339,6 +387,7 @@ gp:GenomeProperty_58193
 .
 gp:GenomeProperty_58210
 	a	:GenomeProperty;
+	:accession	"GenProp0485";
 	:name	"58210";
 	:type	"system";
 	:threshold	"1";
@@ -346,6 +395,7 @@ gp:GenomeProperty_58210
 .
 gp:GenomeProperty_58214
 	a	:GenomeProperty;
+	:accession	"GenProp0489";
 	:name	"58214";
 	:type	"metapath";
 	:threshold	"0";
@@ -353,6 +403,7 @@ gp:GenomeProperty_58214
 .
 gp:GenomeProperty_58209
 	a	:GenomeProperty;
+	:accession	"GenProp0484";
 	:name	"58209";
 	:type	"system";
 	:threshold	"1";
@@ -360,6 +411,7 @@ gp:GenomeProperty_58209
 .
 gp:GenomeProperty_66661
 	a	:GenomeProperty;
+	:accession	"GenProp0933";
 	:name	"66661";
 	:type	"guild";
 	:threshold	"0";
@@ -367,13 +419,23 @@ gp:GenomeProperty_66661
 .
 gp:GenomeProperty_66662
 	a	:GenomeProperty;
+	:accession	"GenProp0934";
 	:name	"66662";
 	:type	"system";
 	:threshold	"0";
 	:property	"dimethyl sulphone utilization (aerobic)";
 .
+gp:GenomeProperty_66664
+	a	:GenomeProperty;
+	:accession	"GenProp0936";
+	:name	"66664";
+	:type	"system";
+	:threshold	"0";
+	:property	"bacteriocin system, sporulation delay protein group";
+.
 gp:GenomeProperty_4099
 	a	:GenomeProperty;
+	:accession	"GenProp0128";
 	:name	"4099";
 	:type	"system";
 	:threshold	"1";
@@ -381,6 +443,7 @@ gp:GenomeProperty_4099
 .
 gp:GenomeProperty_60417
 	a	:GenomeProperty;
+	:accession	"GenProp0690";
 	:name	"60417";
 	:type	"system";
 	:threshold	"0";
@@ -388,6 +451,7 @@ gp:GenomeProperty_60417
 .
 gp:GenomeProperty_60410
 	a	:GenomeProperty;
+	:accession	"GenProp0684";
 	:name	"60410";
 	:type	"system";
 	:threshold	"0";
@@ -395,6 +459,7 @@ gp:GenomeProperty_60410
 .
 gp:GenomeProperty_57216
 	a	:GenomeProperty;
+	:accession	"GenProp0233";
 	:name	"57216";
 	:type	"pathway";
 	:threshold	"0";
@@ -402,6 +467,7 @@ gp:GenomeProperty_57216
 .
 gp:GenomeProperty_66658
 	a	:GenomeProperty;
+	:accession	"GenProp0930";
 	:name	"66658";
 	:type	"pathway";
 	:threshold	"0";
@@ -409,6 +475,7 @@ gp:GenomeProperty_66658
 .
 gp:GenomeProperty_51165
 	a	:GenomeProperty;
+	:accession	"GenProp0188";
 	:name	"51165";
 	:type	"pathway";
 	:threshold	"0";
@@ -416,6 +483,7 @@ gp:GenomeProperty_51165
 .
 gp:GenomeProperty_60397
 	a	:GenomeProperty;
+	:accession	"GenProp0671";
 	:name	"60397";
 	:type	"pathway";
 	:threshold	"0";
@@ -423,6 +491,7 @@ gp:GenomeProperty_60397
 .
 gp:GenomeProperty_66552
 	a	:GenomeProperty;
+	:accession	"GenProp0824";
 	:name	"66552";
 	:type	"system";
 	:threshold	"0";
@@ -430,6 +499,7 @@ gp:GenomeProperty_66552
 .
 gp:GenomeProperty_2030
 	a	:GenomeProperty;
+	:accession	"GenProp0048";
 	:name	"2030";
 	:type	"pathway";
 	:threshold	"2";
@@ -437,6 +507,7 @@ gp:GenomeProperty_2030
 .
 gp:GenomeProperty_2029
 	a	:GenomeProperty;
+	:accession	"GenProp0047";
 	:name	"2029";
 	:type	"pathway";
 	:threshold	"2";
@@ -444,6 +515,7 @@ gp:GenomeProperty_2029
 .
 gp:GenomeProperty_53182
 	a	:GenomeProperty;
+	:accession	"GenProp0204";
 	:name	"53182";
 	:type	"metapath";
 	:threshold	"0";
@@ -451,6 +523,7 @@ gp:GenomeProperty_53182
 .
 gp:GenomeProperty_53181
 	a	:GenomeProperty;
+	:accession	"GenProp0203";
 	:name	"53181";
 	:type	"pathway";
 	:threshold	"0";
@@ -458,6 +531,7 @@ gp:GenomeProperty_53181
 .
 gp:GenomeProperty_66657
 	a	:GenomeProperty;
+	:accession	"GenProp0929";
 	:name	"66657";
 	:type	"guild";
 	:threshold	"0";
@@ -465,6 +539,7 @@ gp:GenomeProperty_66657
 .
 gp:GenomeProperty_24134
 	a	:GenomeProperty;
+	:accession	"GenProp0143";
 	:name	"24134";
 	:type	"pathway";
 	:threshold	"0";
@@ -472,6 +547,7 @@ gp:GenomeProperty_24134
 .
 gp:GenomeProperty_66653
 	a	:GenomeProperty;
+	:accession	"GenProp0925";
 	:name	"66653";
 	:type	"guild";
 	:threshold	"0";
@@ -479,6 +555,7 @@ gp:GenomeProperty_66653
 .
 gp:GenomeProperty_66640
 	a	:GenomeProperty;
+	:accession	"GenProp0912";
 	:name	"66640";
 	:type	"guild";
 	:threshold	"0";
@@ -486,6 +563,7 @@ gp:GenomeProperty_66640
 .
 gp:GenomeProperty_66606
 	a	:GenomeProperty;
+	:accession	"GenProp0878";
 	:name	"66606";
 	:type	"pathway";
 	:threshold	"0";
@@ -493,6 +571,7 @@ gp:GenomeProperty_66606
 .
 gp:GenomeProperty_2039
 	a	:GenomeProperty;
+	:accession	"GenProp0057";
 	:name	"2039";
 	:type	"pathway";
 	:threshold	"0";
@@ -500,6 +579,7 @@ gp:GenomeProperty_2039
 .
 gp:GenomeProperty_9129
 	a	:GenomeProperty;
+	:accession	"GenProp0135";
 	:name	"9129";
 	:type	"system";
 	:threshold	"3";
@@ -507,6 +587,7 @@ gp:GenomeProperty_9129
 .
 gp:GenomeProperty_58348
 	a	:GenomeProperty;
+	:accession	"GenProp0623";
 	:name	"58348";
 	:type	"system";
 	:threshold	"0";
@@ -514,6 +595,7 @@ gp:GenomeProperty_58348
 .
 gp:GenomeProperty_4109
 	a	:GenomeProperty;
+	:accession	"GenProp0129";
 	:name	"4109";
 	:type	"system";
 	:threshold	"2";
@@ -521,6 +603,7 @@ gp:GenomeProperty_4109
 .
 gp:GenomeProperty_64497
 	a	:GenomeProperty;
+	:accession	"GenProp0769";
 	:name	"64497";
 	:type	"pathway";
 	:threshold	"0";
@@ -528,6 +611,7 @@ gp:GenomeProperty_64497
 .
 gp:GenomeProperty_66660
 	a	:GenomeProperty;
+	:accession	"GenProp0932";
 	:name	"66660";
 	:type	"metapath";
 	:threshold	"0";
@@ -535,6 +619,7 @@ gp:GenomeProperty_66660
 .
 gp:GenomeProperty_66656
 	a	:GenomeProperty;
+	:accession	"GenProp0928";
 	:name	"66656";
 	:type	"system";
 	:threshold	"0";
@@ -542,6 +627,7 @@ gp:GenomeProperty_66656
 .
 gp:GenomeProperty_58211
 	a	:GenomeProperty;
+	:accession	"GenProp0486";
 	:name	"58211";
 	:type	"system";
 	:threshold	"0";
@@ -549,6 +635,7 @@ gp:GenomeProperty_58211
 .
 gp:GenomeProperty_4061
 	a	:GenomeProperty;
+	:accession	"GenProp0119";
 	:name	"4061";
 	:type	"system";
 	:threshold	"2";
@@ -556,6 +643,7 @@ gp:GenomeProperty_4061
 .
 gp:GenomeProperty_66582
 	a	:GenomeProperty;
+	:accession	"GenProp0854";
 	:name	"66582";
 	:type	"system";
 	:threshold	"0";
@@ -563,6 +651,7 @@ gp:GenomeProperty_66582
 .
 gp:GenomeProperty_49154
 	a	:GenomeProperty;
+	:accession	"GenProp0172";
 	:name	"49154";
 	:type	"system";
 	:threshold	"0";
@@ -570,6 +659,7 @@ gp:GenomeProperty_49154
 .
 gp:GenomeProperty_66626
 	a	:GenomeProperty;
+	:accession	"GenProp0898";
 	:name	"66626";
 	:type	"system";
 	:threshold	"0";
@@ -577,6 +667,7 @@ gp:GenomeProperty_66626
 .
 gp:GenomeProperty_57250
 	a	:GenomeProperty;
+	:accession	"GenProp0262";
 	:name	"57250";
 	:type	"system";
 	:threshold	"0";
@@ -584,6 +675,7 @@ gp:GenomeProperty_57250
 .
 gp:GenomeProperty_53192
 	a	:GenomeProperty;
+	:accession	"GenProp0213";
 	:name	"53192";
 	:type	"guild";
 	:threshold	"0";
@@ -591,6 +683,7 @@ gp:GenomeProperty_53192
 .
 gp:GenomeProperty_4119
 	a	:GenomeProperty;
+	:accession	"GenProp0130";
 	:name	"4119";
 	:type	"system";
 	:threshold	"1";
@@ -598,6 +691,7 @@ gp:GenomeProperty_4119
 .
 gp:GenomeProperty_66539
 	a	:GenomeProperty;
+	:accession	"GenProp0811";
 	:name	"66539";
 	:type	"system";
 	:threshold	"0";
@@ -605,6 +699,7 @@ gp:GenomeProperty_66539
 .
 gp:GenomeProperty_66649
 	a	:GenomeProperty;
+	:accession	"GenProp0921";
 	:name	"66649";
 	:type	"system";
 	:threshold	"0";
@@ -612,6 +707,7 @@ gp:GenomeProperty_66649
 .
 gp:GenomeProperty_53179
 	a	:GenomeProperty;
+	:accession	"GenProp0201";
 	:name	"53179";
 	:type	"system";
 	:threshold	"0";
@@ -619,6 +715,7 @@ gp:GenomeProperty_53179
 .
 gp:GenomeProperty_55191
 	a	:GenomeProperty;
+	:accession	"GenProp0215";
 	:name	"55191";
 	:type	"system";
 	:threshold	"0";
@@ -626,13 +723,23 @@ gp:GenomeProperty_55191
 .
 gp:GenomeProperty_53187
 	a	:GenomeProperty;
+	:accession	"GenProp0209";
 	:name	"53187";
 	:type	"system";
 	:threshold	"1";
 	:property	"Sec system preprotein translocase";
 .
+gp:GenomeProperty_66665
+	a	:GenomeProperty;
+	:accession	"GenProp0937";
+	:name	"66665";
+	:type	"system";
+	:threshold	"0";
+	:property	"cofactor-coupled enzyme system,  CE1758/CE1759 type";
+.
 gp:GenomeProperty_64506
 	a	:GenomeProperty;
+	:accession	"GenProp0778";
 	:name	"64506";
 	:type	"system";
 	:threshold	"0";
@@ -640,6 +747,7 @@ gp:GenomeProperty_64506
 .
 gp:GenomeProperty_64507
 	a	:GenomeProperty;
+	:accession	"GenProp0779";
 	:name	"64507";
 	:type	"system";
 	:threshold	"0";
@@ -647,6 +755,7 @@ gp:GenomeProperty_64507
 .
 gp:GenomeProperty_58360
 	a	:GenomeProperty;
+	:accession	"GenProp0634";
 	:name	"58360";
 	:type	"system";
 	:threshold	"0";
@@ -654,6 +763,7 @@ gp:GenomeProperty_58360
 .
 gp:GenomeProperty_2015
 	a	:GenomeProperty;
+	:accession	"GenProp0033";
 	:name	"2015";
 	:type	"metapath";
 	:threshold	"5";
@@ -661,6 +771,7 @@ gp:GenomeProperty_2015
 .
 gp:GenomeProperty_58192
 	a	:GenomeProperty;
+	:accession	"GenProp0467";
 	:name	"58192";
 	:type	"system";
 	:threshold	"0";
@@ -668,6 +779,7 @@ gp:GenomeProperty_58192
 .
 gp:GenomeProperty_49158
 	a	:GenomeProperty;
+	:accession	"GenProp0176";
 	:name	"49158";
 	:type	"system";
 	:threshold	"0";
@@ -675,6 +787,7 @@ gp:GenomeProperty_49158
 .
 gp:GenomeProperty_4081
 	a	:GenomeProperty;
+	:accession	"GenProp0127";
 	:name	"4081";
 	:type	"system";
 	:threshold	"0";
@@ -682,6 +795,7 @@ gp:GenomeProperty_4081
 .
 gp:GenomeProperty_58215
 	a	:GenomeProperty;
+	:accession	"GenProp0490";
 	:name	"58215";
 	:type	"system";
 	:threshold	"0";
@@ -689,6 +803,7 @@ gp:GenomeProperty_58215
 .
 gp:GenomeProperty_58267
 	a	:GenomeProperty;
+	:accession	"GenProp0542";
 	:name	"58267";
 	:type	"system";
 	:threshold	"0";
@@ -696,6 +811,7 @@ gp:GenomeProperty_58267
 .
 gp:GenomeProperty_58268
 	a	:GenomeProperty;
+	:accession	"GenProp0543";
 	:name	"58268";
 	:type	"system";
 	:threshold	"0";
@@ -703,6 +819,7 @@ gp:GenomeProperty_58268
 .
 gp:GenomeProperty_66652
 	a	:GenomeProperty;
+	:accession	"GenProp0924";
 	:name	"66652";
 	:type	"pathway";
 	:threshold	"0";
@@ -710,6 +827,7 @@ gp:GenomeProperty_66652
 .
 gp:GenomeProperty_60478
 	a	:GenomeProperty;
+	:accession	"GenProp0750";
 	:name	"60478";
 	:type	"pathway";
 	:threshold	"0";
@@ -717,6 +835,7 @@ gp:GenomeProperty_60478
 .
 gp:GenomeProperty_51173
 	a	:GenomeProperty;
+	:accession	"GenProp0195";
 	:name	"51173";
 	:type	"system";
 	:threshold	"0";
@@ -724,6 +843,7 @@ gp:GenomeProperty_51173
 .
 gp:GenomeProperty_60389
 	a	:GenomeProperty;
+	:accession	"GenProp0663";
 	:name	"60389";
 	:type	"system";
 	:threshold	"0";
@@ -731,6 +851,7 @@ gp:GenomeProperty_60389
 .
 gp:GenomeProperty_66572
 	a	:GenomeProperty;
+	:accession	"GenProp0844";
 	:name	"66572";
 	:type	"system";
 	:threshold	"0";
@@ -738,6 +859,7 @@ gp:GenomeProperty_66572
 .
 gp:GenomeProperty_58204
 	a	:GenomeProperty;
+	:accession	"GenProp0479";
 	:name	"58204";
 	:type	"metapath";
 	:threshold	"0";
@@ -745,6 +867,7 @@ gp:GenomeProperty_58204
 .
 gp:GenomeProperty_60482
 	a	:GenomeProperty;
+	:accession	"GenProp0754";
 	:name	"60482";
 	:type	"pathway";
 	:threshold	"0";
@@ -752,6 +875,7 @@ gp:GenomeProperty_60482
 .
 gp:GenomeProperty_58203
 	a	:GenomeProperty;
+	:accession	"GenProp0478";
 	:name	"58203";
 	:type	"pathway";
 	:threshold	"1";
@@ -759,6 +883,7 @@ gp:GenomeProperty_58203
 .
 gp:GenomeProperty_58205
 	a	:GenomeProperty;
+	:accession	"GenProp0480";
 	:name	"58205";
 	:type	"pathway";
 	:threshold	"0";
@@ -766,6 +891,7 @@ gp:GenomeProperty_58205
 .
 gp:GenomeProperty_55190
 	a	:GenomeProperty;
+	:accession	"GenProp0214";
 	:name	"55190";
 	:type	"system";
 	:threshold	"0";
@@ -773,6 +899,7 @@ gp:GenomeProperty_55190
 .
 gp:GenomeProperty_60394
 	a	:GenomeProperty;
+	:accession	"GenProp0668";
 	:name	"60394";
 	:type	"system";
 	:threshold	"0";
@@ -780,6 +907,7 @@ gp:GenomeProperty_60394
 .
 gp:GenomeProperty_66576
 	a	:GenomeProperty;
+	:accession	"GenProp0848";
 	:name	"66576";
 	:type	"system";
 	:threshold	"0";
@@ -787,6 +915,7 @@ gp:GenomeProperty_66576
 .
 gp:GenomeProperty_58218
 	a	:GenomeProperty;
+	:accession	"GenProp0493";
 	:name	"58218";
 	:type	"system";
 	:threshold	"0";
@@ -794,6 +923,7 @@ gp:GenomeProperty_58218
 .
 gp:GenomeProperty_57310
 	a	:GenomeProperty;
+	:accession	"GenProp0323";
 	:name	"57310";
 	:type	"system";
 	:threshold	"0";
@@ -801,6 +931,7 @@ gp:GenomeProperty_57310
 .
 gp:GenomeProperty_57311
 	a	:GenomeProperty;
+	:accession	"GenProp0324";
 	:name	"57311";
 	:type	"system";
 	:threshold	"0";
@@ -808,6 +939,7 @@ gp:GenomeProperty_57311
 .
 gp:GenomeProperty_57309
 	a	:GenomeProperty;
+	:accession	"GenProp0322";
 	:name	"57309";
 	:type	"system";
 	:threshold	"0";
@@ -815,6 +947,7 @@ gp:GenomeProperty_57309
 .
 gp:GenomeProperty_57308
 	a	:GenomeProperty;
+	:accession	"GenProp0321";
 	:name	"57308";
 	:type	"guild";
 	:threshold	"0";
@@ -822,6 +955,7 @@ gp:GenomeProperty_57308
 .
 gp:GenomeProperty_60475
 	a	:GenomeProperty;
+	:accession	"GenProp0747";
 	:name	"60475";
 	:type	"pathway";
 	:threshold	"0";
@@ -829,6 +963,7 @@ gp:GenomeProperty_60475
 .
 gp:GenomeProperty_64501
 	a	:GenomeProperty;
+	:accession	"GenProp0773";
 	:name	"64501";
 	:type	"system";
 	:threshold	"0";
@@ -836,6 +971,7 @@ gp:GenomeProperty_64501
 .
 gp:GenomeProperty_58337
 	a	:GenomeProperty;
+	:accession	"GenProp0612";
 	:name	"58337";
 	:type	"metapath";
 	:threshold	"0";
@@ -843,6 +979,7 @@ gp:GenomeProperty_58337
 .
 gp:GenomeProperty_58336
 	a	:GenomeProperty;
+	:accession	"GenProp0611";
 	:name	"58336";
 	:type	"metapath";
 	:threshold	"0";
@@ -850,6 +987,7 @@ gp:GenomeProperty_58336
 .
 gp:GenomeProperty_60466
 	a	:GenomeProperty;
+	:accession	"GenProp0738";
 	:name	"60466";
 	:type	"pathway";
 	:threshold	"0";
@@ -857,6 +995,7 @@ gp:GenomeProperty_60466
 .
 gp:GenomeProperty_66623
 	a	:GenomeProperty;
+	:accession	"GenProp0895";
 	:name	"66623";
 	:type	"system";
 	:threshold	"0";
@@ -864,6 +1003,7 @@ gp:GenomeProperty_66623
 .
 gp:GenomeProperty_60402
 	a	:GenomeProperty;
+	:accession	"GenProp0676";
 	:name	"60402";
 	:type	"system";
 	:threshold	"0";
@@ -871,6 +1011,7 @@ gp:GenomeProperty_60402
 .
 gp:GenomeProperty_60412
 	a	:GenomeProperty;
+	:accession	"GenProp0686";
 	:name	"60412";
 	:type	"metapath";
 	:threshold	"0";
@@ -878,6 +1019,7 @@ gp:GenomeProperty_60412
 .
 gp:GenomeProperty_60413
 	a	:GenomeProperty;
+	:accession	"GenProp0687";
 	:name	"60413";
 	:type	"pathway";
 	:threshold	"1";
@@ -885,6 +1027,7 @@ gp:GenomeProperty_60413
 .
 gp:GenomeProperty_57258
 	a	:GenomeProperty;
+	:accession	"GenProp0270";
 	:name	"57258";
 	:type	"pathway";
 	:threshold	"0";
@@ -892,6 +1035,7 @@ gp:GenomeProperty_57258
 .
 gp:GenomeProperty_58363
 	a	:GenomeProperty;
+	:accession	"GenProp0637";
 	:name	"58363";
 	:type	"system";
 	:threshold	"0";
@@ -899,6 +1043,7 @@ gp:GenomeProperty_58363
 .
 gp:GenomeProperty_60465
 	a	:GenomeProperty;
+	:accession	"GenProp0737";
 	:name	"60465";
 	:type	"system";
 	:threshold	"0";
@@ -906,6 +1051,7 @@ gp:GenomeProperty_60465
 .
 gp:GenomeProperty_66646
 	a	:GenomeProperty;
+	:accession	"GenProp0918";
 	:name	"66646";
 	:type	"system";
 	:threshold	"0";
@@ -913,6 +1059,7 @@ gp:GenomeProperty_66646
 .
 gp:GenomeProperty_66585
 	a	:GenomeProperty;
+	:accession	"GenProp0857";
 	:name	"66585";
 	:type	"system";
 	:threshold	"0";
@@ -920,6 +1067,7 @@ gp:GenomeProperty_66585
 .
 gp:GenomeProperty_64494
 	a	:GenomeProperty;
+	:accession	"GenProp0766";
 	:name	"64494";
 	:type	"pathway";
 	:threshold	"0";
@@ -927,6 +1075,7 @@ gp:GenomeProperty_64494
 .
 gp:GenomeProperty_66560
 	a	:GenomeProperty;
+	:accession	"GenProp0832";
 	:name	"66560";
 	:type	"guild";
 	:threshold	"0";
@@ -934,6 +1083,7 @@ gp:GenomeProperty_66560
 .
 gp:GenomeProperty_66559
 	a	:GenomeProperty;
+	:accession	"GenProp0831";
 	:name	"66559";
 	:type	"guild";
 	:threshold	"0";
@@ -941,6 +1091,7 @@ gp:GenomeProperty_66559
 .
 gp:GenomeProperty_66543
 	a	:GenomeProperty;
+	:accession	"GenProp0815";
 	:name	"66543";
 	:type	"guild";
 	:threshold	"0";
@@ -948,6 +1099,7 @@ gp:GenomeProperty_66543
 .
 gp:GenomeProperty_4059
 	a	:GenomeProperty;
+	:accession	"GenProp0117";
 	:name	"4059";
 	:type	"pathway";
 	:threshold	"1";
@@ -955,6 +1107,7 @@ gp:GenomeProperty_4059
 .
 gp:GenomeProperty_57297
 	a	:GenomeProperty;
+	:accession	"GenProp0309";
 	:name	"57297";
 	:type	"pathway";
 	:threshold	"0";
@@ -962,6 +1115,7 @@ gp:GenomeProperty_57297
 .
 gp:GenomeProperty_58365
 	a	:GenomeProperty;
+	:accession	"GenProp0639";
 	:name	"58365";
 	:type	"pathway";
 	:threshold	"0";
@@ -969,6 +1123,7 @@ gp:GenomeProperty_58365
 .
 gp:GenomeProperty_58199
 	a	:GenomeProperty;
+	:accession	"GenProp0474";
 	:name	"58199";
 	:type	"system";
 	:threshold	"0";
@@ -976,6 +1131,7 @@ gp:GenomeProperty_58199
 .
 gp:GenomeProperty_58198
 	a	:GenomeProperty;
+	:accession	"GenProp0473";
 	:name	"58198";
 	:type	"pathway";
 	:threshold	"0";
@@ -983,6 +1139,7 @@ gp:GenomeProperty_58198
 .
 gp:GenomeProperty_44147
 	a	:GenomeProperty;
+	:accession	"GenProp0160";
 	:name	"44147";
 	:type	"pathway";
 	:threshold	"0";
@@ -990,6 +1147,7 @@ gp:GenomeProperty_44147
 .
 gp:GenomeProperty_58181
 	a	:GenomeProperty;
+	:accession	"GenProp0456";
 	:name	"58181";
 	:type	"system";
 	:threshold	"0";
@@ -997,6 +1155,7 @@ gp:GenomeProperty_58181
 .
 gp:GenomeProperty_64510
 	a	:GenomeProperty;
+	:accession	"GenProp0782";
 	:name	"64510";
 	:type	"system";
 	:threshold	"0";
@@ -1004,6 +1163,7 @@ gp:GenomeProperty_64510
 .
 gp:GenomeProperty_66655
 	a	:GenomeProperty;
+	:accession	"GenProp0927";
 	:name	"66655";
 	:type	"pathway";
 	:threshold	"0";
@@ -1011,6 +1171,7 @@ gp:GenomeProperty_66655
 .
 gp:GenomeProperty_53184
 	a	:GenomeProperty;
+	:accession	"GenProp0206";
 	:name	"53184";
 	:type	"system";
 	:threshold	"0";
@@ -1018,6 +1179,7 @@ gp:GenomeProperty_53184
 .
 gp:GenomeProperty_64529
 	a	:GenomeProperty;
+	:accession	"GenProp0800";
 	:name	"64529";
 	:type	"guild";
 	:threshold	"0";
@@ -1025,6 +1187,7 @@ gp:GenomeProperty_64529
 .
 gp:GenomeProperty_64528
 	a	:GenomeProperty;
+	:accession	"GenProp0799";
 	:name	"64528";
 	:type	"guild";
 	:threshold	"0";
@@ -1032,6 +1195,7 @@ gp:GenomeProperty_64528
 .
 gp:GenomeProperty_66584
 	a	:GenomeProperty;
+	:accession	"GenProp0856";
 	:name	"66584";
 	:type	"system";
 	:threshold	"0";
@@ -1039,6 +1203,7 @@ gp:GenomeProperty_66584
 .
 gp:GenomeProperty_24137
 	a	:GenomeProperty;
+	:accession	"GenProp0146";
 	:name	"24137";
 	:type	"pathway";
 	:threshold	"2";
@@ -1046,6 +1211,7 @@ gp:GenomeProperty_24137
 .
 gp:GenomeProperty_66629
 	a	:GenomeProperty;
+	:accession	"GenProp0901";
 	:name	"66629";
 	:type	"system";
 	:threshold	"0";
@@ -1053,6 +1219,7 @@ gp:GenomeProperty_66629
 .
 gp:GenomeProperty_64537
 	a	:GenomeProperty;
+	:accession	"GenProp0808";
 	:name	"64537";
 	:type	"system";
 	:threshold	"0";
@@ -1060,6 +1227,7 @@ gp:GenomeProperty_64537
 .
 gp:GenomeProperty_66589
 	a	:GenomeProperty;
+	:accession	"GenProp0861";
 	:name	"66589";
 	:type	"system";
 	:threshold	"0";
@@ -1067,6 +1235,7 @@ gp:GenomeProperty_66589
 .
 gp:GenomeProperty_66553
 	a	:GenomeProperty;
+	:accession	"GenProp0825";
 	:name	"66553";
 	:type	"system";
 	:threshold	"0";
@@ -1074,6 +1243,7 @@ gp:GenomeProperty_66553
 .
 gp:GenomeProperty_64536
 	a	:GenomeProperty;
+	:accession	"GenProp0807";
 	:name	"64536";
 	:type	"guild";
 	:threshold	"0";
@@ -1081,6 +1251,7 @@ gp:GenomeProperty_64536
 .
 gp:GenomeProperty_64538
 	a	:GenomeProperty;
+	:accession	"GenProp0809";
 	:name	"64538";
 	:type	"system";
 	:threshold	"0";
@@ -1088,6 +1259,7 @@ gp:GenomeProperty_64538
 .
 gp:GenomeProperty_64539
 	a	:GenomeProperty;
+	:accession	"GenProp0810";
 	:name	"64539";
 	:type	"system";
 	:threshold	"0";
@@ -1095,6 +1267,7 @@ gp:GenomeProperty_64539
 .
 gp:GenomeProperty_66628
 	a	:GenomeProperty;
+	:accession	"GenProp0900";
 	:name	"66628";
 	:type	"system";
 	:threshold	"0";
@@ -1102,6 +1275,7 @@ gp:GenomeProperty_66628
 .
 gp:GenomeProperty_60436
 	a	:GenomeProperty;
+	:accession	"GenProp0709";
 	:name	"60436";
 	:type	"pathway";
 	:threshold	"0";
@@ -1109,6 +1283,7 @@ gp:GenomeProperty_60436
 .
 gp:GenomeProperty_60429
 	a	:GenomeProperty;
+	:accession	"GenProp0702";
 	:name	"60429";
 	:type	"system";
 	:threshold	"0";
@@ -1116,6 +1291,7 @@ gp:GenomeProperty_60429
 .
 gp:GenomeProperty_57271
 	a	:GenomeProperty;
+	:accession	"GenProp0283";
 	:name	"57271";
 	:type	"pathway";
 	:threshold	"0";
@@ -1123,6 +1299,7 @@ gp:GenomeProperty_57271
 .
 gp:GenomeProperty_2018
 	a	:GenomeProperty;
+	:accession	"GenProp0036";
 	:name	"2018";
 	:type	"pathway";
 	:threshold	"1";
@@ -1130,6 +1307,7 @@ gp:GenomeProperty_2018
 .
 gp:GenomeProperty_60434
 	a	:GenomeProperty;
+	:accession	"GenProp0707";
 	:name	"60434";
 	:type	"system";
 	:threshold	"0";
@@ -1137,6 +1315,7 @@ gp:GenomeProperty_60434
 .
 gp:GenomeProperty_60383
 	a	:GenomeProperty;
+	:accession	"GenProp0657";
 	:name	"60383";
 	:type	"system";
 	:threshold	"0";
@@ -1144,6 +1323,7 @@ gp:GenomeProperty_60383
 .
 gp:GenomeProperty_66639
 	a	:GenomeProperty;
+	:accession	"GenProp0911";
 	:name	"66639";
 	:type	"system";
 	:threshold	"0";
@@ -1151,6 +1331,7 @@ gp:GenomeProperty_66639
 .
 gp:GenomeProperty_66638
 	a	:GenomeProperty;
+	:accession	"GenProp0910";
 	:name	"66638";
 	:type	"system";
 	:threshold	"0";
@@ -1158,6 +1339,7 @@ gp:GenomeProperty_66638
 .
 gp:GenomeProperty_60404
 	a	:GenomeProperty;
+	:accession	"GenProp0678";
 	:name	"60404";
 	:type	"system";
 	:threshold	"0";
@@ -1165,6 +1347,7 @@ gp:GenomeProperty_60404
 .
 gp:GenomeProperty_60406
 	a	:GenomeProperty;
+	:accession	"GenProp0680";
 	:name	"60406";
 	:type	"system";
 	:threshold	"0";
@@ -1172,6 +1355,7 @@ gp:GenomeProperty_60406
 .
 gp:GenomeProperty_66637
 	a	:GenomeProperty;
+	:accession	"GenProp0909";
 	:name	"66637";
 	:type	"pathway";
 	:threshold	"0";
@@ -1179,6 +1363,7 @@ gp:GenomeProperty_66637
 .
 gp:GenomeProperty_64512
 	a	:GenomeProperty;
+	:accession	"GenProp0784";
 	:name	"64512";
 	:type	"pathway";
 	:threshold	"0";
@@ -1186,6 +1371,7 @@ gp:GenomeProperty_64512
 .
 gp:GenomeProperty_60435
 	a	:GenomeProperty;
+	:accession	"GenProp0708";
 	:name	"60435";
 	:type	"pathway";
 	:threshold	"0";
@@ -1193,6 +1379,7 @@ gp:GenomeProperty_60435
 .
 gp:GenomeProperty_60438
 	a	:GenomeProperty;
+	:accession	"GenProp0711";
 	:name	"60438";
 	:type	"pathway";
 	:threshold	"0";
@@ -1200,6 +1387,7 @@ gp:GenomeProperty_60438
 .
 gp:GenomeProperty_60384
 	a	:GenomeProperty;
+	:accession	"GenProp0658";
 	:name	"60384";
 	:type	"system";
 	:threshold	"1";
@@ -1207,6 +1395,7 @@ gp:GenomeProperty_60384
 .
 gp:GenomeProperty_57232
 	a	:GenomeProperty;
+	:accession	"GenProp0244";
 	:name	"57232";
 	:type	"system";
 	:threshold	"0";
@@ -1214,6 +1403,7 @@ gp:GenomeProperty_57232
 .
 gp:GenomeProperty_57233
 	a	:GenomeProperty;
+	:accession	"GenProp0245";
 	:name	"57233";
 	:type	"system";
 	:threshold	"0";
@@ -1221,6 +1411,7 @@ gp:GenomeProperty_57233
 .
 gp:GenomeProperty_57234
 	a	:GenomeProperty;
+	:accession	"GenProp0246";
 	:name	"57234";
 	:type	"system";
 	:threshold	"0";
@@ -1228,6 +1419,7 @@ gp:GenomeProperty_57234
 .
 gp:GenomeProperty_62490
 	a	:GenomeProperty;
+	:accession	"GenProp0762";
 	:name	"62490";
 	:type	"system";
 	:threshold	"1";
@@ -1235,6 +1427,7 @@ gp:GenomeProperty_62490
 .
 gp:GenomeProperty_24141
 	a	:GenomeProperty;
+	:accession	"GenProp0150";
 	:name	"24141";
 	:type	"pathway";
 	:threshold	"0";
@@ -1242,6 +1435,7 @@ gp:GenomeProperty_24141
 .
 gp:GenomeProperty_24135
 	a	:GenomeProperty;
+	:accession	"GenProp0144";
 	:name	"24135";
 	:type	"pathway";
 	:threshold	"1";
@@ -1249,6 +1443,7 @@ gp:GenomeProperty_24135
 .
 gp:GenomeProperty_60476
 	a	:GenomeProperty;
+	:accession	"GenProp0748";
 	:name	"60476";
 	:type	"system";
 	:threshold	"0";
@@ -1256,6 +1451,7 @@ gp:GenomeProperty_60476
 .
 gp:GenomeProperty_60477
 	a	:GenomeProperty;
+	:accession	"GenProp0749";
 	:name	"60477";
 	:type	"system";
 	:threshold	"0";
@@ -1263,6 +1459,7 @@ gp:GenomeProperty_60477
 .
 gp:GenomeProperty_1
 	a	:GenomeProperty;
+	:accession	"GenProp0001";
 	:name	"1";
 	:type	"pathway";
 	:threshold	"2";
@@ -1270,6 +1467,7 @@ gp:GenomeProperty_1
 .
 gp:GenomeProperty_58190
 	a	:GenomeProperty;
+	:accession	"GenProp0465";
 	:name	"58190";
 	:type	"system";
 	:threshold	"0";
@@ -1277,6 +1475,7 @@ gp:GenomeProperty_58190
 .
 gp:GenomeProperty_60398
 	a	:GenomeProperty;
+	:accession	"GenProp0672";
 	:name	"60398";
 	:type	"system";
 	:threshold	"0";
@@ -1284,6 +1483,7 @@ gp:GenomeProperty_60398
 .
 gp:GenomeProperty_57277
 	a	:GenomeProperty;
+	:accession	"GenProp0289";
 	:name	"57277";
 	:type	"system";
 	:threshold	"0";
@@ -1291,6 +1491,7 @@ gp:GenomeProperty_57277
 .
 gp:GenomeProperty_57278
 	a	:GenomeProperty;
+	:accession	"GenProp0290";
 	:name	"57278";
 	:type	"system";
 	:threshold	"0";
@@ -1298,6 +1499,7 @@ gp:GenomeProperty_57278
 .
 gp:GenomeProperty_57279
 	a	:GenomeProperty;
+	:accession	"GenProp0291";
 	:name	"57279";
 	:type	"system";
 	:threshold	"0";
@@ -1305,6 +1507,7 @@ gp:GenomeProperty_57279
 .
 gp:GenomeProperty_57239
 	a	:GenomeProperty;
+	:accession	"GenProp0251";
 	:name	"57239";
 	:type	"system";
 	:threshold	"0";
@@ -1312,6 +1515,7 @@ gp:GenomeProperty_57239
 .
 gp:GenomeProperty_57265
 	a	:GenomeProperty;
+	:accession	"GenProp0277";
 	:name	"57265";
 	:type	"system";
 	:threshold	"2";
@@ -1319,6 +1523,7 @@ gp:GenomeProperty_57265
 .
 gp:GenomeProperty_57268
 	a	:GenomeProperty;
+	:accession	"GenProp0280";
 	:name	"57268";
 	:type	"system";
 	:threshold	"0";
@@ -1326,6 +1531,7 @@ gp:GenomeProperty_57268
 .
 gp:GenomeProperty_57270
 	a	:GenomeProperty;
+	:accession	"GenProp0282";
 	:name	"57270";
 	:type	"system";
 	:threshold	"0";
@@ -1333,6 +1539,7 @@ gp:GenomeProperty_57270
 .
 gp:GenomeProperty_57266
 	a	:GenomeProperty;
+	:accession	"GenProp0278";
 	:name	"57266";
 	:type	"system";
 	:threshold	"0";
@@ -1340,6 +1547,7 @@ gp:GenomeProperty_57266
 .
 gp:GenomeProperty_57267
 	a	:GenomeProperty;
+	:accession	"GenProp0279";
 	:name	"57267";
 	:type	"metapath";
 	:threshold	"0";
@@ -1347,6 +1555,7 @@ gp:GenomeProperty_57267
 .
 gp:GenomeProperty_4054
 	a	:GenomeProperty;
+	:accession	"GenProp0113";
 	:name	"4054";
 	:type	"pathway";
 	:threshold	"10";
@@ -1354,6 +1563,7 @@ gp:GenomeProperty_4054
 .
 gp:GenomeProperty_57263
 	a	:GenomeProperty;
+	:accession	"GenProp0275";
 	:name	"57263";
 	:type	"pathway";
 	:threshold	"3";
@@ -1361,6 +1571,7 @@ gp:GenomeProperty_57263
 .
 gp:GenomeProperty_49153
 	a	:GenomeProperty;
+	:accession	"GenProp0171";
 	:name	"49153";
 	:type	"pathway";
 	:threshold	"1";
@@ -1368,6 +1579,7 @@ gp:GenomeProperty_49153
 .
 gp:GenomeProperty_57262
 	a	:GenomeProperty;
+	:accession	"GenProp0274";
 	:name	"57262";
 	:type	"metapath";
 	:threshold	"0";
@@ -1375,6 +1587,7 @@ gp:GenomeProperty_57262
 .
 gp:GenomeProperty_57257
 	a	:GenomeProperty;
+	:accession	"GenProp0269";
 	:name	"57257";
 	:type	"pathway";
 	:threshold	"1";
@@ -1382,6 +1595,7 @@ gp:GenomeProperty_57257
 .
 gp:GenomeProperty_64520
 	a	:GenomeProperty;
+	:accession	"GenProp0791";
 	:name	"64520";
 	:type	"metapath";
 	:threshold	"1";
@@ -1389,6 +1603,7 @@ gp:GenomeProperty_64520
 .
 gp:GenomeProperty_2
 	a	:GenomeProperty;
+	:accession	"GenProp0002";
 	:name	"2";
 	:type	"guild";
 	:threshold	"0";
@@ -1396,6 +1611,7 @@ gp:GenomeProperty_2
 .
 gp:GenomeProperty_66619
 	a	:GenomeProperty;
+	:accession	"GenProp0891";
 	:name	"66619";
 	:type	"system";
 	:threshold	"0";
@@ -1403,6 +1619,7 @@ gp:GenomeProperty_66619
 .
 gp:GenomeProperty_49152
 	a	:GenomeProperty;
+	:accession	"GenProp0170";
 	:name	"49152";
 	:type	"system";
 	:threshold	"0";
@@ -1410,6 +1627,7 @@ gp:GenomeProperty_49152
 .
 gp:GenomeProperty_66659
 	a	:GenomeProperty;
+	:accession	"GenProp0931";
 	:name	"66659";
 	:type	"metapath";
 	:threshold	"0";
@@ -1417,6 +1635,7 @@ gp:GenomeProperty_66659
 .
 gp:GenomeProperty_57299
 	a	:GenomeProperty;
+	:accession	"GenProp0311";
 	:name	"57299";
 	:type	"system";
 	:threshold	"0";
@@ -1424,6 +1643,7 @@ gp:GenomeProperty_57299
 .
 gp:GenomeProperty_66586
 	a	:GenomeProperty;
+	:accession	"GenProp0858";
 	:name	"66586";
 	:type	"system";
 	:threshold	"0";
@@ -1431,6 +1651,7 @@ gp:GenomeProperty_66586
 .
 gp:GenomeProperty_58382
 	a	:GenomeProperty;
+	:accession	"GenProp0656";
 	:name	"58382";
 	:type	"system";
 	:threshold	"0";
@@ -1438,6 +1659,7 @@ gp:GenomeProperty_58382
 .
 gp:GenomeProperty_66618
 	a	:GenomeProperty;
+	:accession	"GenProp0890";
 	:name	"66618";
 	:type	"system";
 	:threshold	"0";
@@ -1445,6 +1667,7 @@ gp:GenomeProperty_66618
 .
 gp:GenomeProperty_58202
 	a	:GenomeProperty;
+	:accession	"GenProp0477";
 	:name	"58202";
 	:type	"system";
 	:threshold	"0";
@@ -1452,6 +1675,7 @@ gp:GenomeProperty_58202
 .
 gp:GenomeProperty_39145
 	a	:GenomeProperty;
+	:accession	"GenProp0156";
 	:name	"39145";
 	:type	"system";
 	:threshold	"0";
@@ -1459,6 +1683,7 @@ gp:GenomeProperty_39145
 .
 gp:GenomeProperty_60433
 	a	:GenomeProperty;
+	:accession	"GenProp0706";
 	:name	"60433";
 	:type	"pathway";
 	:threshold	"0";
@@ -1466,6 +1691,7 @@ gp:GenomeProperty_60433
 .
 gp:GenomeProperty_55194
 	a	:GenomeProperty;
+	:accession	"GenProp0218";
 	:name	"55194";
 	:type	"pathway";
 	:threshold	"0";
@@ -1473,6 +1699,7 @@ gp:GenomeProperty_55194
 .
 gp:GenomeProperty_57292
 	a	:GenomeProperty;
+	:accession	"GenProp0304";
 	:name	"57292";
 	:type	"pathway";
 	:threshold	"0";
@@ -1480,6 +1707,7 @@ gp:GenomeProperty_57292
 .
 gp:GenomeProperty_58345
 	a	:GenomeProperty;
+	:accession	"GenProp0620";
 	:name	"58345";
 	:type	"system";
 	:threshold	"0";
@@ -1487,6 +1715,7 @@ gp:GenomeProperty_58345
 .
 gp:GenomeProperty_58342
 	a	:GenomeProperty;
+	:accession	"GenProp0617";
 	:name	"58342";
 	:type	"system";
 	:threshold	"0";
@@ -1494,6 +1723,7 @@ gp:GenomeProperty_58342
 .
 gp:GenomeProperty_58343
 	a	:GenomeProperty;
+	:accession	"GenProp0618";
 	:name	"58343";
 	:type	"system";
 	:threshold	"1";
@@ -1501,6 +1731,7 @@ gp:GenomeProperty_58343
 .
 gp:GenomeProperty_60422
 	a	:GenomeProperty;
+	:accession	"GenProp0695";
 	:name	"60422";
 	:type	"system";
 	:threshold	"0";
@@ -1508,6 +1739,7 @@ gp:GenomeProperty_60422
 .
 gp:GenomeProperty_58340
 	a	:GenomeProperty;
+	:accession	"GenProp0615";
 	:name	"58340";
 	:type	"metapath";
 	:threshold	"0";
@@ -1515,6 +1747,7 @@ gp:GenomeProperty_58340
 .
 gp:GenomeProperty_60409
 	a	:GenomeProperty;
+	:accession	"GenProp0683";
 	:name	"60409";
 	:type	"system";
 	:threshold	"0";
@@ -1522,6 +1755,7 @@ gp:GenomeProperty_60409
 .
 gp:GenomeProperty_58208
 	a	:GenomeProperty;
+	:accession	"GenProp0483";
 	:name	"58208";
 	:type	"system";
 	:threshold	"0";
@@ -1529,6 +1763,7 @@ gp:GenomeProperty_58208
 .
 gp:GenomeProperty_58339
 	a	:GenomeProperty;
+	:accession	"GenProp0614";
 	:name	"58339";
 	:type	"system";
 	:threshold	"0";
@@ -1536,6 +1771,7 @@ gp:GenomeProperty_58339
 .
 gp:GenomeProperty_58338
 	a	:GenomeProperty;
+	:accession	"GenProp0613";
 	:name	"58338";
 	:type	"system";
 	:threshold	"1";
@@ -1543,6 +1779,7 @@ gp:GenomeProperty_58338
 .
 gp:GenomeProperty_49165
 	a	:GenomeProperty;
+	:accession	"GenProp0183";
 	:name	"49165";
 	:type	"pathway";
 	:threshold	"0";
@@ -1550,6 +1787,7 @@ gp:GenomeProperty_49165
 .
 gp:GenomeProperty_66597
 	a	:GenomeProperty;
+	:accession	"GenProp0869";
 	:name	"66597";
 	:type	"system";
 	:threshold	"0";
@@ -1557,6 +1795,7 @@ gp:GenomeProperty_66597
 .
 gp:GenomeProperty_66595
 	a	:GenomeProperty;
+	:accession	"GenProp0867";
 	:name	"66595";
 	:type	"system";
 	:threshold	"0";
@@ -1564,6 +1803,7 @@ gp:GenomeProperty_66595
 .
 gp:GenomeProperty_66604
 	a	:GenomeProperty;
+	:accession	"GenProp0876";
 	:name	"66604";
 	:type	"system";
 	:threshold	"0";
@@ -1571,6 +1811,7 @@ gp:GenomeProperty_66604
 .
 gp:GenomeProperty_66600
 	a	:GenomeProperty;
+	:accession	"GenProp0872";
 	:name	"66600";
 	:type	"system";
 	:threshold	"0";
@@ -1578,6 +1819,7 @@ gp:GenomeProperty_66600
 .
 gp:GenomeProperty_66598
 	a	:GenomeProperty;
+	:accession	"GenProp0870";
 	:name	"66598";
 	:type	"system";
 	:threshold	"0";
@@ -1585,6 +1827,7 @@ gp:GenomeProperty_66598
 .
 gp:GenomeProperty_66599
 	a	:GenomeProperty;
+	:accession	"GenProp0871";
 	:name	"66599";
 	:type	"system";
 	:threshold	"0";
@@ -1592,6 +1835,7 @@ gp:GenomeProperty_66599
 .
 gp:GenomeProperty_66603
 	a	:GenomeProperty;
+	:accession	"GenProp0875";
 	:name	"66603";
 	:type	"system";
 	:threshold	"0";
@@ -1599,6 +1843,7 @@ gp:GenomeProperty_66603
 .
 gp:GenomeProperty_14132
 	a	:GenomeProperty;
+	:accession	"GenProp0139";
 	:name	"14132";
 	:type	"pathway";
 	:threshold	"0";
@@ -1606,6 +1851,7 @@ gp:GenomeProperty_14132
 .
 gp:GenomeProperty_34144
 	a	:GenomeProperty;
+	:accession	"GenProp0155";
 	:name	"34144";
 	:type	"pathway";
 	:threshold	"2";
@@ -1613,6 +1859,7 @@ gp:GenomeProperty_34144
 .
 gp:GenomeProperty_58377
 	a	:GenomeProperty;
+	:accession	"GenProp0651";
 	:name	"58377";
 	:type	"system";
 	:threshold	"0";
@@ -1620,6 +1867,7 @@ gp:GenomeProperty_58377
 .
 gp:GenomeProperty_57256
 	a	:GenomeProperty;
+	:accession	"GenProp0268";
 	:name	"57256";
 	:type	"pathway";
 	:threshold	"0";
@@ -1627,6 +1875,7 @@ gp:GenomeProperty_57256
 .
 gp:GenomeProperty_58379
 	a	:GenomeProperty;
+	:accession	"GenProp0653";
 	:name	"58379";
 	:type	"pathway";
 	:threshold	"0";
@@ -1634,6 +1883,7 @@ gp:GenomeProperty_58379
 .
 gp:GenomeProperty_58335
 	a	:GenomeProperty;
+	:accession	"GenProp0610";
 	:name	"58335";
 	:type	"system";
 	:threshold	"0";
@@ -1641,6 +1891,7 @@ gp:GenomeProperty_58335
 .
 gp:GenomeProperty_64499
 	a	:GenomeProperty;
+	:accession	"GenProp0771";
 	:name	"64499";
 	:type	"system";
 	:threshold	"0";
@@ -1648,6 +1899,7 @@ gp:GenomeProperty_64499
 .
 gp:GenomeProperty_57282
 	a	:GenomeProperty;
+	:accession	"GenProp0294";
 	:name	"57282";
 	:type	"system";
 	:threshold	"1";
@@ -1655,6 +1907,7 @@ gp:GenomeProperty_57282
 .
 gp:GenomeProperty_57280
 	a	:GenomeProperty;
+	:accession	"GenProp0292";
 	:name	"57280";
 	:type	"system";
 	:threshold	"4";
@@ -1662,6 +1915,7 @@ gp:GenomeProperty_57280
 .
 gp:GenomeProperty_58378
 	a	:GenomeProperty;
+	:accession	"GenProp0652";
 	:name	"58378";
 	:type	"system";
 	:threshold	"0";
@@ -1669,6 +1923,7 @@ gp:GenomeProperty_58378
 .
 gp:GenomeProperty_58381
 	a	:GenomeProperty;
+	:accession	"GenProp0655";
 	:name	"58381";
 	:type	"system";
 	:threshold	"0";
@@ -1676,6 +1931,7 @@ gp:GenomeProperty_58381
 .
 gp:GenomeProperty_66575
 	a	:GenomeProperty;
+	:accession	"GenProp0847";
 	:name	"66575";
 	:type	"system";
 	:threshold	"0";
@@ -1683,6 +1939,7 @@ gp:GenomeProperty_66575
 .
 gp:GenomeProperty_60407
 	a	:GenomeProperty;
+	:accession	"GenProp0681";
 	:name	"60407";
 	:type	"pathway";
 	:threshold	"0";
@@ -1690,6 +1947,7 @@ gp:GenomeProperty_60407
 .
 gp:GenomeProperty_64502
 	a	:GenomeProperty;
+	:accession	"GenProp0774";
 	:name	"64502";
 	:type	"system";
 	:threshold	"0";
@@ -1697,6 +1955,7 @@ gp:GenomeProperty_64502
 .
 gp:GenomeProperty_57273
 	a	:GenomeProperty;
+	:accession	"GenProp0285";
 	:name	"57273";
 	:type	"metapath";
 	:threshold	"5";
@@ -1704,6 +1963,7 @@ gp:GenomeProperty_57273
 .
 gp:GenomeProperty_66609
 	a	:GenomeProperty;
+	:accession	"GenProp0881";
 	:name	"66609";
 	:type	"system";
 	:threshold	"0";
@@ -1711,6 +1971,7 @@ gp:GenomeProperty_66609
 .
 gp:GenomeProperty_66608
 	a	:GenomeProperty;
+	:accession	"GenProp0880";
 	:name	"66608";
 	:type	"system";
 	:threshold	"0";
@@ -1718,6 +1979,7 @@ gp:GenomeProperty_66608
 .
 gp:GenomeProperty_66614
 	a	:GenomeProperty;
+	:accession	"GenProp0886";
 	:name	"66614";
 	:type	"guild";
 	:threshold	"0";
@@ -1725,6 +1987,7 @@ gp:GenomeProperty_66614
 .
 gp:GenomeProperty_66607
 	a	:GenomeProperty;
+	:accession	"GenProp0879";
 	:name	"66607";
 	:type	"system";
 	:threshold	"0";
@@ -1732,6 +1995,7 @@ gp:GenomeProperty_66607
 .
 gp:GenomeProperty_66610
 	a	:GenomeProperty;
+	:accession	"GenProp0882";
 	:name	"66610";
 	:type	"system";
 	:threshold	"0";
@@ -1739,6 +2003,7 @@ gp:GenomeProperty_66610
 .
 gp:GenomeProperty_66605
 	a	:GenomeProperty;
+	:accession	"GenProp0877";
 	:name	"66605";
 	:type	"system";
 	:threshold	"0";
@@ -1746,6 +2011,7 @@ gp:GenomeProperty_66605
 .
 gp:GenomeProperty_66611
 	a	:GenomeProperty;
+	:accession	"GenProp0883";
 	:name	"66611";
 	:type	"system";
 	:threshold	"0";
@@ -1753,6 +2019,7 @@ gp:GenomeProperty_66611
 .
 gp:GenomeProperty_66615
 	a	:GenomeProperty;
+	:accession	"GenProp0887";
 	:name	"66615";
 	:type	"guild";
 	:threshold	"0";
@@ -1760,6 +2027,7 @@ gp:GenomeProperty_66615
 .
 gp:GenomeProperty_66613
 	a	:GenomeProperty;
+	:accession	"GenProp0885";
 	:name	"66613";
 	:type	"system";
 	:threshold	"0";
@@ -1767,6 +2035,7 @@ gp:GenomeProperty_66613
 .
 gp:GenomeProperty_66612
 	a	:GenomeProperty;
+	:accession	"GenProp0884";
 	:name	"66612";
 	:type	"metapath";
 	:threshold	"0";
@@ -1774,6 +2043,7 @@ gp:GenomeProperty_66612
 .
 gp:GenomeProperty_58287
 	a	:GenomeProperty;
+	:accession	"GenProp0562";
 	:name	"58287";
 	:type	"pathway";
 	:threshold	"0";
@@ -1781,6 +2051,7 @@ gp:GenomeProperty_58287
 .
 gp:GenomeProperty_60408
 	a	:GenomeProperty;
+	:accession	"GenProp0682";
 	:name	"60408";
 	:type	"system";
 	:threshold	"0";
@@ -1788,6 +2059,7 @@ gp:GenomeProperty_60408
 .
 gp:GenomeProperty_60420
 	a	:GenomeProperty;
+	:accession	"GenProp0693";
 	:name	"60420";
 	:type	"system";
 	:threshold	"0";
@@ -1795,6 +2067,7 @@ gp:GenomeProperty_60420
 .
 gp:GenomeProperty_58183
 	a	:GenomeProperty;
+	:accession	"GenProp0458";
 	:name	"58183";
 	:type	"system";
 	:threshold	"1";
@@ -1802,6 +2075,7 @@ gp:GenomeProperty_58183
 .
 gp:GenomeProperty_60484
 	a	:GenomeProperty;
+	:accession	"GenProp0756";
 	:name	"60484";
 	:type	"system";
 	:threshold	"1";
@@ -1809,6 +2083,7 @@ gp:GenomeProperty_60484
 .
 gp:GenomeProperty_60443
 	a	:GenomeProperty;
+	:accession	"GenProp0715";
 	:name	"60443";
 	:type	"system";
 	:threshold	"1";
@@ -1816,6 +2091,7 @@ gp:GenomeProperty_60443
 .
 gp:GenomeProperty_60442
 	a	:GenomeProperty;
+	:accession	"GenProp0714";
 	:name	"60442";
 	:type	"system";
 	:threshold	"2";
@@ -1823,6 +2099,7 @@ gp:GenomeProperty_60442
 .
 gp:GenomeProperty_19133
 	a	:GenomeProperty;
+	:accession	"GenProp0141";
 	:name	"19133";
 	:type	"pathway";
 	:threshold	"1";
@@ -1830,6 +2107,7 @@ gp:GenomeProperty_19133
 .
 gp:GenomeProperty_58185
 	a	:GenomeProperty;
+	:accession	"GenProp0460";
 	:name	"58185";
 	:type	"system";
 	:threshold	"0";
@@ -1837,6 +2115,7 @@ gp:GenomeProperty_58185
 .
 gp:GenomeProperty_58352
 	a	:GenomeProperty;
+	:accession	"GenProp0627";
 	:name	"58352";
 	:type	"system";
 	:threshold	"0";
@@ -1844,6 +2123,7 @@ gp:GenomeProperty_58352
 .
 gp:GenomeProperty_60437
 	a	:GenomeProperty;
+	:accession	"GenProp0710";
 	:name	"60437";
 	:type	"metapath";
 	:threshold	"0";
@@ -1851,6 +2131,7 @@ gp:GenomeProperty_60437
 .
 gp:GenomeProperty_64509
 	a	:GenomeProperty;
+	:accession	"GenProp0781";
 	:name	"64509";
 	:type	"system";
 	:threshold	"0";
@@ -1858,6 +2139,7 @@ gp:GenomeProperty_64509
 .
 gp:GenomeProperty_60445
 	a	:GenomeProperty;
+	:accession	"GenProp0717";
 	:name	"60445";
 	:type	"system";
 	:threshold	"0";
@@ -1865,6 +2147,7 @@ gp:GenomeProperty_60445
 .
 gp:GenomeProperty_60444
 	a	:GenomeProperty;
+	:accession	"GenProp0716";
 	:name	"60444";
 	:type	"system";
 	:threshold	"1";
@@ -1872,6 +2155,7 @@ gp:GenomeProperty_60444
 .
 gp:GenomeProperty_60421
 	a	:GenomeProperty;
+	:accession	"GenProp0694";
 	:name	"60421";
 	:type	"system";
 	:threshold	"0";
@@ -1879,6 +2163,7 @@ gp:GenomeProperty_60421
 .
 gp:GenomeProperty_57252
 	a	:GenomeProperty;
+	:accession	"GenProp0264";
 	:name	"57252";
 	:type	"pathway";
 	:threshold	"1";
@@ -1886,6 +2171,7 @@ gp:GenomeProperty_57252
 .
 gp:GenomeProperty_2012
 	a	:GenomeProperty;
+	:accession	"GenProp0030";
 	:name	"2012";
 	:type	"pathway";
 	:threshold	"0";
@@ -1893,6 +2179,7 @@ gp:GenomeProperty_2012
 .
 gp:GenomeProperty_64493
 	a	:GenomeProperty;
+	:accession	"GenProp0765";
 	:name	"64493";
 	:type	"pathway";
 	:threshold	"0";
@@ -1900,6 +2187,7 @@ gp:GenomeProperty_64493
 .
 gp:GenomeProperty_24138
 	a	:GenomeProperty;
+	:accession	"GenProp0147";
 	:name	"24138";
 	:type	"pathway";
 	:threshold	"0";
@@ -1907,6 +2195,7 @@ gp:GenomeProperty_24138
 .
 gp:GenomeProperty_49160
 	a	:GenomeProperty;
+	:accession	"GenProp0178";
 	:name	"49160";
 	:type	"system";
 	:threshold	"1";
@@ -1914,6 +2203,7 @@ gp:GenomeProperty_49160
 .
 gp:GenomeProperty_49150
 	a	:GenomeProperty;
+	:accession	"GenProp0168";
 	:name	"49150";
 	:type	"system";
 	:threshold	"1";
@@ -1921,6 +2211,7 @@ gp:GenomeProperty_49150
 .
 gp:GenomeProperty_60418
 	a	:GenomeProperty;
+	:accession	"GenProp0691";
 	:name	"60418";
 	:type	"pathway";
 	:threshold	"0";
@@ -1928,6 +2219,7 @@ gp:GenomeProperty_60418
 .
 gp:GenomeProperty_60472
 	a	:GenomeProperty;
+	:accession	"GenProp0744";
 	:name	"60472";
 	:type	"pathway";
 	:threshold	"0";
@@ -1935,6 +2227,7 @@ gp:GenomeProperty_60472
 .
 gp:GenomeProperty_60416
 	a	:GenomeProperty;
+	:accession	"GenProp0689";
 	:name	"60416";
 	:type	"pathway";
 	:threshold	"0";
@@ -1942,6 +2235,7 @@ gp:GenomeProperty_60416
 .
 gp:GenomeProperty_2005
 	a	:GenomeProperty;
+	:accession	"GenProp0023";
 	:name	"2005";
 	:type	"pathway";
 	:threshold	"0";
@@ -1949,6 +2243,7 @@ gp:GenomeProperty_2005
 .
 gp:GenomeProperty_60424
 	a	:GenomeProperty;
+	:accession	"GenProp0697";
 	:name	"60424";
 	:type	"pathway";
 	:threshold	"0";
@@ -1956,6 +2251,7 @@ gp:GenomeProperty_60424
 .
 gp:GenomeProperty_66556
 	a	:GenomeProperty;
+	:accession	"GenProp0828";
 	:name	"66556";
 	:type	"system";
 	:threshold	"0";
@@ -1963,6 +2259,7 @@ gp:GenomeProperty_66556
 .
 gp:GenomeProperty_58375
 	a	:GenomeProperty;
+	:accession	"GenProp0649";
 	:name	"58375";
 	:type	"system";
 	:threshold	"0";
@@ -1970,6 +2267,7 @@ gp:GenomeProperty_58375
 .
 gp:GenomeProperty_4050
 	a	:GenomeProperty;
+	:accession	"GenProp0109";
 	:name	"4050";
 	:type	"pathway";
 	:threshold	"1";
@@ -1977,6 +2275,7 @@ gp:GenomeProperty_4050
 .
 gp:GenomeProperty_24136
 	a	:GenomeProperty;
+	:accession	"GenProp0145";
 	:name	"24136";
 	:type	"pathway";
 	:threshold	"2";
@@ -1984,6 +2283,7 @@ gp:GenomeProperty_24136
 .
 gp:GenomeProperty_64518
 	a	:GenomeProperty;
+	:accession	"GenProp0789";
 	:name	"64518";
 	:type	"metapath";
 	:threshold	"0";
@@ -1991,6 +2291,7 @@ gp:GenomeProperty_64518
 .
 gp:GenomeProperty_62489
 	a	:GenomeProperty;
+	:accession	"GenProp0761";
 	:name	"62489";
 	:type	"pathway";
 	:threshold	"1";
@@ -1998,6 +2299,7 @@ gp:GenomeProperty_62489
 .
 gp:GenomeProperty_66663
 	a	:GenomeProperty;
+	:accession	"GenProp0935";
 	:name	"66663";
 	:type	"system";
 	:threshold	"0";
@@ -2005,6 +2307,7 @@ gp:GenomeProperty_66663
 .
 gp:GenomeProperty_49151
 	a	:GenomeProperty;
+	:accession	"GenProp0169";
 	:name	"49151";
 	:type	"system";
 	:threshold	"0";
@@ -2012,6 +2315,7 @@ gp:GenomeProperty_49151
 .
 gp:GenomeProperty_66642
 	a	:GenomeProperty;
+	:accession	"GenProp0914";
 	:name	"66642";
 	:type	"system";
 	:threshold	"0";
@@ -2019,6 +2323,7 @@ gp:GenomeProperty_66642
 .
 gp:GenomeProperty_66643
 	a	:GenomeProperty;
+	:accession	"GenProp0915";
 	:name	"66643";
 	:type	"system";
 	:threshold	"0";
@@ -2026,6 +2331,7 @@ gp:GenomeProperty_66643
 .
 gp:GenomeProperty_60451
 	a	:GenomeProperty;
+	:accession	"GenProp0723";
 	:name	"60451";
 	:type	"system";
 	:threshold	"0";
@@ -2033,6 +2339,7 @@ gp:GenomeProperty_60451
 .
 gp:GenomeProperty_66558
 	a	:GenomeProperty;
+	:accession	"GenProp0830";
 	:name	"66558";
 	:type	"system";
 	:threshold	"0";
@@ -2040,6 +2347,7 @@ gp:GenomeProperty_66558
 .
 gp:GenomeProperty_66583
 	a	:GenomeProperty;
+	:accession	"GenProp0855";
 	:name	"66583";
 	:type	"system";
 	:threshold	"0";
@@ -2047,6 +2355,7 @@ gp:GenomeProperty_66583
 .
 gp:GenomeProperty_66579
 	a	:GenomeProperty;
+	:accession	"GenProp0851";
 	:name	"66579";
 	:type	"system";
 	:threshold	"0";
@@ -2054,6 +2363,7 @@ gp:GenomeProperty_66579
 .
 gp:GenomeProperty_10
 	a	:GenomeProperty;
+	:accession	"GenProp0010";
 	:name	"10";
 	:type	"system";
 	:threshold	"0";
@@ -2061,6 +2371,7 @@ gp:GenomeProperty_10
 .
 gp:GenomeProperty_58380
 	a	:GenomeProperty;
+	:accession	"GenProp0654";
 	:name	"58380";
 	:type	"system";
 	:threshold	"0";
@@ -2068,6 +2379,7 @@ gp:GenomeProperty_58380
 .
 gp:GenomeProperty_60467
 	a	:GenomeProperty;
+	:accession	"GenProp0739";
 	:name	"60467";
 	:type	"system";
 	:threshold	"0";
@@ -2075,6 +2387,7 @@ gp:GenomeProperty_60467
 .
 gp:GenomeProperty_60470
 	a	:GenomeProperty;
+	:accession	"GenProp0742";
 	:name	"60470";
 	:type	"system";
 	:threshold	"0";
@@ -2082,6 +2395,7 @@ gp:GenomeProperty_60470
 .
 gp:GenomeProperty_14130
 	a	:GenomeProperty;
+	:accession	"GenProp0137";
 	:name	"14130";
 	:type	"system";
 	:threshold	"1";
@@ -2089,6 +2403,7 @@ gp:GenomeProperty_14130
 .
 gp:GenomeProperty_14131
 	a	:GenomeProperty;
+	:accession	"GenProp0138";
 	:name	"14131";
 	:type	"system";
 	:threshold	"0";
@@ -2096,6 +2411,7 @@ gp:GenomeProperty_14131
 .
 gp:GenomeProperty_44149
 	a	:GenomeProperty;
+	:accession	"GenProp0162";
 	:name	"44149";
 	:type	"pathway";
 	:threshold	"1";
@@ -2103,6 +2419,7 @@ gp:GenomeProperty_44149
 .
 gp:GenomeProperty_66581
 	a	:GenomeProperty;
+	:accession	"GenProp0853";
 	:name	"66581";
 	:type	"system";
 	:threshold	"0";
@@ -2110,6 +2427,7 @@ gp:GenomeProperty_66581
 .
 gp:GenomeProperty_44151
 	a	:GenomeProperty;
+	:accession	"GenProp0164";
 	:name	"44151";
 	:type	"pathway";
 	:threshold	"2";
@@ -2117,6 +2435,7 @@ gp:GenomeProperty_44151
 .
 gp:GenomeProperty_53185
 	a	:GenomeProperty;
+	:accession	"GenProp0207";
 	:name	"53185";
 	:type	"system";
 	:threshold	"0";
@@ -2124,6 +2443,7 @@ gp:GenomeProperty_53185
 .
 gp:GenomeProperty_2043
 	a	:GenomeProperty;
+	:accession	"GenProp0061";
 	:name	"2043";
 	:type	"system";
 	:threshold	"0";
@@ -2131,6 +2451,7 @@ gp:GenomeProperty_2043
 .
 gp:GenomeProperty_60473
 	a	:GenomeProperty;
+	:accession	"GenProp0745";
 	:name	"60473";
 	:type	"system";
 	:threshold	"0";
@@ -2138,6 +2459,7 @@ gp:GenomeProperty_60473
 .
 gp:GenomeProperty_60486
 	a	:GenomeProperty;
+	:accession	"GenProp0758";
 	:name	"60486";
 	:type	"metapath";
 	:threshold	"2";
@@ -2145,6 +2467,7 @@ gp:GenomeProperty_60486
 .
 gp:GenomeProperty_51177
 	a	:GenomeProperty;
+	:accession	"GenProp0199";
 	:name	"51177";
 	:type	"metapath";
 	:threshold	"0";
@@ -2152,6 +2475,7 @@ gp:GenomeProperty_51177
 .
 gp:GenomeProperty_51171
 	a	:GenomeProperty;
+	:accession	"GenProp0193";
 	:name	"51171";
 	:type	"pathway";
 	:threshold	"6";
@@ -2159,6 +2483,7 @@ gp:GenomeProperty_51171
 .
 gp:GenomeProperty_4067
 	a	:GenomeProperty;
+	:accession	"GenProp0125";
 	:name	"4067";
 	:type	"metapath";
 	:threshold	"1";
@@ -2166,6 +2491,7 @@ gp:GenomeProperty_4067
 .
 gp:GenomeProperty_64517
 	a	:GenomeProperty;
+	:accession	"GenProp0788";
 	:name	"64517";
 	:type	"metapath";
 	:threshold	"4";
@@ -2173,6 +2499,7 @@ gp:GenomeProperty_64517
 .
 gp:GenomeProperty_64515
 	a	:GenomeProperty;
+	:accession	"GenProp0787";
 	:name	"64515";
 	:type	"pathway";
 	:threshold	"0";
@@ -2180,6 +2507,7 @@ gp:GenomeProperty_64515
 .
 gp:GenomeProperty_64514
 	a	:GenomeProperty;
+	:accession	"GenProp0786";
 	:name	"64514";
 	:type	"pathway";
 	:threshold	"0";
@@ -2187,6 +2515,7 @@ gp:GenomeProperty_64514
 .
 gp:GenomeProperty_60400
 	a	:GenomeProperty;
+	:accession	"GenProp0674";
 	:name	"60400";
 	:type	"system";
 	:threshold	"0";
@@ -2194,6 +2523,7 @@ gp:GenomeProperty_60400
 .
 gp:GenomeProperty_57269
 	a	:GenomeProperty;
+	:accession	"GenProp0281";
 	:name	"57269";
 	:type	"pathway";
 	:threshold	"0";
@@ -2201,6 +2531,7 @@ gp:GenomeProperty_57269
 .
 gp:GenomeProperty_66625
 	a	:GenomeProperty;
+	:accession	"GenProp0897";
 	:name	"66625";
 	:type	"system";
 	:threshold	"0";
@@ -2208,6 +2539,7 @@ gp:GenomeProperty_66625
 .
 gp:GenomeProperty_60392
 	a	:GenomeProperty;
+	:accession	"GenProp0666";
 	:name	"60392";
 	:type	"system";
 	:threshold	"0";
@@ -2215,6 +2547,7 @@ gp:GenomeProperty_60392
 .
 gp:GenomeProperty_66564
 	a	:GenomeProperty;
+	:accession	"GenProp0836";
 	:name	"66564";
 	:type	"metapath";
 	:threshold	"0";
@@ -2222,6 +2555,7 @@ gp:GenomeProperty_66564
 .
 gp:GenomeProperty_2040
 	a	:GenomeProperty;
+	:accession	"GenProp0058";
 	:name	"2040";
 	:type	"pathway";
 	:threshold	"3";
@@ -2229,6 +2563,7 @@ gp:GenomeProperty_2040
 .
 gp:GenomeProperty_66557
 	a	:GenomeProperty;
+	:accession	"GenProp0829";
 	:name	"66557";
 	:type	"pathway";
 	:threshold	"2";
@@ -2236,6 +2571,7 @@ gp:GenomeProperty_66557
 .
 gp:GenomeProperty_60450
 	a	:GenomeProperty;
+	:accession	"GenProp0722";
 	:name	"60450";
 	:type	"system";
 	:threshold	"0";
@@ -2243,6 +2579,7 @@ gp:GenomeProperty_60450
 .
 gp:GenomeProperty_44148
 	a	:GenomeProperty;
+	:accession	"GenProp0161";
 	:name	"44148";
 	:type	"pathway";
 	:threshold	"1";
@@ -2250,6 +2587,7 @@ gp:GenomeProperty_44148
 .
 gp:GenomeProperty_60460
 	a	:GenomeProperty;
+	:accession	"GenProp0732";
 	:name	"60460";
 	:type	"pathway";
 	:threshold	"0";
@@ -2257,6 +2595,7 @@ gp:GenomeProperty_60460
 .
 gp:GenomeProperty_60457
 	a	:GenomeProperty;
+	:accession	"GenProp0729";
 	:name	"60457";
 	:type	"metapath";
 	:threshold	"0";
@@ -2264,6 +2603,7 @@ gp:GenomeProperty_60457
 .
 gp:GenomeProperty_60447
 	a	:GenomeProperty;
+	:accession	"GenProp0719";
 	:name	"60447";
 	:type	"system";
 	:threshold	"0";
@@ -2271,6 +2611,7 @@ gp:GenomeProperty_60447
 .
 gp:GenomeProperty_60458
 	a	:GenomeProperty;
+	:accession	"GenProp0730";
 	:name	"60458";
 	:type	"pathway";
 	:threshold	"0";
@@ -2278,6 +2619,7 @@ gp:GenomeProperty_60458
 .
 gp:GenomeProperty_49147
 	a	:GenomeProperty;
+	:accession	"GenProp0165";
 	:name	"49147";
 	:type	"system";
 	:threshold	"0";
@@ -2285,6 +2627,7 @@ gp:GenomeProperty_49147
 .
 gp:GenomeProperty_55201
 	a	:GenomeProperty;
+	:accession	"GenProp0225";
 	:name	"55201";
 	:type	"system";
 	:threshold	"0";
@@ -2292,6 +2635,7 @@ gp:GenomeProperty_55201
 .
 gp:GenomeProperty_66616
 	a	:GenomeProperty;
+	:accession	"GenProp0888";
 	:name	"66616";
 	:type	"system";
 	:threshold	"0";
@@ -2299,6 +2643,7 @@ gp:GenomeProperty_66616
 .
 gp:GenomeProperty_51169
 	a	:GenomeProperty;
+	:accession	"GenProp0192";
 	:name	"51169";
 	:type	"system";
 	:threshold	"0";
@@ -2306,6 +2651,7 @@ gp:GenomeProperty_51169
 .
 gp:GenomeProperty_58191
 	a	:GenomeProperty;
+	:accession	"GenProp0466";
 	:name	"58191";
 	:type	"pathway";
 	:threshold	"1";
@@ -2313,6 +2659,7 @@ gp:GenomeProperty_58191
 .
 gp:GenomeProperty_49148
 	a	:GenomeProperty;
+	:accession	"GenProp0166";
 	:name	"49148";
 	:type	"system";
 	:threshold	"0";
@@ -2320,6 +2667,7 @@ gp:GenomeProperty_49148
 .
 gp:GenomeProperty_64503
 	a	:GenomeProperty;
+	:accession	"GenProp0775";
 	:name	"64503";
 	:type	"system";
 	:threshold	"0";
@@ -2327,6 +2675,7 @@ gp:GenomeProperty_64503
 .
 gp:GenomeProperty_60481
 	a	:GenomeProperty;
+	:accession	"GenProp0753";
 	:name	"60481";
 	:type	"pathway";
 	:threshold	"0";
@@ -2334,6 +2683,7 @@ gp:GenomeProperty_60481
 .
 gp:GenomeProperty_66651
 	a	:GenomeProperty;
+	:accession	"GenProp0923";
 	:name	"66651";
 	:type	"system";
 	:threshold	"0";
@@ -2341,6 +2691,7 @@ gp:GenomeProperty_66651
 .
 gp:GenomeProperty_58219
 	a	:GenomeProperty;
+	:accession	"GenProp0494";
 	:name	"58219";
 	:type	"system";
 	:threshold	"0";
@@ -2348,6 +2699,7 @@ gp:GenomeProperty_58219
 .
 gp:GenomeProperty_49159
 	a	:GenomeProperty;
+	:accession	"GenProp0177";
 	:name	"49159";
 	:type	"system";
 	:threshold	"2";
@@ -2355,6 +2707,7 @@ gp:GenomeProperty_49159
 .
 gp:GenomeProperty_62491
 	a	:GenomeProperty;
+	:accession	"GenProp0763";
 	:name	"62491";
 	:type	"pathway";
 	:threshold	"0";
@@ -2362,6 +2715,7 @@ gp:GenomeProperty_62491
 .
 gp:GenomeProperty_66627
 	a	:GenomeProperty;
+	:accession	"GenProp0899";
 	:name	"66627";
 	:type	"system";
 	:threshold	"0";
@@ -2369,6 +2723,7 @@ gp:GenomeProperty_66627
 .
 gp:GenomeProperty_2011
 	a	:GenomeProperty;
+	:accession	"GenProp0029";
 	:name	"2011";
 	:type	"metapath";
 	:threshold	"0";
@@ -2376,6 +2731,7 @@ gp:GenomeProperty_2011
 .
 gp:GenomeProperty_58357
 	a	:GenomeProperty;
+	:accession	"GenProp0631";
 	:name	"58357";
 	:type	"system";
 	:threshold	"0";
@@ -2383,6 +2739,7 @@ gp:GenomeProperty_58357
 .
 gp:GenomeProperty_58359
 	a	:GenomeProperty;
+	:accession	"GenProp0633";
 	:name	"58359";
 	:type	"system";
 	:threshold	"0";
@@ -2390,6 +2747,7 @@ gp:GenomeProperty_58359
 .
 gp:GenomeProperty_58358
 	a	:GenomeProperty;
+	:accession	"GenProp0632";
 	:name	"58358";
 	:type	"system";
 	:threshold	"0";
@@ -2397,6 +2755,7 @@ gp:GenomeProperty_58358
 .
 gp:GenomeProperty_58217
 	a	:GenomeProperty;
+	:accession	"GenProp0492";
 	:name	"58217";
 	:type	"system";
 	:threshold	"0";
@@ -2404,6 +2763,7 @@ gp:GenomeProperty_58217
 .
 gp:GenomeProperty_4055
 	a	:GenomeProperty;
+	:accession	"GenProp0114";
 	:name	"4055";
 	:type	"system";
 	:threshold	"0";
@@ -2411,6 +2771,7 @@ gp:GenomeProperty_4055
 .
 gp:GenomeProperty_4060
 	a	:GenomeProperty;
+	:accession	"GenProp0118";
 	:name	"4060";
 	:type	"pathway";
 	:threshold	"0";
@@ -2418,6 +2779,7 @@ gp:GenomeProperty_4060
 .
 gp:GenomeProperty_60453
 	a	:GenomeProperty;
+	:accession	"GenProp0725";
 	:name	"60453";
 	:type	"metapath";
 	:threshold	"0";
@@ -2425,6 +2787,7 @@ gp:GenomeProperty_60453
 .
 gp:GenomeProperty_60446
 	a	:GenomeProperty;
+	:accession	"GenProp0718";
 	:name	"60446";
 	:type	"pathway";
 	:threshold	"0";
@@ -2432,6 +2795,7 @@ gp:GenomeProperty_60446
 .
 gp:GenomeProperty_4066
 	a	:GenomeProperty;
+	:accession	"GenProp0124";
 	:name	"4066";
 	:type	"pathway";
 	:threshold	"0";
@@ -2439,6 +2803,7 @@ gp:GenomeProperty_4066
 .
 gp:GenomeProperty_60487
 	a	:GenomeProperty;
+	:accession	"GenProp0759";
 	:name	"60487";
 	:type	"pathway";
 	:threshold	"0";
@@ -2446,6 +2811,7 @@ gp:GenomeProperty_60487
 .
 gp:GenomeProperty_4062
 	a	:GenomeProperty;
+	:accession	"GenProp0120";
 	:name	"4062";
 	:type	"pathway";
 	:threshold	"4";
@@ -2453,6 +2819,7 @@ gp:GenomeProperty_4062
 .
 gp:GenomeProperty_60391
 	a	:GenomeProperty;
+	:accession	"GenProp0665";
 	:name	"60391";
 	:type	"system";
 	:threshold	"0";
@@ -2460,6 +2827,7 @@ gp:GenomeProperty_60391
 .
 gp:GenomeProperty_39147
 	a	:GenomeProperty;
+	:accession	"GenProp0158";
 	:name	"39147";
 	:type	"metapath";
 	:threshold	"2";
@@ -2467,6 +2835,7 @@ gp:GenomeProperty_39147
 .
 gp:GenomeProperty_51178
 	a	:GenomeProperty;
+	:accession	"GenProp0200";
 	:name	"51178";
 	:type	"system";
 	:threshold	"1";
@@ -2474,6 +2843,7 @@ gp:GenomeProperty_51178
 .
 gp:GenomeProperty_64511
 	a	:GenomeProperty;
+	:accession	"GenProp0783";
 	:name	"64511";
 	:type	"system";
 	:threshold	"0";
@@ -2481,6 +2851,7 @@ gp:GenomeProperty_64511
 .
 gp:GenomeProperty_58374
 	a	:GenomeProperty;
+	:accession	"GenProp0648";
 	:name	"58374";
 	:type	"system";
 	:threshold	"0";
@@ -2488,6 +2859,7 @@ gp:GenomeProperty_58374
 .
 gp:GenomeProperty_53186
 	a	:GenomeProperty;
+	:accession	"GenProp0208";
 	:name	"53186";
 	:type	"guild";
 	:threshold	"1";
@@ -2495,6 +2867,7 @@ gp:GenomeProperty_53186
 .
 gp:GenomeProperty_53188
 	a	:GenomeProperty;
+	:accession	"GenProp0210";
 	:name	"53188";
 	:type	"pathway";
 	:threshold	"1";
@@ -2502,6 +2875,7 @@ gp:GenomeProperty_53188
 .
 gp:GenomeProperty_2021
 	a	:GenomeProperty;
+	:accession	"GenProp0039";
 	:name	"2021";
 	:type	"pathway";
 	:threshold	"0";
@@ -2509,6 +2883,7 @@ gp:GenomeProperty_2021
 .
 gp:GenomeProperty_51167
 	a	:GenomeProperty;
+	:accession	"GenProp0190";
 	:name	"51167";
 	:type	"system";
 	:threshold	"0";
@@ -2516,6 +2891,7 @@ gp:GenomeProperty_51167
 .
 gp:GenomeProperty_57228
 	a	:GenomeProperty;
+	:accession	"GenProp0241";
 	:name	"57228";
 	:type	"metapath";
 	:threshold	"0";
@@ -2523,6 +2899,7 @@ gp:GenomeProperty_57228
 .
 gp:GenomeProperty_57222
 	a	:GenomeProperty;
+	:accession	"GenProp0236";
 	:name	"57222";
 	:type	"system";
 	:threshold	"0";
@@ -2530,6 +2907,7 @@ gp:GenomeProperty_57222
 .
 gp:GenomeProperty_57215
 	a	:GenomeProperty;
+	:accession	"GenProp0232";
 	:name	"57215";
 	:type	"system";
 	:threshold	"2";
@@ -2537,6 +2915,7 @@ gp:GenomeProperty_57215
 .
 gp:GenomeProperty_60452
 	a	:GenomeProperty;
+	:accession	"GenProp0724";
 	:name	"60452";
 	:type	"pathway";
 	:threshold	"0";
@@ -2544,6 +2923,7 @@ gp:GenomeProperty_60452
 .
 gp:GenomeProperty_60388
 	a	:GenomeProperty;
+	:accession	"GenProp0662";
 	:name	"60388";
 	:type	"system";
 	:threshold	"0";
@@ -2551,6 +2931,7 @@ gp:GenomeProperty_60388
 .
 gp:GenomeProperty_60386
 	a	:GenomeProperty;
+	:accession	"GenProp0660";
 	:name	"60386";
 	:type	"system";
 	:threshold	"0";
@@ -2558,6 +2939,7 @@ gp:GenomeProperty_60386
 .
 gp:GenomeProperty_60387
 	a	:GenomeProperty;
+	:accession	"GenProp0661";
 	:name	"60387";
 	:type	"system";
 	:threshold	"0";
@@ -2565,6 +2947,7 @@ gp:GenomeProperty_60387
 .
 gp:GenomeProperty_66550
 	a	:GenomeProperty;
+	:accession	"GenProp0822";
 	:name	"66550";
 	:type	"pathway";
 	:threshold	"0";
@@ -2572,6 +2955,7 @@ gp:GenomeProperty_66550
 .
 gp:GenomeProperty_66634
 	a	:GenomeProperty;
+	:accession	"GenProp0906";
 	:name	"66634";
 	:type	"system";
 	:threshold	"0";
@@ -2579,6 +2963,7 @@ gp:GenomeProperty_66634
 .
 gp:GenomeProperty_66635
 	a	:GenomeProperty;
+	:accession	"GenProp0907";
 	:name	"66635";
 	:type	"system";
 	:threshold	"0";
@@ -2586,6 +2971,7 @@ gp:GenomeProperty_66635
 .
 gp:GenomeProperty_58372
 	a	:GenomeProperty;
+	:accession	"GenProp0646";
 	:name	"58372";
 	:type	"system";
 	:threshold	"0";
@@ -2593,6 +2979,7 @@ gp:GenomeProperty_58372
 .
 gp:GenomeProperty_2037
 	a	:GenomeProperty;
+	:accession	"GenProp0055";
 	:name	"2037";
 	:type	"system";
 	:threshold	"0";
@@ -2600,6 +2987,7 @@ gp:GenomeProperty_2037
 .
 gp:GenomeProperty_14
 	a	:GenomeProperty;
+	:accession	"GenProp0014";
 	:name	"14";
 	:type	"system";
 	:threshold	"0";
@@ -2607,6 +2995,7 @@ gp:GenomeProperty_14
 .
 gp:GenomeProperty_66568
 	a	:GenomeProperty;
+	:accession	"GenProp0840";
 	:name	"66568";
 	:type	"system";
 	:threshold	"0";
@@ -2614,6 +3003,7 @@ gp:GenomeProperty_66568
 .
 gp:GenomeProperty_60405
 	a	:GenomeProperty;
+	:accession	"GenProp0679";
 	:name	"60405";
 	:type	"pathway";
 	:threshold	"0";
@@ -2621,6 +3011,7 @@ gp:GenomeProperty_60405
 .
 gp:GenomeProperty_57283
 	a	:GenomeProperty;
+	:accession	"GenProp0295";
 	:name	"57283";
 	:type	"system";
 	:threshold	"0";
@@ -2628,6 +3019,7 @@ gp:GenomeProperty_57283
 .
 gp:GenomeProperty_4052
 	a	:GenomeProperty;
+	:accession	"GenProp0111";
 	:name	"4052";
 	:type	"pathway";
 	:threshold	"1";
@@ -2635,6 +3027,7 @@ gp:GenomeProperty_4052
 .
 gp:GenomeProperty_57227
 	a	:GenomeProperty;
+	:accession	"GenProp0240";
 	:name	"57227";
 	:type	"pathway";
 	:threshold	"0";
@@ -2642,6 +3035,7 @@ gp:GenomeProperty_57227
 .
 gp:GenomeProperty_66624
 	a	:GenomeProperty;
+	:accession	"GenProp0896";
 	:name	"66624";
 	:type	"system";
 	:threshold	"0";
@@ -2649,6 +3043,7 @@ gp:GenomeProperty_66624
 .
 gp:GenomeProperty_64523
 	a	:GenomeProperty;
+	:accession	"GenProp0794";
 	:name	"64523";
 	:type	"system";
 	:threshold	"0";
@@ -2656,6 +3051,7 @@ gp:GenomeProperty_64523
 .
 gp:GenomeProperty_60464
 	a	:GenomeProperty;
+	:accession	"GenProp0736";
 	:name	"60464";
 	:type	"pathway";
 	:threshold	"0";
@@ -2663,6 +3059,7 @@ gp:GenomeProperty_60464
 .
 gp:GenomeProperty_66562
 	a	:GenomeProperty;
+	:accession	"GenProp0834";
 	:name	"66562";
 	:type	"system";
 	:threshold	"0";
@@ -2670,6 +3067,7 @@ gp:GenomeProperty_66562
 .
 gp:GenomeProperty_66561
 	a	:GenomeProperty;
+	:accession	"GenProp0833";
 	:name	"66561";
 	:type	"system";
 	:threshold	"0";
@@ -2677,6 +3075,7 @@ gp:GenomeProperty_66561
 .
 gp:GenomeProperty_66573
 	a	:GenomeProperty;
+	:accession	"GenProp0845";
 	:name	"66573";
 	:type	"system";
 	:threshold	"0";
@@ -2684,6 +3083,7 @@ gp:GenomeProperty_66573
 .
 gp:GenomeProperty_57313
 	a	:GenomeProperty;
+	:accession	"GenProp0326";
 	:name	"57313";
 	:type	"system";
 	:threshold	"0";
@@ -2691,6 +3091,7 @@ gp:GenomeProperty_57313
 .
 gp:GenomeProperty_58353
 	a	:GenomeProperty;
+	:accession	"GenProp0628";
 	:name	"58353";
 	:type	"system";
 	:threshold	"0";
@@ -2698,6 +3099,7 @@ gp:GenomeProperty_58353
 .
 gp:GenomeProperty_66587
 	a	:GenomeProperty;
+	:accession	"GenProp0859";
 	:name	"66587";
 	:type	"system";
 	:threshold	"0";
@@ -2705,6 +3107,7 @@ gp:GenomeProperty_66587
 .
 gp:GenomeProperty_60395
 	a	:GenomeProperty;
+	:accession	"GenProp0669";
 	:name	"60395";
 	:type	"system";
 	:threshold	"0";
@@ -2712,6 +3115,7 @@ gp:GenomeProperty_60395
 .
 gp:GenomeProperty_58351
 	a	:GenomeProperty;
+	:accession	"GenProp0626";
 	:name	"58351";
 	:type	"system";
 	:threshold	"0";
@@ -2719,6 +3123,7 @@ gp:GenomeProperty_58351
 .
 gp:GenomeProperty_60390
 	a	:GenomeProperty;
+	:accession	"GenProp0664";
 	:name	"60390";
 	:type	"system";
 	:threshold	"0";
@@ -2726,6 +3131,7 @@ gp:GenomeProperty_60390
 .
 gp:GenomeProperty_58201
 	a	:GenomeProperty;
+	:accession	"GenProp0476";
 	:name	"58201";
 	:type	"guild";
 	:threshold	"1";
@@ -2733,6 +3139,7 @@ gp:GenomeProperty_58201
 .
 gp:GenomeProperty_57312
 	a	:GenomeProperty;
+	:accession	"GenProp0325";
 	:name	"57312";
 	:type	"guild";
 	:threshold	"0";
@@ -2740,6 +3147,7 @@ gp:GenomeProperty_57312
 .
 gp:GenomeProperty_57261
 	a	:GenomeProperty;
+	:accession	"GenProp0273";
 	:name	"57261";
 	:type	"pathway";
 	:threshold	"0";
@@ -2747,6 +3155,7 @@ gp:GenomeProperty_57261
 .
 gp:GenomeProperty_55198
 	a	:GenomeProperty;
+	:accession	"GenProp0222";
 	:name	"55198";
 	:type	"pathway";
 	:threshold	"0";
@@ -2754,6 +3163,7 @@ gp:GenomeProperty_55198
 .
 gp:GenomeProperty_55197
 	a	:GenomeProperty;
+	:accession	"GenProp0221";
 	:name	"55197";
 	:type	"pathway";
 	:threshold	"0";
@@ -2761,6 +3171,7 @@ gp:GenomeProperty_55197
 .
 gp:GenomeProperty_4051
 	a	:GenomeProperty;
+	:accession	"GenProp0110";
 	:name	"4051";
 	:type	"pathway";
 	:threshold	"4";
@@ -2768,6 +3179,7 @@ gp:GenomeProperty_4051
 .
 gp:GenomeProperty_60427
 	a	:GenomeProperty;
+	:accession	"GenProp0700";
 	:name	"60427";
 	:type	"metapath";
 	:threshold	"0";
@@ -2775,6 +3187,7 @@ gp:GenomeProperty_60427
 .
 gp:GenomeProperty_66549
 	a	:GenomeProperty;
+	:accession	"GenProp0821";
 	:name	"66549";
 	:type	"system";
 	:threshold	"0";
@@ -2782,6 +3195,7 @@ gp:GenomeProperty_66549
 .
 gp:GenomeProperty_58371
 	a	:GenomeProperty;
+	:accession	"GenProp0645";
 	:name	"58371";
 	:type	"metapath";
 	:threshold	"0";
@@ -2789,6 +3203,7 @@ gp:GenomeProperty_58371
 .
 gp:GenomeProperty_58368
 	a	:GenomeProperty;
+	:accession	"GenProp0642";
 	:name	"58368";
 	:type	"pathway";
 	:threshold	"0";
@@ -2796,6 +3211,7 @@ gp:GenomeProperty_58368
 .
 gp:GenomeProperty_58369
 	a	:GenomeProperty;
+	:accession	"GenProp0643";
 	:name	"58369";
 	:type	"metapath";
 	:threshold	"0";
@@ -2803,6 +3219,7 @@ gp:GenomeProperty_58369
 .
 gp:GenomeProperty_58370
 	a	:GenomeProperty;
+	:accession	"GenProp0644";
 	:name	"58370";
 	:type	"metapath";
 	:threshold	"0";
@@ -2810,6 +3227,7 @@ gp:GenomeProperty_58370
 .
 gp:GenomeProperty_58373
 	a	:GenomeProperty;
+	:accession	"GenProp0647";
 	:name	"58373";
 	:type	"pathway";
 	:threshold	"0";
@@ -2817,6 +3235,7 @@ gp:GenomeProperty_58373
 .
 gp:GenomeProperty_60488
 	a	:GenomeProperty;
+	:accession	"GenProp0760";
 	:name	"60488";
 	:type	"pathway";
 	:threshold	"0";
@@ -2824,6 +3243,7 @@ gp:GenomeProperty_60488
 .
 gp:GenomeProperty_64504
 	a	:GenomeProperty;
+	:accession	"GenProp0776";
 	:name	"64504";
 	:type	"system";
 	:threshold	"0";
@@ -2831,6 +3251,7 @@ gp:GenomeProperty_64504
 .
 gp:GenomeProperty_66591
 	a	:GenomeProperty;
+	:accession	"GenProp0863";
 	:name	"66591";
 	:type	"pathway";
 	:threshold	"0";
@@ -2838,6 +3259,7 @@ gp:GenomeProperty_66591
 .
 gp:GenomeProperty_66590
 	a	:GenomeProperty;
+	:accession	"GenProp0862";
 	:name	"66590";
 	:type	"pathway";
 	:threshold	"0";
@@ -2845,6 +3267,7 @@ gp:GenomeProperty_66590
 .
 gp:GenomeProperty_49169
 	a	:GenomeProperty;
+	:accession	"GenProp0187";
 	:name	"49169";
 	:type	"pathway";
 	:threshold	"4";
@@ -2852,6 +3275,7 @@ gp:GenomeProperty_49169
 .
 gp:GenomeProperty_66541
 	a	:GenomeProperty;
+	:accession	"GenProp0813";
 	:name	"66541";
 	:type	"pathway";
 	:threshold	"0";
@@ -2859,6 +3283,7 @@ gp:GenomeProperty_66541
 .
 gp:GenomeProperty_4089
 	a	:GenomeProperty;
+	:accession	"GenProp0312";
 	:name	"4089";
 	:type	"system";
 	:threshold	"0";
@@ -2866,6 +3291,7 @@ gp:GenomeProperty_4089
 .
 gp:GenomeProperty_60483
 	a	:GenomeProperty;
+	:accession	"GenProp0755";
 	:name	"60483";
 	:type	"metapath";
 	:threshold	"0";
@@ -2873,6 +3299,7 @@ gp:GenomeProperty_60483
 .
 gp:GenomeProperty_57260
 	a	:GenomeProperty;
+	:accession	"GenProp0272";
 	:name	"57260";
 	:type	"pathway";
 	:threshold	"0";
@@ -2880,6 +3307,7 @@ gp:GenomeProperty_57260
 .
 gp:GenomeProperty_60403
 	a	:GenomeProperty;
+	:accession	"GenProp0677";
 	:name	"60403";
 	:type	"pathway";
 	:threshold	"0";
@@ -2887,6 +3315,7 @@ gp:GenomeProperty_60403
 .
 gp:GenomeProperty_66630
 	a	:GenomeProperty;
+	:accession	"GenProp0902";
 	:name	"66630";
 	:type	"system";
 	:threshold	"0";
@@ -2894,6 +3323,7 @@ gp:GenomeProperty_66630
 .
 gp:GenomeProperty_66577
 	a	:GenomeProperty;
+	:accession	"GenProp0849";
 	:name	"66577";
 	:type	"system";
 	:threshold	"0";
@@ -2901,6 +3331,7 @@ gp:GenomeProperty_66577
 .
 gp:GenomeProperty_60485
 	a	:GenomeProperty;
+	:accession	"GenProp0757";
 	:name	"60485";
 	:type	"system";
 	:threshold	"0";
@@ -2908,6 +3339,7 @@ gp:GenomeProperty_60485
 .
 gp:GenomeProperty_66654
 	a	:GenomeProperty;
+	:accession	"GenProp0926";
 	:name	"66654";
 	:type	"system";
 	:threshold	"0";
@@ -2915,6 +3347,7 @@ gp:GenomeProperty_66654
 .
 gp:GenomeProperty_66645
 	a	:GenomeProperty;
+	:accession	"GenProp0917";
 	:name	"66645";
 	:type	"system";
 	:threshold	"0";
@@ -2922,6 +3355,7 @@ gp:GenomeProperty_66645
 .
 gp:GenomeProperty_66648
 	a	:GenomeProperty;
+	:accession	"GenProp0920";
 	:name	"66648";
 	:type	"system";
 	:threshold	"0";
@@ -2929,6 +3363,7 @@ gp:GenomeProperty_66648
 .
 gp:GenomeProperty_66644
 	a	:GenomeProperty;
+	:accession	"GenProp0916";
 	:name	"66644";
 	:type	"system";
 	:threshold	"0";
@@ -2936,6 +3371,7 @@ gp:GenomeProperty_66644
 .
 gp:GenomeProperty_66631
 	a	:GenomeProperty;
+	:accession	"GenProp0903";
 	:name	"66631";
 	:type	"system";
 	:threshold	"0";
@@ -2943,6 +3379,7 @@ gp:GenomeProperty_66631
 .
 gp:GenomeProperty_55192
 	a	:GenomeProperty;
+	:accession	"GenProp0216";
 	:name	"55192";
 	:type	"system";
 	:threshold	"0";
@@ -2950,6 +3387,7 @@ gp:GenomeProperty_55192
 .
 gp:GenomeProperty_58216
 	a	:GenomeProperty;
+	:accession	"GenProp0491";
 	:name	"58216";
 	:type	"system";
 	:threshold	"0";
@@ -2957,6 +3395,7 @@ gp:GenomeProperty_58216
 .
 gp:GenomeProperty_49164
 	a	:GenomeProperty;
+	:accession	"GenProp0182";
 	:name	"49164";
 	:type	"guild";
 	:threshold	"0";
@@ -2964,6 +3403,7 @@ gp:GenomeProperty_49164
 .
 gp:GenomeProperty_24139
 	a	:GenomeProperty;
+	:accession	"GenProp0148";
 	:name	"24139";
 	:type	"system";
 	:threshold	"0";
@@ -2971,6 +3411,7 @@ gp:GenomeProperty_24139
 .
 gp:GenomeProperty_58212
 	a	:GenomeProperty;
+	:accession	"GenProp0487";
 	:name	"58212";
 	:type	"system";
 	:threshold	"0";
@@ -2978,6 +3419,7 @@ gp:GenomeProperty_58212
 .
 gp:GenomeProperty_64535
 	a	:GenomeProperty;
+	:accession	"GenProp0806";
 	:name	"64535";
 	:type	"system";
 	:threshold	"0";
@@ -2985,6 +3427,7 @@ gp:GenomeProperty_64535
 .
 gp:GenomeProperty_24143
 	a	:GenomeProperty;
+	:accession	"GenProp0151";
 	:name	"24143";
 	:type	"system";
 	:threshold	"1";
@@ -2992,6 +3435,7 @@ gp:GenomeProperty_24143
 .
 gp:GenomeProperty_58362
 	a	:GenomeProperty;
+	:accession	"GenProp0636";
 	:name	"58362";
 	:type	"system";
 	:threshold	"0";
@@ -2999,6 +3443,7 @@ gp:GenomeProperty_58362
 .
 gp:GenomeProperty_58180
 	a	:GenomeProperty;
+	:accession	"GenProp0455";
 	:name	"58180";
 	:type	"system";
 	:threshold	"0";
@@ -3006,6 +3451,7 @@ gp:GenomeProperty_58180
 .
 gp:GenomeProperty_58182
 	a	:GenomeProperty;
+	:accession	"GenProp0457";
 	:name	"58182";
 	:type	"system";
 	:threshold	"1";
@@ -3013,6 +3459,7 @@ gp:GenomeProperty_58182
 .
 gp:GenomeProperty_66540
 	a	:GenomeProperty;
+	:accession	"GenProp0812";
 	:name	"66540";
 	:type	"metapath";
 	:threshold	"0";
@@ -3020,6 +3467,7 @@ gp:GenomeProperty_66540
 .
 gp:GenomeProperty_4053
 	a	:GenomeProperty;
+	:accession	"GenProp0112";
 	:name	"4053";
 	:type	"pathway";
 	:threshold	"2";
@@ -3027,6 +3475,7 @@ gp:GenomeProperty_4053
 .
 gp:GenomeProperty_57275
 	a	:GenomeProperty;
+	:accession	"GenProp0287";
 	:name	"57275";
 	:type	"metapath";
 	:threshold	"0";
@@ -3034,6 +3483,7 @@ gp:GenomeProperty_57275
 .
 gp:GenomeProperty_64531
 	a	:GenomeProperty;
+	:accession	"GenProp0802";
 	:name	"64531";
 	:type	"system";
 	:threshold	"0";
@@ -3041,6 +3491,7 @@ gp:GenomeProperty_64531
 .
 gp:GenomeProperty_49156
 	a	:GenomeProperty;
+	:accession	"GenProp0174";
 	:name	"49156";
 	:type	"system";
 	:threshold	"10";
@@ -3048,6 +3499,7 @@ gp:GenomeProperty_49156
 .
 gp:GenomeProperty_49157
 	a	:GenomeProperty;
+	:accession	"GenProp0175";
 	:name	"49157";
 	:type	"system";
 	:threshold	"8";
@@ -3055,6 +3507,7 @@ gp:GenomeProperty_49157
 .
 gp:GenomeProperty_60399
 	a	:GenomeProperty;
+	:accession	"GenProp0673";
 	:name	"60399";
 	:type	"pathway";
 	:threshold	"0";
@@ -3062,6 +3515,7 @@ gp:GenomeProperty_60399
 .
 gp:GenomeProperty_51176
 	a	:GenomeProperty;
+	:accession	"GenProp0198";
 	:name	"51176";
 	:type	"system";
 	:threshold	"0";
@@ -3069,6 +3523,7 @@ gp:GenomeProperty_51176
 .
 gp:GenomeProperty_60454
 	a	:GenomeProperty;
+	:accession	"GenProp0726";
 	:name	"60454";
 	:type	"system";
 	:threshold	"0";
@@ -3076,6 +3531,7 @@ gp:GenomeProperty_60454
 .
 gp:GenomeProperty_16
 	a	:GenomeProperty;
+	:accession	"GenProp0016";
 	:name	"16";
 	:type	"system";
 	:threshold	"1";
@@ -3083,6 +3539,7 @@ gp:GenomeProperty_16
 .
 gp:GenomeProperty_64526
 	a	:GenomeProperty;
+	:accession	"GenProp0797";
 	:name	"64526";
 	:type	"pathway";
 	:threshold	"0";
@@ -3090,6 +3547,7 @@ gp:GenomeProperty_64526
 .
 gp:GenomeProperty_60419
 	a	:GenomeProperty;
+	:accession	"GenProp0692";
 	:name	"60419";
 	:type	"pathway";
 	:threshold	"0";
@@ -3097,6 +3555,7 @@ gp:GenomeProperty_60419
 .
 gp:GenomeProperty_64498
 	a	:GenomeProperty;
+	:accession	"GenProp0770";
 	:name	"64498";
 	:type	"guild";
 	:threshold	"0";
@@ -3104,6 +3563,7 @@ gp:GenomeProperty_64498
 .
 gp:GenomeProperty_58361
 	a	:GenomeProperty;
+	:accession	"GenProp0635";
 	:name	"58361";
 	:type	"guild";
 	:threshold	"0";
@@ -3111,6 +3571,7 @@ gp:GenomeProperty_58361
 .
 gp:GenomeProperty_53183
 	a	:GenomeProperty;
+	:accession	"GenProp0205";
 	:name	"53183";
 	:type	"system";
 	:threshold	"0";
@@ -3118,6 +3579,7 @@ gp:GenomeProperty_53183
 .
 gp:GenomeProperty_58341
 	a	:GenomeProperty;
+	:accession	"GenProp0616";
 	:name	"58341";
 	:type	"metapath";
 	:threshold	"0";
@@ -3125,6 +3587,7 @@ gp:GenomeProperty_58341
 .
 gp:GenomeProperty_51172
 	a	:GenomeProperty;
+	:accession	"GenProp0194";
 	:name	"51172";
 	:type	"pathway";
 	:threshold	"0";
@@ -3132,6 +3595,7 @@ gp:GenomeProperty_51172
 .
 gp:GenomeProperty_58367
 	a	:GenomeProperty;
+	:accession	"GenProp0641";
 	:name	"58367";
 	:type	"pathway";
 	:threshold	"0";
@@ -3139,6 +3603,7 @@ gp:GenomeProperty_58367
 .
 gp:GenomeProperty_64519
 	a	:GenomeProperty;
+	:accession	"GenProp0790";
 	:name	"64519";
 	:type	"system";
 	:threshold	"0";
@@ -3146,6 +3611,7 @@ gp:GenomeProperty_64519
 .
 gp:GenomeProperty_58195
 	a	:GenomeProperty;
+	:accession	"GenProp0470";
 	:name	"58195";
 	:type	"system";
 	:threshold	"0";
@@ -3153,6 +3619,7 @@ gp:GenomeProperty_58195
 .
 gp:GenomeProperty_64505
 	a	:GenomeProperty;
+	:accession	"GenProp0777";
 	:name	"64505";
 	:type	"system";
 	:threshold	"0";
@@ -3160,6 +3627,7 @@ gp:GenomeProperty_64505
 .
 gp:GenomeProperty_24140
 	a	:GenomeProperty;
+	:accession	"GenProp0149";
 	:name	"24140";
 	:type	"pathway";
 	:threshold	"1";
@@ -3167,6 +3635,7 @@ gp:GenomeProperty_24140
 .
 gp:GenomeProperty_51168
 	a	:GenomeProperty;
+	:accession	"GenProp0191";
 	:name	"51168";
 	:type	"system";
 	:threshold	"0";
@@ -3174,6 +3643,7 @@ gp:GenomeProperty_51168
 .
 gp:GenomeProperty_58349
 	a	:GenomeProperty;
+	:accession	"GenProp0624";
 	:name	"58349";
 	:type	"pathway";
 	:threshold	"0";
@@ -3181,6 +3651,7 @@ gp:GenomeProperty_58349
 .
 gp:GenomeProperty_66620
 	a	:GenomeProperty;
+	:accession	"GenProp0892";
 	:name	"66620";
 	:type	"pathway";
 	:threshold	"0";
@@ -3188,6 +3659,7 @@ gp:GenomeProperty_66620
 .
 gp:GenomeProperty_66621
 	a	:GenomeProperty;
+	:accession	"GenProp0893";
 	:name	"66621";
 	:type	"pathway";
 	:threshold	"0";
@@ -3195,6 +3667,7 @@ gp:GenomeProperty_66621
 .
 gp:GenomeProperty_58213
 	a	:GenomeProperty;
+	:accession	"GenProp0488";
 	:name	"58213";
 	:type	"system";
 	:threshold	"0";
@@ -3202,6 +3675,7 @@ gp:GenomeProperty_58213
 .
 gp:GenomeProperty_60431
 	a	:GenomeProperty;
+	:accession	"GenProp0704";
 	:name	"60431";
 	:type	"pathway";
 	:threshold	"0";
@@ -3209,6 +3683,7 @@ gp:GenomeProperty_60431
 .
 gp:GenomeProperty_57246
 	a	:GenomeProperty;
+	:accession	"GenProp0258";
 	:name	"57246";
 	:type	"guild";
 	:threshold	"1";
@@ -3216,6 +3691,7 @@ gp:GenomeProperty_57246
 .
 gp:GenomeProperty_57247
 	a	:GenomeProperty;
+	:accession	"GenProp0259";
 	:name	"57247";
 	:type	"pathway";
 	:threshold	"0";
@@ -3223,6 +3699,7 @@ gp:GenomeProperty_57247
 .
 gp:GenomeProperty_51166
 	a	:GenomeProperty;
+	:accession	"GenProp0189";
 	:name	"51166";
 	:type	"pathway";
 	:threshold	"0";
@@ -3230,6 +3707,7 @@ gp:GenomeProperty_51166
 .
 gp:GenomeProperty_57281
 	a	:GenomeProperty;
+	:accession	"GenProp0293";
 	:name	"57281";
 	:type	"system";
 	:threshold	"1";
@@ -3237,6 +3715,7 @@ gp:GenomeProperty_57281
 .
 gp:GenomeProperty_24133
 	a	:GenomeProperty;
+	:accession	" ";
 	:name	"24133";
 	:type	"system";
 	:threshold	"0";
@@ -3244,6 +3723,7 @@ gp:GenomeProperty_24133
 .
 gp:GenomeProperty_57245
 	a	:GenomeProperty;
+	:accession	"GenProp0257";
 	:name	"57245";
 	:type	"system";
 	:threshold	"0";
@@ -3251,6 +3731,7 @@ gp:GenomeProperty_57245
 .
 gp:GenomeProperty_66574
 	a	:GenomeProperty;
+	:accession	"GenProp0846";
 	:name	"66574";
 	:type	"system";
 	:threshold	"0";
@@ -3258,6 +3739,7 @@ gp:GenomeProperty_66574
 .
 gp:GenomeProperty_2020
 	a	:GenomeProperty;
+	:accession	"GenProp0038";
 	:name	"2020";
 	:type	"pathway";
 	:threshold	"2";
@@ -3265,6 +3747,7 @@ gp:GenomeProperty_2020
 .
 gp:GenomeProperty_57276
 	a	:GenomeProperty;
+	:accession	"GenProp0288";
 	:name	"57276";
 	:type	"system";
 	:threshold	"0";
@@ -3272,6 +3755,7 @@ gp:GenomeProperty_57276
 .
 gp:GenomeProperty_57240
 	a	:GenomeProperty;
+	:accession	"GenProp0252";
 	:name	"57240";
 	:type	"system";
 	:threshold	"0";
@@ -3279,6 +3763,7 @@ gp:GenomeProperty_57240
 .
 gp:GenomeProperty_57242
 	a	:GenomeProperty;
+	:accession	"GenProp0254";
 	:name	"57242";
 	:type	"pathway";
 	:threshold	"0";
@@ -3286,6 +3771,7 @@ gp:GenomeProperty_57242
 .
 gp:GenomeProperty_57238
 	a	:GenomeProperty;
+	:accession	"GenProp0250";
 	:name	"57238";
 	:type	"pathway";
 	:threshold	"1";
@@ -3293,6 +3779,7 @@ gp:GenomeProperty_57238
 .
 gp:GenomeProperty_57241
 	a	:GenomeProperty;
+	:accession	"GenProp0253";
 	:name	"57241";
 	:type	"pathway";
 	:threshold	"1";
@@ -3300,6 +3787,7 @@ gp:GenomeProperty_57241
 .
 gp:GenomeProperty_2022
 	a	:GenomeProperty;
+	:accession	"GenProp0040";
 	:name	"2022";
 	:type	"system";
 	:threshold	"0";
@@ -3307,6 +3795,7 @@ gp:GenomeProperty_2022
 .
 gp:GenomeProperty_44146
 	a	:GenomeProperty;
+	:accession	"GenProp0159";
 	:name	"44146";
 	:type	"pathway";
 	:threshold	"0";
@@ -3314,6 +3803,7 @@ gp:GenomeProperty_44146
 .
 gp:GenomeProperty_53189
 	a	:GenomeProperty;
+	:accession	"GenProp0211";
 	:name	"53189";
 	:type	"system";
 	:threshold	"0";
@@ -3321,6 +3811,7 @@ gp:GenomeProperty_53189
 .
 gp:GenomeProperty_4129
 	a	:GenomeProperty;
+	:accession	"GenProp0132";
 	:name	"4129";
 	:type	"system";
 	:threshold	"1";
@@ -3328,6 +3819,7 @@ gp:GenomeProperty_4129
 .
 gp:GenomeProperty_55211
 	a	:GenomeProperty;
+	:accession	"GenProp0229";
 	:name	"55211";
 	:type	"system";
 	:threshold	"0";
@@ -3335,6 +3827,7 @@ gp:GenomeProperty_55211
 .
 gp:GenomeProperty_60469
 	a	:GenomeProperty;
+	:accession	"GenProp0741";
 	:name	"60469";
 	:type	"system";
 	:threshold	"0";
@@ -3342,6 +3835,7 @@ gp:GenomeProperty_60469
 .
 gp:GenomeProperty_60468
 	a	:GenomeProperty;
+	:accession	"GenProp0740";
 	:name	"60468";
 	:type	"system";
 	:threshold	"0";
@@ -3349,6 +3843,7 @@ gp:GenomeProperty_60468
 .
 gp:GenomeProperty_60474
 	a	:GenomeProperty;
+	:accession	"GenProp0746";
 	:name	"60474";
 	:type	"system";
 	:threshold	"0";
@@ -3356,6 +3851,7 @@ gp:GenomeProperty_60474
 .
 gp:GenomeProperty_57253
 	a	:GenomeProperty;
+	:accession	"GenProp0265";
 	:name	"57253";
 	:type	"pathway";
 	:threshold	"0";
@@ -3363,6 +3859,7 @@ gp:GenomeProperty_57253
 .
 gp:GenomeProperty_57254
 	a	:GenomeProperty;
+	:accession	"GenProp0266";
 	:name	"57254";
 	:type	"pathway";
 	:threshold	"0";
@@ -3370,6 +3867,7 @@ gp:GenomeProperty_57254
 .
 gp:GenomeProperty_57259
 	a	:GenomeProperty;
+	:accession	"GenProp0271";
 	:name	"57259";
 	:type	"system";
 	:threshold	"0";
@@ -3377,6 +3875,7 @@ gp:GenomeProperty_57259
 .
 gp:GenomeProperty_58364
 	a	:GenomeProperty;
+	:accession	"GenProp0638";
 	:name	"58364";
 	:type	"system";
 	:threshold	"0";
@@ -3384,6 +3883,7 @@ gp:GenomeProperty_58364
 .
 gp:GenomeProperty_2019
 	a	:GenomeProperty;
+	:accession	"GenProp0037";
 	:name	"2019";
 	:type	"pathway";
 	:threshold	"2";
@@ -3391,6 +3891,7 @@ gp:GenomeProperty_2019
 .
 gp:GenomeProperty_60385
 	a	:GenomeProperty;
+	:accession	"GenProp0659";
 	:name	"60385";
 	:type	"pathway";
 	:threshold	"0";
@@ -3398,6 +3899,7 @@ gp:GenomeProperty_60385
 .
 gp:GenomeProperty_66588
 	a	:GenomeProperty;
+	:accession	"GenProp0860";
 	:name	"66588";
 	:type	"system";
 	:threshold	"0";
@@ -3405,6 +3907,7 @@ gp:GenomeProperty_66588
 .
 gp:GenomeProperty_66580
 	a	:GenomeProperty;
+	:accession	"GenProp0852";
 	:name	"66580";
 	:type	"system";
 	:threshold	"0";
@@ -3412,6 +3915,7 @@ gp:GenomeProperty_66580
 .
 gp:GenomeProperty_2041
 	a	:GenomeProperty;
+	:accession	"GenProp0059";
 	:name	"2041";
 	:type	"system";
 	:threshold	"1";
@@ -3419,6 +3923,7 @@ gp:GenomeProperty_2041
 .
 gp:GenomeProperty_58376
 	a	:GenomeProperty;
+	:accession	"GenProp0650";
 	:name	"58376";
 	:type	"system";
 	:threshold	"0";
@@ -3426,6 +3931,7 @@ gp:GenomeProperty_58376
 .
 gp:GenomeProperty_2035
 	a	:GenomeProperty;
+	:accession	"GenProp0053";
 	:name	"2035";
 	:type	"system";
 	:threshold	"1";
@@ -3433,6 +3939,7 @@ gp:GenomeProperty_2035
 .
 gp:GenomeProperty_2034
 	a	:GenomeProperty;
+	:accession	"GenProp0052";
 	:name	"2034";
 	:type	"system";
 	:threshold	"0";
@@ -3440,6 +3947,7 @@ gp:GenomeProperty_2034
 .
 gp:GenomeProperty_60463
 	a	:GenomeProperty;
+	:accession	"GenProp0735";
 	:name	"60463";
 	:type	"system";
 	:threshold	"2";
@@ -3447,6 +3955,7 @@ gp:GenomeProperty_60463
 .
 gp:GenomeProperty_66632
 	a	:GenomeProperty;
+	:accession	"GenProp0904";
 	:name	"66632";
 	:type	"system";
 	:threshold	"0";
@@ -3454,6 +3963,7 @@ gp:GenomeProperty_66632
 .
 gp:GenomeProperty_66633
 	a	:GenomeProperty;
+	:accession	"GenProp0905";
 	:name	"66633";
 	:type	"system";
 	:threshold	"0";
@@ -3461,6 +3971,7 @@ gp:GenomeProperty_66633
 .
 gp:GenomeProperty_2027
 	a	:GenomeProperty;
+	:accession	"GenProp0045";
 	:name	"2027";
 	:type	"pathway";
 	:threshold	"1";
@@ -3468,6 +3979,7 @@ gp:GenomeProperty_2027
 .
 gp:GenomeProperty_14129
 	a	:GenomeProperty;
+	:accession	"GenProp0136";
 	:name	"14129";
 	:type	"pathway";
 	:threshold	"3";
@@ -3475,6 +3987,7 @@ gp:GenomeProperty_14129
 .
 gp:GenomeProperty_58178
 	a	:GenomeProperty;
+	:accession	"GenProp0453";
 	:name	"58178";
 	:type	"system";
 	:threshold	"0";
@@ -3482,6 +3995,7 @@ gp:GenomeProperty_58178
 .
 gp:GenomeProperty_58196
 	a	:GenomeProperty;
+	:accession	"GenProp0471";
 	:name	"58196";
 	:type	"system";
 	:threshold	"0";
@@ -3489,6 +4003,7 @@ gp:GenomeProperty_58196
 .
 gp:GenomeProperty_58197
 	a	:GenomeProperty;
+	:accession	"GenProp0472";
 	:name	"58197";
 	:type	"system";
 	:threshold	"0";
@@ -3496,6 +4011,7 @@ gp:GenomeProperty_58197
 .
 gp:GenomeProperty_60480
 	a	:GenomeProperty;
+	:accession	"GenProp0752";
 	:name	"60480";
 	:type	"system";
 	:threshold	"0";
@@ -3503,6 +4019,7 @@ gp:GenomeProperty_60480
 .
 gp:GenomeProperty_60415
 	a	:GenomeProperty;
+	:accession	"GenProp0688";
 	:name	"60415";
 	:type	"pathway";
 	:threshold	"0";
@@ -3510,6 +4027,7 @@ gp:GenomeProperty_60415
 .
 gp:GenomeProperty_60471
 	a	:GenomeProperty;
+	:accession	"GenProp0743";
 	:name	"60471";
 	:type	"system";
 	:threshold	"0";
@@ -3517,6 +4035,7 @@ gp:GenomeProperty_60471
 .
 gp:GenomeProperty_58206
 	a	:GenomeProperty;
+	:accession	"GenProp0481";
 	:name	"58206";
 	:type	"pathway";
 	:threshold	"0";
@@ -3524,6 +4043,7 @@ gp:GenomeProperty_58206
 .
 gp:GenomeProperty_66542
 	a	:GenomeProperty;
+	:accession	"GenProp0814";
 	:name	"66542";
 	:type	"metapath";
 	:threshold	"0";
@@ -3531,6 +4051,7 @@ gp:GenomeProperty_66542
 .
 gp:GenomeProperty_2033
 	a	:GenomeProperty;
+	:accession	"GenProp0051";
 	:name	"2033";
 	:type	"system";
 	:threshold	"0";
@@ -3538,6 +4059,7 @@ gp:GenomeProperty_2033
 .
 gp:GenomeProperty_55196
 	a	:GenomeProperty;
+	:accession	"GenProp0220";
 	:name	"55196";
 	:type	"pathway";
 	:threshold	"0";
@@ -3545,6 +4067,7 @@ gp:GenomeProperty_55196
 .
 gp:GenomeProperty_58186
 	a	:GenomeProperty;
+	:accession	"GenProp0461";
 	:name	"58186";
 	:type	"pathway";
 	:threshold	"0";
@@ -3552,6 +4075,7 @@ gp:GenomeProperty_58186
 .
 gp:GenomeProperty_44150
 	a	:GenomeProperty;
+	:accession	"GenProp0163";
 	:name	"44150";
 	:type	"pathway";
 	:threshold	"1";
@@ -3559,6 +4083,7 @@ gp:GenomeProperty_44150
 .
 gp:GenomeProperty_64495
 	a	:GenomeProperty;
+	:accession	"GenProp0767";
 	:name	"64495";
 	:type	"system";
 	:threshold	"0";
@@ -3566,6 +4091,7 @@ gp:GenomeProperty_64495
 .
 gp:GenomeProperty_66551
 	a	:GenomeProperty;
+	:accession	"GenProp0823";
 	:name	"66551";
 	:type	"pathway";
 	:threshold	"0";
@@ -3573,6 +4099,7 @@ gp:GenomeProperty_66551
 .
 gp:GenomeProperty_66571
 	a	:GenomeProperty;
+	:accession	"GenProp0843";
 	:name	"66571";
 	:type	"system";
 	:threshold	"0";
@@ -3580,6 +4107,7 @@ gp:GenomeProperty_66571
 .
 gp:GenomeProperty_60425
 	a	:GenomeProperty;
+	:accession	"GenProp0698";
 	:name	"60425";
 	:type	"metapath";
 	:threshold	"0";
@@ -3587,6 +4115,7 @@ gp:GenomeProperty_60425
 .
 gp:GenomeProperty_58366
 	a	:GenomeProperty;
+	:accession	"GenProp0640";
 	:name	"58366";
 	:type	"system";
 	:threshold	"0";
@@ -3594,6 +4123,7 @@ gp:GenomeProperty_58366
 .
 gp:GenomeProperty_60432
 	a	:GenomeProperty;
+	:accession	"GenProp0705";
 	:name	"60432";
 	:type	"system";
 	:threshold	"0";
@@ -3601,6 +4131,7 @@ gp:GenomeProperty_60432
 .
 gp:GenomeProperty_60423
 	a	:GenomeProperty;
+	:accession	"GenProp0696";
 	:name	"60423";
 	:type	"system";
 	:threshold	"0";
@@ -3608,6 +4139,7 @@ gp:GenomeProperty_60423
 .
 gp:GenomeProperty_64508
 	a	:GenomeProperty;
+	:accession	"GenProp0780";
 	:name	"64508";
 	:type	"system";
 	:threshold	"0";
@@ -3615,6 +4147,7 @@ gp:GenomeProperty_64508
 .
 gp:GenomeProperty_58188
 	a	:GenomeProperty;
+	:accession	"GenProp0463";
 	:name	"58188";
 	:type	"system";
 	:threshold	"0";
@@ -3622,6 +4155,7 @@ gp:GenomeProperty_58188
 .
 gp:GenomeProperty_64500
 	a	:GenomeProperty;
+	:accession	"GenProp0772";
 	:name	"64500";
 	:type	"system";
 	:threshold	"0";
@@ -18461,6 +18995,31 @@ gp:FeatureProperty_63347
 	a	:FeatureProperty;
 	:name	"63347";
 	:required_by	gp:GenomeProperty_66663;
+.
+gp:FeatureProperty_63348
+	a	:FeatureProperty;
+	:name	"63348";
+	:required_by	gp:GenomeProperty_66664;
+.
+gp:FeatureProperty_63349
+	a	:FeatureProperty;
+	:name	"63349";
+	:required_by	gp:GenomeProperty_66664;
+.
+gp:FeatureProperty_63350
+	a	:FeatureProperty;
+	:name	"63350";
+	:required_by	gp:GenomeProperty_66664;
+.
+gp:FeatureProperty_63351
+	a	:FeatureProperty;
+	:name	"63351";
+	:required_by	gp:GenomeProperty_66665;
+.
+gp:FeatureProperty_63352
+	a	:FeatureProperty;
+	:name	"63352";
+	:required_by	gp:GenomeProperty_66665;
 .
 gp:FeatureProperty_PF01202
 	a	:FeatureProperty;
@@ -37068,3 +37627,148 @@ gp:FeatureProperty_TIGR04030
 	:type	"HMM";
 	:sufficient_for	gp:FeatureProperty_63347;
 .
+gp:FeatureProperty_TIGR04034
+	a	:FeatureProperty;
+	:name	"TIGR04034";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63348;
+.
+gp:FeatureProperty_TIGR04033
+	a	:FeatureProperty;
+	:name	"TIGR04033";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63349;
+.
+gp:FeatureProperty_TIGR04032
+	a	:FeatureProperty;
+	:name	"TIGR04032";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63350;
+.
+gp:FeatureProperty_TIGR04036
+	a	:FeatureProperty;
+	:name	"TIGR04036";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63351;
+.
+gp:FeatureProperty_TIGR04037
+	a	:FeatureProperty;
+	:name	"TIGR04037";
+	:type	"HMM";
+	:sufficient_for	gp:FeatureProperty_63352;
+.
+gp:GenomeProperty_2015	:sufficient_for	gp:FeatureProperty_51608;
+gp:GenomeProperty_2029	:sufficient_for	gp:FeatureProperty_54404;
+gp:GenomeProperty_2030	:sufficient_for	gp:FeatureProperty_54404;
+gp:GenomeProperty_2033	:sufficient_for	gp:FeatureProperty_62826;
+gp:GenomeProperty_2040	:sufficient_for	gp:FeatureProperty_62930;
+gp:GenomeProperty_4054	:sufficient_for	gp:FeatureProperty_51054;
+gp:GenomeProperty_4060	:sufficient_for	gp:FeatureProperty_51814;
+gp:GenomeProperty_4061	:sufficient_for	gp:FeatureProperty_54084;
+gp:GenomeProperty_4067	:sufficient_for	gp:FeatureProperty_60596;
+gp:GenomeProperty_4067	:sufficient_for	gp:FeatureProperty_60601;
+gp:GenomeProperty_4099	:sufficient_for	gp:FeatureProperty_51613;
+gp:GenomeProperty_4109	:sufficient_for	gp:FeatureProperty_51616;
+gp:GenomeProperty_4129	:sufficient_for	gp:FeatureProperty_62818;
+gp:GenomeProperty_9129	:sufficient_for	gp:FeatureProperty_51616;
+gp:GenomeProperty_44147	:sufficient_for	gp:FeatureProperty_60599;
+gp:GenomeProperty_44147	:sufficient_for	gp:FeatureProperty_60600;
+gp:GenomeProperty_51171	:sufficient_for	gp:FeatureProperty_60596;
+gp:GenomeProperty_55190	:sufficient_for	gp:FeatureProperty_54019;
+gp:GenomeProperty_55196	:sufficient_for	gp:FeatureProperty_51053;
+gp:GenomeProperty_57215	:sufficient_for	gp:FeatureProperty_54152;
+gp:GenomeProperty_57215	:sufficient_for	gp:FeatureProperty_54209;
+gp:GenomeProperty_57222	:sufficient_for	gp:FeatureProperty_54148;
+gp:GenomeProperty_57225	:sufficient_for	gp:FeatureProperty_54202;
+gp:GenomeProperty_57257	:sufficient_for	gp:FeatureProperty_51056;
+gp:GenomeProperty_57258	:sufficient_for	gp:FeatureProperty_51057;
+gp:GenomeProperty_57263	:sufficient_for	gp:FeatureProperty_51059;
+gp:GenomeProperty_57265	:sufficient_for	gp:FeatureProperty_51075;
+gp:GenomeProperty_57266	:sufficient_for	gp:FeatureProperty_51076;
+gp:GenomeProperty_57267	:sufficient_for	gp:FeatureProperty_51088;
+gp:GenomeProperty_57268	:sufficient_for	gp:FeatureProperty_51077;
+gp:GenomeProperty_57272	:sufficient_for	gp:FeatureProperty_51107;
+gp:GenomeProperty_57277	:sufficient_for	gp:FeatureProperty_51145;
+gp:GenomeProperty_57278	:sufficient_for	gp:FeatureProperty_51149;
+gp:GenomeProperty_57279	:sufficient_for	gp:FeatureProperty_51165;
+gp:GenomeProperty_58203	:sufficient_for	gp:FeatureProperty_51512;
+gp:GenomeProperty_58205	:sufficient_for	gp:FeatureProperty_51514;
+gp:GenomeProperty_58206	:sufficient_for	gp:FeatureProperty_62826;
+gp:GenomeProperty_58208	:sufficient_for	gp:FeatureProperty_51626;
+gp:GenomeProperty_58209	:sufficient_for	gp:FeatureProperty_51557;
+gp:GenomeProperty_58210	:sufficient_for	gp:FeatureProperty_51558;
+gp:GenomeProperty_58337	:sufficient_for	gp:FeatureProperty_51612;
+gp:GenomeProperty_58338	:sufficient_for	gp:FeatureProperty_51625;
+gp:GenomeProperty_58339	:sufficient_for	gp:FeatureProperty_51626;
+gp:GenomeProperty_58340	:sufficient_for	gp:FeatureProperty_51617;
+gp:GenomeProperty_58341	:sufficient_for	gp:FeatureProperty_51617;
+gp:GenomeProperty_58342	:sufficient_for	gp:FeatureProperty_51679;
+gp:GenomeProperty_58343	:sufficient_for	gp:FeatureProperty_51679;
+gp:GenomeProperty_58345	:sufficient_for	gp:FeatureProperty_51679;
+gp:GenomeProperty_58348	:sufficient_for	gp:FeatureProperty_51616;
+gp:GenomeProperty_58354	:sufficient_for	gp:FeatureProperty_51613;
+gp:GenomeProperty_58355	:sufficient_for	gp:FeatureProperty_137;
+gp:GenomeProperty_58357	:sufficient_for	gp:FeatureProperty_215;
+gp:GenomeProperty_58358	:sufficient_for	gp:FeatureProperty_215;
+gp:GenomeProperty_58359	:sufficient_for	gp:FeatureProperty_215;
+gp:GenomeProperty_58365	:sufficient_for	gp:FeatureProperty_51813;
+gp:GenomeProperty_58366	:sufficient_for	gp:FeatureProperty_54097;
+gp:GenomeProperty_58367	:sufficient_for	gp:FeatureProperty_51805;
+gp:GenomeProperty_58368	:sufficient_for	gp:FeatureProperty_48843;
+gp:GenomeProperty_58368	:sufficient_for	gp:FeatureProperty_51816;
+gp:GenomeProperty_58369	:sufficient_for	gp:FeatureProperty_51816;
+gp:GenomeProperty_58370	:sufficient_for	gp:FeatureProperty_51816;
+gp:GenomeProperty_60412	:sufficient_for	gp:FeatureProperty_54102;
+gp:GenomeProperty_60413	:sufficient_for	gp:FeatureProperty_54102;
+gp:GenomeProperty_60415	:sufficient_for	gp:FeatureProperty_54046;
+gp:GenomeProperty_60415	:sufficient_for	gp:FeatureProperty_54054;
+gp:GenomeProperty_60415	:sufficient_for	gp:FeatureProperty_54101;
+gp:GenomeProperty_60420	:sufficient_for	gp:FeatureProperty_54085;
+gp:GenomeProperty_60421	:sufficient_for	gp:FeatureProperty_54085;
+gp:GenomeProperty_60425	:sufficient_for	gp:FeatureProperty_54100;
+gp:GenomeProperty_60439	:sufficient_for	gp:FeatureProperty_54200;
+gp:GenomeProperty_60439	:sufficient_for	gp:FeatureProperty_54203;
+gp:GenomeProperty_60440	:sufficient_for	gp:FeatureProperty_54202;
+gp:GenomeProperty_60448	:sufficient_for	gp:FeatureProperty_54209;
+gp:GenomeProperty_60449	:sufficient_for	gp:FeatureProperty_54200;
+gp:GenomeProperty_60449	:sufficient_for	gp:FeatureProperty_54203;
+gp:GenomeProperty_60451	:sufficient_for	gp:FeatureProperty_60618;
+gp:GenomeProperty_60458	:sufficient_for	gp:FeatureProperty_54286;
+gp:GenomeProperty_60460	:sufficient_for	gp:FeatureProperty_54287;
+gp:GenomeProperty_60471	:sufficient_for	gp:FeatureProperty_62827;
+gp:GenomeProperty_60478	:sufficient_for	gp:FeatureProperty_60602;
+gp:GenomeProperty_60478	:sufficient_for	gp:FeatureProperty_60603;
+gp:GenomeProperty_60478	:sufficient_for	gp:FeatureProperty_60627;
+gp:GenomeProperty_60478	:sufficient_for	gp:FeatureProperty_60631;
+gp:GenomeProperty_60478	:sufficient_for	gp:FeatureProperty_63279;
+gp:GenomeProperty_60481	:sufficient_for	gp:FeatureProperty_63272;
+gp:GenomeProperty_60484	:sufficient_for	gp:FeatureProperty_54385;
+gp:GenomeProperty_60485	:sufficient_for	gp:FeatureProperty_60605;
+gp:GenomeProperty_62490	:sufficient_for	gp:FeatureProperty_63106;
+gp:GenomeProperty_64514	:sufficient_for	gp:FeatureProperty_267;
+gp:GenomeProperty_64515	:sufficient_for	gp:FeatureProperty_267;
+gp:GenomeProperty_64517	:sufficient_for	gp:FeatureProperty_60596;
+gp:GenomeProperty_64517	:sufficient_for	gp:FeatureProperty_60601;
+gp:GenomeProperty_64520	:sufficient_for	gp:FeatureProperty_63155;
+gp:GenomeProperty_64521	:sufficient_for	gp:FeatureProperty_60613;
+gp:GenomeProperty_64522	:sufficient_for	gp:FeatureProperty_63324;
+gp:GenomeProperty_64526	:sufficient_for	gp:FeatureProperty_233;
+gp:GenomeProperty_64526	:sufficient_for	gp:FeatureProperty_233;
+gp:GenomeProperty_66557	:sufficient_for	gp:FeatureProperty_62931;
+gp:GenomeProperty_66562	:sufficient_for	gp:FeatureProperty_62926;
+gp:GenomeProperty_66567	:sufficient_for	gp:FeatureProperty_62973;
+gp:GenomeProperty_66605	:sufficient_for	gp:FeatureProperty_63094;
+gp:GenomeProperty_66607	:sufficient_for	gp:FeatureProperty_63100;
+gp:GenomeProperty_66608	:sufficient_for	gp:FeatureProperty_63101;
+gp:GenomeProperty_66609	:sufficient_for	gp:FeatureProperty_63103;
+gp:GenomeProperty_66610	:sufficient_for	gp:FeatureProperty_63102;
+gp:GenomeProperty_66611	:sufficient_for	gp:FeatureProperty_63099;
+gp:GenomeProperty_66612	:sufficient_for	gp:FeatureProperty_63107;
+gp:GenomeProperty_66613	:sufficient_for	gp:FeatureProperty_63105;
+gp:GenomeProperty_66614	:sufficient_for	gp:FeatureProperty_63108;
+gp:GenomeProperty_66615	:sufficient_for	gp:FeatureProperty_63109;
+gp:GenomeProperty_66620	:sufficient_for	gp:FeatureProperty_63134;
+gp:GenomeProperty_66621	:sufficient_for	gp:FeatureProperty_63134;
+gp:GenomeProperty_66655	:sufficient_for	gp:FeatureProperty_63337;
+gp:GenomeProperty_66656	:sufficient_for	gp:FeatureProperty_63293;
+gp:GenomeProperty_66658	:sufficient_for	gp:FeatureProperty_63308;

@@ -27,7 +27,7 @@ public class TestNCBITaxonomyDAO extends TestCase {
 		assertTrue(taxonomyDAO.iterator().next() instanceof Taxon);
 
 		// Test the various ways of defining a new Taxon object
-		Taxon t1 = new Taxon(new Integer(9999999));
+		Taxon t1 = new Taxon(Integer.valueOf(9999999));
 		Taxon t2 = taxonomyDAO.getTaxon(390805);
 		Taxon t3 = taxonomyDAO.getTaxon("Geosporobacter");
 		

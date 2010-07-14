@@ -157,12 +157,12 @@ public class Aruba {
 
 	public void printOutputReports(String outputChars) {
 		for (String output :  outputChars.split(",")) {
-			output.trim();
+			output = output.trim();
 			if (output == "annotations" || output == "annot") {
 				annotationsReport();
 			} else if (output == "rules") {
 				hitsReport();
-				//} else if (output == "gff") {
+			//} else if (output == "gff") {
 				//	gffReport();
 
 			} else {

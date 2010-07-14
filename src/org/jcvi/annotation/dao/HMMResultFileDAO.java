@@ -253,6 +253,7 @@ public class HMMResultFileDAO implements HmmHitDAO {
 			BufferedReader hmmReader = new BufferedReader(new FileReader(
 					hmmFile));
 			parseHmmResultFile(hmmReader);
+			hmmReader.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);

@@ -35,7 +35,6 @@ public class TestGenomeProperty_1 extends TestCase {
 	
 	@Test
 	public void testRdfConverter() {
-		assertTrue(dao instanceof org.jcvi.annotation.dao.RdfFactDAO);
 		assertEquals(1, dao.getNumGenomeProperties());
 		assertEquals(21, dao.getNumFeatureProperties());
 		assertEquals(21, dao.getRelationships().size());

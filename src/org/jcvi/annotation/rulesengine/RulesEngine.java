@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.StringReader;
 import java.net.URL;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
@@ -20,7 +21,6 @@ import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.rule.FactHandle;
-import org.drools.runtime.rule.WorkingMemoryEntryPoint;
 
 
 public class RulesEngine {
@@ -28,7 +28,6 @@ public class RulesEngine {
 	private KnowledgeBase kbase;
 	private KnowledgeBuilder kbuilder;
 	private StatefulKnowledgeSession ksession;
-	private String logFilename;
 	private boolean debug = false;
 	private KnowledgeRuntimeLogger logger;
 	
@@ -180,10 +179,10 @@ public class RulesEngine {
 	}
 
 	public void addGlobals(Map<String, ? extends Object> global) {
-		if (ksession == null)
-			ksession = kbase.newStatefulKnowledgeSession();
-		for (String globalKey : global.keySet()) {
-			ksession.setGlobal(globalKey, global.get(globalKey));
+		if (ksession == null) ksession = kbase.newStatefulKnowledgeSession();
+
+		for (Entry<String, ? extends Object> g : global.entrySet()) {
+			ksession.setGlobal(g.getKey(), g.getValue());
 		}
 	}
 
@@ -196,9 +195,7 @@ public class RulesEngine {
 	
 	public void fireAllRules() throws RulesEngineException {
 		if (debug) {
-			if (logFilename == null) {
-				logger = KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
-			}
+			logger = KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
 			ksession.addEventListener(new DebugWorkingMemoryEventListener());
 		}
 		ksession.fireAllRules();

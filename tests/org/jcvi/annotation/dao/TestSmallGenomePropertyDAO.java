@@ -54,7 +54,6 @@ public class TestSmallGenomePropertyDAO extends TestCase {
 		for (Property prop : genomePropertyDAO) {
 			System.out.println(prop.getClass().getName());
 			assertTrue(prop.getId() != null);
-			assertTrue(prop instanceof Property);
 		}
 	}
 	

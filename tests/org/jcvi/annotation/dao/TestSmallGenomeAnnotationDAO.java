@@ -46,9 +46,7 @@ public class TestSmallGenomeAnnotationDAO extends TestCase {
 	}
 	
 	public void testGetFeatures() {
-		for (Feature f : featureDAO) {
-			assertTrue(f instanceof Feature);
-		}
+		assertTrue(featureDAO.iterator().next() instanceof Feature);
 	}
 	
 	public void testGetAnnotations() {

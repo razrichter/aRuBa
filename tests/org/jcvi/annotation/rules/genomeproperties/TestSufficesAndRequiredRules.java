@@ -33,8 +33,7 @@ public class TestSufficesAndRequiredRules extends TestCase {
     }
 	
 	@Test
-	public void DONOTtestRdfConverter() {
-		assertTrue(dao instanceof org.jcvi.annotation.dao.RdfFactDAO);
+	public void testRdfConverter() {
 		assertEquals(1, dao.getNumGenomeProperties());
 		assertEquals(2, dao.getNumFeatureProperties());
 		assertEquals(2, dao.getRelationships().size());

@@ -150,7 +150,7 @@ public class BlastResultSearchContentHandler extends SearchContentAdapter {
         // System.out.println("\tDatabaseID: " + databaseID);
         checkStateIs(State.START_SEARCH);
         // TODO parse database size out of database id (and clean up database id info, generally)
-        resultDatabase = databaseID;
+        // resultDatabase = databaseID;
     }
 
     public void addSearchProperty(Object key, Object val) {
@@ -207,7 +207,7 @@ public class BlastResultSearchContentHandler extends SearchContentAdapter {
 	            workingHit.setEValue(Double.parseDouble(strVal));
 	        }
 	        else if (strKey.equals("numberOfIdentities")) {
-	            hitNumIdentical = Integer.parseInt(val.toString());
+	            // hitNumIdentical = Integer.parseInt(val.toString());
 	        }
 	        else if (strKey.equals("alignmentSize")) {
 	            workingHit.setAlignmentLength(Integer.parseInt(val.toString()));

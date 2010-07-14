@@ -164,7 +164,7 @@ public class Feature {
 		return false;
 	}
 	public int getDistance(String sourceId, int start, int end, boolean isCircular) {
-		if (this.source.getFeatureId() == sourceId) {
+		if (this.source.getFeatureId().equals(sourceId)) {
 			// Check for overlaps
 			if ((end > this.start && start < this.end) || (end > this.start && start < this.end)) {
 				return 0;
@@ -183,7 +183,7 @@ public class Feature {
 		if (f == null 
 				|| this.getSource() == null
 				|| f.getSource() == null 
-				|| f.getSource().getFeatureId() != this.getSource().getFeatureId()) {
+				|| !(f.getSource().getFeatureId().equals(this.getSource().getFeatureId()))) {
 			return false;
 		}
 		int dist = this.getDistance(f);
@@ -216,18 +216,17 @@ public class Feature {
 	
 	// @Override equals method
 	public boolean equals(Object o) {
-		
 		if (o instanceof Feature) {
-			
 			Feature f = (Feature) o;
-			if (f.getFeatureId().equals(featureId)) {
-					//&& f.getType().equals(type)) {
+			if (f.toString().equals(this.toString())) {
 				return true;
 			}
 		}
 		return false;
 	}
-
-
-
+	
+	// @Override hashCode method
+	public int hashCode() {
+		return this.toString().hashCode();
+	}
 }

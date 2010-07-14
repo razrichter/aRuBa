@@ -13,12 +13,11 @@ import org.jcvi.annotation.facts.HmmHit;
 public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 
 	private Connection conn;
-	private static HmmCutoffTableDAO cutoffTable; 
+	private HmmCutoffTableDAO cutoffTable; 
 	{
 		try {
 			cutoffTable = new HmmCutoffTableDAO();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			throw new RuntimeException(e);
 		}
 	}
@@ -69,15 +68,20 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 	}
 	
 	public Iterator<HmmHit> iteratorBySQL(String sql) {
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
+			stmt.close();
 			return this.getHitIterator(rs);
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally
+		{
+			this.close(stmt);
 		}
 		return null;	
 	}
@@ -166,4 +170,14 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 			}
 		};
 	}	
+
+	public void close (Statement stmt) {
+		try {
+			if (stmt != null) {
+				stmt.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

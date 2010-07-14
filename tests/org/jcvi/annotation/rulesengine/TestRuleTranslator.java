@@ -72,7 +72,7 @@ public class TestRuleTranslator extends TestCase {
 		engine.addFact(feat4);
 		engine.addFact(annot);
 		engine.addFact(annot2);
-		engine.addFact(taxon);
+		//engine.addFact(taxon);
 		
 		// Fire up the rules engine
 		engine.fireAllRules();
@@ -84,7 +84,7 @@ public class TestRuleTranslator extends TestCase {
 		assertTrue(annot.getGoIds().contains("GO:0008150"));
 		
 		// 	1b. Verify the taxon restriction condition
-		assertTrue(taxon.getParentNames().contains("Firmicutes"));
+		// assertTrue(taxon.getParentNames().contains("Firmicutes"));
 		
 		// (2) 	Verify the rule actions occurred
 		// 	2a. Verify the common name on the annotation was changed

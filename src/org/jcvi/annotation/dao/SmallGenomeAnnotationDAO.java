@@ -1,4 +1,6 @@
 package org.jcvi.annotation.dao;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -77,16 +79,20 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 	}
 	
 	public Iterator<Annotation> iteratorBySQL(String sql) {
-
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
+			stmt.close();
 			return this.getAnnotationIterator(rs);
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally 
+		{
+			this.close(stmt);
 		}
 		return null;	
 	}
@@ -154,17 +160,21 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 	public List<String> getGoIdsBySQL(String sql) {
 
 		ArrayList<String> goIds = new ArrayList<String>();
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				goIds.add(rs.getString(1));
 			}
+			stmt.close();
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally {
+			this.close(stmt);
 		}
 		return goIds;	
 	}
@@ -181,18 +191,33 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 	public List<String> getRoleIdsBySQL(String sql) {
 		ArrayList<String> roleIds = new ArrayList<String>();
 		
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				roleIds.add(rs.getString(1));
 			}
+			stmt.close();
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally
+		{
+			this.close(stmt);
 		}
 		return roleIds;	
+	}
+	
+	public void close (Statement stmt) {
+		try {
+			if (stmt != null) {
+				stmt.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

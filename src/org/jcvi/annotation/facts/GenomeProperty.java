@@ -4,6 +4,7 @@ import java.io.PrintStream;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 /*
  * This is a flyweight class for caching equivalent GenomeProperty objects
@@ -18,14 +19,6 @@ public class GenomeProperty extends Property {
 		return GenomePropertyFactory.create(id);
 	}
 
-	public boolean equals(Object p) {
-		if (p.getClass() == this.getClass()) {
-			GenomeProperty fp = (GenomeProperty) p;
-			return fp.getId().equals(this.getId());
-		}
-		return false;
-	}
-	
 	public double getRequired() {
 		List<Property> requiredRelations = this.getRelationshipsByType(RelationshipType.REQUIRED_BY);
 		return (requiredRelations == null) ? 0.0 : requiredRelations.size();
@@ -88,9 +81,6 @@ public class GenomeProperty extends Property {
 			stream.print(p.toStringDetailReport());
 		}
 	}
-	public int hashCode() {
-		return this.getId().hashCode();
-	}
 	
 	public String toStringDetailReport() {
 		String report = ">" + this.toStringReport() + "\n";
@@ -98,10 +88,10 @@ public class GenomeProperty extends Property {
 		// List the properties that are <requiredBy/SufficientFor/etc> this genome property
 		DecimalFormat decimal = new DecimalFormat("0.000");
 		HashMap<RelationshipType, List<Property>> relationships = this.getRelationships();
-		for (RelationshipType type : relationships.keySet()) {
-			for (Property property : relationships.get(type)) {
-				report += property.getClass().getSimpleName() + "_" + property.getId() + "\t" + type.toString() + "\t" + "GenomeProperty_" + this.getId() + "\t" + decimal.format(property.getValue()) + "\n";
-				//report += type.toString() + "\t" + property.toStringReport() + "\n";
+
+		for (Entry<RelationshipType, List<Property>> typeProperties : relationships.entrySet()) {
+			for (Property property : typeProperties.getValue()) {
+				report += property.getClass().getSimpleName() + "_" + property.getId() + "\t" + typeProperties.getKey().toString() + "\t" + "GenomeProperty_" + this.getId() + "\t" + decimal.format(property.getValue()) + "\n";
 			}
 		}
 		return report;
@@ -110,6 +100,25 @@ public class GenomeProperty extends Property {
 	public String toStringReport() {
 		DecimalFormat decimal = new DecimalFormat("0.000");
 		return this.getClass().getSimpleName() + "_" + getId() + "\t" + getThreshold() + "\t" + getFilled() + "/" + getRequired() + "\t" + decimal.format(getValue()) + "\t" + getState().toString();
+	}
+
+	public boolean equals(Object p) {
+	    //use instanceof instead of getClass here for two reasons
+	    //1. if need be, it can match any supertype, and not just one class;
+	    //2. it renders an explict check for "that == null" redundant, since
+	    //it does the check for null already - "null instanceof [type]" always
+	    //returns false. (See Effective Java by Joshua Bloch.)
+		if (p instanceof GenomeProperty) {
+			GenomeProperty gp = (GenomeProperty) p;
+			if (gp.getId().equals(this.getId())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int hashCode() {
+		return this.getId().hashCode();
 	}
 
 	public String toString() {

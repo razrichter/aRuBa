@@ -23,7 +23,7 @@ public class GenbankFeatureDAO implements FeatureDAO {
 	private ArrayList<Feature> sourceFeatureList = null;
 	private InputStreamReader inputStreamReader = null;
 		
-	public void AddCodingFeatrueTypes(String type){
+	public void addCodingFeatureTypes(String type){
 		if(codingFeatureTypes.indexOf(type)==-1)
 			codingFeatureTypes.add(type);
 	}
@@ -123,7 +123,7 @@ public class GenbankFeatureDAO implements FeatureDAO {
 	}
 	public Iterator<Feature> iterator(String genbankFileName) throws DaoException {
 		FileReader fileReader;
-		if(this.genbankFileName == genbankFileName && featureList != null){
+		if (this.genbankFileName.equals(genbankFileName) && featureList != null) {
 			return featureList.iterator();
 			//need to reset features if passing in a different file;		
 		}

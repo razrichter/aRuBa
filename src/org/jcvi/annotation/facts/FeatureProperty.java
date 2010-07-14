@@ -13,9 +13,11 @@ public class FeatureProperty extends Property {
 	}
 
 	public boolean equals(Object p) {
-		if (p.getClass() == this.getClass()) {
+		if (p instanceof FeatureProperty) {
 			FeatureProperty fp = (FeatureProperty) p;
-			return fp.getId().equals(this.getId());
+			if (fp.getId().equals(this.getId())) {
+				return true;
+			}
 		}
 		return false;
 	}

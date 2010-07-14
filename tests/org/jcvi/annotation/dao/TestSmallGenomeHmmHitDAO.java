@@ -30,10 +30,7 @@ public class TestSmallGenomeHmmHitDAO extends TestCase {
 	}
 
 	public void testGetHits() {
-		for (HmmHit hit : hitDAO) {
-			assertTrue(hit instanceof HmmHit);
-			break;
-		}
+		hitDAO.iterator().next() instanceof HmmHit;
 	}
 
 	@After

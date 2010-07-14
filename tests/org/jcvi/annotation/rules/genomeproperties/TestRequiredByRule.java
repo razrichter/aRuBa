@@ -29,7 +29,6 @@ public class TestRequiredByRule extends TestCase {
 	
 	@Test
 	public void testRdfConverter() {
-		assertTrue(dao instanceof org.jcvi.annotation.dao.RdfFactDAO);
 		assertEquals(1, dao.getNumGenomeProperties());
 		assertEquals(3, dao.getNumFeatureProperties());
 		assertEquals(4, dao.getRelationships().size());

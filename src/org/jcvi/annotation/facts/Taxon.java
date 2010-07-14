@@ -88,7 +88,7 @@ public class Taxon {
     	List<Taxon> parents = this.getParents();
     	List<Integer> parentIds = new ArrayList<Integer>();
     	for (Taxon p : parents) {
-    		parentIds.add(new Integer(p.getTaxonId()));
+    		parentIds.add(Integer.valueOf(p.getTaxonId()));
     	}
     	return parentIds;
     }

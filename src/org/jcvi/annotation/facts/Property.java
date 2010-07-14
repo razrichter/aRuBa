@@ -14,7 +14,6 @@ public abstract class Property {
 	private double required;
 	private String definition;
 	private HashMap<String, Object> attributes = new HashMap<String, Object>();
-	private List<Property> properties = new ArrayList<Property>();
 	
 	// Lookup of child relationship to a property
 	private HashMap<RelationshipType, List<Property>> relationships = new HashMap<RelationshipType, List<Property>>();

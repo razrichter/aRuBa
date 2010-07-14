@@ -30,7 +30,6 @@ public class TestGenomeProperty_66575 extends TestCase {
 	
 	@Test
 	public void testRdfConverter() {
-		assertTrue(dao instanceof org.jcvi.annotation.dao.RdfFactDAO);
 		assertEquals(1, dao.getNumGenomeProperties());
 		assertEquals(2, dao.getNumFeatureProperties());
 		assertEquals(2, dao.getRelationships().size());
@@ -112,10 +111,8 @@ public class TestGenomeProperty_66575 extends TestCase {
 		// This gets this property which we expect to be in the GenomeProperty.propsCache
 		GenomeProperty gp = GenomeProperty.create("66575");
 		
-		FeatureProperty featurepropAsserted = FeatureProperty.create("62994");
-		
-		
-		// assertEquals(1.0, featurepropAsserted.getValue());
+		//FeatureProperty featurepropAsserted = FeatureProperty.create("62994");
+		//assertEquals(1.0, featurepropAsserted.getValue());
 		assertEquals(1.0, gp.getRequired());
 		assertEquals(1.0, gp.getFilled());
 		assertEquals(1.0, gp.getValue());

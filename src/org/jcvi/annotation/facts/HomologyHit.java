@@ -145,11 +145,11 @@ public class HomologyHit {
     }
 
     public double getHitPercentLength() {
-        return 100 * (hitEnd - hitStart) / hitLength;
+        return ((double) 100 * (hitEnd - hitStart))/(double) hitLength;
     }
 
     public double getQueryPercentLength() {
-        return 100 * (queryEnd - queryStart) / queryLength;
+        return ((double) 100 * (queryEnd - queryStart))/(double) queryLength;
     }
 
     public double getHitQueryLengthRatio() {

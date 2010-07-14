@@ -19,7 +19,6 @@ public class TestRdfFactDAO extends TestCase {
 		// RdfFactDAO is an iterable of facts
 		engine.addFacts(dao);
 		
-		assertTrue(dao instanceof RdfFactDAO);
 		assertEquals(908, dao.getNumGenomeProperties());
 		assertEquals(5624, dao.getNumFeatureProperties());
 		assertEquals(6005, dao.getRelationships().size());
@@ -35,7 +34,6 @@ public class TestRdfFactDAO extends TestCase {
 		// RdfFactDAO is an iterable of facts
 		engine.addFacts(dao);
 		
-		assertTrue(dao instanceof RdfFactDAO);
 		assertEquals(908, dao.getNumGenomeProperties());
 		assertEquals(5624, dao.getNumFeatureProperties());
 		assertEquals(6005, dao.getRelationships().size());

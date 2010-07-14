@@ -25,7 +25,7 @@ public class RdfFactDAO implements Iterable<Object> {
 
 	// Ontology and instance prefixes
 	private String ontologyNs = "urn:genome_properties:ontology:";
-	private String instanceNs = "urn:genome_properties:instances:";
+	// private String instanceNs = "urn:genome_properties:instances:";
 	private String rdfNs = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 	private Model model;
 	private ArrayList<PropertyRelationship> relationships = new ArrayList<PropertyRelationship>();
@@ -201,11 +201,15 @@ public class RdfFactDAO implements Iterable<Object> {
 										// Get our PropertyRelationship
 										RelationshipType relation = getRelationshipType(key);
 										if (relation != null) {
+											
 											if (propClass.equals("FeatureProperty")) {
 												FeatureProperty parentFeatureProperty = FeatureProperty.create(propId);
 												featureProperties.add(parentFeatureProperty);
 												this.relationships.add(new PropertyRelationship(genomeProperty, relation, parentFeatureProperty));
-	
+												if (key.equals("sufficient_for")) {
+													System.err.println(key + " " + genomeProperty.toString() + " " + parentFeatureProperty.toString());
+												}
+												
 											} else if (propClass.equals("GenomeProperty")) {
 												GenomeProperty parentGenomeProperty = GenomeProperty.create(propId);
 												genomeProperties.add(parentGenomeProperty);
@@ -318,14 +322,12 @@ public class RdfFactDAO implements Iterable<Object> {
 												featureProperties.add(parentFeatureProperty);
 												PropertyRelationship r = new PropertyRelationship(featureProperty, relation, parentFeatureProperty);
 												this.relationships.add(r);
-												// this.relationships.add(new PropertyRelationship(featureProperty, relation, parentFeatureProperty));
 	
 											} else if (propClass.equals("GenomeProperty")) {
 												GenomeProperty parentGenomeProperty = GenomeProperty.create(propId);
 												genomeProperties.add(parentGenomeProperty);
 												PropertyRelationship r = new PropertyRelationship(featureProperty, relation, parentGenomeProperty);
 												this.relationships.add(r);
-												//this.relationships.add(new PropertyRelationship(featureProperty, relation, parentGenomeProperty));
 											}
 										}
 									}

@@ -89,8 +89,9 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 		// Any Java collection is iterable, so we implement the Iterator as a List
 		List<GenomeProperty> properties = new ArrayList<GenomeProperty>();
 
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
 			
 			while (rs.next()) {
@@ -99,11 +100,15 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 				property.setValue(rs.getDouble(3));
 				properties.add(property);
 			}
+			stmt.close();
 
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally 
+		{
+			this.close(stmt);
 		}
 		return properties;	
 	}
@@ -202,5 +207,15 @@ public class SmallGenomePropertyDAO implements PropertyDAO {
 			}
 		}
 		return conn;
+	}
+
+	public void close (Statement stmt) {
+		try {
+			if (stmt != null) {
+				stmt.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

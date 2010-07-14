@@ -1,4 +1,6 @@
 package org.jcvi.annotation.dao;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -69,8 +71,9 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		Connection conn = this.getConn(); 
 		
 		Feature feature = null;
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 
 			// TODO: Set the genome, and assign genome properties to genome 
@@ -97,6 +100,9 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally
+		{
+			this.close(stmt);
 		}
 		
 		return feature;
@@ -121,15 +127,20 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			}			
 		}
 
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
+			stmt.close();
 			return this.getFeatureIterator(rs);
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally
+		{
+			this.close(stmt);
 		}
 		return null;	
 	}
@@ -196,15 +207,20 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		
 		Connection conn = this.getConn(); 
 		
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
+			stmt.close();
 			return this.getAnnotationIterator(rs);
 
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally
+		{
+			this.close(stmt);
 		}
 		return null;
 	}
@@ -215,15 +231,20 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 		" WHERE a.feat_name = i.feat_name AND s.asmbl_id = a.asmbl_id" +
 		" AND s.iscurrent=" + this.isCurrent;
 
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
+			stmt.close();
 			return this.getAnnotationIterator(rs);
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally
+		{
+			this.close(stmt);
 		}
 		return null;	
 	}
@@ -267,5 +288,14 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 				throw new UnsupportedOperationException("no remove allowed from Feature Iterator");
 			}
 		};
+	}
+	public void close (Statement stmt) {
+		try {
+			if (stmt != null) {
+				stmt.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

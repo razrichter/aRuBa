@@ -64,15 +64,20 @@ public class SmallGenomeGoTermDAO implements GoTermDAO {
 	
 	public Iterator<GoTerm> iteratorBySQL(String sql) {
 
+		Statement stmt = null;
 		try {
-			Statement stmt = conn.createStatement();
+			stmt = conn.createStatement();
 			final ResultSet rs = stmt.executeQuery(sql);
+			stmt.close();
 			return this.getGoTermIterator(rs);
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
+		} finally
+		{
+			this.close(stmt);
 		}
 		return null;	
 	}
@@ -112,5 +117,15 @@ public class SmallGenomeGoTermDAO implements GoTermDAO {
 				throw new UnsupportedOperationException("no remove allowed from GoTerm Iterator");
 			}
 		};
+	}
+	
+	public void close (Statement stmt) {
+		try {
+			if (stmt != null) {
+				stmt.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }
