@@ -13,6 +13,18 @@ end
 
 rule "sufficient for Property rule"
 	when
+		prop1			: Property( value == 1.0 )
+		relationship	: PropertyRelationship(
+							subject == prop1, 
+							type == RelationshipType.SUFFICIENT_FOR, 
+							prop2: object )
+	then 
+		System.err.println("Generic sufficient_for: assigns property " + prop2.toString() + " based on Property " + prop1.getId());
+		modify( prop2 ) { setValue(1.0) };
+end
+
+rule "sufficient for Property rule (on Feature)"
+	when
 		relationship	: PropertyRelationship(
 							prop1: 	subject, 
 							type == RelationshipType.SUFFICIENT_FOR, 

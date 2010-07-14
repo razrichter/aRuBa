@@ -8,8 +8,6 @@ import java.util.Map;
 
 import org.jcvi.annotation.facts.Taxon;
 
-import com.sun.xml.internal.ws.Closeable;
-
 public class NCBITaxonomyDAO extends GenericTaxonomyDAO {
 
 	private URL namesUrl;

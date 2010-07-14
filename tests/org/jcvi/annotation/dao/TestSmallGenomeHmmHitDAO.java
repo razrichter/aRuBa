@@ -25,12 +25,11 @@ public class TestSmallGenomeHmmHitDAO extends TestCase {
 		assertEquals("GBAA_pXO2_0060", hit.getQueryId());
 	}
 	public void testGetHitFalseCase() {
-		HmmHit hit = hitDAO.getHmmHit("no_hit");
-		assertTrue(hit == null);
+		assertTrue(hitDAO.getHmmHit("no_hit") == null);
 	}
 
 	public void testGetHits() {
-		hitDAO.iterator().next() instanceof HmmHit;
+		assertTrue(hitDAO.iterator().next() instanceof HmmHit);
 	}
 
 	@After
