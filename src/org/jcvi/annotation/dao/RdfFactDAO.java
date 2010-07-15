@@ -125,7 +125,7 @@ public class RdfFactDAO implements Iterable<Object> {
 			}
 		}
 		System.err.println(" " + this.getRelationships().size() + " relationships");
-		System.err.println(" " + this.getTotalFacts() + " total facts");
+		System.err.println(" " + this.getTotalFacts() + " ");
 
 		return total;
 	}

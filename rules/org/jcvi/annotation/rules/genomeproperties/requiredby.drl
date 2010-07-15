@@ -4,14 +4,14 @@ import org.jcvi.annotation.facts.*;
 import java.util.ArrayList;
 
 rule "GenomeProperty calculator"
+lock-on-active true
 	when
 		genomeprop	 		: GenomeProperty( filledValue : filled )
 		requiredRelations	: ArrayList()
 				from collect( PropertyRelationship( type == RelationshipType.REQUIRED_BY, object == genomeprop ) )		
-		subject : Property( this == subject )
 		numFilledComponents	: Double( doubleValue != filledValue ) 
 				from accumulate(  r : PropertyRelationship( type == RelationshipType.REQUIRED_BY, object == genomeprop ),
-					sum( r.getSubject().getValue() ) )
+				sum( r.getSubject().getValue() ) )
 
  	then 
 		double numRequiredComponents = new Double(requiredRelations.size());

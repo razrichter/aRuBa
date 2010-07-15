@@ -213,20 +213,5 @@ public class Feature {
 			}
 		}
 	}
-	
-	// @Override equals method
-	public boolean equals(Object o) {
-		if (o instanceof Feature) {
-			Feature f = (Feature) o;
-			if (f.toString().equals(this.toString())) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	// @Override hashCode method
-	public int hashCode() {
-		return this.toString().hashCode();
-	}
+
 }

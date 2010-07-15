@@ -27,13 +27,6 @@ public class TestSmallGenomeTaxonomyDAO extends TestCase {
 		
 		// Test false positives
 		try {
-			t = taxonomyDAO.getTaxon("AlienCrittersFromMars");
-			assertFalse(t instanceof Taxon);
-		} catch (DaoException e) {
-			assertTrue( e instanceof DaoException);
-		}
-
-		try {
 			t = taxonomyDAO.getTaxon(new Integer(9999999));
 			assertFalse(t == null);
 		} catch (DaoException e) {

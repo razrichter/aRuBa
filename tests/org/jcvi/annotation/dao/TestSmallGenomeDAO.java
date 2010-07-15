@@ -35,7 +35,7 @@ public class TestSmallGenomeDAO extends TestCase {
 	
 	public void testGetFeature() {
 		Feature f = featureDAO.getFeature("GBAA_pXO2_0003");
-		assertEquals(f.getName(), "GBAA_pXO2_0003");
+		assertEquals("GBAA_pXO2_0003", f.getName());
 	}
 	public void testGetFeatureFalseCase() {
 		Feature f = featureDAO.getFeature("no_such_feature");

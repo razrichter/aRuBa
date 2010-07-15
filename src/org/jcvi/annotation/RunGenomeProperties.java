@@ -92,6 +92,7 @@ public class RunGenomeProperties {
 		// Output the GenomeProperty detail report
 		if (showDetailReport) {
 			GenomeProperty.detailReport(System.out);
+
 		}
 		else
 		{

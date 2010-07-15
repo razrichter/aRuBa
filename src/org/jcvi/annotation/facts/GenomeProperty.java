@@ -19,28 +19,6 @@ public class GenomeProperty extends Property {
 		return GenomePropertyFactory.create(id);
 	}
 
-	public double getRequired() {
-		List<Property> requiredRelations = this.getRelationshipsByType(RelationshipType.REQUIRED_BY);
-		return (requiredRelations == null) ? 0.0 : requiredRelations.size();
-	}
-	
-	public double getFilled() {
-		List<Property> requiredRelations = this.getRelationshipsByType(RelationshipType.REQUIRED_BY);
-		double numFilled = 0.0;
-		if (requiredRelations != null) {
-			for (Property property : requiredRelations) {
-				numFilled += property.getValue();
-			}
-		}
-		return numFilled;
-	}
-	public double getValue() {
-		double numRequired = this.getRequired();
-		double numFilled = this.getFilled();
- 		return (numRequired == 0) ? 0
-				: numFilled/numRequired;
-		
-	}
 	
 	public PropertyState getState() {
 		// Double value = this.getValue();

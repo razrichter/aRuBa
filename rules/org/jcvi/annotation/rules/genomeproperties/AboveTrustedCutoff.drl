@@ -11,8 +11,4 @@ rule "HMM Hit"
  	then
  		modify( p ) { setValue(1) };
  		modify( f ) { addProperty(p) };
- 		//if (hit.getHitId().equals("TIGR00549")) {
- 		//	System.err.println("HMM Hit rule: " + hit.getHitId() + " " + hit.getQueryId());
-		//}
  end
-

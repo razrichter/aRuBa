@@ -17,7 +17,7 @@ import org.jcvi.annotation.facts.HmmHit;
 
 public class HMMResultFileDAO implements HmmHitDAO {
 
-	private class HMMDomainInfo {
+	private static class HMMDomainInfo {
 		private String accession;
 		private int domainNum;
 		private int seqStart;
@@ -152,7 +152,7 @@ public class HMMResultFileDAO implements HmmHitDAO {
 
 	}
 
-	private class HMMHitInfo {
+	private static class HMMHitInfo {
 		private String accession;
 		private String description;
 		private double totalScore;

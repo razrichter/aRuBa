@@ -28,6 +28,5 @@ public class FeatureProperty extends Property {
 	
 	public String toString() {
 		return this.getClass().getSimpleName() + "." + getId();
-		// return this.getClass().getName() + "_" + getId();
 	}
 }

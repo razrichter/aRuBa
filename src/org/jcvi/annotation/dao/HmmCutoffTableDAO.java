@@ -11,7 +11,7 @@ import java.util.Iterator;
 @SuppressWarnings("unchecked")
 public class HmmCutoffTableDAO implements Iterable {
 
-    public class HmmCutoff {
+    public static class HmmCutoff {
         private String HmmAccession;
         private String isologyType;
         private String name;

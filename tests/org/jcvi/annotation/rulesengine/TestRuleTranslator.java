@@ -14,8 +14,8 @@ public class TestRuleTranslator extends TestCase {
 
 	private RulesEngine engine;
 	private Feature feat;
-	private Taxon taxon;
 	private Annotation annot = new Annotation();
+	// private Taxon taxon;
 	
 	@Before
 	public void setUp() throws Exception {

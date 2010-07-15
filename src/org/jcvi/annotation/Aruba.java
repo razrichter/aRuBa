@@ -159,7 +159,7 @@ public class Aruba {
 			output = output.trim();
 			if (output == "annotations" || output == "annot") {
 				annotationsReport();
-			} else if (output == "rules") {
+			} else if (output.equals("rules")) {
 				hitsReport();
 			//} else if (output == "gff") {
 				//	gffReport();
@@ -205,7 +205,6 @@ public class Aruba {
 	public int addGenomePropertiesFacts() {
 		
 		// Add facts about Genome Properties from Notation3 file
-		System.err.println("Adding Genome Properties facts...");
 		URL n3Url = this.getClass().getResource("dao/data/genomeproperties.n3");
 		RdfFactDAO dao = new RdfFactDAO(n3Url, "N3");
 		int numFacts = addRdf(dao);

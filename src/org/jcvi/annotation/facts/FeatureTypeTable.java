@@ -13,7 +13,7 @@ public class FeatureTypeTable {
 		int ids[] = { 1, 2 };
 		String names[] = { "ORF", "tRNA" };
 		for (int i = 0; i < ids.length; i++) {
-			typesMapByName.put(names[i], new Integer(i));
+			typesMapByName.put(names[i], Integer.valueOf(i));
 			typesMapById.put(Integer.valueOf(i), names[i]);
 		}
 	}
