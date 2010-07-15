@@ -1,10 +1,5 @@
 package org.jcvi.annotation;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -12,10 +7,7 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
-import org.jcvi.annotation.dao.HmmCutoffTableDAO;
-import org.jcvi.annotation.dao.HmmCutoffTableDAO.HmmCutoff;
 import org.jcvi.annotation.facts.GenomeProperty;
-import org.jcvi.annotation.facts.HmmHit;
 
 public class RunGenomeProperties {
 

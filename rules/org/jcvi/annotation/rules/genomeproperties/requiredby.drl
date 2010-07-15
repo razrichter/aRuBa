@@ -3,14 +3,15 @@ package org.jcvi.annotation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 import java.util.ArrayList;
 
-rule "Test GenomeProperty filled calculation"
+rule "GenomeProperty calculator"
 	when
 		genomeprop	 		: GenomeProperty( filledValue : filled )
 		requiredRelations	: ArrayList()
 				from collect( PropertyRelationship( type == RelationshipType.REQUIRED_BY, object == genomeprop ) )		
+		subject : Property( this == subject )
 		numFilledComponents	: Double( doubleValue != filledValue ) 
 				from accumulate(  r : PropertyRelationship( type == RelationshipType.REQUIRED_BY, object == genomeprop ),
-				sum( r.getSubject().getValue() ) )
+					sum( r.getSubject().getValue() ) )
 
  	then 
 		double numRequiredComponents = new Double(requiredRelations.size());
@@ -21,5 +22,10 @@ rule "Test GenomeProperty filled calculation"
 			setFilled(numFilledComponents),
 			setValue(fractionFilledComponents)
 		};
+  		System.err.println(numFilledComponents + "/" +
+	  				numRequiredComponents + " = " +
+	  				fractionFilledComponents + " " + 
+	  				genomeprop.toString());
+		//System.err.println("GP Calculator " + genomeprop.toString());
 end
  

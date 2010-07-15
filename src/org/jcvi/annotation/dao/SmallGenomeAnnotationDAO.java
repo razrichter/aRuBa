@@ -89,9 +89,6 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
-		} finally 
-		{
-			this.close(stmt);
 		}
 		return null;	
 	}
@@ -171,8 +168,6 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
-		} finally {
-			this.close(stmt);
 		}
 		return goIds;	
 	}
@@ -196,14 +191,12 @@ public class SmallGenomeAnnotationDAO implements AnnotationDAO {
 			while (rs.next()) {
 				roleIds.add(rs.getString(1));
 			}
+			stmt.close();
 			
 		} catch (SQLException e) {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
-		} finally
-		{
-			this.close(stmt);
 		}
 		return roleIds;	
 	}

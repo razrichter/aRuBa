@@ -74,9 +74,6 @@ public class SmallGenomeGoTermDAO implements GoTermDAO {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
-		} finally
-		{
-			this.close(stmt);
 		}
 		return null;	
 	}

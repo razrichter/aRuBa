@@ -79,7 +79,9 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			// TODO: Set the genome, and assign genome properties to genome 
 			
 			if (rs.next()) {
+
 				String featureId = rs.getString(1);
+				String name = rs.getString(1);
 				String type = rs.getString(2);
 				int start = rs.getInt(3);
 				int end = rs.getInt(4);
@@ -90,8 +92,7 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 					end = start;
 					start = tmp;
 				}
-				feature = new Feature(featureId, type, start, end, strand);
-				rs.close();
+				feature = new Feature(featureId, type, start, end, strand, name);
 			}
 			
 		} catch (SQLException e) {
@@ -135,9 +136,6 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
-		} finally
-		{
-			this.close(stmt);
 		}
 		return null;	
 	}
@@ -214,9 +212,6 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
-		} finally
-		{
-			this.close(stmt);
 		}
 		return null;
 	}
@@ -237,9 +232,6 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
-		} finally
-		{
-			this.close(stmt);
 		}
 		return null;	
 	}

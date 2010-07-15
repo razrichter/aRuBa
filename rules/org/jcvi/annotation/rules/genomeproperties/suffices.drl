@@ -13,20 +13,22 @@ end
 
 rule "sufficient for Property rule"
 	when
-		prop1			: Property( value == 1.0 )
+		prop1			: GenomeProperty( value == 1 )
+		prop2			: Property( value != 1 )
 		relationship	: PropertyRelationship(
 							subject == prop1, 
 							type == RelationshipType.SUFFICIENT_FOR, 
-							prop2: object )
+							object == prop2 )
 	then 
-		System.err.println("Generic sufficient_for: assigns property " + prop2.toString() + " based on Property " + prop1.getId());
+		System.err.println("Sufficient rule: " + prop1.toString() + " " + prop2.toString());
 		modify( prop2 ) { setValue(1.0) };
 end
 
-rule "sufficient for Property rule (on Feature)"
+rule "sufficient for Property rule on Feature"
 	when
+		prop1			: Property( value == 1 )
 		relationship	: PropertyRelationship(
-							prop1: 	subject, 
+							subject == prop1,
 							type == RelationshipType.SUFFICIENT_FOR, 
 							prop2: 	object )
 		feature			: Feature( properties contains prop1, properties not contains prop2  )

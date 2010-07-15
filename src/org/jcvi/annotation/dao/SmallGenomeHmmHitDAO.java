@@ -78,9 +78,6 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 			for (Throwable t : e) {
 				t.printStackTrace();
 			}
-		} finally
-		{
-			this.close(stmt);
 		}
 		return null;	
 	}

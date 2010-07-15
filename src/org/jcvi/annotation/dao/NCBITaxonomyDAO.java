@@ -68,7 +68,6 @@ public class NCBITaxonomyDAO extends GenericTaxonomyDAO {
 				// Set the parent
 				t.setParent(p);
 			}
-			nodesRdr.close();
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -111,7 +110,6 @@ public class NCBITaxonomyDAO extends GenericTaxonomyDAO {
 					// t.addName(name);
 				}
 			}
-			namesRdr.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -143,7 +141,6 @@ public class NCBITaxonomyDAO extends GenericTaxonomyDAO {
 					return t;
 				}
 			}
-			nodesRdr.close();
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -178,7 +175,6 @@ public class NCBITaxonomyDAO extends GenericTaxonomyDAO {
 				if (name.equalsIgnoreCase(taxonName.trim()))
 					return new Taxon(taxonId, name);
 			}
-			namesRdr.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -203,7 +199,6 @@ public class NCBITaxonomyDAO extends GenericTaxonomyDAO {
 				if (id == taxonId)
 					return new Taxon(Integer.valueOf(id), name);
 			}
-			namesRdr.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
