@@ -1,0 +1,16 @@
+#created on: Aug 4, 2010
+package org.jcvi.annotation.rules.genomeproperties
+import org.jcvi.annotation.facts.*;
+
+rule "Sufficient Rule on Feature"
+dialect "mvel"
+	when
+		prop1			: Property( value == 1 )
+		prop2			: Property( value < 1, sufficients contains prop1 )
+		
+		feature			: Feature(properties contains prop1)
+	then 
+		modify( prop2 ) { setValue(1) };
+		modify( feature ) { addProperty(prop2) };
+		//System.out.println("suffices " + prop2.toString + " value:" + prop2.getValue());
+end

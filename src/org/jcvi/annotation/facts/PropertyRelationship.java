@@ -12,13 +12,11 @@ public class PropertyRelationship {
 		this.setType(type);
 		this.setObject(object);
 		
-		// Object need to lookup its relationships to subject property
-		// i.e. FeatureProperty requiredBy GenomeProperty
-		object.addRelationship(type, subject);
-		// if (object.getId().equals("2029")) {
-		// 	System.err.println("Add " + this.toString());
-		// }
-		
+		// Store bi-directional relationships
+		// subject -- type --> object and object -- reverse type --> subject
+		// Ex. FeatureProperty_101 REQUIRED_BY GenomeProperty_2029 
+		subject.addParentRelationship(type, object);
+		object.addChildRelationship(type, subject);
 	}
 
 	public Property getSubject() {

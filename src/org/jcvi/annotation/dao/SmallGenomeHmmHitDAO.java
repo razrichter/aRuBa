@@ -37,7 +37,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 	}
 
 	public String getHmmHitSQL() {
-		return "SELECT DISTINCT a.feat_name, e.accession, " +
+		String sql = "SELECT DISTINCT a.feat_name, e.accession, " +
 			"e.rel_end5, e.rel_end3, e.m_lend, e.m_rend, f_total.score, f_domain.score " +
 			"FROM evidence AS e " +
 			"JOIN feat_score AS f_domain " +
@@ -57,6 +57,10 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 			")OR (" +
 				"e.curated = 1 AND e.assignby != 'sgc3'" +
 			"))";
+		// sql += " AND a.feat_id = 3639";
+		// sql += " AND a.feat_name = 'ORF00018'";
+		return sql;
+		
 	}
 
 	public String getHmmHitSQL(String hitId) {
@@ -90,6 +94,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 		// Use an anonymous inner class to return an Iterator of Feature objects
 		return new Iterator<HmmHit>() {	
 			private HmmHit hit = null;
+			private int total = 0;
 			
 			public boolean hasNext() {
 				// Get/Set the next feature object
@@ -97,7 +102,6 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 				return (hit == null) ? false : true;
 			}
 			public HmmHit next() {
-				
 				if (hit != null) {
 					HmmHit hitTmp = hit;
 					hit = null;
@@ -143,6 +147,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
     						    if (cutoff.isAboveTrustedCutoff(score,
                                         domainScore)) {
                                     hit.setStrongHit();
+                                    //System.out.println("Load " + hit.getHitId() + " " + hit.getQueryId() + " " + hit.getHitStrength());
                                 }
                                 else if (cutoff.isAboveNoiseCutoff(score,
                                         domainScore)) {

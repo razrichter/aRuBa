@@ -1,14 +1,17 @@
-#created on: Apr 6, 2010
 package org.jcvi.annotation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 import java.util.ArrayList;
 
-rule "HMM Hit"
+rule "Above Trusted Cutoff"
+dialect "mvel"
 	when
-		hit : HmmHit( aboveTrustedHit == true )
-		p	: FeatureProperty( id == hit.hitId )
-		f	: Feature ( featureId == hit.queryId, properties not contains p )
+		h	: HmmHit( aboveTrustedHit == true, hitId : hitId )
+		p	: FeatureProperty( id == hitId )
+		f	: Feature ( featureId == h.queryId, properties not contains p )
  	then
  		modify( p ) { setValue(1) };
  		modify( f ) { addProperty(p) };
- end
+ 		//System.out.println("hmm " + p.toString() + " value:" + p.getValue());
+end
+
+

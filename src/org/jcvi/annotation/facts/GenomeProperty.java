@@ -3,7 +3,7 @@ package org.jcvi.annotation.facts;
 import java.io.PrintStream;
 import java.text.DecimalFormat;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map.Entry;
 
 /*
@@ -61,23 +61,25 @@ public class GenomeProperty extends Property {
 	}
 	
 	public String toStringDetailReport() {
-		String report = ">" + this.toStringReport() + "\n";
+		StringBuffer buf = new StringBuffer();
+		buf.append(">" + this.toStringReport() + "\n");
 
 		// List the properties that are <requiredBy/SufficientFor/etc> this genome property
 		DecimalFormat decimal = new DecimalFormat("0.000");
-		HashMap<RelationshipType, List<Property>> relationships = this.getRelationships();
-
-		for (Entry<RelationshipType, List<Property>> typeProperties : relationships.entrySet()) {
+		
+		HashMap<RelationshipType, HashSet<Property>> relationships = this.getChildRelationships();
+		for (Entry<RelationshipType, HashSet<Property>> typeProperties : relationships.entrySet()) {
 			for (Property property : typeProperties.getValue()) {
-				report += property.getClass().getSimpleName() + "_" + property.getId() + "\t" + typeProperties.getKey().toString() + "\t" + "GenomeProperty_" + this.getId() + "\t" + decimal.format(property.getValue()) + "\n";
+				buf.append(property.toString() + "\t" + typeProperties.getKey().toString() + "\t" + this.toString() + "\t" + decimal.format(property.getValue()) + "\n");
 			}
 		}
-		return report;
+		return buf.toString();
 	}
-	
+
 	public String toStringReport() {
 		DecimalFormat decimal = new DecimalFormat("0.000");
-		return this.getClass().getSimpleName() + "_" + getId() + "\t" + getThreshold() + "\t" + getFilled() + "/" + getRequired() + "\t" + decimal.format(getValue()) + "\t" + getState().toString();
+		return this.toString() + "\t" + getThreshold() + "\t" + getFilled() + "/" + getRequired() + "\t" + decimal.format(getValue()) + "\t" + getState().toString();
+		// return this.getClass().getSimpleName() + "_" + getId() + "\t" + getThreshold() + "\t" + getFilled() + "/" + getRequired() + "\t" + decimal.format(getValue()) + "\t" + getState().toString();
 	}
 
 	public boolean equals(Object p) {
@@ -100,7 +102,7 @@ public class GenomeProperty extends Property {
 	}
 
 	public String toString() {
-		return this.getClass().getName() + "_" + getId();
+		return this.getClass().getSimpleName() + "." + getId();
 	}
 }
 

@@ -17,6 +17,7 @@ public class HomologyHit {
     protected int alignmentLength;
     protected double score;
     protected HitStrengthType hitStrength;
+    protected boolean assigned = false;
 
     public enum HitStrengthType {
         BELOW_NOISE, ABOVE_NOISE, ABOVE_TRUSTED
@@ -40,7 +41,16 @@ public class HomologyHit {
         this.queryStrand = queryStrand;
     }
 
-    public String getProgram() {
+    
+    public boolean isAssigned() {
+		return assigned;
+	}
+
+    public void setAssigned(boolean assigned) {
+		this.assigned = assigned;
+	}
+
+	public String getProgram() {
         return program;
     }
 

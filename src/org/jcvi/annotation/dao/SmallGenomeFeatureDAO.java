@@ -1,10 +1,12 @@
 package org.jcvi.annotation.dao;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
 
@@ -77,7 +79,6 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 			ResultSet rs = stmt.executeQuery(sql);
 
 			// TODO: Set the genome, and assign genome properties to genome 
-			
 			if (rs.next()) {
 
 				String featureId = rs.getString(1);
@@ -109,10 +110,12 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 	
 	public Iterator<Feature> iterator(List<String> featureTypes, int isCurrent) {
 		
-		String sql = "SELECT a.feat_id, a.feat_name, a.asmbl_id, a.feat_type, a.end5, a.end3, a.sequence, a.protein " +
+		String sql = "SELECT a.feat_name, a.asmbl_id, a.feat_type, a.end5, a.end3, a.sequence, a.protein " +
 			"FROM asm_feature AS a JOIN stan AS s ON s.asmbl_id = a.asmbl_id " +
 			"AND s.iscurrent=" + isCurrent;
-			
+		// sql += " AND a.feat_id = 3639";
+		// sql += " AND a.feat_name = 'ORF00018'";
+		
 		Iterator<String> types = featureTypes.iterator();
 		if (featureTypes.size() > 0) {
 			sql += "WHERE ";
@@ -161,11 +164,11 @@ public class SmallGenomeFeatureDAO implements FeatureDAO {
 				
 				try {
 					if (rs.next()) {
-						String featureId = rs.getString(2);
-						String name = rs.getString(2);
-						String type = rs.getString(4);
-						int start = rs.getInt(5);
-						int end = rs.getInt(6);
+						String featureId = rs.getString(1);
+						String name = rs.getString(1);
+						String type = rs.getString(3);
+						int start = rs.getInt(4);
+						int end = rs.getInt(5);
 						int strand = 1;
 						if (end < start) {
 							strand = -1;

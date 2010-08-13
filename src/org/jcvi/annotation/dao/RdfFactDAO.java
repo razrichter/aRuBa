@@ -76,13 +76,19 @@ public class RdfFactDAO implements Iterable<Object> {
 		this.properties = properties;
 	}
 	 */
+
 	public HashSet<FeatureProperty> getFeatureProperties() {
 		return featureProperties;
 	}
 	public void setProperties(HashSet<FeatureProperty> properties) {
 		this.featureProperties = properties;
 	}
-
+	public HashSet<GenomeProperty> getGenomeProperties() {
+		return genomeProperties;
+	}
+	public void setGenomeProperties(HashSet<GenomeProperty> genomeProperties) {
+		this.genomeProperties = genomeProperties;
+	}
 	public ArrayList<PropertyRelationship> getRelationships() {
 		return relationships;
 	}
@@ -102,32 +108,12 @@ public class RdfFactDAO implements Iterable<Object> {
 	}
 	
 	public int addDao(RdfFileDAO dao) {
-
 		model = dao.getModel();
-		System.err.println("\nLoading facts from RDF...");
-
-		// Returns a count of all facts
-		int total = 0;
-
-		// Load Genome Properties
-		int numGenomePropertiesBefore = this.getNumGenomeProperties();
-
-		if (this.addGenomeProperties()) {
-			int numGenomePropertiesAdded = this.getNumGenomeProperties() - numGenomePropertiesBefore;
-			System.err.println(" " + numGenomePropertiesAdded + " genome properties");
-
-			// Load Feature Properties
-			int numFeaturePropertiesBefore = this.getNumFeatureProperties();
-			if (this.addFeatureProperties()) {
-				int numFeaturePropertiesAdded = this.getNumFeatureProperties() - numFeaturePropertiesBefore;
-				System.err.println(" " + numFeaturePropertiesAdded + " feature properties");
-				total = numGenomePropertiesAdded + numFeaturePropertiesAdded;
-			}
-		}
-		System.err.println(" " + this.getRelationships().size() + " relationships");
-		System.err.println(" " + this.getTotalFacts() + " ");
-
-		return total;
+		this.addGenomeProperties();
+		this.addFeatureProperties();
+		return this.getGenomeProperties().size() + 
+			this.getFeatureProperties().size() +
+			this.getRelationships().size();
 	}
 
 	private boolean addGenomeProperties() {
@@ -200,13 +186,14 @@ public class RdfFactDAO implements Iterable<Object> {
 										
 										// Get our PropertyRelationship
 										RelationshipType relation = getRelationshipType(key);
+										
 										if (relation != null) {
 											
 											if (propClass.equals("FeatureProperty")) {
 												FeatureProperty parentFeatureProperty = FeatureProperty.create(propId);
 												featureProperties.add(parentFeatureProperty);
 												this.relationships.add(new PropertyRelationship(genomeProperty, relation, parentFeatureProperty));
-												
+																								
 											} else if (propClass.equals("GenomeProperty")) {
 												GenomeProperty parentGenomeProperty = GenomeProperty.create(propId);
 												genomeProperties.add(parentGenomeProperty);
@@ -319,7 +306,7 @@ public class RdfFactDAO implements Iterable<Object> {
 												featureProperties.add(parentFeatureProperty);
 												PropertyRelationship r = new PropertyRelationship(featureProperty, relation, parentFeatureProperty);
 												this.relationships.add(r);
-	
+												
 											} else if (propClass.equals("GenomeProperty")) {
 												GenomeProperty parentGenomeProperty = GenomeProperty.create(propId);
 												genomeProperties.add(parentGenomeProperty);

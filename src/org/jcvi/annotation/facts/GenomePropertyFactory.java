@@ -19,5 +19,9 @@ public class GenomePropertyFactory {
 	public static synchronized Collection<GenomeProperty> getProperties() {
 		return propsCache.values();
 	}
+	
+	public static void clearCache() {
+		propsCache.clear();
+	}
 
 }

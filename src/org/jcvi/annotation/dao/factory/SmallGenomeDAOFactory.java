@@ -2,6 +2,9 @@ package org.jcvi.annotation.dao.factory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import org.jcvi.annotation.dao.SmallGenomeAnnotationDAO;
 import org.jcvi.annotation.dao.SmallGenomeFeatureDAO;
 import org.jcvi.annotation.dao.SmallGenomeHmmHitDAO;

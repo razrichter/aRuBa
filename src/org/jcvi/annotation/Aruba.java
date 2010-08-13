@@ -1,8 +1,5 @@
 package org.jcvi.annotation;
 import java.io.File;
-import java.io.InputStreamReader;
-import java.io.StringReader;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -16,50 +13,36 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
+import org.drools.KnowledgeBase;
+import org.drools.KnowledgeBaseFactory;
+import org.drools.builder.KnowledgeBuilder;
+import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
-import org.drools.io.Resource;
 import org.drools.io.ResourceFactory;
+import org.drools.logger.KnowledgeRuntimeLoggerFactory;
+import org.drools.runtime.StatefulKnowledgeSession;
 import org.jcvi.annotation.dao.BlastResultFileDAO;
 import org.jcvi.annotation.dao.GenbankFeatureDAO;
+import org.jcvi.annotation.dao.GenericFileDAO;
+import org.jcvi.annotation.dao.GenomePropertiesDAOManager;
 import org.jcvi.annotation.dao.HMMResultFileDAO;
 import org.jcvi.annotation.dao.RdfFactDAO;
-import org.jcvi.annotation.dao.factory.SmallGenomeDAOFactory;
+import org.jcvi.annotation.dao.SmallGenomeDAOManager;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
-import org.jcvi.annotation.rulesengine.RulesEngine;
+import org.jcvi.annotation.facts.GenomeProperty;
 
 public class Aruba {
 
 	private static final String sampleCommand = "aruba [ -b <blast_file|dir> -h <hmm_file|dir> -g <genbank_file|dir> -r <rdf_file|dir> -n <n3_file|dir> -r <drools_file|directory> -D <database> -l <log_file> ]  ...";
 	private static final String braingrabRules = "/org/jcvi/annotation/rules/braingrab/BraingrabChangeSet.xml";
-	private static final String genomePropertiesRules = "/org/jcvi/annotation/rules/genomeproperties/GenomePropertiesChangeSet.xml";
 	private static Boolean debug = false;
-	private String DEFAULT_OUTPUT = "annotations";
-	private ArrayList<Feature> features = new ArrayList<Feature>();
-	private RulesEngine engine;
+	private static String DEFAULT_OUTPUT = "gp";
+	private static ArrayList<Feature> features = new ArrayList<Feature>();
 
-	public Aruba() {
-		super();
-		this.engine = new RulesEngine();
-	}
-
-	public RulesEngine getEngine() {
-		return engine;
-	}
 	public static String getRulesChangeSet() {
 		return braingrabRules;
 	}
-
-	/*
-	private void testLog() {
-		WorkingMemoryEventListener listener = new WorkingMemoryEventListener() {
-			public void objectInserted(ObjectInsertedEvent event) {
-				System.out.println("OBJECT INSERTED " + event.getObject().toString());
-			}
-		};
-		engine.getKsession().addEventListener(listener);
-	}
-	 */
 
 	public static void main(String[] args) throws Exception {
 		Options options = new Options();
@@ -71,8 +54,8 @@ public class Aruba {
 		options.addOption("h", "hmm", false, "Path to HMM file or directory");
 		options.addOption("r", "rdf", false, "Path to RDF file or directory");
 		options.addOption("g", "genbank", false, "Path to Genbank file or directory");
-		options.addOption("braingrab",false,"Load BrainGrab rules");
-		options.addOption("genomeproperties",false,"Load facts and rules for Genome Properties");
+		options.addOption("bg", "braingrab",false,"Load BrainGrab rules");
+		options.addOption("gp", "genomeproperties",false,"Load facts and rules for Genome Properties");
 		options.addOption("debug",false,"Debug output");
 		options.addOption("l","log", false, "Log file");
 		options.addOption("o", "output", false, "Output formats (annotations, rules)");
@@ -105,212 +88,144 @@ public class Aruba {
 		}
 		String dbName = cmd.getOptionValue("database");
 
-		// Create an instance of our Aruba engine
-		Aruba aruba = new Aruba();
-
+		//TODO: how to manage output type?
 		String output = cmd.getOptionValue("output");
 		if (output == null) {
-			output = aruba.DEFAULT_OUTPUT;
+			output = DEFAULT_OUTPUT;
 		}
 
-		// Log to file or console if requested
-		String logFile = cmd.getOptionValue("log");
-		if (logFile != null) {
-			aruba.log(logFile);
-		} else if (debug) {
-			aruba.log();
+		try {
+			// Add rules to KnowledgeBuilder
+			final KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+
+			// Add user-provided rules
+			if (cmd.hasOption("rule")) {
+				for (String file : filesFromPaths(cmd.getOptionValues("rule"))) {
+					System.err.println("Adding rule file " + file);
+					kbuilder.add( ResourceFactory.newFileResource(file), ResourceType.DRL );
+				}
+			}
+			
+			// Add Genome Properties rules
+			if (cmd.hasOption("genomeproperties")) {
+				System.err.println("Adding Genome Properties rules");
+				kbuilder.add( ResourceFactory.newClassPathResource( "../rules/genomeproperties/GenomePropertiesChangeSet.xml", GenericFileDAO.class ),ResourceType.CHANGE_SET );
+			}
+
+			// Add BrainGrab rules
+			if (cmd.hasOption("braingrab")) {
+				System.err.println("Adding BrainGrab rules");
+				kbuilder.add(ResourceFactory.newClassPathResource(braingrabRules), ResourceType.CHANGE_SET);
+			}
+			
+			if (kbuilder.hasErrors()) {
+				System.err.println(kbuilder.getErrors().toString());
+				throw new RuntimeException("Unable to compile rules.");
+			}
+			
+			// Create KnowledgeBase and StatefulKnowledgeSession
+			final KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+			kbase.addKnowledgePackages( kbuilder.getKnowledgePackages() );
+			final StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
+			
+			// Log to file or console if requested
+			String logFile = cmd.getOptionValue("log");
+			if (logFile != null) {
+				System.err.println("Writing logs to file " + logFile);
+				KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, logFile);
+			} else if (debug) {
+				KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
+			}
+
+			// ADD FACTS TO STATEFUL KNOWLEDGE SESSION
+			if (cmd.hasOption("genomeproperties")) {
+				System.err.println("Adding Genome Properties facts");
+				GenomePropertiesDAOManager GPManager = new GenomePropertiesDAOManager();
+				GPManager.addGenomePropertiesFacts(ksession);
+			}
+			
+			// Add Facts from Blast, HMM, Genbank or RDF files
+			addBlastFiles(cmd.getOptionValues("blast"), ksession);
+			addHmmFiles(cmd.getOptionValues("hmm"), ksession);
+			addGenbankFiles(cmd.getOptionValues("genbank"), ksession);
+			addRdfFiles(cmd.getOptionValues("rdf"), ksession);
+
+			// Add Small Genome database
+			if (dbName != null) {
+				System.err.println("Adding facts from " + dbName + " database");
+				SmallGenomeDAOManager SGManager = new SmallGenomeDAOManager(dbName);
+				SGManager.addSmallGenomeFacts(ksession);
+			}
+			
+			// FIRE RULES, CLOSE AND SHUTDOWN
+			ksession.fireAllRules();
+			ksession.dispose();
+			
+			// Show output
+			printOutputReports(output);			
+
+			GenomeProperty p = GenomeProperty.create("2029");
+			System.out.println(p.toStringDetailReport());
+
+		} catch (Throwable t) {
+			t.printStackTrace();
 		}
-
-		// Add rules
-		aruba.addDroolsFiles(cmd.getOptionValues("rule"));
-
-		// Add facts and rules for Genome Properties
-		if (cmd.hasOption("genomeproperties")) {
-			aruba.addGenomeProperties();
-		}
-
-		// Add default braingrab rules
-		if (cmd.hasOption("braingrab")) {
-			aruba.addDefaultRules();
-		}
-
-		// Add Facts from Blast, HMM, Genbank or RDF files
-		aruba.addBlastFiles(cmd.getOptionValues("blast"));
-		aruba.addHmmFiles(cmd.getOptionValues("hmm"));
-		aruba.addGenbankFiles(cmd.getOptionValues("genbank"));
-		aruba.addRdfFiles(cmd.getOptionValues("rdf"));
-
-		// Add Small Genome database
-		aruba.addSmallGenome(dbName);
-
-		// Fire rules
-		aruba.run();
-
-		// show outputs
-		aruba.printOutputReports(output);
-
-		// End the StatefulKnowledgeSession
-		aruba.shutdown();
-
+		
 	}
 
-	public void printOutputReports(String outputChars) {
-		for (String output :  outputChars.split(",")) {
-			output = output.trim();
-			if (output == "annotations" || output == "annot") {
+	public static void printOutputReports(String formats) {
+		for (String format :  formats.split(",")) {
+			if (format.equals("annotations") || format.equals("annot")) {
 				annotationsReport();
-			} else if (output.equals("rules")) {
+			} 
+			else if (format.equals("rules")) {
 				hitsReport();
-			//} else if (output == "gff") {
-				//	gffReport();
 
-			} else {
-				// should throw an error here
-				System.err.println("Error: Unknown output format (" + output + "). Skipping.");
+			} 
+			else if (format.equals("gp")) {
+				GenomeProperty.detailReport(System.out);
+			}
+			else {
+				System.err.println("Error: Unknown output format (" + format + "). Skipping.");
 			}
 
 		}
-
 	}
-
-	// Adding Rules
-	public boolean addDefaultRules() {
-		return engine.addResource(this.getClass().getResource(braingrabRules), 
-				ResourceType.CHANGE_SET);
-	}
-	public boolean addGenomePropertiesRules() {
-		return engine.addResource(this.getClass().getResource(genomePropertiesRules), 
-				ResourceType.CHANGE_SET);
-	}
-	public boolean addRule(String file, ResourceType type) {
-		return this.engine.addResource(this.getClass().getResource(file), type);
-	}
-	public boolean addDrools(String file) {
-		return this.addRule(file, ResourceType.DRL);
-	}
-	public boolean addDroolsExpression(String ruleStr) {
-		Resource res = ResourceFactory.newReaderResource(new StringReader(ruleStr));
-		return engine.addResource(res, ResourceType.DRL);
-	}
-
+	
 	// Adding Facts
-	public int addBlast(String file) {
-		return engine.addFacts(new BlastResultFileDAO(file));
-	}
-
-	public int addHmm(String file) {
-		return engine.addFacts(new HMMResultFileDAO(file));
-	}
-
-	public int addGenomePropertiesFacts() {
-		
-		// Add facts about Genome Properties from Notation3 file
-		URL n3Url = this.getClass().getResource("dao/data/genomeproperties.n3");
-		RdfFactDAO dao = new RdfFactDAO(n3Url, "N3");
-		int numFacts = addRdf(dao);
-		System.err.println("complete.");
-		return numFacts;
-	}
-
-	public int addGenomeProperties() {
-		addGenomePropertiesRules();
-		return addGenomePropertiesFacts();
-	}
-
-	public int addRdf(RdfFactDAO dao) {
-		engine.addFacts(dao);
-		return dao.getTotalFacts();
-	}
-	public int addRdf(String file) {
-		return addRdf(new RdfFactDAO(file));
-	}
-	public int addN3(String file) {
-		return addRdf(new RdfFactDAO(file, "N3"));
-	}
-
-	public int addGenbank(String file) {
-		InputStreamReader gbReader = new InputStreamReader(this.getClass().getResourceAsStream(file));       
-		return engine.addFacts(new GenbankFeatureDAO(gbReader));
-	}
-
-	public void addDroolsFiles(String[] filesOrDirs) {
-		for (String file : filesFromPaths(filesOrDirs)) {
-			this.addDrools(file);
+	public static void addDao(Iterable<? extends Object> iter, StatefulKnowledgeSession ksession) {
+		for (Object o : iter) {
+			ksession.insert(o);
 		}
 	}
-	public void addBlastFiles(String[] filesOrDirs) {
+
+	public static void addBlastFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
 		for (String file : filesFromPaths(filesOrDirs)) {
-			this.addBlast(file);
+			addDao(new BlastResultFileDAO(file), ksession);
 		}
 	}
-	public void addHmmFiles(String[] filesOrDirs) {
+	public static void addHmmFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
 		for (String file : filesFromPaths(filesOrDirs)) {
-			this.addHmm(file);
+			addDao(new HMMResultFileDAO(file), ksession);
 		}
 	}
-	public void addRdfFiles(String[] filesOrDirs) {
+	public static void addRdfFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
 		for (String file : filesFromPaths(filesOrDirs)) {
-			this.addRdf(file);
+			addDao(new RdfFactDAO(file), ksession);
 		}
 	}    
-	public void addN3Files(String[] filesOrDirs) {
+	public void addN3Files(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
 		for (String file : filesFromPaths(filesOrDirs)) {
-			this.addN3(file);
+			addDao(new RdfFactDAO(file, "N3"), ksession);
 		}
 	} 
-	public void addGenbankFiles(String[] filesOrDirs) {
+	public static void addGenbankFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
 		for (String file : filesFromPaths(filesOrDirs)) {
-			this.addGenbank(file);
+			addDao(new GenbankFeatureDAO(file), ksession);
 		}
 	}  
 
-	public int addSmallGenome(String dbName) {
 
-		if (dbName == null) {
-			return 0;
-		}
-		
-		System.err.println("Loading facts from Small Genome database " + dbName + "...");
-		SmallGenomeDAOFactory sgFactory = new SmallGenomeDAOFactory(dbName);
-
-		int total = 0;
-
-		// Add Genome Features
-		System.err.println("Adding features...");
-		for (Feature f : sgFactory.getFeatureDAO()) {
-			features.add(f); // save features for later reporting
-		}
-		int count = total = engine.addFacts(features);
-		System.err.println("  " + count + " features");
-
-		// Add annotations
-		total += count = engine.addFacts(sgFactory.getAnnotationDAO());
-		System.err.println("  " + count + " annotations");
-
-		// Add Genome HMMs
-		total += count = engine.addFacts(sgFactory.getHmmHitDAO());
-		System.err.println("  " + count + " HMM hits");
-
-		// Add Genome Properties (use RDF content)
-		// total += count = engine.addFacts(sgFactory.getGenomePropertyDAO(dbName));
-		// System.err.println("  " + count + " genome properties");
-
-		return total;
-	}
-
-	public void log() {
-		engine.setConsoleLogger();
-	}
-	public void log(String logFile) {
-		engine.setFileLogger(logFile);
-	}
-
-	public void run() {
-		engine.fireAllRules();
-	}
-	public void shutdown() {
-		engine.shutdown();
-	}
 	public static List<String> filesFromPaths(String[] filesOrDirs) {
 
 		ArrayList<String> files = new ArrayList<String>();
@@ -351,7 +266,7 @@ public class Aruba {
 		return b.toString();
 	}
 
-	private void annotationsReport() {
+	private static void annotationsReport() {
 		for (Feature f : features) {
 			String annotation = getFeatureAnnotationText(f);
 			if ( ! annotation.equals("") ) {
@@ -359,7 +274,7 @@ public class Aruba {
 			}
 		}		
 	}
-	private void hitsReport() {
+	private static void hitsReport() {
 		for (Feature f : features) {
 			List<Annotation> assertedAnnotations = f.getAssertedAnnotations();
 			for (Annotation a : assertedAnnotations) {

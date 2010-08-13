@@ -1,0 +1,25 @@
+#created on: Aug 5, 2010
+package org.jcvi.annotation.rules.genomeproperties
+import org.jcvi.annotation.facts.*;
+import java.util.ArrayList;
+
+rule "GenomeProperty value calculation"
+// salience -10
+	when
+		genomeprop	 		: GenomeProperty( filledValue : filled, requirements : requirements )
+		numFilled			: Double( doubleValue != filledValue )
+								from accumulate( 
+									Property( requiredBy contains genomeprop, $value : value )
+									sum( $value ) 
+								);
+ 	then 
+ 		double numRequired = new Double(requirements.size());
+		double fractionFilled = (numRequired == 0) ? 0 : numFilled / numRequired;
+ 		modify( genomeprop ) {
+			setRequired(numRequired),
+			setFilled(numFilled),
+			setValue(fractionFilled)
+		};
+ 		//System.out.println("Calculate " + genomeprop.toStringReport());
+end
+

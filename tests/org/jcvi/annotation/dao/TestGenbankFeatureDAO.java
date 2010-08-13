@@ -19,7 +19,6 @@ public class TestGenbankFeatureDAO {
 		gbInputStreamReader = new InputStreamReader(this.getClass().getResourceAsStream("data/CP000855.gb"));       
 		gbFeatureDAO = new GenbankFeatureDAO(gbInputStreamReader);
 		
-		
 	}
 	
 	@Test
