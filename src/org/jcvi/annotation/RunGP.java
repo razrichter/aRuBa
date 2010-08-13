@@ -25,7 +25,7 @@ public class RunGP {
 				
 				// ADD RULES TO KBUILDER AND CREATE KNOWLEDGEBASE
 				final KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-				kbuilder.add( ResourceFactory.newClassPathResource( "../rules/genomeproperties/GenomePropertiesChangeSet.xml", GenericFileDAO.class ),ResourceType.CHANGE_SET );
+				kbuilder.add( ResourceFactory.newClassPathResource( "/org/jcvi/annotation/rules/genomeproperties/GenomePropertiesChangeSet.xml", GenericFileDAO.class ),ResourceType.CHANGE_SET );
 				if (kbuilder.hasErrors()) {
 					System.err.println(kbuilder.getErrors().toString());
 					throw new RuntimeException("Unable to compile rules.");

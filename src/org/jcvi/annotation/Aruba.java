@@ -109,7 +109,7 @@ public class Aruba {
 			// Add Genome Properties rules
 			if (cmd.hasOption("genomeproperties")) {
 				System.err.println("Adding Genome Properties rules");
-				kbuilder.add( ResourceFactory.newClassPathResource( "../rules/genomeproperties/GenomePropertiesChangeSet.xml", GenericFileDAO.class ),ResourceType.CHANGE_SET );
+				kbuilder.add( ResourceFactory.newClassPathResource( "/org/jcvi/annotation/rules/genomeproperties/GenomePropertiesChangeSet.xml", GenericFileDAO.class ),ResourceType.CHANGE_SET );
 			}
 
 			// Add BrainGrab rules
