@@ -670,7 +670,7 @@
     <target name="create_genomeproperties_jar" depends="build">
         <jar destfile="run/genomeproperties.jar" filesetmanifest="mergewithoutmain">
             <manifest>
-                <attribute name="Main-Class" value="org.jcvi.annotation.RunGenomeProperties"/>
+                <attribute name="Main-Class" value="org.jcvi.annotation.RunGP"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="bin"/>
