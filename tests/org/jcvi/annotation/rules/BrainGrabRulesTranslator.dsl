@@ -77,7 +77,7 @@
 [consequence][]set common name {value} on {variable}={variable}.setCommonName("{value}");
 [consequence][]set ec number {value} on {variable}={variable}.setEcNumbers("{value}");
 [consequence][]set assertion type {value} on {variable}={variable}.setAssertionType(Annotation.{value});
-[consequence][]set specificity {value} on {variable}={variable}.setSpecificity(Annotation.{value});
+[consequence][]set specificity {value} on {variable}={variable}.setSpecificity(SpecificityType.{value});
 [consequence][]set confidence {value} on {variable}={variable}.setConfidence({value});
 [consequence][]set role ids {value} on {variable}={variable}.addRoleIds("{value}");
 [consequence][]set go ids {value} on {variable}={variable}.addGoIds("{value}");
@@ -88,7 +88,7 @@
 [consequence][]set common name {value}=ann.setCommonName("{value}");
 [consequence][]set ec number {value}=ann.setEcNumbers("{value}");
 [consequence][]set assertion type {value}=ann.setAssertionType(Annotation.{value});
-[consequence][]set specificity {value}=ann.setSpecificity(Annotation.{value});
+[consequence][]set specificity {value}=ann.setSpecificity(SpecificityType.{value});
 [consequence][]set confidence {value}=ann.setConfidence({value});
 [consequence][]set role ids {value}=ann.addRoleIds("{value}");
 [consequence][]set go ids {value}=ann.addGoIds("{value}");

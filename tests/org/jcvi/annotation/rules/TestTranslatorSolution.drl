@@ -7,44 +7,13 @@ import org.jcvi.annotation.facts.*;
 
 rule "goal solution"
     when
- 		( 
-			annot : Annotation( goIds contains 'GO:0030435' )
-			or 
-			annot : Annotation( goIds contains 'GO:0043936' )
-		) 
-		and 
-		(
-			 gProp : GenomeProperty( this['id'] == 'GenProp0610', this['value'] >= 0.6 )
-		)
-		
-		//and 
-		//(
-		//	 txn : Taxon( parentNames contains 'Firmicutes' )
-		//)
-    	geneA : Feature( assignedAnnotation==annot, properties contains gProp //, taxon == txn  
-    					)
- 		
+ 		genProp : GenomeProperty( id == 'GenProp0610', value >= 0.6 )
+        gene	: Feature( properties contains genProp )
+ 		annot : Annotation( (goIds contains "GO:0030435") || (goIds contains "GO:0043936") ) from gene.assignedAnnotation
+ 		txn : Taxon( parentNames contains 'Firmicutes' ) from gene.taxon
     then
-    	System.out.println(kcontext.getRule().getName());
+    	modify ( annot ) {
+    		addGoId( "GO:0008150" ),
+    		setCommonName( "endospore" )
+    	}
 end
-
-rule "test solution"
-    when
-		(
-		 	annot : Annotation( goIds contains 'GO:0030435' )
-		 	or
-		 	annot : Annotation( goIds contains 'GO:0043936' )
-		 )
-		 and
-		 	genprop : GenomeProperty( this['id'] == 'GenProp0610', this['value'] >= 0.6 )
-		 and
-		 	txn : Taxon(parentNames contains 'Firmicutes' )
-    	
-    	geneA : Feature( assignedAnnotation == annot, taxon == txn, 
-    				properties contains genprop )
-  		
-    then
-    	System.out.println(kcontext.getRule().getName());
-end
-
-

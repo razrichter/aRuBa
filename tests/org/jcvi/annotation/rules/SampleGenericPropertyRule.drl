@@ -5,7 +5,6 @@ import java.util.*;
 # if (HMM_HIT(ARG1, TIGR02607) && HMM_HIT(ARG2, PF05015) && CLOSE(ARG1, ARG2, 100)) 
 # then assert (TOXIN_ANTITOXIN(ARG1, ARG2)
 rule "sample property rule toxin antitoxin"
-dialect "mvel"
 no-loop true
 
 	# if (HMM_HIT(ARG1, TIGR02607) && HMM_HIT(ARG2, PF05015) && CLOSE(ARG1, ARG2, 100))
@@ -16,26 +15,24 @@ no-loop true
  		HmmHit( hitId == "PF05015", queryId == geneB.featureId )
     then
     	System.out.println(kcontext.getRule().getName());
-    	toxinProp = [ "TOXIN_ANTITOXIN": 1 ];
-      	geneA.addProperty(toxinProp);
-    	geneB.addProperty(toxinProp);
-    	insert(toxinProp);
-    	modify(geneA);
-    	modify(geneB);
+     	FeatureProperty toxinAntitoxin = FeatureProperty.create("TOXIN_ANTITOXIN");
+    	insert(toxinAntitoxin);
+ 	  	modify(geneA) { addProperty(toxinAntitoxin) }
+    	modify(geneB) { addProperty(toxinAntitoxin) }
 end
 
 rule "sample rule that is activated when there is a twinarg toxin_antitoxin"
-dialect "mvel"
 no-loop true
 
 	when
-		twinargProp: Map( this["TWINARG"] == 1 )
-		antitoxinProp: Map( this["TOXIN_ANTITOXIN"] == 1 )
-		gene : Feature( properties contains twinargProp, properties contains antitoxinProp)	
+		twinargProp: FeatureProperty( id == "TWINARG" )
+		antitoxinProp: FeatureProperty( id == "TOXIN_ANTITOXIN" )
+		someProp: FeatureProperty( id == "SOMETHING" )
+		gene : Feature( properties contains twinargProp, properties contains antitoxinProp, 
+						properties not contains someProp )	
 	then
 		System.out.println(kcontext.getRule().getName());
-		someProp = [ "SOMETHING": 1 ];
-		gene.addProperty(someProp);
+		modify( gene ) { addProperty(someProp) }
 end
 
 

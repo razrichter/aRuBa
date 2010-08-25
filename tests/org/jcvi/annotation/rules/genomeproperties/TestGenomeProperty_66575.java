@@ -1,125 +1,85 @@
 package org.jcvi.annotation.rules.genomeproperties;
 
-import java.net.URL;
+import java.util.HashMap;
 
 import junit.framework.TestCase;
 
+import org.drools.KnowledgeBase;
+import org.drools.KnowledgeBaseFactory;
+import org.drools.builder.KnowledgeBuilder;
+import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
-import org.jcvi.annotation.dao.RdfFactDAO;
+import org.drools.io.ResourceFactory;
+import org.drools.runtime.StatefulKnowledgeSession;
+import org.jcvi.annotation.dao.GenericFileDAO;
+import org.jcvi.annotation.dao.GenomePropertiesDAOManager;
+import org.jcvi.annotation.dao.SmallGenomeDAOManager;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.FeatureProperty;
 import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.GenomeProperty;
-import org.jcvi.annotation.rulesengine.RulesEngine;
-import org.junit.After;
+import org.jcvi.annotation.facts.PropertyState;
 import org.junit.Before;
 import org.junit.Test;
 
 public class TestGenomeProperty_66575 extends TestCase {
 
-	private RdfFactDAO dao;
-	private RulesEngine engine;
+	private String genome = "gb6";
 	
     @Before
     public void setUp() throws Exception {
-    	engine = new RulesEngine();
-		URL n3Url = this.getClass().getResource("data/GenomeProperty_66575.n3");
-		dao = new RdfFactDAO(n3Url, "N3");
-		engine.addFacts(dao);
-    }
-	
-	@Test
-	public void testRdfConverter() {
-		assertEquals(1, dao.getNumGenomeProperties());
-		assertEquals(2, dao.getNumFeatureProperties());
-		assertEquals(2, dao.getRelationships().size());
-		assertEquals(5, dao.getTotalFacts());
-		
-	}
+    	
+		// ADD RULES TO KBUILDER AND CREATE KNOWLEDGEBASE
+		final KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+		kbuilder.add( ResourceFactory.newClassPathResource( "/org/jcvi/annotation/rules/genomeproperties/GenomePropertiesChangeSet.xml", GenericFileDAO.class ),ResourceType.CHANGE_SET );
+		if (kbuilder.hasErrors()) {
+			System.err.println(kbuilder.getErrors().toString());
+			throw new RuntimeException("Unable to compile rules.");
+		}
+		final KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+		kbase.addKnowledgePackages( kbuilder.getKnowledgePackages() );
+		final StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
 
-	@Test
-	public void testFeaturePropertySufficientForFeatureProperty() {
-		System.out.println("\ntest suffices...");
+		// ADD FACTS TO STATEFUL KNOWLEDGE SESSION
+		SmallGenomeDAOManager SGManager = new SmallGenomeDAOManager(genome);
+		HashMap<String, Integer> data = SGManager.addSmallGenomeFacts(ksession);
 		
-		// Add our suffices rule
-		engine.addResource(this.getClass().getResource("suffices.drl"), ResourceType.DRL);
-		engine.addResource(this.getClass().getResource("requiredby.drl"), ResourceType.DRL);
-		
-		// Expectations:
-		//  1) 	There is a Property Relationship added from the RdfFactDAO that expresses that
-		// 		gp:FeatureProperty_63239 :sufficient_for	gp:GenomeProperty_66644;
-		//  2) 	"Property (on Feature) sufficient_for GenomeProperty" (suffices.drl)
-		//		will assign the consequence property to the feature
-		//  3) 	"Property (on Genome) sufficient_for GenomeProperty"
-
+		// Add only GenProp 66575
+		GenomePropertiesDAOManager GPManager = new GenomePropertiesDAOManager("data/GenomeProperty_66575.n3");
+		GPManager.addGenomePropertiesFacts(ksession, data);
+ 
 		// Init feature with our sufficient property
 		Feature feature = new Feature("xyz");
 		FeatureProperty propSufficient = FeatureProperty.create("TIGR03720"); // ("TIGR03720");
 		FeatureProperty propAssigned = FeatureProperty.create("62994");
 		feature.addProperty(propSufficient);
+	
+		// Init a genome that this feature is annotated on
+		Genome genome = new Genome();
+		feature.setGenome(genome);		
 		
-		// We expect the rule engine to assign this property
-		assertFalse(feature.getProperties().contains(propAssigned));
+		ksession.insert(feature);
+		ksession.insert(propSufficient);
+		ksession.insert(propAssigned);
+		ksession.insert(genome);
 		
-		// Add these facts to our knowledgebase
-		engine.setConsoleLogger();
-		engine.addFact(feature);
-		engine.addFact(propSufficient);	
-		
-		// Fire our engine
-		engine.fireAllRules();
-		
-		assertTrue(feature.getProperties().contains(propAssigned));
-		assertEquals(1.0, propAssigned.getValue());
-		
-		// and, since FeatureProperty_63238 is required by GenomeProperty_66644,
-		// this should trigger a recalculation of the GenomeProperty value
-		GenomeProperty gp = GenomeProperty.create("66575");
-		assertEquals(1.0, gp.getRequired());
-		assertEquals(1.0, gp.getFilled());
-		assertEquals(1.0, gp.getValue());
-	}
+		// FIRE RULES, CLOSE AND SHUTDOWN
+		ksession.fireAllRules();
+		ksession.dispose();
+    }
+
 
 	@Test
 	public void testGenomeProperty66575() {
-		System.out.println("\ntest GenomeProperty 66575...");
-		
-		// Add our Genome Property rules
-		engine.addResource(this.getClass().getResource("suffices.drl"), ResourceType.DRL);
-		engine.addResource(this.getClass().getResource("requiredby.drl"), ResourceType.DRL);
-
-		// Init features with the subjects of each of our sufficient_for feature properties
-		Feature feature = new Feature("feature_with_TIGR03720");
-		FeatureProperty featureprop = FeatureProperty.create("TIGR03720");
-		feature.addProperty(featureprop);
-		
-		// Init a genome that this feature is annotated on
-		Genome genome = new Genome();
-		feature.setGenome(genome);
-		
-		// Add these facts to our knowledgebase
-		engine.addFact(feature);
-		engine.addFact(featureprop);
-		engine.addFact(genome);
-		
-		// Assigned genome properties before firing rules
-		assertEquals(0, genome.getProperties().size());
-		
-		// Fire our engine
-		engine.fireAndDispose();
-		
-		// This gets this property which we expect to be in the GenomeProperty.propsCache
 		GenomeProperty gp = GenomeProperty.create("66575");
+		System.out.println(gp.toStringDetailReport());
 		
 		//FeatureProperty featurepropAsserted = FeatureProperty.create("62994");
 		//assertEquals(1.0, featurepropAsserted.getValue());
 		assertEquals(1.0, gp.getRequired());
 		assertEquals(1.0, gp.getFilled());
 		assertEquals(1.0, gp.getValue());
+		assertEquals(PropertyState.YES, gp.getState());
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		engine = null;
-	}
 }

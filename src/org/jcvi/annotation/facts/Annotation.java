@@ -9,11 +9,6 @@ public class Annotation {
 	public static final int EXACT = 1;
 	public static final int PARTIAL = 0;
 	
-	// specificity constants
-	public static final int EQUIVALOG = 100;
-	public static final int INIT_EQUIV = 95;
-	public static final int DOMAIN = 70;
-	
 	private String source;
 	private double confidence;
 	private SpecificityType specificity;

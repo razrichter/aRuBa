@@ -1,70 +1,62 @@
 package org.jcvi.annotation.rules.genomeproperties;
 
-import java.net.URL;
+import java.util.HashMap;
 
 import junit.framework.TestCase;
 
+import org.drools.KnowledgeBase;
+import org.drools.KnowledgeBaseFactory;
+import org.drools.builder.KnowledgeBuilder;
+import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
-import org.jcvi.annotation.Aruba;
-import org.jcvi.annotation.dao.RdfFactDAO;
-import org.jcvi.annotation.facts.Feature;
-import org.jcvi.annotation.facts.FeatureProperty;
-import org.jcvi.annotation.facts.Genome;
+import org.drools.io.ResourceFactory;
+import org.drools.runtime.StatefulKnowledgeSession;
+import org.jcvi.annotation.dao.GenericFileDAO;
+import org.jcvi.annotation.dao.GenomePropertiesDAOManager;
+import org.jcvi.annotation.dao.SmallGenomeDAOManager;
 import org.jcvi.annotation.facts.GenomeProperty;
 import org.jcvi.annotation.facts.PropertyState;
-import org.jcvi.annotation.rulesengine.RulesEngine;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class TestGenomeProperty_1 extends TestCase {
 
-	private RdfFactDAO dao;
-	private Aruba aruba;
-	private RulesEngine engine;
 	private String genome = "gb6";
 	
     @Before
     public void setUp() throws Exception {
-    	aruba = new Aruba();
-    	engine = aruba.getEngine();
-		URL n3Url = this.getClass().getResource("data/GenomeProperty_1.n3");
-		dao = new RdfFactDAO(n3Url, "N3");
-		engine.addFacts(dao);
+    	
+		// ADD RULES TO KBUILDER AND CREATE KNOWLEDGEBASE
+		final KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+		kbuilder.add( ResourceFactory.newClassPathResource( "/org/jcvi/annotation/rules/genomeproperties/GenomePropertiesChangeSet.xml", GenericFileDAO.class ),ResourceType.CHANGE_SET );
+		if (kbuilder.hasErrors()) {
+			System.err.println(kbuilder.getErrors().toString());
+			throw new RuntimeException("Unable to compile rules.");
+		}
+		final KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+		kbase.addKnowledgePackages( kbuilder.getKnowledgePackages() );
+		final StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
+
+		// ADD FACTS TO STATEFUL KNOWLEDGE SESSION
+		SmallGenomeDAOManager SGManager = new SmallGenomeDAOManager(genome);
+		HashMap<String, Integer> data = SGManager.addSmallGenomeFacts(ksession);
+		
+		// Add only GenProp 1
+		GenomePropertiesDAOManager GPManager = new GenomePropertiesDAOManager("data/GenomeProperty_1.n3");
+		GPManager.addGenomePropertiesFacts(ksession, data);
+ 
+		// FIRE RULES, CLOSE AND SHUTDOWN
+		ksession.fireAllRules();
+		ksession.dispose();
     }
 	
 	@Test
-	public void testRdfConverter() {
-		assertEquals(1, dao.getNumGenomeProperties());
-		assertEquals(21, dao.getNumFeatureProperties());
-		assertEquals(21, dao.getRelationships().size());
-		assertEquals(43, dao.getTotalFacts());
-		
-	}
-
-	@Test
 	public void testGenomeProperty_1() {
 		System.out.println("\ntest GenomeProperty 1...");
-		
-		// Add our Genome Property rules
-		engine.addResource(this.getClass().getResource("AboveTrustedCutoff.drl"), ResourceType.DRL);
-		engine.addResource(this.getClass().getResource("suffices.drl"), ResourceType.DRL);
-		engine.addResource(this.getClass().getResource("requiredby.drl"), ResourceType.DRL);
 
-		// Add a small genome database
-		aruba.addSmallGenome(genome);
-		
 		// Get our GenomeProperty from the GenomeProperty.propsCache,
 		// which was loaded during setup()
 		GenomeProperty p = GenomeProperty.create("1");
-		
-		assertEquals(0.0, p.getFilled());
-		assertEquals(0.0, p.getValue());
-		assertEquals(0.0, p.getRequired());
-		
-		// Fire our engine
-		engine.fireAndDispose();
-		
 		System.out.println(p.toStringReport());
 		
 		assertEquals(7.0, p.getFilled());
@@ -73,8 +65,4 @@ public class TestGenomeProperty_1 extends TestCase {
 		assertEquals(PropertyState.YES, p.getState());
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		engine = null;
-	}
 }

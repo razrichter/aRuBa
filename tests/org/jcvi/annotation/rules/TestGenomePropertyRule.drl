@@ -3,21 +3,20 @@ package org.jcvi.annotation.rules;
 import org.jcvi.annotation.facts.*;
 import java.util.Map;
 
-dialect "mvel"
 # Legacy rule: (THIS_GO_TERM[GO:0030435] || THIS_GO_TERM[GO:0043936]) && GEN_PROP[GenProp0610, 0.6] && GEN_STATE[GenProp0078, Firmicutes]
 
 rule "endospore formers rule"
     when
-    	genProp : GenomeProperty( this["id"]=="GenProp0610", this["value"] >= 0.6 )
+    	genProp : GenomeProperty( id == "GenProp0610", value >= 0.6 )
         geneA : Feature( properties contains genProp )
 	 	Taxon( parentNames contains "Firmicutes") from geneA.taxon
 		annot : Annotation( (goIds contains "GO:0030435") || (goIds contains "GO:0043936") ) from 	geneA.assignedAnnotation
  		
     then
-    	
-    	annot.setCommonName("endospore former");
-   		modify (
-   			genProp["count"] += 1
-   		);
+     	System.out.println("endospore rule fired");
+  		modify( annot ) {
+			setCommonName( "endospore former" ),
+			setSource( kcontext.getRule().getName() )
+		}
 end
 

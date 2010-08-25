@@ -2,7 +2,6 @@
 package org.jcvi.annotation.rules;
 import org.jcvi.annotation.facts.*;
 
-
 rule "Sample trans-coupling rule"
 	
 	# # 2 genes in same direction 

@@ -1,37 +1,44 @@
 package org.jcvi.annotation.rulesengine;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import junit.framework.TestCase;
+
+import org.drools.KnowledgeBase;
+import org.drools.KnowledgeBaseFactory;
+import org.drools.builder.KnowledgeBuilder;
+import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
+import org.drools.io.ResourceFactory;
+import org.drools.runtime.StatefulKnowledgeSession;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.BlastHit;
 import org.jcvi.annotation.facts.Feature;
-import org.junit.After;
+import org.jcvi.annotation.facts.SpecificityType;
 import org.junit.Before;
 
 public class TestBlastPHitRule extends TestCase {
 
-	private RulesEngine engine;
 	private Feature orf;
 	private Annotation ann;
 	
 	@Before
 	public void setUp() throws Exception {
 		
-		engine = new RulesEngine();
-		
-		URL dslUrl = engine.getClass().getResource("../rules/BrainGrabRulesTranslator.dsl");
-		URL dslrUrl = engine.getClass().getResource("../rules/BrainGrabRules.dslr");
-		System.out.println(engine.addResource(dslUrl.toString(), ResourceType.DSL));
-		engine.addResource(dslrUrl.toString(), ResourceType.DSLR);
-		/*
-		URL url = engine.getClass().getResource("../rules/SampleBlastHit.drl");
-		engine.addResource(url.toString(), ResourceType.DRL);
-		*/
-		
+		// ADD BRAINGRAB RULES TO KBUILDER AND CREATE KNOWLEDGEBASE
+		final KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+		kbuilder.add( ResourceFactory.newClassPathResource( "/org/jcvi/annotation/rules/BrainGrabRulesTranslator.dsl", this.getClass() ), ResourceType.DSL );
+		kbuilder.add( ResourceFactory.newClassPathResource("/org/jcvi/annotation/rules/BrainGrabRules.dslr", this.getClass()), ResourceType.DSLR);
+		if (kbuilder.hasErrors()) {
+			System.err.println(kbuilder.getErrors().toString());
+			throw new RuntimeException("Unable to compile rules.");
+		}
+		final KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
+		kbase.addKnowledgePackages( kbuilder.getKnowledgePackages() );
+		final StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
+
+		// ADD FACTS TO STATEFUL KNOWLEDGE SESSION
 		orf = new Feature("testorf", "ORF", 0, 110, 1);
 		
 		// Only hit1 should evaluate true according to our SampleBlastHit rule
@@ -46,11 +53,15 @@ public class TestBlastPHitRule extends TestCase {
         hit2.setQueryLength(orf.getLength());
 		
         
-		engine.addFact(orf);
-		engine.addFact(hit1);
-		engine.addFact(hit2);
-		engine.addFact(hit3);
-		engine.fireAllRules();
+		ksession.insert(orf);
+		ksession.insert(hit1);
+		ksession.insert(hit2);
+		ksession.insert(hit3);
+
+		// FIRE RULES, CLOSE AND SHUTDOWN
+		ksession.fireAllRules();
+		ksession.dispose();
+
 		this.ann = orf.getAssertedAnnotations().get(0);
 	}
 	
@@ -66,7 +77,7 @@ public class TestBlastPHitRule extends TestCase {
 	}
 
 	public void testSampleBlastEcNumber() {
-		assertEquals("", ann.getEcNumbers());
+		assertEquals("", ann.getEcNumbers().get(0));
 	}
 	public void testSampleBlastGoIds() {
 		ArrayList<String> goIds = new ArrayList<String>();
@@ -85,7 +96,7 @@ public class TestBlastPHitRule extends TestCase {
 	}
 	
 	public void testSampleBlastSpecificity() {
-		 assertEquals(ann.getSpecificity(), Annotation.INIT_EQUIV);
+		 assertEquals(ann.getSpecificity(), SpecificityType.INIT_EQUIV);
 	}
 
 	public void testSampleBlastAssertionType() {
@@ -95,10 +106,4 @@ public class TestBlastPHitRule extends TestCase {
 	public void testSampleBlastConfidence() {
 		assertEquals(ann.getConfidence(), 96.0);
 	}
-	
-	@After
-	public void tearDown() throws Exception {
-		engine = null;
-	}
-
 }

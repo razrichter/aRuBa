@@ -16,9 +16,10 @@ rule "Identify Intein containing genes"
 		
 
 	then 
-		Map inteinProp = new Map[ "intein": geneA.getGeneSymbol() ];
-		geneA.addProperty(inteinProp);
+		FeatureProperty inteinProp = FeatureProperty.create("intein");
+		inteinProp.setName( geneA.getFeatureId() );
 		insert(inteinProp);
-		modify(geneA);
-		
+		modify(geneA) { 
+			addProperty(inteinProp)
+		}
 end
