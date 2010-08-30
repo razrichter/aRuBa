@@ -3,10 +3,11 @@
 
 gp:GenomeProperty_1
 	a	:GenomeProperty;
+	:accession	"GenProp0001";
 	:name	"1";
-	:type	"pathway";
+	:category	"pathway";
 	:threshold	"2";
-	:property	"chorismate biosynthesis via shikimate";
+	:description	"chorismate biosynthesis via shikimate";
 .
 
 gp:FeatureProperty_76

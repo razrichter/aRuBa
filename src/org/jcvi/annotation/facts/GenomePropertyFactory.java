@@ -16,12 +16,35 @@ public class GenomePropertyFactory {
 		return p;
 	}
 
+	public static synchronized GenomeProperty create(String id, String name,
+			String type) {
+		GenomeProperty p = create(id);
+		p.setName(name);
+		p.setType(type);
+		return p;
+	}
+
+	public static GenomeProperty get(String id) {
+		return (GenomeProperty) propsCache.get(id);
+	}
+	public static boolean has(String id) {
+		return propsCache.containsKey(id);
+	}
+	
 	public static synchronized Collection<GenomeProperty> getProperties() {
 		return propsCache.values();
 	}
-	
+
+	public static GenomeProperty getRootProperty() {
+		for (GenomeProperty p : getProperties()) {
+			if (p.getType().equals("root")) {
+				return p;
+			}
+		}
+		return null;
+	}
+
 	public static void clearCache() {
 		propsCache.clear();
 	}
-
 }

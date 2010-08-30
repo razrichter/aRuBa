@@ -31,6 +31,9 @@ import org.jcvi.annotation.dao.SmallGenomeDAOManager;
 import org.jcvi.annotation.facts.Annotation;
 import org.jcvi.annotation.facts.Feature;
 import org.jcvi.annotation.facts.GenomeProperty;
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyTextDAGWriter;
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyTextWriter;
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyWriter;
 
 public class Aruba {
 
@@ -165,7 +168,8 @@ public class Aruba {
 			printOutputReports(output);			
 
 			GenomeProperty p = GenomeProperty.create("2029");
-			System.out.println(p.toStringDetailReport());
+			GenomePropertyWriter writer = new GenomePropertyTextWriter();
+			System.out.println(writer.write(p));
 
 		} catch (Throwable t) {
 			t.printStackTrace();
@@ -183,7 +187,9 @@ public class Aruba {
 
 			} 
 			else if (format.equals("gp")) {
-				GenomeProperty.detailReport(System.out);
+				GenomePropertyWriter writer = new GenomePropertyTextDAGWriter();
+				System.out.println(writer.write());
+				//GenomeProperty.detailReport(System.out);
 			}
 			else {
 				System.err.println("Error: Unknown output format (" + format + "). Skipping.");

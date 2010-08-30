@@ -16,6 +16,8 @@ import org.jcvi.annotation.dao.GenomePropertiesDAOManager;
 import org.jcvi.annotation.dao.SmallGenomeDAOManager;
 import org.jcvi.annotation.facts.GenomeProperty;
 import org.jcvi.annotation.facts.PropertyState;
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyTextDAGWriter;
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyWriter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -54,7 +56,8 @@ public class TestGenomeProperty_66644 extends TestCase {
 	@Test
 	public void testGenomeProperty66644() {
 		GenomeProperty gp = GenomeProperty.create("66644");
-		System.out.println(gp.toStringDetailReport());
+		GenomePropertyWriter writer = new GenomePropertyTextDAGWriter();
+		System.out.println(writer.write(gp));
 		assertEquals(2.0, gp.getRequired());
 		assertEquals(0.0, gp.getFilled());
 		assertEquals(0.0, gp.getValue());

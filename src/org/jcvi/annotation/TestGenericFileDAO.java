@@ -15,6 +15,8 @@ import org.jcvi.annotation.facts.FeatureProperty;
 import org.jcvi.annotation.facts.GenomeProperty;
 import org.jcvi.annotation.facts.HmmHit;
 import org.jcvi.annotation.facts.PropertyRelationship;
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyTextWriter;
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyWriter;
 
 public class TestGenericFileDAO {
 
@@ -70,7 +72,8 @@ public class TestGenericFileDAO {
 			System.out.println("complete.");
 			
 			GenomeProperty p = GenomeProperty.create("2029");
-			System.out.println(p.toStringDetailReport());
+			GenomePropertyWriter writer = new GenomePropertyTextWriter();
+			System.out.println(writer.write(p));
 			
 		} catch (Throwable t) {
 			t.printStackTrace();

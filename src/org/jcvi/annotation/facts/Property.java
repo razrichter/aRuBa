@@ -3,16 +3,19 @@ package org.jcvi.annotation.facts;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 
 public abstract class Property {
 
-	private String id;
+	private String id;			// 62489
+	private String name;		// hopanoid lipid biosynthesis
+	private String accession; 	// GenProp0761
+	private String type;
 	private double threshold;
 	private double value = 0;
 	private double filled = 0;
-	private double required = 0;
+	private String title;
 	private String definition;
+	private String comment;
 	private HashMap<String, Object> attributes = new HashMap<String, Object>();
 	
 	// child relationship
@@ -28,12 +31,58 @@ public abstract class Property {
 	protected Property(String id) {
 		this.id = id;
 	}
+	protected Property(String id, String name, String type) {
+		this.id = id;
+		this.name = name;
+		this.type = type;
+	}
 	
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAccession() {
+		return accession;
+	}
+	public void setAccession(String accession) {
+		this.accession = accession;
+	}
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDefinition() {
+		return definition;
+	}
+	public void setDefinition(String definition) {
+		this.definition = definition;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 	public double getThreshold() {
 		return threshold;
@@ -62,17 +111,7 @@ public abstract class Property {
 		this.filled = filled;
 	}
 	public double getRequired() {
-		return required;
-	}
-	public void setRequired(double required) {
-		this.required = required;
-	}
-
-	public String getDefinition() {
-		return definition;
-	}
-	public void setDefinition(String definition) {
-		this.definition = definition;
+		return requirements.size();
 	}
 	public HashMap<String, Object> getAttributes() {
 		return attributes;

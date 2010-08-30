@@ -19,6 +19,8 @@ import org.jcvi.annotation.facts.FeatureProperty;
 import org.jcvi.annotation.facts.Genome;
 import org.jcvi.annotation.facts.GenomeProperty;
 import org.jcvi.annotation.facts.PropertyState;
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyTextWriter;
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyWriter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -72,8 +74,9 @@ public class TestGenomeProperty_66575 extends TestCase {
 	@Test
 	public void testGenomeProperty66575() {
 		GenomeProperty gp = GenomeProperty.create("66575");
-		System.out.println(gp.toStringDetailReport());
-		
+		GenomePropertyWriter writer = new GenomePropertyTextWriter();
+		System.out.println(writer.write(gp));
+
 		//FeatureProperty featurepropAsserted = FeatureProperty.create("62994");
 		//assertEquals(1.0, featurepropAsserted.getValue());
 		assertEquals(1.0, gp.getRequired());

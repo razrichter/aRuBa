@@ -7,6 +7,20 @@ import org.jcvi.annotation.facts.GenomePropertyFactory;
 
 public class GenomePropertiesDAOManager {
 
+	private URL url;
+	
+	public GenomePropertiesDAOManager(URL url) {
+		super();
+		this.setUrl(url);
+	}
+	public GenomePropertiesDAOManager(String file) {
+		super();
+		this.setUrl(this.getClass().getResource(file));
+	}
+	public GenomePropertiesDAOManager() {
+		super();
+	}
+
 	public HashMap<String, Integer> addGenomePropertiesFacts(StatefulKnowledgeSession ksession) {
 		return addGenomePropertiesFacts(ksession, new HashMap<String, Integer>());
 	}
@@ -19,8 +33,10 @@ public class GenomePropertiesDAOManager {
 		GenomePropertyFactory.clearCache();
 		
 		// Load genomeProperty objects from our RDF DAO, and insert into KnowledgeSession
-		URL n3Url = this.getClass().getResource("data/genomeproperties.n3");
-		RdfFactDAO dao = new RdfFactDAO(n3Url, "N3");
+		if (url == null) {
+			url = this.getClass().getResource("data/genomeproperties.n3");
+		}
+		RdfFactDAO dao = new RdfFactDAO(url, "N3");
 		
 		for (Object f : dao.getFacts()) {
 			ksession.insert(f);
@@ -34,6 +50,14 @@ public class GenomePropertiesDAOManager {
 			}
 		}
 		return data;
+	}
+
+	public void setUrl(URL url) {
+		this.url = url;
+	}
+
+	public URL getUrl() {
+		return url;
 	}
 
 }
