@@ -16,7 +16,6 @@ rule "GenomeProperty value calculation"
  		double numRequired = new Double(requirements.size());
 		double fractionFilled = (numRequired == 0) ? 0 : numFilled / numRequired;
  		modify( genomeprop ) {
-			setRequired(numRequired),
 			setFilled(numFilled),
 			setValue(fractionFilled)
 		};
