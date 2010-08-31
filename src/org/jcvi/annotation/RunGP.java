@@ -1,5 +1,9 @@
 package org.jcvi.annotation;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -14,8 +18,12 @@ import org.drools.builder.ResourceType;
 import org.drools.io.ResourceFactory;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
+import org.jcvi.annotation.dao.BlastResultFileDAO;
+import org.jcvi.annotation.dao.GenbankFeatureDAO;
 import org.jcvi.annotation.dao.GenericFileDAO;
 import org.jcvi.annotation.dao.GenomePropertiesDAOManager;
+import org.jcvi.annotation.dao.HMMResultFileDAO;
+import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.dao.SmallGenomeDAOManager;
 import org.jcvi.annotation.writer.factory.GenomePropertyWriterFactory;
 import org.jcvi.annotation.writer.factory.GenomePropertyWriterFactory.GenomePropertiesFormat;
@@ -33,10 +41,13 @@ public class RunGP {
 		options.addOption("h","help",false, "Print this message");
 		options.addOption("d", "database", true, "Small Genome Database id (required)");
 		options.addOption("f", "format", true, "Output format (rdf|xml|n3|dag|text)");
-		options.addOption("r", "rule", true, "Path to rule");
+		options.addOption("r", "rule", true, "Path to rule file or directory");
+		options.addOption("b", "blast", true, "Path to Blast file or directory");
+		options.addOption("hmm", true, "Path to HMM file or directory");
+		options.addOption("rdf", true, "Path to RDF/XML file or directory");
 		options.addOption("g", "genbank", true, "Path to Genbank file or directory");
 		options.addOption("l","log", true, "Log file");
-		options.addOption("debug",false,"Debug output");
+		options.addOption("debug", false, "Debug output");
 
 		CommandLineParser parser = new PosixParser();
 		CommandLine cmd = null;
@@ -92,12 +103,15 @@ public class RunGP {
 			if (cmd.hasOption("database")) {
 				SmallGenomeDAOManager SGManager = new SmallGenomeDAOManager(cmd.getOptionValue("database"));
 				SGManager.addSmallGenomeFacts(ksession);
-			} else 
-			{
-				System.err.println("A small genome database is required.");
-				System.exit(0);
 			}
 			
+			// Add Facts from Blast, HMM, Genbank or RDF files
+			addBlastFiles(cmd.getOptionValues("blast"), ksession);
+			addHmmFiles(cmd.getOptionValues("hmm"), ksession);
+			addGenbankFiles(cmd.getOptionValues("genbank"), ksession);
+			addRdfFiles(cmd.getOptionValues("rdf"), ksession);
+			addN3Files(cmd.getOptionValues("n3"), ksession);
+
 			// Add Genome Properties
 			GenomePropertiesDAOManager GPManager = new GenomePropertiesDAOManager();
 			GPManager.addGenomePropertiesFacts(ksession);
@@ -116,4 +130,61 @@ public class RunGP {
 			t.printStackTrace();
 		}
 	}
+	
+	// Adding Facts
+	public static void addDao(Iterable<? extends Object> iter, StatefulKnowledgeSession ksession) {
+		for (Object o : iter) {
+			ksession.insert(o);
+		}
+	}
+	public static void addBlastFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
+		for (String file : filesFromPaths(filesOrDirs)) {
+			addDao(new BlastResultFileDAO(file), ksession);
+		}
+	}
+	public static void addHmmFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
+		for (String file : filesFromPaths(filesOrDirs)) {
+			addDao(new HMMResultFileDAO(file), ksession);
+		}
+	}
+	public static void addRdfFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
+		for (String file : filesFromPaths(filesOrDirs)) {
+			addDao(new RdfFactDAO(file), ksession);
+		}
+	}    
+	public static void addN3Files(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
+		for (String file : filesFromPaths(filesOrDirs)) {
+			addDao(new RdfFactDAO(file, "N3"), ksession);
+		}
+	} 
+	public static void addGenbankFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
+		for (String file : filesFromPaths(filesOrDirs)) {
+			addDao(new GenbankFeatureDAO(file), ksession);
+		}
+	}  
+	public static List<String> filesFromPaths(String[] filesOrDirs) {
+
+		ArrayList<String> files = new ArrayList<String>();
+		if (filesOrDirs != null) {
+			for (String fileOrDir : filesOrDirs) {
+				File stat = new File(fileOrDir);
+				if ( ! stat.exists() ) {
+					System.err.println("Error: File '"+ fileOrDir + "' does not exist. Skipping.");
+				}
+				else if ( ! stat.canRead() ) {
+					System.err.println("Error: File '" + fileOrDir + "' cannot be read. Skipping.");
+				}
+				else if (stat.isFile() && stat.length() > 0) {
+					files.add(fileOrDir);
+				}
+				else if (stat.isDirectory()) {
+					for (File f: stat.listFiles()) {
+						files.add(f.getPath());
+					}
+				}
+			}
+		}
+		return files;
+	}
+
 }

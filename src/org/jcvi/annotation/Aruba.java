@@ -152,6 +152,7 @@ public class Aruba {
 			addHmmFiles(cmd.getOptionValues("hmm"), ksession);
 			addGenbankFiles(cmd.getOptionValues("genbank"), ksession);
 			addRdfFiles(cmd.getOptionValues("rdf"), ksession);
+			addN3Files(cmd.getOptionValues("n3"), ksession);
 
 			// Add Small Genome database
 			if (dbName != null) {
@@ -220,7 +221,7 @@ public class Aruba {
 			addDao(new RdfFactDAO(file), ksession);
 		}
 	}    
-	public void addN3Files(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
+	public static void addN3Files(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
 		for (String file : filesFromPaths(filesOrDirs)) {
 			addDao(new RdfFactDAO(file, "N3"), ksession);
 		}
