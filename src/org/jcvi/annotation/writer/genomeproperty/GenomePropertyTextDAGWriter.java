@@ -2,11 +2,16 @@ package org.jcvi.annotation.writer.genomeproperty;
 
 import java.text.DecimalFormat;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map.Entry;
 
 import org.jcvi.annotation.facts.GenomeProperty;
 import org.jcvi.annotation.facts.GenomePropertyFactory;
+import org.jcvi.annotation.facts.Property;
+import org.jcvi.annotation.facts.RelationshipType;
 
 public class GenomePropertyTextDAGWriter implements GenomePropertyWriter {
 
@@ -68,7 +73,27 @@ public class GenomePropertyTextDAGWriter implements GenomePropertyWriter {
 			buffer.append("\t" + String.format("%-15s", p.getState().toString()) + "\t" + decimal.format(p.getValue()));
 		}
 		buffer.append("\n");
+		
+		// Testing
+		// buffer.append(nodeEvidence(p, bufferIndent));
+		
 		return buffer;
 	}
 	
+	private StringBuffer nodeEvidence(GenomeProperty p, StringBuffer bufferIndent) {
+		// Show the required evidence for a Genome Property
+		StringBuffer buffer = new StringBuffer();
+		DecimalFormat decimal = new DecimalFormat("0.000");
+		
+		StringBuffer bufferSteps = new StringBuffer();
+		HashMap<RelationshipType, HashSet<Property>> relationships = p.getChildRelationships();
+		for (Entry<RelationshipType, HashSet<Property>> typeProperties : relationships.entrySet()) {
+			for (Property property : typeProperties.getValue()) {
+				bufferSteps.append(property.getId() + "\t" + String.format("%-80s", bufferIndent.toString() + property.getTitle() + " " 
+						+ typeProperties.getKey().toString()
+						+ " " + p.getTitle()) + "\n");
+			}
+		}
+		return bufferSteps;
+	}
 }

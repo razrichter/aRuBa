@@ -1,5 +1,6 @@
 package org.jcvi.annotation.writer.factory;
 
+import org.jcvi.annotation.writer.genomeproperty.GenomePropertyDetailedTextDAGWriter;
 import org.jcvi.annotation.writer.genomeproperty.GenomePropertyN3Writer;
 import org.jcvi.annotation.writer.genomeproperty.GenomePropertyRdfWriter;
 import org.jcvi.annotation.writer.genomeproperty.GenomePropertyTextDAGWriter;
@@ -11,6 +12,7 @@ public abstract class GenomePropertyWriterFactory {
 	public enum GenomePropertiesFormat {
 		TEXT,
 		DAG,
+		DETAILED,
 		N3,
 		RDF,
 		XML;
@@ -22,6 +24,9 @@ public abstract class GenomePropertyWriterFactory {
 				if (format.equals("TEXT")) {
 					return GenomePropertiesFormat.TEXT;
 				} 
+				else if (format.equals("DETAILED")) {
+					return GenomePropertiesFormat.DETAILED;
+				}
 				else if (format.equals("DAG")) {
 					return GenomePropertiesFormat.DAG;
 				}
@@ -52,6 +57,9 @@ public abstract class GenomePropertyWriterFactory {
 			case DAG:
 				return new GenomePropertyTextDAGWriter();
 
+			case DETAILED:
+				return new GenomePropertyDetailedTextDAGWriter();
+				
 			case N3:
 				return new GenomePropertyN3Writer();
 

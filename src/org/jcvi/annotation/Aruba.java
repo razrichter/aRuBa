@@ -91,7 +91,6 @@ public class Aruba {
 		}
 		String dbName = cmd.getOptionValue("database");
 
-		//TODO: how to manage output type?
 		String output = cmd.getOptionValue("output");
 		if (output == null) {
 			output = DEFAULT_OUTPUT;

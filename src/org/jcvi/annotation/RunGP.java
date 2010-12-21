@@ -32,7 +32,7 @@ import org.jcvi.annotation.writer.genomeproperty.GenomePropertyWriter;
 public class RunGP {
 
 	private static final String sampleCommand = "genomeproperties -d <database> [ -f <rdf|xml|n3|dag|text> -r <rule drl file> -g <GenBank file>  -l <log file> --debug ]";
-	private static GenomePropertiesFormat format = GenomePropertiesFormat.DAG;
+	private static GenomePropertiesFormat format = GenomePropertiesFormat.TEXT;
 	
 	public static void main(String[] args) {
 
@@ -40,7 +40,7 @@ public class RunGP {
 		Options options = new Options();
 		options.addOption("h","help",false, "Print this message");
 		options.addOption("d", "database", true, "Small Genome Database id (required)");
-		options.addOption("f", "format", true, "Output format (rdf|xml|n3|dag|text)");
+		options.addOption("f", "format", true, "Output format (rdf|xml|n3|dag|text|detailed)");
 		options.addOption("r", "rule", true, "Path to rule file or directory");
 		options.addOption("b", "blast", true, "Path to Blast file or directory");
 		options.addOption("hmm", true, "Path to HMM file or directory");
@@ -94,18 +94,13 @@ public class RunGP {
 			} else if (cmd.hasOption("debug")) {
 				KnowledgeRuntimeLoggerFactory.newConsoleLogger(ksession);
 			}
-
+			
 			// -----------------------------------------------------------------------------------
 			// ADD FACTS TO STATEFUL KNOWLEDGE SESSION
-			// -----------------------------------------------------------------------------------
+			// -----------------------------------------------------------------------------------	
 			
-			// Add Small Genome database, if requested
-			if (cmd.hasOption("database")) {
-				SmallGenomeDAOManager SGManager = new SmallGenomeDAOManager(cmd.getOptionValue("database"));
-				SGManager.addSmallGenomeFacts(ksession);
-			}
-			
-			// Add Facts from Blast, HMM, Genbank or RDF files
+			// Add Facts from Database, Blast, HMM, Genbank or RDF files
+			addSmallGenomeDatabase(cmd.getOptionValue("database"), ksession);
 			addBlastFiles(cmd.getOptionValues("blast"), ksession);
 			addHmmFiles(cmd.getOptionValues("hmm"), ksession);
 			addGenbankFiles(cmd.getOptionValues("genbank"), ksession);
@@ -116,12 +111,11 @@ public class RunGP {
 			GenomePropertiesDAOManager GPManager = new GenomePropertiesDAOManager();
 			GPManager.addGenomePropertiesFacts(ksession);
 
-			// -----------------------------------------------------------------------------------
-			// FIRE RULES, DISPOSE AND WRITE GENOME PROPERTIES REPORT
-			// -----------------------------------------------------------------------------------
+			// fire rules 
 			ksession.fireAllRules();
 			ksession.dispose();
 			
+			// Write report
 			GenomePropertyWriter writer = GenomePropertyWriterFactory.getWriter(format);
 			System.out.println(writer.write());
 
@@ -137,6 +131,14 @@ public class RunGP {
 			ksession.insert(o);
 		}
 	}
+	private static void addSmallGenomeDatabase(String database, StatefulKnowledgeSession ksession) {
+		if (database != null) {
+			SmallGenomeDAOManager SGManager = new SmallGenomeDAOManager(database);
+			SGManager.addSmallGenomeFacts(ksession);
+		}
+		
+	}
+	
 	public static void addBlastFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
 		for (String file : filesFromPaths(filesOrDirs)) {
 			addDao(new BlastResultFileDAO(file), ksession);
