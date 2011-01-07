@@ -1,0 +1,95 @@
+Logical Depth LDhmmsearch v1.5.4
+Copyright (C) Logical Depth, Inc. All rights reserved.
+J. Craig Venter Institute 300 CPU-socket License
+
+hmmsearch
+HMMER 2.3-compatible (LDhmmsearch)
+
+HMM file:                    /usr/local/db/HMM_IND/PF06986.HMM [PF06986]
+Sequence database:           /usr/local/archive/projects/PPP/split_genomes_new//fasta/269799.fas
+per-sequence score cutoff:   [none]
+per-domain score cutoff:     [none]
+per-sequence E-value cutoff: <= 10
+per-domain E-value cutoff:   [none]
+
+Query HMM:   PF06986
+Accession:   PF06986.2
+Description: TraN: Mating pair stabilisation protein TraN
+  [HMM has been calibrated; E-values are empirical estimates]
+
+Scores for complete sequences (score includes all domains):
+Sequence                     Description                Score    E-value #D
+--------                     -----------                -----    ------- --
+	[no hits above thresholds]
+
+Parsed for domains:
+Sequence                     Domain Seq-f Seq-t    HMM-f HMM-t      Score  E-value
+--------                     ------ ----- -----    ----- -----      -----  -------
+	[no hits above thresholds]
+
+Alignments of top-scoring domains:
+	[no hits above thresholds]
+
+Histogram of all scores:
+score    obs    exp  (one = represents 5 sequences)
+-----    ---    ---
+  -52      1      0|=
+  -51      3      0|=
+  -50      3      0|=
+  -49     12      0|===
+  -48     16      0|====
+  -47     28      0|======
+  -46     30      0|======
+  -45     64      0|=============
+  -44     85      0|=================
+  -43    110      1|*=====================
+  -42    128      7|=*========================
+  -41    175     25|====*==============================
+  -40    203     61|============*============================
+  -39    250    116|=======================*==========================
+  -38    237    182|====================================*===========
+  -37    266    244|================================================*=====
+  -36    258    292|====================================================      *
+  -35    277    317|========================================================  *
+  -34    235    320|===============================================           *
+  -33    223    306|=============================================             *
+  -32    178    279|====================================                   *
+  -31    132    246|===========================                      *
+  -30    132    212|===========================               *
+  -29    112    178|=======================            *
+  -28     79    147|================             *
+  -27     61    120|=============          *
+  -26     54     97|===========        *
+  -25     42     78|=========      *
+  -24     39     62|========    *
+  -23     27     49|======   *
+  -22     27     39|====== *
+  -21     13     30|===  *
+  -20      5     24|=   *
+  -19     10     19|== *
+  -18      8     14|==*
+  -17      3     11|= *
+  -16      2      9|=*
+  -15      0      7| *
+  -14      2      5|*
+  -13      0      4|*
+  -12      2      3|*
+
+
+% Statistical details of theoretical EVD fit:
+              mu =   -33.8498
+          lambda =     0.2484
+chi-sq statistic =  3568.5603
+  P(chi-square)  =          0
+
+Total sequences searched: 3532
+
+Whole sequence top hits:
+     Total hits:           13
+     Satisfying E cutoff:  0
+     Total memory:         1K
+
+Domain top hits:
+     Total hits:           13
+     Satisfying E cutoff:  13
+     Total memory:         4K

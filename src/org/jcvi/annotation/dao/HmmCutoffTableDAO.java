@@ -180,7 +180,7 @@ public class HmmCutoffTableDAO implements Iterable {
 
     }
 
-    private static final String hmmCutoffTablePath = "data/hmmCutoffTable.txt";
+    private static final String hmmCutoffTablePath = "data/hmm2CutoffTable.txt";
     private HashMap<String, HmmCutoff> hmmCutoffs = new HashMap<String, HmmCutoff>();
 
     public HmmCutoffTableDAO() throws IOException {

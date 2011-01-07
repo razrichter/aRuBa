@@ -1,0 +1,155 @@
+Logical Depth LDhmmsearch v1.5.4
+Copyright (C) Logical Depth, Inc. All rights reserved.
+J. Craig Venter Institute 300 CPU-socket License
+
+hmmsearch
+HMMER 2.3-compatible (LDhmmsearch)
+
+HMM file:                    /usr/local/db/HMM_IND/TIGR04069.HMM [TIGR04069]
+Sequence database:           /usr/local/archive/projects/PPP/split_genomes_new//fasta/269799.fas
+per-sequence score cutoff:   [none]
+per-domain score cutoff:     [none]
+per-sequence E-value cutoff: <= 10
+per-domain E-value cutoff:   [none]
+
+Query HMM:   TIGR04069
+Accession:   [none]
+Description: ocin_ACP_rel: peptide maturation system acyl carrier-related protein
+  [HMM has been calibrated; E-values are empirical estimates]
+
+Scores for complete sequences (score includes all domains):
+Sequence                     Description                Score    E-value #D
+--------                     -----------                -----    ------- --
+gi|78222898|ref|YP_384645.1| phosphopantetheine-bindi   -19.6      0.078  1
+gi|78222812|ref|YP_384559.1| Acyl carrier protein (AC   -32.2        1.3  1
+gi|78224730|ref|YP_386477.1| transcription-repair cou   -39.2          6  1
+gi|78222344|ref|YP_384091.1| Phage tail sheath protei   -41.3        9.6  1
+
+Parsed for domains:
+Sequence                     Domain Seq-f Seq-t    HMM-f HMM-t      Score  E-value
+--------                     ------ ----- -----    ----- -----      -----  -------
+gi|78222898|ref|YP_384645.1|  1/1       8    80 ..     1    77 []   -19.6    0.078
+gi|78222812|ref|YP_384559.1|  1/1       3    70 ..     1    77 []   -32.2      1.3
+gi|78224730|ref|YP_386477.1|  1/1     711   772 ..     1    77 []   -39.2        6
+gi|78222344|ref|YP_384091.1|  1/1     151   221 ..     1    77 []   -41.3      9.6
+
+Alignments of top-scoring domains:
+gi|78222898|ref|YP_384645.1|: domain 1 of 1, from 8 to 80: score -19.6, E = 0.078
+                   *->eiekkLenIF..nkrFnIdfdkinnelkeenLLGeklglsPRDLVyl
+                      e++++ ++  + + ++     +i+    +++L+Ge lgl  +D + l
+  gi|7822289     8    EVKQLIIDALriEGMTP---AEID---TDAPLFGEGLGLDSIDALQL 48   
+
+                   lfdVEkqFnIsIPeeeIanGkFnTfNnilkII<-*
+                     + Ekq+++ +P        F +   +++ +   
+  gi|7822289    49 VVAMEKQYGVVVPDAATGTKVFQSVRTVADFV    80   
+
+gi|78222812|ref|YP_384559.1|: domain 1 of 1, from 3 to 70: score -32.2, E = 1.3
+                   *->eiekkLenIFnkrFnIdfdkinnelkeenLLGeklglsPRDLVyllf
+                       i k++++I     + d+        +e  + ++lg    D V l +
+  gi|7822281     3    AIDKRVKEIVAEQLGVDEAQ----VTNEASFMDDLGADSLDTVELVM 45   
+
+                   dVEkqFnIsIPeeeIanGkFnTfNnilkII<-*
+                   + E++F I I+ e  ++     + ++ + I   
+  gi|7822281    46 ALEEEFDIEISDEDAEK-----IQSVQDAI    70   
+
+gi|78224730|ref|YP_386477.1|: domain 1 of 1, from 711 to 772: score -39.2, E = 6
+                   *->eiekkLenIFnkrFnIdfdkinnelkeenLLGeklglsPRDLVyllf
+                      e++++Le++       + + i+ +  +  LL ++  ++  DL +l  
+  gi|7822473   711    EQKEILEKV-------KKGAIDVIIGTHRLLQSDVTFK--DLGLLIV 748  
+
+                   dVEkqFnIsIPeeeIanGkFnTfNnilkII<-*
+                   d E  F+++       + k+  +  +++I+   
+  gi|7822473   749 DEEQRFGVT------HKEKLKKYKAVVDIL    772  
+
+gi|78222344|ref|YP_384091.1|: domain 1 of 1, from 151 to 221: score -41.3, E = 9.6
+                   *->eiekkLenIFnkrFnIdfdkinnelkeenLLGeklglsPRDLVyllf
+                      ++e k  + Fn+++   +d+         + ++k +  +  L  + +
+  gi|7822234   151    GTEFKERERFNDLTV--ADD-----GAPDFIESKVN-DASTLISVEM 189  
+
+                   dVEkqF..nIsIPeeeIanGkFnTfNnilkII<-*
+                     ++q+  ++sI+++  a   F+ +N+++ ++   
+  gi|7822234   190 QAISQYllGVSISQDLSAVADFSVLNDLTMTV    221  
+
+
+Histogram of all scores:
+score    obs    exp  (one = represents 4 sequences)
+-----    ---    ---
+  -99      3      0|=
+  -98      2      0|=
+  -97      2      0|=
+  -96      2      0|=
+  -95      3      0|=
+  -94      7      0|==
+  -93      5      0|==
+  -92      5      0|==
+  -91      9      0|===
+  -90     11      0|===
+  -89     14      0|====
+  -88     15      0|====
+  -87     16      0|====
+  -86     34      0|=========
+  -85     37      0|==========
+  -84     39      0|==========
+  -83     47      0|============
+  -82     54      0|==============
+  -81     66      0|=================
+  -80     80      0|====================
+  -79     97      0|=========================
+  -78    130      1|*================================
+  -77    129      6|=*===============================
+  -76    143     20|====*===============================
+  -75    121     46|===========*===================
+  -74    153     86|=====================*=================
+  -73    177    137|==================================*==========
+  -72    211    189|===============================================*=====
+  -71    172    235|===========================================               *
+  -70    152    268|======================================                    *
+  -69    168    285|==========================================                *
+  -68    169    286|===========================================               *
+  -67    189    275|================================================          *
+  -66    139    254|===================================                       *
+  -65    153    229|=======================================                  *
+  -64    120    201|==============================                    *
+  -63     96    174|========================                   *
+  -62     95    148|========================            *
+  -61     87    124|======================        *
+  -60     72    103|==================       *
+  -59     66     85|=================    *
+  -58     52     70|=============    *
+  -57     41     57|===========   *
+  -56     40     46|========== *
+  -55     28     37|=======  *
+  -54     20     30|=====  *
+  -53     14     24|==== *
+  -52     13     19|====*
+  -51      6     16|== *
+  -50      8     12|==*
+  -49      4     10|= *
+  -48      4      8|=*
+  -47      3      6|=*
+  -46      2      5|=*
+  -45      1      4|*
+  -44      0      3|*
+  -43      2      2|*
+  -42      1      2|*
+  -41      0      1|*
+> -40      3      -|=
+
+
+% Statistical details of theoretical EVD fit:
+              mu =   -67.9281
+          lambda =     0.2218
+chi-sq statistic =  3527.7708
+  P(chi-square)  =          0
+
+Total sequences searched: 3532
+
+Whole sequence top hits:
+     Total hits:           24
+     Satisfying E cutoff:  4
+     Total memory:         3K
+
+Domain top hits:
+     Total hits:           24
+     Satisfying E cutoff:  24
+     Total memory:         10K

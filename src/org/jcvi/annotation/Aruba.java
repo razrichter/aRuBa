@@ -25,7 +25,7 @@ import org.jcvi.annotation.dao.BlastResultFileDAO;
 import org.jcvi.annotation.dao.GenbankFeatureDAO;
 import org.jcvi.annotation.dao.GenericFileDAO;
 import org.jcvi.annotation.dao.GenomePropertiesDAOManager;
-import org.jcvi.annotation.dao.HMMResultFileDAO;
+import org.jcvi.annotation.dao.Hmmer2ResultFileDAO;
 import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.dao.SmallGenomeDAOManager;
 import org.jcvi.annotation.facts.Annotation;
@@ -212,7 +212,7 @@ public class Aruba {
 	}
 	public static void addHmmFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
 		for (String file : filesFromPaths(filesOrDirs)) {
-			addDao(new HMMResultFileDAO(file), ksession);
+			addDao(new Hmmer2ResultFileDAO(file), ksession);
 		}
 	}
 	public static void addRdfFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {

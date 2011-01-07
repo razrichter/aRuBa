@@ -15,7 +15,7 @@ import org.jcvi.annotation.dao.HmmCutoffTableDAO;
 import org.jcvi.annotation.dao.HmmCutoffTableDAO.HmmCutoff;
 import org.jcvi.annotation.facts.HmmHit;
 
-public class HMMResultFileDAO implements HmmHitDAO {
+public class Hmmer2ResultFileDAO implements HmmHitDAO {
 
 	private static class HMMDomainInfo {
 		private String accession;
@@ -30,10 +30,6 @@ public class HMMResultFileDAO implements HmmHitDAO {
 		private boolean fromHmmEnd;
 		private double domainScore;
 		private double domainEValue;
-
-		public HMMDomainInfo() {
-			super();
-		}
 
 		public HMMDomainInfo(String accession, int domainNum, int seqStart,
 				int seqEnd, boolean fromSeqStart, boolean fromSeqEnd,
@@ -158,11 +154,7 @@ public class HMMResultFileDAO implements HmmHitDAO {
 		private double totalScore;
 		private double totalEValue;
 		private int numDomains;
-		private ArrayList<HMMDomainInfo> domains;
-
-		public HMMHitInfo() {
-			super();
-		}
+		private ArrayList<HMMDomainInfo> domains = new ArrayList<HMMDomainInfo>();
 
 		public HMMHitInfo(String accession, String description,
 				double totalScore, double totalEValue, int numDomains) {
@@ -239,15 +231,24 @@ public class HMMResultFileDAO implements HmmHitDAO {
 		}
 	}
 
-	public HMMResultFileDAO() {
+	public Hmmer2ResultFileDAO() {
 		super();
 	}
 
-	public HMMResultFileDAO(String hmmFile) {
+	public Hmmer2ResultFileDAO(String hmmFile) {
 		super();
 		addHmmResultFile(hmmFile);
 	}
 
+	public Hmmer2ResultFileDAO(BufferedReader hmmReader) {
+		super();
+		try {
+			parseHmmResultFile(hmmReader);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	public void addHmmResultFile(String hmmFile) {
 		try {
 			BufferedReader hmmReader = new BufferedReader(new FileReader(
@@ -263,7 +264,7 @@ public class HMMResultFileDAO implements HmmHitDAO {
 	public void parseHmmResultFile(BufferedReader hmmReader) throws IOException {
 
 		final String numRe = "-?\\d+(?:\\.\\d+)?(?:[eE]-?\\d+)?";
-		final Pattern programNameRE = Pattern.compile("^hmm(search|pfam)\\s+");
+		final Pattern programNameRE = Pattern.compile("^hmm(search|pfam)\\s*");
 		final Pattern constantAccRE = Pattern.compile("^Query\\s+(HMM|[Ss]equence):\\s+(.*)$");
 		// Accession description Score E-value num_Domains
 		final Pattern hmmHitTableRE = Pattern.compile("^(\\S+)\\s+(.+)\\s+("
@@ -272,9 +273,9 @@ public class HMMResultFileDAO implements HmmHitDAO {
 				// Accession Domain/Total
 				"^(\\S+)\\s+" + "(\\d+)/(\\d+)\\s+" +
 				// Seq-f Seq-t fromStart toEnd
-				"(\\d+)\\s" + "(\\d+)\\s+" + "([.\\[])([.\\]])\\s+" +
+				"(\\d+)\\s+" + "(\\d+)\\s+" + "([.\\[])([.\\]])\\s+" +
 				// HMM-f HMM-t fromStart toEnd
-				"(\\d+)\\s" + "(\\d+)\\s+" + "([.\\[])([.\\]])\\s+" +
+				"(\\d+)\\s+" + "(\\d+)\\s+" + "([.\\[])([.\\]])\\s+" +
 				// Score E-value
 				"(" + numRe + ")\\s+"+ "(" + numRe + ")\\s*$"				
 		);
@@ -338,7 +339,7 @@ public class HMMResultFileDAO implements HmmHitDAO {
 				}
 			}
 		}
-		if ( ! hits.isEmpty() ) { // save existing hits
+		if ( ! programName.equals("") && ! hits.isEmpty() ) { // save existing hits
 			addParsedHits(programName, constantAcc, hits.values());
 		}
 	}
@@ -348,22 +349,21 @@ public class HMMResultFileDAO implements HmmHitDAO {
 		for (HMMHitInfo hitInfo : hits) {
 			for (HMMDomainInfo domainInfo: hitInfo.getDomains()) {
 				HmmHit hit = null;
-				if ("search".equals(programName)) {
+				if ("hmmsearch".equals(programName)) {
 					hit = new HmmHit(
 						hitInfo.getAccession(), 
 						constantAcc
 					);
 					
 				}
-				else if ("pfam".equals(programName)) {
+				else if ("hmmpfam".equals(programName)) {
 					hit = new HmmHit(
 						constantAcc,
 						hitInfo.getAccession()
 					);
 				}
 				else {
-					throw new RuntimeException("found hit/domain table before result");
-					// something really bad happened here
+					throw new RuntimeException("Don't understand program name" + programName);
 				}
 				hit.setScore(hitInfo.getTotalScore());
 				hit.setDomainScore(domainInfo.getDomainScore());

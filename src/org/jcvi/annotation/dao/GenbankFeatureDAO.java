@@ -92,7 +92,7 @@ public class GenbankFeatureDAO implements FeatureDAO {
 					for(Iterator<org.biojava.bio.seq.Feature> featureIterator = rs.features(); featureIterator.hasNext();){
 						org.biojava.bio.seq.StrandedFeature biojavaFeature = (org.biojava.bio.seq.StrandedFeature)featureIterator.next();
 						if(this.codingFeatureTypes.indexOf(biojavaFeature.getType()) != -1){
-							Feature feature = BiojavaConvertor.convertBiojavaFeatureToAnnotationFeature(biojavaFeature);
+							Feature feature = BiojavaConvertor.convertBiojavaFeatureToAnnotationFeature(rs, biojavaFeature);
 							feature.setSource(sourceFeature);
 							feature.setGenome(sourceFeature.getGenome());
 							featureList.add(feature);
