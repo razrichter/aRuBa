@@ -1,0 +1,3 @@
+#!/bin/bash
+dir=`dirname $0`
+java -Xmx512M -cp $dir/aruba.jar org.jcvi.annotation.PeptideFastaExtractor "$@"
