@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.jcvi.annotation.dao.HmmCutoffTableDAO;
-import org.jcvi.annotation.dao.HmmCutoffTableDAO.HmmCutoff;
+import org.jcvi.annotation.dao.HmmCutoff;
 import org.jcvi.annotation.facts.HmmHit;
 
 public class Hmmer2ResultFileDAO implements HmmHitDAO {

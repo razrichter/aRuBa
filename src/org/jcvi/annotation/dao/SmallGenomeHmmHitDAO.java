@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Iterator;
 
-import org.jcvi.annotation.dao.HmmCutoffTableDAO.HmmCutoff;
+import org.jcvi.annotation.dao.HmmCutoff;
 import org.jcvi.annotation.facts.HmmHit;
 
 

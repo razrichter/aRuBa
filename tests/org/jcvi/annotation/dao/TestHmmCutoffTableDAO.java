@@ -4,7 +4,6 @@ import java.io.InputStream;
 
 import junit.framework.TestCase;
 
-import org.jcvi.annotation.dao.HmmCutoffTableDAO.HmmCutoff;
 import org.junit.Before;
 
 public class TestHmmCutoffTableDAO extends TestCase {
