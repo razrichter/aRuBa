@@ -225,7 +225,7 @@ public class Hmmer2ResultFileDAO implements HmmHitDAO {
 	
 	{
 		try {
-			cutoffTable = new HmmCutoffTableDAO();
+			cutoffTable = HmmCutoffTableDAO.getHmmer2CutoffDAO();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

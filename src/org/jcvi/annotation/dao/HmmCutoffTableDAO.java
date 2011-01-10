@@ -11,16 +11,33 @@ import java.util.Iterator;
 public class HmmCutoffTableDAO implements Iterable<HmmCutoff> {
 
 
-    private static final String hmmCutoffTablePath = "data/hmm2CutoffTable.txt";
+    private static final String hmm2CutoffTablePath = "data/hmm2CutoffTable.txt";
+    private static final String hmm3CutoffTablePath = "data/hmm3CutoffTable.txt";
+    
     private HashMap<String, HmmCutoff> hmmCutoffs = new HashMap<String, HmmCutoff>();
 
-    public HmmCutoffTableDAO() throws IOException {
-        super();
+    public static HmmCutoffTableDAO getHmmer2CutoffDAO() throws IOException {
+    	HmmCutoffTableDAO table = new HmmCutoffTableDAO();
 
         Class<HmmCutoffTableDAO> resourceClass = HmmCutoffTableDAO.class;
         InputStream hmmCutoffTable = resourceClass
-                .getResourceAsStream(hmmCutoffTablePath);
-            readHmmCutoffs(hmmCutoffTable);
+                .getResourceAsStream(hmm2CutoffTablePath);
+        table.readHmmCutoffs(hmmCutoffTable);
+        return table;    
+    }
+    
+    public static HmmCutoffTableDAO getHmmer3CutoffDAO() throws IOException {
+    	HmmCutoffTableDAO table = new HmmCutoffTableDAO();
+
+        Class<HmmCutoffTableDAO> resourceClass = HmmCutoffTableDAO.class;
+        InputStream hmmCutoffTable = resourceClass
+                .getResourceAsStream(hmm3CutoffTablePath);
+        table.readHmmCutoffs(hmmCutoffTable);
+        return table;    
+    }
+
+    private HmmCutoffTableDAO() throws IOException {
+    	super();
     }
     
     public HmmCutoffTableDAO(InputStream in) throws IOException {

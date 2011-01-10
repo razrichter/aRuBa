@@ -16,7 +16,7 @@ public class SmallGenomeHmmHitDAO implements HmmHitDAO {
 	private HmmCutoffTableDAO cutoffTable; 
 	{
 		try {
-			cutoffTable = new HmmCutoffTableDAO();
+			cutoffTable = HmmCutoffTableDAO.getHmmer2CutoffDAO();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

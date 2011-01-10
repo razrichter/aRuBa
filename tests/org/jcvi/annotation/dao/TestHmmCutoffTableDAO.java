@@ -25,7 +25,7 @@ public class TestHmmCutoffTableDAO extends TestCase {
     public void testReadsLiveFile() {
 
         try {
-            HmmCutoffTableDAO liveTable = new HmmCutoffTableDAO();
+            HmmCutoffTableDAO liveTable = HmmCutoffTableDAO.getHmmer2CutoffDAO();
             assertNotNull("Read live table without Error", liveTable);
         }
         catch (Exception e) {
