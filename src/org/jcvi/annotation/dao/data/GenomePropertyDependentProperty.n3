@@ -1,0 +1,337 @@
+@prefix gp: <urn:genome_properties:instances:> .
+@prefix : <urn:genome_properties:ontology:> .
+gp:GenomeProperty_58355
+    a           :GenomeProperty;
+    :id         "58355";
+    :accession  "GenProp0630";
+    :category   "SYSTEM";
+    :threshold  "0";
+    :title      "2-oxoglutarate dehydrogenase system";
+    :definition ""
+.
+gp:FeatureProperty_Step_51742
+    a           :FeatureProperty;
+    :id         "51742";
+    :title      "thiamine pyrophosphate-binding subunit, SucA (E1)";
+    :required_by gp:GenomeProperty_58355
+.
+gp:FeatureProperty_Ev_85
+    a               :FeatureProperty;
+    :id             "TIGR00239";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_51742
+.
+gp:FeatureProperty_Step_51743
+    a           :FeatureProperty;
+    :id         "51743";
+    :title      "dihydrolipoamide succinyltransferase, SucB (E2)";
+    :required_by gp:GenomeProperty_58355
+.
+gp:FeatureProperty_Ev_86
+    a               :FeatureProperty;
+    :id             "TIGR01347";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_51743
+.
+gp:FeatureProperty_Ev_72567
+    a               :FeatureProperty;
+    :id             "TIGR02927";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_51743
+.
+gp:FeatureProperty_Step_51744
+    a           :FeatureProperty;
+    :id         "51744";
+    :title      "dihydrolipoamide dehydrogenase, LpdA (E3)";
+    :required_by gp:GenomeProperty_58355
+.
+gp:FeatureProperty_Ev_87
+    a               :FeatureProperty;
+    :id             "TIGR01350";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_51744
+.
+
+gp:GenomeProperty_2
+    a           :GenomeProperty;
+    :id         "2";
+    :accession  "GenProp2";
+    :category   "METAPATH";
+    :threshold  "0";
+    :title      "dependent_genprop";
+    :definition "Genome property dependent on another genome property"
+.
+gp:FeatureProperty_Step_3
+    a           :FeatureProperty;
+    :id         "2";
+    :title      "step from genome property";
+    :required_by gp:GenomeProperty_2
+.
+gp:FeatureProperty_Ev_3
+    a               :FeatureProperty;
+    :id             "GenProp1";
+    :category       "GENPROP";
+    :sufficient_for gp:FeatureProperty_Step_3
+.
+
+gp:GenomeProperty_2015
+    a           :GenomeProperty;
+    :id         "2015";
+    :accession  "GenProp0033";
+    :category   "METAPATH";
+    :threshold  "5";
+    :title      "TCA cycle";
+    :definition "PARTIAL The TCA cycle, also called the Krebs cycle, citrate cycle, and tricarboxylic acid cycle, is performed in eukaryotic mitochondria and in many prokaryotes. This property refers to the forward direction: from oxaloacetate and acetate to citrate, to isocitrate, to 2-oxoglutarate, to succinate, to fumarate, to malate, to oxaloacetate, with the release of two molecules of C02. It runs only under aerobic conditions. The state YES means the cycle is complete. A complete TCA cycle may correlate with use of TCA intermediates as biosynthetic precursors and with anaplerotic (TCA cycle intermediate-replenishing) reactions such as the glyoxylate shunt. The PARTIAL state indicates the pathway does not form a cycle but may contain several consecutive steps. The direction of flux through this arc is not specified when the state is set and may be in the reductive (reverse) direction. The reverse TCA cycle, an alternative to the Calvin cycle for carbon dioxide fixation, is covered by a separate property."
+.
+gp:FeatureProperty_Step_134
+    a           :FeatureProperty;
+    :id         "134";
+    :title      "citrate synthase";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_76
+    a               :FeatureProperty;
+    :id             "TIGR01798";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_134
+.
+gp:FeatureProperty_Ev_77
+    a               :FeatureProperty;
+    :id             "TIGR01800";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_134
+.
+gp:FeatureProperty_Ev_78
+    a               :FeatureProperty;
+    :id             "TIGR01793";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_134
+.
+gp:FeatureProperty_Step_135
+    a           :FeatureProperty;
+    :id         "135";
+    :title      "aconitate hydratase";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_79
+    a               :FeatureProperty;
+    :id             "TIGR01341";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_135
+.
+gp:FeatureProperty_Ev_80
+    a               :FeatureProperty;
+    :id             "TIGR00117";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_135
+.
+gp:FeatureProperty_Ev_55111
+    a               :FeatureProperty;
+    :id             "TIGR01340";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_135
+.
+gp:FeatureProperty_Step_136
+    a           :FeatureProperty;
+    :id         "136";
+    :title      "isocitrate dehydrogenase";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_81
+    a               :FeatureProperty;
+    :id             "TIGR00175";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_136
+.
+gp:FeatureProperty_Ev_82
+    a               :FeatureProperty;
+    :id             "TIGR00127";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_136
+.
+gp:FeatureProperty_Ev_83
+    a               :FeatureProperty;
+    :id             "TIGR00178";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_136
+.
+gp:FeatureProperty_Ev_84
+    a               :FeatureProperty;
+    :id             "TIGR00183";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_136
+.
+gp:FeatureProperty_Ev_72562
+    a               :FeatureProperty;
+    :id             "TIGR02924";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_136
+.
+gp:FeatureProperty_Step_137
+    a           :FeatureProperty;
+    :id         "137";
+    :title      "2-oxoglutarate dehydrogenase system";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_72570
+    a               :FeatureProperty;
+    :id             "GenProp0630";
+    :category       "GENPROP";
+    :sufficient_for gp:FeatureProperty_Step_137
+.
+gp:FeatureProperty_Step_140
+    a           :FeatureProperty;
+    :id         "140";
+    :title      "succinyl-CoA synthetase, alpha subunit";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_89
+    a               :FeatureProperty;
+    :id             "TIGR01019";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_140
+.
+gp:FeatureProperty_Step_141
+    a           :FeatureProperty;
+    :id         "141";
+    :title      "succinyl-CoA synthetase, beta subunit";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_90
+    a               :FeatureProperty;
+    :id             "TIGR01016";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_141
+.
+gp:FeatureProperty_Step_142
+    a           :FeatureProperty;
+    :id         "142";
+    :title      "succinate dehydrogenase, flavoprotein subunit";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_91
+    a               :FeatureProperty;
+    :id             "TIGR01816";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_142
+.
+gp:FeatureProperty_Ev_92
+    a               :FeatureProperty;
+    :id             "TIGR01811";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_142
+.
+gp:FeatureProperty_Step_143
+    a           :FeatureProperty;
+    :id         "143";
+    :title      "succinate dehydrogenase, iron-sulfur protein";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_93
+    a               :FeatureProperty;
+    :id             "TIGR00384";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_143
+.
+gp:FeatureProperty_Step_144
+    a           :FeatureProperty;
+    :id         "144";
+    :title      "succinate dehydrogenase, cytochrome b subunit";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_94
+    a               :FeatureProperty;
+    :id             "TIGR02970";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_144
+.
+gp:FeatureProperty_Ev_27940
+    a               :FeatureProperty;
+    :id             "TIGR02046";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_144
+.
+gp:FeatureProperty_Step_145
+    a           :FeatureProperty;
+    :id         "145";
+    :title      "fumarate hydratase, class I N-term or class II";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_95
+    a               :FeatureProperty;
+    :id             "TIGR00979";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_145
+.
+gp:FeatureProperty_Ev_12604
+    a               :FeatureProperty;
+    :id             "PF05681";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_145
+.
+gp:FeatureProperty_Step_146
+    a           :FeatureProperty;
+    :id         "146";
+    :title      "malate dehydrogenase";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_96
+    a               :FeatureProperty;
+    :id             "TIGR01759";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_146
+.
+gp:FeatureProperty_Ev_97
+    a               :FeatureProperty;
+    :id             "TIGR01758";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_146
+.
+gp:FeatureProperty_Ev_98
+    a               :FeatureProperty;
+    :id             "TIGR01763";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_146
+.
+gp:FeatureProperty_Ev_99
+    a               :FeatureProperty;
+    :id             "TIGR01772";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_146
+.
+gp:FeatureProperty_Ev_100
+    a               :FeatureProperty;
+    :id             "TIGR01320";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_146
+.
+gp:FeatureProperty_Step_5362
+    a           :FeatureProperty;
+    :id         "5362";
+    :title      "fumarate hydratase, class I C-term or class II";
+    :required_by gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_12614
+    a               :FeatureProperty;
+    :id             "TIGR00979";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_5362
+.
+gp:FeatureProperty_Ev_12615
+    a               :FeatureProperty;
+    :id             "PF05683";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_5362
+.
+gp:FeatureProperty_Step_51809
+    a           :FeatureProperty;
+    :id         "51809";
+    :title      "succinate dehydrogenase, hydrophobic membrane anchor";
+    :part_of    gp:GenomeProperty_2015
+.
+gp:FeatureProperty_Ev_72655
+    a               :FeatureProperty;
+    :id             "TIGR02968";
+    :category       "HMM";
+    :sufficient_for gp:FeatureProperty_Step_51809
+.

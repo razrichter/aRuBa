@@ -165,7 +165,7 @@ foreach my $prop (@$props_r) {
 }
 
 __DATA__
-gp:GenomeProperty_[% prop.prop_def_id %]
+gp:Genome_Property_[% prop.prop_def_id %]
     a           :GenomeProperty;
     :id         "[% prop.prop_def_id %]";
     :accession  "[% prop.prop_acc %]";
@@ -176,23 +176,23 @@ gp:GenomeProperty_[% prop.prop_def_id %]
 .
 [%- FOREACH step IN prop.steps %]
     [%- IF step.is_evaluable %]
-gp:FeatureProperty_Step_[% step.prop_step_id %]
+gp:Property_Component_[% step.prop_step_id %]
     a           :FeatureProperty;
     :id         "[% step.prop_step_id %]";
     :title      "[% step.step_name %]";
         [%- IF step.in_rule %]
-    :required_by gp:GenomeProperty_[% step.prop_def_id %]
+    :required_by gp:Genome_Property_[% step.prop_def_id %]
         [%- ELSE %]
-    :part_of    gp:GenomeProperty_[% step.prop_def_id %]
+    :part_of    gp:Genome_Property_[% step.prop_def_id %]
         [%- END %]
 .
     [%- FOREACH ev IN step.evs %]
         [%- IF ev.is_evaluable %]
-gp:FeatureProperty_Ev_[% ev.step_ev_id %]
+gp:Component_Evidence_[% ev.step_ev_id %]
     a               :FeatureProperty;
     :id             "[% ev.query %]";
     :category       "[% ev.method %]";
-    :sufficient_for gp:FeatureProperty_Step_[% ev.prop_step_id %]
+    :sufficient_for gp:Property_Component_[% ev.prop_step_id %]
 .
         [%- END %]
     [%- END %]

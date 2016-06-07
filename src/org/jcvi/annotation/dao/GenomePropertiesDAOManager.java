@@ -34,7 +34,8 @@ public class GenomePropertiesDAOManager {
 		
 		// Load genomeProperty objects from our RDF DAO, and insert into KnowledgeSession
 		if (url == null) {
-			url = this.getClass().getResource("data/genomeproperties.n3");
+			//url = this.getClass().getResource("data/genomeproperties.n3");
+			url = this.getClass().getResource("data/GenomePropertyDependentProperty.n3");
 		}
 		RdfFactDAO dao = new RdfFactDAO(url, "N3");
 		

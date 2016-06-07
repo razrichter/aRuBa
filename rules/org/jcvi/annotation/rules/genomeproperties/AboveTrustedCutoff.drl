@@ -2,16 +2,27 @@ package org.jcvi.annotation.rules.genomeproperties
 import org.jcvi.annotation.facts.*;
 import java.util.ArrayList;
 
-rule "Above Trusted Cutoff"
+rule "HMM Above Trusted Cutoff"
 dialect "mvel"
 	when
-		h	: HmmHit( aboveTrustedHit == true, hitId : hitId )
-		p	: FeatureProperty( id == hitId )
-		f	: Feature ( featureId == h.queryId, properties not contains p )
+		h	: HmmHit( aboveTrustedHit == true, hitId : hitId, queryId : queryId )
+		p	: FeatureProperty( id == hitId, type == 'HMM' )
+		f	: Feature ( featureId == queryId, properties not contains p )
  	then
  		modify( p ) { setValue(1) };
  		modify( f ) { addProperty(p) };
  		//System.out.println("hmm " + p.toString() + " value:" + p.getValue());
 end
+
+rule "GenProp Evidence"
+dialect "mvel"
+	when
+		ev	: FeatureProperty( gpAcc : id, type == "GENPROP", fpValue : value )
+		gp	: GenomeProperty( gpValue : value, value != fpValue, accession == gpAcc )
+	then
+		modify(ev) { setValue(gpValue) };
+		System.err.println("evidence " + ev.toString() + " on genprop " + gpAcc + " value " + gpValue);
+end
+		
 
 

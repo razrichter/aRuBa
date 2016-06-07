@@ -5,12 +5,23 @@ import org.jcvi.annotation.facts.*;
 rule "Sufficient Rule on Feature"
 dialect "mvel"
 	when
-		prop1			: Property( value == 1 )
-		prop2			: Property( value < 1, sufficients contains prop1 )
+		prop1			: Property( pValue : value, value > 0, type != "GENPROP" ) // i.e. Component Evidence. e.g. HMM hit above trusted cutoff
+		prop2			: Property( value < pValue, sufficients contains prop1 ) // i.e. Property Component Step with the above evidence for it
 		
-		feature			: Feature(properties contains prop1)
+		feature			: Feature(properties contains prop1) // e.g. a Feature with the above HMM hit evidence 
 	then 
-		modify( prop2 ) { setValue(1) };
+		modify( prop2 ) { setValue(pValue) };
 		modify( feature ) { addProperty(prop2) };
 		//System.out.println("suffices " + prop2.toString + " value:" + prop2.getValue());
+end
+
+rule "Sufficient Rule on GenomeProperty"
+dialect "mvel"
+	when
+		prop1			: Property( pValue : value, type == "GENPROP" )
+		prop2			: Property( value != pValue, sufficients contains prop1 )
+		
+	then 
+		modify( prop2 ) { setValue(pValue) };
+		System.err.println("suffices " + prop2.toString + " value:" + prop2.getValue());
 end

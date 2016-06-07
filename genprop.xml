@@ -99,6 +99,7 @@
             <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/workspace/java/RulesBasedAnnotation/lib/jena-2.6.2/stax-api-1.0.1.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/workspace/java/RulesBasedAnnotation/lib/jena-2.6.2/wstx-asl-3.2.9.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/workspace/java/RulesBasedAnnotation/lib/jena-2.6.2/xercesImpl-2.7.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/rrichter/workspace/java/RulesBasedAnnotation/lib/commons-lang-2.5.jar"/>
         </jar>
     </target>
 </project>

@@ -1,7 +1,9 @@
 package org.jcvi.annotation.facts;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Feature {
 	private String featureId;
@@ -13,7 +15,7 @@ public class Feature {
 	private int strand;
 	private boolean isCircular = false;
 	private String type; // Feature type
-	private List<Property> properties = new ArrayList<Property>();
+	private Set<Property> properties = new HashSet<Property>();
 	private Annotation assignedAnnotation;
 	private List<Annotation> assertedAnnotations = new ArrayList<Annotation>();
 		
@@ -61,10 +63,10 @@ public class Feature {
 	}
 	
 	public List<Property> getProperties() {
-		return this.properties;
+		return new ArrayList<Property>(this.properties);
 	}
 	public void setProperties(List<Property> properties) {
-		this.properties = properties;
+		this.properties.addAll(properties);
 	}
 	public void addProperty(Property prop) {
 		this.properties.add(prop);
@@ -205,12 +207,15 @@ public class Feature {
 		this.removeProperty(p.getId().toString());
 	}
 	public void removeProperty(String id) {
-		Property prop;
-		for (int i=0; i < this.properties.size(); i++) {
-			prop = this.properties.get(i);
+		Property foundProp = null;
+		for (Property prop : this.properties) {
 			if (prop.getId().equals(id)) {
-				this.properties.remove(i);
+				foundProp = prop;
+				break;
 			}
+		}
+		if (foundProp != null) {
+			this.properties.remove(foundProp);
 		}
 	}
 

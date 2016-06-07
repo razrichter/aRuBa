@@ -22,3 +22,21 @@ rule "GenomeProperty value calculation"
  		//System.out.println("Calculate " + genomeprop.toStringReport());
 end
 
+rule "GenomeProperty value calculation Secondary"
+salience -10
+	when
+		genomeprop	 		: GenomeProperty( filledValue : filled, requirements : requirements )
+		numFilled			: Double( doubleValue != filledValue )
+								from accumulate( 
+									Property( requiredBy contains genomeprop, $value : value )
+									sum( $value ) 
+								);
+ 	then 
+ 		double numRequired = new Double(requirements.size());
+		double fractionFilled = (numRequired == 0) ? 0 : numFilled / numRequired;
+ 		modify( genomeprop ) {
+			setFilled(numFilled),
+			setValue(fractionFilled)
+		};
+ 		System.err.println("Calculate " + genomeprop.toStringReport());
+end
