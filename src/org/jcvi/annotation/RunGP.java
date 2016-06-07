@@ -23,6 +23,7 @@ import org.jcvi.annotation.dao.GenbankFeatureDAO;
 import org.jcvi.annotation.dao.GenericFileDAO;
 import org.jcvi.annotation.dao.GenomePropertiesDAOManager;
 import org.jcvi.annotation.dao.Hmmer2ResultFileDAO;
+import org.jcvi.annotation.dao.Hmmer3ResultTbloutFileDAO;
 import org.jcvi.annotation.dao.RdfFactDAO;
 import org.jcvi.annotation.dao.SmallGenomeDAOManager;
 import org.jcvi.annotation.writer.factory.GenomePropertyWriterFactory;
@@ -44,6 +45,7 @@ public class RunGP {
 		options.addOption("r", "rule", true, "Path to rule file or directory");
 		options.addOption("b", "blast", true, "Path to Blast file or directory");
 		options.addOption("hmm", true, "Path to HMM file or directory");
+		options.addOption("hmm3",true, "Path to HMM3 tblout file or directory");
 		options.addOption("rdf", true, "Path to RDF/XML file or directory");
 		options.addOption("g", "genbank", true, "Path to Genbank file or directory");
 		options.addOption("l","log", true, "Log file");
@@ -103,6 +105,7 @@ public class RunGP {
 			addSmallGenomeDatabase(cmd.getOptionValue("database"), ksession);
 			addBlastFiles(cmd.getOptionValues("blast"), ksession);
 			addHmmFiles(cmd.getOptionValues("hmm"), ksession);
+			addHmm3Files(cmd.getOptionValues("hmm3"), ksession);
 			addGenbankFiles(cmd.getOptionValues("genbank"), ksession);
 			addRdfFiles(cmd.getOptionValues("rdf"), ksession);
 			addN3Files(cmd.getOptionValues("n3"), ksession);
@@ -149,6 +152,13 @@ public class RunGP {
 			addDao(new Hmmer2ResultFileDAO(file), ksession);
 		}
 	}
+	
+	public static void addHmm3Files(String [] filesOrDirs, StatefulKnowledgeSession ksession) {
+		for (String file : filesFromPaths(filesOrDirs)) {
+			addDao(new Hmmer3ResultTbloutFileDAO(file), ksession);
+		}
+	}
+	
 	public static void addRdfFiles(String[] filesOrDirs, StatefulKnowledgeSession ksession) {
 		for (String file : filesFromPaths(filesOrDirs)) {
 			addDao(new RdfFactDAO(file), ksession);
